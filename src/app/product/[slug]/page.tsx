@@ -16,12 +16,13 @@ export async function generateMetadata({params}:{params:Promise<{slug:string}>})
   if(!product)return {}
   const entity=byEntityId.get(product.entity_id)
   const pathname=`/product/${product.slug}/`
+  const keywords=[product.product_name,entity?.canonical_name,'cryptocurrency wallet','wallet security','wallet lifecycle'].filter((value):value is string=>Boolean(value))
   return {
     title:`${product.product_name} lifecycle`,
     description:product.summary,
     alternates:{canonical:pathname},
     openGraph:{type:'article',title:`${product.product_name} lifecycle`,description:product.summary,url:pathname},
-    keywords:[product.product_name,entity?.canonical_name,'cryptocurrency wallet','wallet security','wallet lifecycle'],
+    keywords,
   }
 }
 
