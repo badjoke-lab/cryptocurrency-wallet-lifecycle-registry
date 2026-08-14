@@ -1,0 +1,6 @@
+export const SITE_NAME = 'Wallet Lifecycle Registry'
+export const SITE_SHORT_NAME = 'WLR'
+export const SITE_TAGLINE = 'Historical registry of cryptocurrency wallets.'
+export const SITE_DESCRIPTION = 'Historical registry of cryptocurrency wallets, tracking products, lifecycle changes, security incidents, vulnerabilities, and evidence.'
+export const SITE_URL = 'https://wlr.badjoke-lab.com'
+export const REPO_URL = 'https://github.com/badjoke-lab/cryptocurrency-wallet-lifecycle-registry'
