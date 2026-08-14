@@ -17,4 +17,5 @@ jobs:
       - run: python -m pip install -r requirements.txt
       - run: npm install --no-audit --no-fund
       - run: npm run validate:records
+      - run: npm run cloudflare:config:print
       - run: npm run build

@@ -9,7 +9,10 @@
     "start": "next start",
     "lint": "eslint .",
     "validate:records": "python3 scripts/validate_records.py",
-    "machine:build": "node scripts/build-machine-layer.mjs"
+    "machine:build": "node scripts/build-machine-layer.mjs",
+    "cloudflare:config:print": "node scripts/configure-cloudflare-pages-project.mjs --print",
+    "cloudflare:config:plan": "node scripts/configure-cloudflare-pages-project.mjs --plan",
+    "cloudflare:config:apply": "node scripts/configure-cloudflare-pages-project.mjs --apply"
   },
   "dependencies": {
     "next": "^15.2.8",

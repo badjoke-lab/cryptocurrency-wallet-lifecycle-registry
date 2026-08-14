@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "project_name": "cryptocurrency-wallet-lifecycle-registry",
+  "production_branch": "main",
+  "build_config": {
+    "build_command": "npm run build",
+    "destination_dir": "out",
+    "root_dir": ""
+  },
+  "custom_domains": [
+    "wlr.badjoke-lab.com"
+  ],
+  "source_config": {
+    "production_deployments_enabled": true,
+    "preview_deployment_setting": "none",
+    "pr_comments_enabled": false,
+    "path_includes": [
+      "src/*",
+      "public/*",
+      "data/*",
+      "schemas/*",
+      "scripts/*",
+      "package.json",
+      "package-lock.json",
+      "next.config.ts",
+      "tsconfig.json"
+    ],
+    "path_excludes": [
+      "docs/*",
+      ".github/*",
+      "README.md",
+      "DESIGN.md"
+    ]
+  }
+}
