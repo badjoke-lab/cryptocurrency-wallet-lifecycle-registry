@@ -1,0 +1,13 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_example-wallet",
+  "title": "Example wallet candidate",
+  "review_state": "researching",
+  "notes": "Discovery material is not evidence unless it is represented in records.evidence and passes the evidence schema.",
+  "records": {
+    "entities": [],
+    "products": [],
+    "events": [],
+    "evidence": []
+  }
+}
