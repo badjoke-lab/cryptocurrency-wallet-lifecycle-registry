@@ -1,4 +1,5 @@
 import './globals.css'
+import './discovery.css'
 import type { Metadata,Viewport } from 'next'
 import Link from 'next/link'
 import SiteHeader from '../components/site-header'
