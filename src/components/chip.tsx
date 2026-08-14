@@ -1,0 +1,1 @@
+export default function Chip({children,tone='neutral'}:{children?:React.ReactNode;tone?:string}){const normalized=String(tone||'neutral').toLowerCase().replace(/[^a-z0-9_-]+/g,'-');return <span className={`chip chip-${normalized}`}>{children}</span>}

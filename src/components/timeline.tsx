@@ -1,0 +1,6 @@
+import Link from 'next/link'
+import Chip from './chip'
+import type { WalletEvent } from '../lib/types'
+import { byProductId,evidenceForEvent } from '../lib/data'
+import { impactTone } from '../lib/ui'
+export default function Timeline({rows}:{rows:WalletEvent[]}){return <div className="timeline-list">{rows.map(event=>{const product=event.product_id?byProductId.get(event.product_id):null;const sources=evidenceForEvent(event.id);return <article className={`timeline-item ${event.impact_level?`event-${event.impact_level}`:''}`} key={event.id}><div className="timeline-date">{event.event_date}</div><div><div className="chip-row"><Chip>{event.event_type}</Chip>{event.impact_level&&<Chip tone={impactTone(event.impact_level)}>{event.impact_level}</Chip>}</div><h3>{event.title}</h3>{product&&<p className="muted small">Product: <Link href={`/product/${product.slug}/`}>{product.product_name}</Link></p>}<p>{event.description}</p><div className="event-meta">{event.security_scope&&<span>Scope: {event.security_scope}</span>}{event.funds_affected&&<span>Funds affected: {event.funds_affected}</span>}{event.user_actions_required?.length?<span>Action: {event.user_actions_required.join(', ')}</span>:null}<span>Evidence: {sources.length}</span></div></div></article>})}</div>}

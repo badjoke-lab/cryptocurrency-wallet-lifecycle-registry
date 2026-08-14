@@ -1,0 +1,328 @@
+[
+  {
+    "id": "wlr_ent_000001",
+    "slug": "trezor",
+    "canonical_name": "Trezor",
+    "aliases": [
+      "TREZOR"
+    ],
+    "wallet_type": "hardware",
+    "status": "active",
+    "summary": "Open-source self-custody hardware wallet ecosystem created in the Czech Republic, with multiple hardware generations and the Trezor Suite companion application.",
+    "developer_or_company": "Trezor Company s.r.o.",
+    "country_or_origin": "Czech Republic",
+    "launch_date": "2013",
+    "launch_date_precision": "year",
+    "official_url": "https://trezor.io/",
+    "official_domain": "trezor.io",
+    "source_code_urls": [
+      "https://github.com/trezor/trezor-firmware",
+      "https://github.com/trezor/trezor-suite"
+    ],
+    "custody_model": "self_custody",
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "Trezor states it was founded in 2013. Product launch dates are tracked separately at product level."
+  },
+  {
+    "id": "wlr_ent_000002",
+    "slug": "ledger",
+    "canonical_name": "Ledger",
+    "aliases": [
+      "Ledger Wallet"
+    ],
+    "wallet_type": "hardware",
+    "status": "active",
+    "summary": "Self-custody hardware signer ecosystem with multiple Nano and touchscreen device generations plus the Ledger Wallet companion application.",
+    "developer_or_company": "Ledger SAS",
+    "country_or_origin": "France",
+    "launch_date": "2014",
+    "launch_date_precision": "year",
+    "official_url": "https://www.ledger.com/",
+    "official_domain": "ledger.com",
+    "source_code_urls": [
+      "https://github.com/LedgerHQ"
+    ],
+    "custody_model": "self_custody",
+    "key_management_model": "device_held_private_keys",
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "Hardware signers and the companion application are modeled as products; lifecycle events are kept separate from security incidents."
+  },
+  {
+    "id": "wlr_ent_000003",
+    "slug": "coldcard",
+    "canonical_name": "COLDCARD",
+    "aliases": [
+      "Coldcard"
+    ],
+    "wallet_type": "hardware",
+    "status": "active",
+    "summary": "Bitcoin-only self-custody hardware signing-device family made by Coinkite, with multiple Mk generations and the Q model.",
+    "developer_or_company": "Coinkite Inc.",
+    "country_or_origin": null,
+    "launch_date": "2017",
+    "launch_date_precision": "year",
+    "official_url": "https://coldcard.com/",
+    "official_domain": "coldcard.com",
+    "source_code_urls": [
+      "https://github.com/Coldcard/firmware"
+    ],
+    "custody_model": "self_custody",
+    "key_management_model": "device_held_seed",
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "Seed-generation security events are modeled across the affected model and release-track matrix."
+  },
+  {
+    "id": "wlr_ent_000004",
+    "slug": "metamask",
+    "canonical_name": "MetaMask",
+    "aliases": [],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Self-custodial software wallet ecosystem launched as a browser wallet and later expanded to a mobile application.",
+    "developer_or_company": "Consensys",
+    "country_or_origin": null,
+    "launch_date": "2016-07-14",
+    "launch_date_precision": "day",
+    "official_url": "https://metamask.io/",
+    "official_domain": "metamask.io",
+    "source_code_urls": [
+      "https://github.com/MetaMask/metamask-extension",
+      "https://github.com/MetaMask/metamask-mobile"
+    ],
+    "custody_model": "self_custody",
+    "key_management_model": "device_software_key_vault",
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "Browser extension and mobile app are separate products because their distribution and security boundaries differ."
+  },
+  {
+    "id": "wlr_ent_000005",
+    "slug": "safe",
+    "canonical_name": "Safe",
+    "aliases": [
+      "Gnosis Safe",
+      "Safe Global"
+    ],
+    "wallet_type": "smart_contract",
+    "status": "active",
+    "summary": "Smart-account and multisig wallet ecosystem that originated at Gnosis and was rebranded from Gnosis Safe to Safe in 2022.",
+    "developer_or_company": "Safe Ecosystem Foundation / Safe",
+    "country_or_origin": null,
+    "launch_date": "2018",
+    "launch_date_precision": "year",
+    "official_url": "https://safe.global/",
+    "official_domain": "safe.global",
+    "source_code_urls": [
+      "https://github.com/safe-global"
+    ],
+    "custody_model": "self_custody",
+    "key_management_model": "programmable_multisig_smart_account",
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "Smart-account protocol and user interfaces are modeled as separate products."
+  },
+  {
+    "id": "wlr_ent_000006",
+    "slug": "bitkey",
+    "canonical_name": "Bitkey",
+    "aliases": [],
+    "wallet_type": "hybrid",
+    "status": "active",
+    "summary": "Bitcoin self-custody wallet system combining hardware, a mobile application, and a provider-assisted server key in a 2-of-3 multisignature architecture.",
+    "developer_or_company": "Block, Inc.",
+    "country_or_origin": "United States",
+    "launch_date": "2023",
+    "launch_date_precision": "year",
+    "official_url": "https://bitkey.world/",
+    "official_domain": "bitkey.world",
+    "source_code_urls": [
+      "https://github.com/proto-at-block"
+    ],
+    "custody_model": "hybrid",
+    "key_management_model": "2_of_3_multisig",
+    "system_components": [
+      {
+        "component_type": "hardware_key",
+        "controlled_by": "user",
+        "role": "signing_key",
+        "custody_note": "Stored in the Bitkey hardware device."
+      },
+      {
+        "component_type": "app_key",
+        "controlled_by": "user",
+        "role": "signing_key",
+        "custody_note": "Stored on the user mobile device."
+      },
+      {
+        "component_type": "server_key",
+        "controlled_by": "provider",
+        "role": "recovery_and_optional_signing_path",
+        "custody_note": "Block holds one of three keys; one key alone cannot move funds."
+      }
+    ],
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "System components represent cryptographic roles; the provider server key is not modeled as a user-facing wallet product."
+  },
+  {
+    "id": "wlr_ent_000007",
+    "slug": "bitbox",
+    "canonical_name": "BitBox",
+    "aliases": [
+      "Shift Crypto",
+      "Shift Cryptosecurity"
+    ],
+    "wallet_type": "hardware",
+    "status": "active",
+    "summary": "Swiss self-custody hardware wallet ecosystem spanning the BitBox01, BitBox02 and BitBox02 Nova generations with the BitBoxApp companion software.",
+    "developer_or_company": "Shift Crypto AG",
+    "country_or_origin": "Switzerland",
+    "launch_date": "2016-03-25",
+    "launch_date_precision": "day",
+    "official_url": "https://bitbox.swiss/",
+    "official_domain": "bitbox.swiss",
+    "source_code_urls": [
+      "https://github.com/BitBoxSwiss"
+    ],
+    "custody_model": "self_custody",
+    "key_management_model": "device_held_seed",
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "Multi and Bitcoin-only editions share hardware and are modeled as variants rather than separate products."
+  },
+  {
+    "id": "wlr_ent_000008",
+    "slug": "blockstream-jade",
+    "canonical_name": "Blockstream Jade",
+    "aliases": [
+      "Jade"
+    ],
+    "wallet_type": "hardware",
+    "status": "active",
+    "summary": "Open-source Bitcoin and Liquid hardware wallet family from Blockstream, including the original Jade, Jade Plus and Jade Core.",
+    "developer_or_company": "Blockstream Corporation Inc.",
+    "country_or_origin": null,
+    "launch_date": "2021-01-03",
+    "launch_date_precision": "day",
+    "official_url": "https://blockstream.com/jade/",
+    "official_domain": "blockstream.com",
+    "source_code_urls": [
+      "https://github.com/Blockstream/Jade"
+    ],
+    "custody_model": "self_custody",
+    "key_management_model": "device_held_seed",
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "Jade 1.1 is treated as a hardware revision/variant of the original Jade in v0 rather than a separate product."
+  },
+  {
+    "id": "wlr_ent_000009",
+    "slug": "trust-wallet",
+    "canonical_name": "Trust Wallet",
+    "aliases": [],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Multi-chain self-custody software wallet founded as a mobile wallet and later expanded to a browser extension.",
+    "developer_or_company": "Trust Wallet",
+    "country_or_origin": null,
+    "launch_date": "2017",
+    "launch_date_precision": "year",
+    "official_url": "https://trustwallet.com/",
+    "official_domain": "trustwallet.com",
+    "source_code_urls": [
+      "https://github.com/trustwallet"
+    ],
+    "custody_model": "self_custody",
+    "key_management_model": "device_software_key_vault",
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "Mobile and browser extension are separate products because their distribution and security boundaries differ."
+  },
+  {
+    "id": "wlr_ent_000010",
+    "slug": "electrum",
+    "canonical_name": "Electrum",
+    "aliases": [],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Long-running open-source Bitcoin wallet created in 2011, distributed as a multi-platform client while retaining a single software-product lineage.",
+    "developer_or_company": "Electrum Technologies GmbH",
+    "country_or_origin": "Germany",
+    "launch_date": "2011",
+    "launch_date_precision": "year",
+    "official_url": "https://electrum.org/",
+    "official_domain": "electrum.org",
+    "source_code_urls": [
+      "https://github.com/spesmilo/electrum"
+    ],
+    "custody_model": "self_custody",
+    "key_management_model": "locally_encrypted_seed_and_private_keys",
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "WLR treats Electrum as one multi-platform product rather than one product per operating system."
+  },
+  {
+    "id": "wlr_ent_000011",
+    "slug": "ready",
+    "canonical_name": "Ready",
+    "aliases": [
+      "Argent"
+    ],
+    "wallet_type": "hybrid",
+    "status": "active",
+    "summary": "Self-custody wallet ecosystem formerly branded Argent, now operating distinct Ready mobile and Ready X products with materially different recovery and key-management models.",
+    "developer_or_company": "Ready",
+    "country_or_origin": "United Kingdom",
+    "launch_date": null,
+    "official_url": "https://www.ready.co/",
+    "official_domain": "ready.co",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "product_specific_smart_account_and_seed_phrase_models",
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "The entity is modeled as hybrid because Ready mobile and Ready X use different security and recovery architectures."
+  },
+  {
+    "id": "wlr_ent_000012",
+    "slug": "zengo",
+    "canonical_name": "Zengo",
+    "aliases": [
+      "ZenGo"
+    ],
+    "wallet_type": "mpc_threshold",
+    "status": "active",
+    "summary": "Consumer self-custody mobile wallet using two-party MPC/threshold signatures instead of a traditional single seed phrase or complete private key.",
+    "developer_or_company": "Zengo Ltd.",
+    "country_or_origin": null,
+    "launch_date": "2019",
+    "launch_date_precision": "year",
+    "official_url": "https://zengo.com/",
+    "official_domain": "zengo.com",
+    "source_code_urls": [
+      "https://github.com/ZenGo-X"
+    ],
+    "custody_model": "self_custody",
+    "key_management_model": "two_party_mpc_threshold_signatures",
+    "system_components": [
+      {
+        "component_type": "personal_share",
+        "controlled_by": "user",
+        "role": "signing_share",
+        "custody_note": "Created and stored on the user's mobile device."
+      },
+      {
+        "component_type": "remote_share",
+        "controlled_by": "provider",
+        "role": "signing_share",
+        "custody_note": "Created and stored on Zengo servers; neither share alone can sign."
+      }
+    ],
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "Recovery factors are separate from the two signing shares and are not modeled as user-facing products."
+  }
+]

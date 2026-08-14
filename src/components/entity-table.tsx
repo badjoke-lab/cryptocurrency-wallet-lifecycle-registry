@@ -1,0 +1,6 @@
+import Link from 'next/link'
+import Chip from './chip'
+import type { WalletEntity } from '../lib/types'
+import { productsForEntity,eventsForEntity,isIncident } from '../lib/data'
+import { statusTone } from '../lib/ui'
+export default function EntityTable({rows}:{rows:WalletEntity[]}){return <div className="registry-panel"><div className="registry-count"><strong>{rows.length}</strong> reviewed wallet records</div><div className="table-wrap"><table className="registry-table"><thead><tr><th>Wallet</th><th>Type</th><th>Status</th><th>Products</th><th>Incidents</th><th>Origin</th><th>Verified</th></tr></thead><tbody>{rows.map(entity=>{const productCount=productsForEntity(entity.id).length;const incidentCount=eventsForEntity(entity.id).filter(isIncident).length;return <tr key={entity.id}><td className="name-cell"><Link className="strong-link" href={`/wallet/${entity.slug}/`}>{entity.canonical_name}</Link><small>{entity.summary}</small></td><td><Chip>{entity.wallet_type}</Chip></td><td><Chip tone={statusTone(entity.status)}>{entity.status}</Chip></td><td>{productCount}</td><td>{incidentCount}</td><td>{entity.country_or_origin??'—'}</td><td>{entity.last_verified_at}</td></tr>})}</tbody></table></div></div>}
