@@ -16,6 +16,7 @@
     "check:staging-boundary": "python3 scripts/check_staging_boundary.py",
     "coverage:audit": "python3 scripts/report_coverage.py --fail-on-structural",
     "coverage:json": "python3 scripts/report_coverage.py --json",
+    "seed:gate": "python3 scripts/check_representative_seed.py",
     "machine:build": "node scripts/build-machine-layer.mjs",
     "cloudflare:config:print": "node scripts/configure-cloudflare-pages-project.mjs --print",
     "cloudflare:config:plan": "node scripts/configure-cloudflare-pages-project.mjs --plan",
