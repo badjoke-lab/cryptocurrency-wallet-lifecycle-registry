@@ -23,5 +23,6 @@ jobs:
       - run: npm run test:identity-evidence
       - run: npm run check:staging-boundary
       - run: npm run coverage:audit
+      - run: npm run seed:gate
       - run: npm run cloudflare:config:print
       - run: npm run build
