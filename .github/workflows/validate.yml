@@ -18,7 +18,9 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npm run validate:records
       - run: npm run validate:candidates
+      - run: npm run validate:identity-evidence
       - run: npm run test:candidates
+      - run: npm run test:identity-evidence
       - run: npm run check:staging-boundary
       - run: npm run coverage:audit
       - run: npm run cloudflare:config:print
