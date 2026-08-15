@@ -20,5 +20,6 @@ jobs:
       - run: npm run validate:candidates
       - run: npm run test:candidates
       - run: npm run check:staging-boundary
+      - run: npm run coverage:audit
       - run: npm run cloudflare:config:print
       - run: npm run build
