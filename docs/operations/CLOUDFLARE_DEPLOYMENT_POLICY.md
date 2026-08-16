@@ -29,6 +29,7 @@ Publish WLR on Cloudflare Pages without wasting Free-plan builds or allowing bra
 8. A stale production result is not automatically a code defect. Confirm the Cloudflare deployment commit against the expected `main` commit before treating the application code as stale or broken.
 9. Never store Cloudflare credentials in repository files or logs.
 10. Use a scoped API token, not a Global API key.
+11. Runtime configuration under `config/` is a production build input and must remain covered by Cloudflare build-watch paths.
 
 ## Machine-readable policy
 
@@ -90,9 +91,11 @@ A deployment is accepted only after all of the following are checked against the
 9. Incident severity colors remain distinct on the black theme and are not presented as wallet safety scores.
 10. Support shows the temporary HEI-shared donation addresses and the editorial-independence disclosure.
 11. Mobile production layout is checked in a real browser viewport and has no document-level horizontal overflow in representative primary navigation, tables/cards, wallet detail, product detail, incident timeline, or Support routes.
+12. When a runtime discovery/filter configuration changes, production verification must confirm the expected exact `main` deployment and representative deterministic filter behavior.
 
 ## Deployment-sensitive files
 
+- `config/*`
 - `config/cloudflare-pages-project.json`
 - `scripts/configure-cloudflare-pages-project.mjs`
 - `.github/workflows/configure-cloudflare-pages.yml`
