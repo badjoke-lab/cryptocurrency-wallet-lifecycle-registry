@@ -1,0 +1,84 @@
+name: Recompute WLR depth gaps
+
+on:
+  push:
+    branches: [ops/recompute-depth-gaps-after-electrum]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Print current entity depth and completeness gaps
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          from collections import Counter, defaultdict
+
+          entities = json.loads(Path('data/entities.json').read_text())
+          products = json.loads(Path('data/products.json').read_text())
+          events = json.loads(Path('data/events.json').read_text())
+          evidence = json.loads(Path('data/evidence.json').read_text())
+
+          event_by_entity = defaultdict(list)
+          evidence_by_entity = defaultdict(list)
+          product_by_entity = defaultdict(list)
+          for row in events: event_by_entity[row['entity_id']].append(row)
+          for row in evidence: evidence_by_entity[row['entity_id']].append(row)
+          for row in products: product_by_entity[row['entity_id']].append(row)
+
+          print('=== ENTITY DEPTH SORTED ASC ===')
+          rows = []
+          for entity in entities:
+              eid = entity['id']
+              evs = event_by_entity[eid]
+              srcs = evidence_by_entity[eid]
+              prods = product_by_entity[eid]
+              incident_types = {'unauthorized_access','supply_chain_incident','vulnerability_disclosed'}
+              remediation_types = {'firmware_fix','software_fix','vendor_response'}
+              eol_types = {'end_of_sale','support_deprecated','product_discontinued','service_shutdown'}
+              rows.append({
+                  'id': eid,
+                  'slug': entity['slug'],
+                  'name': entity['canonical_name'],
+                  'products': len(prods),
+                  'events': len(evs),
+                  'evidence': len(srcs),
+                  'event_types': dict(sorted(Counter(e['event_type'] for e in evs).items())),
+                  'incident_events': sum(e['event_type'] in incident_types for e in evs),
+                  'remediation_events': sum(e['event_type'] in remediation_types for e in evs),
+                  'eol_events': sum(e['event_type'] in eol_types for e in evs),
+                  'missing_product_launch': sum(p.get('launch_date') is None for p in prods),
+                  'unknown_support': sum((p.get('support_status') or 'unknown') == 'unknown' for p in prods),
+              })
+          rows.sort(key=lambda r: (r['events'], r['evidence'], r['name'].lower()))
+          for row in rows:
+              print(json.dumps(row, separators=(',', ':')))
+
+          print('=== THIN <= 1 EVENT ===')
+          for row in rows:
+              if row['events'] <= 1:
+                  print(json.dumps(row, separators=(',', ':')))
+
+          print('=== THIN <= 2 EVENTS ===')
+          for row in rows:
+              if row['events'] <= 2:
+                  print(json.dumps(row, separators=(',', ':')))
+
+          print('=== GLOBAL COMPLETENESS ===')
+          print(json.dumps({
+              'entities': len(entities),
+              'products': len(products),
+              'events': len(events),
+              'evidence': len(evidence),
+              'products_missing_launch': sum(p.get('launch_date') is None for p in products),
+              'products_unknown_support': sum((p.get('support_status') or 'unknown') == 'unknown' for p in products),
+          }, separators=(',', ':')))
+          PY
