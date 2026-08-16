@@ -134,10 +134,12 @@ const manifest = {
     '/data/evidence.json',
     '/data/wallet-index.json',
     '/data/product-index.json',
+    '/data/stats.json',
   ],
   deterministic_record_paths: {
     wallets: '/data/wallets/{entity-slug}.json',
     products: '/data/products/{product-slug}.json',
+    stats: '/data/stats.json',
   },
 }
 await writeFile(resolve(publicData, 'manifest.json'), json(manifest))
@@ -147,10 +149,10 @@ await writeFile(
 )
 await writeFile(
   resolve(publicDir, 'llms.txt'),
-  `# Wallet Lifecycle Registry (WLR)\n\nHistorical registry of cryptocurrency wallets.\n\nCanonical data:\n- /data/entities.json\n- /data/products.json\n- /data/events.json\n- /data/evidence.json\n- /data/manifest.json\n\nDeterministic record views:\n- /data/wallet-index.json\n- /data/product-index.json\n- /data/wallets/{entity-slug}.json\n- /data/products/{product-slug}.json\n\nWLR does not rank wallets or provide a security guarantee.\n`,
+  `# Wallet Lifecycle Registry (WLR)\n\nHistorical registry of cryptocurrency wallets.\n\nCanonical data:\n- /data/entities.json\n- /data/products.json\n- /data/events.json\n- /data/evidence.json\n- /data/manifest.json\n\nDeterministic derived views:\n- /data/wallet-index.json\n- /data/product-index.json\n- /data/wallets/{entity-slug}.json\n- /data/products/{product-slug}.json\n- /data/stats.json\n\nWLR does not rank wallets or provide a security guarantee. Stats describe reviewed registry records and are not market-share, safety-score, or recommendation metrics.\n`,
 )
 await writeFile(
   resolve(publicDir, 'ai.txt'),
-  `Wallet Lifecycle Registry (WLR) is a historical registry. Treat canonical JSON, deterministic per-wallet/product JSON, and linked evidence as records, not recommendations. Incident counts are not safety scores. Absence of a recorded incident is not evidence that a wallet is safe.\n`,
+  `Wallet Lifecycle Registry (WLR) is a historical registry. Treat canonical JSON, deterministic per-wallet/product JSON, derived stats, and linked evidence as records, not recommendations. Incident counts are not safety scores. Absence of a recorded incident is not evidence that a wallet is safe. Stats describe reviewed WLR coverage, not wallet market share or vendor performance.\n`,
 )
 console.log('Built machine-readable layer', manifest.record_counts)
