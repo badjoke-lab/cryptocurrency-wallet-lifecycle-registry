@@ -1,6 +1,15 @@
 name: Monitor WLR lifecycle
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'config/lifecycle-monitoring.json'
+      - 'scripts/lifecycle-monitoring-core.mjs'
+      - 'scripts/run-lifecycle-monitoring.mjs'
+      - 'scripts/test-lifecycle-monitoring.mjs'
+      - 'scripts/validate-lifecycle-monitoring.mjs'
+      - '.github/workflows/monitor-lifecycle.yml'
   schedule:
     - cron: '17 5 * * 0'
   workflow_dispatch:
