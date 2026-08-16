@@ -1,4 +1,123 @@
-export type WalletEntity = { id:string; slug:string; canonical_name:string; aliases?:string[]; wallet_type:string; status:string; summary:string; developer_or_company?:string|null; country_or_origin?:string|null; launch_date?:string|null; launch_date_precision?:string|null; official_url?:string|null; official_domain?:string|null; source_code_urls?:string[]; custody_model?:string|null; confidence:string; last_verified_at:string; notes?:string; system_components?:Array<Record<string,unknown>> }
-export type WalletProduct = { id:string; entity_id:string; slug:string; product_name:string; aliases?:string[]; product_type:string; status:string; sales_status?:string|null; support_status?:string|null; launch_date?:string|null; launch_date_precision?:string|null; discontinued_date?:string|null; sales_end_date?:string|null; support_commitment?:Record<string,unknown>|null; variants?:string[]; generation?:string|number|null; platform?:string[]|string|null; summary:string; predecessor_product_id?:string|null; successor_product_id?:string|null; confidence:string; last_verified_at:string; notes?:string; official_url?:string|null; source_code_url?:string|null; system_components?:Array<Record<string,unknown>> }
-export type WalletEvent = { id:string; entity_id:string; product_id?:string|null; affected_product_ids?:string[]; affected_variants?:string[]; event_type:string; event_date:string; event_date_basis?:string; disclosed_at?:string|null; title:string; description:string; confidence:string; impact_level?:string; security_scope?:string; funds_affected?:string; user_actions_required?:string[]; affected_data?:string[]; affected_regions?:string[]; third_party_name?:string|null; amount_text?:string|null; affected_users_text?:string|null; event_status_effect?:string; is_major_event?:boolean; notes?:string }
-export type WalletEvidence = { id:string; entity_id:string; product_id?:string|null; product_ids?:string[]; event_id?:string|null; event_ids?:string[]; source_type:string; title:string; url:string; publisher:string; published_at?:string|null; archived_url?:string|null; accessed_at?:string|null; reliability:string; claim_scope:string; is_primary?:boolean; notes?:string }
+export type WalletEntity = {
+  id:string
+  slug:string
+  canonical_name:string
+  aliases?:string[]
+  wallet_type:string
+  status:string
+  summary:string
+  developer_or_company?:string|null
+  country_or_origin?:string|null
+  launch_date?:string|null
+  launch_date_precision?:string|null
+  discontinued_date?:string|null
+  official_url?:string|null
+  official_domain?:string|null
+  source_code_urls?:string[]
+  custody_model?:string|null
+  key_management_model?:string|null
+  parent_entity_id?:string|null
+  predecessor_entity_id?:string|null
+  successor_entity_id?:string|null
+  acquired_by_entity_id?:string|null
+  confidence:string
+  last_verified_at:string
+  notes?:string
+  system_components?:Array<Record<string,unknown>>
+}
+
+export type WalletProduct = {
+  id:string
+  entity_id:string
+  slug:string
+  product_name:string
+  aliases?:string[]
+  product_type:string
+  status:string
+  sales_status?:string|null
+  support_status?:string|null
+  launch_date?:string|null
+  launch_date_precision?:string|null
+  discontinued_date?:string|null
+  sales_end_date?:string|null
+  support_commitment?:Record<string,unknown>|null
+  variants?:string[]
+  generation?:string|number|null
+  platform?:string[]|string|null
+  summary:string
+  custody_model?:string|null
+  key_management_model?:string|null
+  predecessor_product_id?:string|null
+  successor_product_id?:string|null
+  confidence:string
+  last_verified_at:string
+  notes?:string
+  official_url?:string|null
+  source_code_url?:string|null
+  system_components?:Array<Record<string,unknown>>
+}
+
+export type VersionRule = {
+  product_ids:string[]
+  track:string
+  range:string
+  [key:string]:unknown
+}
+
+export type FixedVersion = {
+  product_ids:string[]
+  track:string
+  version:string
+  [key:string]:unknown
+}
+
+export type WalletEvent = {
+  id:string
+  entity_id:string
+  product_id?:string|null
+  affected_product_ids?:string[]
+  affected_variants?:string[]
+  event_type:string
+  event_date:string
+  event_date_basis?:string
+  disclosed_at?:string|null
+  title:string
+  description:string
+  confidence:string
+  impact_level?:string
+  security_scope?:string
+  funds_affected?:string
+  user_actions_required?:string[]
+  affected_versions?:string[]
+  affected_version_rules?:VersionRule[]
+  fixed_versions?:FixedVersion[]
+  cve_ids?:string[]
+  affected_data?:string[]
+  affected_regions?:string[]
+  third_party_name?:string|null
+  amount_text?:string|null
+  affected_users_text?:string|null
+  event_status_effect?:string
+  is_major_event?:boolean
+  notes?:string
+}
+
+export type WalletEvidence = {
+  id:string
+  entity_id:string
+  product_id?:string|null
+  product_ids?:string[]
+  event_id?:string|null
+  event_ids?:string[]
+  source_type:string
+  title:string
+  url:string
+  publisher:string
+  published_at?:string|null
+  archived_url?:string|null
+  accessed_at?:string|null
+  reliability:string
+  claim_scope:string
+  is_primary?:boolean
+  notes?:string
+}
