@@ -20,6 +20,7 @@ jobs:
       - run: npm run validate:candidates
       - run: npm run validate:identity-evidence
       - run: npm run validate:machine-records
+      - run: npm run validate:structured-discovery
       - run: npm run test:candidates
       - run: npm run test:identity-evidence
       - run: npm run check:staging-boundary
