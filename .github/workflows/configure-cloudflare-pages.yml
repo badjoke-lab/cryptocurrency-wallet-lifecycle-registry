@@ -135,6 +135,8 @@ jobs:
             "/data/product-index.json"
             "/data/wallets/trezor.json"
             "/data/products/trezor-model-one.json"
+            "/llms.txt"
+            "/ai.txt"
             "/robots.txt"
             "/sitemap.xml"
           )
@@ -200,8 +202,25 @@ jobs:
           curl -fsSL "$base/wallet/trezor" | grep -Fq 'Trezor'
           curl -fsSL "$base/product/trezor-model-one" | grep -Fq 'Trezor Model One'
           curl -fsSL "$base/support" | grep -Fq 'Support'
+          curl -fsSL "$base/llms.txt" | grep -Fq 'Deterministic record views'
+          curl -fsSL "$base/ai.txt" | grep -Fq 'not recommendations'
 
-          echo "Production verification passed: entities=${entities}, products=${products}, events=${events}, evidence=${evidence}."
+          git show origin/main:src/app/globals.css > "$work/globals.css"
+          git show origin/main:src/app/support/page.tsx > "$work/support.tsx"
+          git show origin/main:src/components/incident-explorer.tsx > "$work/incidents.tsx"
+          grep -Fq '@media(max-width:720px)' "$work/globals.css"
+          grep -Fq 'overflow-x:hidden' "$work/globals.css"
+          grep -Fq '.table-wrap{overflow-x:auto}' "$work/globals.css"
+          grep -Fq 'word-break:break-all' "$work/globals.css"
+          grep -Fq '.chip-active,.chip-low{color:var(--positive)' "$work/globals.css"
+          grep -Fq '.chip-limited,.chip-medium{color:var(--warning)' "$work/globals.css"
+          grep -Fq '.chip-deprecated,.chip-high{color:var(--high)' "$work/globals.css"
+          grep -Fq '.chip-dead,.chip-critical{color:var(--danger)' "$work/globals.css"
+          grep -Fq 'event-critical' "$work/incidents.tsx"
+          grep -Fq 'temporarily shared with the HEI project' "$work/support.tsx"
+          grep -Fq 'Support does not buy classification' "$work/support.tsx"
+
+          echo "Production verification passed: entities=${entities}, products=${products}, events=${events}, evidence=${evidence}; machine guidance, responsive safeguards, severity mapping, and Support disclosures verified."
 
       - name: Configure Cloudflare Pages project
         if: github.event_name == 'workflow_dispatch'
