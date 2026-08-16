@@ -4,6 +4,12 @@ import process from 'node:process'
 const CONFIG_PATH = 'config/cloudflare-pages-project.json'
 const API_BASE = 'https://api.cloudflare.com/client/v4'
 const VALID_MODES = new Set(['print', 'plan', 'apply'])
+const GITHUB_SOURCE = {
+  owner: 'badjoke-lab',
+  owner_id: '227710934',
+  repo_name: 'cryptocurrency-wallet-lifecycle-registry',
+  repo_id: '1333853655',
+}
 
 function fail(message) {
   console.error(message)
@@ -35,7 +41,7 @@ function readConfig() {
   return parsed
 }
 
-async function cloudflareRequest(path, init = {}) {
+async function cloudflareRequest(path, init = {}, options = {}) {
   const accountId = process.env.CLOUDFLARE_ACCOUNT_ID
   const apiToken = process.env.CLOUDFLARE_API_TOKEN
   if (!accountId || !apiToken) {
@@ -52,6 +58,8 @@ async function cloudflareRequest(path, init = {}) {
   })
 
   const body = await response.json().catch(() => null)
+  if (options.allowNotFound && response.status === 404) return null
+
   if (!response.ok || !body?.success) {
     const details = body?.errors?.map((error) => `${error.code}: ${error.message}`).join('; ')
     fail(`Cloudflare API request failed (${response.status}): ${details || 'unknown error'}`)
@@ -97,14 +105,56 @@ function desiredState(policy) {
   }
 }
 
+function canonicalize(value) {
+  if (Array.isArray(value)) return value.map(canonicalize)
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(
+      Object.keys(value)
+        .sort()
+        .map((key) => [key, canonicalize(value[key])]),
+    )
+  }
+  return value
+}
+
 function stable(value) {
-  return JSON.stringify(value, Object.keys(value).sort(), 2)
+  return JSON.stringify(canonicalize(value), null, 2)
+}
+
+function sourceConfig(policy) {
+  return {
+    deployments_enabled: true,
+    owner: GITHUB_SOURCE.owner,
+    owner_id: GITHUB_SOURCE.owner_id,
+    repo_name: GITHUB_SOURCE.repo_name,
+    repo_id: GITHUB_SOURCE.repo_id,
+    production_branch: policy.production_branch,
+    production_deployments_enabled: policy.source_config.production_deployments_enabled,
+    preview_deployment_setting: policy.source_config.preview_deployment_setting,
+    pr_comments_enabled: policy.source_config.pr_comments_enabled,
+    path_includes: policy.source_config.path_includes,
+    path_excludes: policy.source_config.path_excludes,
+    preview_branch_includes: [],
+    preview_branch_excludes: [],
+  }
+}
+
+function buildCreatePayload(policy) {
+  return {
+    name: policy.project_name,
+    production_branch: policy.production_branch,
+    build_config: policy.build_config,
+    source: {
+      type: 'github',
+      config: sourceConfig(policy),
+    },
+  }
 }
 
 function buildPatch(currentProject, policy) {
   const source = currentProject?.source
   if (!source || source.type !== 'github') {
-    fail('The existing Pages project must use GitHub source integration. Create the initial Pages project from the GitHub repository first.')
+    fail('The existing Pages project must use GitHub source integration.')
   }
 
   return {
@@ -117,15 +167,7 @@ function buildPatch(currentProject, policy) {
       type: source.type,
       config: {
         ...source.config,
-        deployments_enabled: true,
-        production_branch: policy.production_branch,
-        production_deployments_enabled: policy.source_config.production_deployments_enabled,
-        preview_deployment_setting: policy.source_config.preview_deployment_setting,
-        pr_comments_enabled: policy.source_config.pr_comments_enabled,
-        path_includes: policy.source_config.path_includes,
-        path_excludes: policy.source_config.path_excludes,
-        preview_branch_includes: [],
-        preview_branch_excludes: [],
+        ...sourceConfig(policy),
       },
     },
   }
@@ -139,6 +181,7 @@ async function ensureDomains(policy, currentDomains) {
   const present = new Set(currentDomains.map((domain) => domain.name ?? domain))
   for (const domain of policy.custom_domains) {
     if (present.has(domain)) continue
+    console.log(`Attaching custom domain ${domain}...`)
     await cloudflareRequest(`/pages/projects/${encodeURIComponent(policy.project_name)}/domains`, {
       method: 'POST',
       body: JSON.stringify({ name: domain }),
@@ -155,10 +198,29 @@ if (mode === 'print') {
 }
 
 const projectPath = `/pages/projects/${encodeURIComponent(policy.project_name)}`
-const current = await cloudflareRequest(projectPath)
-const currentDomains = await getDomains(policy.project_name)
-const currentSelected = selectedState(current, currentDomains)
+let current = await cloudflareRequest(projectPath, {}, { allowNotFound: true })
 const desiredSelected = desiredState(policy)
+
+if (!current) {
+  console.log(`Cloudflare Pages project ${policy.project_name} does not exist.`)
+  console.log('Desired selected Cloudflare Pages state:')
+  console.log(JSON.stringify(desiredSelected, null, 2))
+
+  if (mode === 'plan') {
+    console.log('Apply mode will create a GitHub-integrated Pages project, apply policy, attach domains, and verify.')
+    process.exit(0)
+  }
+
+  console.log('Creating GitHub-integrated Cloudflare Pages project...')
+  await cloudflareRequest('/pages/projects', {
+    method: 'POST',
+    body: JSON.stringify(buildCreatePayload(policy)),
+  })
+  current = await cloudflareRequest(projectPath)
+}
+
+let currentDomains = await getDomains(policy.project_name)
+let currentSelected = selectedState(current, currentDomains)
 
 console.log('Current selected Cloudflare Pages state:')
 console.log(JSON.stringify(currentSelected, null, 2))
@@ -186,9 +248,10 @@ const verified = await cloudflareRequest(projectPath)
 const verifiedDomains = await getDomains(policy.project_name)
 const verifiedSelected = selectedState(verified, verifiedDomains)
 
+console.log('Verified selected Cloudflare Pages state:')
+console.log(JSON.stringify(verifiedSelected, null, 2))
+
 if (stable(verifiedSelected) !== stable(desiredSelected)) {
-  console.error('Verified state:')
-  console.error(JSON.stringify(verifiedSelected, null, 2))
   fail('Cloudflare Pages configuration verification failed after apply.')
 }
 
