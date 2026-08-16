@@ -39,7 +39,21 @@ Status: roadmap addendum
   - patch-response duration remains explicitly unavailable because canonical incident-to-remediation linkage is not recorded.
   - exact day-level launch-to-discontinued product lifespan eligibility is currently 0, so no lifespan distribution is published.
   - real-browser desktop and 390x844 verification passed without document-level horizontal overflow.
-- Next: Step 8 monitored/reviewed lifecycle follow-up for existing records. Monitoring must receive its own WLR-specific specification before implementation and must preserve the candidate -> validate -> human review -> canonical merge boundary.
+- Step 8 monitored/reviewed lifecycle follow-up: complete and operationally verified.
+  - specification: `docs/operations/LIFECYCLE_MONITORING_SPEC.md` via PR #52.
+  - implementation: PR #53.
+  - accepted implementation main commit: `117edc5942f09a2962d01ed6bf7cd63906f676cf`.
+  - post-merge `Validate WLR` run #82 completed successfully on the accepted main commit.
+  - first real network monitoring run: workflow `Monitor WLR lifecycle`, run #1 / run id `31960555176`, successful on the exact accepted main commit.
+  - accepted artifact: `wlr-lifecycle-monitoring`, artifact id `9267112811`.
+  - first-run scope: 25 entities / 69 products, 76 canonical official-URL targets, all 76 checked, 0 invalid and 0 truncated.
+  - first-run outcomes: 67 `ok`, 5 `client_error`, 3 `redirected`, 1 `not_found`.
+  - all 94 entity/product records were within the current reverification window at the first run.
+  - prior state was unavailable as expected for the first accepted run; `baseline_initialized: true` and no observations were falsely reported as historical changes.
+  - the single review-queue item was product `wlr_prod_000066` / `leather-browser-extension`, whose recorded install URL returned 404; its action remained neutral `research_before_canonical_change` and did not alter canonical status/support/security data.
+  - artifact inspection confirmed bounded operational metadata only; response bodies, arbitrary headers, cookies, authorization material, and automatic `mark_dead` / `mark_unsupported` / `mark_patched` conclusions were absent.
+  - normal workflow remains weekly + manually runnable and read-only with respect to repository contents; monitoring artifacts are not public/canonical evidence.
+- Next: Step 9 evaluate natural-language-to-filter translation. This is an evaluation gate, not approval to make free-form AI output authoritative. Any implementation must translate into the existing deterministic structured-discovery state and preserve ordinary filters as the source of truth.
 
 ## Gate
 Spec -> implementation PR -> validation/CI green -> merge -> production verification where applicable -> docs/status sync.
