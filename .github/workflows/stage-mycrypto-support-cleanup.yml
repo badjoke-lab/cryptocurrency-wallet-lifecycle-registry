@@ -1,0 +1,104 @@
+name: Stage MyCrypto Desktop support cleanup
+
+on:
+  push:
+    branches: [fix/mycrypto-desktop-support-ended]
+
+permissions:
+  contents: write
+
+jobs:
+  stage:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/mycrypto-desktop-support-ended
+          fetch-depth: 0
+
+      - name: Apply reviewed MyCrypto Desktop support cleanup
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          def replace_record(path, target_id, mutate):
+              p = Path(path)
+              text = p.read_text()
+              decoder = json.JSONDecoder()
+              pos = text.find('[') + 1
+              while True:
+                  while pos < len(text) and text[pos] in ' \r\n\t,': pos += 1
+                  if pos >= len(text) or text[pos] == ']':
+                      raise SystemExit(f'{target_id} not found in {path}')
+                  obj, end = decoder.raw_decode(text, pos)
+                  if obj.get('id') == target_id:
+                      updated = mutate(obj)
+                      replacement = json.dumps(updated, ensure_ascii=False, separators=(',', ':'))
+                      p.write_text(text[:pos] + replacement + text[end:])
+                      return
+                  pos = end
+
+          def desktop(obj):
+              obj['support_status'] = 'ended'
+              obj['last_verified_at'] = '2026-08-17'
+              obj['notes'] = 'The official MyCrypto Help Center identifies the desktop application as part of an older MyCrypto version that is not actively maintained. The official download remains reachable; support_status=ended records the maintenance state and does not imply the binary is unavailable or unusable.'
+              return obj
+
+          replace_record('data/products.json', 'wlr_prod_000069', desktop)
+
+          p = Path('data/evidence.json')
+          text = p.read_text()
+          records = json.loads(text)
+          if any(item.get('id') == 'wlr_src_000121' for item in records):
+              raise SystemExit('wlr_src_000121 already exists')
+
+          evidence = {
+              'id': 'wlr_src_000121',
+              'entity_id': 'wlr_ent_000025',
+              'product_ids': ['wlr_prod_000069'],
+              'event_ids': [],
+              'product_id': 'wlr_prod_000069',
+              'event_id': None,
+              'source_type': 'official_statement',
+              'title': 'Verifying the Authenticity of the Desktop Application',
+              'url': 'https://support.mycrypto.com/staying-safe/verifying-authenticity-of-desktop-app/',
+              'publisher': 'MyCrypto',
+              'published_at': None,
+              'accessed_at': '2026-08-17',
+              'reliability': 'high',
+              'claim_scope': 'support_status',
+              'is_primary': True,
+              'notes': 'Current first-party help page; it reports a last-updated date of 2021-10-25 and explicitly states that the desktop application belongs to an older MyCrypto version that is not actively maintained while the download remains available.'
+          }
+          closing = text.rfind(']')
+          prefix = text[:closing].rstrip()
+          separator = '' if prefix.endswith('[') else ','
+          p.write_text(prefix + separator + '\n' + json.dumps(evidence, ensure_ascii=False, separators=(',', ':')) + '\n' + text[closing:])
+          PY
+
+          python3 scripts/validate_records.py
+          python3 scripts/validate_identity_evidence_policy.py
+          echo '=== MYCRYPTO WEB APP ==='
+          jq -c '.[] | select(.id == "wlr_prod_000068") | {id,status,support_status,official_url,last_verified_at,notes}' data/products.json
+          echo '=== MYCRYPTO DESKTOP ==='
+          jq -c '.[] | select(.id == "wlr_prod_000069") | {id,status,support_status,official_url,last_verified_at,notes}' data/products.json
+          echo '=== SUPPORT EVIDENCE ==='
+          jq -c '.[] | select(.id == "wlr_src_000121")' data/evidence.json
+          git diff --check
+          git diff -- data/products.json data/evidence.json
+
+      - name: Commit reviewed support cleanup
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- data/products.json data/evidence.json; then
+            echo 'No canonical changes to commit.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/products.json data/evidence.json
+          git commit -m 'Resolve MyCrypto Desktop support status'
+          git push origin HEAD:fix/mycrypto-desktop-support-ended
