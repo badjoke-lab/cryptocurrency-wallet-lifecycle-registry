@@ -1,0 +1,123 @@
+name: Verify WLR Step 9 Production v2
+
+on:
+  push:
+    branches: [ops/step9-production-verify]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Verify public deployment marker
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"
+          trap 'rm -rf "$work"' EXIT
+          curl -fsSL --retry 10 --retry-all-errors --retry-delay 2 https://wlr.badjoke-lab.com/ -o "$work/home.html"
+          grep -Fq 'Describe filters' "$work/home.html"
+          grep -Fq 'Apply filters' "$work/home.html"
+
+      - name: Locate Chrome
+        id: chrome
+        run: |
+          browser="$(command -v google-chrome || command -v chromium || command -v chromium-browser || true)"
+          test -n "$browser"
+          echo "browser=$browser" >> "$GITHUB_OUTPUT"
+          "$browser" --version
+
+      - name: Verify translator behavior in production browser
+        env:
+          BROWSER: ${{ steps.chrome.outputs.browser }}
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"
+          cleanup() {
+            if [ -n "${chrome_pid:-}" ]; then kill "$chrome_pid" 2>/dev/null || true; wait "$chrome_pid" 2>/dev/null || true; fi
+            rm -rf "$work" 2>/dev/null || true
+          }
+          trap cleanup EXIT
+          "$BROWSER" --headless=new --no-sandbox --disable-gpu --remote-debugging-port=9222 --user-data-dir="$work/chrome" about:blank >"$work/chrome.log" 2>&1 &
+          chrome_pid=$!
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:9222/json/version >/dev/null 2>&1 && break; sleep 1; done
+          curl -fsS http://127.0.0.1:9222/json/version >/dev/null
+
+          cat > "$work/qa.mjs" <<'NODE'
+          const sleep=(ms)=>new Promise(r=>setTimeout(r,ms))
+          const target=await (await fetch('http://127.0.0.1:9222/json/new?about%3Ablank',{method:'PUT'})).json()
+          const socket=new WebSocket(target.webSocketDebuggerUrl)
+          await new Promise((resolve,reject)=>{socket.addEventListener('open',resolve,{once:true});socket.addEventListener('error',reject,{once:true})})
+          let id=1,loadResolve
+          const pending=new Map()
+          let requests=[]
+          socket.addEventListener('message',(event)=>{
+            const m=JSON.parse(event.data)
+            if(m.id&&pending.has(m.id)){const p=pending.get(m.id);pending.delete(m.id);m.error?p.reject(new Error(JSON.stringify(m.error))):p.resolve(m.result)}
+            if(m.method==='Page.loadEventFired'&&loadResolve){loadResolve();loadResolve=null}
+            if(m.method==='Network.requestWillBeSent')requests.push(m.params.request.url)
+          })
+          const send=(method,params={})=>new Promise((resolve,reject)=>{const n=id++;pending.set(n,{resolve,reject});socket.send(JSON.stringify({id:n,method,params}))})
+          const evalJs=async(expression)=>{const r=await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw new Error(JSON.stringify(r.exceptionDetails));return r.result.value}
+          const setMetrics=(width,height,mobile)=>send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile,screenWidth:width,screenHeight:height})
+          const navigate=async(url)=>{const loaded=new Promise(r=>{loadResolve=r});await send('Page.navigate',{url});await Promise.race([loaded,sleep(15000)]);await sleep(1000)}
+          const waitFor=async(expression,label)=>{for(let i=0;i<50;i++){if(await evalJs(expression))return;await sleep(100)}throw new Error('timeout waiting for '+label)}
+          const inputSelector='input[aria-describedby="natural-filter-status"]'
+          const labelControl=(label,selector)=>`(()=>{const l=[...document.querySelectorAll('label')].find(el=>[...el.querySelectorAll('span')].some(s=>s.textContent?.trim()===${JSON.stringify(label)}));return l?.querySelector(${JSON.stringify(selector)})??null})()`
+          const setPhrase=async(value)=>evalJs(`(()=>{const el=document.querySelector(${JSON.stringify(inputSelector)});if(!el)throw new Error('missing helper input');const setter=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set;setter.call(el,${JSON.stringify(value)});el.dispatchEvent(new Event('input',{bubbles:true}));return el.value})()`)
+          const setControl=async(label,value,selector='select')=>evalJs(`(()=>{const el=${labelControl(label,selector)};if(!el)throw new Error('missing control '+${JSON.stringify(label)});const proto=${selector==='select'?'HTMLSelectElement':'HTMLInputElement'}.prototype;Object.getOwnPropertyDescriptor(proto,'value').set.call(el,${JSON.stringify(value)});el.dispatchEvent(new Event(${selector==='select'?"'change'":"'input'"},{bubbles:true}));return el.value})()`)
+          const getControl=(label,selector='select')=>evalJs(`(()=>{const el=${labelControl(label,selector)};return el?.value??null})()`)
+          const helperState=()=>evalJs(`(()=>{const b=[...document.querySelectorAll('button')].find(x=>x.textContent?.trim()==='Apply filters');const i=document.querySelector(${JSON.stringify(inputSelector)});return{disabled:b?.disabled??null,text:document.querySelector('#natural-filter-status')?.textContent??'',input:i?.value??''}})()`)
+          const click=async(text)=>evalJs(`(()=>{const b=[...document.querySelectorAll('button')].find(x=>x.textContent?.trim()===${JSON.stringify(text)});if(!b)throw new Error('missing button '+${JSON.stringify(text)});b.click();return true})()`)
+
+          await send('Page.enable');await send('Runtime.enable');await send('Network.enable')
+          await setMetrics(1280,900,false)
+          await navigate('https://wlr.badjoke-lab.com/')
+          await waitFor(`Boolean(document.querySelector(${JSON.stringify(inputSelector)}))`,'helper input')
+          await sleep(1200)
+          requests=[]
+
+          await setPhrase('hardware wallets with reviewed incidents before 2020');await sleep(250)
+          let state=await helperState()
+          console.log('positive preview',JSON.stringify(state))
+          if(state.disabled!==false||!state.text.includes('Type: hardware')||!state.text.includes('Security history: Recorded')||!state.text.includes('Launch to: 2019'))throw new Error('positive preview mismatch')
+          await click('Apply filters');await sleep(250)
+          const positive={type:await getControl('Type'),security:await getControl('Security history'),to:await getControl('Launch year to','input'),count:await evalJs(`Number(document.querySelector('.registry-count strong')?.textContent??'-1')`)}
+          console.log('positive applied',JSON.stringify(positive))
+          if(positive.type!=='hardware'||positive.security!=='recorded'||positive.to!=='2019'||!(positive.count>=0&&positive.count<25))throw new Error('positive apply mismatch')
+
+          for(const [phrase,needle] of [['safe wallets','Unsupported claim/ranking language'],['wallets without incidents','Unsupported claim/ranking language'],['hardware software wallets','Conflict:']]){
+            await setPhrase(phrase);await sleep(200);state=await helperState();console.log('fail closed',phrase,JSON.stringify(state));if(state.disabled!==true||!state.text.includes(needle))throw new Error('fail closed mismatch '+phrase)
+          }
+
+          await setPhrase('no reviewed incident recorded');await sleep(200)
+          state=await helperState();if(state.disabled!==false)throw new Error('coverage-safe negative should apply')
+          await click('Apply filters');await sleep(200)
+          if(await getControl('Security history')!=='not_recorded')throw new Error('negative coverage filter mismatch')
+
+          const statusOptions=await evalJs(`(()=>{const el=${labelControl('Status','select')};return[...el.options].map(o=>o.value)})()`)
+          const manual=statusOptions.find(v=>v!=='all');if(!manual)throw new Error('no status option')
+          await setControl('Status',manual);await sleep(150)
+          if(await getControl('Status')!==manual)throw new Error('manual edit after apply failed')
+
+          await click('Reset');await sleep(200)
+          const reset={helper:await helperState(),type:await getControl('Type'),security:await getControl('Security history'),status:await getControl('Status'),from:await getControl('Launch year from','input'),to:await getControl('Launch year to','input')}
+          console.log('reset',JSON.stringify(reset))
+          if(reset.helper.input!==''||reset.type!=='all'||reset.security!=='all'||reset.status!=='all'||reset.from!==''||reset.to!=='')throw new Error('reset mismatch')
+
+          if(requests.length!==0){console.log('interaction requests',JSON.stringify(requests));throw new Error('translator interaction generated network requests')}
+
+          await setMetrics(390,844,true);await sleep(300)
+          const mobile=await evalJs(`(()=>{const root=document.scrollingElement||document.documentElement;const section=document.querySelector('[aria-labelledby="natural-filter-title"]');const input=document.querySelector(${JSON.stringify(inputSelector)});const apply=[...document.querySelectorAll('button')].find(b=>b.textContent?.trim()==='Apply filters');const boxes=[section,input,apply].filter(Boolean).map(el=>{const r=el.getBoundingClientRect();return{left:r.left,right:r.right,width:r.width}});return{innerWidth,clientWidth:root.clientWidth,scrollWidth:root.scrollWidth,outside:boxes.filter(b=>b.left< -1||b.right>innerWidth+1)}})()`)
+          console.log('mobile',JSON.stringify(mobile))
+          if(mobile.innerWidth!==390||mobile.scrollWidth>mobile.clientWidth+1||mobile.outside.length)throw new Error('mobile document overflow')
+          socket.close()
+          console.log('STEP9_NATURAL_FILTER_CLOSEOUT_OK')
+          NODE
+          node "$work/qa.mjs"
