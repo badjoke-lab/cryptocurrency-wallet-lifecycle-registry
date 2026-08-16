@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/sync-public-data.mjs && node scripts/build-machine-layer.mjs",
+    "prebuild": "node scripts/sync-public-data.mjs && node scripts/build-machine-layer.mjs && node scripts/build-stats.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
@@ -14,6 +14,7 @@
     "validate:machine-records": "node scripts/build-machine-layer.mjs && node scripts/validate-machine-records.mjs",
     "validate:structured-discovery": "node scripts/validate-structured-discovery.mjs",
     "validate:compare": "node scripts/validate-compare.mjs",
+    "validate:stats": "node scripts/build-machine-layer.mjs && node scripts/build-stats.mjs && node scripts/validate-stats.mjs",
     "test:candidates": "python3 scripts/test_candidate_validator.py",
     "test:identity-evidence": "python3 scripts/test_identity_evidence_policy.py",
     "check:staging-boundary": "python3 scripts/check_staging_boundary.py",
@@ -21,6 +22,7 @@
     "coverage:json": "python3 scripts/report_coverage.py --json",
     "seed:gate": "python3 scripts/check_representative_seed.py",
     "machine:build": "node scripts/build-machine-layer.mjs",
+    "stats:build": "node scripts/build-stats.mjs",
     "cloudflare:config:print": "node scripts/configure-cloudflare-pages-project.mjs --print",
     "cloudflare:config:plan": "node scripts/configure-cloudflare-pages-project.mjs --plan",
     "cloudflare:config:apply": "node scripts/configure-cloudflare-pages-project.mjs --apply"
