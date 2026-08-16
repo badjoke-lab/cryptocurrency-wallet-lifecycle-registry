@@ -6,31 +6,15 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
-
-SECURITY_EVENT_TYPES = {
-    "vulnerability_disclosed",
-    "security_research_published",
-    "exploit",
-    "unauthorized_access",
-    "supply_chain_compromise",
-    "malicious_update",
-    "seed_key_exposure",
-    "private_key_exposure",
-    "firmware_issue",
-    "software_issue",
-    "customer_data_breach",
-    "third_party_data_breach",
-    "phishing_campaign",
-    "security_fix",
-    "firmware_fix",
-    "software_fix",
-    "key_migration_recommended",
-    "recall",
-}
+POLICY_PATH = ROOT / "config" / "structured-discovery.json"
 
 
 def load(name):
     return json.loads((DATA / name).read_text(encoding="utf-8"))
+
+
+def load_policy():
+    return json.loads(POLICY_PATH.read_text(encoding="utf-8"))
 
 
 def evidence_entity_ids(row):
@@ -42,6 +26,10 @@ def build_report():
     products = load("products.json")
     events = load("events.json")
     evidence = load("evidence.json")
+    policy = load_policy()
+    incident_types = set(policy["incident_event_types"])
+    remediation_types = set(policy["remediation_event_types"])
+    eol_types = set(policy["eol_event_types"])
 
     products_by_entity = defaultdict(list)
     events_by_entity = defaultdict(list)
@@ -70,7 +58,9 @@ def build_report():
             1 for p in entity_products if p.get("support_status") not in (None, "unknown")
         )
         major_events = sum(1 for e in entity_events if e.get("is_major_event") is True)
-        security_events = sum(1 for e in entity_events if e.get("event_type") in SECURITY_EVENT_TYPES)
+        incident_events = sum(1 for e in entity_events if e.get("event_type") in incident_types)
+        remediation_events = sum(1 for e in entity_events if e.get("event_type") in remediation_types)
+        eol_events = sum(1 for e in entity_events if e.get("event_type") in eol_types)
         primary_evidence = sum(1 for e in entity_evidence if e.get("is_primary") is True)
         source_types = Counter(e.get("source_type", "unknown") for e in entity_evidence)
 
@@ -107,7 +97,9 @@ def build_report():
                 "products_with_known_support": product_support_known,
                 "events": len(entity_events),
                 "major_events": major_events,
-                "security_events": security_events,
+                "incident_events": incident_events,
+                "remediation_events": remediation_events,
+                "eol_events": eol_events,
                 "evidence": len(entity_evidence),
                 "primary_evidence": primary_evidence,
                 "source_types": dict(sorted(source_types.items())),
@@ -128,13 +120,16 @@ def build_report():
         "products_with_unknown_support": sum(
             1 for p in products if p.get("support_status") in (None, "unknown")
         ),
-        "security_events": sum(1 for e in events if e.get("event_type") in SECURITY_EVENT_TYPES),
+        "incident_events": sum(1 for e in events if e.get("event_type") in incident_types),
+        "remediation_events": sum(1 for e in events if e.get("event_type") in remediation_types),
+        "eol_events": sum(1 for e in events if e.get("event_type") in eol_types),
         "major_events": sum(1 for e in events if e.get("is_major_event") is True),
     }
 
     return {
         "scope": "canonical_only",
         "interpretation": "Coverage metrics are completeness indicators, not wallet safety or quality scores.",
+        "taxonomy_source": "config/structured-discovery.json",
         "summary": summary,
         "entities": rows,
         "structural_errors": structural_errors,
@@ -148,7 +143,9 @@ def print_text(report):
         "COVERAGE "
         f"entities={summary['entities']} products={summary['products']} "
         f"events={summary['events']} evidence={summary['evidence']} "
-        f"security_events={summary['security_events']} major_events={summary['major_events']}"
+        f"incident_events={summary['incident_events']} "
+        f"remediation_events={summary['remediation_events']} "
+        f"eol_events={summary['eol_events']} major_events={summary['major_events']}"
     )
     print(
         "GAPS "
@@ -159,11 +156,12 @@ def print_text(report):
         f"product_launch_missing={summary['products_missing_launch_date']} "
         f"product_support_unknown={summary['products_with_unknown_support']}"
     )
-    print("ENTITY\tPRODUCTS\tEVENTS\tSECURITY\tEVIDENCE\tLAUNCH\tSUPPORT\tFLAGS")
+    print("ENTITY\tPRODUCTS\tEVENTS\tINCIDENTS\tREMEDIATION\tEOL\tEVIDENCE\tLAUNCH\tSUPPORT\tFLAGS")
     for row in report["entities"]:
         print(
-            f"{row['slug']}\t{row['products']}\t{row['events']}\t{row['security_events']}\t"
-            f"{row['evidence']}\t{row['products_with_launch_date']}/{row['products']}\t"
+            f"{row['slug']}\t{row['products']}\t{row['events']}\t{row['incident_events']}\t"
+            f"{row['remediation_events']}\t{row['eol_events']}\t{row['evidence']}\t"
+            f"{row['products_with_launch_date']}/{row['products']}\t"
             f"{row['products_with_known_support']}/{row['products']}\t"
             f"{','.join(row['flags']) or '-'}"
         )
