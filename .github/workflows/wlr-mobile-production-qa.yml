@@ -1,0 +1,129 @@
+name: Verify WLR Mobile Production Layout
+
+on:
+  push:
+    branches:
+      - ops/cloudflare-publication
+    paths:
+      - .github/workflows/wlr-mobile-production-qa.yml
+
+permissions:
+  contents: read
+
+jobs:
+  mobile-production-qa:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Locate Chrome
+        id: chrome
+        shell: bash
+        run: |
+          set -euo pipefail
+          browser="$(command -v google-chrome || command -v chromium || command -v chromium-browser || true)"
+          test -n "$browser" || { echo 'No Chrome/Chromium available on runner.' >&2; exit 1; }
+          echo "browser=$browser" >> "$GITHUB_OUTPUT"
+          "$browser" --version
+
+      - name: Verify 390px production viewport
+        env:
+          BROWSER: ${{ steps.chrome.outputs.browser }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"
+          trap 'kill "${chrome_pid:-}" 2>/dev/null || true; rm -rf "$work"' EXIT
+          "$BROWSER" --headless=new --no-sandbox --disable-gpu --remote-debugging-port=9222 --user-data-dir="$work/chrome" about:blank >"$work/chrome.log" 2>&1 &
+          chrome_pid=$!
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:9222/json/version >/dev/null 2>&1 && break; sleep 1; done
+          curl -fsS http://127.0.0.1:9222/json/version >/dev/null
+
+          cat > "$work/mobile-qa.mjs" <<'NODE'
+          const pages = [
+            '/', '/hardware/', '/software/', '/incidents/',
+            '/wallet/trezor/', '/product/trezor-model-one/', '/support/'
+          ]
+          const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+
+          async function openTarget(url) {
+            const response = await fetch(`http://127.0.0.1:9222/json/new?${encodeURIComponent(url)}`, { method: 'PUT' })
+            if (!response.ok) throw new Error(`Cannot create Chrome target: ${response.status}`)
+            return response.json()
+          }
+
+          async function inspect(url) {
+            const target = await openTarget('about:blank')
+            const socket = new WebSocket(target.webSocketDebuggerUrl)
+            await new Promise((resolve, reject) => {
+              socket.addEventListener('open', resolve, { once: true })
+              socket.addEventListener('error', reject, { once: true })
+            })
+            let nextId = 1
+            const pending = new Map()
+            let loadResolve
+            socket.addEventListener('message', (event) => {
+              const message = JSON.parse(event.data)
+              if (message.id && pending.has(message.id)) {
+                const { resolve, reject } = pending.get(message.id)
+                pending.delete(message.id)
+                if (message.error) reject(new Error(JSON.stringify(message.error)))
+                else resolve(message.result)
+              }
+              if (message.method === 'Page.loadEventFired' && loadResolve) {
+                loadResolve()
+                loadResolve = null
+              }
+            })
+            const send = (method, params = {}) => new Promise((resolve, reject) => {
+              const id = nextId++
+              pending.set(id, { resolve, reject })
+              socket.send(JSON.stringify({ id, method, params }))
+            })
+
+            await send('Page.enable')
+            await send('Runtime.enable')
+            await send('Emulation.setDeviceMetricsOverride', {
+              width: 390, height: 844, deviceScaleFactor: 1, mobile: true,
+              screenWidth: 390, screenHeight: 844
+            })
+            const loaded = new Promise((resolve) => { loadResolve = resolve })
+            await send('Page.navigate', { url })
+            await Promise.race([loaded, sleep(15000)])
+            await sleep(500)
+            const evaluation = await send('Runtime.evaluate', {
+              returnByValue: true,
+              expression: `(() => {
+                const root = document.scrollingElement || document.documentElement;
+                const selectors = ['.site-header','main.shell','.registry-panel','.timeline-list','.support-wallets','.wallet-address'];
+                const boxes = selectors.flatMap((selector) => [...document.querySelectorAll(selector)].map((element) => {
+                  const r = element.getBoundingClientRect();
+                  return { selector, left: r.left, right: r.right, width: r.width };
+                }));
+                const outside = boxes.filter((box) => box.left < -1 || box.right > innerWidth + 1);
+                return {
+                  href: location.href,
+                  width: innerWidth,
+                  documentScrollWidth: root.scrollWidth,
+                  documentClientWidth: root.clientWidth,
+                  outside,
+                  mobileMoreDisplay: getComputedStyle(document.querySelector('.mobile-more-navigation') || document.body).display,
+                  desktopSecondaryDisplay: document.querySelector('.desktop-secondary-navigation') ? getComputedStyle(document.querySelector('.desktop-secondary-navigation')).display : null
+                };
+              })()`
+            })
+            socket.close()
+            return evaluation.result.value
+          }
+
+          let failed = false
+          for (const path of pages) {
+            const result = await inspect(`https://wlr.badjoke-lab.com${path}`)
+            const overflow = result.documentScrollWidth > result.documentClientWidth + 1 || result.outside.length > 0
+            const navWrong = result.mobileMoreDisplay === 'none' || (result.desktopSecondaryDisplay !== null && result.desktopSecondaryDisplay !== 'none')
+            console.log(JSON.stringify({ path, ...result, overflow, navWrong }))
+            if (overflow || navWrong || result.width !== 390) failed = true
+          }
+          if (failed) process.exit(1)
+          console.log('Mobile production QA passed at 390x844 for all representative routes.')
+          NODE
+
+          node "$work/mobile-qa.mjs"
