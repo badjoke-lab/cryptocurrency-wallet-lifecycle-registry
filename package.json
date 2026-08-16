@@ -12,6 +12,7 @@
     "validate:candidates": "python3 scripts/validate_candidates.py",
     "validate:identity-evidence": "python3 scripts/validate_identity_evidence_policy.py",
     "validate:machine-records": "node scripts/build-machine-layer.mjs && node scripts/validate-machine-records.mjs",
+    "validate:structured-discovery": "node scripts/validate-structured-discovery.mjs",
     "test:candidates": "python3 scripts/test_candidate_validator.py",
     "test:identity-evidence": "python3 scripts/test_identity_evidence_policy.py",
     "check:staging-boundary": "python3 scripts/check_staging_boundary.py",
