@@ -1,0 +1,51 @@
+name: Verify WLR PR62 Production
+
+on:
+  push:
+    branches: [ops/pr62-production-verify]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Verify exact Cloudflare production deployment
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          expected="97bc44f4075f7ab24b735011ce9f9c732d38b7c6"
+          base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
+          auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
+          match=""
+          for attempt in $(seq 1 40); do
+            deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
+            match="$(jq -c --arg sha "$expected" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
+            if [ -n "$match" ] && jq -e '.latest_stage.status == "success"' <<<"$match" >/dev/null; then break; fi
+            echo "Waiting for exact deployment attempt=${attempt}"
+            sleep 10
+          done
+          test -n "$match"
+          jq -e '.latest_stage.status == "success" and .deployment_trigger.metadata.branch == "main" and (.aliases | index("https://wlr.badjoke-lab.com")) != null' <<<"$match" >/dev/null
+          echo "$match" | jq '{id,short_id,aliases,latest_stage,deployment_trigger}'
+      - name: Verify public dates and derived coverage
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"
+          trap 'rm -rf "$work"' EXIT
+          curl -fsSL --retry 10 --retry-all-errors --retry-delay 2 https://wlr.badjoke-lab.com/data/products.json -o "$work/products.json"
+          curl -fsSL --retry 10 --retry-all-errors --retry-delay 2 https://wlr.badjoke-lab.com/data/stats.json -o "$work/stats.json"
+          jq -e '.[] | select(.id == "wlr_prod_000044") | .launch_date == "2026-02-27" and .launch_date_precision == "day" and .last_verified_at == "2026-08-17"' "$work/products.json" >/dev/null
+          jq -e '.[] | select(.id == "wlr_prod_000049") | .launch_date == "2022-08-16" and .launch_date_precision == "day" and .last_verified_at == "2026-08-17"' "$work/products.json" >/dev/null
+          jq -e '.registry.entities == 25 and .registry.products == 69 and .registry.events == 73 and .registry.evidence == 120' "$work/stats.json" >/dev/null
+          jq -e '.products.launch_date.count == 47 and .products.launch_date.denominator == 69' "$work/stats.json" >/dev/null
+          curl -fsSL -o /dev/null -w 'Tangem Mobile product HTTP %{http_code}\n' https://wlr.badjoke-lab.com/product/tangem-mobile-wallet/
+          curl -fsSL -o /dev/null -w 'Exodus Web3 product HTTP %{http_code}\n' https://wlr.badjoke-lab.com/product/exodus-web3-wallet/
+          echo 'PR62_PRODUCTION_VERIFY_OK launch_coverage=47/69 tangem_mobile=2026-02-27 exodus_web3=2022-08-16'
