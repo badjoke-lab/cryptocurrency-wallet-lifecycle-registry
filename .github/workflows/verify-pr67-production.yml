@@ -10,13 +10,14 @@ permissions:
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
         with:
           ref: main
 
-      - name: Verify exact Cloudflare production deployment
+      - name: Resolve exact Cloudflare production deployment
+        id: deployment
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -25,25 +26,52 @@ jobs:
           expected="47c7acca14159f0d570aeb6cba320a9ffb0ad506"
           base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
           auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
-          match=""
-          for attempt in $(seq 1 40); do
-            deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
-            match="$(jq -c --arg sha "$expected" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
-            if [ -n "$match" ] && jq -e '.latest_stage.status == "success"' <<<"$match" >/dev/null; then break; fi
-            echo "Waiting for exact deployment attempt=${attempt}"
-            sleep 10
-          done
+          deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
+          match="$(jq -c --arg sha "$expected" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
           test -n "$match"
           jq -e '.latest_stage.status == "success" and .deployment_trigger.metadata.branch == "main" and (.aliases | index("https://wlr.badjoke-lab.com")) != null' <<<"$match" >/dev/null
-          echo "$match" | jq '{id,short_id,aliases,latest_stage,deployment_trigger}'
+          url="$(jq -r '.url' <<<"$match")"
+          echo "deployment_url=$url" >> "$GITHUB_OUTPUT"
+          echo "$match" | jq '{id,short_id,url,aliases,latest_stage,deployment_trigger}'
+
+      - name: Wait for custom domain to serve exact deployment content
+        env:
+          DEPLOYMENT_URL: ${{ steps.deployment.outputs.deployment_url }}
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"
+          trap 'rm -rf "$work"' EXIT
+
+          echo '=== DEPLOYMENT-SPECIFIC STATS ==='
+          curl -fsSL "${DEPLOYMENT_URL}/data/stats.json?verify=47c7acca" -o "$work/deployment-stats.json"
+          jq '{registry}' "$work/deployment-stats.json"
+          jq -e '.registry.events == 76 and .registry.evidence == 125 and .registry.incident_events == 15 and .registry.remediation_events == 3' "$work/deployment-stats.json" >/dev/null
+
+          ready=0
+          for attempt in $(seq 1 40); do
+            cache_bust="47c7acca-${attempt}-$(date +%s)"
+            curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/stats.json?verify=${cache_bust}" -o "$work/custom-stats.json"
+            events="$(jq -r '.registry.events' "$work/custom-stats.json")"
+            evidence="$(jq -r '.registry.evidence' "$work/custom-stats.json")"
+            incidents="$(jq -r '.registry.incident_events' "$work/custom-stats.json")"
+            remediation="$(jq -r '.registry.remediation_events' "$work/custom-stats.json")"
+            echo "custom-domain attempt=${attempt} events=${events} evidence=${evidence} incidents=${incidents} remediation=${remediation}"
+            if [ "$events" = 76 ] && [ "$evidence" = 125 ] && [ "$incidents" = 15 ] && [ "$remediation" = 3 ]; then
+              ready=1
+              break
+            fi
+            sleep 10
+          done
+          test "$ready" -eq 1
 
       - name: Verify public Electrum events, evidence and Stats
         run: |
           set -euo pipefail
           work="$(mktemp -d)"
           trap 'rm -rf "$work"' EXIT
+          nonce="$(date +%s)"
           for name in events evidence stats; do
-            curl -fsSL --retry 10 --retry-all-errors --retry-delay 2 "https://wlr.badjoke-lab.com/data/${name}.json" -o "$work/${name}.json"
+            curl -fsSL --retry 10 --retry-all-errors --retry-delay 2 "https://wlr.badjoke-lab.com/data/${name}.json?verify=${nonce}" -o "$work/${name}.json"
           done
 
           echo '=== PUBLIC ELECTRUM EVENTS ==='
@@ -51,7 +79,7 @@ jobs:
           echo '=== PUBLIC ELECTRUM EVIDENCE ==='
           jq -c '.[] | select(.id == "wlr_src_000122" or .id == "wlr_src_000123" or .id == "wlr_src_000124" or .id == "wlr_src_000125") | {id,event_id,url,reliability,claim_scope,is_primary}' "$work/evidence.json"
           echo '=== PUBLIC STATS ==='
-          jq '{registry,incident_events:.registry.incident_events,remediation_events:.registry.remediation_events,launch_date:.products.launch_date,support_known:.data_quality.products.support_status_known}' "$work/stats.json"
+          jq '{registry,launch_date:.products.launch_date,support_known:.data_quality.products.support_status_known}' "$work/stats.json"
 
           check() { label="$1"; shift; echo "CHECK ${label}"; "$@"; echo "PASS ${label}"; }
           check 'External plugin vulnerability' jq -e '.[] | select(.id == "wlr_ev_000074") | .event_type == "vulnerability_disclosed" and .event_date == "2026-04-28" and .impact_level == "medium" and .funds_affected == "unknown" and (.fixed_versions[] | .version == "4.7.2")' "$work/events.json"
@@ -62,8 +90,8 @@ jobs:
           check 'Incident/remediation totals' jq -e '.registry.incident_events == 15 and .registry.remediation_events == 3' "$work/stats.json"
           check 'Launch coverage retained' jq -e '.products.launch_date.count == 47 and .products.launch_date.denominator == 69' "$work/stats.json"
           check 'Support coverage retained' jq -e '.data_quality.products.support_status_known.count == 68 and .data_quality.products.support_status_known.denominator == 69' "$work/stats.json"
-          check 'Electrum wallet route' curl -fsSL -o /dev/null https://wlr.badjoke-lab.com/wallet/electrum/
-          check 'Electrum product route' curl -fsSL -o /dev/null https://wlr.badjoke-lab.com/product/electrum-application/
+          check 'Electrum wallet route' curl -fsSL -o /dev/null "https://wlr.badjoke-lab.com/wallet/electrum/?verify=${nonce}"
+          check 'Electrum product route' curl -fsSL -o /dev/null "https://wlr.badjoke-lab.com/product/electrum-application/?verify=${nonce}"
           check 'External plugin GHSA' curl -fsSL -o /dev/null https://github.com/spesmilo/electrum/security/advisories/GHSA-vw94-r84p-66qf
           check 'NWC GHSA' curl -fsSL -o /dev/null https://github.com/spesmilo/electrum/security/advisories/GHSA-q7m2-785w-r585
           echo 'PR67_PRODUCTION_VERIFY_OK events=76 evidence=125 incidents=15 remediation=3 electrum_fix=4.7.2'
