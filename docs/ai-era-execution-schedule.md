@@ -53,7 +53,25 @@ Status: roadmap addendum
   - the single review-queue item was product `wlr_prod_000066` / `leather-browser-extension`, whose recorded install URL returned 404; its action remained neutral `research_before_canonical_change` and did not alter canonical status/support/security data.
   - artifact inspection confirmed bounded operational metadata only; response bodies, arbitrary headers, cookies, authorization material, and automatic `mark_dead` / `mark_unsupported` / `mark_patched` conclusions were absent.
   - normal workflow remains weekly + manually runnable and read-only with respect to repository contents; monitoring artifacts are not public/canonical evidence.
-- Next: Step 9 evaluate natural-language-to-filter translation. This is an evaluation gate, not approval to make free-form AI output authoritative. Any implementation must translate into the existing deterministic structured-discovery state and preserve ordinary filters as the source of truth.
+- Step 9 constrained natural-language-to-filter translation: complete and production-verified.
+  - evaluation/decision: `docs/operations/NATURAL_LANGUAGE_FILTER_EVALUATION.md` via PR #56.
+  - decision: deterministic client-side constrained grammar approved; external LLM/API and open-ended semantic interpretation rejected.
+  - implementation: PR #57.
+  - accepted implementation main commit: `5bc7da11e9b28b78ea76ae61e9cfe205c2469171`.
+  - post-merge `Validate WLR` run #91 completed successfully on the accepted main commit.
+  - Cloudflare production deployment: `7a400185-f72b-4d7d-befa-64378aeca370`, successful for the exact accepted main commit and canonical `wlr.badjoke-lab.com` alias.
+  - production helper markers `Describe filters` and `Apply filters` were present before browser QA.
+  - representative positive phrase `hardware wallets with reviewed incidents before 2020` previewed and applied only existing filter state (`type=hardware`, `securityHistory=recorded`, `launchTo=2019`) and returned 4 reviewed records in the accepted production dataset.
+  - `safe wallets` and `wallets without incidents` remained unsupported claim language; `hardware software wallets` failed closed as a conflict.
+  - coverage-safe negative phrase `no reviewed incident recorded` applied only the existing `not_recorded` coverage filter.
+  - explicit controls remained editable after translator application and Reset cleared both helper input and structured state.
+  - production browser interaction generated zero translator-time network requests after the page settled; the implementation remains fully local and deterministic.
+  - 390x844 browser QA kept document width at 390px with no helper/input/button overflow.
+  - accepted real-browser verification: `Verify WLR Step 9 Production v2`, run id `31961529400`, conclusion `success`.
+
+## AI-era sequence closeout
+
+Steps 1–9 are complete. The AI-era addendum has finished its planned sequence without introducing an authoritative free-form AI layer. WLR now returns to ordinary reviewed registry growth and depth work under `RECORD_GROWTH_POLICY.md` and `IDENTITY_EVIDENCE_POLICY.md`; future AI-related expansion requires a new reviewed specification rather than silently extending Step 9.
 
 ## Gate
 Spec -> implementation PR -> validation/CI green -> merge -> production verification where applicable -> docs/status sync.
