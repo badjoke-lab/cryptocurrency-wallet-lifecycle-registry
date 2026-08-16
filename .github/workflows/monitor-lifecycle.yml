@@ -1,0 +1,77 @@
+name: Monitor WLR lifecycle
+
+on:
+  schedule:
+    - cron: '17 5 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Restore previous monitoring state when available
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p previous
+          api="https://api.github.com/repos/${GITHUB_REPOSITORY}"
+          auth="Authorization: Bearer ${GH_TOKEN}"
+          version="X-GitHub-Api-Version: 2022-11-28"
+          runs="$(curl -fsSL -H "$auth" -H "$version" "${api}/actions/workflows/monitor-lifecycle.yml/runs?status=success&per_page=20")"
+          found=0
+          while read -r run_id; do
+            [ -n "$run_id" ] || continue
+            artifacts="$(curl -fsSL -H "$auth" -H "$version" "${api}/actions/runs/${run_id}/artifacts?per_page=100")"
+            archive_url="$(jq -r '.artifacts[] | select(.name == "wlr-lifecycle-monitoring") | .archive_download_url' <<<"$artifacts" | head -n 1)"
+            if [ -z "$archive_url" ] || [ "$archive_url" = "null" ]; then
+              continue
+            fi
+            curl -fsSL -L -H "$auth" -H "$version" "$archive_url" -o previous.zip
+            rm -rf previous/unpacked
+            mkdir -p previous/unpacked
+            unzip -q previous.zip -d previous/unpacked
+            state_path="$(find previous/unpacked -name monitoring-state.json -type f | head -n 1)"
+            if [ -n "$state_path" ]; then
+              cp "$state_path" previous/monitoring-state.json
+              echo "Restored prior state from run ${run_id}"
+              found=1
+              break
+            fi
+          done < <(jq -r --arg current "$GITHUB_RUN_ID" '.workflow_runs[] | select((.id | tostring) != $current) | .id' <<<"$runs")
+          if [ "$found" -eq 0 ]; then
+            echo "No prior retained monitoring state available; this run will initialize a baseline."
+          fi
+
+      - name: Run reviewed lifecycle monitoring
+        run: |
+          set -euo pipefail
+          args=(--out-dir monitoring-output --source-commit "$GITHUB_SHA")
+          if [ -f previous/monitoring-state.json ]; then
+            args+=(--previous-state previous/monitoring-state.json)
+          fi
+          node scripts/run-lifecycle-monitoring.mjs "${args[@]}"
+
+      - name: Publish neutral monitoring summary
+        if: always() && hashFiles('monitoring-output/monitoring-summary.md') != ''
+        run: cat monitoring-output/monitoring-summary.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload monitoring review artifact
+        if: always() && hashFiles('monitoring-output/**') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: wlr-lifecycle-monitoring
+          path: monitoring-output/
+          retention-days: 30
+          if-no-files-found: error
