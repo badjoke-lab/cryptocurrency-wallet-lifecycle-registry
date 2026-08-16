@@ -47,6 +47,21 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: npm run cloudflare:config:apply
 
+      - name: Inspect Cloudflare publication state
+        if: github.event_name == 'push'
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
+          auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
+          echo 'Custom domain state:'
+          curl -fsS "${base}/domains/wlr.badjoke-lab.com" -H "$auth" | jq '{success, result: {name: .result.name, status: .result.status, validation_data: .result.validation_data, verification_data: .result.verification_data}}'
+          echo 'Production deployments:'
+          curl -fsS "${base}/deployments?env=production&per_page=5" -H "$auth" | jq '{success, deployments: [.result[] | {id, short_id, url, aliases, environment, created_on, latest_stage, deployment_trigger}]}'
+
       - name: Configure Cloudflare Pages project
         if: github.event_name == 'workflow_dispatch'
         env:
