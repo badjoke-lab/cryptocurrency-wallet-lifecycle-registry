@@ -6,7 +6,9 @@ import {
   discoveryLabels,
   formatDiscoveryValue,
 } from '../lib/discovery'
+import type { NaturalFilterState } from '../lib/natural-language-filters'
 import Chip from './chip'
+import NaturalFilterHelper from './natural-filter-helper'
 
 export type EntityTableRow = {
   id: string
@@ -53,6 +55,7 @@ export default function EntityTableClient({ rows }: { rows: EntityTableRow[] }) 
   const [launchFrom, setLaunchFrom] = useState('')
   const [launchTo, setLaunchTo] = useState('')
   const [sort, setSort] = useState('name')
+  const [helperResetToken, setHelperResetToken] = useState(0)
 
   const walletTypes = useMemo(() => [...new Set(rows.map((row) => row.walletType))].sort(), [rows])
   const custodyModels = useMemo(
@@ -60,6 +63,10 @@ export default function EntityTableClient({ rows }: { rows: EntityTableRow[] }) 
     [rows],
   )
   const statuses = useMemo(() => [...new Set(rows.map((row) => row.status))].sort(), [rows])
+  const naturalFilterFacets = useMemo(
+    () => ({ walletTypes, custodyModels, statuses }),
+    [custodyModels, statuses, walletTypes],
+  )
 
   const fromYear = parseYear(launchFrom)
   const toYear = parseYear(launchTo)
@@ -104,6 +111,19 @@ export default function EntityTableClient({ rows }: { rows: EntityTableRow[] }) 
     walletType,
   ])
 
+  const applyNaturalFilters = (filters: NaturalFilterState) => {
+    setQuery('')
+    setWalletType(filters.walletType ?? 'all')
+    setCustodyModel(filters.custodyModel ?? 'all')
+    setStatus(filters.status ?? 'all')
+    setSecurityHistory(filters.securityHistory ?? 'all')
+    setRemediationHistory(filters.remediationHistory ?? 'all')
+    setEolHistory(filters.eolHistory ?? 'all')
+    setLaunchFrom(filters.launchFrom ?? '')
+    setLaunchTo(filters.launchTo ?? '')
+    setSort(filters.sort ?? 'name')
+  }
+
   const reset = () => {
     setQuery('')
     setWalletType('all')
@@ -115,11 +135,13 @@ export default function EntityTableClient({ rows }: { rows: EntityTableRow[] }) 
     setLaunchFrom('')
     setLaunchTo('')
     setSort('name')
+    setHelperResetToken((value) => value + 1)
   }
 
   return (
     <div className="registry-panel">
       <div className="controls registry-controls" aria-describedby="registry-filter-note">
+        <NaturalFilterHelper facets={naturalFilterFacets} resetToken={helperResetToken} onApply={applyNaturalFilters} />
         <label className="control-field search-field">
           <span>Search</span>
           <input

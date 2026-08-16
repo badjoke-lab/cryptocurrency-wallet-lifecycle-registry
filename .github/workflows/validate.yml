@@ -21,6 +21,8 @@ jobs:
       - run: npm run validate:identity-evidence
       - run: npm run validate:machine-records
       - run: npm run validate:structured-discovery
+      - run: npm run test:natural-filters
+      - run: npm run validate:natural-filters
       - run: npm run validate:compare
       - run: npm run validate:stats
       - run: npm run test:monitoring
