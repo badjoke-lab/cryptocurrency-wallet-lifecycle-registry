@@ -1,0 +1,55 @@
+name: Audit WLR existing release date gaps
+
+on:
+  push:
+    branches: [ops/audit-existing-release-date-gaps]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Find launch-null products with existing release events
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          products = json.loads(Path('data/products.json').read_text())
+          events = json.loads(Path('data/events.json').read_text())
+          evidence = json.loads(Path('data/evidence.json').read_text())
+          entities = {x['id']: x for x in json.loads(Path('data/entities.json').read_text())}
+
+          missing = [p for p in products if p.get('launch_date') is None]
+          print(f'MISSING_PRODUCT_LAUNCH_COUNT={len(missing)}')
+          print('=== CANDIDATES WITH PRODUCT-RELEASE EVENTS ===')
+          count = 0
+          for p in missing:
+              linked = [e for e in events if e.get('event_type') == 'product_released' and (e.get('product_id') == p['id'] or p['id'] in (e.get('affected_product_ids') or []))]
+              if not linked:
+                  continue
+              count += 1
+              ent = entities.get(p['entity_id'], {})
+              print(json.dumps({
+                  'product': {k:p.get(k) for k in ['id','entity_id','slug','product_name','status','launch_date','launch_date_precision','official_url','last_verified_at']},
+                  'entity': {k:ent.get(k) for k in ['id','slug','canonical_name','launch_date','launch_date_precision']},
+                  'release_events': [{k:e.get(k) for k in ['id','event_type','event_date','event_date_basis','title','confidence','product_id','affected_product_ids']} for e in linked]
+              }, separators=(',', ':')))
+              for e in linked:
+                  linked_evidence = [s for s in evidence if s.get('event_id') == e['id'] or e['id'] in (s.get('event_ids') or []) or s.get('product_id') == p['id'] or p['id'] in (s.get('product_ids') or [])]
+                  print('  EVIDENCE', json.dumps([{k:s.get(k) for k in ['id','source_type','title','url','publisher','published_at','accessed_at','reliability','is_primary','claim_scope','event_id','event_ids','product_id','product_ids']} for s in linked_evidence], separators=(',', ':')))
+          print(f'RELEASE_EVENT_GAP_CANDIDATES={count}')
+
+          print('=== ALL MISSING LAUNCH PRODUCTS WITHOUT RELEASE EVENT ===')
+          for p in missing:
+              linked = [e for e in events if e.get('event_type') == 'product_released' and (e.get('product_id') == p['id'] or p['id'] in (e.get('affected_product_ids') or []))]
+              if linked:
+                  continue
+              print(json.dumps({k:p.get(k) for k in ['id','entity_id','slug','product_name','status','support_status','official_url']}, separators=(',', ':')))
+          PY
