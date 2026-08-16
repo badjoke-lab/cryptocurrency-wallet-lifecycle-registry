@@ -106,6 +106,103 @@ jobs:
           echo 'Production deployments:'
           curl -fsS "${base}/deployments?env=production&per_page=5" -H "$auth" | jq '{success, deployments: [.result[] | {id, short_id, url, aliases, environment, created_on, latest_stage, deployment_trigger}]}'
 
+      - name: Verify WLR public HTTP
+        if: github.event_name == 'push'
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="https://wlr.badjoke-lab.com"
+          work="$(mktemp -d)"
+          trap 'rm -rf "$work"' EXIT
+
+          paths=(
+            "/"
+            "/hardware"
+            "/software"
+            "/incidents"
+            "/methodology"
+            "/about"
+            "/support"
+            "/wallet/trezor"
+            "/product/trezor-model-one"
+            "/version.json"
+            "/data/manifest.json"
+            "/data/entities.json"
+            "/data/products.json"
+            "/data/events.json"
+            "/data/evidence.json"
+            "/data/wallet-index.json"
+            "/data/product-index.json"
+            "/data/wallets/trezor.json"
+            "/data/products/trezor-model-one.json"
+            "/robots.txt"
+            "/sitemap.xml"
+          )
+
+          for path in "${paths[@]}"; do
+            code="$(curl -sS --retry 10 --retry-all-errors --retry-delay 2 -o "$work/body" -w '%{http_code}' "${base}${path}")"
+            if [ "$code" != "200" ]; then
+              echo "${path}: HTTP ${code}" >&2
+              exit 10
+            fi
+            echo "${path}: HTTP 200"
+          done
+
+          curl -fsS "$base/version.json" -o "$work/version.json"
+          curl -fsS "$base/data/manifest.json" -o "$work/manifest.json"
+          for name in entities products events evidence; do
+            curl -fsS "$base/data/${name}.json" -o "$work/${name}.json"
+          done
+          curl -fsS "$base/data/wallet-index.json" -o "$work/wallet-index.json"
+          curl -fsS "$base/data/product-index.json" -o "$work/product-index.json"
+          curl -fsS "$base/data/wallets/trezor.json" -o "$work/wallet-trezor.json"
+          curl -fsS "$base/data/products/trezor-model-one.json" -o "$work/product-trezor-model-one.json"
+
+          jq -e '.project == "WLR" and .version == "0.1.0" and .schema_version == "v3"' "$work/version.json" >/dev/null
+          jq -e '.project == "Wallet Lifecycle Registry" and .short_name == "WLR" and .data_safety == "canonical_only"' "$work/manifest.json" >/dev/null
+          jq -e '.schema == "wlr.wallet-record.v1" and .entity.slug == "trezor"' "$work/wallet-trezor.json" >/dev/null
+          jq -e '.schema == "wlr.product-record.v1" and .entity.slug == "trezor" and .product.slug == "trezor-model-one"' "$work/product-trezor-model-one.json" >/dev/null
+
+          entities="$(jq 'length' "$work/entities.json")"
+          products="$(jq 'length' "$work/products.json")"
+          events="$(jq 'length' "$work/events.json")"
+          evidence="$(jq 'length' "$work/evidence.json")"
+          wallets="$(jq 'length' "$work/wallet-index.json")"
+          product_records="$(jq 'length' "$work/product-index.json")"
+
+          jq -e \
+            --argjson entities "$entities" \
+            --argjson products "$products" \
+            --argjson events "$events" \
+            --argjson evidence "$evidence" \
+            --argjson wallets "$wallets" \
+            --argjson product_records "$product_records" \
+            '.record_counts.entities == $entities and
+             .record_counts.products == $products and
+             .record_counts.events == $events and
+             .record_counts.evidence == $evidence and
+             .record_counts.wallet_records == $wallets and
+             .record_counts.product_records == $product_records' \
+            "$work/manifest.json" >/dev/null
+
+          test "$entities" -eq 25
+          test "$products" -eq 69
+          test "$wallets" -eq 25
+          test "$product_records" -eq 69
+
+          git fetch origin main --depth=1
+          for name in entities products events evidence; do
+            git show "origin/main:data/${name}.json" > "$work/main-${name}.json"
+            cmp "$work/main-${name}.json" "$work/${name}.json"
+          done
+
+          curl -fsS "$base/" | grep -Fq 'Wallet Lifecycle Registry'
+          curl -fsS "$base/wallet/trezor" | grep -Fq 'Trezor'
+          curl -fsS "$base/product/trezor-model-one" | grep -Fq 'Trezor Model One'
+          curl -fsS "$base/support" | grep -Fq 'Support'
+
+          echo "Production verification passed: entities=${entities}, products=${products}, events=${events}, evidence=${evidence}."
+
       - name: Configure Cloudflare Pages project
         if: github.event_name == 'workflow_dispatch'
         env:
