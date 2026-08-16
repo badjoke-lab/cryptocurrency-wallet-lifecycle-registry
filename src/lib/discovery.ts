@@ -52,5 +52,5 @@ export function deriveWalletDiscoveryFacts(
 
 export function formatDiscoveryValue(value: string): string {
   if (value === DISCOVERY_MISSING_CUSTODY) return discoveryLabels.custody_missing
-  return value.replaceAll('_', ' ')
+  return value.replace(/_/g, ' ')
 }
