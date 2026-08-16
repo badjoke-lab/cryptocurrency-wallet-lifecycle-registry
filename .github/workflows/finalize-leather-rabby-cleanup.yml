@@ -1,0 +1,66 @@
+name: Finalize Leather and Rabby cleanup
+
+on:
+  push:
+    branches: [fix/leather-url-rabby-launch]
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/leather-url-rabby-launch
+          fetch-depth: 0
+      - name: Fix Rabby entity note and verify targeted canonical records
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          p = Path('data/entities.json')
+          text = p.read_text()
+          decoder = json.JSONDecoder()
+          pos = text.find('[') + 1
+          while True:
+              while pos < len(text) and text[pos] in ' \r\n\t,':
+                  pos += 1
+              if pos >= len(text) or text[pos] == ']':
+                  raise SystemExit('wlr_ent_000018 not found')
+              obj, end = decoder.raw_decode(text, pos)
+              if obj.get('id') == 'wlr_ent_000018':
+                  obj['notes'] = 'Initial Rabby launch date is established by the reviewed July 26, 2021 first-party browser-extension release announcement; later Mobile and Desktop launch dates remain unset pending separate reviewed sources.'
+                  replacement = json.dumps(obj, ensure_ascii=False, separators=(',', ':'))
+                  p.write_text(text[:pos] + replacement + text[end:])
+                  break
+              pos = end
+          PY
+
+          python3 scripts/validate_records.py
+          python3 scripts/validate_identity_evidence_policy.py
+          echo '=== RABBY ENTITY ==='
+          jq -c '.[] | select(.id == "wlr_ent_000018")' data/entities.json
+          echo '=== RABBY EXTENSION ==='
+          jq -c '.[] | select(.id == "wlr_prod_000054")' data/products.json
+          echo '=== LEATHER EXTENSION ==='
+          jq -c '.[] | select(.id == "wlr_prod_000066")' data/products.json
+          echo '=== LEATHER EXTENSION EVIDENCE ==='
+          jq -c '.[] | select(.id == "wlr_src_000120")' data/evidence.json
+          git diff --check
+      - name: Commit final consistency fix
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- data/entities.json; then
+            echo 'No entity note change required.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/entities.json
+          git commit -m 'Align Rabby launch note with reviewed date'
+          git push origin HEAD:fix/leather-url-rabby-launch
