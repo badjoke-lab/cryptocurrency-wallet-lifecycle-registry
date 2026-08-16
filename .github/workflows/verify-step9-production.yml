@@ -1,0 +1,157 @@
+name: Verify WLR Step 9 Production
+
+on:
+  push:
+    branches: [ops/step9-production-verify]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Verify exact Cloudflare production deployment
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          expected="5bc7da11e9b28b78ea76ae61e9cfe205c2469171"
+          base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
+          auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
+          match=""
+          for attempt in $(seq 1 40); do
+            deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
+            match="$(jq -c --arg sha "$expected" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
+            if [ -n "$match" ] && jq -e '.latest_stage.status == "success"' <<<"$match" >/dev/null; then
+              break
+            fi
+            echo "Waiting for exact production deployment attempt=${attempt}"
+            sleep 10
+          done
+          test -n "$match"
+          jq -e '.latest_stage.status == "success" and .deployment_trigger.type == "github:push" and .deployment_trigger.metadata.branch == "main" and (.aliases | index("https://wlr.badjoke-lab.com")) != null' <<<"$match" >/dev/null
+          echo "$match" | jq '{id,short_id,url,aliases,latest_stage,deployment_trigger}'
+
+      - name: Verify public registry helper is deployed
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"
+          trap 'rm -rf "$work"' EXIT
+          curl -fsSL --retry 10 --retry-all-errors --retry-delay 2 https://wlr.badjoke-lab.com/ -o "$work/home.html"
+          grep -Fq 'Describe filters' "$work/home.html"
+          grep -Fq 'Filter phrase' "$work/home.html"
+          grep -Fq 'Apply filters' "$work/home.html"
+
+      - name: Locate Chrome
+        id: chrome
+        run: |
+          set -euo pipefail
+          browser="$(command -v google-chrome || command -v chromium || command -v chromium-browser || true)"
+          test -n "$browser"
+          echo "browser=$browser" >> "$GITHUB_OUTPUT"
+          "$browser" --version
+
+      - name: Verify deterministic translator in real browser
+        env:
+          BROWSER: ${{ steps.chrome.outputs.browser }}
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"
+          cleanup() {
+            if [ -n "${chrome_pid:-}" ]; then kill "$chrome_pid" 2>/dev/null || true; wait "$chrome_pid" 2>/dev/null || true; fi
+            rm -rf "$work" 2>/dev/null || true
+          }
+          trap cleanup EXIT
+          "$BROWSER" --headless=new --no-sandbox --disable-gpu --remote-debugging-port=9222 --user-data-dir="$work/chrome" about:blank >"$work/chrome.log" 2>&1 &
+          chrome_pid=$!
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:9222/json/version >/dev/null 2>&1 && break; sleep 1; done
+          curl -fsS http://127.0.0.1:9222/json/version >/dev/null
+
+          cat > "$work/qa.mjs" <<'NODE'
+          const sleep=(ms)=>new Promise(r=>setTimeout(r,ms))
+          const target=await (await fetch('http://127.0.0.1:9222/json/new?about%3Ablank',{method:'PUT'})).json()
+          const socket=new WebSocket(target.webSocketDebuggerUrl)
+          await new Promise((resolve,reject)=>{socket.addEventListener('open',resolve,{once:true});socket.addEventListener('error',reject,{once:true})})
+          let id=1,loadResolve
+          const pending=new Map()
+          let requests=[]
+          socket.addEventListener('message',(event)=>{
+            const m=JSON.parse(event.data)
+            if(m.id&&pending.has(m.id)){const p=pending.get(m.id);pending.delete(m.id);m.error?p.reject(new Error(JSON.stringify(m.error))):p.resolve(m.result)}
+            if(m.method==='Page.loadEventFired'&&loadResolve){loadResolve();loadResolve=null}
+            if(m.method==='Network.requestWillBeSent')requests.push(m.params.request.url)
+          })
+          const send=(method,params={})=>new Promise((resolve,reject)=>{const n=id++;pending.set(n,{resolve,reject});socket.send(JSON.stringify({id:n,method,params}))})
+          const evalJs=async(expression)=>{const r=await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw new Error(JSON.stringify(r.exceptionDetails));return r.result.value}
+          const setMetrics=(width,height,mobile)=>send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile,screenWidth:width,screenHeight:height})
+          const navigate=async(url)=>{const loaded=new Promise(r=>{loadResolve=r});await send('Page.navigate',{url});await Promise.race([loaded,sleep(15000)]);await sleep(900)}
+          const setLabelValue=async(label,value,kind='input')=>evalJs(`(()=>{const label=[...document.querySelectorAll('label')].find(el=>el.querySelector('span')?.textContent?.trim()===${JSON.stringify(label)});if(!label)throw new Error('missing label '+${JSON.stringify(label)});const el=label.querySelector(${JSON.stringify(kind)});if(!el)throw new Error('missing control '+${JSON.stringify(label)});const proto=${kind==='select'?'HTMLSelectElement':'HTMLInputElement'}.prototype;const setter=Object.getOwnPropertyDescriptor(proto,'value').set;setter.call(el,${JSON.stringify(value)});el.dispatchEvent(new Event(${kind==='select'?"'change'":"'input'"},{bubbles:true}));return el.value})()`)
+          const controlValue=(label,kind='select')=>evalJs(`(()=>{const label=[...document.querySelectorAll('label')].find(el=>el.querySelector('span')?.textContent?.trim()===${JSON.stringify(label)});return label?.querySelector(${JSON.stringify(kind)})?.value ?? null})()`)
+          const setPhrase=(value)=>setLabelValue('Filter phrase',value,'input')
+          const helperState=()=>evalJs(`(()=>{const button=[...document.querySelectorAll('button')].find(b=>b.textContent?.trim()==='Apply filters');return{disabled:button?.disabled??null,text:document.querySelector('#natural-filter-status')?.textContent??'',input:[...document.querySelectorAll('label')].find(el=>el.querySelector('span')?.textContent?.trim()==='Filter phrase')?.querySelector('input')?.value??''}})()`)
+          const clickButton=(text)=>evalJs(`(()=>{const b=[...document.querySelectorAll('button')].find(x=>x.textContent?.trim()===${JSON.stringify(text)});if(!b)throw new Error('missing button');b.click();return true})()`)
+
+          await send('Page.enable');await send('Runtime.enable');await send('Network.enable')
+          await setMetrics(1280,900,false)
+          await navigate('https://wlr.badjoke-lab.com/')
+          requests=[]
+
+          await setPhrase('hardware wallets with reviewed incidents before 2020');await sleep(250)
+          let state=await helperState()
+          console.log('positive preview',JSON.stringify(state))
+          if(state.disabled!==false||!state.text.includes('Type: hardware')||!state.text.includes('Security history: Recorded')||!state.text.includes('Launch to: 2019'))throw new Error('positive preview mismatch')
+          await clickButton('Apply filters');await sleep(250)
+          const positive={type:await controlValue('Type'),security:await controlValue('Security history'),to:await controlValue('Launch year to','input'),count:await evalJs(`Number(document.querySelector('.registry-count strong')?.textContent??'-1')`)}
+          console.log('positive applied',JSON.stringify(positive))
+          if(positive.type!=='hardware'||positive.security!=='recorded'||positive.to!=='2019'||!(positive.count>=0&&positive.count<25))throw new Error('positive apply mismatch')
+
+          await setPhrase('safe wallets');await sleep(200)
+          state=await helperState();console.log('unsupported safe',JSON.stringify(state))
+          if(state.disabled!==true||!state.text.includes('Unsupported claim/ranking language'))throw new Error('safe phrase did not fail closed')
+
+          await setPhrase('wallets without incidents');await sleep(200)
+          state=await helperState();console.log('unsupported absence',JSON.stringify(state))
+          if(state.disabled!==true||!state.text.includes('Unsupported claim/ranking language'))throw new Error('without incidents did not fail closed')
+
+          await setPhrase('hardware software wallets');await sleep(200)
+          state=await helperState();console.log('conflict',JSON.stringify(state))
+          if(state.disabled!==true||!state.text.includes('Conflict:'))throw new Error('conflict did not fail closed')
+
+          await setPhrase('no reviewed incident recorded');await sleep(200)
+          state=await helperState()
+          if(state.disabled!==false)throw new Error('coverage-safe negative phrase should be applicable')
+          await clickButton('Apply filters');await sleep(200)
+          if(await controlValue('Security history')!=='not_recorded')throw new Error('negative coverage filter was not applied')
+
+          const statusOptions=await evalJs(`(()=>{const label=[...document.querySelectorAll('label')].find(el=>el.querySelector('span')?.textContent?.trim()==='Status');return[...label.querySelector('select').options].map(o=>o.value)})()`)
+          const manual=statusOptions.find(v=>v!=='all')
+          if(!manual)throw new Error('no manual status option')
+          await setLabelValue('Status',manual,'select');await sleep(150)
+          if(await controlValue('Status')!==manual)throw new Error('manual edit after apply failed')
+
+          await clickButton('Reset');await sleep(200)
+          const reset={helper:await helperState(),type:await controlValue('Type'),security:await controlValue('Security history'),status:await controlValue('Status'),from:await controlValue('Launch year from','input'),to:await controlValue('Launch year to','input')}
+          console.log('reset',JSON.stringify(reset))
+          if(reset.helper.input!==''||reset.type!=='all'||reset.security!=='all'||reset.status!=='all'||reset.from!==''||reset.to!=='')throw new Error('reset mismatch')
+
+          if(requests.length!==0){console.log('translator requests',requests);throw new Error('translator interaction generated network requests')}
+
+          await setMetrics(390,844,true);await sleep(300)
+          const mobile=await evalJs(`(()=>{const root=document.scrollingElement||document.documentElement;const section=document.querySelector('[aria-labelledby="natural-filter-title"]');const input=[...document.querySelectorAll('label')].find(el=>el.querySelector('span')?.textContent?.trim()==='Filter phrase')?.querySelector('input');const apply=[...document.querySelectorAll('button')].find(b=>b.textContent?.trim()==='Apply filters');const boxes=[section,input,apply].filter(Boolean).map(el=>{const r=el.getBoundingClientRect();return{left:r.left,right:r.right,width:r.width}});return{innerWidth,clientWidth:root.clientWidth,scrollWidth:root.scrollWidth,outside:boxes.filter(b=>b.left< -1||b.right>innerWidth+1)}})()`)
+          console.log('mobile',JSON.stringify(mobile))
+          if(mobile.innerWidth!==390||mobile.scrollWidth>mobile.clientWidth+1||mobile.outside.length)throw new Error('mobile document overflow')
+          socket.close()
+          console.log('STEP9_NATURAL_FILTER_CLOSEOUT_OK')
+          NODE
+          node "$work/qa.mjs"
