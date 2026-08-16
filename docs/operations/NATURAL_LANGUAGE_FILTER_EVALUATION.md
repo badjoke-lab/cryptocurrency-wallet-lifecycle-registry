@@ -1,6 +1,6 @@
 # WLR Natural-Language Filter Translation Evaluation
 
-Status: AI-era Step 9 evaluation decision
+Status: AI-era Step 9 evaluation decision and accepted implementation record
 Issue: #55
 
 ## Decision
@@ -9,7 +9,7 @@ Issue: #55
 
 **NO-GO for an external LLM/API, open-ended semantic search, or any translator that can create facts outside the existing structured discovery state.**
 
-The accepted Step 9 implementation, if built, is a client-side convenience layer that compiles a small documented grammar into the already-reviewed filter controls. The explicit filter state remains the only discovery authority.
+The accepted Step 9 implementation is a client-side convenience layer that compiles a small documented grammar into the already-reviewed filter controls. The explicit filter state remains the only discovery authority.
 
 ## Why this is worth adding
 
@@ -80,7 +80,7 @@ The translator must not:
 
 The helper is separate from ordinary text search.
 
-Recommended flow:
+Accepted flow:
 
 1. user enters a phrase in a `Describe filters` field;
 2. translator parses locally;
@@ -91,7 +91,7 @@ Recommended flow:
 7. the ordinary controls immediately reflect the applied values and remain editable;
 8. `Reset` clears both explicit filters and translator preview/input.
 
-There must be no chatbot, generated explanation, streaming response, or prompt-history UI.
+There is no chatbot, generated explanation, streaming response, or prompt-history UI.
 
 ## Supported grammar v1
 
@@ -101,7 +101,7 @@ The grammar is intentionally narrow. Matching is case-insensitive and punctuatio
 
 The translator may match a phrase to an exact wallet type only when that value exists in the current rows.
 
-Initial explicit aliases may include:
+Initial explicit aliases include:
 
 ```text
 hardware / hardware wallet(s) -> hardware
@@ -127,7 +127,7 @@ A phrase such as `active wallets` may set `status=active` only if `active` is an
 
 ### Reviewed incident history
 
-Positive phrases may include:
+Positive phrases include:
 
 ```text
 with reviewed incidents
@@ -141,7 +141,7 @@ They compile to:
 securityHistory = recorded
 ```
 
-Negative matching must preserve coverage semantics. Accepted negative phrases may include:
+Negative matching preserves coverage semantics. Accepted negative phrases include:
 
 ```text
 no reviewed incident recorded
@@ -154,7 +154,7 @@ They compile to:
 securityHistory = not_recorded
 ```
 
-Ambiguous phrases such as `safe wallets`, `without incidents`, `no vulnerabilities`, or `not hacked` must **not** compile to the negative filter. They are unresolved because WLR absence-of-record is not proof of real-world absence.
+Ambiguous phrases such as `safe wallets`, `without incidents`, `no vulnerabilities`, or `not hacked` do **not** compile to the negative filter. They are unsupported because WLR absence-of-record is not proof of real-world absence.
 
 ### Reviewed fix/remediation history
 
@@ -177,7 +177,7 @@ no reviewed remediation recorded
 
 compile to `remediationHistory=not_recorded`.
 
-Phrases such as `unpatched`, `unfixed`, `vendor did not respond`, or `unsafe` are unresolved and never mapped.
+Phrases such as `unpatched`, `unfixed`, `vendor did not respond`, or `unsafe` are unresolved/unsupported and never mapped.
 
 ### Reviewed EOL/deprecation history
 
@@ -215,7 +215,7 @@ between YYYY and YYYY
 YYYY-YYYY
 ```
 
-Semantics must be documented and fixture-tested:
+Semantics:
 
 - `before 2020` -> `launchTo=2019`
 - `through 2020` / `until 2020` -> `launchTo=2020`
@@ -223,11 +223,11 @@ Semantics must be documented and fixture-tested:
 - `since 2020` -> `launchFrom=2020`
 - `between 2015 and 2020` -> inclusive `launchFrom=2015`, `launchTo=2020`
 
-Years outside the explicit UI bounds or contradictory ranges fail closed.
+Unsupported years or contradictory ranges fail closed.
 
 ### Sort intent
 
-Only unambiguous phrases may map to existing sort values:
+Only unambiguous phrases map to existing sort values:
 
 ```text
 name / alphabetical -> name
@@ -236,15 +236,13 @@ most incidents -> incidents
 most products -> products
 ```
 
-`best`, `safest`, `top wallets`, and similar ranking language are unsupported and must never map to a sort.
+`best`, `safest`, `top wallets`, and similar ranking language are unsupported and never map to a sort.
 
 ### Remaining text search
 
-A v1 translator must **not** automatically dump all unrecognized words into ordinary text search.
+The v1 translator does **not** automatically dump unrecognized words into ordinary text search.
 
 This is deliberate: doing so makes failed parsing look successful and can turn ambiguous natural language into accidental string matches.
-
-A later version may allow an explicitly marked remainder such as `text: ledger`, but v1 should fail visibly on unresolved fragments.
 
 ## Conflict behavior
 
@@ -257,22 +255,22 @@ before 2015 after 2020
 with reviewed incidents and no reviewed incident recorded
 ```
 
-A conflict must prevent `Apply filters` until the phrase is edited or the conflicting fragment is removed.
+A conflict prevents `Apply filters` until the phrase is edited or the conflicting fragment is removed.
 
-The parser must not choose one interpretation based on token order.
+The parser does not choose one interpretation based on token order.
 
 ## Unknown and unsafe language
 
-The preview must distinguish:
+The preview distinguishes:
 
 - `recognized` filter clauses;
 - `unresolved` text;
 - `conflict` errors;
 - `unsupported safety/ranking language`.
 
-Unsupported terms such as `safe`, `safest`, `best`, `recommended`, `unpatched`, and `no vulnerabilities` should receive a short neutral explanation that WLR filters reviewed records rather than making that claim.
+Unsupported terms such as `safe`, `safest`, `best`, `recommended`, `unpatched`, and `no vulnerabilities` receive a neutral explanation that WLR filters reviewed records rather than making that claim.
 
-No assistant-like prose generation is needed.
+No assistant-like prose generation is used.
 
 ## Determinism
 
@@ -284,9 +282,9 @@ Given the same:
 
 output must be byte-equivalent JSON.
 
-The parser should expose a pure function with an input/output contract suitable for Node offline tests.
+The parser exposes a pure function used by both the UI and Node fixture tests.
 
-Suggested result shape:
+Representative result shape:
 
 ```json
 {
@@ -309,11 +307,11 @@ Suggested result shape:
 }
 ```
 
-No result field may contain a canonical claim about an individual wallet.
+No result field contains a canonical claim about an individual wallet.
 
 ## Validation fixtures
 
-Implementation must include positive, negative, conflict, and unsupported fixtures. At minimum:
+Implementation includes positive, negative, conflict, unresolved, and unsupported fixtures covering at least:
 
 ```text
 hardware wallets with reviewed incidents before 2020
@@ -333,34 +331,45 @@ with reviewed incidents and no reviewed incident recorded
 before 2015 after 2020
 ```
 
-Tests must verify exact filter output and exact fail-closed behavior.
+Tests verify exact filter output and fail-closed behavior.
 
 ## UI safeguards
 
-- helper must be visually subordinate to explicit structured controls;
+- helper is visually subordinate to explicit structured controls;
 - preview appears before apply;
 - no automatic application while typing;
 - explicit controls remain accessible and editable;
 - translator status is announced accessibly;
 - unsupported language never appears as a filter chip;
-- mobile layout must have no document-level horizontal overflow at the existing 390px production QA viewport;
+- mobile layout has no document-level horizontal overflow at the 390px production QA viewport;
 - normal text search continues to mean literal reviewed-label string matching.
 
-## Production acceptance
+## Accepted implementation and production verification
 
-If implementation proceeds, acceptance requires:
+The approved deterministic design was implemented in PR #57.
 
-1. this evaluation decision/spec merged first;
-2. implementation in a separate PR linked to Issue #55;
-3. deterministic translator fixtures and existing discovery validation green;
-4. exact-head normal `Validate WLR` green;
-5. production verification for representative positive, negative, conflict, unsupported, reset, and manual-edit-after-apply cases;
-6. 390x844 real-browser verification without document-level overflow;
-7. no external network request generated by translator use;
-8. docs/status sync and Issue #55 close.
+- accepted main commit: `5bc7da11e9b28b78ea76ae61e9cfe205c2469171`
+- post-merge `Validate WLR`: run #91 / id `31961378981`, success
+- exact Cloudflare production deployment: `7a400185-f72b-4d7d-befa-64378aeca370`
+- production domain alias: `https://wlr.badjoke-lab.com`
+- accepted real-browser QA: `Verify WLR Step 9 Production v2`, run id `31961529400`, success
+
+Production browser verification established:
+
+- `hardware wallets with reviewed incidents before 2020` previewed `Type: hardware`, `Security history: Recorded`, and `Launch to: 2019`, then applied to the ordinary explicit controls and returned 4 reviewed records;
+- `safe wallets` failed closed as unsupported claim/ranking language;
+- `wallets without incidents` failed closed rather than being converted into absence-of-reviewed-incident coverage;
+- `hardware software wallets` failed closed as a conflicting wallet-type request;
+- `no reviewed incident recorded` was accepted as the coverage-safe existing `not_recorded` filter;
+- after apply, ordinary Status remained manually editable;
+- Reset cleared the helper input and all tested structured controls;
+- after the initial page load settled, all tested translator interactions generated zero network requests;
+- 390x844 real-browser layout had `innerWidth=390`, `clientWidth=390`, `scrollWidth=390`, and no helper/input/button boxes outside the viewport.
+
+The first browser QA attempt used a brittle `label > span` selector and failed before exercising the product. It did not indicate a production defect; v2 used the helper's stable accessibility selector and completed successfully. No production code change was required after accepted main `5bc7da11...`.
 
 ## Final evaluation
 
 The value/cost tradeoff is favorable only under the constrained design above. It improves access to an already-stable filter system while preserving WLR's evidence and determinism boundaries.
 
-Therefore Step 9 is approved for **deterministic constrained translation only**. Any future proposal to replace it with LLM-backed semantic interpretation requires a new specification and explicit review; it is not covered by this approval.
+Step 9 is therefore complete for **deterministic constrained translation only**. Any future proposal to replace it with LLM-backed semantic interpretation requires a new specification and explicit review; it is not covered by this approval.
