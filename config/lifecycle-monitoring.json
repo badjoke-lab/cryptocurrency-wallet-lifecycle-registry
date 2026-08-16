@@ -1,0 +1,26 @@
+{
+  "schema": "wlr.lifecycle-monitoring-policy.v1",
+  "policy_version": "1.0.0",
+  "schedule": "weekly",
+  "reverification": {
+    "review_due_days": 90,
+    "review_overdue_days": 180
+  },
+  "network": {
+    "timeout_ms": 8000,
+    "max_redirects": 5,
+    "max_targets_per_run": 120,
+    "concurrency": 4,
+    "accepted_schemes": ["https:", "http:"],
+    "user_agent": "WLR-Lifecycle-Monitor/1.0 (+https://wlr.badjoke-lab.com/methodology/)"
+  },
+  "target_fields": {
+    "entity": ["official_url"],
+    "product": ["official_url"]
+  },
+  "output": {
+    "schema_version": "wlr.lifecycle-monitoring.v1",
+    "artifact_name": "wlr-lifecycle-monitoring",
+    "retention_days": 30
+  }
+}

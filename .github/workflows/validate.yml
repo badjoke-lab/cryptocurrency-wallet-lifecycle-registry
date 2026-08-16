@@ -23,6 +23,8 @@ jobs:
       - run: npm run validate:structured-discovery
       - run: npm run validate:compare
       - run: npm run validate:stats
+      - run: npm run test:monitoring
+      - run: npm run validate:monitoring
       - run: npm run test:candidates
       - run: npm run test:identity-evidence
       - run: npm run check:staging-boundary
