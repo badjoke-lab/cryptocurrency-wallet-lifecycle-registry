@@ -1,0 +1,128 @@
+name: Stage Leather and Rabby cleanup
+
+on:
+  push:
+    branches: [fix/leather-url-rabby-launch]
+
+permissions:
+  contents: write
+
+jobs:
+  stage:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/leather-url-rabby-launch
+          fetch-depth: 0
+
+      - name: Apply reviewed canonical cleanup without reformatting unrelated records
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          def replace_record(path, target_id, mutate):
+              p = Path(path)
+              text = p.read_text()
+              decoder = json.JSONDecoder()
+              pos = text.find('[') + 1
+              while True:
+                  while pos < len(text) and text[pos] in ' \r\n\t,':
+                      pos += 1
+                  if pos >= len(text) or text[pos] == ']':
+                      raise SystemExit(f'{target_id} not found in {path}')
+                  obj, end = decoder.raw_decode(text, pos)
+                  if obj.get('id') == target_id:
+                      updated = mutate(obj)
+                      replacement = json.dumps(updated, ensure_ascii=False, separators=(',', ':'))
+                      p.write_text(text[:pos] + replacement + text[end:])
+                      return
+                  pos = end
+
+          def set_after(obj, after_key, key, value):
+              if key in obj:
+                  obj[key] = value
+                  return obj
+              out = {}
+              inserted = False
+              for k, v in obj.items():
+                  out[k] = v
+                  if k == after_key:
+                      out[key] = value
+                      inserted = True
+              if not inserted:
+                  out[key] = value
+              return out
+
+          def rabby_entity(obj):
+              obj['launch_date'] = '2021-07-26'
+              obj = set_after(obj, 'launch_date', 'launch_date_precision', 'day')
+              obj['last_verified_at'] = '2026-08-17'
+              return obj
+
+          def rabby_product(obj):
+              obj['launch_date'] = '2021-07-26'
+              obj = set_after(obj, 'launch_date', 'launch_date_precision', 'day')
+              obj['last_verified_at'] = '2026-08-17'
+              obj['notes'] = 'Initial browser-extension release date is established by the reviewed July 26, 2021 first-party Rabby release announcement.'
+              return obj
+
+          def leather_product(obj):
+              obj['official_url'] = 'https://leather.io/wallet/extension'
+              obj['last_verified_at'] = '2026-08-17'
+              obj['notes'] = 'Exact initial extension release date remains unset; the product existed before the 2023 Leather rebrand. Current official URL points to Leather’s dedicated browser-extension product page.'
+              return obj
+
+          replace_record('data/entities.json', 'wlr_ent_000018', rabby_entity)
+          replace_record('data/products.json', 'wlr_prod_000054', rabby_product)
+          replace_record('data/products.json', 'wlr_prod_000066', leather_product)
+
+          evidence_path = Path('data/evidence.json')
+          evidence_text = evidence_path.read_text()
+          existing = json.loads(evidence_text)
+          if not any(item.get('id') == 'wlr_src_000120' for item in existing):
+              evidence = {
+                  'id': 'wlr_src_000120',
+                  'entity_id': 'wlr_ent_000024',
+                  'product_ids': ['wlr_prod_000066'],
+                  'event_ids': [],
+                  'product_id': 'wlr_prod_000066',
+                  'event_id': None,
+                  'source_type': 'official_statement',
+                  'title': 'Extension – Leather',
+                  'url': 'https://leather.io/wallet/extension',
+                  'publisher': 'Leather',
+                  'published_at': None,
+                  'accessed_at': '2026-08-17',
+                  'reliability': 'high',
+                  'claim_scope': 'product',
+                  'is_primary': True,
+                  'notes': 'Current first-party Leather page dedicated to the supported browser-extension product and its Chrome distribution path.'
+              }
+              closing = evidence_text.rfind(']')
+              prefix = evidence_text[:closing].rstrip()
+              suffix = evidence_text[closing:]
+              separator = '' if prefix.rstrip().endswith('[') else ','
+              evidence_path.write_text(prefix + separator + '\n' + json.dumps(evidence, ensure_ascii=False, separators=(',', ':')) + '\n' + suffix)
+          PY
+
+          python3 scripts/validate_records.py
+          python3 scripts/validate_identity_evidence_policy.py
+          git diff --check
+          git diff -- data/entities.json data/products.json data/evidence.json
+
+      - name: Commit staged cleanup
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- data/entities.json data/products.json data/evidence.json; then
+            echo 'No canonical changes to commit.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/entities.json data/products.json data/evidence.json
+          git commit -m 'Correct Leather extension URL and Rabby launch date'
+          git push origin HEAD:fix/leather-url-rabby-launch
