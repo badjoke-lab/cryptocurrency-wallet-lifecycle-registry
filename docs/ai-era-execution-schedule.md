@@ -29,7 +29,17 @@ Status: roadmap addendum
   - Cloudflare production deployment: `b012afb9-54b5-4809-ac0f-0b5018766108`
   - representative browser QA: Trezor / Ledger; verified URL selection order, duplicate/unknown handling, four-wallet cap, add/remove/reset, product/support/security/remediation/EOL counts, and shareable repeated `wallet=` state.
   - 390x844 browser QA kept document width at 390px while exercising horizontal scrolling only inside explicit Compare viewports.
-- Next: Step 7 Stats for incident/patch response, EOL/lifespan, types, and data quality. Stats must receive its own specification before implementation.
+- Step 7 deterministic Stats: complete and production-verified.
+  - specification: `docs/operations/STATS_SPEC.md`
+  - implementation: PR #44
+  - accepted production main commit: `79fc4bec2bc691f1fb24d05f3c8556cafaf71035`
+  - production verification confirmed `/stats/` and `/data/stats.json`, exact deterministic JSON equality with the accepted main derivation, byte-equal canonical JSON, and the exact Cloudflare deployment for the accepted main commit.
+  - verified registry scope: 25 entities / 69 products / 73 events / 119 evidence / 13 reviewed incident events / 2 recorded remediation events.
+  - product launch-date coverage is 44 / 69 and known support-status coverage is 67 / 69.
+  - patch-response duration remains explicitly unavailable because canonical incident-to-remediation linkage is not recorded.
+  - exact day-level launch-to-discontinued product lifespan eligibility is currently 0, so no lifespan distribution is published.
+  - real-browser desktop and 390x844 verification passed without document-level horizontal overflow.
+- Next: Step 8 monitored/reviewed lifecycle follow-up for existing records. Monitoring must receive its own WLR-specific specification before implementation and must preserve the candidate -> validate -> human review -> canonical merge boundary.
 
 ## Gate
 Spec -> implementation PR -> validation/CI green -> merge -> production verification where applicable -> docs/status sync.
