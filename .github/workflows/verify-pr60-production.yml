@@ -1,0 +1,62 @@
+name: Verify WLR PR60 Production
+
+on:
+  push:
+    branches: [ops/pr60-production-verify]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Verify exact Cloudflare production deployment
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          expected="23b867419fb2221d63f41302ac95f97009682f86"
+          base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
+          auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
+          match=""
+          for attempt in $(seq 1 40); do
+            deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
+            match="$(jq -c --arg sha "$expected" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
+            if [ -n "$match" ] && jq -e '.latest_stage.status == "success"' <<<"$match" >/dev/null; then
+              break
+            fi
+            echo "Waiting for exact production deployment attempt=${attempt}"
+            sleep 10
+          done
+          test -n "$match"
+          jq -e '.latest_stage.status == "success" and .deployment_trigger.type == "github:push" and .deployment_trigger.metadata.branch == "main" and (.aliases | index("https://wlr.badjoke-lab.com")) != null' <<<"$match" >/dev/null
+          echo "$match" | jq '{id,short_id,url,aliases,latest_stage,deployment_trigger}'
+
+      - name: Verify public canonical corrections and derived Stats
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"
+          trap 'rm -rf "$work"' EXIT
+          for name in entities products evidence stats; do
+            curl -fsSL --retry 10 --retry-all-errors --retry-delay 2 "https://wlr.badjoke-lab.com/data/${name}.json" -o "$work/${name}.json"
+          done
+
+          jq -e '.[] | select(.id == "wlr_ent_000018") | .launch_date == "2021-07-26" and .launch_date_precision == "day" and .last_verified_at == "2026-08-17"' "$work/entities.json" >/dev/null
+          jq -e '.[] | select(.id == "wlr_prod_000054") | .launch_date == "2021-07-26" and .launch_date_precision == "day" and .last_verified_at == "2026-08-17"' "$work/products.json" >/dev/null
+          jq -e '.[] | select(.id == "wlr_prod_000066") | .official_url == "https://leather.io/wallet/extension" and .last_verified_at == "2026-08-17"' "$work/products.json" >/dev/null
+          jq -e '.[] | select(.id == "wlr_src_000120") | .product_id == "wlr_prod_000066" and .url == "https://leather.io/wallet/extension" and .reliability == "high" and .is_primary == true' "$work/evidence.json" >/dev/null
+          jq -e '.registry.entities == 25 and .registry.products == 69 and .registry.events == 73 and .registry.evidence == 120' "$work/stats.json" >/dev/null
+          jq -e '.products.launch_date.count == 45 and .products.launch_date.denominator == 69' "$work/stats.json" >/dev/null
+
+          curl -fsSL -o /dev/null -w 'Leather extension page HTTP %{http_code}\n' https://leather.io/wallet/extension
+          curl -fsSL -o /dev/null -w 'Rabby wallet page HTTP %{http_code}\n' https://wlr.badjoke-lab.com/wallet/rabby/
+          curl -fsSL -o /dev/null -w 'Leather product page HTTP %{http_code}\n' https://wlr.badjoke-lab.com/wallet/leather/product/leather-browser-extension/
+
+          echo 'PR60_PRODUCTION_VERIFY_OK evidence=120 launch_coverage=45/69 leather_url=https://leather.io/wallet/extension rabby_launch=2021-07-26'
