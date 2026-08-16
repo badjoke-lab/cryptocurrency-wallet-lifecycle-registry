@@ -26,7 +26,7 @@ Publish WLR on Cloudflare Pages without wasting Free-plan builds or allowing bra
 5. `config/cloudflare-pages-project.json` is the machine-readable authority for the desired Pages project state.
 6. The first production deployment is deployment-sensitive and requires explicit verification of routes, metadata, public JSON, mobile layout, dark-theme contrast, incident severity badges, and Support.
 7. After the initial publish, routine reviewed canonical data additions do not require a branch preview when GitHub CI covers the generated output.
-8. A stale production result is not automatically a code defect. Compare `/version.json` with the expected `main` commit first.
+8. A stale production result is not automatically a code defect. Confirm the Cloudflare deployment commit against the expected `main` commit before treating the application code as stale or broken.
 9. Never store Cloudflare credentials in repository files or logs.
 10. Use a scoped API token, not a Global API key.
 
@@ -53,7 +53,7 @@ CLOUDFLARE_ACCOUNT_ID
 CLOUDFLARE_API_TOKEN
 ```
 
-The token needs Pages edit/write access for the account.
+The token needs Pages edit/write access for the account. Automated custom-domain DNS management additionally requires `Zone -> DNS -> Edit` scoped to the `badjoke-lab.com` zone.
 
 ## First publish
 
@@ -71,22 +71,25 @@ Preview deployments: disabled after initial configuration
 Custom domain: wlr.badjoke-lab.com
 ```
 
-After the Git-integrated project exists, use the repository `Configure Cloudflare Pages` workflow in `plan` mode and then `apply` mode to converge branch controls, build watch paths, build settings, and the required custom domain.
+After the Git-integrated project exists, use the repository Cloudflare configuration tooling to converge branch controls, build watch paths, build settings, and the required custom domain. DNS for the custom hostname must resolve as a proxied CNAME to the project `pages.dev` hostname before the domain can become active.
+
+The initial WLR production publication was accepted from `main` commit `fbebf0c0f04a9ac517594361897e6bb4605f1bfe`. Cloudflare reported the production deployment stage successful and `wlr.badjoke-lab.com` active before closeout.
 
 ## Production verification
 
-A deployment is accepted only after all of the following are checked against the expected `main` commit:
+A deployment is accepted only after all of the following are checked against the expected `main` state:
 
-1. `/version.json` returns HTTP 200 and reports the expected commit.
+1. Cloudflare's deployment API reports a successful production deployment for the expected `main` commit, and `/version.json` returns HTTP 200 with the expected WLR version/schema metadata.
 2. `/data/manifest.json` returns HTTP 200 and reports the canonical counts.
-3. `/data/entities.json`, `/data/products.json`, `/data/events.json`, and `/data/evidence.json` match the manifest counts.
-4. `/llms.txt` and `/ai.txt` return HTTP 200.
-5. `/robots.txt` and `/sitemap.xml` return HTTP 200.
-6. `/`, `/hardware/`, `/software/`, `/incidents/`, `/methodology/`, `/about/`, and `/support/` return HTTP 200.
-7. At least one wallet detail and one product detail route return HTTP 200.
-8. Incident severity colors remain distinct on the black theme and are not presented as wallet safety scores.
-9. Support shows the temporary HEI-shared donation addresses and the editorial-independence disclosure.
-10. Mobile layout has no horizontal overflow in the primary navigation, tables/cards, wallet detail, incident timeline, or Support address blocks.
+3. `/data/entities.json`, `/data/products.json`, `/data/events.json`, and `/data/evidence.json` match the manifest counts and expected canonical `main` data.
+4. Deterministic wallet/product indexes and representative wallet/product JSON return HTTP 200 and pass their schema/linkage checks.
+5. `/llms.txt` and `/ai.txt` return HTTP 200.
+6. `/robots.txt` and `/sitemap.xml` return HTTP 200.
+7. `/`, `/hardware/`, `/software/`, `/incidents/`, `/methodology/`, `/about/`, and `/support/` return final HTTP 200 after canonical redirects.
+8. At least one wallet detail and one product detail route return final HTTP 200.
+9. Incident severity colors remain distinct on the black theme and are not presented as wallet safety scores.
+10. Support shows the temporary HEI-shared donation addresses and the editorial-independence disclosure.
+11. Mobile production layout is checked in a real browser viewport and has no document-level horizontal overflow in representative primary navigation, tables/cards, wallet detail, product detail, incident timeline, or Support routes.
 
 ## Deployment-sensitive files
 
@@ -106,7 +109,7 @@ A deployment is accepted only after all of the following are checked against the
 
 - enabling automatic previews for every branch without review
 - using production as the first place to discover a known CI failure
-- treating stale Cloudflare output as a source-code failure before checking `/version.json`
+- treating stale Cloudflare output as a source-code failure before checking the Cloudflare deployment commit
 - committing Cloudflare credentials
 - changing the canonical domain without updating `src/lib/site.ts` and the deployment policy together
 - turning WLR into a live safety ranking based on incident badge color
