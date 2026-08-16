@@ -1,0 +1,345 @@
+name: Verify WLR Step 5 Production
+
+on:
+  push:
+    branches:
+      - ops/step5-production-verify
+    paths:
+      - .github/workflows/verify-step5-production.yml
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Apply and verify Cloudflare project policy
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: npm run cloudflare:config:apply
+
+      - name: Wait for exact main production deployment
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          EXPECTED_SHA: 714e0e774fee6c0b893b9bf45097c339c7d389d0
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
+          auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
+
+          project="$(curl -fsS "$base" -H "$auth")"
+          jq -e '.success == true and (.result.source.config.path_includes | index("config/*")) != null' <<<"$project" >/dev/null
+
+          found=0
+          for attempt in $(seq 1 72); do
+            deployments="$(curl -fsS "${base}/deployments?env=production&per_page=10" -H "$auth")"
+            match="$(jq -c --arg sha "$EXPECTED_SHA" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
+            if [ -n "$match" ]; then
+              status="$(jq -r '.latest_stage.status // "unknown"' <<<"$match")"
+              echo "Exact production deployment status: ${status}"
+              if [ "$status" = "success" ]; then
+                jq -e '.deployment_trigger.type == "github:push" and .deployment_trigger.metadata.branch == "main" and (.aliases | index("https://wlr.badjoke-lab.com")) != null' <<<"$match" >/dev/null
+                echo "$match" | jq '{id, short_id, url, aliases, environment, latest_stage, deployment_trigger}'
+                found=1
+                break
+              fi
+              if [ "$status" = "failure" ] || [ "$status" = "failed" ]; then
+                echo "$match" | jq .
+                exit 1
+              fi
+            fi
+            sleep 5
+          done
+          test "$found" -eq 1
+
+          domain="$(curl -fsS "${base}/domains/wlr.badjoke-lab.com" -H "$auth")"
+          jq -e '.success == true and .result.status == "active" and .result.validation_data.status == "active" and .result.verification_data.status == "active"' <<<"$domain" >/dev/null
+
+      - name: Verify public discovery controls and canonical counts
+        shell: bash
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"
+          trap 'rm -rf "$work"' EXIT
+          curl -fsSL --retry 10 --retry-all-errors --retry-delay 2 https://wlr.badjoke-lab.com/ -o "$work/home.html"
+          grep -Fq 'Custody / key model' "$work/home.html"
+          grep -Fq 'Security history' "$work/home.html"
+          grep -Fq 'Fix / remediation' "$work/home.html"
+          grep -Fq 'EOL / deprecation' "$work/home.html"
+          grep -Fq 'Launch year from' "$work/home.html"
+          grep -Fq 'Launch year to' "$work/home.html"
+          grep -Fq 'not wallet safety or patch status' "$work/home.html"
+          curl -fsSL https://wlr.badjoke-lab.com/data/entities.json -o "$work/entities.json"
+          curl -fsSL https://wlr.badjoke-lab.com/data/products.json -o "$work/products.json"
+          curl -fsSL https://wlr.badjoke-lab.com/data/events.json -o "$work/events.json"
+          test "$(jq 'length' "$work/entities.json")" -eq 25
+          test "$(jq 'length' "$work/products.json")" -eq 69
+          test "$(jq 'length' "$work/events.json")" -eq 73
+
+      - name: Locate Chrome
+        id: chrome
+        shell: bash
+        run: |
+          set -euo pipefail
+          browser="$(command -v google-chrome || command -v chromium || command -v chromium-browser || true)"
+          test -n "$browser"
+          echo "browser=$browser" >> "$GITHUB_OUTPUT"
+          "$browser" --version
+
+      - name: Run real-browser structured discovery QA
+        env:
+          BROWSER: ${{ steps.chrome.outputs.browser }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"
+          cleanup() {
+            if [ -n "${chrome_pid:-}" ]; then
+              kill "$chrome_pid" 2>/dev/null || true
+              wait "$chrome_pid" 2>/dev/null || true
+            fi
+            rm -rf "$work" 2>/dev/null || true
+          }
+          trap cleanup EXIT
+
+          "$BROWSER" --headless=new --no-sandbox --disable-gpu --remote-debugging-port=9222 --user-data-dir="$work/chrome" about:blank >"$work/chrome.log" 2>&1 &
+          chrome_pid=$!
+          for i in $(seq 1 30); do
+            curl -fsS http://127.0.0.1:9222/json/version >/dev/null 2>&1 && break
+            sleep 1
+          done
+          curl -fsS http://127.0.0.1:9222/json/version >/dev/null
+
+          cat > "$work/qa.mjs" <<'NODE'
+          import fs from 'node:fs'
+
+          const entities = JSON.parse(fs.readFileSync('data/entities.json', 'utf8'))
+          const products = JSON.parse(fs.readFileSync('data/products.json', 'utf8'))
+          const events = JSON.parse(fs.readFileSync('data/events.json', 'utf8'))
+          const policy = JSON.parse(fs.readFileSync('config/structured-discovery.json', 'utf8'))
+
+          const productMap = new Map()
+          const eventMap = new Map()
+          for (const product of products) {
+            const rows = productMap.get(product.entity_id) ?? []
+            rows.push(product)
+            productMap.set(product.entity_id, rows)
+          }
+          for (const event of events) {
+            const rows = eventMap.get(event.entity_id) ?? []
+            rows.push(event)
+            eventMap.set(event.entity_id, rows)
+          }
+
+          const incidentTypes = new Set(policy.incident_event_types)
+          const remediationTypes = new Set(policy.remediation_event_types)
+          const eolTypes = new Set(policy.eol_event_types)
+          const eolEntityStatuses = new Set(policy.eol_entity_statuses)
+          const eolProductStatuses = new Set(policy.eol_product_statuses)
+          const missingCustody = '__not_recorded__'
+
+          const rows = entities.map((entity) => {
+            const entityProducts = productMap.get(entity.id) ?? []
+            const entityEvents = eventMap.get(entity.id) ?? []
+            const launchMatch = entity.launch_date ? /^(\d{4})(?:-|$)/.exec(entity.launch_date) : null
+            const productSearch = entityProducts.flatMap((product) => [product.product_name, ...(product.aliases ?? []), product.product_type, product.status])
+            const eventSearch = entityEvents.flatMap((event) => [event.title, event.event_type])
+            return {
+              entity,
+              custody: entity.custody_model?.trim() || missingCustody,
+              incident: entityEvents.some((event) => incidentTypes.has(event.event_type)),
+              remediation: entityEvents.some((event) => remediationTypes.has(event.event_type)),
+              eol: eolEntityStatuses.has(entity.status) || entityProducts.some((product) => eolProductStatuses.has(product.status) || Boolean(product.discontinued_date) || Boolean(product.sales_end_date)) || entityEvents.some((event) => eolTypes.has(event.event_type)),
+              launchYear: launchMatch ? Number(launchMatch[1]) : null,
+              searchText: [entity.canonical_name, ...(entity.aliases ?? []), entity.developer_or_company, entity.country_or_origin, entity.wallet_type, entity.custody_model, entity.status, ...productSearch, ...eventSearch].filter(Boolean).join(' ').toLowerCase(),
+            }
+          })
+
+          const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+          const targetResponse = await fetch('http://127.0.0.1:9222/json/new?about%3Ablank', { method: 'PUT' })
+          if (!targetResponse.ok) throw new Error(`Cannot create Chrome target: ${targetResponse.status}`)
+          const target = await targetResponse.json()
+          const socket = new WebSocket(target.webSocketDebuggerUrl)
+          await new Promise((resolve, reject) => {
+            socket.addEventListener('open', resolve, { once: true })
+            socket.addEventListener('error', reject, { once: true })
+          })
+
+          let nextId = 1
+          const pending = new Map()
+          let loadResolve
+          socket.addEventListener('message', (event) => {
+            const message = JSON.parse(event.data)
+            if (message.id && pending.has(message.id)) {
+              const { resolve, reject } = pending.get(message.id)
+              pending.delete(message.id)
+              if (message.error) reject(new Error(JSON.stringify(message.error)))
+              else resolve(message.result)
+            }
+            if (message.method === 'Page.loadEventFired' && loadResolve) {
+              loadResolve()
+              loadResolve = null
+            }
+          })
+          const send = (method, params = {}) => new Promise((resolve, reject) => {
+            const id = nextId++
+            pending.set(id, { resolve, reject })
+            socket.send(JSON.stringify({ id, method, params }))
+          })
+          const evaluate = async (expression) => {
+            const result = await send('Runtime.evaluate', { expression, returnByValue: true, awaitPromise: true })
+            if (result.exceptionDetails) throw new Error(JSON.stringify(result.exceptionDetails))
+            return result.result.value
+          }
+          const navigate = async (url) => {
+            const loaded = new Promise((resolve) => { loadResolve = resolve })
+            await send('Page.navigate', { url })
+            await Promise.race([loaded, sleep(15000)])
+            await sleep(900)
+          }
+          const setMetrics = (width, height, mobile) => send('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile, screenWidth: width, screenHeight: height })
+          const count = () => evaluate(`Number(document.querySelector('.registry-count strong')?.textContent ?? '-1')`)
+          const controlValue = (label) => evaluate(`(() => { const label = [...document.querySelectorAll('.control-field')].find(x => x.querySelector('span')?.textContent?.trim() === ${JSON.stringify(label)}); return label?.querySelector('select,input')?.value ?? null })()`)
+          const setControl = async (label, value) => {
+            const ok = await evaluate(`(() => {
+              const label = [...document.querySelectorAll('.control-field')].find(x => x.querySelector('span')?.textContent?.trim() === ${JSON.stringify(label)});
+              const el = label?.querySelector('select,input');
+              if (!el) return false;
+              const proto = el instanceof HTMLSelectElement ? HTMLSelectElement.prototype : HTMLInputElement.prototype;
+              const setter = Object.getOwnPropertyDescriptor(proto, 'value')?.set;
+              setter?.call(el, ${JSON.stringify(value)});
+              el.dispatchEvent(new Event(el instanceof HTMLSelectElement ? 'change' : 'input', { bubbles: true }));
+              return true;
+            })()`)
+            if (!ok) throw new Error(`Missing control: ${label}`)
+            await sleep(350)
+          }
+          const reset = async () => {
+            const ok = await evaluate(`(() => { const button = [...document.querySelectorAll('button')].find(x => x.textContent?.trim() === 'Reset'); if (!button) return false; button.click(); return true })()`)
+            if (!ok) throw new Error('Reset button missing')
+            await sleep(350)
+          }
+          const expectCount = async (name, expected) => {
+            const actual = await count()
+            console.log(`${name}: expected=${expected} actual=${actual}`)
+            if (actual !== expected) throw new Error(`${name}: expected ${expected}, got ${actual}`)
+          }
+
+          await send('Page.enable')
+          await send('Runtime.enable')
+          await setMetrics(1280, 900, false)
+          await navigate('https://wlr.badjoke-lab.com/')
+
+          const labels = await evaluate(`[...document.querySelectorAll('.control-field > span')].map(x => x.textContent?.trim())`)
+          for (const required of ['Search', 'Type', 'Custody / key model', 'Status', 'Security history', 'Fix / remediation', 'EOL / deprecation', 'Launch year from', 'Launch year to', 'Sort']) {
+            if (!labels.includes(required)) throw new Error(`Missing production filter label: ${required}`)
+          }
+          const note = await evaluate(`document.querySelector('#registry-filter-note')?.textContent ?? ''`)
+          if (!note.includes('not wallet safety or patch status')) throw new Error('Coverage safeguard note missing')
+          await expectCount('initial', rows.length)
+
+          const incidentExpected = rows.filter((row) => row.incident).length
+          await setControl('Security history', 'recorded')
+          await expectCount('incident recorded', incidentExpected)
+          await reset()
+          await setControl('Security history', 'not_recorded')
+          await expectCount('incident not recorded', rows.length - incidentExpected)
+          await reset()
+
+          const remediationExpected = rows.filter((row) => row.remediation).length
+          await setControl('Fix / remediation', 'recorded')
+          await expectCount('remediation recorded', remediationExpected)
+          await reset()
+
+          const eolExpected = rows.filter((row) => row.eol).length
+          await setControl('EOL / deprecation', 'recorded')
+          await expectCount('EOL recorded', eolExpected)
+          await reset()
+
+          const typeCounts = new Map()
+          for (const row of rows) typeCounts.set(row.entity.wallet_type, (typeCounts.get(row.entity.wallet_type) ?? 0) + 1)
+          const typeChoice = [...typeCounts.entries()].sort((a, b) => a[1] - b[1])[0]
+          await setControl('Type', typeChoice[0])
+          await expectCount(`type ${typeChoice[0]}`, typeChoice[1])
+          await reset()
+
+          const custodyCounts = new Map()
+          for (const row of rows) custodyCounts.set(row.custody, (custodyCounts.get(row.custody) ?? 0) + 1)
+          const custodyChoice = [...custodyCounts.entries()].sort((a, b) => a[1] - b[1])[0]
+          await setControl('Custody / key model', custodyChoice[0])
+          await expectCount(`custody ${custodyChoice[0]}`, custodyChoice[1])
+          await reset()
+
+          const knownYears = rows.map((row) => row.launchYear).filter((value) => value !== null).sort((a, b) => a - b)
+          if (knownYears.length < 3) throw new Error('Not enough supported launch years for range QA')
+          const lower = knownYears[Math.floor((knownYears.length - 1) * 0.25)]
+          const upper = knownYears[Math.floor((knownYears.length - 1) * 0.75)]
+          const rangeExpected = rows.filter((row) => row.launchYear !== null && row.launchYear >= lower && row.launchYear <= upper).length
+          await setControl('Launch year from', String(lower))
+          await setControl('Launch year to', String(upper))
+          await expectCount(`launch ${lower}-${upper}`, rangeExpected)
+          await reset()
+
+          const minYear = knownYears[0]
+          const maxYear = knownYears[knownYears.length - 1]
+          await setControl('Launch year from', String(maxYear))
+          await setControl('Launch year to', String(minYear))
+          await expectCount('invalid launch range', 0)
+          const warning = await evaluate(`document.querySelector('.filter-warning')?.textContent ?? ''`)
+          if (!warning.includes('must not exceed')) throw new Error('Invalid launch range warning missing')
+          await reset()
+
+          const searchQuery = 'trezor model one'
+          const searchExpected = rows.filter((row) => row.searchText.includes(searchQuery)).length
+          if (searchExpected < 1) throw new Error('Representative product search has no canonical expectation')
+          await setControl('Search', 'Trezor Model One')
+          await expectCount('product text search', searchExpected)
+          await reset()
+
+          const combinedExpected = rows.filter((row) => row.entity.wallet_type === 'hardware' && row.incident).length
+          if (typeCounts.has('hardware')) {
+            await setControl('Type', 'hardware')
+            await setControl('Security history', 'recorded')
+            await expectCount('hardware AND incident', combinedExpected)
+            await reset()
+          }
+
+          if (await controlValue('Security history') !== 'all') throw new Error('Reset did not restore Security history')
+          await expectCount('reset', rows.length)
+
+          await setMetrics(390, 844, true)
+          for (const route of ['/', '/hardware/', '/software/']) {
+            await navigate(`https://wlr.badjoke-lab.com${route}`)
+            const layout = await evaluate(`(() => {
+              const root = document.scrollingElement || document.documentElement;
+              const controls = [...document.querySelectorAll('.control-field')].map((el) => { const r = el.getBoundingClientRect(); return { left: r.left, right: r.right, width: r.width } });
+              return {
+                innerWidth,
+                scrollWidth: root.scrollWidth,
+                clientWidth: root.clientWidth,
+                controlsOutside: controls.filter((r) => r.left < -1 || r.right > innerWidth + 1),
+                mobileMore: getComputedStyle(document.querySelector('.mobile-more-navigation') || document.body).display,
+                desktopSecondary: document.querySelector('.desktop-secondary-navigation') ? getComputedStyle(document.querySelector('.desktop-secondary-navigation')).display : null,
+              };
+            })()`)
+            console.log(route, JSON.stringify(layout))
+            if (layout.innerWidth !== 390 || layout.scrollWidth > layout.clientWidth + 1 || layout.controlsOutside.length || layout.mobileMore === 'none' || (layout.desktopSecondary !== null && layout.desktopSecondary !== 'none')) {
+              throw new Error(`Mobile layout failed for ${route}`)
+            }
+          }
+
+          socket.close()
+          console.log(`STEP5_BROWSER_QA_OK total=${rows.length} incident=${incidentExpected} remediation=${remediationExpected} eol=${eolExpected} launch_range=${rangeExpected} search=${searchExpected}`)
+          NODE
+
+          node "$work/qa.mjs"
