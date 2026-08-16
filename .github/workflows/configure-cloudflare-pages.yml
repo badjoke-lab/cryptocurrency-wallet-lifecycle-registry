@@ -57,8 +57,10 @@ jobs:
           set -euo pipefail
           base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
           auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
+          echo 'Project publication target:'
+          curl -fsS "$base" -H "$auth" | jq '{success, result: {name: .result.name, subdomain: .result.subdomain, production_branch: .result.production_branch, source: {type: .result.source.type, owner: .result.source.config.owner, repo_name: .result.source.config.repo_name}}}'
           echo 'Custom domain state:'
-          curl -fsS "${base}/domains/wlr.badjoke-lab.com" -H "$auth" | jq '{success, result: {name: .result.name, status: .result.status, validation_data: .result.validation_data, verification_data: .result.verification_data}}'
+          curl -fsS "${base}/domains/wlr.badjoke-lab.com" -H "$auth" | jq '{success, result: {name: .result.name, status: .result.status, zone_tag: .result.zone_tag, validation_data: .result.validation_data, verification_data: .result.verification_data}}'
           echo 'Production deployments:'
           curl -fsS "${base}/deployments?env=production&per_page=5" -H "$auth" | jq '{success, deployments: [.result[] | {id, short_id, url, aliases, environment, created_on, latest_stage, deployment_trigger}]}'
 
