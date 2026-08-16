@@ -141,6 +141,51 @@ For new candidate entity/product launch dates:
 
 Do not convert a blog publication date into a product launch date unless the source actually establishes that relationship.
 
+## Product support-status semantics
+
+`support_status` describes the **product's vendor/project maintenance and update-support state**, not whether a URL loads, whether a binary can still be downloaded, whether a product can still be used, whether customer-service contact exists, or whether the overall wallet entity remains active.
+
+The canonical values are interpreted as follows.
+
+### `supported`
+
+Use only when first-party evidence presents the product as currently supported/maintained or gives a current ordinary maintenance/update commitment. A live product page, reachable application, recent repository activity, or recent release alone is not enough.
+
+### `maintenance`
+
+Use when first-party evidence explicitly places the product in a reduced/legacy maintenance phase **and also establishes that some ordinary maintenance continues**. This is not a synonym for “old”, “limited”, or “not actively maintained”. If ongoing maintenance cannot be established, do not use this value.
+
+### `security_only`
+
+Use only when first-party evidence explicitly says normal maintenance/features have ended but security fixes or security updates continue. Do not infer this state from silence, release history, or security advisories alone.
+
+### `ended`
+
+Use when first-party evidence explicitly establishes that active product maintenance/support/updates have ended, including language that the product is no longer actively maintained, unless the same or newer first-party evidence establishes a narrower continuing `maintenance` or `security_only` commitment.
+
+`ended` does **not** mean the software is unusable, the download has disappeared, the entity is dead, or customer-service contact is unavailable. A legacy product can remain downloadable or usable while its product-maintenance status is `ended`.
+
+### `unknown`
+
+Use when available first-party evidence does not resolve the maintenance/support state into one of the values above. `unknown` is preferred to inferring a positive or negative support state from circumstantial signals.
+
+### Evidence and separation rules
+
+Support status is product-specific. Do not automatically copy one product's support state to sibling products or the parent entity.
+
+The following are **not sufficient by themselves** to set `support_status`:
+
+- HTTP reachability or monitoring results;
+- current download availability;
+- app-store listing presence;
+- source-repository archival/non-archival state;
+- recent or old commit/release timestamps;
+- a generic help center, email address, or customer-support contact;
+- a successor product existing;
+- the product's `status` or `sales_status` value.
+
+When changing an existing canonical `support_status`, use a separate reviewed cleanup with first-party evidence that supports the exact product and state. If evidence only establishes that ordinary maintenance ended but says nothing about continued security fixes, classify `ended` rather than inventing `security_only`.
+
 ## Evidence minimums
 
 ### Every new candidate event
