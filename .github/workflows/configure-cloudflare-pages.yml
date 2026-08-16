@@ -140,23 +140,23 @@ jobs:
           )
 
           for path in "${paths[@]}"; do
-            code="$(curl -sS --retry 10 --retry-all-errors --retry-delay 2 -o "$work/body" -w '%{http_code}' "${base}${path}")"
+            code="$(curl -sSL --retry 10 --retry-all-errors --retry-delay 2 -o "$work/body" -w '%{http_code}' "${base}${path}")"
             if [ "$code" != "200" ]; then
-              echo "${path}: HTTP ${code}" >&2
+              echo "${path}: final HTTP ${code}" >&2
               exit 10
             fi
-            echo "${path}: HTTP 200"
+            echo "${path}: final HTTP 200"
           done
 
-          curl -fsS "$base/version.json" -o "$work/version.json"
-          curl -fsS "$base/data/manifest.json" -o "$work/manifest.json"
+          curl -fsSL "$base/version.json" -o "$work/version.json"
+          curl -fsSL "$base/data/manifest.json" -o "$work/manifest.json"
           for name in entities products events evidence; do
-            curl -fsS "$base/data/${name}.json" -o "$work/${name}.json"
+            curl -fsSL "$base/data/${name}.json" -o "$work/${name}.json"
           done
-          curl -fsS "$base/data/wallet-index.json" -o "$work/wallet-index.json"
-          curl -fsS "$base/data/product-index.json" -o "$work/product-index.json"
-          curl -fsS "$base/data/wallets/trezor.json" -o "$work/wallet-trezor.json"
-          curl -fsS "$base/data/products/trezor-model-one.json" -o "$work/product-trezor-model-one.json"
+          curl -fsSL "$base/data/wallet-index.json" -o "$work/wallet-index.json"
+          curl -fsSL "$base/data/product-index.json" -o "$work/product-index.json"
+          curl -fsSL "$base/data/wallets/trezor.json" -o "$work/wallet-trezor.json"
+          curl -fsSL "$base/data/products/trezor-model-one.json" -o "$work/product-trezor-model-one.json"
 
           jq -e '.project == "WLR" and .version == "0.1.0" and .schema_version == "v3"' "$work/version.json" >/dev/null
           jq -e '.project == "Wallet Lifecycle Registry" and .short_name == "WLR" and .data_safety == "canonical_only"' "$work/manifest.json" >/dev/null
@@ -196,10 +196,10 @@ jobs:
             cmp "$work/main-${name}.json" "$work/${name}.json"
           done
 
-          curl -fsS "$base/" | grep -Fq 'Wallet Lifecycle Registry'
-          curl -fsS "$base/wallet/trezor" | grep -Fq 'Trezor'
-          curl -fsS "$base/product/trezor-model-one" | grep -Fq 'Trezor Model One'
-          curl -fsS "$base/support" | grep -Fq 'Support'
+          curl -fsSL "$base/" | grep -Fq 'Wallet Lifecycle Registry'
+          curl -fsSL "$base/wallet/trezor" | grep -Fq 'Trezor'
+          curl -fsSL "$base/product/trezor-model-one" | grep -Fq 'Trezor Model One'
+          curl -fsSL "$base/support" | grep -Fq 'Support'
 
           echo "Production verification passed: entities=${entities}, products=${products}, events=${events}, evidence=${evidence}."
 
