@@ -20,7 +20,7 @@
     "test:candidates": "python3 scripts/test_candidate_validator.py",
     "test:identity-evidence": "python3 scripts/test_identity_evidence_policy.py",
     "test:monitoring": "node scripts/test-lifecycle-monitoring.mjs",
-    "test:natural-filters": "node --experimental-strip-types scripts/test-natural-language-filters.ts",
+    "test:natural-filters": "node --experimental-strip-types scripts/test-natural-language-filters.mts",
     "check:staging-boundary": "python3 scripts/check_staging_boundary.py",
     "coverage:audit": "python3 scripts/report_coverage.py --fail-on-structural",
     "coverage:json": "python3 scripts/report_coverage.py --json",
