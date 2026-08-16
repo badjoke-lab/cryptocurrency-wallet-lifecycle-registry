@@ -1,3 +1,4 @@
+# Cloudflare Pages production deployment trigger; header behavior unchanged.
 /data/*
   Cache-Control: public, max-age=300, must-revalidate
 
