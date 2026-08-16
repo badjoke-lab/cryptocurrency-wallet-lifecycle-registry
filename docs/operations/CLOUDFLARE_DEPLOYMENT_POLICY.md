@@ -86,12 +86,14 @@ A deployment is accepted only after all of the following are checked against the
 4. Deterministic wallet/product indexes and representative wallet/product JSON return HTTP 200 and pass their schema/linkage checks.
 5. `/llms.txt` and `/ai.txt` return HTTP 200.
 6. `/robots.txt` and `/sitemap.xml` return HTTP 200.
-7. `/`, `/hardware/`, `/software/`, `/incidents/`, `/methodology/`, `/about/`, and `/support/` return final HTTP 200 after canonical redirects.
+7. `/`, `/hardware/`, `/software/`, `/incidents/`, `/compare/`, `/methodology/`, `/about/`, and `/support/` return final HTTP 200 after canonical redirects.
 8. At least one wallet detail and one product detail route return final HTTP 200.
 9. Incident severity colors remain distinct on the black theme and are not presented as wallet safety scores.
 10. Support shows the temporary HEI-shared donation addresses and the editorial-independence disclosure.
-11. Mobile production layout is checked in a real browser viewport and has no document-level horizontal overflow in representative primary navigation, tables/cards, wallet detail, product detail, incident timeline, or Support routes.
+11. Mobile production layout is checked in a real browser viewport and has no document-level horizontal overflow in representative primary navigation, tables/cards, wallet detail, product detail, incident timeline, Compare, or Support routes.
 12. When a runtime discovery/filter configuration changes, production verification must confirm the expected exact `main` deployment and representative deterministic filter behavior.
+13. Compare changes must verify repeated `wallet=` query order, duplicate and unknown selection handling, the four-wallet cap, add/remove/reset URL synchronization, deterministic lifecycle/security/support counts, and product-specific support presentation.
+14. Narrow-screen Compare may scroll horizontally only inside explicit Compare viewports; the document itself must not overflow horizontally.
 
 ## Deployment-sensitive files
 
