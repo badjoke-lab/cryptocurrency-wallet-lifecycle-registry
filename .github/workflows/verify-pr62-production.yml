@@ -24,14 +24,8 @@ jobs:
           expected="97bc44f4075f7ab24b735011ce9f9c732d38b7c6"
           base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
           auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
-          match=""
-          for attempt in $(seq 1 40); do
-            deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
-            match="$(jq -c --arg sha "$expected" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
-            if [ -n "$match" ] && jq -e '.latest_stage.status == "success"' <<<"$match" >/dev/null; then break; fi
-            echo "Waiting for exact deployment attempt=${attempt}"
-            sleep 10
-          done
+          deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
+          match="$(jq -c --arg sha "$expected" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
           test -n "$match"
           jq -e '.latest_stage.status == "success" and .deployment_trigger.metadata.branch == "main" and (.aliases | index("https://wlr.badjoke-lab.com")) != null' <<<"$match" >/dev/null
           echo "$match" | jq '{id,short_id,aliases,latest_stage,deployment_trigger}'
@@ -42,10 +36,19 @@ jobs:
           trap 'rm -rf "$work"' EXIT
           curl -fsSL --retry 10 --retry-all-errors --retry-delay 2 https://wlr.badjoke-lab.com/data/products.json -o "$work/products.json"
           curl -fsSL --retry 10 --retry-all-errors --retry-delay 2 https://wlr.badjoke-lab.com/data/stats.json -o "$work/stats.json"
-          jq -e '.[] | select(.id == "wlr_prod_000044") | .launch_date == "2026-02-27" and .launch_date_precision == "day" and .last_verified_at == "2026-08-17"' "$work/products.json" >/dev/null
-          jq -e '.[] | select(.id == "wlr_prod_000049") | .launch_date == "2022-08-16" and .launch_date_precision == "day" and .last_verified_at == "2026-08-17"' "$work/products.json" >/dev/null
-          jq -e '.registry.entities == 25 and .registry.products == 69 and .registry.events == 73 and .registry.evidence == 120' "$work/stats.json" >/dev/null
-          jq -e '.products.launch_date.count == 47 and .products.launch_date.denominator == 69' "$work/stats.json" >/dev/null
-          curl -fsSL -o /dev/null -w 'Tangem Mobile product HTTP %{http_code}\n' https://wlr.badjoke-lab.com/product/tangem-mobile-wallet/
-          curl -fsSL -o /dev/null -w 'Exodus Web3 product HTTP %{http_code}\n' https://wlr.badjoke-lab.com/product/exodus-web3-wallet/
+
+          echo '=== PUBLIC TANGEM MOBILE ==='
+          jq -c '.[] | select(.id == "wlr_prod_000044") | {id,launch_date,launch_date_precision,last_verified_at,notes}' "$work/products.json"
+          echo '=== PUBLIC EXODUS WEB3 ==='
+          jq -c '.[] | select(.id == "wlr_prod_000049") | {id,launch_date,launch_date_precision,last_verified_at,notes}' "$work/products.json"
+          echo '=== PUBLIC STATS ==='
+          jq '{registry,launch_date:.products.launch_date}' "$work/stats.json"
+
+          check() { label="$1"; shift; echo "CHECK ${label}"; "$@"; echo "PASS ${label}"; }
+          check 'Tangem Mobile launch' jq -e '.[] | select(.id == "wlr_prod_000044") | .launch_date == "2026-02-27" and .launch_date_precision == "day" and .last_verified_at == "2026-08-17"' "$work/products.json"
+          check 'Exodus Web3 launch' jq -e '.[] | select(.id == "wlr_prod_000049") | .launch_date == "2022-08-16" and .launch_date_precision == "day" and .last_verified_at == "2026-08-17"' "$work/products.json"
+          check 'Registry totals' jq -e '.registry.entities == 25 and .registry.products == 69 and .registry.events == 73 and .registry.evidence == 120' "$work/stats.json"
+          check 'Launch coverage' jq -e '.products.launch_date.count == 47 and .products.launch_date.denominator == 69' "$work/stats.json"
+          check 'Tangem product route' curl -fsSL -o /dev/null https://wlr.badjoke-lab.com/product/tangem-mobile-wallet/
+          check 'Exodus product route' curl -fsSL -o /dev/null https://wlr.badjoke-lab.com/product/exodus-web3-wallet/
           echo 'PR62_PRODUCTION_VERIFY_OK launch_coverage=47/69 tangem_mobile=2026-02-27 exodus_web3=2022-08-16'
