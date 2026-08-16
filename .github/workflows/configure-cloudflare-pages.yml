@@ -1,17 +1,6 @@
 name: Configure Cloudflare Pages
 
-# ops/cloudflare-publication is a temporary branch-only trigger for publication recovery.
 on:
-  workflow_dispatch:
-    inputs:
-      mode:
-        description: Compare or apply the repository Cloudflare Pages policy
-        required: true
-        default: plan
-        type: choice
-        options:
-          - plan
-          - apply
   push:
     branches:
       - ops/cloudflare-publication
@@ -29,85 +18,35 @@ jobs:
   configure:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 22
 
-      - name: Print repository Cloudflare policy
-        run: npm run cloudflare:config:print
-
-      - name: Bootstrap and apply Cloudflare Pages project from ops branch
-        if: github.event_name == 'push'
+      - name: Verify Cloudflare configuration and DNS
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: npm run cloudflare:config:apply
-
-      - name: Ensure WLR custom-domain CNAME
-        if: github.event_name == 'push'
-        env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         shell: bash
         run: |
           set -euo pipefail
+          npm run cloudflare:config:apply
+
+          auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
           zone_id="147e01c60264c3d27fbfa37dae868062"
-          name="wlr.badjoke-lab.com"
-          target="cryptocurrency-wallet-lifecycle-registry.pages.dev"
-          auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
-          api="https://api.cloudflare.com/client/v4/zones/${zone_id}/dns_records"
+          dns="$(curl -fsS "https://api.cloudflare.com/client/v4/zones/${zone_id}/dns_records?type=CNAME&name=wlr.badjoke-lab.com" -H "$auth")"
+          jq -e '.success == true and (.result | length) == 1 and .result[0].content == "cryptocurrency-wallet-lifecycle-registry.pages.dev" and .result[0].proxied == true' <<<"$dns" >/dev/null
 
-          response="$(curl -sS "${api}?type=CNAME&name=${name}" -H "$auth")"
-          if [ "$(jq -r '.success' <<<"$response")" != "true" ]; then
-            echo "$response" | jq '{success, errors}'
-            echo 'Cloudflare token cannot read WLR DNS record.' >&2
-            exit 2
-          fi
-
-          count="$(jq '.result | length' <<<"$response")"
-          if [ "$count" -gt 1 ]; then
-            echo 'Multiple CNAME records found for WLR; refusing to mutate.' >&2
-            exit 3
-          fi
-          if [ "$count" -eq 1 ]; then
-            existing="$(jq -r '.result[0].content' <<<"$response")"
-            if [ "$existing" != "$target" ]; then
-              echo "Existing WLR CNAME points to ${existing}; refusing to overwrite." >&2
-              exit 4
-            fi
-            echo "WLR CNAME already points to ${target}."
-          else
-            create="$(curl -sS -X POST "$api" -H "$auth" -H 'Content-Type: application/json' --data "{\"type\":\"CNAME\",\"name\":\"${name}\",\"content\":\"${target}\",\"ttl\":1,\"proxied\":true,\"comment\":\"Wallet Lifecycle Registry Cloudflare Pages\"}")"
-            if [ "$(jq -r '.success' <<<"$create")" != "true" ]; then
-              echo "$create" | jq '{success, errors}'
-              echo 'Cloudflare token cannot create WLR DNS record.' >&2
-              exit 5
-            fi
-            echo "$create" | jq '{success, result: {id: .result.id, type: .result.type, name: .result.name, content: .result.content, proxied: .result.proxied}}'
-          fi
-
-      - name: Inspect Cloudflare publication state
-        if: github.event_name == 'push'
-        env:
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        shell: bash
-        run: |
-          set -euo pipefail
           base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
-          auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
-          echo 'Project publication target:'
-          curl -fsS "$base" -H "$auth" | jq '{success, result: {name: .result.name, subdomain: .result.subdomain, production_branch: .result.production_branch, source: {type: .result.source.type, owner: .result.source.config.owner, repo_name: .result.source.config.repo_name}}}'
-          echo 'Custom domain state:'
-          curl -fsS "${base}/domains/wlr.badjoke-lab.com" -H "$auth" | jq '{success, result: {name: .result.name, status: .result.status, zone_tag: .result.zone_tag, validation_data: .result.validation_data, verification_data: .result.verification_data}}'
-          echo 'Production deployments:'
-          curl -fsS "${base}/deployments?env=production&per_page=5" -H "$auth" | jq '{success, deployments: [.result[] | {id, short_id, url, aliases, environment, created_on, latest_stage, deployment_trigger}]}'
+          project="$(curl -fsS "$base" -H "$auth")"
+          domain="$(curl -fsS "${base}/domains/wlr.badjoke-lab.com" -H "$auth")"
+          deployments="$(curl -fsS "${base}/deployments?env=production&per_page=5" -H "$auth")"
+          jq -e '.success == true and .result.production_branch == "main" and .result.subdomain == "cryptocurrency-wallet-lifecycle-registry.pages.dev" and .result.source.type == "github" and .result.source.config.owner == "badjoke-lab" and .result.source.config.repo_name == "cryptocurrency-wallet-lifecycle-registry"' <<<"$project" >/dev/null
+          jq -e '.success == true and .result.status == "active" and .result.validation_data.status == "active" and .result.verification_data.status == "active"' <<<"$domain" >/dev/null
+          jq -e '.success == true and .result[0].environment == "production" and .result[0].latest_stage.status == "success" and .result[0].deployment_trigger.type == "github:push" and .result[0].deployment_trigger.metadata.branch == "main" and .result[0].deployment_trigger.metadata.commit_hash == "fbebf0c0f04a9ac517594361897e6bb4605f1bfe" and (.result[0].aliases | index("https://wlr.badjoke-lab.com")) != null' <<<"$deployments" >/dev/null
+          echo 'Cloudflare project, DNS, active domain, and first production deployment verified.'
 
-      - name: Verify WLR public HTTP
-        if: github.event_name == 'push'
+      - name: Verify WLR production closeout
         shell: bash
         run: |
           set -euo pipefail
@@ -116,49 +55,33 @@ jobs:
           trap 'rm -rf "$work"' EXIT
 
           paths=(
-            "/"
-            "/hardware"
-            "/software"
-            "/incidents"
-            "/methodology"
-            "/about"
-            "/support"
-            "/wallet/trezor"
-            "/product/trezor-model-one"
-            "/version.json"
-            "/data/manifest.json"
-            "/data/entities.json"
-            "/data/products.json"
-            "/data/events.json"
-            "/data/evidence.json"
-            "/data/wallet-index.json"
-            "/data/product-index.json"
-            "/data/wallets/trezor.json"
-            "/data/products/trezor-model-one.json"
-            "/llms.txt"
-            "/ai.txt"
-            "/robots.txt"
-            "/sitemap.xml"
+            / /hardware /software /incidents /methodology /about /support
+            /wallet/trezor /product/trezor-model-one
+            /version.json /data/manifest.json
+            /data/entities.json /data/products.json /data/events.json /data/evidence.json
+            /data/wallet-index.json /data/product-index.json
+            /data/wallets/trezor.json /data/products/trezor-model-one.json
+            /llms.txt /ai.txt /robots.txt /sitemap.xml
           )
-
           for path in "${paths[@]}"; do
-            code="$(curl -sSL --retry 10 --retry-all-errors --retry-delay 2 -o "$work/body" -w '%{http_code}' "${base}${path}")"
-            if [ "$code" != "200" ]; then
-              echo "${path}: final HTTP ${code}" >&2
-              exit 10
-            fi
+            code="$(curl -sSL --retry 10 --retry-all-errors --retry-delay 2 -o "$work/http-body" -w '%{http_code}' "${base}${path}")"
+            test "$code" = 200 || { echo "${path}: final HTTP ${code}" >&2; exit 10; }
             echo "${path}: final HTTP 200"
           done
 
           curl -fsSL "$base/version.json" -o "$work/version.json"
           curl -fsSL "$base/data/manifest.json" -o "$work/manifest.json"
-          for name in entities products events evidence; do
-            curl -fsSL "$base/data/${name}.json" -o "$work/${name}.json"
-          done
+          for name in entities products events evidence; do curl -fsSL "$base/data/${name}.json" -o "$work/${name}.json"; done
           curl -fsSL "$base/data/wallet-index.json" -o "$work/wallet-index.json"
           curl -fsSL "$base/data/product-index.json" -o "$work/product-index.json"
           curl -fsSL "$base/data/wallets/trezor.json" -o "$work/wallet-trezor.json"
           curl -fsSL "$base/data/products/trezor-model-one.json" -o "$work/product-trezor-model-one.json"
+          curl -fsSL "$base/" -o "$work/home.html"
+          curl -fsSL "$base/wallet/trezor" -o "$work/wallet.html"
+          curl -fsSL "$base/product/trezor-model-one" -o "$work/product.html"
+          curl -fsSL "$base/support" -o "$work/support.html"
+          curl -fsSL "$base/llms.txt" -o "$work/llms.txt"
+          curl -fsSL "$base/ai.txt" -o "$work/ai.txt"
 
           jq -e '.project == "WLR" and .version == "0.1.0" and .schema_version == "v3"' "$work/version.json" >/dev/null
           jq -e '.project == "Wallet Lifecycle Registry" and .short_name == "WLR" and .data_safety == "canonical_only"' "$work/manifest.json" >/dev/null
@@ -171,24 +94,11 @@ jobs:
           evidence="$(jq 'length' "$work/evidence.json")"
           wallets="$(jq 'length' "$work/wallet-index.json")"
           product_records="$(jq 'length' "$work/product-index.json")"
-
-          jq -e \
-            --argjson entities "$entities" \
-            --argjson products "$products" \
-            --argjson events "$events" \
-            --argjson evidence "$evidence" \
-            --argjson wallets "$wallets" \
-            --argjson product_records "$product_records" \
-            '.record_counts.entities == $entities and
-             .record_counts.products == $products and
-             .record_counts.events == $events and
-             .record_counts.evidence == $evidence and
-             .record_counts.wallet_records == $wallets and
-             .record_counts.product_records == $product_records' \
-            "$work/manifest.json" >/dev/null
-
+          jq -e --argjson entities "$entities" --argjson products "$products" --argjson events "$events" --argjson evidence "$evidence" --argjson wallets "$wallets" --argjson product_records "$product_records" '.record_counts.entities == $entities and .record_counts.products == $products and .record_counts.events == $events and .record_counts.evidence == $evidence and .record_counts.wallet_records == $wallets and .record_counts.product_records == $product_records' "$work/manifest.json" >/dev/null
           test "$entities" -eq 25
           test "$products" -eq 69
+          test "$events" -eq 73
+          test "$evidence" -eq 119
           test "$wallets" -eq 25
           test "$product_records" -eq 69
 
@@ -198,12 +108,12 @@ jobs:
             cmp "$work/main-${name}.json" "$work/${name}.json"
           done
 
-          curl -fsSL "$base/" | grep -Fq 'Wallet Lifecycle Registry'
-          curl -fsSL "$base/wallet/trezor" | grep -Fq 'Trezor'
-          curl -fsSL "$base/product/trezor-model-one" | grep -Fq 'Trezor Model One'
-          curl -fsSL "$base/support" | grep -Fq 'Support'
-          curl -fsSL "$base/llms.txt" | grep -Fq 'Deterministic record views'
-          curl -fsSL "$base/ai.txt" | grep -Fq 'not recommendations'
+          grep -Fq 'Wallet Lifecycle Registry' "$work/home.html"
+          grep -Fq 'Trezor' "$work/wallet.html"
+          grep -Fq 'Trezor Model One' "$work/product.html"
+          grep -Fq 'Support' "$work/support.html"
+          grep -Fq 'Deterministic record views' "$work/llms.txt"
+          grep -Fq 'not recommendations' "$work/ai.txt"
 
           git show origin/main:src/app/globals.css > "$work/globals.css"
           git show origin/main:src/app/support/page.tsx > "$work/support.tsx"
@@ -216,15 +126,9 @@ jobs:
           grep -Fq '.chip-limited,.chip-medium{color:var(--warning)' "$work/globals.css"
           grep -Fq '.chip-deprecated,.chip-high{color:var(--high)' "$work/globals.css"
           grep -Fq '.chip-dead,.chip-critical{color:var(--danger)' "$work/globals.css"
-          grep -Fq 'event-critical' "$work/incidents.tsx"
+          grep -Fq '.event-critical{border-left:3px solid var(--danger)' "$work/globals.css"
+          grep -Fq 'event-${row.impactLevel}' "$work/incidents.tsx"
           grep -Fq 'temporarily shared with the HEI project' "$work/support.tsx"
           grep -Fq 'Support does not buy classification' "$work/support.tsx"
 
-          echo "Production verification passed: entities=${entities}, products=${products}, events=${events}, evidence=${evidence}; machine guidance, responsive safeguards, severity mapping, and Support disclosures verified."
-
-      - name: Configure Cloudflare Pages project
-        if: github.event_name == 'workflow_dispatch'
-        env:
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: npm run cloudflare:config:${{ inputs.mode }}
+          echo "Production closeout passed: entities=${entities}, products=${products}, events=${events}, evidence=${evidence}; machine guidance, responsive safeguards, severity mapping, and Support disclosures verified."
