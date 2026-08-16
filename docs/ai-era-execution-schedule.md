@@ -13,6 +13,17 @@ Status: roadmap addendum
 8. Establish monitored/reviewed lifecycle follow-up for existing records.
 9. Evaluate natural-language-to-filter translation only after deterministic search/Compare are stable.
 
+## Current execution status
+
+- Steps 1–4: complete.
+- Step 5 structured filters/search: complete and production-verified.
+  - specification: `docs/operations/STRUCTURED_DISCOVERY_SPEC.md`
+  - implementation: PR #36
+  - accepted production main commit: `714e0e774fee6c0b893b9bf45097c339c7d389d0`
+  - Cloudflare production deployment: `31298acd-3bf9-45b2-b8f9-28778a5bf51c`
+  - real-browser verification covered deterministic filter counts, combined filters, product-label search, invalid launch-year ranges, reset behavior, and 390px mobile layout.
+- Next: Step 6 lifecycle/security/support Compare. Compare must receive its own specification before implementation.
+
 ## Gate
 Spec -> implementation PR -> validation/CI green -> merge -> production verification where applicable -> docs/status sync.
 
