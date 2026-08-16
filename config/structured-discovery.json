@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "incident_event_types": [
+    "vulnerability_disclosed",
+    "security_research_published",
+    "exploit",
+    "unauthorized_access",
+    "supply_chain_compromise",
+    "malicious_update",
+    "seed_key_exposure",
+    "private_key_exposure",
+    "firmware_issue",
+    "software_issue",
+    "customer_data_breach",
+    "third_party_data_breach",
+    "phishing_campaign"
+  ],
+  "remediation_event_types": [
+    "security_fix",
+    "firmware_fix",
+    "software_fix",
+    "key_migration_recommended",
+    "recall"
+  ],
+  "eol_event_types": [
+    "deprecation_announced",
+    "sales_discontinued",
+    "discontinued"
+  ],
+  "eol_entity_statuses": [
+    "deprecated",
+    "discontinued",
+    "dead"
+  ],
+  "eol_product_statuses": [
+    "deprecated",
+    "discontinued"
+  ],
+  "labels": {
+    "custody_missing": "Not recorded",
+    "incident_recorded": "Reviewed incident history",
+    "incident_not_recorded": "No reviewed incident recorded",
+    "remediation_recorded": "Recorded fix/remediation",
+    "remediation_not_recorded": "No reviewed fix/remediation recorded",
+    "eol_recorded": "Recorded EOL/deprecation",
+    "eol_not_recorded": "No reviewed EOL/deprecation recorded"
+  }
+}
