@@ -41,12 +41,8 @@ jobs:
           set -euo pipefail
           work="$(mktemp -d)"
           trap 'rm -rf "$work"' EXIT
-
-          echo '=== DEPLOYMENT-SPECIFIC STATS ==='
           curl -fsSL "${DEPLOYMENT_URL}/data/stats.json?verify=47c7acca" -o "$work/deployment-stats.json"
-          jq '{registry}' "$work/deployment-stats.json"
           jq -e '.registry.events == 76 and .registry.evidence == 125 and .registry.incident_events == 15 and .registry.remediation_events == 3' "$work/deployment-stats.json" >/dev/null
-
           ready=0
           for attempt in $(seq 1 40); do
             cache_bust="47c7acca-${attempt}-$(date +%s)"
@@ -56,10 +52,7 @@ jobs:
             incidents="$(jq -r '.registry.incident_events' "$work/custom-stats.json")"
             remediation="$(jq -r '.registry.remediation_events' "$work/custom-stats.json")"
             echo "custom-domain attempt=${attempt} events=${events} evidence=${evidence} incidents=${incidents} remediation=${remediation}"
-            if [ "$events" = 76 ] && [ "$evidence" = 125 ] && [ "$incidents" = 15 ] && [ "$remediation" = 3 ]; then
-              ready=1
-              break
-            fi
+            if [ "$events" = 76 ] && [ "$evidence" = 125 ] && [ "$incidents" = 15 ] && [ "$remediation" = 3 ]; then ready=1; break; fi
             sleep 10
           done
           test "$ready" -eq 1
@@ -73,14 +66,6 @@ jobs:
           for name in events evidence stats; do
             curl -fsSL --retry 10 --retry-all-errors --retry-delay 2 "https://wlr.badjoke-lab.com/data/${name}.json?verify=${nonce}" -o "$work/${name}.json"
           done
-
-          echo '=== PUBLIC ELECTRUM EVENTS ==='
-          jq -c '.[] | select(.id == "wlr_ev_000074" or .id == "wlr_ev_000075" or .id == "wlr_ev_000076") | {id,event_type,event_date,event_date_basis,title,impact_level,funds_affected,affected_versions,fixed_versions}' "$work/events.json"
-          echo '=== PUBLIC ELECTRUM EVIDENCE ==='
-          jq -c '.[] | select(.id == "wlr_src_000122" or .id == "wlr_src_000123" or .id == "wlr_src_000124" or .id == "wlr_src_000125") | {id,event_id,url,reliability,claim_scope,is_primary}' "$work/evidence.json"
-          echo '=== PUBLIC STATS ==='
-          jq '{registry,launch_date:.products.launch_date,support_known:.data_quality.products.support_status_known}' "$work/stats.json"
-
           check() { label="$1"; shift; echo "CHECK ${label}"; "$@"; echo "PASS ${label}"; }
           check 'External plugin vulnerability' jq -e '.[] | select(.id == "wlr_ev_000074") | .event_type == "vulnerability_disclosed" and .event_date == "2026-04-28" and .impact_level == "medium" and .funds_affected == "unknown" and (.fixed_versions[] | .version == "4.7.2")' "$work/events.json"
           check 'NWC vulnerability' jq -e '.[] | select(.id == "wlr_ev_000075") | .event_type == "vulnerability_disclosed" and .event_date == "2026-04-28" and .impact_level == "low" and .funds_affected == "unknown" and (.fixed_versions[] | .version == "4.7.2")' "$work/events.json"
@@ -91,7 +76,7 @@ jobs:
           check 'Launch coverage retained' jq -e '.products.launch_date.count == 47 and .products.launch_date.denominator == 69' "$work/stats.json"
           check 'Support coverage retained' jq -e '.data_quality.products.support_status_known.count == 68 and .data_quality.products.support_status_known.denominator == 69' "$work/stats.json"
           check 'Electrum wallet route' curl -fsSL -o /dev/null "https://wlr.badjoke-lab.com/wallet/electrum/?verify=${nonce}"
-          check 'Electrum product route' curl -fsSL -o /dev/null "https://wlr.badjoke-lab.com/product/electrum-application/?verify=${nonce}"
+          check 'Electrum product route' curl -fsSL -o /dev/null "https://wlr.badjoke-lab.com/product/electrum-client/?verify=${nonce}"
           check 'External plugin GHSA' curl -fsSL -o /dev/null https://github.com/spesmilo/electrum/security/advisories/GHSA-vw94-r84p-66qf
           check 'NWC GHSA' curl -fsSL -o /dev/null https://github.com/spesmilo/electrum/security/advisories/GHSA-q7m2-785w-r585
           echo 'PR67_PRODUCTION_VERIFY_OK events=76 evidence=125 incidents=15 remediation=3 electrum_fix=4.7.2'
