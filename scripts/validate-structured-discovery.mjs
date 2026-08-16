@@ -21,12 +21,17 @@ function sameSet(actual, expected) {
 }
 
 const policy = readJson('config/structured-discovery.json')
+const cloudflarePolicy = readJson('config/cloudflare-pages-project.json')
 const entities = readJson('data/entities.json')
 const products = readJson('data/products.json')
 const events = readJson('data/events.json')
 const eventSchema = readJson('schemas/event.schema.json')
 
 assert(policy.schema_version === '1.0.0', 'unsupported policy schema version')
+assert(
+  cloudflarePolicy.source_config?.path_includes?.includes('config/*'),
+  'Cloudflare build watch must include config/* because structured discovery policy is a runtime build input',
+)
 
 const expectedIncidentTypes = [
   'vulnerability_disclosed',
