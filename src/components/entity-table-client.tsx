@@ -138,7 +138,7 @@ export default function EntityTableClient({ rows }: { rows: EntityTableRow[] }) 
         <label className="control-field">
           <span>Custody / key model</span>
           <select value={custodyModel} onChange={(event) => setCustodyModel(event.target.value)}>
-            <option value="all">All recorded states</option>
+            <option value="all">All custody states</option>
             {custodyModels.map((value) => <option value={value} key={value}>{formatDiscoveryValue(value)}</option>)}
           </select>
         </label>
