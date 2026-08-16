@@ -47,6 +47,48 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: npm run cloudflare:config:apply
 
+      - name: Ensure WLR custom-domain CNAME
+        if: github.event_name == 'push'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          zone_id="147e01c60264c3d27fbfa37dae868062"
+          name="wlr.badjoke-lab.com"
+          target="cryptocurrency-wallet-lifecycle-registry.pages.dev"
+          auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
+          api="https://api.cloudflare.com/client/v4/zones/${zone_id}/dns_records"
+
+          response="$(curl -sS "${api}?type=CNAME&name=${name}" -H "$auth")"
+          if [ "$(jq -r '.success' <<<"$response")" != "true" ]; then
+            echo "$response" | jq '{success, errors}'
+            echo 'Cloudflare token cannot read WLR DNS record.' >&2
+            exit 2
+          fi
+
+          count="$(jq '.result | length' <<<"$response")"
+          if [ "$count" -gt 1 ]; then
+            echo 'Multiple CNAME records found for WLR; refusing to mutate.' >&2
+            exit 3
+          fi
+          if [ "$count" -eq 1 ]; then
+            existing="$(jq -r '.result[0].content' <<<"$response")"
+            if [ "$existing" != "$target" ]; then
+              echo "Existing WLR CNAME points to ${existing}; refusing to overwrite." >&2
+              exit 4
+            fi
+            echo "WLR CNAME already points to ${target}."
+          else
+            create="$(curl -sS -X POST "$api" -H "$auth" -H 'Content-Type: application/json' --data "{\"type\":\"CNAME\",\"name\":\"${name}\",\"content\":\"${target}\",\"ttl\":1,\"proxied\":true,\"comment\":\"Wallet Lifecycle Registry Cloudflare Pages\"}")"
+            if [ "$(jq -r '.success' <<<"$create")" != "true" ]; then
+              echo "$create" | jq '{success, errors}'
+              echo 'Cloudflare token cannot create WLR DNS record.' >&2
+              exit 5
+            fi
+            echo "$create" | jq '{success, result: {id: .result.id, type: .result.type, name: .result.name, content: .result.content, proxied: .result.proxied}}'
+          fi
+
       - name: Inspect Cloudflare publication state
         if: github.event_name == 'push'
         env:
