@@ -40,12 +40,12 @@ jobs:
       - name: Print repository Cloudflare policy
         run: npm run cloudflare:config:print
 
-      - name: Plan Cloudflare Pages project from ops branch
+      - name: Bootstrap and apply Cloudflare Pages project from ops branch
         if: github.event_name == 'push'
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: npm run cloudflare:config:plan
+        run: npm run cloudflare:config:apply
 
       - name: Configure Cloudflare Pages project
         if: github.event_name == 'workflow_dispatch'
