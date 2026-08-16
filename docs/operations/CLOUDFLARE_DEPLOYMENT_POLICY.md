@@ -84,16 +84,19 @@ A deployment is accepted only after all of the following are checked against the
 2. `/data/manifest.json` returns HTTP 200 and reports the canonical counts.
 3. `/data/entities.json`, `/data/products.json`, `/data/events.json`, and `/data/evidence.json` match the manifest counts and expected canonical `main` data.
 4. Deterministic wallet/product indexes and representative wallet/product JSON return HTTP 200 and pass their schema/linkage checks.
-5. `/llms.txt` and `/ai.txt` return HTTP 200.
-6. `/robots.txt` and `/sitemap.xml` return HTTP 200.
-7. `/`, `/hardware/`, `/software/`, `/incidents/`, `/compare/`, `/methodology/`, `/about/`, and `/support/` return final HTTP 200 after canonical redirects.
-8. At least one wallet detail and one product detail route return final HTTP 200.
-9. Incident severity colors remain distinct on the black theme and are not presented as wallet safety scores.
-10. Support shows the temporary HEI-shared donation addresses and the editorial-independence disclosure.
-11. Mobile production layout is checked in a real browser viewport and has no document-level horizontal overflow in representative primary navigation, tables/cards, wallet detail, product detail, incident timeline, Compare, or Support routes.
-12. When a runtime discovery/filter configuration changes, production verification must confirm the expected exact `main` deployment and representative deterministic filter behavior.
-13. Compare changes must verify repeated `wallet=` query order, duplicate and unknown selection handling, the four-wallet cap, add/remove/reset URL synchronization, deterministic lifecycle/security/support counts, and product-specific support presentation.
-14. Narrow-screen Compare may scroll horizontally only inside explicit Compare viewports; the document itself must not overflow horizontally.
+5. `/data/stats.json` returns HTTP 200 when Stats is present and matches the deterministic derivation from the accepted canonical `main` data and central structured-discovery policy.
+6. `/llms.txt` and `/ai.txt` return HTTP 200.
+7. `/robots.txt` and `/sitemap.xml` return HTTP 200.
+8. `/`, `/hardware/`, `/software/`, `/incidents/`, `/compare/`, `/stats/`, `/methodology/`, `/about/`, and `/support/` return final HTTP 200 after canonical redirects.
+9. At least one wallet detail and one product detail route return final HTTP 200.
+10. Incident severity colors remain distinct on the black theme and are not presented as wallet safety scores.
+11. Support shows the temporary HEI-shared donation addresses and the editorial-independence disclosure.
+12. Mobile production layout is checked in a real browser viewport and has no document-level horizontal overflow in representative primary navigation, tables/cards, wallet detail, product detail, incident timeline, Compare, Stats, or Support routes.
+13. When a runtime discovery/filter configuration changes, production verification must confirm the expected exact `main` deployment and representative deterministic filter behavior.
+14. Compare changes must verify repeated `wallet=` query order, duplicate and unknown selection handling, the four-wallet cap, add/remove/reset URL synchronization, deterministic lifecycle/security/support counts, and product-specific support presentation.
+15. Narrow-screen Compare may scroll horizontally only inside explicit Compare viewports; the document itself must not overflow horizontally.
+16. Stats changes must verify registry totals and central incident/remediation/EOL counts against canonical production JSON, expose numerator/denominator coverage, keep patch-response duration unavailable without explicit canonical linkage, and enforce lifecycle precision rules before publishing lifespan distributions.
+17. Stats production QA must verify that public `stats.json` exactly matches the deterministic accepted-main derivation and that a 390px real-browser viewport has no document-level horizontal overflow.
 
 ## Deployment-sensitive files
 
@@ -118,6 +121,7 @@ A deployment is accepted only after all of the following are checked against the
 - committing Cloudflare credentials
 - changing the canonical domain without updating `src/lib/site.ts` and the deployment policy together
 - turning WLR into a live safety ranking based on incident badge color
+- publishing market-share, safety-score, or inferred vendor-response metrics from registry coverage data
 
 ## Precedence
 
