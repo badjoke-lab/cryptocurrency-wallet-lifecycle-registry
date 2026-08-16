@@ -1,0 +1,217 @@
+name: Verify WLR Step 7 Stats Production
+
+on:
+  push:
+    branches:
+      - ops/step7-production-verify
+    paths:
+      - .github/workflows/verify-step7-production.yml
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Wait for exact Step 7 production deployment
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          EXPECTED_SHA: 79fc4bec2bc691f1fb24d05f3c8556cafaf71035
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
+          auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
+          found=0
+          for attempt in $(seq 1 72); do
+            deployments="$(curl -fsS "${base}/deployments?env=production&per_page=10" -H "$auth")"
+            match="$(jq -c --arg sha "$EXPECTED_SHA" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
+            if [ -n "$match" ]; then
+              status="$(jq -r '.latest_stage.status // "unknown"' <<<"$match")"
+              echo "Exact Step 7 deployment status: ${status}"
+              if [ "$status" = "success" ]; then
+                jq -e '.deployment_trigger.type == "github:push" and .deployment_trigger.metadata.branch == "main" and (.aliases | index("https://wlr.badjoke-lab.com")) != null' <<<"$match" >/dev/null
+                echo "$match" | jq '{id, short_id, url, aliases, latest_stage, deployment_trigger}'
+                found=1
+                break
+              fi
+              if [ "$status" = "failure" ] || [ "$status" = "failed" ]; then
+                echo "$match" | jq .
+                exit 1
+              fi
+            fi
+            sleep 5
+          done
+          test "$found" -eq 1
+          domain="$(curl -fsS "${base}/domains/wlr.badjoke-lab.com" -H "$auth")"
+          jq -e '.success == true and .result.status == "active"' <<<"$domain" >/dev/null
+
+      - name: Verify production Stats against exact canonical derivation
+        shell: bash
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"
+          trap 'rm -rf "$work"' EXIT
+
+          node scripts/build-stats.mjs
+          cp public/data/stats.json "$work/expected-stats.json"
+
+          for path in stats/ data/stats.json data/entities.json data/products.json data/events.json data/evidence.json sitemap.xml; do
+            code="$(curl -sSL --retry 10 --retry-all-errors --retry-delay 2 -o "$work/$(echo "$path" | tr '/' '_')" -w '%{http_code}' "https://wlr.badjoke-lab.com/${path}")"
+            test "$code" = 200 || { echo "${path}: HTTP ${code}" >&2; exit 10; }
+            echo "${path}: HTTP 200"
+          done
+
+          cmp "$work/expected-stats.json" "$work/data_stats.json"
+          cmp data/entities.json "$work/data_entities.json"
+          cmp data/products.json "$work/data_products.json"
+          cmp data/events.json "$work/data_events.json"
+          cmp data/evidence.json "$work/data_evidence.json"
+
+          jq -e '.schema == "wlr.stats.v1" and .scope == "canonical_only"' "$work/data_stats.json" >/dev/null
+          jq -e '.registry.entities == 25 and .registry.products == 69 and .registry.events == 73 and .registry.evidence == 119 and .registry.incident_events == 13 and .registry.remediation_events == 2' "$work/data_stats.json" >/dev/null
+          jq -e '.remediation.patch_response_duration.status == "unavailable" and (.remediation.patch_response_duration.reason | contains("incident-to-remediation linkage"))' "$work/data_stats.json" >/dev/null
+          jq -e '.eol_lifecycle.exact_product_lifespan.eligible_count == 0 and .eol_lifecycle.exact_product_lifespan.distribution == null' "$work/data_stats.json" >/dev/null
+          jq -e '.products.launch_date.count == 44 and .products.launch_date.denominator == 69 and .data_quality.products.support_status_known.count == 67 and .data_quality.products.support_status_known.denominator == 69' "$work/data_stats.json" >/dev/null
+
+          grep -Fq 'Registry statistics' "$work/stats_"
+          grep -Fq 'Patch-response duration: unavailable' "$work/stats_"
+          grep -Fq 'Exact product lifespan distribution: not published' "$work/stats_"
+          grep -Fq 'Open machine-readable stats.json' "$work/stats_"
+          grep -Fq 'https://wlr.badjoke-lab.com/stats/' "$work/sitemap.xml"
+
+          echo 'Production stats.json exactly matches deterministic main derivation and canonical public JSON.'
+          jq '{registry, product_launch:.products.launch_date, product_support_known:.data_quality.products.support_status_known, patch_response:.remediation.patch_response_duration, exact_lifespan:.eol_lifecycle.exact_product_lifespan}' "$work/data_stats.json"
+
+      - name: Locate Chrome
+        id: chrome
+        shell: bash
+        run: |
+          set -euo pipefail
+          browser="$(command -v google-chrome || command -v chromium || command -v chromium-browser || true)"
+          test -n "$browser"
+          echo "browser=$browser" >> "$GITHUB_OUTPUT"
+          "$browser" --version
+
+      - name: Run real-browser Stats QA
+        env:
+          BROWSER: ${{ steps.chrome.outputs.browser }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"
+          cleanup() {
+            if [ -n "${chrome_pid:-}" ]; then
+              kill "$chrome_pid" 2>/dev/null || true
+              wait "$chrome_pid" 2>/dev/null || true
+            fi
+            rm -rf "$work" 2>/dev/null || true
+          }
+          trap cleanup EXIT
+
+          "$BROWSER" --headless=new --no-sandbox --disable-gpu --remote-debugging-port=9222 --user-data-dir="$work/chrome" about:blank >"$work/chrome.log" 2>&1 &
+          chrome_pid=$!
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:9222/json/version >/dev/null 2>&1 && break; sleep 1; done
+          curl -fsS http://127.0.0.1:9222/json/version >/dev/null
+
+          cat > "$work/qa.mjs" <<'NODE'
+          const expected = await (await fetch('https://wlr.badjoke-lab.com/data/stats.json')).json()
+          const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+          const targetResponse = await fetch('http://127.0.0.1:9222/json/new?about%3Ablank', { method: 'PUT' })
+          if (!targetResponse.ok) throw new Error(`Cannot create Chrome target: ${targetResponse.status}`)
+          const target = await targetResponse.json()
+          const socket = new WebSocket(target.webSocketDebuggerUrl)
+          await new Promise((resolve, reject) => {
+            socket.addEventListener('open', resolve, { once: true })
+            socket.addEventListener('error', reject, { once: true })
+          })
+          let nextId = 1
+          const pending = new Map()
+          let loadResolve
+          socket.addEventListener('message', (event) => {
+            const message = JSON.parse(event.data)
+            if (message.id && pending.has(message.id)) {
+              const { resolve, reject } = pending.get(message.id)
+              pending.delete(message.id)
+              if (message.error) reject(new Error(JSON.stringify(message.error)))
+              else resolve(message.result)
+            }
+            if (message.method === 'Page.loadEventFired' && loadResolve) {
+              loadResolve()
+              loadResolve = null
+            }
+          })
+          const send = (method, params = {}) => new Promise((resolve, reject) => {
+            const id = nextId++
+            pending.set(id, { resolve, reject })
+            socket.send(JSON.stringify({ id, method, params }))
+          })
+          const evaluate = async (expression) => {
+            const result = await send('Runtime.evaluate', { expression, returnByValue: true, awaitPromise: true })
+            if (result.exceptionDetails) throw new Error(JSON.stringify(result.exceptionDetails))
+            return result.result.value
+          }
+          const navigate = async (url) => {
+            const loaded = new Promise((resolve) => { loadResolve = resolve })
+            await send('Page.navigate', { url })
+            await Promise.race([loaded, sleep(15000)])
+            await sleep(800)
+          }
+          const metrics = (width, height, mobile) => send('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile, screenWidth: width, screenHeight: height })
+
+          await send('Page.enable')
+          await send('Runtime.enable')
+          await metrics(1280, 900, false)
+          await navigate('https://wlr.badjoke-lab.com/stats/')
+
+          const totals = await evaluate(`[...document.querySelectorAll('.stats-totals article strong')].map(x => Number(x.textContent))`)
+          const expectedTotals = [expected.registry.entities, expected.registry.products, expected.registry.events, expected.registry.evidence, expected.registry.incident_events, expected.registry.remediation_events, expected.registry.eol_events]
+          if (JSON.stringify(totals) !== JSON.stringify(expectedTotals)) throw new Error(`Stats total cards mismatch: ${JSON.stringify(totals)} vs ${JSON.stringify(expectedTotals)}`)
+
+          const text = await evaluate(`document.body.textContent ?? ''`)
+          for (const required of [
+            'Counts and coverage ratios describe reviewed WLR records',
+            'Patch-response duration: unavailable',
+            'canonical incident-to-remediation linkage is not recorded',
+            'Exact product lifespan distribution: not published',
+            '0 product records currently meet the exact day-level launch-to-discontinued eligibility rule',
+            'Coverage ratios expose missing data; they are not grades.'
+          ]) {
+            if (!text.includes(required)) throw new Error(`Missing Stats safety/limitation copy: ${required}`)
+          }
+
+          const statsLink = await evaluate(`document.querySelector('a[href="/data/stats.json"]')?.textContent?.trim() ?? ''`)
+          if (!statsLink.includes('machine-readable')) throw new Error('Machine-readable Stats link missing')
+
+          await metrics(390, 844, true)
+          await navigate('https://wlr.badjoke-lab.com/stats/')
+          const mobile = await evaluate(`(() => {
+            const root = document.scrollingElement || document.documentElement;
+            const selectors = ['.stats-totals','.stats-distribution','.stats-coverage-card','.stats-unavailable','.stats-methodology'];
+            const boxes = selectors.flatMap(selector => [...document.querySelectorAll(selector)].map(el => { const r=el.getBoundingClientRect(); return {selector,left:r.left,right:r.right,width:r.width}; }));
+            return {
+              innerWidth,
+              clientWidth: root.clientWidth,
+              scrollWidth: root.scrollWidth,
+              outside: boxes.filter(box => box.left < -1 || box.right > innerWidth + 1),
+              mobileMore: getComputedStyle(document.querySelector('.mobile-more-navigation') || document.body).display,
+              desktopSecondary: document.querySelector('.desktop-secondary-navigation') ? getComputedStyle(document.querySelector('.desktop-secondary-navigation')).display : null,
+            };
+          })()`)
+          console.log('Mobile Stats:', JSON.stringify(mobile))
+          if (mobile.innerWidth !== 390 || mobile.scrollWidth > mobile.clientWidth + 1 || mobile.outside.length) throw new Error('Stats mobile document overflow detected')
+          if (mobile.mobileMore === 'none' || (mobile.desktopSecondary !== null && mobile.desktopSecondary !== 'none')) throw new Error('Stats mobile navigation state incorrect')
+
+          socket.close()
+          console.log(`STEP7_STATS_QA_OK totals=${expectedTotals.join(',')} product_launch=${expected.products.launch_date.count}/${expected.products.launch_date.denominator} support_known=${expected.data_quality.products.support_status_known.count}/${expected.data_quality.products.support_status_known.denominator} exact_lifespan=${expected.eol_lifecycle.exact_product_lifespan.eligible_count}`)
+          NODE
+
+          node "$work/qa.mjs"
