@@ -1,0 +1,60 @@
+name: Finalize reviewed product launch notes
+
+on:
+  push:
+    branches: [fix/backfill-reviewed-product-launch-dates]
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/backfill-reviewed-product-launch-dates
+          fetch-depth: 0
+      - name: Preserve existing identity notes and append release evidence
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          notes = {
+              'wlr_prod_000044': 'Kept separate from the Tangem hardware wallet because its private-key storage and recovery boundary is the smartphone rather than a Tangem secure element. Launch date is established by the reviewed February 27, 2026 first-party Tangem Mobile Wallet release event and official Tangem blog evidence.',
+              'wlr_prod_000049': 'Do not confuse Exodus Web3 Wallet browser extension with the separate Web3 browser feature inside Exodus Mobile. Launch date is established by the reviewed August 16, 2022 first-party Exodus browser-extension release event and official Exodus announcement.',
+          }
+
+          p = Path('data/products.json')
+          text = p.read_text()
+          decoder = json.JSONDecoder()
+          for target_id, note in notes.items():
+              pos = text.find('[') + 1
+              while True:
+                  while pos < len(text) and text[pos] in ' \r\n\t,': pos += 1
+                  if pos >= len(text) or text[pos] == ']': raise SystemExit(f'{target_id} not found')
+                  obj, end = decoder.raw_decode(text, pos)
+                  if obj.get('id') == target_id:
+                      obj['notes'] = note
+                      replacement = json.dumps(obj, ensure_ascii=False, separators=(',', ':'))
+                      text = text[:pos] + replacement + text[end:]
+                      break
+                  pos = end
+          p.write_text(text)
+          PY
+          python3 scripts/validate_records.py
+          python3 scripts/validate_identity_evidence_policy.py
+          jq -c '.[] | select(.id == "wlr_prod_000044" or .id == "wlr_prod_000049") | {id,launch_date,launch_date_precision,last_verified_at,notes}' data/products.json
+          git diff --check
+      - name: Commit note preservation
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- data/products.json; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/products.json
+          git commit -m 'Preserve product identity notes in launch backfill'
+          git push origin HEAD:fix/backfill-reviewed-product-launch-dates
