@@ -57,6 +57,6 @@ jobs:
 
           curl -fsSL -o /dev/null -w 'Leather extension page HTTP %{http_code}\n' https://leather.io/wallet/extension
           curl -fsSL -o /dev/null -w 'Rabby wallet page HTTP %{http_code}\n' https://wlr.badjoke-lab.com/wallet/rabby/
-          curl -fsSL -o /dev/null -w 'Leather product page HTTP %{http_code}\n' https://wlr.badjoke-lab.com/wallet/leather/product/leather-browser-extension/
+          curl -fsSL -o /dev/null -w 'Leather product page HTTP %{http_code}\n' https://wlr.badjoke-lab.com/product/leather-browser-extension/
 
           echo 'PR60_PRODUCTION_VERIFY_OK evidence=120 launch_coverage=45/69 leather_url=https://leather.io/wallet/extension rabby_launch=2021-07-26'
