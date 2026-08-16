@@ -1,0 +1,249 @@
+name: Verify WLR Step 6 Compare Production
+
+on:
+  push:
+    branches:
+      - ops/step6-production-verify
+    paths:
+      - .github/workflows/verify-step6-production.yml
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Wait for exact Step 6 production deployment
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          EXPECTED_SHA: b6dcfcc2346b452cdb5b755b6979d237a1e3cd9a
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
+          auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
+          found=0
+          for attempt in $(seq 1 72); do
+            deployments="$(curl -fsS "${base}/deployments?env=production&per_page=10" -H "$auth")"
+            match="$(jq -c --arg sha "$EXPECTED_SHA" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
+            if [ -n "$match" ]; then
+              status="$(jq -r '.latest_stage.status // "unknown"' <<<"$match")"
+              echo "Exact Step 6 deployment status: ${status}"
+              if [ "$status" = "success" ]; then
+                jq -e '.deployment_trigger.type == "github:push" and .deployment_trigger.metadata.branch == "main" and (.aliases | index("https://wlr.badjoke-lab.com")) != null' <<<"$match" >/dev/null
+                echo "$match" | jq '{id, short_id, url, aliases, latest_stage, deployment_trigger}'
+                found=1
+                break
+              fi
+              if [ "$status" = "failure" ] || [ "$status" = "failed" ]; then
+                echo "$match" | jq .
+                exit 1
+              fi
+            fi
+            sleep 5
+          done
+          test "$found" -eq 1
+          domain="$(curl -fsS "${base}/domains/wlr.badjoke-lab.com" -H "$auth")"
+          jq -e '.success == true and .result.status == "active"' <<<"$domain" >/dev/null
+
+      - name: Verify public Compare route and discovery surface
+        shell: bash
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"
+          trap 'rm -rf "$work"' EXIT
+          code="$(curl -sSL --retry 10 --retry-all-errors --retry-delay 2 -o "$work/compare.html" -w '%{http_code}' https://wlr.badjoke-lab.com/compare/)"
+          test "$code" = 200
+          grep -Fq 'Compare wallet records' "$work/compare.html"
+          grep -Fq 'does not score wallets' "$work/compare.html"
+          curl -fsSL https://wlr.badjoke-lab.com/sitemap.xml -o "$work/sitemap.xml"
+          grep -Fq 'https://wlr.badjoke-lab.com/compare/' "$work/sitemap.xml"
+          curl -fsSL https://wlr.badjoke-lab.com/ -o "$work/home.html"
+          grep -Fq 'href="/compare/"' "$work/home.html"
+
+      - name: Locate Chrome
+        id: chrome
+        shell: bash
+        run: |
+          set -euo pipefail
+          browser="$(command -v google-chrome || command -v chromium || command -v chromium-browser || true)"
+          test -n "$browser"
+          echo "browser=$browser" >> "$GITHUB_OUTPUT"
+          "$browser" --version
+
+      - name: Run real-browser Compare QA
+        env:
+          BROWSER: ${{ steps.chrome.outputs.browser }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"
+          cleanup() {
+            if [ -n "${chrome_pid:-}" ]; then
+              kill "$chrome_pid" 2>/dev/null || true
+              wait "$chrome_pid" 2>/dev/null || true
+            fi
+            rm -rf "$work" 2>/dev/null || true
+          }
+          trap cleanup EXIT
+
+          "$BROWSER" --headless=new --no-sandbox --disable-gpu --remote-debugging-port=9222 --user-data-dir="$work/chrome" about:blank >"$work/chrome.log" 2>&1 &
+          chrome_pid=$!
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:9222/json/version >/dev/null 2>&1 && break; sleep 1; done
+          curl -fsS http://127.0.0.1:9222/json/version >/dev/null
+
+          cat > "$work/qa.mjs" <<'NODE'
+          import fs from 'node:fs'
+
+          const entities = JSON.parse(fs.readFileSync('data/entities.json', 'utf8'))
+          const products = JSON.parse(fs.readFileSync('data/products.json', 'utf8'))
+          const events = JSON.parse(fs.readFileSync('data/events.json', 'utf8'))
+          const policy = JSON.parse(fs.readFileSync('config/structured-discovery.json', 'utf8'))
+          const incidentTypes = new Set(policy.incident_event_types)
+          const remediationTypes = new Set(policy.remediation_event_types)
+          const eolTypes = new Set(policy.eol_event_types)
+
+          const stats = entities.map((entity) => {
+            const entityProducts = products.filter((product) => product.entity_id === entity.id)
+            const entityEvents = events.filter((event) => event.entity_id === entity.id)
+            return {
+              slug: entity.slug,
+              name: entity.canonical_name,
+              productCount: entityProducts.length,
+              incidentCount: entityEvents.filter((event) => incidentTypes.has(event.event_type)).length,
+              remediationCount: entityEvents.filter((event) => remediationTypes.has(event.event_type)).length,
+              eolEventCount: entityEvents.filter((event) => eolTypes.has(event.event_type)).length,
+            }
+          })
+          const ranked = [...stats].sort((a, b) => b.incidentCount - a.incidentCount || b.productCount - a.productCount || a.name.localeCompare(b.name))
+          const pair = ranked.slice(0, 2)
+          if (pair.length !== 2) throw new Error('Need two representative wallets')
+          console.log('Representative pair:', pair)
+
+          const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+          const targetResponse = await fetch('http://127.0.0.1:9222/json/new?about%3Ablank', { method: 'PUT' })
+          if (!targetResponse.ok) throw new Error(`Cannot create Chrome target: ${targetResponse.status}`)
+          const target = await targetResponse.json()
+          const socket = new WebSocket(target.webSocketDebuggerUrl)
+          await new Promise((resolve, reject) => {
+            socket.addEventListener('open', resolve, { once: true })
+            socket.addEventListener('error', reject, { once: true })
+          })
+          let nextId = 1
+          const pending = new Map()
+          let loadResolve
+          socket.addEventListener('message', (event) => {
+            const message = JSON.parse(event.data)
+            if (message.id && pending.has(message.id)) {
+              const { resolve, reject } = pending.get(message.id)
+              pending.delete(message.id)
+              if (message.error) reject(new Error(JSON.stringify(message.error)))
+              else resolve(message.result)
+            }
+            if (message.method === 'Page.loadEventFired' && loadResolve) {
+              loadResolve()
+              loadResolve = null
+            }
+          })
+          const send = (method, params = {}) => new Promise((resolve, reject) => {
+            const id = nextId++
+            pending.set(id, { resolve, reject })
+            socket.send(JSON.stringify({ id, method, params }))
+          })
+          const evaluate = async (expression) => {
+            const result = await send('Runtime.evaluate', { expression, returnByValue: true, awaitPromise: true })
+            if (result.exceptionDetails) throw new Error(JSON.stringify(result.exceptionDetails))
+            return result.result.value
+          }
+          const navigate = async (url) => {
+            const loaded = new Promise((resolve) => { loadResolve = resolve })
+            await send('Page.navigate', { url })
+            await Promise.race([loaded, sleep(15000)])
+            await sleep(1000)
+          }
+          const setMetrics = (width, height, mobile) => send('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile, screenWidth: width, screenHeight: height })
+          const selectionNames = () => evaluate(`[...document.querySelectorAll('.compare-selection strong')].map(x => x.textContent?.trim())`)
+          const walletParams = () => evaluate(`[...new URL(location.href).searchParams.getAll('wallet')]`)
+          const rowValues = (label) => evaluate(`(() => { const row=[...document.querySelectorAll('.compare-matrix tr')].find(r=>r.querySelector('th')?.textContent?.trim()===${JSON.stringify(label)}); return row ? [...row.querySelectorAll('td')].map(td=>td.textContent?.trim()) : null })()`)
+          const sectionCardCounts = (heading, selector) => evaluate(`(() => { const section=[...document.querySelectorAll('.compare-section')].find(s=>s.querySelector('h2')?.textContent?.trim()===${JSON.stringify(heading)}); return section ? [...section.querySelectorAll('.compare-column')].map(c=>c.querySelectorAll(${JSON.stringify(selector)}).length) : null })()`)
+
+          await send('Page.enable')
+          await send('Runtime.enable')
+          await setMetrics(1280, 900, false)
+          const pairUrl = `https://wlr.badjoke-lab.com/compare/?wallet=${encodeURIComponent(pair[0].slug)}&wallet=${encodeURIComponent(pair[1].slug)}`
+          await navigate(pairUrl)
+
+          const selected = await selectionNames()
+          if (JSON.stringify(selected) !== JSON.stringify(pair.map((row) => row.name))) throw new Error(`Selection order mismatch: ${JSON.stringify(selected)}`)
+          const params = await walletParams()
+          if (JSON.stringify(params) !== JSON.stringify(pair.map((row) => row.slug))) throw new Error(`URL order mismatch: ${JSON.stringify(params)}`)
+
+          const productRow = await rowValues('Reviewed products')
+          if (JSON.stringify(productRow?.map(Number)) !== JSON.stringify(pair.map((row) => row.productCount))) throw new Error(`Product count mismatch: ${JSON.stringify(productRow)}`)
+          const incidentRow = await rowValues('Reviewed incident events')
+          if (JSON.stringify(incidentRow?.map(Number)) !== JSON.stringify(pair.map((row) => row.incidentCount))) throw new Error(`Incident count mismatch: ${JSON.stringify(incidentRow)}`)
+          const remediationRow = await rowValues('Recorded remediation events')
+          if (JSON.stringify(remediationRow?.map(Number)) !== JSON.stringify(pair.map((row) => row.remediationCount))) throw new Error(`Remediation count mismatch: ${JSON.stringify(remediationRow)}`)
+          const eolRow = await rowValues('Recorded EOL/deprecation events')
+          if (JSON.stringify(eolRow?.map(Number)) !== JSON.stringify(pair.map((row) => row.eolEventCount))) throw new Error(`EOL count mismatch: ${JSON.stringify(eolRow)}`)
+
+          const productCards = await sectionCardCounts('Product-specific support facts', '.compare-product-card')
+          if (JSON.stringify(productCards) !== JSON.stringify(pair.map((row) => row.productCount))) throw new Error(`Product card mismatch: ${JSON.stringify(productCards)}`)
+          const safeCopy = await evaluate(`document.body.textContent ?? ''`)
+          if (!safeCopy.includes('Support and sales states are never collapsed into one ecosystem-wide label.')) throw new Error('Product support boundary copy missing')
+          if (!safeCopy.includes('Compare is a historical registry view.')) throw new Error('Compare disclaimer missing')
+
+          await navigate(`https://wlr.badjoke-lab.com/compare/?wallet=${pair[0].slug}&wallet=${pair[0].slug}&wallet=not-a-wallet&wallet=${pair[1].slug}`)
+          const duplicateSelected = await selectionNames()
+          if (JSON.stringify(duplicateSelected) !== JSON.stringify(pair.map((row) => row.name))) throw new Error('Duplicate/unknown normalization changed valid order')
+          const invalidNotice = await evaluate(`document.querySelector('.compare-warning')?.textContent ?? ''`)
+          if (!invalidNotice.includes('Ignored unknown wallet selection: not-a-wallet')) throw new Error(`Unknown selection notice missing: ${invalidNotice}`)
+
+          const five = [...stats].sort((a, b) => a.name.localeCompare(b.name)).slice(0, 5)
+          await navigate(`https://wlr.badjoke-lab.com/compare/?${five.map((row) => `wallet=${encodeURIComponent(row.slug)}`).join('&')}`)
+          if ((await selectionNames()).length !== 4) throw new Error('More than four wallets were selected')
+          const warnings = await evaluate(`[...document.querySelectorAll('.compare-warning')].map(x=>x.textContent ?? '').join(' ')`)
+          if (!warnings.includes('Only the first four distinct valid wallet selections are compared.')) throw new Error('Four-wallet truncation notice missing')
+
+          await navigate(pairUrl)
+          const removed = await evaluate(`(() => { const button=document.querySelector(${JSON.stringify(`[aria-label="Remove ${pair[0].name}"]`)}); if(!button) return false; button.click(); return true })()`)
+          if (!removed) throw new Error('Remove control missing')
+          await sleep(500)
+          if (JSON.stringify(await walletParams()) !== JSON.stringify([pair[1].slug])) throw new Error('Remove did not update shareable URL')
+
+          const addOk = await evaluate(`(() => { const label=[...document.querySelectorAll('.control-field')].find(x=>x.querySelector('span')?.textContent?.trim()==='Add wallet'); const el=label?.querySelector('select'); if(!el) return false; const setter=Object.getOwnPropertyDescriptor(HTMLSelectElement.prototype,'value')?.set; setter?.call(el,${JSON.stringify(pair[0].slug)}); el.dispatchEvent(new Event('change',{bubbles:true})); return true })()`)
+          if (!addOk) throw new Error('Add select missing')
+          await sleep(300)
+          const clickedAdd = await evaluate(`(() => { const button=[...document.querySelectorAll('button')].find(x=>x.textContent?.trim()==='Add'); if(!button) return false; button.click(); return true })()`)
+          if (!clickedAdd) throw new Error('Add button missing')
+          await sleep(500)
+          if (JSON.stringify(await walletParams()) !== JSON.stringify([pair[1].slug, pair[0].slug])) throw new Error('Add did not preserve selection order in URL')
+
+          const resetOk = await evaluate(`(() => { const button=[...document.querySelectorAll('button')].find(x=>x.textContent?.trim()==='Reset'); if(!button) return false; button.click(); return true })()`)
+          if (!resetOk) throw new Error('Reset button missing')
+          await sleep(500)
+          if ((await walletParams()).length !== 0 || (await selectionNames()).length !== 0) throw new Error('Reset did not clear Compare state')
+
+          await setMetrics(390, 844, true)
+          await navigate(pairUrl)
+          const mobile = await evaluate(`(() => { const root=document.scrollingElement||document.documentElement; const scrolls=[...document.querySelectorAll('.compare-scroll')].map(el=>{const r=el.getBoundingClientRect();return {left:r.left,right:r.right,clientWidth:el.clientWidth,scrollWidth:el.scrollWidth}}); const panel=document.querySelector('.compare-selector-panel')?.getBoundingClientRect(); return {innerWidth,docClient:root.clientWidth,docScroll:root.scrollWidth,scrolls,panel:panel?{left:panel.left,right:panel.right}:null,mobileMore:getComputedStyle(document.querySelector('.mobile-more-navigation')||document.body).display,desktopSecondary:document.querySelector('.desktop-secondary-navigation')?getComputedStyle(document.querySelector('.desktop-secondary-navigation')).display:null};})()`)
+          console.log('Mobile:', mobile)
+          if (mobile.innerWidth !== 390 || mobile.docScroll > mobile.docClient + 1) throw new Error('Document-level mobile overflow detected')
+          if (!mobile.panel || mobile.panel.left < -1 || mobile.panel.right > 391) throw new Error('Compare selector panel outside viewport')
+          if (!mobile.scrolls.length || mobile.scrolls.some((row) => row.left < -1 || row.right > 391)) throw new Error('Compare scroll viewport outside document viewport')
+          if (!mobile.scrolls.some((row) => row.scrollWidth > row.clientWidth)) throw new Error('Expected internal Compare scrolling was not exercised')
+          if (mobile.mobileMore === 'none' || (mobile.desktopSecondary !== null && mobile.desktopSecondary !== 'none')) throw new Error('Mobile navigation state incorrect')
+
+          socket.close()
+          console.log(`STEP6_COMPARE_QA_OK pair=${pair[0].slug},${pair[1].slug} products=${pair[0].productCount},${pair[1].productCount} incidents=${pair[0].incidentCount},${pair[1].incidentCount} remediation=${pair[0].remediationCount},${pair[1].remediationCount} eol=${pair[0].eolEventCount},${pair[1].eolEventCount}`)
+          NODE
+
+          node "$work/qa.mjs"
