@@ -31,7 +31,14 @@ jobs:
         run: |
           set -euo pipefail
           work="$(mktemp -d)"
-          trap 'kill "${chrome_pid:-}" 2>/dev/null || true; rm -rf "$work"' EXIT
+          cleanup() {
+            if [ -n "${chrome_pid:-}" ]; then
+              kill "$chrome_pid" 2>/dev/null || true
+              wait "$chrome_pid" 2>/dev/null || true
+            fi
+            rm -rf "$work" 2>/dev/null || true
+          }
+          trap cleanup EXIT
           "$BROWSER" --headless=new --no-sandbox --disable-gpu --remote-debugging-port=9222 --user-data-dir="$work/chrome" about:blank >"$work/chrome.log" 2>&1 &
           chrome_pid=$!
           for i in $(seq 1 30); do curl -fsS http://127.0.0.1:9222/json/version >/dev/null 2>&1 && break; sleep 1; done
