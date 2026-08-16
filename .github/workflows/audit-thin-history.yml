@@ -14,18 +14,28 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
-      - name: Print thin-history scope
+      - name: Print targeted depth and correction scope
         run: |
           set -euo pipefail
-          ids='["wlr_ent_000010","wlr_ent_000012","wlr_ent_000018","wlr_ent_000019","wlr_ent_000021","wlr_ent_000023"]'
+          ids='["wlr_ent_000010","wlr_ent_000012","wlr_ent_000018","wlr_ent_000019","wlr_ent_000021","wlr_ent_000023","wlr_ent_000024"]'
           echo '=== ENTITIES ==='
           jq -c --argjson ids "$ids" '.[] | select(.id as $id | $ids | index($id)) | {id,slug,canonical_name,launch_date,launch_date_precision,status,official_url,last_verified_at}' data/entities.json
           echo '=== PRODUCTS ==='
-          jq -c --argjson ids "$ids" '.[] | select(.entity_id as $id | $ids | index($id)) | {id,entity_id,slug,product_name,status,launch_date,launch_date_precision,support_status,official_url}' data/products.json
+          jq -c --argjson ids "$ids" '.[] | select(.entity_id as $id | $ids | index($id)) | {id,entity_id,slug,product_name,status,launch_date,launch_date_precision,support_status,official_url,last_verified_at,notes}' data/products.json
           echo '=== EVENTS ==='
-          jq -c --argjson ids "$ids" '.[] | select(.entity_id as $id | $ids | index($id)) | {id,entity_id,product_id,event_type,event_date,event_date_basis,title,affected_product_ids,confidence}' data/events.json
+          jq -c --argjson ids "$ids" '.[] | select(.entity_id as $id | $ids | index($id)) | {id,entity_id,product_id,event_type,event_date,event_date_basis,title,affected_product_ids,confidence,notes}' data/events.json
           echo '=== EVIDENCE ==='
-          jq -c --argjson ids "$ids" '.[] | select(.entity_id as $id | $ids | index($id)) | {id,entity_id,product_id,event_id,event_ids,source_type,title,url,publisher,published_at,reliability,is_primary,claim_scope}' data/evidence.json
+          jq -c --argjson ids "$ids" '.[] | select(.entity_id as $id | $ids | index($id)) | {id,entity_id,product_id,product_ids,event_id,event_ids,source_type,title,url,publisher,published_at,reliability,is_primary,claim_scope,notes}' data/evidence.json
+          echo '=== RABBY RELEASE LINKAGE ==='
+          jq -c '.[] | select(.id == "wlr_prod_000054")' data/products.json
+          jq -c '.[] | select(.id == "wlr_ev_000069")' data/events.json
+          jq -c '.[] | select(.id == "wlr_src_000115")' data/evidence.json
+          echo '=== LEATHER BROWSER LINKAGE ==='
+          jq -c '.[] | select(.id == "wlr_prod_000066")' data/products.json
+          jq -c '.[] | select(.entity_id == "wlr_ent_000024" or .product_id == "wlr_prod_000066" or ((.product_ids // []) | index("wlr_prod_000066")))' data/evidence.json
+          echo '=== MAX IDS ==='
+          jq -r '.[].id' data/events.json | sort -V | tail -n 5
+          jq -r '.[].id' data/evidence.json | sort -V | tail -n 5
           echo '=== MISSING LAUNCH PRODUCTS ==='
           jq -c '.[] | select(.launch_date == null) | {id,entity_id,slug,product_name,status,support_status,official_url}' data/products.json
           echo '=== UNKNOWN SUPPORT PRODUCTS ==='
