@@ -22,7 +22,14 @@ Status: roadmap addendum
   - accepted production main commit: `714e0e774fee6c0b893b9bf45097c339c7d389d0`
   - Cloudflare production deployment: `31298acd-3bf9-45b2-b8f9-28778a5bf51c`
   - real-browser verification covered deterministic filter counts, combined filters, product-label search, invalid launch-year ranges, reset behavior, and 390px mobile layout.
-- Next: Step 6 lifecycle/security/support Compare. Compare must receive its own specification before implementation.
+- Step 6 lifecycle/security/support Compare: complete and production-verified.
+  - specification: `docs/operations/COMPARE_SPEC.md`
+  - implementation: PR #40
+  - accepted production main commit: `b6dcfcc2346b452cdb5b755b6979d237a1e3cd9a`
+  - Cloudflare production deployment: `b012afb9-54b5-4809-ac0f-0b5018766108`
+  - representative browser QA: Trezor / Ledger; verified URL selection order, duplicate/unknown handling, four-wallet cap, add/remove/reset, product/support/security/remediation/EOL counts, and shareable repeated `wallet=` state.
+  - 390x844 browser QA kept document width at 390px while exercising horizontal scrolling only inside explicit Compare viewports.
+- Next: Step 7 Stats for incident/patch response, EOL/lifespan, types, and data quality. Stats must receive its own specification before implementation.
 
 ## Gate
 Spec -> implementation PR -> validation/CI green -> merge -> production verification where applicable -> docs/status sync.
