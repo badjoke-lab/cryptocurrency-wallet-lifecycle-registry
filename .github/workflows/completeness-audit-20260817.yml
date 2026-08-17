@@ -1,0 +1,68 @@
+name: Audit WLR product completeness gaps
+
+on:
+  push:
+    branches: [ops/completeness-audit-20260817]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Audit launch and support gaps
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          entities=json.loads(Path('data/entities.json').read_text())
+          products=json.loads(Path('data/products.json').read_text())
+          events=json.loads(Path('data/events.json').read_text())
+          evidence=json.loads(Path('data/evidence.json').read_text())
+          ent={e['id']:e for e in entities}
+
+          launch_null=[p for p in products if p.get('launch_date') in (None,'')]
+          support_unknown=[p for p in products if p.get('support_status') in (None,'unknown')]
+
+          print(f'AUDIT_COUNTS products={len(products)} launch_null={len(launch_null)} support_unknown={len(support_unknown)}')
+          print('=== LAUNCH NULL ===')
+          for p in launch_null:
+              related_events=[e for e in events if e.get('product_id')==p['id'] or p['id'] in e.get('affected_product_ids',[])]
+              release_events=[e for e in related_events if e.get('event_type') in {'product_released','launched','other'}]
+              linked_evidence=[s for s in evidence if p['id']==s.get('product_id') or p['id'] in s.get('product_ids',[])]
+              release_ev_ids={e['id'] for e in release_events}
+              release_evidence=[s for s in linked_evidence if s.get('event_id') in release_ev_ids or release_ev_ids.intersection(s.get('event_ids',[])) or s.get('claim_scope')=='launch_date']
+              print(json.dumps({
+                'product_id':p['id'],
+                'entity_id':p['entity_id'],
+                'entity':ent[p['entity_id']]['canonical_name'],
+                'product':p['product_name'],
+                'slug':p['slug'],
+                'product_type':p.get('product_type'),
+                'official_url':p.get('official_url'),
+                'source_code_url':p.get('source_code_url'),
+                'release_events':[{'id':e['id'],'type':e['event_type'],'date':e.get('event_date'),'basis':e.get('event_date_basis'),'title':e.get('title')} for e in release_events],
+                'release_evidence':[{'id':s['id'],'type':s.get('source_type'),'published_at':s.get('published_at'),'claim_scope':s.get('claim_scope'),'primary':s.get('is_primary'),'reliability':s.get('reliability'),'url':s.get('url')} for s in release_evidence]
+              }, ensure_ascii=False))
+
+          print('=== SUPPORT UNKNOWN ===')
+          for p in support_unknown:
+              linked=[s for s in evidence if p['id']==s.get('product_id') or p['id'] in s.get('product_ids',[])]
+              support_evidence=[s for s in linked if s.get('claim_scope')=='support_status']
+              print(json.dumps({
+                'product_id':p['id'],
+                'entity_id':p['entity_id'],
+                'entity':ent[p['entity_id']]['canonical_name'],
+                'product':p['product_name'],
+                'slug':p['slug'],
+                'official_url':p.get('official_url'),
+                'support_status':p.get('support_status'),
+                'support_evidence':[{'id':s['id'],'type':s.get('source_type'),'published_at':s.get('published_at'),'primary':s.get('is_primary'),'reliability':s.get('reliability'),'url':s.get('url')} for s in support_evidence]
+              }, ensure_ascii=False))
+          PY
