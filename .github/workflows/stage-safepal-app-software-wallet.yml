@@ -1,0 +1,59 @@
+name: Stage SafePal App software-wallet history
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/stage-safepal-app-software-wallet.yml']
+permissions:
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply reviewed SafePal App lifecycle records
+        shell: python
+        run: |
+          from pathlib import Path
+          import json
+
+          event_path = Path('data/events.json')
+          evidence_path = Path('data/evidence.json')
+
+          events = json.loads(event_path.read_text())
+          evidence = json.loads(evidence_path.read_text())
+          assert not any(x.get('id') == 'wlr_ev_000095' for x in events)
+          assert not any(x.get('id') == 'wlr_src_000153' for x in evidence)
+
+          events.append({
+            'id':'wlr_ev_000095','entity_id':'wlr_ent_000026','product_id':'wlr_prod_000073','affected_product_ids':['wlr_prod_000073'],
+            'event_type':'product_released','event_date':'2020-05-11','event_date_basis':'release',
+            'title':'SafePal App added self-custody software-wallet capability',
+            'description':'SafePal officially released SafePal Lite inside the SafePal App, allowing users to create or import self-custody software wallets in addition to using the App as a companion for SafePal hardware wallets.',
+            'confidence':'high','event_status_effect':'none','is_major_event':true,
+            'notes':'This event records the software-wallet capability release, not the initial SafePal App launch. First-party SafePal posts show that the App already existed in 2019.'
+          })
+          evidence.append({
+            'id':'wlr_src_000153','entity_id':'wlr_ent_000026','product_id':'wlr_prod_000073','event_id':'wlr_ev_000095',
+            'source_type':'official_blog','title':'SafePal Lite Software Wallet is now ALIVE','url':'https://www.safepal.com/en/blog/safepal-lite-software-wallet-is-now-alive','publisher':'SafePal','published_at':'2020-05-11','accessed_at':'2026-08-17','reliability':'high','claim_scope':'event','is_primary':true,
+            'notes':'Primary SafePal announcement for the 2020-05-11 release of decentralized software-wallet functionality inside the existing SafePal App. It explicitly distinguishes this from the earlier hardware-wallet companion App.'
+          })
+
+          event_path.write_text(json.dumps(events, ensure_ascii=False, separators=(',',':')) + '\n')
+          evidence_path.write_text(json.dumps(evidence, ensure_ascii=False, separators=(',',':')) + '\n')
+      - name: Validate
+        run: |
+          npm install --no-audit --no-fund
+          python -m pip install -r requirements.txt
+          npm run validate:records
+          npm run validate:identity-evidence
+          npm run coverage:audit
+      - name: Push reviewed branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -b data/safepal-app-software-wallet-history
+          git add data/events.json data/evidence.json
+          git commit -m 'Record SafePal App software-wallet release history'
+          git push origin data/safepal-app-software-wallet-history
