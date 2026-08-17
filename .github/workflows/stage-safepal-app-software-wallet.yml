@@ -31,12 +31,12 @@ jobs:
             'event_type':'product_released','event_date':'2020-05-11','event_date_basis':'release',
             'title':'SafePal App added self-custody software-wallet capability',
             'description':'SafePal officially released SafePal Lite inside the SafePal App, allowing users to create or import self-custody software wallets in addition to using the App as a companion for SafePal hardware wallets.',
-            'confidence':'high','event_status_effect':'none','is_major_event':true,
+            'confidence':'high','event_status_effect':'none','is_major_event':True,
             'notes':'This event records the software-wallet capability release, not the initial SafePal App launch. First-party SafePal posts show that the App already existed in 2019.'
           })
           evidence.append({
             'id':'wlr_src_000153','entity_id':'wlr_ent_000026','product_id':'wlr_prod_000073','event_id':'wlr_ev_000095',
-            'source_type':'official_blog','title':'SafePal Lite Software Wallet is now ALIVE','url':'https://www.safepal.com/en/blog/safepal-lite-software-wallet-is-now-alive','publisher':'SafePal','published_at':'2020-05-11','accessed_at':'2026-08-17','reliability':'high','claim_scope':'event','is_primary':true,
+            'source_type':'official_blog','title':'SafePal Lite Software Wallet is now ALIVE','url':'https://www.safepal.com/en/blog/safepal-lite-software-wallet-is-now-alive','publisher':'SafePal','published_at':'2020-05-11','accessed_at':'2026-08-17','reliability':'high','claim_scope':'event','is_primary':True,
             'notes':'Primary SafePal announcement for the 2020-05-11 release of decentralized software-wallet functionality inside the existing SafePal App. It explicitly distinguishes this from the earlier hardware-wallet companion App.'
           })
 
