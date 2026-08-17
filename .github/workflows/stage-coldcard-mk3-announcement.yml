@@ -1,0 +1,44 @@
+name: Stage COLDCARD Mk3 announcement history
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/stage-coldcard-mk3-announcement.yml']
+permissions:
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply reviewed COLDCARD Mk3 announcement records
+        shell: python
+        run: |
+          from pathlib import Path
+          import json
+
+          event={'id':'wlr_ev_000097','entity_id':'wlr_ent_000003','product_id':'wlr_prod_000015','affected_product_ids':['wlr_prod_000015'],'event_type':'product_announced','event_date':'2019-08-26','event_date_basis':'announcement','title':'COLDCARD Mk3 announced and first-batch preorders opened','description':'Coinkite announced COLDCARD Mark 3, opened first-batch preorders, and stated that units were planned to ship by October 2019.','confidence':'high','event_status_effect':'none','is_major_event':True,'notes':'This records the announcement and preorder opening only. It does not infer an exact commercial ship or release date.'}
+          source={'id':'wlr_src_000155','entity_id':'wlr_ent_000003','product_ids':['wlr_prod_000015'],'event_ids':['wlr_ev_000097'],'product_id':'wlr_prod_000015','event_id':'wlr_ev_000097','source_type':'official_blog','title':'COLDCARD Mark 3','url':'https://blog.coinkite.com/coldcard-mark3/','publisher':'Coinkite','published_at':'2019-08-26','accessed_at':'2026-08-17','reliability':'high','claim_scope':'event','is_primary':True,'notes':'First-party Coinkite announcement introducing Mark 3, opening first-batch preorders, and stating planned shipment by October 2019.'}
+
+          for path,obj,ident in [('data/events.json',event,'wlr_ev_000097'),('data/evidence.json',source,'wlr_src_000155')]:
+              p=Path(path); t=p.read_text(); assert ident not in t
+              nl='\n' if t.endswith('\n') else ''; core=t[:-1] if nl else t
+              assert core.endswith(']'); core=core[:-1]
+              sep='' if core.rstrip().endswith('[') else ','
+              p.write_text(core+sep+json.dumps(obj,ensure_ascii=False,separators=(',',':'))+']'+nl)
+      - name: Validate
+        run: |
+          npm install --no-audit --no-fund
+          python -m pip install -r requirements.txt
+          npm run validate:records
+          npm run validate:identity-evidence
+          npm run coverage:audit
+      - name: Push reviewed branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -b data/coldcard-mk3-announcement-history
+          git add data/events.json data/evidence.json
+          git commit -m 'Record COLDCARD Mk3 announcement history'
+          git push origin data/coldcard-mk3-announcement-history
