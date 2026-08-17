@@ -8,6 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Pin exact merged main
+        run: test "$(git rev-parse HEAD)" = "7af181f2f03d4a5a829e542b880721b05aa26c7e"
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -53,8 +57,8 @@ jobs:
           test "$(git rev-parse HEAD)" = "$expected_sha"
           node scripts/build-stats.mjs
           jq -e '.registry.entities == 26 and .registry.products == 74 and .registry.events == 103 and .registry.evidence == 162' public/data/stats.json >/dev/null
-          jq -e '.products.launch_date.known == 62 and .products.launch_date.total == 74' public/data/stats.json >/dev/null
-          jq -e '.data_quality.products.support_status_known.known == 73 and .data_quality.products.support_status_known.total == 74' public/data/stats.json >/dev/null
+          jq -e '.products.launch_date.count == 62 and .products.launch_date.denominator == 74' public/data/stats.json >/dev/null
+          jq -e '.data_quality.products.support_status_known.count == 73 and .data_quality.products.support_status_known.denominator == 74' public/data/stats.json >/dev/null
           jq -e '.[] | select(.id == "wlr_prod_000053") | .launch_date == "2022" and .launch_date_precision == "year"' data/products.json >/dev/null
           jq -e '.[] | select(.id == "wlr_ev_000103") | .entity_id == "wlr_ent_000017" and .product_id == "wlr_prod_000053" and .event_type == "product_released" and .event_date == "2022" and .event_date_basis == "release"' data/events.json >/dev/null
           jq -e '.[] | select(.id == "wlr_src_000161") | .event_id == "wlr_ev_000103" and .product_id == "wlr_prod_000053" and .reliability == "high" and .is_primary == true and .claim_scope == "launch_date"' data/evidence.json >/dev/null
