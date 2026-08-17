@@ -1,0 +1,126 @@
+name: Verify WLR PR73 Production
+
+on:
+  push:
+    branches: [ops/pr73-production-verify]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Resolve exact Cloudflare production deployment
+        id: cf
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          expected="f5ec0c267f2a1830e268754618c8ca7aca774754"
+          base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
+          auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
+          match=""
+          for attempt in $(seq 1 60); do
+            deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
+            match="$(jq -c --arg sha "$expected" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
+            if [ -n "$match" ] && jq -e '.latest_stage.status == "success"' <<<"$match" >/dev/null; then break; fi
+            echo "Waiting exact deployment attempt=${attempt}"
+            sleep 10
+          done
+          test -n "$match"
+          jq -e '.latest_stage.status == "success" and .deployment_trigger.metadata.branch == "main" and (.aliases | index("https://wlr.badjoke-lab.com")) != null' <<<"$match" >/dev/null
+          url="$(jq -r '.url' <<<"$match")"
+          echo "deployment_url=$url" >> "$GITHUB_OUTPUT"
+          echo "$match" | jq '{id,short_id,url,aliases,latest_stage,deployment_trigger}'
+
+      - name: Verify deployment-specific state
+        env:
+          DEPLOYMENT_URL: ${{ steps.cf.outputs.deployment_url }}
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"
+          trap 'rm -rf "$work"' EXIT
+          curl -fsSL "${DEPLOYMENT_URL}/data/stats.json?verify=f5ec0c26" -o "$work/stats.json"
+          jq '{registry,launch:.products.launch_date,support:.data_quality.products.support_status_known}' "$work/stats.json"
+          jq -e '.registry.entities == 25 and .registry.products == 69 and .registry.events == 80 and .registry.evidence == 133 and .registry.incident_events == 17 and .registry.remediation_events == 5' "$work/stats.json" >/dev/null
+          jq -e '.products.launch_date.count == 47 and .products.launch_date.denominator == 69' "$work/stats.json" >/dev/null
+          jq -e '.data_quality.products.support_status_known.count == 68 and .data_quality.products.support_status_known.denominator == 69' "$work/stats.json" >/dev/null
+
+      - name: Wait for custom domain exact content
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"
+          trap 'rm -rf "$work"' EXIT
+          ready=0
+          for attempt in $(seq 1 60); do
+            nonce="f5ec0c26-${attempt}-$(date +%s)"
+            curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/stats.json?verify=${nonce}" -o "$work/stats.json"
+            events="$(jq -r '.registry.events' "$work/stats.json")"
+            evidence="$(jq -r '.registry.evidence' "$work/stats.json")"
+            incidents="$(jq -r '.registry.incident_events' "$work/stats.json")"
+            remediation="$(jq -r '.registry.remediation_events' "$work/stats.json")"
+            echo "custom attempt=${attempt} events=${events} evidence=${evidence} incidents=${incidents} remediation=${remediation}"
+            if [ "$events" = 80 ] && [ "$evidence" = 133 ] && [ "$incidents" = 17 ] && [ "$remediation" = 5 ]; then ready=1; break; fi
+            sleep 10
+          done
+          test "$ready" -eq 1
+
+      - name: Verify public Rabby records and routes
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"
+          trap 'rm -rf "$work"' EXIT
+          nonce="$(date +%s)"
+          for name in events evidence stats; do
+            curl -fsSL "https://wlr.badjoke-lab.com/data/${name}.json?verify=${nonce}" -o "$work/${name}.json"
+          done
+
+          echo '=== RABBY EVENT ==='
+          jq -c '.[] | select(.id == "wlr_ev_000080")' "$work/events.json"
+          echo '=== RABBY EVIDENCE ==='
+          jq -c '.[] | select(.id == "wlr_src_000131" or .id == "wlr_src_000132" or .id == "wlr_src_000133")' "$work/evidence.json"
+          echo '=== PUBLIC STATS ==='
+          jq '{registry}' "$work/stats.json"
+
+          check() { label="$1"; shift; echo "CHECK ${label}"; "$@"; echo "PASS ${label}"; }
+
+          check 'Rabby Swap exploit' jq -e '
+            .[] | select(.id == "wlr_ev_000080") as $e |
+            ($e.entity_id == "wlr_ent_000018") and
+            ($e.product_id == "wlr_prod_000054") and
+            ($e.event_type == "exploit") and
+            ($e.event_date == "2022-10-11") and
+            ($e.event_date_basis == "occurrence") and
+            ($e.impact_level == "high") and
+            ($e.security_scope == "smart_contract") and
+            ($e.funds_affected == "yes") and
+            ($e.event_status_effect == "none") and
+            (($e.user_actions_required | index("revoke_permissions")) != null) and
+            (($e | has("amount_text")) | not) and
+            (($e | has("affected_versions")) | not) and
+            (($e | has("fixed_versions")) | not)
+          ' "$work/events.json"
+
+          check 'Rabby evidence set' jq -e '
+            ([.[] | select(.id == "wlr_src_000131" or .id == "wlr_src_000132" or .id == "wlr_src_000133")] | length == 3) and
+            ([.[] | select(.id == "wlr_src_000131" or .id == "wlr_src_000132") | select(.source_type == "official_social" and .reliability == "high" and .is_primary == true and .event_id == "wlr_ev_000080")] | length == 2) and
+            ([.[] | select(.id == "wlr_src_000133") | select(.source_type == "news_article" and .reliability == "high" and .is_primary == false and .claim_scope == "funds_affected" and .event_id == "wlr_ev_000080")] | length == 1)
+          ' "$work/evidence.json"
+
+          check 'Canonical source URLs' jq -e '
+            ([.[] | select(.id == "wlr_src_000131") | .url] == ["https://x.com/Rabby_io/status/1579877793642737665"]) and
+            ([.[] | select(.id == "wlr_src_000132") | .url] == ["https://x.com/Rabby_io/status/1579819525494960128"]) and
+            ([.[] | select(.id == "wlr_src_000133") | .url] == ["https://www.theblock.co/post/176284/rabby-wallet-exploit-prompts-users-to-revoke-access"])
+          ' "$work/evidence.json"
+
+          check 'Registry totals' jq -e '.registry.entities == 25 and .registry.products == 69 and .registry.events == 80 and .registry.evidence == 133 and .registry.incident_events == 17 and .registry.remediation_events == 5' "$work/stats.json"
+          check 'Rabby wallet route' curl -fsSL -o /dev/null "https://wlr.badjoke-lab.com/wallet/rabby/?verify=${nonce}"
+          check 'Rabby browser extension route' curl -fsSL -o /dev/null "https://wlr.badjoke-lab.com/product/rabby-browser-extension/?verify=${nonce}"
+          echo 'PR73_PRODUCTION_VERIFY_OK events=80 evidence=133 incidents=17 remediation=5 rabby_event=wlr_ev_000080'
