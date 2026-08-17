@@ -1,0 +1,42 @@
+name: Stage Keystone 3 Pro announcement history
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/stage-keystone3pro-announcement.yml']
+permissions:
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply reviewed Keystone 3 Pro announcement records
+        shell: python
+        run: |
+          from pathlib import Path
+          import json
+
+          event={'id':'wlr_ev_000100','entity_id':'wlr_ent_000013','product_id':'wlr_prod_000041','affected_product_ids':['wlr_prod_000041'],'event_type':'product_announced','event_date':'2023-09-04','event_date_basis':'announcement','title':'Keystone publicly detailed the Keystone 3 Pro','description':'Keystone published a first-party product article detailing the Keystone 3 Pro hardware wallet and its community-driven design and security architecture.','confidence':'high','event_status_effect':'none','is_major_event':True,'notes':'This is a first-party public product-announcement milestone. It does not establish the exact first commercial shipment or general-release day, so the product launch_date remains unresolved.'}
+          source={'id':'wlr_src_000158','entity_id':'wlr_ent_000013','product_ids':['wlr_prod_000041'],'event_ids':['wlr_ev_000100'],'product_id':'wlr_prod_000041','event_id':'wlr_ev_000100','source_type':'official_blog','title':'Keystone 3 Pro: A Community-Centric Designed Hardware Wallet','url':'https://blog.keyst.one/keystone-3-pro-a-community-centric-designed-hardware-wallet-3d5f8f5b41e5','publisher':'Keystone','published_at':'2023-09-04','accessed_at':'2026-08-17','reliability':'high','claim_scope':'event','is_primary':True,'notes':'First-party Keystone article used to anchor the public Keystone 3 Pro announcement milestone; it is not treated as proof of the exact first commercial shipment date.'}
+
+          for path,obj,ident in [('data/events.json',event,'wlr_ev_000100'),('data/evidence.json',source,'wlr_src_000158')]:
+              p=Path(path); rows=json.loads(p.read_text()); assert all(r.get('id') != ident for r in rows)
+              rows.append(obj)
+              p.write_text(json.dumps(rows,ensure_ascii=False,separators=(',',':'))+'\n')
+      - name: Validate
+        run: |
+          npm install --no-audit --no-fund
+          python -m pip install -r requirements.txt
+          npm run validate:records
+          npm run validate:identity-evidence
+          npm run coverage:audit
+      - name: Push reviewed branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -b data/keystone3pro-announcement-history
+          git add data/events.json data/evidence.json
+          git commit -m 'Record Keystone 3 Pro announcement history'
+          git push origin data/keystone3pro-announcement-history
