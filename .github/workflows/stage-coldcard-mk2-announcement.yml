@@ -1,0 +1,42 @@
+name: Stage COLDCARD Mk2 announcement history
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/stage-coldcard-mk2-announcement.yml']
+permissions:
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply reviewed COLDCARD Mk2 announcement records
+        shell: python
+        run: |
+          from pathlib import Path
+          import json
+
+          event={'id':'wlr_ev_000098','entity_id':'wlr_ent_000003','product_id':'wlr_prod_000014','affected_product_ids':['wlr_prod_000014'],'event_type':'product_announced','event_date':'2019-01-28','event_date_basis':'announcement','title':'COLDCARD Mk2 publicly described with new hardware and firmware changes','description':'Coinkite publicly described the new COLDCARD Mk2, including mechanical buttons and hardware and firmware changes intended to harden the device against PIN-bypass attacks.','confidence':'high','event_status_effect':'none','is_major_event':True,'notes':'This is a first-party public Mk2 disclosure milestone. It does not establish an exact commercial shipment or release date, so the product launch_date remains unresolved.'}
+          source={'id':'wlr_src_000156','entity_id':'wlr_ent_000003','product_ids':['wlr_prod_000014'],'event_ids':['wlr_ev_000098'],'product_id':'wlr_prod_000014','event_id':'wlr_ev_000098','source_type':'official_blog','title':'Keep Your Pins Long, and Your Peace of Mind Intact','url':'https://blog.coinkite.com/use-long-pins/','publisher':'Coinkite','published_at':'2019-01-28','accessed_at':'2026-08-17','reliability':'high','claim_scope':'event','is_primary':True,'notes':'First-party Coinkite security post explicitly refers to the new Coldcard Mk2 and describes its mechanical-button, PCB-trace, bootrom and firmware hardening changes.'}
+
+          for path,obj,ident in [('data/events.json',event,'wlr_ev_000098'),('data/evidence.json',source,'wlr_src_000156')]:
+              p=Path(path); rows=json.loads(p.read_text()); assert all(r.get('id') != ident for r in rows)
+              rows.append(obj)
+              p.write_text(json.dumps(rows,ensure_ascii=False,separators=(',',':'))+'\n')
+      - name: Validate
+        run: |
+          npm install --no-audit --no-fund
+          python -m pip install -r requirements.txt
+          npm run validate:records
+          npm run validate:identity-evidence
+          npm run coverage:audit
+      - name: Push reviewed branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -b data/coldcard-mk2-announcement-history
+          git add data/events.json data/evidence.json
+          git commit -m 'Record COLDCARD Mk2 announcement history'
+          git push origin data/coldcard-mk2-announcement-history
