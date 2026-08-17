@@ -1,0 +1,136 @@
+name: Stage reviewed Leather extension launch history
+
+on:
+  push:
+    branches: [data/leather-extension-launch-history]
+
+permissions:
+  contents: write
+
+jobs:
+  stage:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data/leather-extension-launch-history
+          fetch-depth: 0
+
+      - name: Add Hiro/Leather extension launch date, event, and evidence
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          products_path=Path('data/products.json')
+          events_path=Path('data/events.json')
+          evidence_path=Path('data/evidence.json')
+          products=json.loads(products_path.read_text())
+          events=json.loads(events_path.read_text())
+          evidence=json.loads(evidence_path.read_text())
+
+          assert len(products)==69 and len(events)==86 and len(evidence)==142
+          p=next(x for x in products if x['id']=='wlr_prod_000066')
+          assert p['entity_id']=='wlr_ent_000024' and p['slug']=='leather-browser-extension'
+          assert 'Hiro Wallet Extension' in p.get('aliases',[])
+          assert p.get('launch_date') is None and p.get('launch_date_precision')=='approximate'
+          assert not any(e.get('product_id')=='wlr_prod_000066' and e.get('event_type')=='product_released' for e in events)
+          assert any(e['id']=='wlr_ev_000060' and e['event_type']=='rebranded' for e in events)
+          assert any(e['id']=='wlr_ev_000061' and e['event_type']=='vulnerability_disclosed' and e['product_id']=='wlr_prod_000066' for e in events)
+          assert 'wlr_ev_000087' not in {e['id'] for e in events}
+          assert 'wlr_src_000143' not in {s['id'] for s in evidence}
+
+          lines=products_path.read_text().splitlines()
+          idx=[i for i,line in enumerate(lines) if '"id":"wlr_prod_000066"' in line]
+          assert len(idx)==1
+          i=idx[0]
+          old='"launch_date":null'
+          new='"launch_date":"2021-08-10","launch_date_precision":"day"'
+          assert old in lines[i]
+          # Current row omits launch_date_precision when launch_date is null; avoid duplicating if future formatting changes.
+          lines[i]=lines[i].replace(old,new,1)
+          products_path.write_text('\n'.join(lines)+'\n')
+
+          def append_rows(path, rows):
+              text=path.read_text(); stripped=text.rstrip(); assert stripped.endswith(']')
+              body=stripped[:-1].rstrip()
+              addition=',\n'+',\n'.join(json.dumps(row,ensure_ascii=False,separators=(',',':')) for row in rows)+'\n]'
+              path.write_text(body+addition+'\n')
+
+          event={
+            'id':'wlr_ev_000087',
+            'entity_id':'wlr_ent_000024',
+            'product_id':'wlr_prod_000066',
+            'affected_product_ids':['wlr_prod_000066'],
+            'event_type':'product_released',
+            'event_date':'2021-08-10',
+            'event_date_basis':'release',
+            'title':'Hiro Wallet browser extension became available in Chrome and Firefox stores',
+            'description':'Hiro announced general store availability of its wallet browser extension on 2021-08-10 for Chrome and Firefox. This browser-extension lineage was later acquired and rebranded to Leather in 2023.',
+            'confidence':'high',
+            'event_status_effect':'active',
+            'is_major_event':True,
+            'notes':'This launch event belongs to the current Leather Browser Extension lineage under its historical Hiro Wallet branding. Chrome/Firefox are historical launch-time distribution facts and do not replace the current-platform list.'
+          }
+          source={
+            'id':'wlr_src_000143',
+            'entity_id':'wlr_ent_000024',
+            'product_ids':['wlr_prod_000066'],
+            'event_ids':['wlr_ev_000087'],
+            'product_id':'wlr_prod_000066',
+            'event_id':'wlr_ev_000087',
+            'source_type':'official_statement',
+            'title':'Hiro Wallet Available in Chrome and Firefox Stores',
+            'url':'https://www.hiro.so/press-release/hiro-wallet-available-in-chrome-and-firefox-stores',
+            'publisher':'Hiro',
+            'published_at':'2021-08-10',
+            'accessed_at':'2026-08-17',
+            'reliability':'high',
+            'claim_scope':'launch_date',
+            'is_primary':True,
+            'notes':'First-party Hiro press-release page recording browser-store availability for the wallet extension before the later Leather acquisition and rebrand.'
+          }
+          append_rows(events_path,[event])
+          append_rows(evidence_path,[source])
+          PY
+
+      - name: Validate canonical records and identity/evidence policy
+        run: |
+          set -euo pipefail
+          python3 scripts/validate_records.py
+          python3 scripts/validate_identity_evidence_policy.py
+
+      - name: Assert targeted Leather batch
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          products=json.loads(Path('data/products.json').read_text())
+          events=json.loads(Path('data/events.json').read_text())
+          evidence=json.loads(Path('data/evidence.json').read_text())
+          p=next(x for x in products if x['id']=='wlr_prod_000066')
+          assert p['launch_date']=='2021-08-10' and p['launch_date_precision']=='day'
+          assert 'Hiro Wallet Extension' in p['aliases']
+          e=next(x for x in events if x['id']=='wlr_ev_000087')
+          assert e['entity_id']=='wlr_ent_000024' and e['product_id']=='wlr_prod_000066'
+          assert e['event_type']=='product_released' and e['event_date']=='2021-08-10' and e['event_date_basis']=='release'
+          s=next(x for x in evidence if x['id']=='wlr_src_000143')
+          assert s['product_id']=='wlr_prod_000066' and s['event_id']=='wlr_ev_000087'
+          assert s['source_type']=='official_statement' and s['claim_scope']=='launch_date' and s['reliability']=='high' and s['is_primary'] is True
+          assert s['published_at']=='2021-08-10'
+          assert len(products)==69 and len(events)==87 and len(evidence)==143
+          print('LEATHER_EXTENSION_LAUNCH_STAGE_OK products=69 events=87 evidence=143 launch_coverage_expected=51/69 incidents=18 remediation=7')
+          PY
+
+      - name: Commit staged canonical changes
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data/products.json data/events.json data/evidence.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Add reviewed Leather extension launch history'
+          git push origin HEAD:data/leather-extension-launch-history
