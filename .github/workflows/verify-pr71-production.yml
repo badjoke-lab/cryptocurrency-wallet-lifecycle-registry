@@ -1,0 +1,86 @@
+name: Verify WLR PR71 Production
+
+on:
+  push:
+    branches: [ops/pr71-production-verify]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Resolve exact Cloudflare production deployment
+        id: cf
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          expected="91c8122b25f82bc06faf5a659ab8da86e6707c8e"
+          base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
+          auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
+          match=""
+          for attempt in $(seq 1 60); do
+            deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
+            match="$(jq -c --arg sha "$expected" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
+            if [ -n "$match" ] && jq -e '.latest_stage.status == "success"' <<<"$match" >/dev/null; then break; fi
+            echo "Waiting exact deployment attempt=${attempt}"
+            sleep 10
+          done
+          test -n "$match"
+          jq -e '.latest_stage.status == "success" and .deployment_trigger.metadata.branch == "main" and (.aliases | index("https://wlr.badjoke-lab.com")) != null' <<<"$match" >/dev/null
+          url="$(jq -r '.url' <<<"$match")"
+          echo "deployment_url=$url" >> "$GITHUB_OUTPUT"
+          echo "$match" | jq '{id,short_id,url,aliases,latest_stage,deployment_trigger}'
+
+      - name: Verify deployment-specific state
+        env:
+          DEPLOYMENT_URL: ${{ steps.cf.outputs.deployment_url }}
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"
+          trap 'rm -rf "$work"' EXIT
+          curl -fsSL "${DEPLOYMENT_URL}/data/stats.json?verify=91c8122b" -o "$work/stats.json"
+          jq -e '.registry.entities == 25 and .registry.products == 69 and .registry.events == 79 and .registry.evidence == 130 and .registry.incident_events == 16 and .registry.remediation_events == 5' "$work/stats.json" >/dev/null
+          jq '{registry}' "$work/stats.json"
+
+      - name: Wait for custom domain exact content
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"
+          trap 'rm -rf "$work"' EXIT
+          ready=0
+          for attempt in $(seq 1 60); do
+            nonce="91c8122b-${attempt}-$(date +%s)"
+            curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/stats.json?verify=${nonce}" -o "$work/stats.json"
+            events="$(jq -r '.registry.events' "$work/stats.json")"
+            evidence="$(jq -r '.registry.evidence' "$work/stats.json")"
+            remediation="$(jq -r '.registry.remediation_events' "$work/stats.json")"
+            echo "custom attempt=${attempt} events=${events} evidence=${evidence} remediation=${remediation}"
+            if [ "$events" = 79 ] && [ "$evidence" = 130 ] && [ "$remediation" = 5 ]; then ready=1; break; fi
+            sleep 10
+          done
+          test "$ready" -eq 1
+
+      - name: Verify public Rainbow records and routes
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"
+          trap 'rm -rf "$work"' EXIT
+          nonce="$(date +%s)"
+          for name in events evidence stats; do
+            curl -fsSL "https://wlr.badjoke-lab.com/data/${name}.json?verify=${nonce}" -o "$work/${name}.json"
+          done
+          jq -e '.[] | select(.id == "wlr_ev_000079") | .entity_id == "wlr_ent_000019" and .product_id == "wlr_prod_000058" and .event_type == "software_fix" and .event_date == "2023-06-15" and .event_date_basis == "release" and (.fixed_versions[] | .version == "1.1.0") and (.impact_level == null) and (.funds_affected == null)' "$work/events.json" >/dev/null
+          jq -e '.[] | select(.id == "wlr_src_000130") | .event_id == "wlr_ev_000079" and .source_type == "release_notes" and .url == "https://github.com/rainbow-me/browser-extension/releases/tag/v1.1.0" and .reliability == "high" and .claim_scope == "security_fix" and .is_primary == true' "$work/evidence.json" >/dev/null
+          jq -e '.registry.events == 79 and .registry.evidence == 130 and .registry.remediation_events == 5' "$work/stats.json" >/dev/null
+          curl -fsSL -o /dev/null "https://wlr.badjoke-lab.com/wallet/rainbow/?verify=${nonce}"
+          curl -fsSL -o /dev/null "https://wlr.badjoke-lab.com/product/rainbow-browser-extension/?verify=${nonce}"
+          echo 'PR71_PRODUCTION_VERIFY_OK events=79 evidence=130 incidents=16 remediation=5 rainbow_fix=1.1.0'
