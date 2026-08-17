@@ -1,0 +1,56 @@
+name: Stage COLDCARD Mk4 launch history
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/stage-coldcard-mk4-launch.yml']
+permissions:
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply reviewed COLDCARD Mk4 launch records
+        shell: python
+        run: |
+          from pathlib import Path
+          import json
+
+          products_path=Path('data/products.json')
+          text=products_path.read_text()
+          marker='{"id":"wlr_prod_000016"'
+          start=text.index(marker)
+          end=text.index('\n  },', start)+5
+          block=text[start:end]
+          old='"launch_date":null,"launch_date_precision":"approximate"'
+          new='"launch_date":"2022","launch_date_precision":"year"'
+          assert old in block
+          block=block.replace(old,new,1)
+          products_path.write_text(text[:start]+block+text[end:])
+
+          event={'id':'wlr_ev_000096','entity_id':'wlr_ent_000003','product_id':'wlr_prod_000016','affected_product_ids':['wlr_prod_000016'],'event_type':'product_released','event_date':'2022','event_date_basis':'release','title':'COLDCARD Mk4 introduced','description':'COLDCARD documentation records the Mk4 generation as introduced in 2022.','confidence':'high','event_status_effect':'active','is_major_event':True,'notes':'Year-level precision is retained because the first-party documentation does not provide an exact release day in its launch statement.'}
+          source={'id':'wlr_src_000154','entity_id':'wlr_ent_000003','product_ids':['wlr_prod_000016'],'event_ids':['wlr_ev_000096'],'product_id':'wlr_prod_000016','event_id':'wlr_ev_000096','source_type':'official_statement','title':'COLDCARD Mk4 vs. Mk3','url':'https://coldcard.com/docs/coldcard-mk4/','publisher':'COLDCARD / Coinkite','published_at':None,'accessed_at':'2026-08-17','reliability':'high','claim_scope':'launch_date','is_primary':True,'notes':'First-party COLDCARD documentation states that the Mk4 was introduced in 2022.'}
+
+          for path,obj,ident in [('data/events.json',event,'wlr_ev_000096'),('data/evidence.json',source,'wlr_src_000154')]:
+              p=Path(path); t=p.read_text(); assert ident not in t
+              nl='\n' if t.endswith('\n') else ''; core=t[:-1] if nl else t
+              assert core.endswith(']'); core=core[:-1]
+              sep='' if core.rstrip().endswith('[') else ','
+              p.write_text(core+sep+json.dumps(obj,ensure_ascii=False,separators=(',',':'))+']'+nl)
+      - name: Validate
+        run: |
+          npm install --no-audit --no-fund
+          python -m pip install -r requirements.txt
+          npm run validate:records
+          npm run validate:identity-evidence
+          npm run coverage:audit
+      - name: Push reviewed branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -b data/coldcard-mk4-launch-history
+          git add data/products.json data/events.json data/evidence.json
+          git commit -m 'Add reviewed COLDCARD Mk4 launch history'
+          git push origin data/coldcard-mk4-launch-history
