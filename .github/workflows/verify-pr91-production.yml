@@ -1,0 +1,127 @@
+name: Verify WLR PR91 Production
+
+on:
+  push:
+    branches: [qa/pr91-production-verify]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Resolve exact deployment and verify Passport Core public state
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          expected_sha="32566680f926395f7230ce8ab1cd5be3dfc30807"
+          test "$(git rev-parse HEAD)" = "$expected_sha"
+
+          python3 - <<'PY' > /tmp/expected.env
+          import json
+          from pathlib import Path
+          entities=json.loads(Path('data/entities.json').read_text())
+          products=json.loads(Path('data/products.json').read_text())
+          events=json.loads(Path('data/events.json').read_text())
+          evidence=json.loads(Path('data/evidence.json').read_text())
+          tax=json.loads(Path('config/structured-discovery.json').read_text())
+          incidents=sum(e.get('event_type') in tax['incident_event_types'] for e in events)
+          remediation=sum(e.get('event_type') in tax['remediation_event_types'] for e in events)
+          launch=sum(p.get('launch_date') not in (None,'') for p in products)
+          support=sum(p.get('support_status') not in (None,'unknown') for p in products)
+          print(f'ENTITIES={len(entities)}')
+          print(f'PRODUCTS={len(products)}')
+          print(f'EVENTS={len(events)}')
+          print(f'EVIDENCE={len(evidence)}')
+          print(f'INCIDENTS={incidents}')
+          print(f'REMEDIATION={remediation}')
+          print(f'LAUNCH={launch}')
+          print(f'SUPPORT={support}')
+          PY
+          source /tmp/expected.env
+          echo "expected entities=$ENTITIES products=$PRODUCTS events=$EVENTS evidence=$EVIDENCE incidents=$INCIDENTS remediation=$REMEDIATION launch=$LAUNCH support=$SUPPORT"
+          test "$ENTITIES" = 26
+          test "$PRODUCTS" = 74
+          test "$EVENTS" = 90
+          test "$EVIDENCE" = 148
+          test "$LAUNCH" = 53
+          test "$SUPPORT" = 73
+
+          base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
+          auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
+          match=""
+          for attempt in $(seq 1 60); do
+            deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
+            match="$(jq -c --arg sha "$expected_sha" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
+            if [ -n "$match" ] && jq -e '.latest_stage.status == "success"' <<<"$match" >/dev/null; then break; fi
+            echo "Waiting exact deployment attempt=${attempt}"
+            sleep 10
+          done
+          test -n "$match"
+          jq -e '.latest_stage.status == "success" and .deployment_trigger.metadata.branch == "main" and (.aliases | index("https://wlr.badjoke-lab.com")) != null' <<<"$match" >/dev/null
+          deployment_url="$(jq -r '.url' <<<"$match")"
+          echo "$match" | jq '{id,short_id,url,aliases,latest_stage,deployment_trigger}'
+
+          work="$(mktemp -d)"
+          trap 'rm -rf "$work"' EXIT
+          curl -fsSL "${deployment_url}/data/stats.json?verify=32566680" -o "$work/deploy-stats.json"
+          python3 - "$work/deploy-stats.json" /tmp/expected.env <<'PY'
+          import json,pathlib,sys
+          stats=json.loads(pathlib.Path(sys.argv[1]).read_text())
+          vals={k:int(v) for k,v in (line.strip().split('=',1) for line in pathlib.Path(sys.argv[2]).read_text().splitlines())}
+          r=stats['registry']
+          assert (r['entities'],r['products'],r['events'],r['evidence'])==(vals['ENTITIES'],vals['PRODUCTS'],vals['EVENTS'],vals['EVIDENCE'])
+          assert r['incident_events']==vals['INCIDENTS'] and r['remediation_events']==vals['REMEDIATION']
+          assert stats['products']['launch_date']['count']==vals['LAUNCH'] and stats['products']['launch_date']['denominator']==vals['PRODUCTS']
+          assert stats['data_quality']['products']['support_status_known']['count']==vals['SUPPORT'] and stats['data_quality']['products']['support_status_known']['denominator']==vals['PRODUCTS']
+          print('PASSPORT_DEPLOYMENT_TOTALS_OK')
+          PY
+
+          ready=0
+          for attempt in $(seq 1 60); do
+            nonce="32566680-${attempt}-$(date +%s)"
+            for name in products events evidence stats; do
+              curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/${name}.json?verify=${nonce}" -o "$work/${name}.json"
+            done
+            if python3 - "$work" /tmp/expected.env <<'PY'
+          import json,pathlib,sys
+          root=pathlib.Path(sys.argv[1]); vals={k:int(v) for k,v in (line.strip().split('=',1) for line in pathlib.Path(sys.argv[2]).read_text().splitlines())}
+          products=json.loads((root/'products.json').read_text()); events=json.loads((root/'events.json').read_text()); evidence=json.loads((root/'evidence.json').read_text()); stats=json.loads((root/'stats.json').read_text())
+          r=stats['registry']; ok=(r['entities'],r['products'],r['events'],r['evidence'],r['incident_events'],r['remediation_events'])==(vals['ENTITIES'],vals['PRODUCTS'],vals['EVENTS'],vals['EVIDENCE'],vals['INCIDENTS'],vals['REMEDIATION'])
+          p=next((p for p in products if p['id']=='wlr_prod_000051'),None)
+          ok=ok and p is not None and p.get('launch_date')=='2022-03' and p.get('launch_date_precision')=='month'
+          ok=ok and any(e['id']=='wlr_ev_000090' for e in events) and any(s['id']=='wlr_src_000148' for s in evidence)
+          raise SystemExit(0 if ok else 1)
+          PY
+            then ready=1; echo "custom files ready attempt=${attempt}"; break; fi
+            echo "Waiting custom files attempt=${attempt}"
+            sleep 10
+          done
+          test "$ready" -eq 1
+
+          python3 - "$work" <<'PY'
+          import json,pathlib,sys
+          root=pathlib.Path(sys.argv[1])
+          products=json.loads((root/'products.json').read_text()); events=json.loads((root/'events.json').read_text()); evidence=json.loads((root/'evidence.json').read_text()); stats=json.loads((root/'stats.json').read_text())
+          p=next(p for p in products if p['id']=='wlr_prod_000051')
+          assert p['product_name']=='Passport Core' and 'Passport Batch 2' in p['aliases'] and p['predecessor_product_id']=='wlr_prod_000050'
+          assert p['launch_date']=='2022-03' and p['launch_date_precision']=='month'
+          e=next(e for e in events if e['id']=='wlr_ev_000090')
+          assert e['entity_id']=='wlr_ent_000017' and e['product_id']=='wlr_prod_000051' and e['event_type']=='product_released' and e['event_date']=='2022-03'
+          s=next(s for s in evidence if s['id']=='wlr_src_000148')
+          assert s['source_type']=='official_blog' and s['claim_scope']=='launch_date' and s['reliability']=='high' and s['is_primary'] is True
+          assert s['url']=='https://foundation.xyz/2022/12/announcing-our-7m-seed-round/'
+          print('PASSPORT_PUBLIC_DATA_OK',stats['registry'])
+          PY
+
+          nonce="$(date +%s)"
+          curl -fsSL -o /dev/null "https://wlr.badjoke-lab.com/wallet/foundation-passport/?verify=${nonce}"
+          curl -fsSL -o /dev/null "https://wlr.badjoke-lab.com/product/passport-core/?verify=${nonce}"
+          echo 'PR91_PRODUCTION_VERIFY_OK'
