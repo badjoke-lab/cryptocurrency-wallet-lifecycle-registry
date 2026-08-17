@@ -1,0 +1,56 @@
+name: Fix SafePal S1 Pro product diff scope
+
+on:
+  push:
+    branches: [data/safepal-s1pro-launch-history]
+    paths:
+      - .github/workflows/fix-safepal-s1pro-product-format.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Restore main product formatting and apply scoped change
+        run: |
+          git fetch origin main
+          git checkout origin/main -- data/products.json
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('data/products.json')
+          t = p.read_text(encoding='utf-8')
+          marker = '"id":"wlr_prod_000071"'
+          start = t.find(marker)
+          if start < 0:
+              marker = '"id": "wlr_prod_000071"'
+              start = t.find(marker)
+          if start < 0:
+              raise SystemExit('SafePal S1 Pro product not found')
+          end = t.find('\n  },', start)
+          if end < 0:
+              end = t.find('}', start)
+          seg = t[start:end+1]
+          if '"launch_date":null' in seg:
+              newseg = seg.replace('"launch_date":null', '"launch_date":"2023-09-07","launch_date_precision":"day"', 1)
+          elif '"launch_date": null' in seg:
+              newseg = seg.replace('"launch_date": null', '"launch_date": "2023-09-07",\n    "launch_date_precision": "day"', 1)
+          else:
+              raise SystemExit('Expected null launch_date not found in S1 Pro segment')
+          p.write_text(t[:start] + newseg + t[end+1:], encoding='utf-8')
+          PY
+          python3 scripts/validate_records.py
+          python3 scripts/validate_identity_evidence_policy.py
+          python3 scripts/report_coverage.py --fail-on-structural
+      - name: Commit scoped correction
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          rm .github/workflows/fix-safepal-s1pro-product-format.yml
+          git add data/products.json .github/workflows/fix-safepal-s1pro-product-format.yml
+          git commit -m 'Keep SafePal S1 Pro product diff scoped'
+          git push origin HEAD:data/safepal-s1pro-launch-history
