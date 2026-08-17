@@ -42,7 +42,7 @@ jobs:
           auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
           match=""
           for attempt in $(seq 1 60); do
-            deployments="$(curl -fsS "${base}/deployments?env=production&per_page=30" -H "$auth")"
+            deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
             match="$(jq -c --arg sha "$expected" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
             if [ -n "$match" ] && jq -e '.latest_stage.status == "success"' <<<"$match" >/dev/null; then
               break
