@@ -1,0 +1,50 @@
+name: Audit WLR canonical state after SafePal merge
+
+on:
+  push:
+    branches: [qa/post-safepal-canonical-audit]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Print canonical totals, next IDs, and remaining launch gaps
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json,re
+          from pathlib import Path
+          entities=json.loads(Path('data/entities.json').read_text())
+          products=json.loads(Path('data/products.json').read_text())
+          events=json.loads(Path('data/events.json').read_text())
+          evidence=json.loads(Path('data/evidence.json').read_text())
+          def maxnum(rows,prefix):
+              vals=[]
+              for r in rows:
+                  m=re.fullmatch(re.escape(prefix)+r'(\d+)',r['id'])
+                  if m: vals.append(int(m.group(1)))
+              return max(vals)
+          gaps=[p for p in products if p.get('launch_date') in (None,'')]
+          support=[p for p in products if p.get('support_status') in (None,'unknown')]
+          incident_types={'exploit','vulnerability_disclosed','software_issue','data_breach'}
+          remediation_types={'firmware_fix','software_fix','security_fix','vendor_response'}
+          incidents=sum(e.get('event_type') in incident_types for e in events)
+          remediation=sum(e.get('event_type') in remediation_types for e in events)
+          print(f'MAIN_HEAD={Path(".git/refs/heads/main").read_text().strip() if Path(".git/refs/heads/main").exists() else "checkout"}')
+          print(f'COUNTS entities={len(entities)} products={len(products)} events={len(events)} evidence={len(evidence)} incidents={incidents} remediation={remediation}')
+          print(f'MAX_IDS event={maxnum(events,"wlr_ev_")} evidence={maxnum(evidence,"wlr_src_")}')
+          print(f'GAPS launch={len(gaps)} support_unknown={len(support)}')
+          ent={e['id']:e for e in entities}
+          for p in gaps:
+              print('LAUNCH_GAP|'+ '|'.join([p['id'],p['entity_id'],ent[p['entity_id']]['canonical_name'],p['product_name'],p['slug'],p.get('product_type',''),p.get('official_url') or '',p.get('source_code_url') or '']))
+          for p in support:
+              print('SUPPORT_GAP|'+ '|'.join([p['id'],p['entity_id'],ent[p['entity_id']]['canonical_name'],p['product_name'],p['slug'],p.get('support_status') or '']))
+          safe=[e for e in events if e.get('entity_id') and ent.get(e['entity_id'],{}).get('canonical_name')=='SafePal']
+          print('SAFEPAL_EVENTS='+json.dumps([{'id':e['id'],'type':e.get('event_type'),'date':e.get('event_date'),'product_id':e.get('product_id'),'title':e.get('title')} for e in safe],ensure_ascii=False))
+          PY
