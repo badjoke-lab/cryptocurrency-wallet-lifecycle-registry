@@ -1,0 +1,203 @@
+name: Stage SafePal customer data breach
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/stage-safepal-customer-data-breach.yml
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Append reviewed SafePal records
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          def load(path):
+              return json.loads(Path(path).read_text(encoding='utf-8'))
+
+          def append_minimal(path, obj):
+              p = Path(path)
+              text = p.read_text(encoding='utf-8')
+              end = text.rfind(']')
+              if end < 0:
+                  raise SystemExit(f'missing closing array in {path}')
+              before = text[:end].rstrip()
+              after = text[end:]
+              if before.endswith('['):
+                  replacement = before + '\n' + json.dumps(obj, ensure_ascii=False, separators=(',', ':')) + '\n' + after
+              else:
+                  replacement = before + ',\n' + json.dumps(obj, ensure_ascii=False, separators=(',', ':')) + '\n' + after
+              p.write_text(replacement, encoding='utf-8')
+
+          entities = load('data/entities.json')
+          events = load('data/events.json')
+          evidence = load('data/evidence.json')
+
+          if any(row.get('slug') == 'safepal' or row.get('canonical_name', '').lower() == 'safepal' for row in entities):
+              raise SystemExit('SafePal already exists in canonical entities; refusing duplicate staging')
+          if any(row.get('id') == 'wlr_ent_000026' for row in entities):
+              raise SystemExit('wlr_ent_000026 already used')
+          if any(row.get('id') == 'wlr_ev_000089' for row in events):
+              raise SystemExit('wlr_ev_000089 already used')
+          for source_id in ('wlr_src_000145', 'wlr_src_000146', 'wlr_src_000147'):
+              if any(row.get('id') == source_id for row in evidence):
+                  raise SystemExit(f'{source_id} already used')
+
+          entity = {
+              'id': 'wlr_ent_000026',
+              'slug': 'safepal',
+              'canonical_name': 'SafePal',
+              'aliases': [],
+              'wallet_type': 'hybrid',
+              'status': 'active',
+              'summary': 'Self-custody cryptocurrency wallet ecosystem spanning SafePal hardware wallets, a mobile application, and a browser extension.',
+              'developer_or_company': 'SafePal',
+              'country_or_origin': None,
+              'launch_date': '2018',
+              'launch_date_precision': 'year',
+              'official_url': 'https://www.safepal.com/',
+              'official_domain': 'safepal.com',
+              'source_code_urls': [],
+              'custody_model': 'self_custody',
+              'key_management_model': 'product_specific_hardware_or_local_software_keys',
+              'confidence': 'high',
+              'last_verified_at': '2026-08-17',
+              'notes': 'SafePal is modeled as a hybrid wallet ecosystem because its current lineup includes hardware wallets plus mobile and browser-extension software. Product-level records can be added separately without changing the entity boundary.'
+          }
+
+          event = {
+              'id': 'wlr_ev_000089',
+              'entity_id': 'wlr_ent_000026',
+              'product_id': None,
+              'affected_product_ids': [],
+              'event_type': 'customer_data_breach',
+              'event_date': '2026-08-16',
+              'event_date_basis': 'disclosure',
+              'disclosed_at': '2026-08-16',
+              'title': 'Customer order data exposure disclosed',
+              'description': 'SafePal disclosed exposure of customer order information affecting approximately 40,000 customers. SafePal stated that private keys and seed phrases were not compromised.',
+              'confidence': 'high',
+              'impact_level': 'high',
+              'security_scope': 'customer_data',
+              'funds_affected': 'no',
+              'event_status_effect': 'none',
+              'affected_users_text': 'Approximately 40,000 customers',
+              'affected_data': ['customer_order_information'],
+              'is_major_event': True,
+              'user_actions_required': ['monitor'],
+              'notes': 'This is a customer/order-data privacy incident, not a wallet private-key, seed-phrase, or key-storage compromise. WLR does not infer compromise of wallet software, hardware, or signing keys from this disclosure.'
+          }
+
+          incident_source = {
+              'id': 'wlr_src_000145',
+              'entity_id': 'wlr_ent_000026',
+              'product_ids': [],
+              'event_ids': ['wlr_ev_000089'],
+              'product_id': None,
+              'event_id': 'wlr_ev_000089',
+              'source_type': 'official_statement',
+              'title': 'Security Update',
+              'url': 'https://www.safepal.com/en/blog/security-update',
+              'publisher': 'SafePal',
+              'published_at': '2026-08-16',
+              'accessed_at': '2026-08-17',
+              'reliability': 'high',
+              'claim_scope': 'customer_data',
+              'is_primary': True,
+              'notes': 'First-party SafePal disclosure used for the customer-order-data exposure and the explicit boundary that private keys and seed phrases were not compromised.'
+          }
+
+          status_source = {
+              'id': 'wlr_src_000146',
+              'entity_id': 'wlr_ent_000026',
+              'product_ids': [],
+              'event_ids': [],
+              'product_id': None,
+              'event_id': None,
+              'source_type': 'official_statement',
+              'title': 'SafePal Download Center',
+              'url': 'https://www.safepal.com/en/download/index',
+              'publisher': 'SafePal',
+              'published_at': None,
+              'accessed_at': '2026-08-17',
+              'reliability': 'high',
+              'claim_scope': 'status',
+              'is_primary': True,
+              'notes': 'Current first-party distribution page confirming the active SafePal App, SafePal Extension Wallet, and supported SafePal hardware-wallet lines.'
+          }
+
+          lineage_source = {
+              'id': 'wlr_src_000147',
+              'entity_id': 'wlr_ent_000026',
+              'product_ids': [],
+              'event_ids': [],
+              'product_id': None,
+              'event_id': None,
+              'source_type': 'official_blog',
+              'title': 'Our Response To The Security Findings From Kraken Security Labs',
+              'url': 'https://safepal.com/en/blog/our-response-to-the-security-findings-from-kraken-security-labs',
+              'publisher': 'SafePal',
+              'published_at': '2021-02-16',
+              'accessed_at': '2026-08-17',
+              'reliability': 'high',
+              'claim_scope': 'entity',
+              'is_primary': True,
+              'notes': 'First-party SafePal source describing SafePal as a decentralized wallet and establishing the project as founded in 2018.'
+          }
+
+          append_minimal('data/entities.json', entity)
+          append_minimal('data/events.json', event)
+          append_minimal('data/evidence.json', incident_source)
+          append_minimal('data/evidence.json', status_source)
+          append_minimal('data/evidence.json', lineage_source)
+
+          entities2 = load('data/entities.json')
+          events2 = load('data/events.json')
+          evidence2 = load('data/evidence.json')
+          assert len(entities2) == len(entities) + 1
+          assert len(events2) == len(events) + 1
+          assert len(evidence2) == len(evidence) + 3
+          assert entities2[-1]['id'] == 'wlr_ent_000026'
+          assert events2[-1]['id'] == 'wlr_ev_000089'
+          assert [row['id'] for row in evidence2[-3:]] == ['wlr_src_000145', 'wlr_src_000146', 'wlr_src_000147']
+          PY
+
+      - name: Install record-validation dependency
+        run: python3 -m pip install -r requirements.txt
+
+      - name: Validate canonical records
+        run: |
+          python3 scripts/validate_records.py
+          python3 scripts/validate_identity_evidence_policy.py
+          python3 scripts/report_coverage.py --fail-on-structural
+
+      - name: Create reviewed data branch and pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          branch='data/safepal-customer-data-breach-2026'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -b "$branch"
+          rm .github/workflows/stage-safepal-customer-data-breach.yml
+          git add data/entities.json data/events.json data/evidence.json .github/workflows/stage-safepal-customer-data-breach.yml
+          git commit -m 'Add reviewed SafePal customer data breach history'
+          git push origin "$branch"
+          gh pr create \
+            --base main \
+            --head "$branch" \
+            --title 'Add reviewed SafePal customer data breach history' \
+            --body $'Adds SafePal to WLR and records the August 2026 customer-order-data exposure as an entity-level customer-data incident.\n\nChanges:\n- `wlr_ent_000026`: SafePal active hybrid wallet ecosystem.\n- `wlr_ev_000089`: customer-data breach disclosure affecting approximately 40,000 customers.\n- `wlr_src_000145`: first-party SafePal incident disclosure.\n- `wlr_src_000146`: first-party current product/download status.\n- `wlr_src_000147`: first-party SafePal entity/2018 lineage source.\n\nSecurity boundary:\n- records customer/order-data exposure;\n- does **not** classify this as a private-key, seed-phrase, wallet-software, hardware-wallet, or signing-key compromise;\n- `funds_affected=no` follows the disclosed incident boundary rather than inferring key compromise.\n\nPre-PR staging validation runs `validate_records.py`, identity/evidence policy validation, and structural coverage audit.\n\nExpected after merge: 26 entities / 69 products / 89 events / 147 evidence.'
