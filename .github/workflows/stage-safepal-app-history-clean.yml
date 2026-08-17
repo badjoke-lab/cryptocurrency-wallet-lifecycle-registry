@@ -1,0 +1,48 @@
+name: Stage SafePal App history clean
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/stage-safepal-app-history-clean.yml']
+permissions:
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply minimal reviewed records
+        shell: python
+        run: |
+          from pathlib import Path
+          import json
+
+          event = {'id':'wlr_ev_000095','entity_id':'wlr_ent_000026','product_id':'wlr_prod_000073','affected_product_ids':['wlr_prod_000073'],'event_type':'product_released','event_date':'2020-05-11','event_date_basis':'release','title':'SafePal App added self-custody software-wallet capability','description':'SafePal officially released SafePal Lite inside the SafePal App, allowing users to create or import self-custody software wallets in addition to using the App as a companion for SafePal hardware wallets.','confidence':'high','event_status_effect':'none','is_major_event':True,'notes':'This event records the software-wallet capability release, not the initial SafePal App launch. First-party SafePal posts show that the App already existed in 2019.'}
+          source = {'id':'wlr_src_000153','entity_id':'wlr_ent_000026','product_id':'wlr_prod_000073','event_id':'wlr_ev_000095','source_type':'official_blog','title':'SafePal Lite Software Wallet is now ALIVE','url':'https://www.safepal.com/en/blog/safepal-lite-software-wallet-is-now-alive','publisher':'SafePal','published_at':'2020-05-11','accessed_at':'2026-08-17','reliability':'high','claim_scope':'event','is_primary':True,'notes':'Primary SafePal announcement for the 2020-05-11 release of decentralized software-wallet functionality inside the existing SafePal App. It explicitly distinguishes this from the earlier hardware-wallet companion App.'}
+
+          for path, obj, ident in [('data/events.json',event,'wlr_ev_000095'),('data/evidence.json',source,'wlr_src_000153')]:
+              p=Path(path)
+              text=p.read_text()
+              assert ident not in text
+              nl='\n' if text.endswith('\n') else ''
+              core=text[:-1] if nl else text
+              assert core.endswith(']')
+              core=core[:-1]
+              sep='' if core.rstrip().endswith('[') else ','
+              p.write_text(core+sep+json.dumps(obj,ensure_ascii=False,separators=(',',':'))+']'+nl)
+      - name: Validate
+        run: |
+          npm install --no-audit --no-fund
+          python -m pip install -r requirements.txt
+          npm run validate:records
+          npm run validate:identity-evidence
+          npm run coverage:audit
+      - name: Push reviewed clean branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -b data/safepal-app-software-wallet-history-clean
+          git add data/events.json data/evidence.json
+          git commit -m 'Record SafePal App software-wallet release history'
+          git push origin data/safepal-app-software-wallet-history-clean
