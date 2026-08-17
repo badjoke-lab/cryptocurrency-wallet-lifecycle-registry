@@ -1,0 +1,129 @@
+name: Stage reviewed Rabby Desktop launch year
+
+on:
+  push:
+    branches: [review/rabby-desktop-launch-year]
+
+permissions:
+  contents: write
+
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: review/rabby-desktop-launch-year
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Apply reviewed canonical correction
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs = require('fs');
+
+          const read = (path) => JSON.parse(fs.readFileSync(path, 'utf8'));
+          const write = (path, value) => fs.writeFileSync(path, JSON.stringify(value) + '\n');
+
+          const productsPath = 'data/products.json';
+          const eventsPath = 'data/events.json';
+          const evidencePath = 'data/evidence.json';
+
+          const products = read(productsPath);
+          const events = read(eventsPath);
+          const evidence = read(evidencePath);
+
+          const product = products.find((item) => item.id === 'wlr_prod_000056');
+          if (!product) throw new Error('Missing canonical product wlr_prod_000056');
+          if (product.entity_id !== 'wlr_ent_000018' || product.slug !== 'rabby-desktop') {
+            throw new Error('Rabby Desktop canonical identity changed unexpectedly');
+          }
+          if (product.launch_date !== null && product.launch_date !== '2022') {
+            throw new Error(`Unexpected existing launch_date: ${product.launch_date}`);
+          }
+
+          product.launch_date = '2022';
+          product.launch_date_precision = 'year';
+          product.last_verified_at = '2026-08-18';
+          product.notes = 'First-party Rabby Desktop source history establishes a 2022 release series, including desktop release packaging in September and Release v0.1.1 on 2022-09-30. WLR records year precision only because the reviewed history does not establish a defensible exact initial launch day or a surfaced v0.1.0 release commit.';
+
+          const eventRecord = {
+            id: 'wlr_ev_000104',
+            entity_id: 'wlr_ent_000018',
+            product_id: 'wlr_prod_000056',
+            affected_product_ids: ['wlr_prod_000056'],
+            event_type: 'product_released',
+            event_date: '2022',
+            event_date_basis: 'release',
+            title: 'Rabby Desktop released in 2022',
+            description: "Rabby's official desktop source repository records desktop release packaging and a v0.1.1 release during 2022, establishing the desktop product as released by that year.",
+            confidence: 'high',
+            event_status_effect: 'active',
+            is_major_event: true,
+            notes: 'Year precision only. The reviewed repository does not surface a v0.1.0 release commit, so WLR does not infer an exact initial launch day from the 2022-09-30 v0.1.1 commit.'
+          };
+
+          const existingEvent = events.find((item) => item.id === eventRecord.id);
+          if (existingEvent) {
+            if (JSON.stringify(existingEvent) !== JSON.stringify(eventRecord)) {
+              throw new Error('wlr_ev_000104 already exists with different content');
+            }
+          } else {
+            events.push(eventRecord);
+          }
+
+          const evidenceRecord = {
+            id: 'wlr_src_000163',
+            entity_id: 'wlr_ent_000018',
+            product_id: 'wlr_prod_000056',
+            event_id: 'wlr_ev_000104',
+            source_type: 'source_code',
+            title: 'Rabby Desktop Release v0.1.1',
+            url: 'https://github.com/RabbyHub/RabbyDesktop/commit/87c9f355475992cf7902b13900679fd50b3482e4',
+            publisher: 'RabbyHub',
+            published_at: '2022-09-30',
+            accessed_at: '2026-08-18',
+            reliability: 'high',
+            claim_scope: 'launch_date',
+            is_primary: true,
+            notes: 'Official Rabby Desktop source-repository release commit establishing that the desktop product was in release during 2022. WLR uses it to support year-level launch chronology, not as proof of the exact initial launch day.'
+          };
+
+          const existingEvidence = evidence.find((item) => item.id === evidenceRecord.id);
+          if (existingEvidence) {
+            if (JSON.stringify(existingEvidence) !== JSON.stringify(evidenceRecord)) {
+              throw new Error('wlr_src_000163 already exists with different content');
+            }
+          } else {
+            evidence.push(evidenceRecord);
+          }
+
+          write(productsPath, products);
+          write(eventsPath, events);
+          write(evidencePath, evidence);
+          NODE
+
+      - name: Verify staged boundary
+        run: |
+          set -euo pipefail
+          jq -e '.[] | select(.id == "wlr_prod_000056") | .launch_date == "2022" and .launch_date_precision == "year" and .last_verified_at == "2026-08-18"' data/products.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_ev_000104") | .entity_id == "wlr_ent_000018" and .product_id == "wlr_prod_000056" and .event_type == "product_released" and .event_date == "2022" and .event_date_basis == "release"' data/events.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_src_000163") | .entity_id == "wlr_ent_000018" and .product_id == "wlr_prod_000056" and .event_id == "wlr_ev_000104" and .source_type == "source_code" and .reliability == "high" and .is_primary == true and .claim_scope == "launch_date"' data/evidence.json >/dev/null
+
+      - name: Commit canonical correction
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/products.json data/events.json data/evidence.json
+          if git diff --cached --quiet; then
+            echo 'Canonical correction already staged.'
+            exit 0
+          fi
+          git commit -m 'Add reviewed Rabby Desktop launch year'
+          git push origin HEAD:review/rabby-desktop-launch-year
