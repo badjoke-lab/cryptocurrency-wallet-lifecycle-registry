@@ -1,0 +1,82 @@
+name: Stage SafePal S1 Pro launch history
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/stage-safepal-s1pro-launch.yml
+
+permissions:
+  contents: write
+
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply reviewed SafePal S1 Pro launch records
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          p = Path('data/products.json')
+          products = json.loads(p.read_text(encoding='utf-8'))
+          matches = [x for x in products if x.get('id') == 'wlr_prod_000071']
+          if len(matches) != 1:
+              raise SystemExit('SafePal S1 Pro product precondition failed')
+          prod = matches[0]
+          if prod.get('launch_date') is not None:
+              raise SystemExit(f"SafePal S1 Pro launch_date already populated: {prod.get('launch_date')}")
+          prod['launch_date'] = '2023-09-07'
+          prod['launch_date_precision'] = 'day'
+          p.write_text(json.dumps(products, ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
+
+          def append(path, obj):
+              q = Path(path)
+              data = json.loads(q.read_text(encoding='utf-8'))
+              data.append(obj)
+              q.write_text(json.dumps(data, ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
+
+          events = json.loads(Path('data/events.json').read_text(encoding='utf-8'))
+          evidence = json.loads(Path('data/evidence.json').read_text(encoding='utf-8'))
+          if any(x.get('id') == 'wlr_ev_000094' for x in events):
+              raise SystemExit('event id already used')
+          if any(x.get('id') == 'wlr_src_000152' for x in evidence):
+              raise SystemExit('source id already used')
+
+          append('data/events.json', {
+            'id':'wlr_ev_000094','entity_id':'wlr_ent_000026','product_id':'wlr_prod_000071','affected_product_ids':['wlr_prod_000071'],
+            'event_type':'product_released','event_date':'2023-09-07','event_date_basis':'release',
+            'title':'SafePal S1 Pro released through official channels',
+            'description':'SafePal announced on September 7, 2023 that the S1 Pro was ready for distribution through official SafePal channels and available to order.',
+            'confidence':'high','event_status_effect':'active','is_major_event':True,
+            'notes':'The release date uses SafePal’s direct first-party S1 Pro release announcement rather than a later retrospective.'
+          })
+          append('data/evidence.json', {
+            'id':'wlr_src_000152','entity_id':'wlr_ent_000026','product_ids':['wlr_prod_000071'],'event_ids':['wlr_ev_000094'],
+            'product_id':'wlr_prod_000071','event_id':'wlr_ev_000094','source_type':'official_blog','title':'SafePal releases the S1 Pro',
+            'url':'https://www.safepal.com/en/blog/safepal-releases-the-s1-pro','publisher':'SafePal','published_at':'2023-09-07','accessed_at':'2026-08-17',
+            'reliability':'high','claim_scope':'launch_date','is_primary':True,
+            'notes':'First-party SafePal release post states that the S1 Pro was ready for distribution through official SafePal channels and available to order.'
+          })
+          PY
+      - name: Validate
+        run: |
+          python3 -m pip install -r requirements.txt
+          python3 scripts/validate_records.py
+          python3 scripts/validate_identity_evidence_policy.py
+          python3 scripts/report_coverage.py --fail-on-structural
+      - name: Push reviewed branch
+        run: |
+          set -euo pipefail
+          branch='data/safepal-s1pro-launch-history'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -b "$branch"
+          rm .github/workflows/stage-safepal-s1pro-launch.yml
+          git add data/products.json data/events.json data/evidence.json .github/workflows/stage-safepal-s1pro-launch.yml
+          git commit -m 'Add reviewed SafePal S1 Pro launch history'
+          git push origin "$branch"
