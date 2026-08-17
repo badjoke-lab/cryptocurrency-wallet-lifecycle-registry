@@ -1,0 +1,106 @@
+name: Verify WLR PR82 Production
+
+on:
+  push:
+    branches: [ops/pr82-production-verify]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Resolve exact deployment and wait for all public Trust Wallet files
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          expected="a6d47815b831696b9ab3044506f79984422b4ea5"
+          base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
+          auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
+          match=""
+          for attempt in $(seq 1 60); do
+            deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
+            match="$(jq -c --arg sha "$expected" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
+            if [ -n "$match" ] && jq -e '.latest_stage.status == "success"' <<<"$match" >/dev/null; then break; fi
+            echo "Waiting exact deployment attempt=${attempt}"
+            sleep 10
+          done
+          test -n "$match"
+          jq -e '.latest_stage.status == "success" and .deployment_trigger.metadata.branch == "main" and (.aliases | index("https://wlr.badjoke-lab.com")) != null' <<<"$match" >/dev/null
+          deployment_url="$(jq -r '.url' <<<"$match")"
+          echo "$match" | jq '{id,short_id,url,aliases,latest_stage,deployment_trigger}'
+
+          work="$(mktemp -d)"
+          trap 'rm -rf "$work"' EXIT
+          curl -fsSL "${deployment_url}/data/stats.json?verify=a6d47815" -o "$work/deploy-stats.json"
+          python3 - "$work/deploy-stats.json" <<'PY'
+          import json, pathlib, sys
+          stats=json.loads(pathlib.Path(sys.argv[1]).read_text())
+          r=stats['registry']
+          assert (r['entities'],r['products'],r['events'],r['evidence'],r['incident_events'],r['remediation_events'])==(25,69,85,141,18,7)
+          assert stats['products']['launch_date']['count']==49 and stats['products']['launch_date']['denominator']==69
+          assert stats['data_quality']['products']['support_status_known']['count']==68 and stats['data_quality']['products']['support_status_known']['denominator']==69
+          print('TRUST_WALLET_DEPLOYMENT_TOTALS_OK')
+          PY
+
+          ready=0
+          for attempt in $(seq 1 60); do
+            nonce="a6d47815-${attempt}-$(date +%s)"
+            for name in products events evidence stats; do
+              curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/${name}.json?verify=${nonce}" -o "$work/${name}.json"
+            done
+            if python3 - "$work" <<'PY'
+          import json, pathlib, sys
+          root=pathlib.Path(sys.argv[1])
+          products=json.loads((root/'products.json').read_text())
+          events=json.loads((root/'events.json').read_text())
+          evidence=json.loads((root/'evidence.json').read_text())
+          stats=json.loads((root/'stats.json').read_text())
+          r=stats['registry']
+          ok=(r['events'],r['evidence'],r['incident_events'],r['remediation_events'])==(85,141,18,7)
+          p=next((p for p in products if p['id']=='wlr_prod_000036'),None)
+          ok=ok and p is not None and p.get('launch_date')=='2022-11-14' and p.get('launch_date_precision')=='day'
+          ok=ok and any(e['id']=='wlr_ev_000085' for e in events)
+          ok=ok and any(s['id']=='wlr_src_000141' for s in evidence)
+          raise SystemExit(0 if ok else 1)
+          PY
+            then ready=1; echo "custom files ready attempt=${attempt}"; break; fi
+            echo "Waiting custom files attempt=${attempt}"
+            sleep 10
+          done
+          test "$ready" -eq 1
+
+          python3 - "$work" <<'PY'
+          import json, pathlib, sys
+          root=pathlib.Path(sys.argv[1])
+          products=json.loads((root/'products.json').read_text())
+          events=json.loads((root/'events.json').read_text())
+          evidence=json.loads((root/'evidence.json').read_text())
+          stats=json.loads((root/'stats.json').read_text())
+          p=next(p for p in products if p['id']=='wlr_prod_000036')
+          assert p['product_name']=='Trust Wallet Browser Extension'
+          assert p['launch_date']=='2022-11-14' and p['launch_date_precision']=='day'
+          e=next(e for e in events if e['id']=='wlr_ev_000085')
+          assert e['entity_id']=='wlr_ent_000009' and e['product_id']=='wlr_prod_000036'
+          assert e['event_type']=='product_released' and e['event_date']=='2022-11-14' and e['event_date_basis']=='release'
+          s=next(s for s in evidence if s['id']=='wlr_src_000141')
+          assert s['product_id']=='wlr_prod_000036' and s['event_id']=='wlr_ev_000085'
+          assert s['source_type']=='official_statement' and s['claim_scope']=='launch_date' and s['reliability']=='high' and s['is_primary'] is True
+          assert s['url']=='https://www.prnewswire.com/news-releases/trust-wallet-launches-highly-anticipated-browser-extension-wallet-for-desktop-301676375.html'
+          r=stats['registry']
+          assert (r['entities'],r['products'],r['events'],r['evidence'],r['incident_events'],r['remediation_events'])==(25,69,85,141,18,7)
+          assert stats['products']['launch_date']['count']==49
+          print('TRUST_WALLET_PUBLIC_DATA_OK events=85 evidence=141 launch=49/69 incidents=18 remediation=7')
+          PY
+
+          nonce="$(date +%s)"
+          curl -fsSL -o /dev/null "https://wlr.badjoke-lab.com/wallet/trust-wallet/?verify=${nonce}"
+          curl -fsSL -o /dev/null "https://wlr.badjoke-lab.com/product/trust-wallet-browser-extension/?verify=${nonce}"
+          echo 'PR82_PRODUCTION_VERIFY_OK'
