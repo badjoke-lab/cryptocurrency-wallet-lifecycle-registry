@@ -1,0 +1,44 @@
+name: Stage product_announced event migration
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/stage-product-announced-migration.yml']
+permissions:
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Migrate Mk3 announcement event type
+        shell: python
+        run: |
+          from pathlib import Path
+          import json
+          p=Path('data/events.json')
+          rows=json.loads(p.read_text())
+          matches=[r for r in rows if r.get('id')=='wlr_ev_000097']
+          assert len(matches)==1
+          row=matches[0]
+          assert row.get('event_type')=='other'
+          row['event_type']='product_announced'
+          note=row.get('notes','')
+          row['notes']=note.replace(' The generic other event type is used because the current WLR schema has no product_announced enum.','')
+          p.write_text(json.dumps(rows,ensure_ascii=False,separators=(',',':'))+'\n')
+      - name: Validate
+        run: |
+          npm install --no-audit --no-fund
+          python -m pip install -r requirements.txt
+          npm run validate:records
+          npm run validate:identity-evidence
+          npm run coverage:audit
+      - name: Push reviewed branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -b data/migrate-mk3-product-announced
+          git add data/events.json
+          git commit -m 'Migrate Mk3 event to product_announced'
+          git push origin data/migrate-mk3-product-announced
