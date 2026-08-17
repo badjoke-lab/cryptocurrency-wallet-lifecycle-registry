@@ -1,0 +1,65 @@
+name: Fix SafePal S1 Pro record diff scope
+
+on:
+  push:
+    branches: [data/safepal-s1pro-launch-history]
+    paths:
+      - .github/workflows/fix-safepal-s1pro-record-format.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Restore main record formatting and append scoped records
+        run: |
+          git fetch origin main
+          git checkout origin/main -- data/events.json data/evidence.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          def append_preserving(path, obj, id_value):
+              q = Path(path)
+              t = q.read_text(encoding='utf-8')
+              if id_value in t:
+                  raise SystemExit(f'{id_value} already present in restored main file')
+              end = t.rfind(']')
+              if end < 0:
+                  raise SystemExit(f'closing array not found: {path}')
+              before = t[:end].rstrip()
+              sep = ',\n' if before.rstrip().endswith('}') else '\n'
+              q.write_text(before + sep + json.dumps(obj, ensure_ascii=False, separators=(',', ':')) + '\n]\n', encoding='utf-8')
+
+          append_preserving('data/events.json', {
+            'id':'wlr_ev_000094','entity_id':'wlr_ent_000026','product_id':'wlr_prod_000071','affected_product_ids':['wlr_prod_000071'],
+            'event_type':'product_released','event_date':'2023-09-07','event_date_basis':'release',
+            'title':'SafePal S1 Pro released through official channels',
+            'description':'SafePal announced on September 7, 2023 that the S1 Pro was ready for distribution through official SafePal channels and available to order.',
+            'confidence':'high','event_status_effect':'active','is_major_event':True,
+            'notes':'The release date uses SafePal’s direct first-party S1 Pro release announcement rather than a later retrospective.'
+          }, 'wlr_ev_000094')
+          append_preserving('data/evidence.json', {
+            'id':'wlr_src_000152','entity_id':'wlr_ent_000026','product_ids':['wlr_prod_000071'],'event_ids':['wlr_ev_000094'],
+            'product_id':'wlr_prod_000071','event_id':'wlr_ev_000094','source_type':'official_blog','title':'SafePal releases the S1 Pro',
+            'url':'https://www.safepal.com/en/blog/safepal-releases-the-s1-pro','publisher':'SafePal','published_at':'2023-09-07','accessed_at':'2026-08-17',
+            'reliability':'high','claim_scope':'launch_date','is_primary':True,
+            'notes':'First-party SafePal release post states that the S1 Pro was ready for distribution through official SafePal channels and available to order.'
+          }, 'wlr_src_000152')
+          PY
+          python3 scripts/validate_records.py
+          python3 scripts/validate_identity_evidence_policy.py
+          python3 scripts/report_coverage.py --fail-on-structural
+      - name: Commit scoped correction
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          rm .github/workflows/fix-safepal-s1pro-record-format.yml
+          git add data/events.json data/evidence.json .github/workflows/fix-safepal-s1pro-record-format.yml
+          git commit -m 'Keep SafePal S1 Pro record diffs scoped'
+          git push origin HEAD:data/safepal-s1pro-launch-history
