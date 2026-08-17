@@ -15,7 +15,7 @@ jobs:
         with:
           ref: main
 
-      - name: Resolve exact Cloudflare deployment and verify public Sparrow state
+      - name: Resolve exact deployment and wait for all public Sparrow files
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -24,14 +24,8 @@ jobs:
           expected="9e5c719d177744b224bbe79f186f67f6d9299eb1"
           base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
           auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
-          match=""
-          for attempt in $(seq 1 60); do
-            deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
-            match="$(jq -c --arg sha "$expected" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
-            if [ -n "$match" ] && jq -e '.latest_stage.status == "success"' <<<"$match" >/dev/null; then break; fi
-            echo "Waiting exact deployment attempt=${attempt}"
-            sleep 10
-          done
+          deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
+          match="$(jq -c --arg sha "$expected" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
           test -n "$match"
           jq -e '.latest_stage.status == "success" and .deployment_trigger.metadata.branch == "main" and (.aliases | index("https://wlr.badjoke-lab.com")) != null' <<<"$match" >/dev/null
           deployment_url="$(jq -r '.url' <<<"$match")"
@@ -45,8 +39,6 @@ jobs:
           stats=json.loads(pathlib.Path(sys.argv[1]).read_text())
           r=stats['registry']
           assert (r['entities'],r['products'],r['events'],r['evidence'],r['incident_events'],r['remediation_events']) == (25,69,83,139,18,7)
-          assert stats['products']['launch_date']['count']==47 and stats['products']['launch_date']['denominator']==69
-          assert stats['data_quality']['products']['support_status_known']['count']==68 and stats['data_quality']['products']['support_status_known']['denominator']==69
           print('SPARROW_DEPLOYMENT_TOTALS_OK')
           PY
 
@@ -54,21 +46,36 @@ jobs:
           for attempt in $(seq 1 60); do
             nonce="9e5c719d-${attempt}-$(date +%s)"
             curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/stats.json?verify=${nonce}" -o "$work/stats.json"
-            vals="$(jq -r '[.registry.events,.registry.evidence,.registry.incident_events,.registry.remediation_events] | @tsv' "$work/stats.json")"
-            echo "custom attempt=${attempt} values=${vals}"
-            if [ "$vals" = $'83\t139\t18\t7' ]; then ready=1; break; fi
+            curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/events.json?verify=${nonce}" -o "$work/events.json"
+            curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/evidence.json?verify=${nonce}" -o "$work/evidence.json"
+            if python3 - "$work" <<'PY'
+          import json, pathlib, sys
+          root=pathlib.Path(sys.argv[1])
+          stats=json.loads((root/'stats.json').read_text())
+          events=json.loads((root/'events.json').read_text())
+          evidence=json.loads((root/'evidence.json').read_text())
+          r=stats['registry']
+          ok=(r['events'],r['evidence'],r['incident_events'],r['remediation_events'])==(83,139,18,7)
+          ok=ok and {'wlr_ev_000082','wlr_ev_000083'}.issubset({e['id'] for e in events})
+          ok=ok and {'wlr_src_000136','wlr_src_000137','wlr_src_000138','wlr_src_000139'}.issubset({s['id'] for s in evidence})
+          raise SystemExit(0 if ok else 1)
+          PY
+            then ready=1; echo "custom files ready attempt=${attempt}"; break; fi
+            echo "Waiting custom files attempt=${attempt}"
             sleep 10
           done
           test "$ready" -eq 1
 
-          nonce="$(date +%s)"
-          curl -fsSL "https://wlr.badjoke-lab.com/data/events.json?verify=${nonce}" -o "$work/events.json"
-          curl -fsSL "https://wlr.badjoke-lab.com/data/evidence.json?verify=${nonce}" -o "$work/evidence.json"
           python3 - "$work" <<'PY'
           import json, pathlib, sys
           root=pathlib.Path(sys.argv[1])
           events=json.loads((root/'events.json').read_text())
           evidence=json.loads((root/'evidence.json').read_text())
+          stats=json.loads((root/'stats.json').read_text())
+          r=stats['registry']
+          assert (r['entities'],r['products'],r['events'],r['evidence'],r['incident_events'],r['remediation_events'])==(25,69,83,139,18,7)
+          assert stats['products']['launch_date']['count']==47 and stats['products']['launch_date']['denominator']==69
+          assert stats['data_quality']['products']['support_status_known']['count']==68 and stats['data_quality']['products']['support_status_known']['denominator']==69
           issue=next(e for e in events if e['id']=='wlr_ev_000082')
           fix=next(e for e in events if e['id']=='wlr_ev_000083')
           assert issue['entity_id']=='wlr_ent_000021' and issue['product_id']=='wlr_prod_000061'
@@ -87,6 +94,7 @@ jobs:
           print('SPARROW_PUBLIC_DATA_OK events=83 evidence=139 incidents=18 remediation=7')
           PY
 
+          nonce="$(date +%s)"
           curl -fsSL -o /dev/null "https://wlr.badjoke-lab.com/wallet/sparrow-wallet/?verify=${nonce}"
           curl -fsSL -o /dev/null "https://wlr.badjoke-lab.com/product/sparrow-desktop/?verify=${nonce}"
           echo 'PR78_PRODUCTION_VERIFY_OK'
