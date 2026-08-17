@@ -1,0 +1,115 @@
+name: Verify WLR PR121 Production
+
+on:
+  push:
+    branches: [ops/pr121-production-verify]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build expected canonical stats
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "da5941a439bed28730544500c47e43cfb853c65e"
+          node scripts/build-stats.mjs
+          jq '{registry,launch_date:.products.launch_date,support_known:.data_quality.products.support_status_known}' public/data/stats.json
+          jq -e '.[] | select(.id == "wlr_prod_000048") | .slug == "exodus-mobile" and .launch_date == "2019" and .launch_date_precision == "year"' data/products.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_ev_000101") | .entity_id == "wlr_ent_000016" and .product_id == "wlr_prod_000048" and .event_type == "product_released" and .event_date == "2019"' data/events.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_src_000159") | .entity_id == "wlr_ent_000016" and .product_id == "wlr_prod_000048" and .event_id == "wlr_ev_000101" and .reliability == "high" and .is_primary == true' data/evidence.json >/dev/null
+
+      - name: Resolve exact Cloudflare production deployment
+        id: deploy
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          expected="da5941a439bed28730544500c47e43cfb853c65e"
+          base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
+          auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
+          match=""
+          for attempt in $(seq 1 60); do
+            deployments="$(curl -fsS "${base}/deployments?env=production&per_page=30" -H "$auth")"
+            match="$(jq -c --arg sha "$expected" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
+            if [ -n "$match" ] && jq -e '.latest_stage.status == "success"' <<<"$match" >/dev/null; then
+              break
+            fi
+            echo "Waiting for exact deployment attempt=${attempt}"
+            sleep 10
+          done
+          test -n "$match"
+          jq -e '.latest_stage.status == "success" and .deployment_trigger.metadata.branch == "main" and (.aliases | index("https://wlr.badjoke-lab.com")) != null' <<<"$match" >/dev/null
+          url="$(jq -r '.url' <<<"$match")"
+          echo "deployment_url=$url" >> "$GITHUB_OUTPUT"
+          echo "$match" | jq '{id,short_id,url,aliases,latest_stage,deployment_trigger}'
+
+      - name: Verify deployment-specific output and custom domain
+        env:
+          DEPLOYMENT_URL: ${{ steps.deploy.outputs.deployment_url }}
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"
+          trap 'rm -rf "$work"' EXIT
+          cp public/data/stats.json "$work/expected-stats.json"
+
+          curl -fsSL "${DEPLOYMENT_URL}/data/stats.json?verify=da5941a" -o "$work/deploy-stats.json"
+          jq -e --slurpfile expected "$work/expected-stats.json" '
+            .registry == $expected[0].registry and
+            .products.launch_date == $expected[0].products.launch_date and
+            .data_quality.products.support_status_known == $expected[0].data_quality.products.support_status_known
+          ' "$work/deploy-stats.json" >/dev/null
+
+          ready=0
+          for attempt in $(seq 1 60); do
+            nonce="da5941a-${attempt}-$(date +%s)"
+            curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/stats.json?verify=${nonce}" -o "$work/public-stats.json"
+            if jq -e --slurpfile expected "$work/expected-stats.json" '
+              .registry == $expected[0].registry and
+              .products.launch_date == $expected[0].products.launch_date and
+              .data_quality.products.support_status_known == $expected[0].data_quality.products.support_status_known
+            ' "$work/public-stats.json" >/dev/null; then
+              ready=1
+              echo "Custom domain serves exact expected stats on attempt=${attempt}"
+              break
+            fi
+            echo "Waiting for custom-domain exact content attempt=${attempt}"
+            sleep 10
+          done
+          test "$ready" -eq 1
+
+      - name: Verify public Exodus Mobile records and routes
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"
+          trap 'rm -rf "$work"' EXIT
+          nonce="$(date +%s)"
+          for name in products events evidence stats; do
+            curl -fsSL --retry 10 --retry-all-errors --retry-delay 2 "https://wlr.badjoke-lab.com/data/${name}.json?verify=${nonce}" -o "$work/${name}.json"
+          done
+
+          jq -e '.[] | select(.id == "wlr_prod_000048") | .slug == "exodus-mobile" and .launch_date == "2019" and .launch_date_precision == "year"' "$work/products.json" >/dev/null
+          jq -e '.[] | select(.id == "wlr_ev_000101") | .entity_id == "wlr_ent_000016" and .product_id == "wlr_prod_000048" and .event_type == "product_released" and .event_date == "2019"' "$work/events.json" >/dev/null
+          jq -e '.[] | select(.id == "wlr_src_000159") | .entity_id == "wlr_ent_000016" and .product_id == "wlr_prod_000048" and .event_id == "wlr_ev_000101" and .reliability == "high" and .is_primary == true' "$work/evidence.json" >/dev/null
+
+          source_url="$(jq -r '.[] | select(.id == "wlr_src_000159") | .url' "$work/evidence.json")"
+          test -n "$source_url" && test "$source_url" != null
+          curl -fsSL -o /dev/null "https://wlr.badjoke-lab.com/wallet/exodus/?verify=${nonce}"
+          curl -fsSL -o /dev/null "https://wlr.badjoke-lab.com/product/exodus-mobile/?verify=${nonce}"
+          curl -fsSL -o /dev/null "$source_url"
+
+          echo '=== ACCEPTED PUBLIC STATS ==='
+          jq '{registry,launch_date:.products.launch_date,support_known:.data_quality.products.support_status_known}' "$work/stats.json"
+          echo 'PR121_PRODUCTION_VERIFY_OK exodus_mobile_launch=2019 precision=year event=wlr_ev_000101 evidence=wlr_src_000159'
