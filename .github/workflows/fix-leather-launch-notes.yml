@@ -1,0 +1,39 @@
+name: Fix Leather launch notes consistency
+
+on:
+  push:
+    branches: [data/leather-extension-launch-history]
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data/leather-extension-launch-history
+          fetch-depth: 0
+      - name: Update only Leather extension notes
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          path=Path('data/products.json')
+          text=path.read_text()
+          old='Exact initial extension release date remains unset; the product existed before the 2023 Leather rebrand. Current official URL points to Leather’s dedicated browser-extension product page.'
+          new='General browser-store availability is anchored to 2021-08-10 under the historical Hiro Wallet branding; the product later continued through the 2023 Leather rebrand. Current official URL points to Leather’s dedicated browser-extension product page.'
+          assert text.count(old)==1
+          text=text.replace(old,new,1)
+          path.write_text(text)
+          PY
+          python3 scripts/validate_records.py
+          python3 scripts/validate_identity_evidence_policy.py
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data/products.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Align Leather extension launch notes'
+          git push origin HEAD:data/leather-extension-launch-history
