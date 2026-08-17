@@ -20,7 +20,7 @@ jobs:
 
           products_path=Path('data/products.json')
           text=products_path.read_text()
-          marker='{"id":"wlr_prod_000016"'
+          marker='"id":"wlr_prod_000016"'
           start=text.index(marker)
           end=text.index('\n  },', start)+5
           block=text[start:end]
