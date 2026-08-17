@@ -1,0 +1,119 @@
+name: Stage Ready Mobile launch year
+
+on:
+  push:
+    branches: [cleanup/ready-mobile-launch-year]
+
+permissions:
+  contents: write
+
+jobs:
+  stage:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: cleanup/ready-mobile-launch-year
+          fetch-depth: 0
+
+      - name: Apply reviewed canonical change
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          products_path = Path('data/products.json')
+          events_path = Path('data/events.json')
+          evidence_path = Path('data/evidence.json')
+
+          products = json.loads(products_path.read_text())
+          events = json.loads(events_path.read_text())
+          evidence = json.loads(evidence_path.read_text())
+
+          assert max(int(x['id'].split('_')[-1]) for x in events) == 101, 'unexpected event head'
+          assert max(int(x['id'].split('_')[-1]) for x in evidence) == 159, 'unexpected evidence head'
+          assert not any(x['id'] == 'wlr_ev_000102' for x in events)
+          assert not any(x['id'] == 'wlr_src_000160' for x in evidence)
+
+          product = next(x for x in products if x['id'] == 'wlr_prod_000038')
+          assert product['slug'] == 'ready-mobile'
+          assert product['entity_id'] == 'wlr_ent_000011'
+          assert product.get('launch_date') is None
+          product['launch_date'] = '2018'
+          product['launch_date_precision'] = 'year'
+          product['last_verified_at'] = '2026-08-18'
+          product['notes'] = (
+              'As of August 2026 the Ready app is transitioning from Starknet to Base while Ready X continues Starknet support. '
+              'The current Ready Mobile lineage continues the former Argent Mobile product; first-party Argent history states that Argent launched on Ethereum in 2018, so WLR records year precision only.'
+          )
+
+          events.append({
+              'id': 'wlr_ev_000102',
+              'entity_id': 'wlr_ent_000011',
+              'product_id': 'wlr_prod_000038',
+              'affected_product_ids': ['wlr_prod_000038'],
+              'event_type': 'product_released',
+              'event_date': '2018',
+              'event_date_basis': 'release',
+              'title': 'Argent mobile wallet launched on Ethereum',
+              'description': 'Argent launched its consumer smart-wallet product on Ethereum in 2018. This mobile product lineage later continued as Ready Mobile after the 2025 Argent-to-Ready rebrand.',
+              'confidence': 'high',
+              'event_status_effect': 'active',
+              'is_major_event': True,
+              'notes': 'Year precision only. The first-party retrospective establishes the 2018 Ethereum launch but not a defensible month or day. Ready/Argent brand continuity is separately supported by existing canonical evidence wlr_src_000051.'
+          })
+
+          evidence.append({
+              'id': 'wlr_src_000160',
+              'entity_id': 'wlr_ent_000011',
+              'product_ids': ['wlr_prod_000038'],
+              'event_ids': ['wlr_ev_000102'],
+              'product_id': 'wlr_prod_000038',
+              'event_id': 'wlr_ev_000102',
+              'source_type': 'official_blog',
+              'title': 'Doubling down on Starknet',
+              'url': 'https://www.argent.xyz/blog/doubling-down-on-starknet',
+              'publisher': 'Argent / Ready',
+              'published_at': '2023-12-19',
+              'accessed_at': '2026-08-18',
+              'reliability': 'high',
+              'claim_scope': 'launch_date',
+              'is_primary': True,
+              'notes': 'First-party Argent history explicitly states that Argent launched on Ethereum in 2018. WLR retains year precision and uses existing wlr_src_000051 for the later Argent Mobile -> Ready Mobile continuity.'
+          })
+
+          for path, data in ((products_path, products), (events_path, events), (evidence_path, evidence)):
+              path.write_text(json.dumps(data, ensure_ascii=False, separators=(',', ':')) + '\n')
+          PY
+
+      - name: Validate reviewed change
+        run: |
+          set -euo pipefail
+          npm run validate:records
+          npm run validate:identity-evidence
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=json.loads(Path('data/products.json').read_text())
+          e=json.loads(Path('data/events.json').read_text())
+          s=json.loads(Path('data/evidence.json').read_text())
+          prod=next(x for x in p if x['id']=='wlr_prod_000038')
+          ev=next(x for x in e if x['id']=='wlr_ev_000102')
+          src=next(x for x in s if x['id']=='wlr_src_000160')
+          assert prod['launch_date']=='2018' and prod['launch_date_precision']=='year'
+          assert ev['event_type']=='product_released' and ev['event_date']=='2018' and ev['event_date_basis']=='release'
+          assert src['event_id']=='wlr_ev_000102' and src['reliability']=='high' and src['is_primary'] is True
+          print('READY_MOBILE_STAGE_OK')
+          PY
+
+      - name: Commit canonical staging result
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/products.json data/events.json data/evidence.json
+          git diff --cached --quiet && { echo 'No staged canonical change'; exit 1; }
+          git commit -m 'Add reviewed Ready Mobile launch year'
+          git push origin HEAD:cleanup/ready-mobile-launch-year
