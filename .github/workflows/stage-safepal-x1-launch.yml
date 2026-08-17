@@ -1,0 +1,76 @@
+name: Stage SafePal X1 launch history
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/stage-safepal-x1-launch.yml
+
+permissions:
+  contents: write
+
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply reviewed SafePal X1 launch records
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          p = Path('data/products.json')
+          text = p.read_text(encoding='utf-8')
+          old = '"id":"wlr_prod_000072","entity_id":"wlr_ent_000026","slug":"safepal-x1","product_name":"SafePal X1","aliases":[],"product_type":"hardware_device","status":"active","sales_status":"unknown","support_status":"supported","launch_date":null,'
+          new = '"id":"wlr_prod_000072","entity_id":"wlr_ent_000026","slug":"safepal-x1","product_name":"SafePal X1","aliases":[],"product_type":"hardware_device","status":"active","sales_status":"unknown","support_status":"supported","launch_date":"2023-09","launch_date_precision":"month",'
+          if text.count(old) != 1:
+              raise SystemExit('SafePal X1 product precondition failed')
+          p.write_text(text.replace(old, new, 1), encoding='utf-8')
+
+          def append(path, obj):
+              q = Path(path)
+              t = q.read_text(encoding='utf-8')
+              end = t.rfind(']')
+              before = t[:end].rstrip()
+              q.write_text(before + ',\n' + json.dumps(obj, ensure_ascii=False, separators=(',', ':')) + '\n]\n', encoding='utf-8')
+
+          events = json.loads(Path('data/events.json').read_text())
+          evidence = json.loads(Path('data/evidence.json').read_text())
+          if any(x.get('id') == 'wlr_ev_000093' for x in events): raise SystemExit('event id already used')
+          if any(x.get('id') == 'wlr_src_000151' for x in evidence): raise SystemExit('source id already used')
+
+          append('data/events.json', {
+            'id':'wlr_ev_000093','entity_id':'wlr_ent_000026','product_id':'wlr_prod_000072','affected_product_ids':['wlr_prod_000072'],
+            'event_type':'product_released','event_date':'2023-09','event_date_basis':'release',
+            'title':'SafePal X1 Bluetooth hardware wallet officially launched','description':'SafePal records the official launch and open-source release of its X1 Bluetooth hardware wallet in September 2023.',
+            'confidence':'high','event_status_effect':'active','is_major_event':True,
+            'notes':'Month-level precision is retained because the contemporaneous 2023-09-13 CEO letter announced the launch while still referencing preorder availability; no exact commercial-release day is inferred.'
+          })
+          append('data/evidence.json', {
+            'id':'wlr_src_000151','entity_id':'wlr_ent_000026','product_ids':['wlr_prod_000072'],'event_ids':['wlr_ev_000093'],
+            'product_id':'wlr_prod_000072','event_id':'wlr_ev_000093','source_type':'official_statement','title':'About SafePal — Our History',
+            'url':'https://www.safepal.com/en/about','publisher':'SafePal','published_at':None,'accessed_at':'2026-08-17',
+            'reliability':'high','claim_scope':'launch_date','is_primary':True,
+            'notes':'First-party SafePal history records the official launch and open-source release of the X1 Bluetooth hardware wallet in September 2023.'
+          })
+          PY
+      - name: Validate
+        run: |
+          python3 -m pip install -r requirements.txt
+          python3 scripts/validate_records.py
+          python3 scripts/validate_identity_evidence_policy.py
+          python3 scripts/report_coverage.py --fail-on-structural
+      - name: Push reviewed branch
+        run: |
+          set -euo pipefail
+          branch='data/safepal-x1-launch-history'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -b "$branch"
+          rm .github/workflows/stage-safepal-x1-launch.yml
+          git add data/products.json data/events.json data/evidence.json .github/workflows/stage-safepal-x1-launch.yml
+          git commit -m 'Add reviewed SafePal X1 launch history'
+          git push origin "$branch"
