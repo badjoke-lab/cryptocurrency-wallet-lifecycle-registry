@@ -79,14 +79,8 @@ jobs:
           expected="f35c2f4ea3dfd007a019df3ffe417a57884ae33f"
           base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
           auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
-          match=""
-          for attempt in $(seq 1 60); do
-            deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
-            match="$(jq -c --arg sha "$expected" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
-            if [ -n "$match" ] && jq -e '.latest_stage.status == "success"' <<<"$match" >/dev/null; then break; fi
-            echo "Waiting for exact deployment attempt=${attempt}"
-            sleep 10
-          done
+          deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
+          match="$(jq -c --arg sha "$expected" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
           test -n "$match"
           jq -e '.latest_stage.status == "success" and .deployment_trigger.metadata.branch == "main" and .deployment_trigger.metadata.commit_dirty == false and (.aliases | index("https://wlr.badjoke-lab.com")) != null' <<<"$match" >/dev/null
           echo "deployment_url=$(jq -r '.url' <<<"$match")" >> "$GITHUB_OUTPUT"
@@ -101,34 +95,42 @@ jobs:
           work="$(mktemp -d)"
           trap 'rm -rf "$work"' EXIT
           cp public/data/stats.json "$work/expected-stats.json"
-          curl -fsSL "${DEPLOYMENT_URL}/data/stats.json?verify=f35c2f4e" -o "$work/deploy-stats.json"
+          curl -fsSL "${DEPLOYMENT_URL}/data/stats.json?verify=f35c2f4e-r2" -o "$work/deploy-stats.json"
           jq -e --slurpfile expected "$work/expected-stats.json" '.registry == $expected[0].registry and .products.launch_date == $expected[0].products.launch_date and .data_quality.products.support_status_known == $expected[0].data_quality.products.support_status_known' "$work/deploy-stats.json" >/dev/null
-          ready=0
-          for attempt in $(seq 1 60); do
-            nonce="f35c2f4e-${attempt}-$(date +%s)"
-            curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/stats.json?verify=${nonce}" -o "$work/public-stats.json"
-            if jq -e --slurpfile expected "$work/expected-stats.json" '.registry == $expected[0].registry and .products.launch_date == $expected[0].products.launch_date and .data_quality.products.support_status_known == $expected[0].data_quality.products.support_status_known' "$work/public-stats.json" >/dev/null; then ready=1; break; fi
-            echo "Waiting for custom-domain exact content attempt=${attempt}"
-            sleep 10
-          done
-          test "$ready" -eq 1
+          curl -fsSL "https://wlr.badjoke-lab.com/data/stats.json?verify=f35c2f4e-r2-$(date +%s)" -o "$work/public-stats.json"
+          jq -e --slurpfile expected "$work/expected-stats.json" '.registry == $expected[0].registry and .products.launch_date == $expected[0].products.launch_date and .data_quality.products.support_status_known == $expected[0].data_quality.products.support_status_known' "$work/public-stats.json" >/dev/null
 
       - name: Verify public Rabby Desktop records and routes
         run: |
           set -euo pipefail
           work="$(mktemp -d)"
           trap 'rm -rf "$work"' EXIT
-          nonce="$(date +%s)"
-          for name in entities products events evidence stats; do
-            curl -fsSL --retry 10 --retry-all-errors --retry-delay 2 "https://wlr.badjoke-lab.com/data/${name}.json?verify=${nonce}" -o "$work/${name}.json"
+          ready=0
+          for attempt in $(seq 1 60); do
+            nonce="f35c2f4e-records-${attempt}-$(date +%s)"
+            ok=1
+            for name in entities products events evidence stats; do
+              if ! curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/${name}.json?verify=${nonce}" -o "$work/${name}.json"; then
+                ok=0
+              fi
+            done
+            if [ "$ok" -eq 1 ] && \
+               jq -e '.[] | select(.id == "wlr_prod_000056") | .launch_date == "2022" and .launch_date_precision == "year"' "$work/products.json" >/dev/null 2>&1 && \
+               jq -e '.[] | select(.id == "wlr_ev_000104") | .product_id == "wlr_prod_000056" and .event_date == "2022" and .event_date_basis == "release"' "$work/events.json" >/dev/null 2>&1 && \
+               jq -e '.[] | select(.id == "wlr_src_000163") | .event_id == "wlr_ev_000104" and .reliability == "high" and .is_primary == true and .claim_scope == "launch_date"' "$work/evidence.json" >/dev/null 2>&1; then
+              ready=1
+              echo "Public canonical records are exact on attempt=${attempt}"
+              break
+            fi
+            echo "Waiting for public canonical record propagation attempt=${attempt}"
+            sleep 10
           done
-          jq -e '.[] | select(.id == "wlr_prod_000056") | .launch_date == "2022" and .launch_date_precision == "year"' "$work/products.json" >/dev/null
-          jq -e '.[] | select(.id == "wlr_ev_000104") | .product_id == "wlr_prod_000056" and .event_date == "2022" and .event_date_basis == "release"' "$work/events.json" >/dev/null
-          jq -e '.[] | select(.id == "wlr_src_000163") | .event_id == "wlr_ev_000104" and .reliability == "high" and .is_primary == true and .claim_scope == "launch_date"' "$work/evidence.json" >/dev/null
+          test "$ready" -eq 1
           entity_slug="$(jq -r '.[] | select(.id == "wlr_ent_000018") | .slug' "$work/entities.json")"
           product_slug="$(jq -r '.[] | select(.id == "wlr_prod_000056") | .slug' "$work/products.json")"
           test -n "$entity_slug" && test "$entity_slug" != "null"
           test "$product_slug" = "rabby-desktop"
+          nonce="$(date +%s)"
           wallet_code="$(curl -sS -o /dev/null -w '%{http_code}' "https://wlr.badjoke-lab.com/wallet/${entity_slug}/?verify=${nonce}")"
           product_code="$(curl -sS -o /dev/null -w '%{http_code}' "https://wlr.badjoke-lab.com/product/${product_slug}/?verify=${nonce}")"
           test "$wallet_code" -ge 200 && test "$wallet_code" -lt 400
