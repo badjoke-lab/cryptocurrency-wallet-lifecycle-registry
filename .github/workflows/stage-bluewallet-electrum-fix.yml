@@ -1,0 +1,148 @@
+name: Stage reviewed BlueWallet Electrum persistence fix
+
+on:
+  push:
+    branches: [data/bluewallet-electrum-persistence-fix]
+
+permissions:
+  contents: write
+
+jobs:
+  stage:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data/bluewallet-electrum-persistence-fix
+          fetch-depth: 0
+
+      - name: Append reviewed BlueWallet event and evidence
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          def append_rows(path, rows):
+              text = path.read_text()
+              stripped = text.rstrip()
+              assert stripped.endswith(']')
+              body = stripped[:-1].rstrip()
+              addition = ',\n' + ',\n'.join(json.dumps(row, ensure_ascii=False, separators=(',', ':')) for row in rows) + '\n]'
+              path.write_text(body + addition + '\n')
+
+          events_path = Path('data/events.json')
+          evidence_path = Path('data/evidence.json')
+          events = json.loads(events_path.read_text())
+          evidence = json.loads(evidence_path.read_text())
+
+          assert len(events) == 80
+          assert len(evidence) == 133
+          assert 'wlr_ev_000081' not in {row['id'] for row in events}
+          assert not {'wlr_src_000134','wlr_src_000135'}.intersection({row['id'] for row in evidence})
+          assert any(row['id'] == 'wlr_ev_000058' and row['entity_id'] == 'wlr_ent_000023' for row in events)
+
+          event = {
+            'id': 'wlr_ev_000081',
+            'entity_id': 'wlr_ent_000023',
+            'product_id': 'wlr_prod_000063',
+            'affected_product_ids': ['wlr_prod_000063'],
+            'event_type': 'software_fix',
+            'event_date': '2025-01-31',
+            'event_date_basis': 'release',
+            'title': 'BlueWallet v7.0.9 fixed preferred Electrum server persistence',
+            'description': 'BlueWallet v7.0.9 fixed the preferred Electrum server persistence issue tracked as #7532, where a saved custom preferred server could be replaced by a suggested server after app restarts on the documented iOS reproductions.',
+            'confidence': 'high',
+            'security_scope': 'mobile_app',
+            'event_status_effect': 'none',
+            'fixed_versions': [
+              {'product_ids': ['wlr_prod_000063'], 'track': 'BlueWallet Mobile', 'version': '7.0.9'}
+            ],
+            'user_actions_required': ['update'],
+            'affected_components': ['Electrum preferred server settings'],
+            'is_major_event': False,
+            'notes': 'This is recorded as a software fix, not a vulnerability or exploit. WLR scopes the event only to BlueWallet Mobile because the reviewed reproductions are iOS/mobile; Desktop impact, server compromise, an affected pre-fix version range, and fund loss are not inferred.'
+          }
+
+          sources = [
+            {
+              'id': 'wlr_src_000134',
+              'entity_id': 'wlr_ent_000023',
+              'product_ids': ['wlr_prod_000063'],
+              'event_ids': ['wlr_ev_000081'],
+              'product_id': 'wlr_prod_000063',
+              'event_id': 'wlr_ev_000081',
+              'source_type': 'release_notes',
+              'title': 'BlueWallet v7.0.9',
+              'url': 'https://github.com/BlueWallet/BlueWallet/releases/tag/v7.0.9',
+              'publisher': 'BlueWallet',
+              'published_at': '2025-01-31',
+              'accessed_at': '2026-08-17',
+              'reliability': 'high',
+              'claim_scope': 'security_fix',
+              'is_primary': True,
+              'notes': 'Official BlueWallet release notes explicitly list the operational-security preferred Electrum server persistence/reset issue #7532 as fixed in v7.0.9.'
+            },
+            {
+              'id': 'wlr_src_000135',
+              'entity_id': 'wlr_ent_000023',
+              'product_ids': ['wlr_prod_000063'],
+              'event_ids': ['wlr_ev_000081'],
+              'product_id': 'wlr_prod_000063',
+              'event_id': 'wlr_ev_000081',
+              'source_type': 'source_code',
+              'title': 'BlueWallet PR #7546 — Electrum preferred server persistence fix',
+              'url': 'https://github.com/BlueWallet/BlueWallet/pull/7546',
+              'publisher': 'BlueWallet',
+              'published_at': '2025-01-28',
+              'accessed_at': '2026-08-17',
+              'reliability': 'high',
+              'claim_scope': 'security_fix',
+              'is_primary': True,
+              'notes': 'Merged official BlueWallet source-code change for issue #7532. The patch changes Electrum preferred-server/reset/history behavior and settings refresh logic.'
+            }
+          ]
+
+          append_rows(events_path, [event])
+          append_rows(evidence_path, sources)
+          PY
+
+      - name: Validate canonical records and identity/evidence policy
+        run: |
+          set -euo pipefail
+          python3 scripts/validate_records.py
+          python3 scripts/validate_identity_evidence_policy.py
+
+      - name: Assert targeted BlueWallet batch
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          events=json.loads(Path('data/events.json').read_text())
+          evidence=json.loads(Path('data/evidence.json').read_text())
+          assert len(events)==81
+          assert len(evidence)==135
+          e=next(row for row in events if row['id']=='wlr_ev_000081')
+          assert e['entity_id']=='wlr_ent_000023' and e['product_id']=='wlr_prod_000063'
+          assert e['affected_product_ids']==['wlr_prod_000063']
+          assert e['event_type']=='software_fix' and e['event_date']=='2025-01-31' and e['event_date_basis']=='release'
+          assert e['security_scope']=='mobile_app' and e['user_actions_required']==['update']
+          assert e['fixed_versions']==[{'product_ids':['wlr_prod_000063'],'track':'BlueWallet Mobile','version':'7.0.9'}]
+          assert 'funds_affected' not in e and 'affected_versions' not in e and 'impact_level' not in e
+          src=[s for s in evidence if s['id'] in {'wlr_src_000134','wlr_src_000135'}]
+          assert len(src)==2
+          assert all(s['is_primary'] is True and s['reliability']=='high' and s['claim_scope']=='security_fix' for s in src)
+          print('BLUEWALLET_ELECTRUM_STAGE_OK events=81 evidence=135 incidents_expected=17 remediation_expected=6')
+          PY
+
+      - name: Commit staged canonical changes
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data/events.json data/evidence.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Add reviewed BlueWallet Electrum persistence fix'
+          git push origin HEAD:data/bluewallet-electrum-persistence-fix
