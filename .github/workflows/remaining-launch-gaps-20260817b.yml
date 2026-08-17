@@ -1,0 +1,32 @@
+name: Audit remaining WLR launch gaps
+
+on:
+  push:
+    branches: [qa/remaining-launch-gaps-20260817b]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Print remaining product launch gaps
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          entities=json.loads(Path('data/entities.json').read_text())
+          products=json.loads(Path('data/products.json').read_text())
+          ent={e['id']:e for e in entities}
+          gaps=[p for p in products if p.get('launch_date') in (None,'')]
+          print(f'LAUNCH_GAP_COUNT={len(gaps)}')
+          for p in gaps:
+              print('|'.join([
+                p['id'], p['entity_id'], ent[p['entity_id']]['canonical_name'], p['product_name'], p['slug'], p.get('product_type',''),
+                p.get('official_url') or '', p.get('source_code_url') or '', p.get('notes') or ''
+              ]))
+          PY
