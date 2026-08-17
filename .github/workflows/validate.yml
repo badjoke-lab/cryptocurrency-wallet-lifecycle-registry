@@ -34,3 +34,84 @@ jobs:
       - run: npm run seed:gate
       - run: npm run cloudflare:config:print
       - run: npm run build
+
+  verify-pr125-production:
+    if: github.event_name == 'pull_request' && github.head_ref == 'ops/pr125-production-verify'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build exact-main expected state
+        run: |
+          set -euo pipefail
+          expected_sha="7af181f2f03d4a5a829e542b880721b05aa26c7e"
+          test "$(git rev-parse HEAD)" = "$expected_sha"
+          node scripts/build-stats.mjs
+          jq -e '.registry.entities == 26 and .registry.products == 74 and .registry.events == 103 and .registry.evidence == 162' public/data/stats.json >/dev/null
+          jq -e '.products.launch_date.known == 62 and .products.launch_date.total == 74' public/data/stats.json >/dev/null
+          jq -e '.data_quality.products.support_status_known.known == 73 and .data_quality.products.support_status_known.total == 74' public/data/stats.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_prod_000053") | .launch_date == "2022" and .launch_date_precision == "year"' data/products.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_ev_000103") | .entity_id == "wlr_ent_000017" and .product_id == "wlr_prod_000053" and .event_type == "product_released" and .event_date == "2022" and .event_date_basis == "release"' data/events.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_src_000161") | .event_id == "wlr_ev_000103" and .product_id == "wlr_prod_000053" and .reliability == "high" and .is_primary == true and .claim_scope == "launch_date"' data/evidence.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_src_000162") | .event_id == "wlr_ev_000103" and .product_id == "wlr_prod_000053" and .reliability == "high" and .is_primary == true and .claim_scope == "launch_date"' data/evidence.json >/dev/null
+      - name: Resolve exact Cloudflare production deployment
+        id: deploy
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          expected="7af181f2f03d4a5a829e542b880721b05aa26c7e"
+          base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
+          auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
+          match=""
+          for attempt in $(seq 1 60); do
+            deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
+            match="$(jq -c --arg sha "$expected" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
+            if [ -n "$match" ] && jq -e '.latest_stage.status == "success"' <<<"$match" >/dev/null; then break; fi
+            echo "Waiting for exact deployment attempt=${attempt}"
+            sleep 10
+          done
+          test -n "$match"
+          jq -e '.latest_stage.status == "success" and .deployment_trigger.metadata.branch == "main" and (.aliases | index("https://wlr.badjoke-lab.com")) != null' <<<"$match" >/dev/null
+          echo "deployment_url=$(jq -r '.url' <<<"$match")" >> "$GITHUB_OUTPUT"
+          echo "deployment_id=$(jq -r '.id' <<<"$match")" >> "$GITHUB_OUTPUT"
+          echo "$match" | jq '{id,short_id,url,aliases,latest_stage,deployment_trigger}'
+      - name: Verify exact deployment, custom domain, records and routes
+        env:
+          DEPLOYMENT_URL: ${{ steps.deploy.outputs.deployment_url }}
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"
+          trap 'rm -rf "$work"' EXIT
+          cp public/data/stats.json "$work/expected-stats.json"
+          curl -fsSL "${DEPLOYMENT_URL}/data/stats.json?verify=7af181f2" -o "$work/deploy-stats.json"
+          jq -e --slurpfile expected "$work/expected-stats.json" '.registry == $expected[0].registry and .products.launch_date == $expected[0].products.launch_date and .data_quality.products.support_status_known == $expected[0].data_quality.products.support_status_known' "$work/deploy-stats.json" >/dev/null
+          ready=0
+          for attempt in $(seq 1 60); do
+            nonce="7af181f2-${attempt}-$(date +%s)"
+            curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/stats.json?verify=${nonce}" -o "$work/public-stats.json"
+            if jq -e --slurpfile expected "$work/expected-stats.json" '.registry == $expected[0].registry and .products.launch_date == $expected[0].products.launch_date and .data_quality.products.support_status_known == $expected[0].data_quality.products.support_status_known' "$work/public-stats.json" >/dev/null; then ready=1; break; fi
+            sleep 10
+          done
+          test "$ready" -eq 1
+          nonce="$(date +%s)"
+          for name in entities products events evidence stats; do curl -fsSL --retry 10 --retry-all-errors --retry-delay 2 "https://wlr.badjoke-lab.com/data/${name}.json?verify=${nonce}" -o "$work/${name}.json"; done
+          jq -e '.[] | select(.id == "wlr_prod_000053") | .launch_date == "2022" and .launch_date_precision == "year"' "$work/products.json" >/dev/null
+          jq -e '.[] | select(.id == "wlr_ev_000103") | .event_date == "2022" and .event_date_basis == "release"' "$work/events.json" >/dev/null
+          jq -e '.[] | select(.id == "wlr_src_000161") | .event_id == "wlr_ev_000103" and .reliability == "high" and .is_primary == true' "$work/evidence.json" >/dev/null
+          jq -e '.[] | select(.id == "wlr_src_000162") | .event_id == "wlr_ev_000103" and .reliability == "high" and .is_primary == true' "$work/evidence.json" >/dev/null
+          entity_slug="$(jq -r '.[] | select(.id == "wlr_ent_000017") | .slug' "$work/entities.json")"
+          product_slug="$(jq -r '.[] | select(.id == "wlr_prod_000053") | .slug' "$work/products.json")"
+          wallet_code="$(curl -sS -o /dev/null -w '%{http_code}' "https://wlr.badjoke-lab.com/wallet/${entity_slug}/?verify=${nonce}")"
+          product_code="$(curl -sS -o /dev/null -w '%{http_code}' "https://wlr.badjoke-lab.com/product/${product_slug}/?verify=${nonce}")"
+          test "$wallet_code" -ge 200 && test "$wallet_code" -lt 400
+          test "$product_code" -ge 200 && test "$product_code" -lt 400
+          echo "WLR routes wallet=${wallet_code} product=${product_code} entity_slug=${entity_slug} product_slug=${product_slug}"
+          jq '{registry,launch_date:.products.launch_date,support_known:.data_quality.products.support_status_known}' "$work/stats.json"
+          echo 'PR125_PRODUCTION_VERIFY_OK envoy_launch=2022 precision=year event=wlr_ev_000103 evidence=wlr_src_000161,wlr_src_000162'
