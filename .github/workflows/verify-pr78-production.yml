@@ -1,0 +1,92 @@
+name: Verify WLR PR78 Production
+
+on:
+  push:
+    branches: [ops/pr78-production-verify]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Resolve exact Cloudflare deployment and verify public Sparrow state
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          expected="9e5c719d177744b224bbe79f186f67f6d9299eb1"
+          base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
+          auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
+          match=""
+          for attempt in $(seq 1 60); do
+            deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
+            match="$(jq -c --arg sha "$expected" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
+            if [ -n "$match" ] && jq -e '.latest_stage.status == "success"' <<<"$match" >/dev/null; then break; fi
+            echo "Waiting exact deployment attempt=${attempt}"
+            sleep 10
+          done
+          test -n "$match"
+          jq -e '.latest_stage.status == "success" and .deployment_trigger.metadata.branch == "main" and (.aliases | index("https://wlr.badjoke-lab.com")) != null' <<<"$match" >/dev/null
+          deployment_url="$(jq -r '.url' <<<"$match")"
+          echo "$match" | jq '{id,short_id,url,aliases,latest_stage,deployment_trigger}'
+
+          work="$(mktemp -d)"
+          trap 'rm -rf "$work"' EXIT
+          curl -fsSL "${deployment_url}/data/stats.json?verify=9e5c719d" -o "$work/deploy-stats.json"
+          python3 - "$work/deploy-stats.json" <<'PY'
+          import json, pathlib, sys
+          stats=json.loads(pathlib.Path(sys.argv[1]).read_text())
+          r=stats['registry']
+          assert (r['entities'],r['products'],r['events'],r['evidence'],r['incident_events'],r['remediation_events']) == (25,69,83,139,18,7)
+          assert stats['products']['launch_date']['count']==47 and stats['products']['launch_date']['denominator']==69
+          assert stats['data_quality']['products']['support_status_known']['count']==68 and stats['data_quality']['products']['support_status_known']['denominator']==69
+          print('SPARROW_DEPLOYMENT_TOTALS_OK')
+          PY
+
+          ready=0
+          for attempt in $(seq 1 60); do
+            nonce="9e5c719d-${attempt}-$(date +%s)"
+            curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/stats.json?verify=${nonce}" -o "$work/stats.json"
+            vals="$(jq -r '[.registry.events,.registry.evidence,.registry.incident_events,.registry.remediation_events] | @tsv' "$work/stats.json")"
+            echo "custom attempt=${attempt} values=${vals}"
+            if [ "$vals" = $'83\t139\t18\t7' ]; then ready=1; break; fi
+            sleep 10
+          done
+          test "$ready" -eq 1
+
+          nonce="$(date +%s)"
+          curl -fsSL "https://wlr.badjoke-lab.com/data/events.json?verify=${nonce}" -o "$work/events.json"
+          curl -fsSL "https://wlr.badjoke-lab.com/data/evidence.json?verify=${nonce}" -o "$work/evidence.json"
+          python3 - "$work" <<'PY'
+          import json, pathlib, sys
+          root=pathlib.Path(sys.argv[1])
+          events=json.loads((root/'events.json').read_text())
+          evidence=json.loads((root/'evidence.json').read_text())
+          issue=next(e for e in events if e['id']=='wlr_ev_000082')
+          fix=next(e for e in events if e['id']=='wlr_ev_000083')
+          assert issue['entity_id']=='wlr_ent_000021' and issue['product_id']=='wlr_prod_000061'
+          assert issue['event_type']=='software_issue' and issue['event_date']=='2026-03-05' and issue['event_date_basis']=='disclosure'
+          assert issue['security_scope']=='software' and issue['event_status_effect']=='none'
+          assert 'impact_level' not in issue and 'funds_affected' not in issue and 'affected_versions' not in issue
+          assert fix['event_type']=='software_fix' and fix['event_date']=='2026-03-10' and fix['event_date_basis']=='release'
+          assert fix['fixed_versions']==[{'product_ids':['wlr_prod_000061'],'track':'Sparrow Desktop','version':'2.4.2'}]
+          assert fix['user_actions_required']==['update']
+          src={s['id']:s for s in evidence if s['id'] in {'wlr_src_000136','wlr_src_000137','wlr_src_000138','wlr_src_000139'}}
+          assert set(src)=={'wlr_src_000136','wlr_src_000137','wlr_src_000138','wlr_src_000139'}
+          assert src['wlr_src_000136']['url']=='https://github.com/sparrowwallet/sparrow/issues/1961'
+          assert src['wlr_src_000137']['url']=='https://github.com/sparrowwallet/sparrow/issues/1961#issuecomment-4010642640'
+          assert src['wlr_src_000138']['url']=='https://github.com/sparrowwallet/sparrow/commit/e9108b85cdd00ffa53c5efd79a30934bd69aca07'
+          assert src['wlr_src_000139']['url']=='https://github.com/sparrowwallet/sparrow/releases/tag/2.4.2'
+          print('SPARROW_PUBLIC_DATA_OK events=83 evidence=139 incidents=18 remediation=7')
+          PY
+
+          curl -fsSL -o /dev/null "https://wlr.badjoke-lab.com/wallet/sparrow-wallet/?verify=${nonce}"
+          curl -fsSL -o /dev/null "https://wlr.badjoke-lab.com/product/sparrow-desktop/?verify=${nonce}"
+          echo 'PR78_PRODUCTION_VERIFY_OK'
