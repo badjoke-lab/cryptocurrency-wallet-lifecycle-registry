@@ -15,8 +15,7 @@ jobs:
         with:
           ref: main
 
-      - name: Resolve exact Cloudflare production deployment
-        id: deploy
+      - name: Verify exact deployment and public BlueWallet state
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -25,93 +24,66 @@ jobs:
           expected="e17fa1cf391c4bf31e6b1fe8f1f00b558afa1361"
           base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
           auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
-          match=""
-          for attempt in $(seq 1 60); do
-            deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
-            match="$(jq -c --arg sha "$expected" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
-            if [ -n "$match" ] && jq -e '.latest_stage.status == "success"' <<<"$match" >/dev/null; then break; fi
-            echo "Waiting exact deployment attempt=${attempt}"
-            sleep 10
-          done
+          deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
+          match="$(jq -c --arg sha "$expected" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
           test -n "$match"
           jq -e '.latest_stage.status == "success" and .deployment_trigger.metadata.branch == "main" and (.aliases | index("https://wlr.badjoke-lab.com")) != null' <<<"$match" >/dev/null
-          url="$(jq -r '.url' <<<"$match")"
-          echo "deployment_url=$url" >> "$GITHUB_OUTPUT"
           echo "$match" | jq '{id,short_id,url,aliases,latest_stage,deployment_trigger}'
 
-      - name: Verify deployment-specific state
-        env:
-          DEPLOYMENT_URL: ${{ steps.deploy.outputs.deployment_url }}
-        run: |
-          set -euo pipefail
           work="$(mktemp -d)"
           trap 'rm -rf "$work"' EXIT
-          curl -fsSL "${DEPLOYMENT_URL}/data/stats.json?verify=e17fa1cf" -o "$work/stats.json"
-          jq '{registry,launch:.products.launch_date,support:.data_quality.products.support_status_known}' "$work/stats.json"
-          jq -e '.registry.entities == 25 and .registry.products == 69 and .registry.events == 81 and .registry.evidence == 135 and .registry.incident_events == 17 and .registry.remediation_events == 6' "$work/stats.json" >/dev/null
-          jq -e '.products.launch_date.count == 47 and .products.launch_date.denominator == 69' "$work/stats.json" >/dev/null
-          jq -e '.data_quality.products.support_status_known.count == 68 and .data_quality.products.support_status_known.denominator == 69' "$work/stats.json" >/dev/null
-
-      - name: Wait for custom domain exact content
-        run: |
-          set -euo pipefail
-          work="$(mktemp -d)"
-          trap 'rm -rf "$work"' EXIT
-          ready=0
-          for attempt in $(seq 1 60); do
-            nonce="e17fa1cf-${attempt}-$(date +%s)"
-            curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/stats.json?verify=${nonce}" -o "$work/stats.json"
-            events="$(jq -r '.registry.events' "$work/stats.json")"
-            evidence="$(jq -r '.registry.evidence' "$work/stats.json")"
-            incidents="$(jq -r '.registry.incident_events' "$work/stats.json")"
-            remediation="$(jq -r '.registry.remediation_events' "$work/stats.json")"
-            echo "custom attempt=${attempt} events=${events} evidence=${evidence} incidents=${incidents} remediation=${remediation}"
-            if [ "$events" = 81 ] && [ "$evidence" = 135 ] && [ "$incidents" = 17 ] && [ "$remediation" = 6 ]; then ready=1; break; fi
-            sleep 10
-          done
-          test "$ready" -eq 1
-
-      - name: Verify public BlueWallet records and routes
-        run: |
-          set -euo pipefail
-          work="$(mktemp -d)"
-          trap 'rm -rf "$work"' EXIT
-          nonce="$(date +%s)"
+          nonce="e17fa1cf-$(date +%s)"
           for name in events evidence stats; do
             curl -fsSL "https://wlr.badjoke-lab.com/data/${name}.json?verify=${nonce}" -o "$work/${name}.json"
           done
 
-          check() { label="$1"; shift; echo "CHECK ${label}"; "$@"; echo "PASS ${label}"; }
+          python3 - "$work" <<'PY'
+          import json, pathlib, sys
+          root = pathlib.Path(sys.argv[1])
+          events = json.loads((root / 'events.json').read_text())
+          evidence = json.loads((root / 'evidence.json').read_text())
+          stats = json.loads((root / 'stats.json').read_text())
 
-          check 'BlueWallet Electrum persistence fix' jq -e '
-            .[] | select(.id == "wlr_ev_000081") as $e |
-            ($e.entity_id == "wlr_ent_000023") and
-            ($e.product_id == "wlr_prod_000063") and
-            ($e.affected_product_ids == ["wlr_prod_000063"]) and
-            ($e.event_type == "software_fix") and
-            ($e.event_date == "2025-01-31") and
-            ($e.event_date_basis == "release") and
-            ($e.security_scope == "mobile_app") and
-            ($e.event_status_effect == "none") and
-            ($e.user_actions_required == ["update"]) and
-            ($e.fixed_versions == [{"product_ids":["wlr_prod_000063"],"track":"BlueWallet Mobile","version":"7.0.9"}]) and
-            (($e | has("funds_affected")) | not) and
-            (($e | has("affected_versions")) | not) and
-            (($e | has("impact_level")) | not)
-          ' "$work/events.json"
+          registry = stats['registry']
+          assert registry['entities'] == 25
+          assert registry['products'] == 69
+          assert registry['events'] == 81
+          assert registry['evidence'] == 135
+          assert registry['incident_events'] == 17
+          assert registry['remediation_events'] == 6
+          assert stats['products']['launch_date']['count'] == 47
+          assert stats['products']['launch_date']['denominator'] == 69
+          assert stats['data_quality']['products']['support_status_known']['count'] == 68
+          assert stats['data_quality']['products']['support_status_known']['denominator'] == 69
 
-          check 'BlueWallet evidence set' jq -e '
-            ([.[] | select(.id == "wlr_src_000134" or .id == "wlr_src_000135")] | length == 2) and
-            ([.[] | select(.id == "wlr_src_000134" or .id == "wlr_src_000135") | select(.reliability == "high" and .is_primary == true and .claim_scope == "security_fix" and .event_id == "wlr_ev_000081" and .product_id == "wlr_prod_000063")] | length == 2)
-          ' "$work/evidence.json"
+          event = next(e for e in events if e['id'] == 'wlr_ev_000081')
+          assert event['entity_id'] == 'wlr_ent_000023'
+          assert event['product_id'] == 'wlr_prod_000063'
+          assert event['affected_product_ids'] == ['wlr_prod_000063']
+          assert event['event_type'] == 'software_fix'
+          assert event['event_date'] == '2025-01-31'
+          assert event['event_date_basis'] == 'release'
+          assert event['security_scope'] == 'mobile_app'
+          assert event['event_status_effect'] == 'none'
+          assert event['user_actions_required'] == ['update']
+          assert event['fixed_versions'] == [{'product_ids':['wlr_prod_000063'],'track':'BlueWallet Mobile','version':'7.0.9'}]
+          assert 'funds_affected' not in event
+          assert 'affected_versions' not in event
+          assert 'impact_level' not in event
 
-          check 'Canonical source URLs' jq -e '
-            ([.[] | select(.id == "wlr_src_000134") | .url] == ["https://github.com/BlueWallet/BlueWallet/releases/tag/v7.0.9"]) and
-            ([.[] | select(.id == "wlr_src_000135") | .url] == ["https://github.com/BlueWallet/BlueWallet/pull/7546"])
-          ' "$work/evidence.json"
+          sources = {s['id']: s for s in evidence if s['id'] in {'wlr_src_000134','wlr_src_000135'}}
+          assert set(sources) == {'wlr_src_000134','wlr_src_000135'}
+          for source in sources.values():
+              assert source['reliability'] == 'high'
+              assert source['is_primary'] is True
+              assert source['claim_scope'] == 'security_fix'
+              assert source['event_id'] == 'wlr_ev_000081'
+              assert source['product_id'] == 'wlr_prod_000063'
+          assert sources['wlr_src_000134']['url'] == 'https://github.com/BlueWallet/BlueWallet/releases/tag/v7.0.9'
+          assert sources['wlr_src_000135']['url'] == 'https://github.com/BlueWallet/BlueWallet/pull/7546'
+          print('BLUEWALLET_PUBLIC_DATA_OK events=81 evidence=135 incidents=17 remediation=6')
+          PY
 
-          check 'Registry totals' jq -e '.registry.entities == 25 and .registry.products == 69 and .registry.events == 81 and .registry.evidence == 135 and .registry.incident_events == 17 and .registry.remediation_events == 6' "$work/stats.json"
-          check 'BlueWallet wallet route' curl -fsSL -o /dev/null "https://wlr.badjoke-lab.com/wallet/bluewallet/?verify=${nonce}"
-          check 'BlueWallet mobile route' curl -fsSL -o /dev/null "https://wlr.badjoke-lab.com/product/bluewallet-mobile/?verify=${nonce}"
-
-          echo 'PR76_PRODUCTION_VERIFY_OK events=81 evidence=135 incidents=17 remediation=6 bluewallet_event=wlr_ev_000081'
+          curl -fsSL -o /dev/null "https://wlr.badjoke-lab.com/wallet/bluewallet/?verify=${nonce}"
+          curl -fsSL -o /dev/null "https://wlr.badjoke-lab.com/product/bluewallet-mobile/?verify=${nonce}"
+          echo 'PR76_PRODUCTION_VERIFY_OK'
