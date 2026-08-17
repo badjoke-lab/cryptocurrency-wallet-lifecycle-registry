@@ -1,0 +1,49 @@
+name: Recompute WLR gaps after Ready
+
+on:
+  push:
+    branches: [ops/recompute-gaps-after-ready]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Print current completeness gaps
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "4c9510af9b259d52daa0552e8b28131aa7a18885"
+          python3 - <<'PY'
+          import json
+          from collections import Counter, defaultdict
+          from pathlib import Path
+
+          entities=json.loads(Path('data/entities.json').read_text())
+          products=json.loads(Path('data/products.json').read_text())
+          events=json.loads(Path('data/events.json').read_text())
+          evidence=json.loads(Path('data/evidence.json').read_text())
+          entity_name={x['id']:x['canonical_name'] for x in entities}
+          ev_by_entity=defaultdict(list)
+          for e in events: ev_by_entity[e['entity_id']].append(e)
+
+          missing=[p for p in products if p.get('launch_date') is None]
+          unknown=[p for p in products if (p.get('support_status') or 'unknown')=='unknown']
+          print('=== GLOBAL ===')
+          print(json.dumps({'entities':len(entities),'products':len(products),'events':len(events),'evidence':len(evidence),'missing_product_launch':len(missing),'unknown_support':len(unknown)},separators=(',',':')))
+          print('=== MISSING PRODUCT LAUNCH ===')
+          for p in missing:
+            print(json.dumps({'id':p['id'],'entity_id':p['entity_id'],'entity':entity_name[p['entity_id']],'slug':p['slug'],'product_name':p['product_name'],'product_type':p['product_type']},separators=(',',':')))
+          print('=== UNKNOWN SUPPORT ===')
+          for p in unknown:
+            print(json.dumps({'id':p['id'],'entity_id':p['entity_id'],'entity':entity_name[p['entity_id']],'slug':p['slug'],'product_name':p['product_name']},separators=(',',':')))
+          print('=== THIN HISTORY <=1 EVENT ===')
+          for ent in entities:
+            rows=ev_by_entity[ent['id']]
+            if len(rows)<=1:
+              print(json.dumps({'id':ent['id'],'slug':ent['slug'],'name':ent['canonical_name'],'events':len(rows),'event_types':dict(Counter(x['event_type'] for x in rows))},separators=(',',':')))
+          PY
