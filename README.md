@@ -6,12 +6,16 @@ Wallet Lifecycle Registry (WLR) is an evidence-backed historical registry of har
 
 WLR is **not** a wallet ranking or recommendation service. Incident counts are historical facts, not safety scores.
 
-## Current v0 seed
+## Current registry state
 
-- 25 wallet entities
-- 69 products
-- 66 lifecycle/security events
-- 112 evidence records
+- 26 wallet entities
+- 74 products
+- 115 lifecycle/security events
+- 188 evidence records
+- entity launch-date coverage: 26 / 26 (100%)
+- product launch-date coverage: 74 / 74 (100%)
+- known product support-status coverage: 74 / 74 (100%)
+- known product sales-status coverage: 72 / 74 (97.3%)
 - CYA-derived editorial registry UI adapted to a black palette
 - semantic status and incident-severity colors
 - searchable wallet and incident views
@@ -19,7 +23,9 @@ WLR is **not** a wallet ranking or recommendation service. Incident counts are h
 - 8 core registry routes plus `/support/`
 - static Next.js export for Cloudflare Pages
 
-The original 25-entity v0 seed is complete. Further growth is reviewed against record depth, lifecycle coverage, evidence quality, and product-boundary clarity rather than adding wallets only to increase the entity count.
+The original 25-entity v0 seed is complete and has expanded through reviewed product-lineage, lifecycle, incident, remediation, and evidence-depth work. Further growth is reviewed against record depth, lifecycle coverage, evidence quality, and product-boundary clarity rather than adding wallets only to increase the entity count.
+
+Two product sales states remain intentionally unresolved pending direct first-party sales-end evidence: COLDCARD Mk3 (`wlr_prod_000015`) and first-generation Bitkey Hardware (`wlr_prod_000025`). Unknown values are preserved rather than inferred from successor products, firmware finality, store absence, or upgrade paths.
 
 ## Canonical data
 
