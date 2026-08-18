@@ -1,0 +1,91 @@
+name: Stage reviewed Rabby Mobile launch year
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  stage:
+    if: github.head_ref == 'review/rabby-mobile-launch-year'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: review/rabby-mobile-launch-year
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Apply reviewed canonical correction
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs = require('fs');
+          const read = p => JSON.parse(fs.readFileSync(p, 'utf8'));
+          const write = (p, v) => fs.writeFileSync(p, JSON.stringify(v) + '\n');
+          const products = read('data/products.json');
+          const events = read('data/events.json');
+          const evidence = read('data/evidence.json');
+
+          const product = products.find(x => x.id === 'wlr_prod_000055');
+          if (!product || product.entity_id !== 'wlr_ent_000018' || product.slug !== 'rabby-mobile') throw new Error('Unexpected Rabby Mobile identity');
+          if (product.launch_date !== null && product.launch_date !== '2024') throw new Error(`Unexpected launch date ${product.launch_date}`);
+          product.launch_date = '2024';
+          product.launch_date_precision = 'year';
+          product.last_verified_at = '2026-08-18';
+          product.notes = "Rabby's official mobile repository begins development in late 2023, then records version 0.1.0 being prepared for publishing on 2024-01-29 and an explicit publish of 0.1.1 on 2024-03-01. WLR records 2024 at year precision because the reviewed source history establishes the public release lineage during 2024 but does not establish one defensible exact first App Store or Play Store release day.";
+
+          const ev = {
+            id:'wlr_ev_000107', entity_id:'wlr_ent_000018', product_id:'wlr_prod_000055', affected_product_ids:['wlr_prod_000055'],
+            event_type:'product_released', event_date:'2024', event_date_basis:'release',
+            title:'Rabby Mobile released in 2024',
+            description:"Rabby's official mobile repository establishes the transition from late-2023 development into a public mobile release lineage during 2024, including 0.1.0 publish preparation and an explicit 0.1.1 publish commit.",
+            confidence:'high', event_status_effect:'active', is_major_event:true,
+            notes:'Year precision only. The initial repository commit in 2023 is development evidence, not launch evidence; the 2024 publish-history does not establish one exact first public store-release day.'
+          };
+          const oldEv = events.find(x => x.id === ev.id);
+          if (oldEv && JSON.stringify(oldEv) !== JSON.stringify(ev)) throw new Error('wlr_ev_000107 collision');
+          if (!oldEv) events.push(ev);
+
+          const src1 = {
+            id:'wlr_src_000167', entity_id:'wlr_ent_000018', product_id:'wlr_prod_000055', event_id:'wlr_ev_000107',
+            source_type:'source_code', title:'Rabby Mobile 0.1.0 publish preparation',
+            url:'https://github.com/RabbyHub/rabby-mobile/commit/0bd8fbe6ea265e5fc265a975facc9eb1cb9ff2a0', publisher:'RabbyHub', published_at:'2024-01-29', accessed_at:'2026-08-18', reliability:'high', claim_scope:'launch_date', is_primary:true,
+            notes:'Official Rabby Mobile repository commit that sets version 0.1.0 for publish and includes iOS App Store publishing configuration and Android build/deploy work. Used to establish the 2024 release lineage, not as an exact public launch-day assertion.'
+          };
+          const src2 = {
+            id:'wlr_src_000168', entity_id:'wlr_ent_000018', product_id:'wlr_prod_000055', event_id:'wlr_ev_000107',
+            source_type:'source_code', title:'Rabby Mobile publish 0.1.1',
+            url:'https://github.com/RabbyHub/rabby-mobile/commit/60b0e0536e515da399bfb8664357c47e7c4b3d71', publisher:'RabbyHub', published_at:'2024-03-01', accessed_at:'2026-08-18', reliability:'high', claim_scope:'launch_date', is_primary:true,
+            notes:'Official Rabby Mobile repository commit explicitly publishing version 0.1.1. Used as first-party corroboration that the public release lineage was active during 2024, not as proof that 2024-03-01 was the first launch day.'
+          };
+          for (const src of [src1, src2]) {
+            const old = evidence.find(x => x.id === src.id);
+            if (old && JSON.stringify(old) !== JSON.stringify(src)) throw new Error(`${src.id} collision`);
+            if (!old) evidence.push(src);
+          }
+
+          write('data/products.json', products);
+          write('data/events.json', events);
+          write('data/evidence.json', evidence);
+          NODE
+      - name: Verify staged boundary
+        run: |
+          set -euo pipefail
+          jq -e '.[] | select(.id == "wlr_prod_000055") | .launch_date == "2024" and .launch_date_precision == "year" and .last_verified_at == "2026-08-18"' data/products.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_ev_000107") | .entity_id == "wlr_ent_000018" and .product_id == "wlr_prod_000055" and .event_type == "product_released" and .event_date == "2024" and .event_date_basis == "release"' data/events.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_src_000167") | .event_id == "wlr_ev_000107" and .source_type == "source_code" and .reliability == "high" and .is_primary == true and .claim_scope == "launch_date"' data/evidence.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_src_000168") | .event_id == "wlr_ev_000107" and .source_type == "source_code" and .reliability == "high" and .is_primary == true and .claim_scope == "launch_date"' data/evidence.json >/dev/null
+      - name: Commit canonical files
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/products.json data/events.json data/evidence.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Add reviewed Rabby Mobile launch year'
+          git push origin HEAD:review/rabby-mobile-launch-year
