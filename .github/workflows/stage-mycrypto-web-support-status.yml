@@ -1,0 +1,83 @@
+name: Stage MyCrypto Web App support status
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  stage:
+    if: github.head_ref == 'review/mycrypto-web-support-status'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: review/mycrypto-web-support-status
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Apply reviewed canonical correction
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs = require('fs');
+          const read = p => JSON.parse(fs.readFileSync(p, 'utf8'));
+          const write = (p, v) => fs.writeFileSync(p, JSON.stringify(v) + '\n');
+          const products = read('data/products.json');
+          const evidence = read('data/evidence.json');
+
+          const product = products.find(x => x.id === 'wlr_prod_000068');
+          if (!product || product.entity_id !== 'wlr_ent_000025' || product.slug !== 'mycrypto-web-app') throw new Error('Unexpected MyCrypto Web App identity');
+          if (product.support_status !== 'unknown' && product.support_status !== 'supported') throw new Error(`Unexpected support status ${product.support_status}`);
+          product.support_status = 'supported';
+          product.last_verified_at = '2026-08-18';
+          product.notes = "The official MyCrypto web application remains publicly available at app.mycrypto.com with current account-access options and a Contact Support path. MyCrypto's official Knowledge Base explicitly distinguishes the desktop application as an older version that is not actively maintained while directing users to the latest version of MyCrypto on mycrypto.com. WLR therefore records the web product as supported. This support classification does not assert active feature development or a current source-code release cadence; the public MyCrypto source repository's mainline implementation history has been quiet since 2022.";
+
+          const sources = [
+            {
+              id:'wlr_src_000184', entity_id:'wlr_ent_000025', product_id:'wlr_prod_000068',
+              source_type:'official_statement', title:'MyCrypto Web App — Add Account',
+              url:'https://app.mycrypto.com/', publisher:'MyCrypto', published_at:null, accessed_at:'2026-08-18',
+              reliability:'high', claim_scope:'support_status', is_primary:true,
+              notes:'Current official MyCrypto web application surface. The live product exposes supported account-access paths including Web3, WalletConnect, Ledger, Trezor, GridPlus and View Address, plus a Contact Support action. Used to establish current product operation/support, not active development cadence.'
+            },
+            {
+              id:'wlr_src_000185', entity_id:'wlr_ent_000025', product_id:'wlr_prod_000068',
+              source_type:'official_statement', title:'How to Access Your Wallet with a Secret Recovery Phrase',
+              url:'https://support.mycrypto.com/how-to/accessing-wallet/how-to-access-your-wallet-with-mnemonic-phrase/', publisher:'MyCrypto', published_at:'2021-10-26', accessed_at:'2026-08-18',
+              reliability:'high', claim_scope:'support_status', is_primary:true,
+              notes:'Official MyCrypto Knowledge Base explicitly says the desktop application is an older version that is not actively maintained and directs users to the latest version of MyCrypto on mycrypto.com. Used to distinguish the current web product from the separately ended-maintenance desktop product.'
+            }
+          ];
+          for (const src of sources) {
+            const old = evidence.find(x => x.id === src.id);
+            if (old && JSON.stringify(old) !== JSON.stringify(src)) throw new Error(`${src.id} collision`);
+            if (!old) evidence.push(src);
+          }
+
+          write('data/products.json', products);
+          write('data/evidence.json', evidence);
+          NODE
+      - name: Verify staged boundary
+        run: |
+          set -euo pipefail
+          jq -e '.[] | select(.id == "wlr_prod_000068") | .support_status == "supported" and .status == "active" and .last_verified_at == "2026-08-18"' data/products.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_src_000184") | .product_id == "wlr_prod_000068" and .claim_scope == "support_status" and .reliability == "high" and .is_primary == true' data/evidence.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_src_000185") | .product_id == "wlr_prod_000068" and .claim_scope == "support_status" and .reliability == "high" and .is_primary == true' data/evidence.json >/dev/null
+          node scripts/build-stats.mjs
+          jq -e '.registry.entities == 26 and .registry.products == 74 and .registry.events == 115 and .registry.evidence == 185' public/data/stats.json >/dev/null
+          jq -e '.products.launch_date.count == 74 and .products.launch_date.denominator == 74 and .products.launch_date.percentage == 100' public/data/stats.json >/dev/null
+          jq -e '.data_quality.products.support_status_known.count == 74 and .data_quality.products.support_status_known.denominator == 74 and .data_quality.products.support_status_known.percentage == 100' public/data/stats.json >/dev/null
+      - name: Commit canonical files
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/products.json data/evidence.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Resolve MyCrypto Web App support status'
+          git push origin HEAD:review/mycrypto-web-support-status
