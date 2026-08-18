@@ -1,0 +1,120 @@
+name: Verify WLR PR169 Production
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  exact-main-ci:
+    if: github.head_ref == 'ops/pr169-production-verify'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - name: Pin exact merged main
+        run: test "$(git rev-parse HEAD)" = "819078e6a7d18c8fe27a5995937cbd11be0918d5"
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.x' }
+      - run: python -m pip install -r requirements.txt
+      - run: npm install --no-audit --no-fund
+      - run: npm run validate:records
+      - run: npm run validate:candidates
+      - run: npm run validate:identity-evidence
+      - run: npm run validate:machine-records
+      - run: npm run validate:structured-discovery
+      - run: npm run test:natural-filters
+      - run: npm run validate:natural-filters
+      - run: npm run validate:compare
+      - run: npm run validate:stats
+      - run: npm run test:monitoring
+      - run: npm run validate:monitoring
+      - run: npm run test:candidates
+      - run: npm run test:identity-evidence
+      - run: npm run check:staging-boundary
+      - run: npm run coverage:audit
+      - run: npm run seed:gate
+      - run: npm run cloudflare:config:print
+      - run: npm run build
+
+  production-verify:
+    if: github.head_ref == 'ops/pr169-production-verify'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Build exact-main expected state
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "819078e6a7d18c8fe27a5995937cbd11be0918d5"
+          node scripts/build-stats.mjs
+          jq -e '.registry.entities == 26 and .registry.products == 74 and .registry.events == 115 and .registry.evidence == 187' public/data/stats.json >/dev/null
+          jq -e '.entities.launch_date.count == 26 and .entities.launch_date.percentage == 100' public/data/stats.json >/dev/null
+          jq -e '.products.launch_date.count == 74 and .products.launch_date.percentage == 100' public/data/stats.json >/dev/null
+          jq -e '.data_quality.products.support_status_known.count == 74 and .data_quality.products.support_status_known.percentage == 100' public/data/stats.json >/dev/null
+          jq -e '.data_quality.products.sales_status_known.count == 71 and .data_quality.products.sales_status_known.denominator == 74 and .data_quality.products.sales_status_known.percentage == 95.9' public/data/stats.json >/dev/null
+          for id in wlr_prod_000016 wlr_prod_000070 wlr_prod_000071 wlr_prod_000072; do jq -e --arg id "$id" '.[] | select(.id == $id) | .sales_status == "on_sale" and .support_status == "supported"' data/products.json >/dev/null; done
+          jq -e '.[] | select(.id == "wlr_src_000186") | .product_id == "wlr_prod_000016" and .claim_scope == "sales_status"' data/evidence.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_src_000187") | (.product_ids | sort) == (["wlr_prod_000070","wlr_prod_000071","wlr_prod_000072"] | sort) and .claim_scope == "sales_status"' data/evidence.json >/dev/null
+      - name: Resolve exact Cloudflare production deployment
+        id: cf
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          expected="819078e6a7d18c8fe27a5995937cbd11be0918d5"
+          base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
+          auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
+          match=""
+          for attempt in $(seq 1 100); do
+            deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
+            match="$(jq -c --arg sha "$expected" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
+            if [ -n "$match" ] && jq -e '.latest_stage.status == "success"' <<<"$match" >/dev/null; then break; fi
+            echo "Waiting for exact deployment attempt=${attempt}"; sleep 10
+          done
+          test -n "$match"
+          jq -e '.latest_stage.status == "success" and .deployment_trigger.metadata.branch == "main" and .deployment_trigger.metadata.commit_dirty == false and (.aliases | index("https://wlr.badjoke-lab.com")) != null' <<<"$match" >/dev/null
+          echo "deployment_url=$(jq -r '.url' <<<"$match")" >> "$GITHUB_OUTPUT"
+          echo "$match" | jq '{id,short_id,url,aliases,latest_stage,deployment_trigger}'
+      - name: Verify exact deployment and public data
+        env:
+          DEPLOYMENT_URL: ${{ steps.cf.outputs.deployment_url }}
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"; trap 'rm -rf "$work"' EXIT
+          cp public/data/stats.json "$work/expected.json"
+          curl -fsSL "${DEPLOYMENT_URL}/data/stats.json?verify=819078e6" -o "$work/deploy.json"
+          jq -e --slurpfile expected "$work/expected.json" '.registry == $expected[0].registry and .data_quality.products.sales_status_known == $expected[0].data_quality.products.sales_status_known' "$work/deploy.json" >/dev/null
+          ready=0
+          for attempt in $(seq 1 60); do
+            nonce="819078e6-${attempt}-$(date +%s)"; ok=1
+            for name in products evidence stats; do curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/${name}.json?verify=${nonce}" -o "$work/${name}.json" || ok=0; done
+            if [ "$ok" -eq 1 ] \
+              && jq -e '.data_quality.products.sales_status_known.count == 71 and .data_quality.products.sales_status_known.percentage == 95.9' "$work/stats.json" >/dev/null 2>&1 \
+              && jq -e '[.[] | select(.id == "wlr_prod_000016" or .id == "wlr_prod_000070" or .id == "wlr_prod_000071" or .id == "wlr_prod_000072") | select(.sales_status == "on_sale")] | length == 4' "$work/products.json" >/dev/null 2>&1 \
+              && jq -e '.[] | select(.id == "wlr_src_000186") | .claim_scope == "sales_status"' "$work/evidence.json" >/dev/null 2>&1 \
+              && jq -e '.[] | select(.id == "wlr_src_000187") | .claim_scope == "sales_status"' "$work/evidence.json" >/dev/null 2>&1; then ready=1; echo "Public canonical records exact on attempt=${attempt}"; break; fi
+            sleep 10
+          done
+          test "$ready" -eq 1
+          nonce="$(date +%s)"
+          for slug in coldcard-mk4 safepal-s1 safepal-s1-pro safepal-x1; do
+            code="$(curl -sS -o /dev/null -w '%{http_code}' "https://wlr.badjoke-lab.com/product/${slug}/?verify=${nonce}")"
+            test "$code" -ge 200 && test "$code" -lt 400
+            echo "WLR product/${slug} -> ${code}"
+          done
+          for slug in coldcard safepal; do
+            code="$(curl -sS -o /dev/null -w '%{http_code}' "https://wlr.badjoke-lab.com/wallet/${slug}/?verify=${nonce}")"
+            test "$code" -ge 200 && test "$code" -lt 400
+            echo "WLR wallet/${slug} -> ${code}"
+          done
+          echo 'PR169_PRODUCTION_VERIFY_OK sales_coverage=71/74 entity_launch=26/26 product_launch=74/74 support=74/74'
