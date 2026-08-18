@@ -1,0 +1,39 @@
+name: Diagnose PR164 Cloudflare
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    if: github.head_ref == 'ops/pr164-cloudflare-diagnose'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - name: Query project and recent production deployments
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          expected="3cd47263e96a520ae2862f4922b7ecdb502179bb"
+          base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
+          auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
+          project="$(curl -fsS "$base" -H "$auth")"
+          jq -e '.success == true' <<<"$project" >/dev/null
+          echo 'PROJECT_STATE'
+          jq '.result | {name,production_branch,build_config,source}' <<<"$project"
+          deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
+          jq -e '.success == true' <<<"$deployments" >/dev/null
+          echo 'RECENT_PRODUCTION_DEPLOYMENTS'
+          jq '[.result[] | {id,url,created_on,latest_stage,environment,aliases,metadata:.deployment_trigger.metadata}]' <<<"$deployments"
+          count="$(jq --arg sha "$expected" '[.result[] | select(.deployment_trigger.metadata.commit_hash == $sha)] | length' <<<"$deployments")"
+          echo "EXPECTED_SHA_MATCH_COUNT=${count}"
+          if [ "$count" -gt 0 ]; then
+            jq --arg sha "$expected" '[.result[] | select(.deployment_trigger.metadata.commit_hash == $sha)] | first' <<<"$deployments"
+          fi
