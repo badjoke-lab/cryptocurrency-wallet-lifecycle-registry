@@ -1,0 +1,73 @@
+name: Stage COLDCARD Mk2 sales status
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  stage:
+    if: github.head_ref == 'review/coldcard-mk2-sales-status'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: review/coldcard-mk2-sales-status
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Apply reviewed canonical correction
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs = require('fs');
+          const read = p => JSON.parse(fs.readFileSync(p, 'utf8'));
+          const write = (p,v) => fs.writeFileSync(p, JSON.stringify(v) + '\n');
+          const products = read('data/products.json');
+          const evidence = read('data/evidence.json');
+
+          const product = products.find(x => x.id === 'wlr_prod_000014');
+          if (!product || product.entity_id !== 'wlr_ent_000003' || product.slug !== 'coldcard-mk2') throw new Error('Unexpected COLDCARD Mk2 identity');
+          if (product.sales_status !== 'unknown' && product.sales_status !== 'end_of_sale') throw new Error(`Unexpected Mk2 sales status ${product.sales_status}`);
+          product.sales_status = 'end_of_sale';
+          product.last_verified_at = '2026-08-18';
+          product.notes = "Coinkite's 2020-05-18 first-party security article describes Mk2 as the older COLDCARD and states that Mk3 was the product Coinkite was selling at that time and had been selling for the previous year. WLR therefore records Mk2 sales_status=end_of_sale without inventing an exact sales-end date. Legacy device status/support remain separately modeled.";
+
+          const src = {
+            id:'wlr_src_000188', entity_id:'wlr_ent_000003', product_id:'wlr_prod_000014',
+            source_type:'official_blog', title:'Laser Fault Injection',
+            url:'https://blog.coinkite.com/laser-fault-injection/', publisher:'Coinkite', published_at:'2020-05-18', accessed_at:'2026-08-18',
+            reliability:'high', claim_scope:'sales_status', is_primary:true,
+            notes:'First-party Coinkite article describing Mk2 as the older COLDCARD and stating that Mk3 was the product Coinkite was selling at that time and had been selling for the prior year. Establishes Mk2 end-of-sale status by 2020-05-18, but not one exact sales-end day.'
+          };
+          const old = evidence.find(x => x.id === src.id);
+          if (old && JSON.stringify(old) !== JSON.stringify(src)) throw new Error(`${src.id} collision`);
+          if (!old) evidence.push(src);
+
+          write('data/products.json', products);
+          write('data/evidence.json', evidence);
+          NODE
+      - name: Verify staged boundary
+        run: |
+          set -euo pipefail
+          jq -e '.[] | select(.id == "wlr_prod_000014") | .sales_status == "end_of_sale" and .sales_end_date == null and .status == "active" and .support_status == "supported" and .last_verified_at == "2026-08-18"' data/products.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_prod_000015") | .sales_status == "unknown"' data/products.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_prod_000025") | .sales_status == "unknown"' data/products.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_src_000188") | .product_id == "wlr_prod_000014" and .claim_scope == "sales_status" and .reliability == "high" and .is_primary == true' data/evidence.json >/dev/null
+          node scripts/build-stats.mjs
+          jq -e '.registry.entities == 26 and .registry.products == 74 and .registry.events == 115 and .registry.evidence == 188' public/data/stats.json >/dev/null
+          jq -e '.data_quality.products.sales_status_known.count == 72 and .data_quality.products.sales_status_known.denominator == 74 and .data_quality.products.sales_status_known.percentage == 97.3' public/data/stats.json >/dev/null
+          jq -e '.entities.launch_date.count == 26 and .entities.launch_date.percentage == 100 and .products.launch_date.count == 74 and .products.launch_date.percentage == 100 and .data_quality.products.support_status_known.count == 74 and .data_quality.products.support_status_known.percentage == 100' public/data/stats.json >/dev/null
+      - name: Commit canonical files
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/products.json data/evidence.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Resolve COLDCARD Mk2 sales status'
+          git push origin HEAD:review/coldcard-mk2-sales-status
