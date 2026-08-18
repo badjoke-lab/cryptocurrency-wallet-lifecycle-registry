@@ -1,0 +1,82 @@
+name: Normalize final entity launch-date diff
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  normalize:
+    if: github.head_ref == 'review/final-entity-launch-coverage'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: review/final-entity-launch-coverage
+          fetch-depth: 0
+      - name: Restore base formatting and apply only reviewed fields
+        run: |
+          set -euo pipefail
+          base=6a5d053a4baf51d4f6081c40906120119d352b9b
+          git checkout "$base" -- data/entities.json
+          python <<'PY'
+          from pathlib import Path
+          p = Path('data/entities.json')
+          text = p.read_text()
+
+          replacements = {
+            'wlr_ent_000011': (
+              '"launch_date": null,',
+              '"launch_date": "2018",\n    "launch_date_precision": "year",',
+              '"last_verified_at": "2026-08-14",',
+              '"last_verified_at": "2026-08-18",',
+              '"notes": "The entity is modeled as hybrid because Ready mobile and Ready X use different security and recovery architectures."',
+              '"notes": "Ready preserves the continuous Argent wallet lineage. First-party Argent/Ready history establishes that Argent launched on Ethereum in 2018, and Ready\'s later rebrand history preserves continuity into the current Ready products. WLR therefore records the entity launch at 2018 year precision without inventing an exact first launch day."'
+            ),
+          }
+
+          start = text.index('"id": "wlr_ent_000011"')
+          end = text.index('"id": "wlr_ent_000012"')
+          block = text[start:end]
+          for old,new in [(replacements['wlr_ent_000011'][0],replacements['wlr_ent_000011'][1]),(replacements['wlr_ent_000011'][2],replacements['wlr_ent_000011'][3]),(replacements['wlr_ent_000011'][4],replacements['wlr_ent_000011'][5])]:
+              if block.count(old) != 1: raise SystemExit(f'Ready replacement mismatch: {old}')
+              block = block.replace(old,new,1)
+          text = text[:start] + block + text[end:]
+
+          def replace_one_line(entity_id, next_id, date, old_verified, note):
+              nonlocal_text = None
+              return None
+
+          # The remaining records are one-line JSON objects in the canonical file.
+          import json, re
+          lines = text.splitlines()
+          for i,line in enumerate(lines):
+              if '"id":"wlr_ent_000019"' in line:
+                  obj = json.loads(line.strip().rstrip(','))
+                  obj['launch_date'] = '2019'; obj['launch_date_precision'] = 'year'; obj['last_verified_at'] = '2026-08-18'; obj['notes'] = 'Official Rainbow repository history records an external beta release and a production release during 2019 under the earlier Balance/Rainbow mobile lineage. WLR therefore records the Rainbow entity launch at 2019 year precision without asserting one exact initial App Store publication day.'
+                  lines[i] = json.dumps(obj, separators=(',',':')) + ','
+              if '"id":"wlr_ent_000020"' in line:
+                  obj = json.loads(line.strip().rstrip(','))
+                  obj['launch_date'] = '2021'; obj['launch_date_precision'] = 'year'; obj['last_verified_at'] = '2026-08-18'; obj['notes'] = 'Contemporaneous 2021 evidence establishes the Xverse mobile-wallet lineage: a commissioned security audit identifies Secret Key Labs\' Xverse Wallet mobile application and App Store distribution evidence confirms public availability during 2021. WLR therefore records the entity launch at 2021 year precision without asserting one exact original store-release day.'
+                  lines[i] = json.dumps(obj, separators=(',',':')) + ','
+          text = '\n'.join(lines) + '\n'
+          p.write_text(text)
+          PY
+      - name: Verify normalized boundary
+        run: |
+          set -euo pipefail
+          jq -e '.[] | select(.id == "wlr_ent_000011") | .launch_date == "2018" and .launch_date_precision == "year" and .last_verified_at == "2026-08-18"' data/entities.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_ent_000019") | .launch_date == "2019" and .launch_date_precision == "year" and .last_verified_at == "2026-08-18"' data/entities.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_ent_000020") | .launch_date == "2021" and .launch_date_precision == "year" and .last_verified_at == "2026-08-18"' data/entities.json >/dev/null
+          git diff --check
+      - name: Commit normalized canonical file
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/entities.json
+          git commit -m 'Normalize final entity launch-date diff'
+          git push origin HEAD:review/final-entity-launch-coverage
