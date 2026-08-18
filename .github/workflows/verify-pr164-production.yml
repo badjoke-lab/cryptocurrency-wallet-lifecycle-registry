@@ -1,0 +1,124 @@
+name: Verify WLR PR164 Production
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  exact-main-ci:
+    if: github.head_ref == 'ops/pr164-production-verify'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - name: Pin exact merged main
+        run: test "$(git rev-parse HEAD)" = "3cd47263e96a520ae2862f4922b7ecdb502179bb"
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.x' }
+      - run: python -m pip install -r requirements.txt
+      - run: npm install --no-audit --no-fund
+      - run: npm run validate:records
+      - run: npm run validate:candidates
+      - run: npm run validate:identity-evidence
+      - run: npm run validate:machine-records
+      - run: npm run validate:structured-discovery
+      - run: npm run test:natural-filters
+      - run: npm run validate:natural-filters
+      - run: npm run validate:compare
+      - run: npm run validate:stats
+      - run: npm run test:monitoring
+      - run: npm run validate:monitoring
+      - run: npm run test:candidates
+      - run: npm run test:identity-evidence
+      - run: npm run check:staging-boundary
+      - run: npm run coverage:audit
+      - run: npm run seed:gate
+      - run: npm run cloudflare:config:print
+      - run: npm run build
+
+  production-verify:
+    if: github.head_ref == 'ops/pr164-production-verify'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Build exact-main expected state
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "3cd47263e96a520ae2862f4922b7ecdb502179bb"
+          node scripts/build-stats.mjs
+          jq -e '.registry.entities == 26 and .registry.products == 74 and .registry.events == 115 and .registry.evidence == 185' public/data/stats.json >/dev/null
+          jq -e '.entities.launch_date.count == 26 and .entities.launch_date.denominator == 26 and .entities.launch_date.percentage == 100' public/data/stats.json >/dev/null
+          jq -e '.products.launch_date.count == 74 and .products.launch_date.denominator == 74 and .products.launch_date.percentage == 100' public/data/stats.json >/dev/null
+          jq -e '.data_quality.products.support_status_known.count == 74 and .data_quality.products.support_status_known.denominator == 74 and .data_quality.products.support_status_known.percentage == 100' public/data/stats.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_ent_000011") | .launch_date == "2018" and .launch_date_precision == "year"' data/entities.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_ent_000019") | .launch_date == "2019" and .launch_date_precision == "year"' data/entities.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_ent_000020") | .launch_date == "2021" and .launch_date_precision == "year"' data/entities.json >/dev/null
+      - name: Resolve exact Cloudflare production deployment
+        id: cf
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          expected="3cd47263e96a520ae2862f4922b7ecdb502179bb"
+          base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
+          auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
+          match=""
+          for attempt in $(seq 1 60); do
+            deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
+            match="$(jq -c --arg sha "$expected" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
+            if [ -n "$match" ] && jq -e '.latest_stage.status == "success"' <<<"$match" >/dev/null; then break; fi
+            echo "Waiting for exact deployment attempt=${attempt}"; sleep 10
+          done
+          test -n "$match"
+          jq -e '.latest_stage.status == "success" and .deployment_trigger.metadata.branch == "main" and .deployment_trigger.metadata.commit_dirty == false and (.aliases | index("https://wlr.badjoke-lab.com")) != null' <<<"$match" >/dev/null
+          echo "deployment_url=$(jq -r '.url' <<<"$match")" >> "$GITHUB_OUTPUT"
+          echo "deployment_id=$(jq -r '.id' <<<"$match")" >> "$GITHUB_OUTPUT"
+          echo "$match" | jq '{id,short_id,url,aliases,latest_stage,deployment_trigger}'
+      - name: Verify exact deployment and custom domain
+        env:
+          DEPLOYMENT_URL: ${{ steps.cf.outputs.deployment_url }}
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"; trap 'rm -rf "$work"' EXIT
+          cp public/data/stats.json "$work/expected.json"
+          curl -fsSL "${DEPLOYMENT_URL}/data/stats.json?verify=3cd47263" -o "$work/deploy.json"
+          jq -e --slurpfile expected "$work/expected.json" '.registry == $expected[0].registry and .entities.launch_date == $expected[0].entities.launch_date and .products.launch_date == $expected[0].products.launch_date and .data_quality.products.support_status_known == $expected[0].data_quality.products.support_status_known' "$work/deploy.json" >/dev/null
+          ready=0
+          for attempt in $(seq 1 60); do
+            curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/stats.json?verify=3cd47263-${attempt}-$(date +%s)" -o "$work/public.json"
+            if jq -e --slurpfile expected "$work/expected.json" '.registry == $expected[0].registry and .entities.launch_date == $expected[0].entities.launch_date and .products.launch_date == $expected[0].products.launch_date and .data_quality.products.support_status_known == $expected[0].data_quality.products.support_status_known' "$work/public.json" >/dev/null 2>&1; then ready=1; break; fi
+            sleep 10
+          done
+          test "$ready" -eq 1
+      - name: Verify public entity records and routes
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"; trap 'rm -rf "$work"' EXIT
+          ready=0
+          for attempt in $(seq 1 60); do
+            nonce="3cd47263-${attempt}-$(date +%s)"
+            curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/entities.json?verify=${nonce}" -o "$work/entities.json"
+            if jq -e '.[] | select(.id == "wlr_ent_000011") | .launch_date == "2018" and .launch_date_precision == "year"' "$work/entities.json" >/dev/null 2>&1 \
+              && jq -e '.[] | select(.id == "wlr_ent_000019") | .launch_date == "2019" and .launch_date_precision == "year"' "$work/entities.json" >/dev/null 2>&1 \
+              && jq -e '.[] | select(.id == "wlr_ent_000020") | .launch_date == "2021" and .launch_date_precision == "year"' "$work/entities.json" >/dev/null 2>&1; then ready=1; echo "Public entities exact on attempt=${attempt}"; break; fi
+            sleep 10
+          done
+          test "$ready" -eq 1
+          nonce="$(date +%s)"
+          for slug in ready rainbow xverse; do
+            code="$(curl -sS -o /dev/null -w '%{http_code}' "https://wlr.badjoke-lab.com/wallet/${slug}/?verify=${nonce}")"
+            test "$code" -ge 200 && test "$code" -lt 400
+            echo "WLR route wallet/${slug} -> ${code}"
+          done
+          echo 'PR164_PRODUCTION_VERIFY_OK ready=2018 rainbow=2019 xverse=2021 entity_launch_coverage=26/26 product_launch_coverage=74/74 support_coverage=74/74'
