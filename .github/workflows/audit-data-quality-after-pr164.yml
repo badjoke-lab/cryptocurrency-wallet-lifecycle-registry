@@ -1,0 +1,40 @@
+name: Audit WLR data quality after PR164
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    if: github.head_ref == 'ops/data-quality-audit-after-pr164'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Print deterministic quality audit
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "3cd47263e96a520ae2862f4922b7ecdb502179bb"
+          node scripts/build-stats.mjs
+          echo 'DATA_QUALITY'
+          jq '.data_quality' public/data/stats.json
+          echo 'PRODUCT_COVERAGE'
+          jq '.products | {launch_date,support_status,sales_status,support_commitment,lineage_participation}' public/data/stats.json
+          echo 'UNKNOWN_SALES_STATUS_PRODUCTS'
+          jq '[.[] | select((.sales_status // "unknown") == "unknown") | {id,entity_id,slug,product_name,product_type,status,sales_status,support_status}]' data/products.json
+          echo 'NO_SUPPORT_COMMITMENT_PRODUCTS'
+          jq '[.[] | select((.support_commitment == null) or ((.support_commitment|type)=="object" and ((.support_commitment|keys|length)==0))) | {id,entity_id,slug,product_name,product_type,status,support_status}]' data/products.json
+          echo 'ENTITIES_WITH_LT2_EVENTS'
+          jq -n --slurpfile e data/entities.json --slurpfile ev data/events.json '$e[0] | map(. as $x | (($ev[0] | map(select(.entity_id == $x.id)) | length)) as $n | select($n < 2) | {id:$x.id,slug:$x.slug,name:$x.canonical_name,event_count:$n,status:$x.status})'
+          echo 'ENTITIES_WITH_LT2_EVIDENCE'
+          jq -n --slurpfile e data/entities.json --slurpfile src data/evidence.json '$e[0] | map(. as $x | (($src[0] | map(select(.entity_id == $x.id)) | length)) as $n | select($n < 2) | {id:$x.id,slug:$x.slug,name:$x.canonical_name,evidence_count:$n,status:$x.status})'
+          echo 'INCIDENT_GAPS'
+          jq --slurpfile cfg config/structured-discovery.json '[.[] | select(.event_type as $t | ($cfg[0].incident_event_types | index($t))) | select((.impact_level == null) or (.security_scope == null) or (.funds_affected == null) or (((.affected_versions // [])|length)==0 and (((.affected_version_rules // [])|length)==0))) | {id,entity_id,product_id,event_type,event_date,title,impact_level,security_scope,funds_affected,affected_versions,affected_version_rules}]' data/events.json
+          echo 'REMEDIATION_GAPS'
+          jq --slurpfile cfg config/structured-discovery.json '[.[] | select(.event_type as $t | ($cfg[0].remediation_event_types | index($t))) | select((((.fixed_versions // [])|length)==0) or (((.affected_product_ids // [])|length)==0 and .product_id == null) or (((.user_actions_required // [])|length)==0)) | {id,entity_id,product_id,affected_product_ids,event_type,event_date,title,fixed_versions,user_actions_required}]' data/events.json
