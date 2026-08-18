@@ -2,8 +2,8 @@
   "bundle_version": "1.0.0",
   "candidate_id": "wlr_cand_metamask-june-2022-security-depth",
   "title": "MetaMask Extension June 2022 security depth",
-  "review_state": "researching",
-  "notes": "Candidate-only review bundle for two material MetaMask Extension security disclosures. Canonical publication is prohibited until separate manual review and canonical PR.",
+  "review_state": "review_ready",
+  "notes": "Candidate-only review bundle for two material MetaMask Extension security disclosures. Source boundaries, product scope, date precision, version ranges, severity, and negative-claim handling were manually reviewed after candidate/identity-evidence validation. Canonical publication still requires a separate explicit canonical PR.",
   "records": {
     "entities": [],
     "products": [],
