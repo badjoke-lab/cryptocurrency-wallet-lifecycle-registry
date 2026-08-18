@@ -1,0 +1,133 @@
+name: Stage final product launch-date coverage
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  stage:
+    if: github.head_ref == 'review/final-launch-date-coverage'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: review/final-launch-date-coverage
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Apply reviewed canonical corrections
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs = require('fs');
+          const read = p => JSON.parse(fs.readFileSync(p, 'utf8'));
+          const write = (p, v) => fs.writeFileSync(p, JSON.stringify(v) + '\n');
+          const products = read('data/products.json');
+          const events = read('data/events.json');
+          const evidence = read('data/evidence.json');
+
+          const prime = products.find(x => x.id === 'wlr_prod_000052');
+          if (!prime || prime.entity_id !== 'wlr_ent_000017' || prime.slug !== 'passport-prime') throw new Error('Unexpected Passport Prime identity');
+          if (prime.launch_date !== null && prime.launch_date !== '2025') throw new Error(`Unexpected Passport Prime launch date ${prime.launch_date}`);
+          prime.launch_date = '2025';
+          prime.launch_date_precision = 'year';
+          prime.last_verified_at = '2026-08-18';
+          prime.notes = "Foundation announced Passport Prime in December 2024, but WLR does not treat announcement or preorder chronology as release. Foundation's May 2025 shipping update still described production ramp and future Early Access shipments, while its 2025-10-16 first-party security-audit article states that Passport Prime begins shipping. WLR therefore records the public release/shipping lineage at 2025 year precision without asserting an exact first shipment day.";
+
+          const xverse = products.find(x => x.id === 'wlr_prod_000059');
+          if (!xverse || xverse.entity_id !== 'wlr_ent_000020' || xverse.slug !== 'xverse-mobile') throw new Error('Unexpected Xverse Mobile identity');
+          if (xverse.launch_date !== null && xverse.launch_date !== '2021') throw new Error(`Unexpected Xverse Mobile launch date ${xverse.launch_date}`);
+          xverse.launch_date = '2021';
+          xverse.launch_date_precision = 'year';
+          xverse.last_verified_at = '2026-08-18';
+          xverse.notes = "Contemporaneous 2021 evidence establishes the Xverse mobile-wallet lineage: Least Authority completed a commissioned security audit of Secret Key Labs' Xverse Wallet mobile application in August 2021, and Apple App Store distribution evidence shows public Xverse user activity in November 2021. Xverse's own April 2022 history then describes the product as an iOS/Android mobile wallet after a recent rebrand. WLR records 2021 at year precision without inferring one exact initial App Store or Play Store publication day.";
+
+          const newEvents = [
+            {
+              id:'wlr_ev_000114', entity_id:'wlr_ent_000017', product_id:'wlr_prod_000052', affected_product_ids:['wlr_prod_000052'],
+              event_type:'product_released', event_date:'2025', event_date_basis:'release',
+              title:'Passport Prime began shipping in 2025',
+              description:'Foundation first-party shipping history establishes that Passport Prime entered its shipping/release lineage during 2025 after the 2024 announcement and preorder period.',
+              confidence:'high', event_status_effect:'active', is_major_event:true,
+              notes:'Year precision only. Foundation still described future Early Access shipping in May 2025 and later stated that Passport Prime was beginning to ship in October 2025; no exact first shipment day is asserted.'
+            },
+            {
+              id:'wlr_ev_000115', entity_id:'wlr_ent_000020', product_id:'wlr_prod_000059', affected_product_ids:['wlr_prod_000059'],
+              event_type:'product_released', event_date:'2021', event_date_basis:'release',
+              title:'Xverse Mobile publicly available during 2021',
+              description:'Contemporaneous audit and mobile-store distribution evidence establish the Xverse Wallet mobile product during 2021.',
+              confidence:'high', event_status_effect:'active', is_major_event:true,
+              notes:'Year precision only. The reviewed evidence safely establishes public mobile availability during 2021 but does not justify one exact initial store-release day.'
+            }
+          ];
+          for (const ev of newEvents) {
+            const old = events.find(x => x.id === ev.id);
+            if (old && JSON.stringify(old) !== JSON.stringify(ev)) throw new Error(`${ev.id} collision`);
+            if (!old) events.push(ev);
+          }
+
+          const newEvidence = [
+            {
+              id:'wlr_src_000180', entity_id:'wlr_ent_000017', product_id:'wlr_prod_000052', event_id:'wlr_ev_000114',
+              source_type:'official_blog', title:'Passport Prime Security Audit',
+              url:'https://foundation.xyz/2025/10/passport-prime-security-audit/', publisher:'Foundation', published_at:'2025-10-16', accessed_at:'2026-08-18',
+              reliability:'high', claim_scope:'launch_date', is_primary:true,
+              notes:'First-party Foundation article stating that Passport Prime begins shipping. Used to establish the 2025 release/shipping year, not an exact first shipment day.'
+            },
+            {
+              id:'wlr_src_000181', entity_id:'wlr_ent_000017', product_id:'wlr_prod_000052', event_id:'wlr_ev_000114',
+              source_type:'official_statement', title:'Shipping Updates for Passport Prime and Core',
+              url:'https://community.foundation.xyz/t/shipping-updates-for-passport-prime-and-core/426', publisher:'Foundation', published_at:'2025-05-07', accessed_at:'2026-08-18',
+              reliability:'high', claim_scope:'launch_date', is_primary:true,
+              notes:'First-party Foundation customer shipping update stating that remaining components were still arriving and the 1,000 Early Access orders were expected to be assembled and shipped afterward. Used to avoid backdating the release to the 2024 announcement/preorder period.'
+            },
+            {
+              id:'wlr_src_000182', entity_id:'wlr_ent_000020', product_id:'wlr_prod_000059', event_id:'wlr_ev_000115',
+              source_type:'audit_report', title:'Secret Key Labs – Xverse Wallet',
+              url:'https://leastauthority.com/blog/audit-of-secret-key-labs-xverse-wallet/', publisher:'Least Authority', published_at:'2021-08-27', accessed_at:'2026-08-18',
+              reliability:'high', claim_scope:'launch_date', is_primary:true,
+              notes:'Contemporaneous commissioned audit identifying Xverse Wallet as Secret Key Labs’ mobile wallet application. Establishes the 2021 mobile product lineage; distribution evidence is used separately to establish public availability during the year.'
+            },
+            {
+              id:'wlr_src_000183', entity_id:'wlr_ent_000020', product_id:'wlr_prod_000059', event_id:'wlr_ev_000115',
+              source_type:'database_reference', title:'Xverse: Bitcoin Crypto Wallet — Apple App Store',
+              url:'https://apps.apple.com/us/app/xverse-bitcoin-crypto-wallet/id1552272513', publisher:'Apple App Store / Secret Key Labs', published_at:'2021-11-21', accessed_at:'2026-08-18',
+              reliability:'high', claim_scope:'launch_date', is_primary:true,
+              notes:'Primary distribution-platform listing for the Secret Key Labs Xverse app includes public user review activity dated 2021-11-21. Used only to establish public availability during 2021, not to claim that date as the original release date.'
+            }
+          ];
+          for (const src of newEvidence) {
+            const old = evidence.find(x => x.id === src.id);
+            if (old && JSON.stringify(old) !== JSON.stringify(src)) throw new Error(`${src.id} collision`);
+            if (!old) evidence.push(src);
+          }
+
+          write('data/products.json', products);
+          write('data/events.json', events);
+          write('data/evidence.json', evidence);
+          NODE
+      - name: Verify staged boundary
+        run: |
+          set -euo pipefail
+          jq -e '.[] | select(.id == "wlr_prod_000052") | .launch_date == "2025" and .launch_date_precision == "year" and .last_verified_at == "2026-08-18"' data/products.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_prod_000059") | .launch_date == "2021" and .launch_date_precision == "year" and .last_verified_at == "2026-08-18"' data/products.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_ev_000114") | .product_id == "wlr_prod_000052" and .event_date == "2025" and .event_date_basis == "release"' data/events.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_ev_000115") | .product_id == "wlr_prod_000059" and .event_date == "2021" and .event_date_basis == "release"' data/events.json >/dev/null
+          for id in wlr_src_000180 wlr_src_000181 wlr_src_000182 wlr_src_000183; do jq -e --arg id "$id" '.[] | select(.id == $id) | .reliability == "high"' data/evidence.json >/dev/null; done
+          node scripts/build-stats.mjs
+          jq -e '.registry.entities == 26 and .registry.products == 74 and .registry.events == 115 and .registry.evidence == 183' public/data/stats.json >/dev/null
+          jq -e '.products.launch_date.count == 74 and .products.launch_date.denominator == 74 and .products.launch_date.percentage == 100' public/data/stats.json >/dev/null
+      - name: Commit canonical files
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/products.json data/events.json data/evidence.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Resolve final product launch-date gaps'
+          git push origin HEAD:review/final-launch-date-coverage
