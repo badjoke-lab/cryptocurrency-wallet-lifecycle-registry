@@ -1,0 +1,91 @@
+name: Stage reviewed COLDCARD Mk3 launch year
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  stage:
+    if: github.head_ref == 'review/coldcard-mk3-launch-year'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: review/coldcard-mk3-launch-year
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Apply reviewed canonical correction
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs = require('fs');
+          const read = p => JSON.parse(fs.readFileSync(p, 'utf8'));
+          const write = (p, v) => fs.writeFileSync(p, JSON.stringify(v) + '\n');
+          const products = read('data/products.json');
+          const events = read('data/events.json');
+          const evidence = read('data/evidence.json');
+
+          const product = products.find(x => x.id === 'wlr_prod_000015');
+          if (!product || product.entity_id !== 'wlr_ent_000003' || product.slug !== 'coldcard-mk3') throw new Error('Unexpected COLDCARD Mk3 identity');
+          if (product.launch_date !== null && product.launch_date !== '2019') throw new Error(`Unexpected launch date ${product.launch_date}`);
+          product.launch_date = '2019';
+          product.launch_date_precision = 'year';
+          product.last_verified_at = '2026-08-18';
+          product.notes = "Coinkite's first-party history separates the Mk3 preorder announcement from its later production/sales lineage. The 2019-08-26 announcement opened preorders and planned October shipping; 2019-10-25 Coinkite published Mark3 rev B hardware files, and 2020-05-18 Coinkite retrospectively stated that Mk3 was the product it was selling then and had been selling for the last year. WLR therefore records 2019 at year precision without asserting an exact first shipping or sale day.";
+
+          const ev = {
+            id:'wlr_ev_000112', entity_id:'wlr_ent_000003', product_id:'wlr_prod_000015', affected_product_ids:['wlr_prod_000015'],
+            event_type:'product_released', event_date:'2019', event_date_basis:'release',
+            title:'COLDCARD Mk3 released in 2019',
+            description:"Coinkite's first-party production and retrospective sales history establishes that COLDCARD Mk3 entered the released/sold product lineage during 2019.",
+            confidence:'high', event_status_effect:'active', is_major_event:true,
+            notes:'Year precision only. The August 2019 announcement is explicitly preorder evidence and is not treated as launch; the reviewed sources do not establish one exact first shipping or sale day.'
+          };
+          const oldEv = events.find(x => x.id === ev.id);
+          if (oldEv && JSON.stringify(oldEv) !== JSON.stringify(ev)) throw new Error('wlr_ev_000112 collision');
+          if (!oldEv) events.push(ev);
+
+          const src1 = {
+            id:'wlr_src_000176', entity_id:'wlr_ent_000003', product_id:'wlr_prod_000015', event_id:'wlr_ev_000112',
+            source_type:'official_blog', title:'Coldcard Hardware Details',
+            url:'https://blog.coinkite.com/coldcard-hardware-shared/', publisher:'Coinkite', published_at:'2019-10-25', accessed_at:'2026-08-18', reliability:'high', claim_scope:'launch_date', is_primary:true,
+            notes:'First-party Coinkite article publishing the Mark3 rev B schematic and BOM during 2019. Used as production-lineage evidence, not as proof that 2019-10-25 was the exact first sale day.'
+          };
+          const src2 = {
+            id:'wlr_src_000177', entity_id:'wlr_ent_000003', product_id:'wlr_prod_000015', event_id:'wlr_ev_000112',
+            source_type:'official_blog', title:'Laser Fault Injection',
+            url:'https://blog.coinkite.com/laser-fault-injection/', publisher:'Coinkite', published_at:'2020-05-18', accessed_at:'2026-08-18', reliability:'high', claim_scope:'launch_date', is_primary:true,
+            notes:'First-party Coinkite retrospective stating that Mk3 was the product being sold at the time and had been sold for the last year. Used to confirm sales during 2019 while preserving year precision.'
+          };
+          for (const src of [src1, src2]) {
+            const old = evidence.find(x => x.id === src.id);
+            if (old && JSON.stringify(old) !== JSON.stringify(src)) throw new Error(`${src.id} collision`);
+            if (!old) evidence.push(src);
+          }
+
+          write('data/products.json', products);
+          write('data/events.json', events);
+          write('data/evidence.json', evidence);
+          NODE
+      - name: Verify staged boundary
+        run: |
+          set -euo pipefail
+          jq -e '.[] | select(.id == "wlr_prod_000015") | .launch_date == "2019" and .launch_date_precision == "year" and .last_verified_at == "2026-08-18"' data/products.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_ev_000112") | .entity_id == "wlr_ent_000003" and .product_id == "wlr_prod_000015" and .event_type == "product_released" and .event_date == "2019" and .event_date_basis == "release"' data/events.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_src_000176") | .event_id == "wlr_ev_000112" and .source_type == "official_blog" and .reliability == "high" and .is_primary == true and .claim_scope == "launch_date"' data/evidence.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_src_000177") | .event_id == "wlr_ev_000112" and .source_type == "official_blog" and .reliability == "high" and .is_primary == true and .claim_scope == "launch_date"' data/evidence.json >/dev/null
+      - name: Commit canonical files
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/products.json data/events.json data/evidence.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Add reviewed COLDCARD Mk3 launch year'
+          git push origin HEAD:review/coldcard-mk3-launch-year
