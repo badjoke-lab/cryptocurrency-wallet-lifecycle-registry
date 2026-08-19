@@ -70,16 +70,12 @@ jobs:
           jq -e '.data_quality.products.support_status_known.count == 75 and .data_quality.products.support_status_known.denominator == 99 and .data_quality.products.support_status_known.percentage == 75.8' public/data/stats.json >/dev/null
           jq -e '.data_quality.products.sales_status_known.count == 97 and .data_quality.products.sales_status_known.denominator == 99 and .data_quality.products.sales_status_known.percentage == 98' public/data/stats.json >/dev/null
           jq -e '.data_quality.events.incident_impact_level.count == 23 and .data_quality.events.incident_impact_level.percentage == 100 and .data_quality.events.incident_funds_affected.count == 23 and .data_quality.events.incident_funds_affected.percentage == 100' public/data/stats.json >/dev/null
-          node <<'NODE'
-          const fs=require('fs'), r=p=>JSON.parse(fs.readFileSync(p,'utf8'));
-          const e=r('data/entities.json'),p=r('data/products.json'),s=r('data/evidence.json');
-          for(let i=37;i<=50;i++) if(!e.some(x=>x.id===`wlr_ent_${String(i).padStart(6,'0')}`)) throw new Error(`missing entity ${i}`);
-          for(let i=86;i<=99;i++) if(!p.some(x=>x.id===`wlr_prod_${String(i).padStart(6,'0')}`)) throw new Error(`missing product ${i}`);
-          for(let i=219;i<=246;i++) if(!s.some(x=>x.id===`wlr_src_${String(i).padStart(6,'0')}`)) throw new Error(`missing evidence ${i}`);
-          const ronin=p.find(x=>x.id==='wlr_prod_000094'); if(ronin.slug!=='ronin-wallet-extension'||ronin.product_type!=='browser_extension')throw new Error('Ronin boundary mismatch');
-          const bitget=p.find(x=>x.id==='wlr_prod_000095'); if(bitget.slug!=='bitget-wallet-mobile'||bitget.product_type!=='mobile_app'||bitget.launch_date!==null)throw new Error('Bitget boundary mismatch');
-          const zerion=p.find(x=>x.id==='wlr_prod_000097'); if(zerion.slug!=='zerion-wallet-mobile'||zerion.product_type!=='mobile_app')throw new Error('Zerion boundary mismatch');
-          NODE
+          for n in $(seq 37 50); do id=$(printf 'wlr_ent_%06d' "$n"); jq -e --arg id "$id" '.[] | select(.id == $id)' data/entities.json >/dev/null; done
+          for n in $(seq 86 99); do id=$(printf 'wlr_prod_%06d' "$n"); jq -e --arg id "$id" '.[] | select(.id == $id)' data/products.json >/dev/null; done
+          for n in $(seq 219 246); do id=$(printf 'wlr_src_%06d' "$n"); jq -e --arg id "$id" '.[] | select(.id == $id)' data/evidence.json >/dev/null; done
+          jq -e '.[] | select(.id == "wlr_prod_000094") | .slug == "ronin-wallet-extension" and .product_type == "browser_extension"' data/products.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_prod_000095") | .slug == "bitget-wallet-mobile" and .product_type == "mobile_app" and .launch_date == null' data/products.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_prod_000097") | .slug == "zerion-wallet-mobile" and .product_type == "mobile_app"' data/products.json >/dev/null
       - name: Resolve exact Cloudflare production deployment
         id: cf
         run: |
@@ -109,18 +105,18 @@ jobs:
           ready=0
           for attempt in $(seq 1 60); do
             nonce="651c2587-${attempt}-$(date +%s)"; ok=1
-            for name in entities products evidence stats; do curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/${name}.json?verify=${nonce}" -o "$work/${name}.json" || ok=0; done
+            for name in entities products evidence stats; do
+              curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/${name}.json?verify=${nonce}" -o "$work/${name}.json" || ok=0
+            done
             if [ "$ok" -eq 1 ] && jq -e '.registry.entities == 50 and .registry.products == 99 and .registry.events == 121 and .registry.evidence == 246' "$work/stats.json" >/dev/null 2>&1; then
-              node - "$work" <<'NODE'
-              const fs=require('fs'),dir=process.argv[2],r=n=>JSON.parse(fs.readFileSync(`${dir}/${n}.json`,'utf8'));
-              const e=r('entities'),p=r('products'),s=r('evidence');
-              for(let i=37;i<=50;i++) if(!e.some(x=>x.id===`wlr_ent_${String(i).padStart(6,'0')}`))process.exit(1);
-              for(let i=86;i<=99;i++) if(!p.some(x=>x.id===`wlr_prod_${String(i).padStart(6,'0')}`))process.exit(1);
-              for(let i=219;i<=246;i++) if(!s.some(x=>x.id===`wlr_src_${String(i).padStart(6,'0')}`))process.exit(1);
-              const a=p.find(x=>x.id==='wlr_prod_000094'),b=p.find(x=>x.id==='wlr_prod_000095'),z=p.find(x=>x.id==='wlr_prod_000097');
-              if(a?.slug!=='ronin-wallet-extension'||b?.slug!=='bitget-wallet-mobile'||b?.launch_date!==null||z?.slug!=='zerion-wallet-mobile')process.exit(1);
-              NODE
-              if [ "$?" -eq 0 ]; then ready=1; echo "Public canonical batch exact on attempt=${attempt}"; break; fi
+              good=1
+              for n in $(seq 37 50); do id=$(printf 'wlr_ent_%06d' "$n"); jq -e --arg id "$id" '.[] | select(.id == $id)' "$work/entities.json" >/dev/null 2>&1 || good=0; done
+              for n in $(seq 86 99); do id=$(printf 'wlr_prod_%06d' "$n"); jq -e --arg id "$id" '.[] | select(.id == $id)' "$work/products.json" >/dev/null 2>&1 || good=0; done
+              for n in $(seq 219 246); do id=$(printf 'wlr_src_%06d' "$n"); jq -e --arg id "$id" '.[] | select(.id == $id)' "$work/evidence.json" >/dev/null 2>&1 || good=0; done
+              jq -e '.[] | select(.id == "wlr_prod_000094") | .slug == "ronin-wallet-extension" and .product_type == "browser_extension"' "$work/products.json" >/dev/null 2>&1 || good=0
+              jq -e '.[] | select(.id == "wlr_prod_000095") | .slug == "bitget-wallet-mobile" and .product_type == "mobile_app" and .launch_date == null' "$work/products.json" >/dev/null 2>&1 || good=0
+              jq -e '.[] | select(.id == "wlr_prod_000097") | .slug == "zerion-wallet-mobile" and .product_type == "mobile_app"' "$work/products.json" >/dev/null 2>&1 || good=0
+              if [ "$good" -eq 1 ]; then ready=1; echo "Public canonical batch exact on attempt=${attempt}"; break; fi
             fi
             sleep 10
           done
