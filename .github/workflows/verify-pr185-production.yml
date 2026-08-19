@@ -1,0 +1,118 @@
+name: Verify WLR PR185 Production
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  exact-main-ci:
+    if: github.head_ref == 'ops/pr185-production-verify'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - name: Pin exact merged main
+        run: test "$(git rev-parse HEAD)" = "eeb7eb34782cfecb71f419f8ebb136544a1690f7"
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.x' }
+      - run: python -m pip install -r requirements.txt
+      - run: npm install --no-audit --no-fund
+      - run: npm run validate:records
+      - run: npm run validate:candidates
+      - run: npm run validate:identity-evidence
+      - run: npm run validate:machine-records
+      - run: npm run validate:structured-discovery
+      - run: npm run test:natural-filters
+      - run: npm run validate:natural-filters
+      - run: npm run validate:compare
+      - run: npm run validate:stats
+      - run: npm run test:monitoring
+      - run: npm run validate:monitoring
+      - run: npm run test:candidates
+      - run: npm run test:identity-evidence
+      - run: npm run check:staging-boundary
+      - run: npm run coverage:audit
+      - run: npm run seed:gate
+      - run: npm run cloudflare:config:print
+      - run: npm run build
+
+  production-verify:
+    if: github.head_ref == 'ops/pr185-production-verify'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Build exact-main expected state
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "eeb7eb34782cfecb71f419f8ebb136544a1690f7"
+          node scripts/build-stats.mjs
+          jq -e '.registry.entities == 26 and .registry.products == 74 and .registry.events == 119 and .registry.evidence == 194 and .registry.incident_events == 22 and .registry.remediation_events == 8' public/data/stats.json >/dev/null
+          jq -e '.data_quality.events.incident_impact_level.count == 22 and .data_quality.events.incident_impact_level.percentage == 100 and .data_quality.events.incident_funds_affected.count == 22 and .data_quality.events.incident_funds_affected.percentage == 100' public/data/stats.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_ev_000118") | .product_id == "wlr_prod_000023" and .event_type == "supply_chain_compromise" and .event_date == "2025-02-21" and .impact_level == "critical" and .security_scope == "supply_chain" and .funds_affected == "yes" and .event_status_effect == "limited"' data/events.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_ev_000119") | .product_id == "wlr_prod_000023" and .event_type == "security_fix" and .event_date == "2025-02-28" and .security_scope == "supply_chain" and .funds_affected == "yes" and .event_status_effect == "active"' data/events.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_src_000192") | (.event_ids | sort) == (["wlr_ev_000118","wlr_ev_000119"] | sort)' data/evidence.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_src_000193") | .event_id == "wlr_ev_000118"' data/evidence.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_src_000194") | .event_id == "wlr_ev_000118" and .claim_scope == "funds_affected"' data/evidence.json >/dev/null
+      - name: Resolve exact Cloudflare production deployment
+        id: cf
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          expected="eeb7eb34782cfecb71f419f8ebb136544a1690f7"
+          base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
+          auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
+          match=""
+          for attempt in $(seq 1 100); do
+            deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
+            match="$(jq -c --arg sha "$expected" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
+            if [ -n "$match" ] && jq -e '.latest_stage.status == "success"' <<<"$match" >/dev/null; then break; fi
+            echo "Waiting for exact deployment attempt=${attempt}"; sleep 10
+          done
+          test -n "$match"
+          jq -e '.latest_stage.status == "success" and .deployment_trigger.metadata.branch == "main" and .deployment_trigger.metadata.commit_dirty == false and (.aliases | index("https://wlr.badjoke-lab.com")) != null' <<<"$match" >/dev/null
+          echo "deployment_url=$(jq -r '.url' <<<"$match")" >> "$GITHUB_OUTPUT"
+          echo "$match" | jq '{id,short_id,url,aliases,latest_stage,deployment_trigger}'
+      - name: Verify exact deployment and public Safe records
+        env:
+          DEPLOYMENT_URL: ${{ steps.cf.outputs.deployment_url }}
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"; trap 'rm -rf "$work"' EXIT
+          curl -fsSL "${DEPLOYMENT_URL}/data/stats.json?verify=eeb7eb34" -o "$work/deploy.json"
+          jq -e '.registry.events == 119 and .registry.evidence == 194 and .registry.incident_events == 22 and .registry.remediation_events == 8' "$work/deploy.json" >/dev/null
+          ready=0
+          for attempt in $(seq 1 60); do
+            nonce="eeb7eb34-${attempt}-$(date +%s)"; ok=1
+            for name in events evidence stats; do curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/${name}.json?verify=${nonce}" -o "$work/${name}.json" || ok=0; done
+            if [ "$ok" -eq 1 ] \
+              && jq -e '.registry.events == 119 and .registry.evidence == 194 and .registry.incident_events == 22 and .registry.remediation_events == 8 and .data_quality.events.incident_impact_level.count == 22 and .data_quality.events.incident_funds_affected.count == 22' "$work/stats.json" >/dev/null 2>&1 \
+              && jq -e '.[] | select(.id == "wlr_ev_000118") | .event_type == "supply_chain_compromise" and .funds_affected == "yes" and .product_id == "wlr_prod_000023"' "$work/events.json" >/dev/null 2>&1 \
+              && jq -e '.[] | select(.id == "wlr_ev_000119") | .event_type == "security_fix" and .event_status_effect == "active"' "$work/events.json" >/dev/null 2>&1 \
+              && jq -e '.[] | select(.id == "wlr_src_000192") | (.event_ids | length) == 2' "$work/evidence.json" >/dev/null 2>&1 \
+              && jq -e '.[] | select(.id == "wlr_src_000193") | .event_id == "wlr_ev_000118"' "$work/evidence.json" >/dev/null 2>&1 \
+              && jq -e '.[] | select(.id == "wlr_src_000194") | .event_id == "wlr_ev_000118"' "$work/evidence.json" >/dev/null 2>&1; then ready=1; echo "Public canonical records exact on attempt=${attempt}"; break; fi
+            sleep 10
+          done
+          test "$ready" -eq 1
+          nonce="$(date +%s)"
+          for url in \
+            "https://wlr.badjoke-lab.com/wallet/safe/?verify=${nonce}" \
+            "https://wlr.badjoke-lab.com/product/safe-wallet-web/?verify=${nonce}" \
+            "https://wlr.badjoke-lab.com/incidents/?verify=${nonce}"; do
+            code="$(curl -sS -o /dev/null -w '%{http_code}' "$url")"
+            test "$code" -ge 200 && test "$code" -lt 400
+            echo "WLR route ${url} -> ${code}"
+          done
+          echo 'PR185_PRODUCTION_VERIFY_OK events=119 evidence=194 incidents=22 remediations=8 safe_incident=supply_chain_compromise'
