@@ -2,8 +2,8 @@
   "bundle_version": "1.0.0",
   "candidate_id": "wlr_cand_tangem-2024-private-key-logging",
   "title": "Tangem App 2024 private-key logging issue",
-  "review_state": "researching",
-  "notes": "Candidate-only bundle adding the missing Tangem companion-app product boundary plus the December 2024 mobile-app logging issue and fixed releases. Canonical publication is prohibited until candidate validation and manual review complete.",
+  "review_state": "review_ready",
+  "notes": "Candidate-only bundle adding the missing Tangem companion-app product boundary plus the December 2024 mobile-app logging issue and fixed releases. Product identity, distinct 2026 standalone-mobile-wallet boundary, affected-user conditions, explicit no-loss/no-compromise claim, release date and fixed versions were manually reviewed after candidate/identity-evidence validation. Canonical publication still requires a separate explicit main-based PR.",
   "records": {
     "entities": [],
     "products": [
