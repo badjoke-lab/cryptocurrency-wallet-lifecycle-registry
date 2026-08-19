@@ -1,0 +1,122 @@
+name: Verify WLR PR189 Production
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  exact-main-ci:
+    if: github.head_ref == 'ops/pr189-production-verify'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - name: Pin exact merged main
+        run: test "$(git rev-parse HEAD)" = "be8ede69a94deb756a7762d8c0af3d491d18b68b"
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.x' }
+      - run: python -m pip install -r requirements.txt
+      - run: npm install --no-audit --no-fund
+      - run: npm run validate:records
+      - run: npm run validate:candidates
+      - run: npm run validate:identity-evidence
+      - run: npm run validate:machine-records
+      - run: npm run validate:structured-discovery
+      - run: npm run test:natural-filters
+      - run: npm run validate:natural-filters
+      - run: npm run validate:compare
+      - run: npm run validate:stats
+      - run: npm run test:monitoring
+      - run: npm run validate:monitoring
+      - run: npm run test:candidates
+      - run: npm run test:identity-evidence
+      - run: npm run check:staging-boundary
+      - run: npm run coverage:audit
+      - run: npm run seed:gate
+      - run: npm run cloudflare:config:print
+      - run: npm run build
+
+  production-verify:
+    if: github.head_ref == 'ops/pr189-production-verify'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Build exact-main expected state
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "be8ede69a94deb756a7762d8c0af3d491d18b68b"
+          node scripts/build-stats.mjs
+          jq -e '.registry.entities == 26 and .registry.products == 75 and .registry.events == 121 and .registry.evidence == 197 and .registry.incident_events == 23 and .registry.remediation_events == 9' public/data/stats.json >/dev/null
+          jq -e '.products.launch_date.count == 74 and .products.launch_date.denominator == 75 and .products.launch_date.percentage == 98.7' public/data/stats.json >/dev/null
+          jq -e '.data_quality.products.support_status_known.count == 75 and .data_quality.products.support_status_known.percentage == 100 and .data_quality.products.sales_status_known.count == 73 and .data_quality.products.sales_status_known.percentage == 97.3' public/data/stats.json >/dev/null
+          jq -e '.data_quality.events.incident_impact_level.count == 23 and .data_quality.events.incident_impact_level.percentage == 100 and .data_quality.events.incident_funds_affected.count == 23 and .data_quality.events.incident_funds_affected.percentage == 100' public/data/stats.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_prod_000075") | .slug == "tangem-app" and .product_type == "companion_app" and .launch_date == null and .support_status == "supported" and .sales_status == "not_applicable"' data/products.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_ev_000120") | .product_id == "wlr_prod_000075" and .event_type == "software_issue" and .event_date == "2024-12-31" and .funds_affected == "no"' data/events.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_ev_000121") | .product_id == "wlr_prod_000075" and .event_type == "software_fix" and .event_date == "2024-12-27" and .fixed_versions[0].version == "5.19.1" and .fixed_versions[1].version == "5.19.2"' data/events.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_src_000195") | .product_id == "wlr_prod_000075" and .claim_scope == "product"' data/evidence.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_src_000196") | .event_id == "wlr_ev_000120"' data/evidence.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_src_000197") | .event_id == "wlr_ev_000121" and .claim_scope == "security_fix"' data/evidence.json >/dev/null
+      - name: Resolve exact Cloudflare production deployment
+        id: cf
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          expected="be8ede69a94deb756a7762d8c0af3d491d18b68b"
+          base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
+          auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
+          match=""
+          for attempt in $(seq 1 100); do
+            deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
+            match="$(jq -c --arg sha "$expected" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
+            if [ -n "$match" ] && jq -e '.latest_stage.status == "success"' <<<"$match" >/dev/null; then break; fi
+            echo "Waiting for exact deployment attempt=${attempt}"; sleep 10
+          done
+          test -n "$match"
+          jq -e '.latest_stage.status == "success" and .deployment_trigger.metadata.branch == "main" and .deployment_trigger.metadata.commit_dirty == false and (.aliases | index("https://wlr.badjoke-lab.com")) != null' <<<"$match" >/dev/null
+          echo "deployment_url=$(jq -r '.url' <<<"$match")" >> "$GITHUB_OUTPUT"
+          echo "$match" | jq '{id,short_id,url,aliases,latest_stage,deployment_trigger}'
+      - name: Verify exact deployment and public Tangem records
+        env:
+          DEPLOYMENT_URL: ${{ steps.cf.outputs.deployment_url }}
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"; trap 'rm -rf "$work"' EXIT
+          curl -fsSL "${DEPLOYMENT_URL}/data/stats.json?verify=be8ede69" -o "$work/deploy.json"
+          jq -e '.registry.products == 75 and .registry.events == 121 and .registry.evidence == 197 and .registry.incident_events == 23 and .registry.remediation_events == 9' "$work/deploy.json" >/dev/null
+          ready=0
+          for attempt in $(seq 1 60); do
+            nonce="be8ede69-${attempt}-$(date +%s)"; ok=1
+            for name in products events evidence stats; do curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/${name}.json?verify=${nonce}" -o "$work/${name}.json" || ok=0; done
+            if [ "$ok" -eq 1 ] \
+              && jq -e '.registry.products == 75 and .registry.events == 121 and .registry.evidence == 197 and .products.launch_date.count == 74 and .products.launch_date.denominator == 75' "$work/stats.json" >/dev/null 2>&1 \
+              && jq -e '.[] | select(.id == "wlr_prod_000075") | .slug == "tangem-app" and .product_type == "companion_app" and .launch_date == null' "$work/products.json" >/dev/null 2>&1 \
+              && jq -e '.[] | select(.id == "wlr_ev_000120") | .funds_affected == "no" and .event_type == "software_issue"' "$work/events.json" >/dev/null 2>&1 \
+              && jq -e '.[] | select(.id == "wlr_ev_000121") | .event_type == "software_fix" and .fixed_versions[0].version == "5.19.1" and .fixed_versions[1].version == "5.19.2"' "$work/events.json" >/dev/null 2>&1 \
+              && jq -e '.[] | select(.id == "wlr_src_000195") | .product_id == "wlr_prod_000075"' "$work/evidence.json" >/dev/null 2>&1 \
+              && jq -e '.[] | select(.id == "wlr_src_000196") | .event_id == "wlr_ev_000120"' "$work/evidence.json" >/dev/null 2>&1 \
+              && jq -e '.[] | select(.id == "wlr_src_000197") | .event_id == "wlr_ev_000121"' "$work/evidence.json" >/dev/null 2>&1; then ready=1; echo "Public canonical records exact on attempt=${attempt}"; break; fi
+            sleep 10
+          done
+          test "$ready" -eq 1
+          nonce="$(date +%s)"
+          for url in \
+            "https://wlr.badjoke-lab.com/wallet/tangem/?verify=${nonce}" \
+            "https://wlr.badjoke-lab.com/product/tangem-app/?verify=${nonce}" \
+            "https://wlr.badjoke-lab.com/incidents/?verify=${nonce}"; do
+            code="$(curl -sS -o /dev/null -w '%{http_code}' "$url")"
+            test "$code" -ge 200 && test "$code" -lt 400
+            echo "WLR route ${url} -> ${code}"
+          done
+          echo 'PR189_PRODUCTION_VERIFY_OK products=75 events=121 evidence=197 tangem_app_launch=unknown incident_funds=no'
