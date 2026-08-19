@@ -1,0 +1,151 @@
+name: Verify WLR PR197 Production
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  exact-main-ci:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - name: Pin exact merged main
+        run: test "$(git rev-parse HEAD)" = "651c258781562b64e97e4ca8ff8eb3097e605d6f"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - run: npm install --no-audit --no-fund
+      - run: npm run validate:records
+      - run: npm run validate:candidates
+      - run: npm run validate:identity-evidence
+      - run: npm run validate:machine-records
+      - run: npm run validate:structured-discovery
+      - run: npm run test:natural-filters
+      - run: npm run validate:natural-filters
+      - run: npm run validate:compare
+      - run: npm run validate:stats
+      - run: npm run test:monitoring
+      - run: npm run validate:monitoring
+      - run: npm run test:candidates
+      - run: npm run test:identity-evidence
+      - run: npm run check:staging-boundary
+      - run: npm run coverage:audit
+      - run: npm run seed:gate
+      - run: npm run cloudflare:config:print
+      - run: npm run build
+
+  production-verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build exact-main expected state
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "651c258781562b64e97e4ca8ff8eb3097e605d6f"
+          node scripts/build-stats.mjs
+          jq -e '.registry.entities == 50 and .registry.products == 99 and .registry.events == 121 and .registry.evidence == 246 and .registry.incident_events == 23 and .registry.remediation_events == 9' public/data/stats.json >/dev/null
+          jq -e '.entities.launch_date.count == 44 and .entities.launch_date.denominator == 50 and .entities.launch_date.percentage == 88' public/data/stats.json >/dev/null
+          jq -e '.products.launch_date.count == 83 and .products.launch_date.denominator == 99 and .products.launch_date.percentage == 83.8' public/data/stats.json >/dev/null
+          jq -e '.data_quality.products.support_status_known.count == 75 and .data_quality.products.support_status_known.denominator == 99 and .data_quality.products.support_status_known.percentage == 75.8' public/data/stats.json >/dev/null
+          jq -e '.data_quality.products.sales_status_known.count == 97 and .data_quality.products.sales_status_known.denominator == 99 and .data_quality.products.sales_status_known.percentage == 98' public/data/stats.json >/dev/null
+          jq -e '.data_quality.events.incident_impact_level.count == 23 and .data_quality.events.incident_impact_level.percentage == 100 and .data_quality.events.incident_funds_affected.count == 23 and .data_quality.events.incident_funds_affected.percentage == 100' public/data/stats.json >/dev/null
+          node <<'NODE'
+          const fs=require('fs'), r=p=>JSON.parse(fs.readFileSync(p,'utf8'));
+          const e=r('data/entities.json'),p=r('data/products.json'),s=r('data/evidence.json');
+          for(let i=37;i<=50;i++) if(!e.some(x=>x.id===`wlr_ent_${String(i).padStart(6,'0')}`)) throw new Error(`missing entity ${i}`);
+          for(let i=86;i<=99;i++) if(!p.some(x=>x.id===`wlr_prod_${String(i).padStart(6,'0')}`)) throw new Error(`missing product ${i}`);
+          for(let i=219;i<=246;i++) if(!s.some(x=>x.id===`wlr_src_${String(i).padStart(6,'0')}`)) throw new Error(`missing evidence ${i}`);
+          const ronin=p.find(x=>x.id==='wlr_prod_000094'); if(ronin.slug!=='ronin-wallet-extension'||ronin.product_type!=='browser_extension')throw new Error('Ronin boundary mismatch');
+          const bitget=p.find(x=>x.id==='wlr_prod_000095'); if(bitget.slug!=='bitget-wallet-mobile'||bitget.product_type!=='mobile_app'||bitget.launch_date!==null)throw new Error('Bitget boundary mismatch');
+          const zerion=p.find(x=>x.id==='wlr_prod_000097'); if(zerion.slug!=='zerion-wallet-mobile'||zerion.product_type!=='mobile_app')throw new Error('Zerion boundary mismatch');
+          NODE
+      - name: Resolve exact Cloudflare production deployment
+        id: cf
+        run: |
+          set -euo pipefail
+          expected="651c258781562b64e97e4ca8ff8eb3097e605d6f"
+          base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
+          auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
+          match=""
+          for attempt in $(seq 1 100); do
+            deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
+            match="$(jq -c --arg sha "$expected" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
+            if [ -n "$match" ] && jq -e '.latest_stage.status == "success"' <<<"$match" >/dev/null; then break; fi
+            echo "Waiting for exact deployment attempt=${attempt}"; sleep 10
+          done
+          test -n "$match"
+          jq -e '.latest_stage.status == "success" and .deployment_trigger.metadata.branch == "main" and .deployment_trigger.metadata.commit_dirty == false and (.aliases | index("https://wlr.badjoke-lab.com")) != null' <<<"$match" >/dev/null
+          echo "deployment_url=$(jq -r '.url' <<<"$match")" >> "$GITHUB_OUTPUT"
+          echo "$match" | jq '{id,short_id,url,aliases,latest_stage,deployment_trigger}'
+      - name: Verify exact deployment and public batch 02 records
+        env:
+          DEPLOYMENT_URL: ${{ steps.cf.outputs.deployment_url }}
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"; trap 'rm -rf "$work"' EXIT
+          curl -fsSL "${DEPLOYMENT_URL}/data/stats.json?verify=651c2587" -o "$work/deploy.json"
+          jq -e '.registry.entities == 50 and .registry.products == 99 and .registry.events == 121 and .registry.evidence == 246' "$work/deploy.json" >/dev/null
+          ready=0
+          for attempt in $(seq 1 60); do
+            nonce="651c2587-${attempt}-$(date +%s)"; ok=1
+            for name in entities products evidence stats; do curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/${name}.json?verify=${nonce}" -o "$work/${name}.json" || ok=0; done
+            if [ "$ok" -eq 1 ] && jq -e '.registry.entities == 50 and .registry.products == 99 and .registry.events == 121 and .registry.evidence == 246' "$work/stats.json" >/dev/null 2>&1; then
+              node - "$work" <<'NODE'
+              const fs=require('fs'),dir=process.argv[2],r=n=>JSON.parse(fs.readFileSync(`${dir}/${n}.json`,'utf8'));
+              const e=r('entities'),p=r('products'),s=r('evidence');
+              for(let i=37;i<=50;i++) if(!e.some(x=>x.id===`wlr_ent_${String(i).padStart(6,'0')}`))process.exit(1);
+              for(let i=86;i<=99;i++) if(!p.some(x=>x.id===`wlr_prod_${String(i).padStart(6,'0')}`))process.exit(1);
+              for(let i=219;i<=246;i++) if(!s.some(x=>x.id===`wlr_src_${String(i).padStart(6,'0')}`))process.exit(1);
+              const a=p.find(x=>x.id==='wlr_prod_000094'),b=p.find(x=>x.id==='wlr_prod_000095'),z=p.find(x=>x.id==='wlr_prod_000097');
+              if(a?.slug!=='ronin-wallet-extension'||b?.slug!=='bitget-wallet-mobile'||b?.launch_date!==null||z?.slug!=='zerion-wallet-mobile')process.exit(1);
+              NODE
+              if [ "$?" -eq 0 ]; then ready=1; echo "Public canonical batch exact on attempt=${attempt}"; break; fi
+            fi
+            sleep 10
+          done
+          test "$ready" -eq 1
+          nonce="$(date +%s)"
+          routes=(
+            wallet/onekey product/onekey-pro
+            wallet/dcent product/dcent-biometric-wallet
+            wallet/coolwallet product/coolwallet-pro
+            wallet/ngrave product/ngrave-zero
+            wallet/nunchuk product/nunchuk-wallet
+            wallet/cake-wallet product/cake-wallet
+            wallet/keplr product/keplr-extension
+            wallet/lace product/lace-wallet
+            wallet/ronin-wallet product/ronin-wallet-extension
+            wallet/bitget-wallet product/bitget-wallet-mobile
+            wallet/uniswap-wallet product/uniswap-wallet
+            wallet/zerion-wallet product/zerion-wallet-mobile
+            wallet/phoenix-wallet product/phoenix-wallet
+            wallet/muun product/muun-wallet
+          )
+          for route in "${routes[@]}"; do
+            url="https://wlr.badjoke-lab.com/${route}/?verify=${nonce}"
+            code="$(curl -sS -o /dev/null -w '%{http_code}' "$url")"
+            test "$code" -ge 200 && test "$code" -lt 400
+            echo "WLR route ${route} -> ${code}"
+          done
+          echo 'PR197_PRODUCTION_VERIFY_OK entities=50 products=99 events=121 evidence=246'
