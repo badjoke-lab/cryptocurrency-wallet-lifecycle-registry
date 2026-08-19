@@ -111,7 +111,7 @@ jobs:
           nonce="$(date +%s)"
           for url in \
             "https://wlr.badjoke-lab.com/wallet/metamask/?verify=${nonce}" \
-            "https://wlr.badjoke-lab.com/product/metamask-extension/?verify=${nonce}" \
+            "https://wlr.badjoke-lab.com/product/metamask-browser-extension/?verify=${nonce}" \
             "https://wlr.badjoke-lab.com/incidents/?verify=${nonce}"; do
             code="$(curl -sS -o /dev/null -w '%{http_code}' "$url")"
             test "$code" -ge 200 && test "$code" -lt 400
