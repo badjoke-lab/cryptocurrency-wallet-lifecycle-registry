@@ -1,0 +1,248 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_year": null,
+      "parent_entity": {
+        "canonical_name": "MyCrypto",
+        "id": "wlr_ent_000025",
+        "slug": "mycrypto",
+        "status": "acquired",
+        "wallet_type": "software"
+      },
+      "predecessor_product_id": null,
+      "product_type": "desktop_app",
+      "sales_status": "not_applicable",
+      "status": "limited",
+      "successor_product_id": null,
+      "support_status": "ended"
+    },
+    "status": "limited"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000069"
+        ],
+        "confidence": "high",
+        "description": "MyCrypto released its stable desktop applications and moved raw private-key, mnemonic, and keystore-file access out of the web interface into the desktop application.",
+        "entity_id": "wlr_ent_000025",
+        "event_date": "2018-07-13",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000065",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000069",
+        "title": "MyCrypto Desktop officially launched"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000068",
+          "wlr_prod_000069"
+        ],
+        "confidence": "high",
+        "description": "Consensys announced the acquisition of MyCrypto to combine its work with MetaMask while MyCrypto stated that its existing products would continue operating in the short term.",
+        "entity_id": "wlr_ent_000025",
+        "event_date": "2022-02-01",
+        "event_date_basis": "announcement",
+        "event_status_effect": "acquired",
+        "event_type": "acquired",
+        "id": "wlr_ev_000066",
+        "is_major_event": true,
+        "notes": "The acquisition announcement described gradual product convergence rather than an immediate MyCrypto shutdown.",
+        "product_id": null,
+        "title": "Consensys acquired MyCrypto"
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000025",
+        "event_id": "wlr_ev_000065",
+        "event_ids": [
+          "wlr_ev_000065"
+        ],
+        "id": "wlr_src_000106",
+        "is_primary": true,
+        "notes": "Primary launch source for MyCrypto Desktop and the browser-to-desktop key-handling boundary.",
+        "product_id": "wlr_prod_000069",
+        "product_ids": [
+          "wlr_prod_000069"
+        ],
+        "published_at": "2018-07-13",
+        "publisher": "MyCrypto",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "MyCrypto Launches Desktop Applications w/ Hardware Wallet Support",
+        "url": "https://blog.mycrypto.com/mycrypto-launches-desktop-applications-w--hardware-wallet-support/"
+      },
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "ownership",
+        "entity_id": "wlr_ent_000025",
+        "event_id": "wlr_ev_000066",
+        "event_ids": [
+          "wlr_ev_000066"
+        ],
+        "id": "wlr_src_000107",
+        "is_primary": true,
+        "notes": "Primary acquiring-company announcement for the MyCrypto acquisition and planned MetaMask collaboration.",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000068",
+          "wlr_prod_000069"
+        ],
+        "published_at": "2022-02-01",
+        "publisher": "Consensys",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Consensys Acquires MyCrypto to Strengthen MetaMask Partnership and Enhance Web3 Experiences",
+        "url": "https://consensys.io/blog/consensys-acquires-mycrypto-to-strengthen-metamask-partnership-and-enhance-web3-experiences"
+      },
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "ownership",
+        "entity_id": "wlr_ent_000025",
+        "event_id": "wlr_ev_000066",
+        "event_ids": [
+          "wlr_ev_000066"
+        ],
+        "id": "wlr_src_000108",
+        "is_primary": true,
+        "notes": "Primary MyCrypto-side acquisition announcement stating products would not immediately go away and longer-term convergence would be gradual.",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000068",
+          "wlr_prod_000069"
+        ],
+        "published_at": "2022-02-01",
+        "publisher": "MyCrypto",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "MyCrypto is Joining MetaMask to Lead The Way to Web3",
+        "url": "https://blog.mycrypto.com/mycrypto-is-joining-metamask/"
+      },
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "status",
+        "entity_id": "wlr_ent_000025",
+        "event_id": null,
+        "event_ids": [],
+        "id": "wlr_src_000110",
+        "is_primary": true,
+        "notes": "Current official desktop download endpoint remains reachable; this does not by itself establish active maintenance.",
+        "product_id": "wlr_prod_000069",
+        "product_ids": [
+          "wlr_prod_000069"
+        ],
+        "published_at": null,
+        "publisher": "MyCrypto",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Download MyCrypto",
+        "url": "https://download.mycrypto.com/"
+      },
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000025",
+        "event_id": null,
+        "event_ids": [],
+        "id": "wlr_src_000111",
+        "is_primary": true,
+        "notes": "Official public repository remains non-archived; repository metadata identifies MyCrypto as an open-source Ethereum account-management tool.",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000068",
+          "wlr_prod_000069"
+        ],
+        "published_at": null,
+        "publisher": "MyCryptoHQ",
+        "reliability": "high",
+        "source_type": "source_code",
+        "title": "MyCrypto official source repository",
+        "url": "https://github.com/MyCryptoHQ/MyCrypto"
+      },
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "support_status",
+        "entity_id": "wlr_ent_000025",
+        "event_id": null,
+        "event_ids": [],
+        "id": "wlr_src_000112",
+        "is_primary": true,
+        "notes": "Latest formal GitHub release visible at review time; used to justify conservative limited/unknown-support treatment rather than an unsupported active-maintenance claim.",
+        "product_id": "wlr_prod_000069",
+        "product_ids": [
+          "wlr_prod_000069"
+        ],
+        "published_at": "2021-08-26",
+        "publisher": "MyCryptoHQ",
+        "reliability": "high",
+        "source_type": "release_notes",
+        "title": "MyCrypto Release 1.7.17",
+        "url": "https://github.com/MyCryptoHQ/MyCrypto/releases/tag/1.7.17"
+      },
+      {
+        "accessed_at": "2026-08-17",
+        "claim_scope": "support_status",
+        "entity_id": "wlr_ent_000025",
+        "event_id": null,
+        "event_ids": [],
+        "id": "wlr_src_000121",
+        "is_primary": true,
+        "notes": "Current first-party help page; it reports a last-updated date of 2021-10-25 and explicitly states that the desktop application belongs to an older MyCrypto version that is not actively maintained while the download remains available.",
+        "product_id": "wlr_prod_000069",
+        "product_ids": [
+          "wlr_prod_000069"
+        ],
+        "published_at": null,
+        "publisher": "MyCrypto",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Verifying the Authenticity of the Desktop Application",
+        "url": "https://support.mycrypto.com/staying-safe/verifying-authenticity-of-desktop-app/"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000069",
+  "identity": {
+    "aliases": [
+      "MyCrypto Desktop App"
+    ]
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/mycrypto-desktop.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000069",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "mycrypto-desktop"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/mycrypto/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--mycrypto-desktop.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/mycrypto-desktop.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-17"
+  }
+}

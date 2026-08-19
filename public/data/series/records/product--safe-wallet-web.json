@@ -1,0 +1,209 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "medium",
+      "launch_year": null,
+      "parent_entity": {
+        "canonical_name": "Safe",
+        "id": "wlr_ent_000005",
+        "slug": "safe",
+        "status": "active",
+        "wallet_type": "smart_contract"
+      },
+      "predecessor_product_id": null,
+      "product_type": "web_app",
+      "sales_status": "not_applicable",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "supported"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000021",
+          "wlr_prod_000023"
+        ],
+        "confidence": "high",
+        "description": "The project rebranded from Gnosis Safe to Safe after spinning out from GnosisDAO; Safe states that the protocol, audited contracts, accounts, funds, and security model did not change.",
+        "entity_id": "wlr_ent_000005",
+        "event_date": "2022",
+        "event_date_basis": "announcement",
+        "event_status_effect": "none",
+        "event_type": "rebranded",
+        "id": "wlr_ev_000025",
+        "is_major_event": true,
+        "product_id": null,
+        "title": "Gnosis Safe rebranded to Safe"
+      },
+      {
+        "affected_components": [
+          "developer_workstation",
+          "aws_infrastructure",
+          "safe_wallet_web_delivery",
+          "web_javascript"
+        ],
+        "affected_product_ids": [
+          "wlr_prod_000023"
+        ],
+        "amount_text": "Approximately $1.46 billion from Bybit's affected Ethereum cold wallet",
+        "confidence": "high",
+        "description": "A targeted compromise of a Safe{Wallet} developer workstation and Safe{Wallet} web-delivery infrastructure enabled malicious JavaScript to manipulate a Bybit Safe transaction on 2025-02-21. The manipulated transaction resulted in approximately $1.46 billion in assets leaving Bybit's affected Ethereum cold wallet.",
+        "entity_id": "wlr_ent_000005",
+        "event_date": "2025-02-21",
+        "event_date_basis": "occurrence",
+        "event_status_effect": "limited",
+        "event_type": "supply_chain_compromise",
+        "funds_affected": "yes",
+        "id": "wlr_ev_000118",
+        "impact_level": "critical",
+        "is_major_event": true,
+        "notes": "The product boundary is Safe{Wallet} Web. Safe stated that external forensic review did not identify vulnerabilities in Safe smart contracts or in the source code of the frontend/services. Sygnia describes the incident as a supply-chain compromise and traces the attack path from a compromised Safe developer workstation through Safe AWS access to injected JavaScript served from app.safe.global. The malicious code was highly targeted to the Bybit Safe; this record does not generalize the impact to all Safe accounts or Safe Mobile.",
+        "product_id": "wlr_prod_000023",
+        "security_scope": "supply_chain",
+        "title": "Safe{Wallet} Web supply-chain compromise enabled targeted Bybit transaction manipulation",
+        "user_actions_required": [
+          "monitor"
+        ]
+      },
+      {
+        "affected_components": [
+          "developer_credentials",
+          "aws_infrastructure",
+          "safe_wallet_web_delivery"
+        ],
+        "affected_product_ids": [
+          "wlr_prod_000023"
+        ],
+        "confidence": "high",
+        "description": "Safe reported that the Safe{Wallet} team fully rebuilt and reconfigured infrastructure, rotated all credentials, eliminated the identified attack vector, and restored Safe{Wallet} on Ethereum mainnet with a phased rollout and additional security measures.",
+        "entity_id": "wlr_ent_000005",
+        "event_date": "2025-02-28",
+        "event_date_basis": "disclosure",
+        "event_status_effect": "active",
+        "event_type": "security_fix",
+        "funds_affected": "yes",
+        "id": "wlr_ev_000119",
+        "impact_level": "critical",
+        "is_major_event": true,
+        "notes": "This remediation is infrastructure- and credential-based, so WLR does not invent an affected-version or fixed-version range. The 2025-02-28 date is the public disclosure date of the completed rebuild/credential-rotation boundary, not an asserted exact completion timestamp for every remediation action.",
+        "product_id": "wlr_prod_000023",
+        "security_scope": "supply_chain",
+        "title": "Safe{Wallet} rebuilt infrastructure and rotated credentials after targeted compromise",
+        "user_actions_required": [
+          "monitor"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "rebrand",
+        "entity_id": "wlr_ent_000005",
+        "event_id": "wlr_ev_000025",
+        "id": "wlr_src_000030",
+        "is_primary": true,
+        "notes": "",
+        "product_id": null,
+        "published_at": "2024-04-12",
+        "publisher": "Safe",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "History of Safe",
+        "url": "https://safe.global/blog/history-of-safe"
+      },
+      {
+        "accessed_at": "2026-08-19",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000005",
+        "event_id": null,
+        "event_ids": [
+          "wlr_ev_000118",
+          "wlr_ev_000119"
+        ],
+        "id": "wlr_src_000192",
+        "is_primary": true,
+        "notes": "Official Safe Ecosystem Foundation statement reproducing the Safe{Wallet} team's preliminary findings: compromised Safe{Wallet} developer machine, disguised malicious transaction, no identified Safe smart-contract or frontend/services source-code vulnerability, full infrastructure rebuild/reconfiguration, credential rotation and phased restoration.",
+        "product_id": "wlr_prod_000023",
+        "published_at": "2025-02-28",
+        "publisher": "Safe Ecosystem Foundation",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "February 28th, 2025: Statement by the Safe Ecosystem Foundation",
+        "url": "https://safefoundation.org/blog/safe-ecosystem-foundation-statement"
+      },
+      {
+        "accessed_at": "2026-08-19",
+        "claim_scope": "vulnerability",
+        "entity_id": "wlr_ent_000005",
+        "event_id": "wlr_ev_000118",
+        "id": "wlr_src_000193",
+        "is_primary": true,
+        "notes": "Investigator-authored account documenting the compromised Safe developer workstation, stolen AWS access, malicious JavaScript injected into Safe{Wallet}'s S3-delivered web resources, the targeted Bybit activation condition and the conclusion that the incident traced back to a supply-chain compromise.",
+        "product_id": "wlr_prod_000023",
+        "published_at": "2025-03-16",
+        "publisher": "Sygnia",
+        "reliability": "high",
+        "source_type": "security_research",
+        "title": "Bybit – What We Know So Far",
+        "url": "https://www.sygnia.co/blog/sygnia-investigation-bybit-hack/"
+      },
+      {
+        "accessed_at": "2026-08-19",
+        "claim_scope": "funds_affected",
+        "entity_id": "wlr_ent_000005",
+        "event_id": "wlr_ev_000118",
+        "id": "wlr_src_000194",
+        "is_primary": true,
+        "notes": "First-party victim timeline establishing the 2025-02-21 incident, approximately $1.46B asset loss from the affected Ethereum cold wallet, Safe's temporary Wallet pause, and the later forensic finding of malicious JavaScript on the Safe{Wallet} platform.",
+        "product_id": "wlr_prod_000023",
+        "published_at": "2025-03-03",
+        "publisher": "Bybit",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Bybit Security Incident: Timeline of Events and FAQs",
+        "url": "https://www.bybit.com/en/learn/this-week-in-bybit/bybit-security-incident-timeline"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000023",
+  "identity": {
+    "aliases": [
+      "Gnosis Safe for teams",
+      "Gnosis Safe"
+    ]
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/safe-wallet-web.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000023",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "safe-wallet-web"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/safe/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--safe-wallet-web.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/safe-wallet-web.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-14"
+  }
+}

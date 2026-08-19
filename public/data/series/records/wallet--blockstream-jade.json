@@ -1,0 +1,278 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "current_vendor": null,
+      "custody_model": "self_custody",
+      "open_source_status": null,
+      "product_ids": [
+        "wlr_prod_000032",
+        "wlr_prod_000033",
+        "wlr_prod_000034"
+      ],
+      "status": "active",
+      "wallet_type": "hardware",
+      "website_status": null
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000032"
+        ],
+        "confidence": "high",
+        "description": "Blockstream launched its open-source Jade hardware wallet for Bitcoin and Liquid assets.",
+        "entity_id": "wlr_ent_000008",
+        "event_date": "2021-01-03",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000035",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000032",
+        "title": "Original Blockstream Jade launched"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000033"
+        ],
+        "confidence": "high",
+        "description": "Blockstream launched Jade Plus while keeping the original Jade on sale and supported.",
+        "entity_id": "wlr_ent_000008",
+        "event_date": "2025-01-03",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000036",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000033",
+        "title": "Blockstream Jade Plus launched"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000032",
+          "wlr_prod_000033"
+        ],
+        "affected_variants": [
+          "Original Jade",
+          "Jade 1.1"
+        ],
+        "affected_version_rules": [
+          {
+            "product_ids": [
+              "wlr_prod_000032",
+              "wlr_prod_000033"
+            ],
+            "range": "1.0.24 through 1.0.36",
+            "track": "Jade firmware"
+          }
+        ],
+        "confidence": "high",
+        "description": "Blockstream disclosed a descriptor-RPC memory-safety issue affecting Jade firmware 1.0.24 through 1.0.36 across Original Jade, Jade 1.1 and Jade Plus device types.",
+        "entity_id": "wlr_ent_000008",
+        "event_date": "2025-12-16",
+        "event_date_basis": "disclosure",
+        "event_status_effect": "none",
+        "event_type": "vulnerability_disclosed",
+        "fixed_versions": [
+          {
+            "product_ids": [
+              "wlr_prod_000032",
+              "wlr_prod_000033"
+            ],
+            "track": "fixed firmware",
+            "version": "1.0.37"
+          },
+          {
+            "product_ids": [
+              "wlr_prod_000032",
+              "wlr_prod_000033"
+            ],
+            "track": "recommended anti-rollback firmware",
+            "version": "1.0.38+"
+          }
+        ],
+        "funds_affected": "no",
+        "id": "wlr_ev_000037",
+        "impact_level": "high",
+        "is_major_event": true,
+        "notes": "Blockstream reported no evidence of exploitation in the wild and no confirmed loss of user funds.",
+        "product_id": null,
+        "security_scope": "firmware",
+        "title": "Jade RPC stack-overwrite vulnerability disclosed",
+        "user_actions_required": [
+          "update"
+        ]
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000034"
+        ],
+        "confidence": "high",
+        "description": "Blockstream launched Jade Core as a streamlined additional hardware-wallet model.",
+        "entity_id": "wlr_ent_000008",
+        "event_date": "2026-04-28",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000038",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000034",
+        "title": "Blockstream Jade Core introduced"
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000008",
+        "event_id": "wlr_ev_000035",
+        "event_ids": [
+          "wlr_ev_000035"
+        ],
+        "id": "wlr_src_000041",
+        "is_primary": true,
+        "notes": "",
+        "product_id": "wlr_prod_000032",
+        "product_ids": [
+          "wlr_prod_000032"
+        ],
+        "published_at": "2021-01-03",
+        "publisher": "Blockstream",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Secure Your Bitcoin and Liquid Assets With the New Blockstream Jade Hardware Wallet",
+        "url": "https://blockstream.com/press-releases/2021-01-03-secure-your-bitcoin-and-liquid-assets-with-the-new-blockstream-jade-hardware-wallet/"
+      },
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000008",
+        "event_id": "wlr_ev_000036",
+        "event_ids": [
+          "wlr_ev_000036"
+        ],
+        "id": "wlr_src_000042",
+        "is_primary": true,
+        "notes": "",
+        "product_id": "wlr_prod_000033",
+        "product_ids": [
+          "wlr_prod_000033"
+        ],
+        "published_at": "2025-01-03",
+        "publisher": "Blockstream",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Blockstream Marks ‘Bitcoin Genesis Day’ with the Launch of Jade Plus",
+        "url": "https://blockstream.com/press-releases/2025-01-03-blockstream-launch-jade-plus/"
+      },
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "vulnerability",
+        "entity_id": "wlr_ent_000008",
+        "event_id": "wlr_ev_000037",
+        "event_ids": [
+          "wlr_ev_000037"
+        ],
+        "id": "wlr_src_000043",
+        "is_primary": true,
+        "notes": "",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000032",
+          "wlr_prod_000033"
+        ],
+        "published_at": "2025-12-16",
+        "publisher": "Blockstream",
+        "reliability": "high",
+        "source_type": "official_security_advisory",
+        "title": "Jade Security Disclosure",
+        "url": "https://blog.blockstream.com/jade-security-disclosure/"
+      },
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000008",
+        "event_id": "wlr_ev_000038",
+        "event_ids": [
+          "wlr_ev_000038"
+        ],
+        "id": "wlr_src_000044",
+        "is_primary": true,
+        "notes": "",
+        "product_id": "wlr_prod_000034",
+        "product_ids": [
+          "wlr_prod_000034"
+        ],
+        "published_at": "2026-04-28",
+        "publisher": "Blockstream",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Less Complexity, Same Security: Blockstream Introduces Jade Core",
+        "url": "https://blockstream.com/press-releases/2026-04-28-blockstream-introduces-jade-core/"
+      },
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "status",
+        "entity_id": "wlr_ent_000008",
+        "event_id": null,
+        "event_ids": [],
+        "id": "wlr_src_000045",
+        "is_primary": true,
+        "notes": "Confirms three concurrent models and original Jade remains in production.",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000032",
+          "wlr_prod_000033",
+          "wlr_prod_000034"
+        ],
+        "published_at": "2026-07-03",
+        "publisher": "Blockstream",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Blockstream Quarterly Update - Q2 2026",
+        "url": "https://blog.blockstream.com/blockstream-quarterly-update-q2-2026/"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000008",
+  "identity": {
+    "aliases": [
+      "Jade"
+    ],
+    "name": "Blockstream Jade"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/wallets/blockstream-jade.json",
+    "relationship_boundary": "wallet-to-product links are preserved as native product_ids but are not emitted as typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_ent_000008",
+    "native_record_type": "wlr.wallet-record.v1",
+    "slug": "blockstream-jade"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/blockstream-jade/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/wallet--blockstream-jade.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/wallets/blockstream-jade.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-14"
+  }
+}

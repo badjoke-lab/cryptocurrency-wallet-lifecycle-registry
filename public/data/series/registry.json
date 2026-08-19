@@ -1,0 +1,70 @@
+{
+  "canonical_only": true,
+  "capabilities": {
+    "compare": true,
+    "events": "inline",
+    "evidence": "inline",
+    "record_json": true,
+    "relationships": "adapter",
+    "search": true,
+    "stats": true
+  },
+  "data_safety": {
+    "ai_generated_canonical_facts": false,
+    "canonical_only": true,
+    "includes_internal_monitoring": false,
+    "includes_private_notes": false,
+    "includes_unreviewed_candidates": false
+  },
+  "native_contract": {
+    "manifest_url": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "version_url": "https://wlr.badjoke-lab.com/version.json"
+  },
+  "object_type": "registry_descriptor",
+  "record_counts": {
+    "native": {
+      "entities": 75,
+      "events": 121,
+      "evidence": 296,
+      "product_records": 124,
+      "products": 124,
+      "wallet_records": 75
+    },
+    "primary_records": 75
+  },
+  "record_types": [
+    {
+      "machine_template": "/data/series/records/wallet--{slug}.json",
+      "native_record_type": "wlr.wallet-record.v1",
+      "series_record_type": "wallet"
+    },
+    {
+      "machine_template": "/data/series/records/product--{slug}.json",
+      "native_record_type": "wlr.product-record.v1",
+      "series_record_type": "wallet_product"
+    }
+  ],
+  "registry": {
+    "id": "cryptocurrency-wallet-lifecycle-registry",
+    "name": "Wallet Lifecycle Registry",
+    "native_project_id": "cryptocurrency-wallet-lifecycle-registry",
+    "origin": "https://wlr.badjoke-lab.com",
+    "repository": "https://github.com/badjoke-lab/cryptocurrency-wallet-lifecycle-registry",
+    "type": "cryptocurrency_wallet_lifecycle_registry"
+  },
+  "routes": {
+    "compare": "/compare/",
+    "descriptor": "/data/series/registry.json",
+    "index": "/data/series/index.json",
+    "record_templates": [
+      "/data/series/records/wallet--{slug}.json",
+      "/data/series/records/product--{slug}.json"
+    ],
+    "search": "/explorer/",
+    "stats": "/stats/"
+  },
+  "series_schema_version": "1.0.0",
+  "verification": {
+    "last_verified_at": "2026-08-20"
+  }
+}

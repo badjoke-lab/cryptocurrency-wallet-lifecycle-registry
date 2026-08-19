@@ -1,0 +1,90 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "current_vendor": null,
+      "custody_model": "self_custody",
+      "open_source_status": null,
+      "product_ids": [
+        "wlr_prod_000086"
+      ],
+      "status": "active",
+      "wallet_type": "hardware",
+      "website_status": null
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": []
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-19",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000037",
+        "event_id": null,
+        "id": "wlr_src_000219",
+        "is_primary": true,
+        "notes": "First-party fundamentals describe OneKey as an open-source hardware wallet brand and state that its hardware devices and OneKey App have served users since 2020.",
+        "product_id": null,
+        "published_at": "2025-12-15",
+        "publisher": "OneKey",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "OneKey fundamentals",
+        "url": "https://help.onekey.so/en/articles/11461079-onekey-fundamentals"
+      },
+      {
+        "accessed_at": "2026-08-19",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000037",
+        "event_id": null,
+        "id": "wlr_src_000220",
+        "is_primary": true,
+        "notes": "Current first-party product page establishes OneKey Pro as an active hardware-wallet product.",
+        "product_id": "wlr_prod_000086",
+        "published_at": null,
+        "publisher": "OneKey",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "OneKey Pro Hardware Wallet",
+        "url": "https://onekey.so/products/onekey-pro-hardware-wallet"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000037",
+  "identity": {
+    "aliases": [],
+    "name": "OneKey"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/wallets/onekey.json",
+    "relationship_boundary": "wallet-to-product links are preserved as native product_ids but are not emitted as typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_ent_000037",
+    "native_record_type": "wlr.wallet-record.v1",
+    "slug": "onekey"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/onekey/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/wallet--onekey.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/wallets/onekey.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-19"
+  }
+}

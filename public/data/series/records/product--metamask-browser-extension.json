@@ -1,0 +1,241 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_year": null,
+      "parent_entity": {
+        "canonical_name": "MetaMask",
+        "id": "wlr_ent_000004",
+        "slug": "metamask",
+        "status": "active",
+        "wallet_type": "software"
+      },
+      "predecessor_product_id": null,
+      "product_type": "browser_extension",
+      "sales_status": "not_applicable",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "supported"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000019"
+        ],
+        "confidence": "high",
+        "description": "MetaMask shipped its first public browser-wallet version.",
+        "entity_id": "wlr_ent_000004",
+        "event_date": "2016-07-14",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000021",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000019",
+        "title": "First MetaMask version shipped"
+      },
+      {
+        "affected_components": [
+          "extension_ui"
+        ],
+        "affected_product_ids": [
+          "wlr_prod_000019"
+        ],
+        "affected_version_rules": [
+          {
+            "product_ids": [
+              "wlr_prod_000019"
+            ],
+            "range": "<10.14.6",
+            "track": "extension"
+          }
+        ],
+        "confidence": "high",
+        "description": "MetaMask reported a critical Extension-only clickjacking vulnerability that could render the wallet UI as a hidden layer over a malicious site and trick users into revealing private data or sending crypto-assets. MetaMask awarded the reporting team a $120,000 bounty and stated that Extension 10.14.6 and later were protected.",
+        "entity_id": "wlr_ent_000004",
+        "event_date": "2022-06",
+        "event_date_basis": "disclosure",
+        "event_status_effect": "none",
+        "event_type": "vulnerability_disclosed",
+        "fixed_versions": [
+          {
+            "product_ids": [
+              "wlr_prod_000019"
+            ],
+            "track": "extension",
+            "version": "10.14.6"
+          }
+        ],
+        "funds_affected": "unknown",
+        "id": "wlr_ev_000116",
+        "impact_level": "critical",
+        "is_major_event": true,
+        "notes": "Month precision is intentional: the reviewed first-party source establishes a June 2022 disclosure but not one defensible exact public disclosure day. MetaMask reported no known exploitation before the patch, but WLR does not convert that into a stronger funds_affected=no claim.",
+        "product_id": "wlr_prod_000019",
+        "security_scope": "browser_extension",
+        "title": "MetaMask Extension critical clickjacking vulnerability disclosed",
+        "user_actions_required": [
+          "update"
+        ]
+      },
+      {
+        "affected_components": [
+          "secret_recovery_phrase_import",
+          "browser_session_restore"
+        ],
+        "affected_product_ids": [
+          "wlr_prod_000019"
+        ],
+        "affected_version_rules": [
+          {
+            "product_ids": [
+              "wlr_prod_000019"
+            ],
+            "range": "<10.11.3",
+            "track": "extension"
+          }
+        ],
+        "confidence": "high",
+        "cve_ids": [
+          "CVE-2022-32969"
+        ],
+        "description": "Halborn disclosed CVE-2022-32969, known as Demonic, in which browser session-restore behavior could cache an imported Secret Recovery Phrase to disk in plaintext under specified conditions. MetaMask Extension versions before 10.11.3 were affected; MetaMask implemented mitigations in 10.11.3 and later, and MetaMask Mobile was not affected.",
+        "entity_id": "wlr_ent_000004",
+        "event_date": "2022-06-15",
+        "event_date_basis": "disclosure",
+        "event_status_effect": "none",
+        "event_type": "vulnerability_disclosed",
+        "fixed_versions": [
+          {
+            "product_ids": [
+              "wlr_prod_000019"
+            ],
+            "track": "extension",
+            "version": "10.11.3"
+          }
+        ],
+        "funds_affected": "unknown",
+        "id": "wlr_ev_000117",
+        "impact_level": "medium",
+        "is_major_event": true,
+        "notes": "Halborn's 2022-06-15 coordinated public disclosure supplies the event date. NVD rates CVE-2022-32969 at CVSS 3.1 5.9 MEDIUM and records MetaMask versions before 10.11.3 as affected. First-party MetaMask reporting explicitly excludes MetaMask Mobile. No confirmed funds-loss statement is established, so funds_affected remains unknown.",
+        "product_id": "wlr_prod_000019",
+        "security_scope": "browser_extension",
+        "title": "Demonic vulnerability exposed MetaMask Extension recovery phrases on disk",
+        "user_actions_required": [
+          "update"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000004",
+        "event_id": "wlr_ev_000021",
+        "id": "wlr_src_000026",
+        "is_primary": true,
+        "notes": "MetaMask states the first version shipped on July 14, 2016.",
+        "product_id": "wlr_prod_000019",
+        "published_at": "2026-07-14",
+        "publisher": "MetaMask",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Ten Years After the First Commit",
+        "url": "https://metamask.io/news/ten-years-after-the-first-commit"
+      },
+      {
+        "accessed_at": "2026-08-18",
+        "claim_scope": "vulnerability",
+        "entity_id": "wlr_ent_000004",
+        "event_id": null,
+        "event_ids": [
+          "wlr_ev_000116",
+          "wlr_ev_000117"
+        ],
+        "id": "wlr_src_000189",
+        "is_primary": true,
+        "notes": "First-party MetaMask security report. Supports the Extension-only critical clickjacking vulnerability, protected version 10.14.6+, the Demonic disk-caching issue, mitigation in 10.11.3+, and explicit exclusion of MetaMask Mobile from Demonic.",
+        "product_id": "wlr_prod_000019",
+        "published_at": "2022-06-30",
+        "publisher": "MetaMask",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "MetaMask Security Monthly: June 2022",
+        "url": "https://metamask.io/ru/news/metamask-security-monthly-june-2022"
+      },
+      {
+        "accessed_at": "2026-08-18",
+        "claim_scope": "vulnerability",
+        "entity_id": "wlr_ent_000004",
+        "event_id": "wlr_ev_000117",
+        "id": "wlr_src_000190",
+        "is_primary": true,
+        "notes": "Primary researcher disclosure published 2022-06-15 after coordinated mitigation work. Describes plaintext Secret Recovery Phrase persistence through browser session-restore behavior and the attacker's remote/physical access path.",
+        "product_id": "wlr_prod_000019",
+        "published_at": "2022-06-15",
+        "publisher": "Halborn",
+        "reliability": "high",
+        "source_type": "security_research",
+        "title": "Halborn MetaMask Demonic Vulnerability Discovery",
+        "url": "https://www.halborn.com/disclosures/demonic-vulnerability"
+      },
+      {
+        "accessed_at": "2026-08-18",
+        "claim_scope": "affected_versions",
+        "entity_id": "wlr_ent_000004",
+        "event_id": "wlr_ev_000117",
+        "id": "wlr_src_000191",
+        "is_primary": false,
+        "notes": "NVD enrichment records CVSS 3.1 score 5.9 MEDIUM and MetaMask versions up to but excluding 10.11.3 as affected, with the MetaMask 10.11.2-to-10.11.3 comparison referenced as a patch boundary.",
+        "product_id": "wlr_prod_000019",
+        "published_at": "2022-06-29",
+        "publisher": "NIST National Vulnerability Database",
+        "reliability": "high",
+        "source_type": "cve",
+        "title": "CVE-2022-32969 Detail",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-32969"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000019",
+  "identity": {
+    "aliases": [
+      "MetaMask Extension"
+    ]
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/metamask-browser-extension.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000019",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "metamask-browser-extension"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/metamask/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--metamask-browser-extension.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/metamask-browser-extension.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-14"
+  }
+}

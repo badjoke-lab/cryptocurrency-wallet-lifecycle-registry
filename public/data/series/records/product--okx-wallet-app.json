@@ -1,0 +1,78 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_year": null,
+      "parent_entity": {
+        "canonical_name": "OKX Wallet",
+        "id": "wlr_ent_000028",
+        "slug": "okx-wallet",
+        "status": "active",
+        "wallet_type": "software"
+      },
+      "predecessor_product_id": null,
+      "product_type": "mobile_app",
+      "sales_status": "not_applicable",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "unknown"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": []
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-19",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000028",
+        "event_id": null,
+        "id": "wlr_src_000201",
+        "is_primary": true,
+        "notes": "First-party announcement states that the standalone OKX Wallet App was available on the App Store and Google Play on 2025-04-16.",
+        "product_id": "wlr_prod_000077",
+        "published_at": "2025-04-16",
+        "publisher": "OKX",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Announcing the new OKX Wallet app",
+        "url": "https://www.okx.com/en-us/learn/okx-new-wallet-app"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000077",
+  "identity": {
+    "aliases": []
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/okx-wallet-app.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000077",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "okx-wallet-app"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/okx-wallet/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--okx-wallet-app.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/okx-wallet-app.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-19"
+  }
+}

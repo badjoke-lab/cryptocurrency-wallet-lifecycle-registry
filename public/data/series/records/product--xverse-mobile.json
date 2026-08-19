@@ -1,0 +1,155 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_year": null,
+      "parent_entity": {
+        "canonical_name": "Xverse",
+        "id": "wlr_ent_000020",
+        "slug": "xverse",
+        "status": "active",
+        "wallet_type": "software"
+      },
+      "predecessor_product_id": null,
+      "product_type": "mobile_app",
+      "sales_status": "not_applicable",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "supported"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000059"
+        ],
+        "confidence": "high",
+        "description": "Contemporaneous audit and mobile-store distribution evidence establish the Xverse Wallet mobile product during 2021.",
+        "entity_id": "wlr_ent_000020",
+        "event_date": "2021",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000115",
+        "is_major_event": true,
+        "notes": "Year precision only. The reviewed evidence safely establishes public mobile availability during 2021 but does not justify one exact initial store-release day.",
+        "product_id": "wlr_prod_000059",
+        "title": "Xverse Mobile publicly available during 2021"
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "status",
+        "entity_id": "wlr_ent_000020",
+        "event_id": null,
+        "event_ids": [],
+        "id": "wlr_src_000086",
+        "is_primary": true,
+        "notes": "Current first-party download page separates the browser extension from iOS/Android mobile apps.",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000059",
+          "wlr_prod_000060"
+        ],
+        "published_at": null,
+        "publisher": "Xverse",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Download Xverse Wallet for Android, iOS & Chrome",
+        "url": "https://www.xverse.app/download"
+      },
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "product_lineage",
+        "entity_id": "wlr_ent_000020",
+        "event_id": null,
+        "event_ids": [],
+        "id": "wlr_src_000089",
+        "is_primary": true,
+        "notes": "First-party historical source describing Xverse as a non-custodial iOS/Android mobile wallet before the desktop extension launch.",
+        "product_id": "wlr_prod_000059",
+        "product_ids": [
+          "wlr_prod_000059"
+        ],
+        "published_at": "2022-04-05",
+        "publisher": "Xverse",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Introducing Xverse: the Gateway to the Stacks Ecosystem",
+        "url": "https://www.xverse.app/blog/the-gateway-to-the-stacks-ecosystem-xverse-mobile-wallet"
+      },
+      {
+        "accessed_at": "2026-08-18",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000020",
+        "event_id": "wlr_ev_000115",
+        "id": "wlr_src_000182",
+        "is_primary": true,
+        "notes": "Contemporaneous commissioned audit identifying Xverse Wallet as Secret Key Labs’ mobile wallet application. Establishes the 2021 mobile product lineage; distribution evidence is used separately to establish public availability during the year.",
+        "product_id": "wlr_prod_000059",
+        "published_at": "2021-08-27",
+        "publisher": "Least Authority",
+        "reliability": "high",
+        "source_type": "audit_report",
+        "title": "Secret Key Labs – Xverse Wallet",
+        "url": "https://leastauthority.com/blog/audit-of-secret-key-labs-xverse-wallet/"
+      },
+      {
+        "accessed_at": "2026-08-18",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000020",
+        "event_id": "wlr_ev_000115",
+        "id": "wlr_src_000183",
+        "is_primary": true,
+        "notes": "Primary distribution-platform listing for the Secret Key Labs Xverse app includes public user review activity dated 2021-11-21. Used only to establish public availability during 2021, not to claim that date as the original release date.",
+        "product_id": "wlr_prod_000059",
+        "published_at": "2021-11-21",
+        "publisher": "Apple App Store / Secret Key Labs",
+        "reliability": "high",
+        "source_type": "database_reference",
+        "title": "Xverse: Bitcoin Crypto Wallet — Apple App Store",
+        "url": "https://apps.apple.com/us/app/xverse-bitcoin-crypto-wallet/id1552272513"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000059",
+  "identity": {
+    "aliases": [
+      "Xverse Mobile Wallet"
+    ]
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/xverse-mobile.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000059",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "xverse-mobile"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/xverse/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--xverse-mobile.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/xverse-mobile.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-18"
+  }
+}

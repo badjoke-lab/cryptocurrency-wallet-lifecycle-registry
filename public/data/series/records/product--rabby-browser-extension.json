@@ -1,0 +1,239 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_year": null,
+      "parent_entity": {
+        "canonical_name": "Rabby",
+        "id": "wlr_ent_000018",
+        "slug": "rabby",
+        "status": "active",
+        "wallet_type": "software"
+      },
+      "predecessor_product_id": null,
+      "product_type": "browser_extension",
+      "sales_status": "not_applicable",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "supported"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000054"
+        ],
+        "confidence": "high",
+        "description": "The Rabby/DeBank team publicly introduced Rabby as a browser-extension wallet for DeFi users on July 26, 2021.",
+        "entity_id": "wlr_ent_000018",
+        "event_date": "2021-07-26",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000069",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000054",
+        "title": "Rabby browser-extension wallet introduced"
+      },
+      {
+        "affected_components": [
+          "Rabby Swap smart contract"
+        ],
+        "affected_product_ids": [
+          "wlr_prod_000054"
+        ],
+        "affected_users_text": "Users who had used Rabby Swap and retained approvals to the exploited contracts; Rabby stated that users who had not used Swap were unaffected.",
+        "confidence": "high",
+        "description": "Rabby reported that the Rabby Swap smart contract suffered a hack attack and that stolen funds were being tracked. Users who had used Swap were instructed to revoke existing approvals across chains, while Rabby stated that users who had not used Swap were unaffected.",
+        "disclosed_at": "2022-10-11",
+        "entity_id": "wlr_ent_000018",
+        "event_date": "2022-10-11",
+        "event_date_basis": "occurrence",
+        "event_status_effect": "none",
+        "event_type": "exploit",
+        "funds_affected": "yes",
+        "id": "wlr_ev_000080",
+        "impact_level": "high",
+        "is_major_event": true,
+        "notes": "This is modeled as a feature-level smart-contract exploit affecting the then-current Rabby Browser Extension product, not as a browser key-storage compromise. WLR does not canonicalize an exact loss amount, affected-version range, or impact to later Mobile/Desktop products from these sources.",
+        "product_id": "wlr_prod_000054",
+        "security_scope": "smart_contract",
+        "title": "Rabby Swap smart contract exploited",
+        "user_actions_required": [
+          "revoke_permissions"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "status",
+        "entity_id": "wlr_ent_000018",
+        "event_id": null,
+        "event_ids": [],
+        "id": "wlr_src_000079",
+        "is_primary": true,
+        "notes": "Current first-party distribution page lists Extension, Mobile, and Desktop products.",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000054",
+          "wlr_prod_000055",
+          "wlr_prod_000056"
+        ],
+        "published_at": null,
+        "publisher": "Rabby",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Rabby Wallet",
+        "url": "https://rabby.io/"
+      },
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000018",
+        "event_id": null,
+        "event_ids": [],
+        "id": "wlr_src_000080",
+        "is_primary": true,
+        "notes": "Official open-source browser extension repository.",
+        "product_id": "wlr_prod_000054",
+        "product_ids": [
+          "wlr_prod_000054"
+        ],
+        "published_at": null,
+        "publisher": "RabbyHub",
+        "reliability": "high",
+        "source_type": "source_code",
+        "title": "Rabby Browser Extension Source",
+        "url": "https://github.com/RabbyHub/Rabby"
+      },
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000018",
+        "event_id": "wlr_ev_000069",
+        "event_ids": [
+          "wlr_ev_000069"
+        ],
+        "id": "wlr_src_000115",
+        "is_primary": true,
+        "notes": "First-party Rabby publication introducing the new browser-extension wallet on July 26, 2021.",
+        "product_id": "wlr_prod_000054",
+        "product_ids": [
+          "wlr_prod_000054"
+        ],
+        "published_at": "2021-07-26",
+        "publisher": "Rabby Wallet / DeBank",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Rabby Release Announcement",
+        "url": "https://medium.com/@rabby_io/rabby-release-announcement-564406988e2b"
+      },
+      {
+        "accessed_at": "2026-08-17",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000018",
+        "event_id": "wlr_ev_000080",
+        "event_ids": [
+          "wlr_ev_000080"
+        ],
+        "id": "wlr_src_000131",
+        "is_primary": true,
+        "notes": "Primary Rabby incident statement reporting the Swap smart-contract hack, stolen-fund tracking, and the distinction between users who had and had not used Swap.",
+        "product_id": "wlr_prod_000054",
+        "product_ids": [
+          "wlr_prod_000054"
+        ],
+        "published_at": "2022-10-11",
+        "publisher": "Rabby Wallet",
+        "reliability": "high",
+        "source_type": "official_social",
+        "title": "Rabby Swap smart contract has suffered from a hack attack",
+        "url": "https://x.com/Rabby_io/status/1579877793642737665"
+      },
+      {
+        "accessed_at": "2026-08-17",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000018",
+        "event_id": "wlr_ev_000080",
+        "event_ids": [
+          "wlr_ev_000080"
+        ],
+        "id": "wlr_src_000132",
+        "is_primary": true,
+        "notes": "Primary Rabby follow-up listing exploited contract addresses across chains and instructing users to revoke approvals.",
+        "product_id": "wlr_prod_000054",
+        "product_ids": [
+          "wlr_prod_000054"
+        ],
+        "published_at": "2022-10-11",
+        "publisher": "Rabby Wallet",
+        "reliability": "high",
+        "source_type": "official_social",
+        "title": "Rabby Swap exploited contract approval revocation notice",
+        "url": "https://x.com/Rabby_io/status/1579819525494960128"
+      },
+      {
+        "accessed_at": "2026-08-17",
+        "claim_scope": "funds_affected",
+        "entity_id": "wlr_ent_000018",
+        "event_id": "wlr_ev_000080",
+        "event_ids": [
+          "wlr_ev_000080"
+        ],
+        "id": "wlr_src_000133",
+        "is_primary": false,
+        "notes": "Contemporary reporting corroborating the Rabby Swap contract exploit, user-fund draining reports, and Rabby approval-revocation guidance.",
+        "product_id": "wlr_prod_000054",
+        "product_ids": [
+          "wlr_prod_000054"
+        ],
+        "published_at": "2022-10-11",
+        "publisher": "The Block",
+        "reliability": "high",
+        "source_type": "news_article",
+        "title": "Rabby Wallet exploit prompts users to revoke access",
+        "url": "https://www.theblock.co/post/176284/rabby-wallet-exploit-prompts-users-to-revoke-access"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000054",
+  "identity": {
+    "aliases": [
+      "Rabby Extension"
+    ]
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/rabby-browser-extension.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000054",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "rabby-browser-extension"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/rabby/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--rabby-browser-extension.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/rabby-browser-extension.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-17"
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_year": null,
+      "parent_entity": {
+        "canonical_name": "Ledger",
+        "id": "wlr_ent_000002",
+        "slug": "ledger",
+        "status": "active",
+        "wallet_type": "hardware"
+      },
+      "predecessor_product_id": null,
+      "product_type": "hardware_device",
+      "sales_status": "end_of_sale",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "supported"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000007"
+        ],
+        "confidence": "high",
+        "description": "Ledger launched the Nano S hardware signer in 2016.",
+        "entity_id": "wlr_ent_000002",
+        "event_date": "2016",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000011",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000007",
+        "title": "Ledger Nano S launched"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000007"
+        ],
+        "confidence": "high",
+        "description": "Ledger announced retirement of Nano S production and replacement by Nano S Plus while stating existing Nano S support and maintenance would continue.",
+        "entity_id": "wlr_ent_000002",
+        "event_date": "2022-06-22",
+        "event_date_basis": "announcement",
+        "event_status_effect": "none",
+        "event_type": "sales_discontinued",
+        "id": "wlr_ev_000014",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000007",
+        "title": "Ledger announced Nano S retirement from production"
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000002",
+        "event_id": "wlr_ev_000011",
+        "id": "wlr_src_000014",
+        "is_primary": true,
+        "notes": "Current Ledger retrospective confirms Nano S launched in 2016 and gives Nano lineage context.",
+        "product_id": "wlr_prod_000007",
+        "published_at": "2025-10-23",
+        "publisher": "Ledger",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Introducing Ledger Nano Gen5",
+        "url": "https://www.ledger.com/academy/topics/ledgersolutions/introducing-ledger-nano-gen5"
+      },
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "discontinuation",
+        "entity_id": "wlr_ent_000002",
+        "event_id": "wlr_ev_000014",
+        "id": "wlr_src_000018",
+        "is_primary": true,
+        "notes": "Confirms production retirement while support and maintenance continue.",
+        "product_id": "wlr_prod_000007",
+        "published_at": "2022-06-22",
+        "publisher": "Ledger",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Ledger to Unveil Broad Slate of Groundbreaking Web3 Products",
+        "url": "https://www.ledger.com/blog/our-security-products-educational-announcements-at-ledger-op3n-during-nft.nyc"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000007",
+  "identity": {
+    "aliases": []
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/ledger-nano-s.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000007",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "ledger-nano-s"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/ledger/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--ledger-nano-s.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/ledger-nano-s.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-14"
+  }
+}

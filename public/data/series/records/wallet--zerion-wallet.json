@@ -1,0 +1,92 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "current_vendor": null,
+      "custody_model": "self_custody",
+      "open_source_status": null,
+      "product_ids": [
+        "wlr_prod_000097"
+      ],
+      "status": "active",
+      "wallet_type": "software",
+      "website_status": null
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": []
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-19",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000048",
+        "event_id": null,
+        "id": "wlr_src_000241",
+        "is_primary": true,
+        "notes": "First-party announcement launches Zerion Wallet on 2022-05-26 and explicitly describes it as entirely self-custodial.",
+        "product_id": null,
+        "published_at": "2022-05-26",
+        "publisher": "Zerion",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Announcing the Zerion Wallet",
+        "url": "https://zerion.io/blog/announcing-the-zerion-smart-wallet/"
+      },
+      {
+        "accessed_at": "2026-08-19",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000048",
+        "event_id": null,
+        "id": "wlr_src_000242",
+        "is_primary": true,
+        "notes": "Current first-party installation guide separately documents the Zerion mobile app for iOS/Android and Zerion browser extension, supporting WLR's decision to keep the mobile product boundary separate.",
+        "product_id": "wlr_prod_000097",
+        "published_at": "2025-10-07",
+        "publisher": "Zerion",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Install Zerion",
+        "url": "https://help.zerion.io/en/articles/11326422-install-zerion"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000048",
+  "identity": {
+    "aliases": [
+      "Zerion"
+    ],
+    "name": "Zerion Wallet"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/wallets/zerion-wallet.json",
+    "relationship_boundary": "wallet-to-product links are preserved as native product_ids but are not emitted as typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_ent_000048",
+    "native_record_type": "wlr.wallet-record.v1",
+    "slug": "zerion-wallet"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/zerion-wallet/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/wallet--zerion-wallet.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/wallets/zerion-wallet.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-19"
+  }
+}

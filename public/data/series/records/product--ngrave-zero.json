@@ -1,0 +1,78 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_year": null,
+      "parent_entity": {
+        "canonical_name": "NGRAVE",
+        "id": "wlr_ent_000040",
+        "slug": "ngrave",
+        "status": "active",
+        "wallet_type": "hardware"
+      },
+      "predecessor_product_id": null,
+      "product_type": "hardware_device",
+      "sales_status": "on_sale",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "unknown"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": []
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-19",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000040",
+        "event_id": null,
+        "id": "wlr_src_000226",
+        "is_primary": true,
+        "notes": "Current first-party product page establishes the active NGRAVE ZERO air-gapped hardware-wallet boundary.",
+        "product_id": "wlr_prod_000089",
+        "published_at": null,
+        "publisher": "NGRAVE",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "NGRAVE ZERO",
+        "url": "https://ngrave.io/en/zero"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000089",
+  "identity": {
+    "aliases": []
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/ngrave-zero.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000089",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "ngrave-zero"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/ngrave/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--ngrave-zero.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/ngrave-zero.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-19"
+  }
+}

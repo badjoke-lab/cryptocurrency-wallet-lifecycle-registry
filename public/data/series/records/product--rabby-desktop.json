@@ -1,0 +1,139 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_year": null,
+      "parent_entity": {
+        "canonical_name": "Rabby",
+        "id": "wlr_ent_000018",
+        "slug": "rabby",
+        "status": "active",
+        "wallet_type": "software"
+      },
+      "predecessor_product_id": null,
+      "product_type": "desktop_app",
+      "sales_status": "not_applicable",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "supported"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000056"
+        ],
+        "confidence": "high",
+        "description": "Rabby's official desktop source repository records desktop release packaging and a v0.1.1 release during 2022, establishing the desktop product as released by that year.",
+        "entity_id": "wlr_ent_000018",
+        "event_date": "2022",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000104",
+        "is_major_event": true,
+        "notes": "Year precision only. The reviewed repository does not surface a v0.1.0 release commit, so WLR does not infer an exact initial launch day from the 2022-09-30 v0.1.1 commit.",
+        "product_id": "wlr_prod_000056",
+        "title": "Rabby Desktop released in 2022"
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "status",
+        "entity_id": "wlr_ent_000018",
+        "event_id": null,
+        "event_ids": [],
+        "id": "wlr_src_000079",
+        "is_primary": true,
+        "notes": "Current first-party distribution page lists Extension, Mobile, and Desktop products.",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000054",
+          "wlr_prod_000055",
+          "wlr_prod_000056"
+        ],
+        "published_at": null,
+        "publisher": "Rabby",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Rabby Wallet",
+        "url": "https://rabby.io/"
+      },
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000018",
+        "event_id": null,
+        "event_ids": [],
+        "id": "wlr_src_000081",
+        "is_primary": true,
+        "notes": "Official organization listing identifies rabby-mobile and RabbyDesktop as separate applications.",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000055",
+          "wlr_prod_000056"
+        ],
+        "published_at": null,
+        "publisher": "RabbyHub",
+        "reliability": "high",
+        "source_type": "source_code",
+        "title": "RabbyHub official repositories",
+        "url": "https://github.com/orgs/RabbyHub/repositories"
+      },
+      {
+        "accessed_at": "2026-08-18",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000018",
+        "event_id": "wlr_ev_000104",
+        "id": "wlr_src_000163",
+        "is_primary": true,
+        "notes": "Official Rabby Desktop source-repository release commit establishing that the desktop product was in release during 2022. WLR uses it to support year-level launch chronology, not as proof of the exact initial launch day.",
+        "product_id": "wlr_prod_000056",
+        "published_at": "2022-09-30",
+        "publisher": "RabbyHub",
+        "reliability": "high",
+        "source_type": "source_code",
+        "title": "Rabby Desktop Release v0.1.1",
+        "url": "https://github.com/RabbyHub/RabbyDesktop/commit/87c9f355475992cf7902b13900679fd50b3482e4"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000056",
+  "identity": {
+    "aliases": []
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/rabby-desktop.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000056",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "rabby-desktop"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/rabby/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--rabby-desktop.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/rabby-desktop.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-18"
+  }
+}

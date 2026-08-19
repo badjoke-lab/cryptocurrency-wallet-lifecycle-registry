@@ -1,0 +1,180 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_year": null,
+      "parent_entity": {
+        "canonical_name": "Foundation Passport",
+        "id": "wlr_ent_000017",
+        "slug": "foundation-passport",
+        "status": "active",
+        "wallet_type": "hardware"
+      },
+      "predecessor_product_id": null,
+      "product_type": "hardware_device",
+      "sales_status": "on_sale",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "supported"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000052"
+        ],
+        "confidence": "high",
+        "description": "Foundation first-party shipping history establishes that Passport Prime entered its shipping/release lineage during 2025 after the 2024 announcement and preorder period.",
+        "entity_id": "wlr_ent_000017",
+        "event_date": "2025",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000114",
+        "is_major_event": true,
+        "notes": "Year precision only. Foundation still described future Early Access shipping in May 2025 and later stated that Passport Prime was beginning to ship in October 2025; no exact first shipment day is asserted.",
+        "product_id": "wlr_prod_000052",
+        "title": "Passport Prime began shipping in 2025"
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "product_lineage",
+        "entity_id": "wlr_ent_000017",
+        "event_id": null,
+        "event_ids": [
+          "wlr_ev_000050",
+          "wlr_ev_000051"
+        ],
+        "id": "wlr_src_000074",
+        "is_primary": true,
+        "notes": "Primary history source for the 2020 first generation, Founder’s Edition, Batch 2/Core continuity, 2025 rename, Prime, and Envoy product family.",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000050",
+          "wlr_prod_000051",
+          "wlr_prod_000052",
+          "wlr_prod_000053"
+        ],
+        "published_at": "2025-03-17",
+        "publisher": "Foundation",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Passport is now Passport Core",
+        "url": "https://foundation.xyz/blog/passport-is-now-passport-core"
+      },
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "status",
+        "entity_id": "wlr_ent_000017",
+        "event_id": null,
+        "event_ids": [],
+        "id": "wlr_src_000076",
+        "is_primary": true,
+        "notes": "Current first-party product comparison for Passport Core and Passport Prime.",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000051",
+          "wlr_prod_000052"
+        ],
+        "published_at": null,
+        "publisher": "Foundation",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Compare Products",
+        "url": "https://foundation.xyz/compare-products/"
+      },
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "architecture",
+        "entity_id": "wlr_ent_000017",
+        "event_id": null,
+        "event_ids": [],
+        "id": "wlr_src_000077",
+        "is_primary": true,
+        "notes": "Describes Prime as an offline Bitcoin key-management device and Envoy as its companion app, while noting Envoy can hold keys for its own built-in hot wallet.",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000052",
+          "wlr_prod_000053"
+        ],
+        "published_at": "2025-11-11",
+        "publisher": "Foundation Devices, Inc.",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Passport Prime Terms of Use",
+        "url": "https://foundation.xyz/terms-prime/"
+      },
+      {
+        "accessed_at": "2026-08-18",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000017",
+        "event_id": "wlr_ev_000114",
+        "id": "wlr_src_000180",
+        "is_primary": true,
+        "notes": "First-party Foundation article stating that Passport Prime begins shipping. Used to establish the 2025 release/shipping year, not an exact first shipment day.",
+        "product_id": "wlr_prod_000052",
+        "published_at": "2025-10-16",
+        "publisher": "Foundation",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Passport Prime Security Audit",
+        "url": "https://foundation.xyz/2025/10/passport-prime-security-audit/"
+      },
+      {
+        "accessed_at": "2026-08-18",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000017",
+        "event_id": "wlr_ev_000114",
+        "id": "wlr_src_000181",
+        "is_primary": true,
+        "notes": "First-party Foundation customer shipping update stating that remaining components were still arriving and the 1,000 Early Access orders were expected to be assembled and shipped afterward. Used to avoid backdating the release to the 2024 announcement/preorder period.",
+        "product_id": "wlr_prod_000052",
+        "published_at": "2025-05-07",
+        "publisher": "Foundation",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Shipping Updates for Passport Prime and Core",
+        "url": "https://community.foundation.xyz/t/shipping-updates-for-passport-prime-and-core/426"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000052",
+  "identity": {
+    "aliases": []
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/passport-prime.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000052",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "passport-prime"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/foundation-passport/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--passport-prime.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/passport-prime.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-18"
+  }
+}

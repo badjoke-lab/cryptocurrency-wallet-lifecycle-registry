@@ -1,0 +1,403 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "current_vendor": null,
+      "custody_model": "self_custody",
+      "open_source_status": null,
+      "product_ids": [
+        "wlr_prod_000007",
+        "wlr_prod_000008",
+        "wlr_prod_000009",
+        "wlr_prod_000010",
+        "wlr_prod_000011",
+        "wlr_prod_000012",
+        "wlr_prod_000013"
+      ],
+      "status": "active",
+      "wallet_type": "hardware",
+      "website_status": null
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000007"
+        ],
+        "confidence": "high",
+        "description": "Ledger launched the Nano S hardware signer in 2016.",
+        "entity_id": "wlr_ent_000002",
+        "event_date": "2016",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000011",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000007",
+        "title": "Ledger Nano S launched"
+      },
+      {
+        "affected_data": [
+          "email_address",
+          "name",
+          "postal_address",
+          "phone_number",
+          "product_order_information"
+        ],
+        "affected_product_ids": [],
+        "affected_users_text": "More than 1 million email addresses and approximately 272,000 detailed customer records were later confirmed in the public dump.",
+        "confidence": "high",
+        "description": "Ledger discovered unauthorized access to its e-commerce and marketing database through a third-party API key; later publication of the stolen database exposed a much larger set of customer records.",
+        "disclosed_at": "2020-07-29",
+        "entity_id": "wlr_ent_000002",
+        "event_date": "2020-07-14",
+        "event_date_basis": "discovery",
+        "event_status_effect": "none",
+        "event_type": "customer_data_breach",
+        "funds_affected": "no",
+        "id": "wlr_ev_000012",
+        "impact_level": "high",
+        "is_major_event": true,
+        "notes": "Ledger stated the breach did not compromise Ledger hardware wallets, the companion application, or customer funds.",
+        "product_id": null,
+        "security_scope": "customer_data",
+        "third_party_name": "Third-party API / e-commerce infrastructure",
+        "title": "E-commerce and marketing database breach discovered",
+        "user_actions_required": [
+          "monitor"
+        ]
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000009"
+        ],
+        "confidence": "high",
+        "description": "Ledger made the Nano S Plus generally available.",
+        "entity_id": "wlr_ent_000002",
+        "event_date": "2022-04-05",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000013",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000009",
+        "title": "Ledger Nano S Plus became generally available"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000007"
+        ],
+        "confidence": "high",
+        "description": "Ledger announced retirement of Nano S production and replacement by Nano S Plus while stating existing Nano S support and maintenance would continue.",
+        "entity_id": "wlr_ent_000002",
+        "event_date": "2022-06-22",
+        "event_date_basis": "announcement",
+        "event_status_effect": "none",
+        "event_type": "sales_discontinued",
+        "id": "wlr_ev_000014",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000007",
+        "title": "Ledger announced Nano S retirement from production"
+      },
+      {
+        "affected_product_ids": [],
+        "affected_versions": [
+          "1.1.5",
+          "1.1.6",
+          "1.1.7"
+        ],
+        "confidence": "high",
+        "description": "A former employee phishing compromise enabled malicious Ledger Connect Kit packages to be published to NPM and dynamically loaded by some dApps, causing a small number of users to sign draining transactions.",
+        "entity_id": "wlr_ent_000002",
+        "event_date": "2023-12-14",
+        "event_date_basis": "occurrence",
+        "event_status_effect": "none",
+        "event_type": "supply_chain_compromise",
+        "funds_affected": "yes",
+        "id": "wlr_ev_000015",
+        "impact_level": "critical",
+        "is_major_event": true,
+        "notes": "Ledger stated the attacker did not gain access to Ledger infrastructure, source repositories, or the affected dApps themselves.",
+        "product_id": null,
+        "security_scope": "supply_chain",
+        "title": "Malicious Ledger Connect Kit versions published through compromised NPM account",
+        "user_actions_required": [
+          "monitor"
+        ]
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000010"
+        ],
+        "confidence": "high",
+        "description": "Ledger began shipping Ledger Stax to pre-order customers.",
+        "entity_id": "wlr_ent_000002",
+        "event_date": "2024-05-28",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000016",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000010",
+        "title": "Ledger Stax shipping began"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000012"
+        ],
+        "confidence": "high",
+        "description": "Ledger launched Nano Gen5 at Ledger Op3n 2025.",
+        "entity_id": "wlr_ent_000002",
+        "event_date": "2025-10-23",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000017",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000012",
+        "title": "Ledger Nano Gen5 launched"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000013"
+        ],
+        "confidence": "high",
+        "description": "Ledger transitioned the companion application branding from Ledger Live to Ledger Wallet.",
+        "entity_id": "wlr_ent_000002",
+        "event_date": "2025-10",
+        "event_date_basis": "announcement",
+        "event_status_effect": "none",
+        "event_type": "rebranded",
+        "id": "wlr_ev_000018",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000013",
+        "title": "Ledger Live renamed Ledger Wallet"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000013"
+        ],
+        "confidence": "high",
+        "description": "Ledger launched Ledger Live as a new all-in-one companion application for Ledger devices on Windows, Mac, and Linux. The same product lineage was later renamed Ledger Wallet in 2025.",
+        "entity_id": "wlr_ent_000002",
+        "event_date": "2018-07-09",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000084",
+        "is_major_event": true,
+        "notes": "This launch event belongs to the existing Ledger Wallet product lineage, which retains Ledger Live as a historical alias. The later 2025 rebrand event remains separate.",
+        "product_id": "wlr_prod_000013",
+        "title": "Ledger Live launched as Ledger companion application"
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000002",
+        "event_id": "wlr_ev_000011",
+        "id": "wlr_src_000014",
+        "is_primary": true,
+        "notes": "Current Ledger retrospective confirms Nano S launched in 2016 and gives Nano lineage context.",
+        "product_id": "wlr_prod_000007",
+        "published_at": "2025-10-23",
+        "publisher": "Ledger",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Introducing Ledger Nano Gen5",
+        "url": "https://www.ledger.com/academy/topics/ledgersolutions/introducing-ledger-nano-gen5"
+      },
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "customer_data",
+        "entity_id": "wlr_ent_000002",
+        "event_id": "wlr_ev_000012",
+        "id": "wlr_src_000015",
+        "is_primary": true,
+        "notes": "Primary update on the customer database leak and separation from hardware/app/funds.",
+        "product_id": null,
+        "published_at": "2020-12-21",
+        "publisher": "Ledger",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Message by LEDGER’s CEO – Update on the July data breach. Despite the leak, your crypto assets are safe.",
+        "url": "https://www.ledger.com/message-ledgers-ceo-data-leak"
+      },
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "customer_data",
+        "entity_id": "wlr_ent_000002",
+        "event_id": "wlr_ev_000012",
+        "id": "wlr_src_000016",
+        "is_primary": true,
+        "notes": "Primary recap of discovery, disclosure, customer-record counts and Shopify-related exposure.",
+        "product_id": null,
+        "published_at": "2021-01-13",
+        "publisher": "Ledger",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Update: Efforts to Protect Your Data and Prosecute The Scammers",
+        "url": "https://www.ledger.com/blog/update-efforts-to-protect-your-data-and-prosecute-the-scammers"
+      },
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000002",
+        "event_id": "wlr_ev_000013",
+        "id": "wlr_src_000017",
+        "is_primary": true,
+        "notes": "",
+        "product_id": "wlr_prod_000009",
+        "published_at": "2022-04-05",
+        "publisher": "Ledger",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Explore Web3 Securely: The Ledger Nano S Plus Is Available",
+        "url": "https://www.ledger.com/blog-explore-web3-securely-the-ledger-nano-s-plus-is-available"
+      },
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "discontinuation",
+        "entity_id": "wlr_ent_000002",
+        "event_id": "wlr_ev_000014",
+        "id": "wlr_src_000018",
+        "is_primary": true,
+        "notes": "Confirms production retirement while support and maintenance continue.",
+        "product_id": "wlr_prod_000007",
+        "published_at": "2022-06-22",
+        "publisher": "Ledger",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Ledger to Unveil Broad Slate of Groundbreaking Web3 Products",
+        "url": "https://www.ledger.com/blog/our-security-products-educational-announcements-at-ledger-op3n-during-nft.nyc"
+      },
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000002",
+        "event_id": "wlr_ev_000015",
+        "id": "wlr_src_000019",
+        "is_primary": true,
+        "notes": "",
+        "product_id": null,
+        "published_at": "2023-12-20",
+        "publisher": "Ledger",
+        "reliability": "high",
+        "source_type": "official_security_advisory",
+        "title": "Security Incident Report",
+        "url": "https://www.ledger.com/blog/security-incident-report"
+      },
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000002",
+        "event_id": "wlr_ev_000016",
+        "id": "wlr_src_000020",
+        "is_primary": true,
+        "notes": "",
+        "product_id": "wlr_prod_000010",
+        "published_at": "2024-05-28",
+        "publisher": "Ledger",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Ledger Stax Now Shipping: A Message From Ledger’s CEO Pascal Gauthier",
+        "url": "https://www.ledger.com/blog-ledger-stax-now-shipping-a-message-from-ledgers-ceo-pascal-gauthier"
+      },
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000002",
+        "event_id": "wlr_ev_000017",
+        "id": "wlr_src_000021",
+        "is_primary": true,
+        "notes": "",
+        "product_id": "wlr_prod_000012",
+        "published_at": "2025-10-23",
+        "publisher": "Ledger",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Introducing Ledger Nano Gen5",
+        "url": "https://www.ledger.com/academy/topics/ledgersolutions/introducing-ledger-nano-gen5"
+      },
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "rebrand",
+        "entity_id": "wlr_ent_000002",
+        "event_id": "wlr_ev_000018",
+        "id": "wlr_src_000022",
+        "is_primary": true,
+        "notes": "Current official app is Ledger Wallet; current listings describe it as formerly Ledger Live.",
+        "product_id": "wlr_prod_000013",
+        "published_at": null,
+        "publisher": "Ledger",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Ledger Wallet official download page",
+        "url": "https://www.ledger.com/start"
+      },
+      {
+        "accessed_at": "2026-08-17",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000002",
+        "event_id": "wlr_ev_000084",
+        "event_ids": [
+          "wlr_ev_000084"
+        ],
+        "id": "wlr_src_000140",
+        "is_primary": true,
+        "notes": "First-party Ledger launch announcement explicitly introducing Ledger Live as the new all-in-one companion application.",
+        "product_id": "wlr_prod_000013",
+        "product_ids": [
+          "wlr_prod_000013"
+        ],
+        "published_at": "2018-07-09",
+        "publisher": "Ledger",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Ledger launches Ledger Live, the all-in-one companion app to your Ledger device",
+        "url": "https://www.ledger.com/ledger-launches-ledger-live-the-all-in-one-companion-app-to-your-ledger-device"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000002",
+  "identity": {
+    "aliases": [
+      "Ledger Wallet"
+    ],
+    "name": "Ledger"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/wallets/ledger.json",
+    "relationship_boundary": "wallet-to-product links are preserved as native product_ids but are not emitted as typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_ent_000002",
+    "native_record_type": "wlr.wallet-record.v1",
+    "slug": "ledger"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/ledger/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/wallet--ledger.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/wallets/ledger.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-14"
+  }
+}

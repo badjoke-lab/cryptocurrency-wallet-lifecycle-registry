@@ -1,0 +1,157 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_year": null,
+      "parent_entity": {
+        "canonical_name": "BitBox",
+        "id": "wlr_ent_000007",
+        "slug": "bitbox",
+        "status": "active",
+        "wallet_type": "hardware"
+      },
+      "predecessor_product_id": null,
+      "product_type": "hardware_device",
+      "sales_status": "end_of_sale",
+      "status": "discontinued",
+      "successor_product_id": "wlr_prod_000029",
+      "support_status": "ended"
+    },
+    "status": "discontinued"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000028"
+        ],
+        "confidence": "high",
+        "description": "The first BitBox01 hardware wallet, later also known as Digital Bitbox, came to market.",
+        "entity_id": "wlr_ent_000007",
+        "event_date": "2016-03-25",
+        "event_date_basis": "release",
+        "event_type": "product_released",
+        "id": "wlr_ev_000029",
+        "product_id": "wlr_prod_000028",
+        "title": "BitBox01 came to market"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000028"
+        ],
+        "confidence": "high",
+        "description": "Shift Cryptosecurity announced the BitBox01 end-of-sale and EOL process and encouraged migration to BitBox02.",
+        "entity_id": "wlr_ent_000007",
+        "event_date": "2019-11-12",
+        "event_date_basis": "announcement",
+        "event_status_effect": "deprecated",
+        "event_type": "deprecation_announced",
+        "id": "wlr_ev_000031",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000028",
+        "title": "BitBox01 end-of-sale and end-of-life announced"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000028"
+        ],
+        "confidence": "medium",
+        "description": "BitBox later described the BitBox01 as end-of-life, meaning it no longer received updates while some functionality could continue temporarily.",
+        "entity_id": "wlr_ent_000007",
+        "event_date": "2020",
+        "event_date_basis": "approximate",
+        "event_status_effect": "discontinued",
+        "event_type": "discontinued",
+        "id": "wlr_ev_000032",
+        "is_major_event": true,
+        "notes": "Year-level lifecycle anchor; later 2023 guidance confirms the device had been EOL for multiple years.",
+        "product_id": "wlr_prod_000028",
+        "title": "BitBox01 entered end-of-life"
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "product_lineage",
+        "entity_id": "wlr_ent_000007",
+        "event_id": null,
+        "event_ids": [
+          "wlr_ev_000029",
+          "wlr_ev_000031"
+        ],
+        "id": "wlr_src_000036",
+        "is_primary": true,
+        "notes": "Establishes March 25, 2016 launch and the EOL announcement.",
+        "product_id": "wlr_prod_000028",
+        "product_ids": [
+          "wlr_prod_000028"
+        ],
+        "published_at": "2019-11-12",
+        "publisher": "BitBox / Shift Cryptosecurity",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Announcing the BitBox01 (aka Digital Bitbox) end-of-sale and end-of-life dates and process",
+        "url": "https://blog.bitbox.swiss/en/announcing-the-bitbox01-aka-digital-bitbox-end-of-sale-and-end-of-life-dates-and-process/"
+      },
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "discontinuation",
+        "entity_id": "wlr_ent_000007",
+        "event_id": "wlr_ev_000032",
+        "event_ids": [
+          "wlr_ev_000032"
+        ],
+        "id": "wlr_src_000037",
+        "is_primary": true,
+        "notes": "",
+        "product_id": "wlr_prod_000028",
+        "product_ids": [
+          "wlr_prod_000028"
+        ],
+        "published_at": "2023-01-18",
+        "publisher": "BitBox",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "The end of the road for the BitBox01",
+        "url": "https://blog.bitbox.swiss/en/the-end-of-the-road-for-the-bitbox01/"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000028",
+  "identity": {
+    "aliases": [
+      "Digital Bitbox"
+    ]
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/bitbox01.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000028",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "bitbox01"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/bitbox/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--bitbox01.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/bitbox01.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-14"
+  }
+}

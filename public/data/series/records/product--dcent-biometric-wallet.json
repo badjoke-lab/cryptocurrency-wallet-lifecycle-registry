@@ -1,0 +1,78 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_year": null,
+      "parent_entity": {
+        "canonical_name": "D'CENT",
+        "id": "wlr_ent_000038",
+        "slug": "dcent",
+        "status": "active",
+        "wallet_type": "hardware"
+      },
+      "predecessor_product_id": null,
+      "product_type": "hardware_device",
+      "sales_status": "on_sale",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "unknown"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": []
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-19",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000038",
+        "event_id": null,
+        "id": "wlr_src_000222",
+        "is_primary": true,
+        "notes": "Current first-party storefront lists the D'CENT Biometric Wallet for sale and describes its secure-element and fingerprint wallet boundary.",
+        "product_id": "wlr_prod_000087",
+        "published_at": null,
+        "publisher": "D'CENT / IoTrust",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "D'CENT Biometric Wallet",
+        "url": "https://store.dcentwallet.com/products/biometric-wallet"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000087",
+  "identity": {
+    "aliases": []
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/dcent-biometric-wallet.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000087",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "dcent-biometric-wallet"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/dcent/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--dcent-biometric-wallet.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/dcent-biometric-wallet.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-19"
+  }
+}

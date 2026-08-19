@@ -1,0 +1,286 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_year": null,
+      "parent_entity": {
+        "canonical_name": "COLDCARD",
+        "id": "wlr_ent_000003",
+        "slug": "coldcard",
+        "status": "active",
+        "wallet_type": "hardware"
+      },
+      "predecessor_product_id": null,
+      "product_type": "hardware_device",
+      "sales_status": "on_sale",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "supported"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000014",
+          "wlr_prod_000015",
+          "wlr_prod_000016",
+          "wlr_prod_000017",
+          "wlr_prod_000018"
+        ],
+        "affected_version_rules": [
+          {
+            "product_ids": [
+              "wlr_prod_000014",
+              "wlr_prod_000015"
+            ],
+            "range": "4.0.1 through 4.1.9 inclusive",
+            "track": "standard"
+          },
+          {
+            "product_ids": [
+              "wlr_prod_000016",
+              "wlr_prod_000017"
+            ],
+            "range": "before 5.6.0",
+            "track": "standard"
+          },
+          {
+            "product_ids": [
+              "wlr_prod_000018"
+            ],
+            "range": "before 1.5.0Q",
+            "track": "standard"
+          },
+          {
+            "product_ids": [
+              "wlr_prod_000016",
+              "wlr_prod_000017"
+            ],
+            "range": "before 6.6.0X",
+            "track": "edge"
+          },
+          {
+            "product_ids": [
+              "wlr_prod_000018"
+            ],
+            "range": "before 6.6.0QX",
+            "track": "edge"
+          }
+        ],
+        "confidence": "high",
+        "description": "COLDCARD disclosed a seed-generation defect in affected firmware lines. Fixed releases restore the intended hardware-randomness path for future seed generation, but existing affected seeds require migration unless an advisory exception applies.",
+        "entity_id": "wlr_ent_000003",
+        "event_date": "2026-07-30",
+        "event_date_basis": "disclosure",
+        "event_status_effect": "none",
+        "event_type": "vulnerability_disclosed",
+        "fixed_versions": [
+          {
+            "product_ids": [
+              "wlr_prod_000014",
+              "wlr_prod_000015"
+            ],
+            "track": "standard",
+            "version": "4.2.0"
+          },
+          {
+            "product_ids": [
+              "wlr_prod_000016",
+              "wlr_prod_000017"
+            ],
+            "track": "standard",
+            "version": "5.6.0"
+          },
+          {
+            "product_ids": [
+              "wlr_prod_000018"
+            ],
+            "track": "standard",
+            "version": "1.5.0Q"
+          },
+          {
+            "product_ids": [
+              "wlr_prod_000016",
+              "wlr_prod_000017"
+            ],
+            "track": "edge",
+            "version": "6.6.0X"
+          },
+          {
+            "product_ids": [
+              "wlr_prod_000018"
+            ],
+            "track": "edge",
+            "version": "6.6.0QX"
+          }
+        ],
+        "funds_affected": "unknown",
+        "id": "wlr_ev_000019",
+        "impact_level": "critical",
+        "is_major_event": true,
+        "notes": "A firmware update fixes future seed generation but does not repair a seed that was already generated on affected firmware.",
+        "product_id": null,
+        "security_scope": "seed_generation",
+        "title": "Seed-generation entropy defect disclosed",
+        "user_actions_required": [
+          "update",
+          "migrate"
+        ]
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000014",
+          "wlr_prod_000015",
+          "wlr_prod_000016",
+          "wlr_prod_000017",
+          "wlr_prod_000018"
+        ],
+        "confidence": "high",
+        "description": "Coinkite released fixed firmware for the supported COLDCARD model and track matrix and published migration guidance for existing affected seeds.",
+        "entity_id": "wlr_ent_000003",
+        "event_date": "2026-07-31",
+        "event_date_basis": "release",
+        "event_status_effect": "none",
+        "event_type": "firmware_fix",
+        "fixed_versions": [
+          {
+            "product_ids": [
+              "wlr_prod_000014",
+              "wlr_prod_000015"
+            ],
+            "track": "standard",
+            "version": "4.2.0"
+          },
+          {
+            "product_ids": [
+              "wlr_prod_000016",
+              "wlr_prod_000017"
+            ],
+            "track": "standard",
+            "version": "5.6.0"
+          },
+          {
+            "product_ids": [
+              "wlr_prod_000018"
+            ],
+            "track": "standard",
+            "version": "1.5.0Q"
+          },
+          {
+            "product_ids": [
+              "wlr_prod_000016",
+              "wlr_prod_000017"
+            ],
+            "track": "edge",
+            "version": "6.6.0X"
+          },
+          {
+            "product_ids": [
+              "wlr_prod_000018"
+            ],
+            "track": "edge",
+            "version": "6.6.0QX"
+          }
+        ],
+        "funds_affected": "unknown",
+        "id": "wlr_ev_000020",
+        "impact_level": "critical",
+        "is_major_event": true,
+        "product_id": null,
+        "security_scope": "seed_generation",
+        "title": "Fixed COLDCARD firmware released across supported model lines",
+        "user_actions_required": [
+          "update",
+          "migrate"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "vulnerability",
+        "entity_id": "wlr_ent_000003",
+        "event_id": "wlr_ev_000019",
+        "id": "wlr_src_000023",
+        "is_primary": true,
+        "notes": "Primary status page for affected seed-generation defect, model/track fixed releases, and migration requirement.",
+        "product_id": null,
+        "published_at": null,
+        "publisher": "Coinkite",
+        "reliability": "high",
+        "source_type": "official_security_advisory",
+        "title": "Current COLDCARD Security Status",
+        "url": "https://coldcard.com/security/status"
+      },
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "security_fix",
+        "entity_id": "wlr_ent_000003",
+        "event_id": "wlr_ev_000020",
+        "id": "wlr_src_000024",
+        "is_primary": true,
+        "notes": "",
+        "product_id": null,
+        "published_at": null,
+        "publisher": "Coinkite",
+        "reliability": "high",
+        "source_type": "release_notes",
+        "title": "COLDCARD Firmware Downloads - Latest Versions",
+        "url": "https://coldcard.com/downloads"
+      },
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "security_fix",
+        "entity_id": "wlr_ent_000003",
+        "event_id": "wlr_ev_000020",
+        "id": "wlr_src_000025",
+        "is_primary": true,
+        "notes": "Primary upgrade guidance listing July 31, 2026 hotfix versions and warning that affected seeds must be regenerated/migrated.",
+        "product_id": null,
+        "published_at": null,
+        "publisher": "Coinkite",
+        "reliability": "high",
+        "source_type": "release_notes",
+        "title": "Upgrade Firmware",
+        "url": "https://coldcard.com/docs/upgrade/"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000017",
+  "identity": {
+    "aliases": []
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/coldcard-mk5.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000017",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "coldcard-mk5"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/coldcard/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--coldcard-mk5.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/coldcard-mk5.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-14"
+  }
+}

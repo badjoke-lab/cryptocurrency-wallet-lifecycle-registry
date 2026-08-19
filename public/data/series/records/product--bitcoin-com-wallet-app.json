@@ -1,0 +1,78 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_year": null,
+      "parent_entity": {
+        "canonical_name": "Bitcoin.com Wallet",
+        "id": "wlr_ent_000054",
+        "slug": "bitcoin-com-wallet",
+        "status": "active",
+        "wallet_type": "software"
+      },
+      "predecessor_product_id": null,
+      "product_type": "mobile_app",
+      "sales_status": "not_applicable",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "unknown"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": []
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-20",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000054",
+        "event_id": null,
+        "id": "wlr_src_000254",
+        "is_primary": true,
+        "notes": "Current Bitcoin.com support explicitly identifies the Bitcoin.com Wallet app as self-custodial with user-controlled keys.",
+        "product_id": "wlr_prod_000103",
+        "published_at": null,
+        "publisher": "Bitcoin.com",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Cryptocurrency security",
+        "url": "https://support.bitcoin.com/en/articles/5343935-cryptocurrency-security"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000103",
+  "identity": {
+    "aliases": []
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/bitcoin-com-wallet-app.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000103",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "bitcoin-com-wallet-app"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/bitcoin-com-wallet/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--bitcoin-com-wallet-app.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/bitcoin-com-wallet-app.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-20"
+  }
+}

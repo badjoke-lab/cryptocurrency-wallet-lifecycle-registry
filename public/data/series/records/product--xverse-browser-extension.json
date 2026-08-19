@@ -1,0 +1,180 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_year": null,
+      "parent_entity": {
+        "canonical_name": "Xverse",
+        "id": "wlr_ent_000020",
+        "slug": "xverse",
+        "status": "active",
+        "wallet_type": "software"
+      },
+      "predecessor_product_id": null,
+      "product_type": "browser_extension",
+      "sales_status": "not_applicable",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "supported"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000060"
+        ],
+        "confidence": "high",
+        "description": "Xverse launched its desktop browser extension in beta for Chrome, adding a desktop wallet product alongside the existing mobile wallet.",
+        "entity_id": "wlr_ent_000020",
+        "event_date": "2022-12-08",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000052",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000060",
+        "title": "Xverse desktop browser extension launched"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000060"
+        ],
+        "confidence": "high",
+        "description": "Xverse disclosed that browser behavior could cause a seed phrase to be written unencrypted to a local Chrome log during extension onboarding under certain conditions.",
+        "entity_id": "wlr_ent_000020",
+        "event_date": "2023-06-07",
+        "event_date_basis": "disclosure",
+        "event_status_effect": "none",
+        "event_type": "vulnerability_disclosed",
+        "fixed_versions": [
+          {
+            "product_ids": [
+              "wlr_prod_000060"
+            ],
+            "track": "extension",
+            "version": "0.11.5"
+          }
+        ],
+        "funds_affected": "no",
+        "id": "wlr_ev_000053",
+        "impact_level": "high",
+        "is_major_event": true,
+        "notes": "Xverse stated the seed phrase never left the local device, mobile users were not affected, no exploits were reported, and no user funds were lost. Version 0.11.4 prevented new local logging; 0.11.5 additionally provided cleanup of previously cached logs.",
+        "product_id": "wlr_prod_000060",
+        "security_scope": "browser_extension",
+        "title": "Xverse Extension local seed-phrase logging issue disclosed",
+        "user_actions_required": [
+          "update",
+          "migrate"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "status",
+        "entity_id": "wlr_ent_000020",
+        "event_id": null,
+        "event_ids": [],
+        "id": "wlr_src_000086",
+        "is_primary": true,
+        "notes": "Current first-party download page separates the browser extension from iOS/Android mobile apps.",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000059",
+          "wlr_prod_000060"
+        ],
+        "published_at": null,
+        "publisher": "Xverse",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Download Xverse Wallet for Android, iOS & Chrome",
+        "url": "https://www.xverse.app/download"
+      },
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000020",
+        "event_id": "wlr_ev_000052",
+        "event_ids": [
+          "wlr_ev_000052"
+        ],
+        "id": "wlr_src_000087",
+        "is_primary": true,
+        "notes": "Primary launch announcement for the desktop browser extension.",
+        "product_id": "wlr_prod_000060",
+        "product_ids": [
+          "wlr_prod_000060"
+        ],
+        "published_at": "2022-12-08",
+        "publisher": "Xverse",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Xverse Launches Desktop Browser Extension",
+        "url": "https://www.xverse.app/blog/xverse-launches-desktop-browser-extension"
+      },
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "vulnerability",
+        "entity_id": "wlr_ent_000020",
+        "event_id": "wlr_ev_000053",
+        "event_ids": [
+          "wlr_ev_000053"
+        ],
+        "id": "wlr_src_000088",
+        "is_primary": true,
+        "notes": "Primary disclosure for the local seed-phrase logging issue, mobile exclusion, no reported losses, and 0.11.4/0.11.5 mitigations.",
+        "product_id": "wlr_prod_000060",
+        "product_ids": [
+          "wlr_prod_000060"
+        ],
+        "published_at": "2023-06-07",
+        "publisher": "Xverse",
+        "reliability": "high",
+        "source_type": "official_security_advisory",
+        "title": "Security Notice: Chrome Extension Encryption Issue",
+        "url": "https://www.xverse.app/blog/security-notice-chrome-extension-06072023"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000060",
+  "identity": {
+    "aliases": [
+      "Xverse Extension",
+      "Xverse Desktop Browser Extension"
+    ]
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/xverse-browser-extension.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000060",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "xverse-browser-extension"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/xverse/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--xverse-browser-extension.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/xverse-browser-extension.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-15"
+  }
+}

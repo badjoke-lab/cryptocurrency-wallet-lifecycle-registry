@@ -1,0 +1,209 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_year": null,
+      "parent_entity": {
+        "canonical_name": "Ready",
+        "id": "wlr_ent_000011",
+        "slug": "ready",
+        "status": "active",
+        "wallet_type": "hybrid"
+      },
+      "predecessor_product_id": null,
+      "product_type": "mobile_app",
+      "sales_status": "not_applicable",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "supported"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000038",
+          "wlr_prod_000039"
+        ],
+        "confidence": "high",
+        "description": "The wallet organization rebranded from Argent to Ready, retaining the lineage while clarifying distinct Ready product directions.",
+        "entity_id": "wlr_ent_000011",
+        "event_date": "2025-06-24",
+        "event_date_basis": "announcement",
+        "event_status_effect": "none",
+        "event_type": "rebranded",
+        "id": "wlr_ev_000042",
+        "is_major_event": true,
+        "product_id": null,
+        "title": "Argent rebranded to Ready"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000038"
+        ],
+        "confidence": "high",
+        "description": "Ready announced that the Ready mobile app would move from Starknet to Base in mid-August 2026, while Ready X would continue supporting Starknet.",
+        "entity_id": "wlr_ent_000011",
+        "event_date": "2026-08-12",
+        "event_date_basis": "announcement",
+        "event_status_effect": "none",
+        "event_type": "network_migration_announced",
+        "id": "wlr_ev_000043",
+        "is_major_event": true,
+        "notes": "Users with Starknet assets were advised to move or recover them through Ready X or another wallet before the app transition; assets remained self-custodial.",
+        "product_id": "wlr_prod_000038",
+        "title": "Ready announced migration of its mobile app from Starknet to Base",
+        "user_actions_required": [
+          "migrate"
+        ]
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000038"
+        ],
+        "confidence": "high",
+        "description": "Argent launched its consumer smart-wallet product on Ethereum in 2018. This mobile product lineage later continued as Ready Mobile after the 2025 Argent-to-Ready rebrand.",
+        "entity_id": "wlr_ent_000011",
+        "event_date": "2018",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000102",
+        "is_major_event": true,
+        "notes": "Year precision only. The first-party retrospective establishes the 2018 Ethereum launch but not a defensible month or day. Ready/Argent brand continuity is separately supported by existing canonical evidence wlr_src_000051.",
+        "product_id": "wlr_prod_000038",
+        "title": "Argent mobile wallet launched on Ethereum"
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "rebrand",
+        "entity_id": "wlr_ent_000011",
+        "event_id": "wlr_ev_000042",
+        "event_ids": [
+          "wlr_ev_000042"
+        ],
+        "id": "wlr_src_000051",
+        "is_primary": true,
+        "notes": "",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000038",
+          "wlr_prod_000039"
+        ],
+        "published_at": "2025-06-24",
+        "publisher": "Ready",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Argent is now Ready",
+        "url": "https://www.ready.co/blog/argent-is-now-ready"
+      },
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "architecture",
+        "entity_id": "wlr_ent_000011",
+        "event_id": null,
+        "event_ids": [],
+        "id": "wlr_src_000052",
+        "is_primary": true,
+        "notes": "Primary source explicitly distinguishes two wallet products and their different security models.",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000038",
+          "wlr_prod_000039"
+        ],
+        "published_at": "2026-07-20",
+        "publisher": "Ready",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Why do you say there is no seed phrase if Ready also mentions seed phrases?",
+        "url": "https://help.ready.co/hc/en-us/articles/28334367814685-Why-do-you-say-there-is-no-seed-phrase-if-Ready-also-mentions-seed-phrases"
+      },
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000011",
+        "event_id": "wlr_ev_000043",
+        "event_ids": [
+          "wlr_ev_000043"
+        ],
+        "id": "wlr_src_000053",
+        "is_primary": true,
+        "notes": "",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000038",
+          "wlr_prod_000039"
+        ],
+        "published_at": "2026-08-12",
+        "publisher": "Ready",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Ready is moving to Base",
+        "url": "https://help.ready.co/hc/en-us/articles/37609718066589-Ready-is-moving-to-Base"
+      },
+      {
+        "accessed_at": "2026-08-18",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000011",
+        "event_id": "wlr_ev_000102",
+        "event_ids": [
+          "wlr_ev_000102"
+        ],
+        "id": "wlr_src_000160",
+        "is_primary": true,
+        "notes": "First-party Argent history explicitly states that Argent launched on Ethereum in 2018. WLR retains year precision and uses existing wlr_src_000051 for the later Argent Mobile -> Ready Mobile continuity.",
+        "product_id": "wlr_prod_000038",
+        "product_ids": [
+          "wlr_prod_000038"
+        ],
+        "published_at": "2023-12-19",
+        "publisher": "Argent / Ready",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Doubling down on Starknet",
+        "url": "https://www.argent.xyz/blog/doubling-down-on-starknet"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000038",
+  "identity": {
+    "aliases": [
+      "Ready app",
+      "Argent mobile"
+    ]
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/ready-mobile.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000038",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "ready-mobile"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/ready/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--ready-mobile.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/ready-mobile.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-18"
+  }
+}

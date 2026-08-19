@@ -1,0 +1,144 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_year": null,
+      "parent_entity": {
+        "canonical_name": "Bitkey",
+        "id": "wlr_ent_000006",
+        "slug": "bitkey",
+        "status": "active",
+        "wallet_type": "hybrid"
+      },
+      "predecessor_product_id": null,
+      "product_type": "mobile_app",
+      "sales_status": "not_applicable",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "supported"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000025",
+          "wlr_prod_000026"
+        ],
+        "confidence": "high",
+        "description": "Bitkey exited pre-order status and began shipping its integrated hardware-and-mobile self-custody system.",
+        "entity_id": "wlr_ent_000006",
+        "event_date": "2024-03-13",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000026",
+        "is_major_event": true,
+        "product_id": null,
+        "title": "Bitkey began shipping"
+      },
+      {
+        "affected_components": [
+          "app_key",
+          "relationship_enrollment_flow"
+        ],
+        "affected_product_ids": [
+          "wlr_prod_000026",
+          "wlr_prod_000027"
+        ],
+        "affected_versions": [],
+        "confidence": "high",
+        "description": "Bitkey disclosed that the mobile app used a non-cryptographic random-number generator for a one-time relationship-enrollment secret. The demonstrated practical path was limited to narrow second-generation recovery-contact or inheritance flows and did not weaken wallet spending keys.",
+        "entity_id": "wlr_ent_000006",
+        "event_date": "2026-08-02",
+        "event_date_basis": "disclosure",
+        "event_status_effect": "none",
+        "event_type": "software_issue",
+        "funds_affected": "no",
+        "id": "wlr_ev_000028",
+        "impact_level": "high",
+        "is_major_event": true,
+        "notes": "Bitkey reported no evidence that customers were exploited or that funds were impacted; selected second-generation inheritance users were advised to update the app and re-enroll beneficiaries.",
+        "product_id": "wlr_prod_000026",
+        "security_scope": "mobile_app",
+        "title": "Relationship-enrollment randomness bug disclosed",
+        "user_actions_required": [
+          "update",
+          "reconfigure"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000006",
+        "event_id": "wlr_ev_000026",
+        "id": "wlr_src_000033",
+        "is_primary": true,
+        "notes": "",
+        "product_id": null,
+        "published_at": "2024-03-13",
+        "publisher": "Bitkey",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Bitkey starts shipping today",
+        "url": "https://bitkey.world/blog/bitkey-starts-shipping-today"
+      },
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000006",
+        "event_id": "wlr_ev_000028",
+        "id": "wlr_src_000035",
+        "is_primary": true,
+        "notes": "",
+        "product_id": "wlr_prod_000026",
+        "published_at": "2026-08-02",
+        "publisher": "Bitkey",
+        "reliability": "high",
+        "source_type": "official_security_advisory",
+        "title": "Relationship-enrollment bug in Bitkey",
+        "url": "https://bitkey.world/blog/relationship-enrollment-bug-in-bitkey"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000026",
+  "identity": {
+    "aliases": [
+      "Bitkey app"
+    ]
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/bitkey-mobile-app.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000026",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "bitkey-mobile-app"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/bitkey/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--bitkey-mobile-app.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/bitkey-mobile-app.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-14"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_year": null,
+      "parent_entity": {
+        "canonical_name": "Muun",
+        "id": "wlr_ent_000050",
+        "slug": "muun",
+        "status": "active",
+        "wallet_type": "software"
+      },
+      "predecessor_product_id": null,
+      "product_type": "mobile_app",
+      "sales_status": "not_applicable",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "unknown"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": []
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-19",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000050",
+        "event_id": null,
+        "id": "wlr_src_000246",
+        "is_primary": true,
+        "notes": "First-party iOS release establishes the iOS product surface and states that the Android version already existed.",
+        "product_id": "wlr_prod_000099",
+        "published_at": "2019-10-21",
+        "publisher": "Muun",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Muun releases non-custodial Bitcoin and Lightning wallet for iOS",
+        "url": "https://blog.muun.com/muun-releases-non-custodial-bitcoin-and-lightning-wallet-for-ios/amp/"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000099",
+  "identity": {
+    "aliases": []
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/muun-wallet.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000099",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "muun-wallet"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/muun/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--muun-wallet.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/muun-wallet.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-19"
+  }
+}

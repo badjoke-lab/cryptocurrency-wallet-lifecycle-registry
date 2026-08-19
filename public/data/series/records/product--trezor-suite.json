@@ -1,0 +1,111 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_year": null,
+      "parent_entity": {
+        "canonical_name": "Trezor",
+        "id": "wlr_ent_000001",
+        "slug": "trezor",
+        "status": "active",
+        "wallet_type": "hardware"
+      },
+      "predecessor_product_id": null,
+      "product_type": "companion_app",
+      "sales_status": "not_applicable",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "supported"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000006"
+        ],
+        "confidence": "high",
+        "description": "Trezor officially launched Trezor Suite as its desktop and web interface for Trezor hardware wallets.",
+        "entity_id": "wlr_ent_000001",
+        "event_date": "2021-07-14",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000004",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000006",
+        "title": "Trezor Suite officially launched"
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000001",
+        "event_id": "wlr_ev_000004",
+        "id": "wlr_src_000005",
+        "is_primary": true,
+        "notes": "Primary source for the official Trezor Suite launch.",
+        "product_id": "wlr_prod_000006",
+        "published_at": "2021-07-14",
+        "publisher": "Trezor / SatoshiLabs",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Trezor Suite launches!",
+        "url": "https://blog.trezor.io/trezor-suite-launches-8958c1d37d33"
+      },
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000001",
+        "event_id": null,
+        "id": "wlr_src_000006",
+        "is_primary": true,
+        "notes": "Official source repository covering Trezor Suite desktop/web, Connect and Trezor Suite Mobile.",
+        "product_id": "wlr_prod_000006",
+        "published_at": null,
+        "publisher": "Trezor",
+        "reliability": "high",
+        "source_type": "source_code",
+        "title": "Trezor Suite Monorepo",
+        "url": "https://github.com/trezor/trezor-suite"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000006",
+  "identity": {
+    "aliases": []
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/trezor-suite.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000006",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "trezor-suite"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/trezor/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--trezor-suite.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/trezor-suite.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-14"
+  }
+}

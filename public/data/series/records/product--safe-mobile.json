@@ -1,0 +1,120 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_year": null,
+      "parent_entity": {
+        "canonical_name": "Safe",
+        "id": "wlr_ent_000005",
+        "slug": "safe",
+        "status": "active",
+        "wallet_type": "smart_contract"
+      },
+      "predecessor_product_id": null,
+      "product_type": "mobile_app",
+      "sales_status": "not_applicable",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "supported"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000024"
+        ],
+        "confidence": "high",
+        "description": "Safe Labs launched a completely rebuilt Safe{Mobile} application for managing and signing Safe smart-account transactions on iOS and Android.",
+        "entity_id": "wlr_ent_000005",
+        "event_date": "2025-10-16",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000099",
+        "is_major_event": true,
+        "notes": "This event tracks the current rebuilt Safe Mobile product and does not rewrite the separate lifecycle of the discontinued 2018 Gnosis Safe Mobile legacy app.",
+        "product_id": "wlr_prod_000024",
+        "title": "Safe Labs launched the rebuilt Safe Mobile app"
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "status",
+        "entity_id": "wlr_ent_000005",
+        "event_id": null,
+        "id": "wlr_src_000031",
+        "is_primary": true,
+        "notes": "Primary source confirming current Safe Mobile availability and multisig wallet function.",
+        "product_id": "wlr_prod_000024",
+        "published_at": null,
+        "publisher": "Safe",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Safe Crypto Wallet App: Your assets. Your control.",
+        "url": "https://safe.global/mobile"
+      },
+      {
+        "accessed_at": "2026-08-17",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000005",
+        "event_id": "wlr_ev_000099",
+        "event_ids": [
+          "wlr_ev_000099"
+        ],
+        "id": "wlr_src_000157",
+        "is_primary": true,
+        "notes": "First-party Safe announcement explicitly states Safe Labs launched the completely rebuilt Safe{Mobile} app and that it was available on both iOS and Android.",
+        "product_id": "wlr_prod_000024",
+        "product_ids": [
+          "wlr_prod_000024"
+        ],
+        "published_at": "2025-10-16",
+        "publisher": "Safe",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Secure Signing, Now Seamlessly Mobile: Safe Labs Introduces An All-New Safe{Mobile} App",
+        "url": "https://safe.global/blog/secure-signing-now-seamlessly-mobile-safe-labs-introduces-an-all-new-safe-mobile-app"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000024",
+  "identity": {
+    "aliases": [
+      "Safe{Mobile}"
+    ]
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/safe-mobile.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000024",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "safe-mobile"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/safe/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--safe-mobile.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/safe-mobile.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-14"
+  }
+}

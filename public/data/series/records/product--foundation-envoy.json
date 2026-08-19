@@ -1,0 +1,173 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_year": null,
+      "parent_entity": {
+        "canonical_name": "Foundation Passport",
+        "id": "wlr_ent_000017",
+        "slug": "foundation-passport",
+        "status": "active",
+        "wallet_type": "hardware"
+      },
+      "predecessor_product_id": null,
+      "product_type": "mobile_app",
+      "sales_status": "not_applicable",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "supported"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000053"
+        ],
+        "confidence": "high",
+        "description": "Foundation released Envoy during 2022 as a mobile Passport companion and Bitcoin software-wallet application for iOS and Android.",
+        "entity_id": "wlr_ent_000017",
+        "event_date": "2022",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000103",
+        "is_major_event": true,
+        "notes": "Year precision only. Foundation stated on 2022-03-10 that Envoy would launch later, while the official Envoy repository published v1.0.7 Android/iOS release artifacts in October 2022 and Foundation subsequently described v1.0.7 as live on mobile platforms.",
+        "product_id": "wlr_prod_000053",
+        "title": "Foundation Envoy released on mobile platforms"
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "product_lineage",
+        "entity_id": "wlr_ent_000017",
+        "event_id": null,
+        "event_ids": [
+          "wlr_ev_000050",
+          "wlr_ev_000051"
+        ],
+        "id": "wlr_src_000074",
+        "is_primary": true,
+        "notes": "Primary history source for the 2020 first generation, Founder’s Edition, Batch 2/Core continuity, 2025 rename, Prime, and Envoy product family.",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000050",
+          "wlr_prod_000051",
+          "wlr_prod_000052",
+          "wlr_prod_000053"
+        ],
+        "published_at": "2025-03-17",
+        "publisher": "Foundation",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Passport is now Passport Core",
+        "url": "https://foundation.xyz/blog/passport-is-now-passport-core"
+      },
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "architecture",
+        "entity_id": "wlr_ent_000017",
+        "event_id": null,
+        "event_ids": [],
+        "id": "wlr_src_000077",
+        "is_primary": true,
+        "notes": "Describes Prime as an offline Bitcoin key-management device and Envoy as its companion app, while noting Envoy can hold keys for its own built-in hot wallet.",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000052",
+          "wlr_prod_000053"
+        ],
+        "published_at": "2025-11-11",
+        "publisher": "Foundation Devices, Inc.",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Passport Prime Terms of Use",
+        "url": "https://foundation.xyz/terms-prime/"
+      },
+      {
+        "accessed_at": "2026-08-18",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000017",
+        "event_id": "wlr_ev_000103",
+        "event_ids": [
+          "wlr_ev_000103"
+        ],
+        "id": "wlr_src_000161",
+        "is_primary": true,
+        "notes": "First-party pre-launch boundary: Foundation announces Envoy and explicitly says it will launch in app stores later alongside Passport Batch 2. This source is not treated as the release date itself.",
+        "product_id": "wlr_prod_000053",
+        "product_ids": [
+          "wlr_prod_000053"
+        ],
+        "published_at": "2022-03-10",
+        "publisher": "Foundation",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Introducing Passport Batch 2 & Envoy Mobile App",
+        "url": "https://foundation.xyz/2022/03/introducing-passport-batch-2-envoy/"
+      },
+      {
+        "accessed_at": "2026-08-18",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000017",
+        "event_id": "wlr_ev_000103",
+        "event_ids": [
+          "wlr_ev_000103"
+        ],
+        "id": "wlr_src_000162",
+        "is_primary": true,
+        "notes": "Official Envoy repository release containing Android App Bundle/APK and iOS IPA artifacts in October 2022. Used with the March pre-launch announcement to establish only that the initial public product launch occurred in 2022.",
+        "product_id": "wlr_prod_000053",
+        "product_ids": [
+          "wlr_prod_000053"
+        ],
+        "published_at": "2022-10-17",
+        "publisher": "Foundation Devices",
+        "reliability": "high",
+        "source_type": "release_notes",
+        "title": "Envoy Release 1.0.7",
+        "url": "https://github.com/Foundation-Devices/envoy/releases/tag/v1.0.7"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000053",
+  "identity": {
+    "aliases": [
+      "Envoy Mobile Wallet"
+    ]
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/foundation-envoy.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000053",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "foundation-envoy"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/foundation-passport/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--foundation-envoy.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/foundation-envoy.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-18"
+  }
+}

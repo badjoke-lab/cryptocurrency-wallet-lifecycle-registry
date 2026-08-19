@@ -1,0 +1,106 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "current_vendor": null,
+      "custody_model": "self_custody",
+      "open_source_status": null,
+      "product_ids": [
+        "wlr_prod_000080"
+      ],
+      "status": "active",
+      "wallet_type": "software",
+      "website_status": null
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": []
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-19",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000031",
+        "event_id": null,
+        "id": "wlr_src_000206",
+        "is_primary": true,
+        "notes": "First-party about page states Solflare's inception was in 2020 and describes self-custodial ownership.",
+        "product_id": null,
+        "published_at": null,
+        "publisher": "Solflare",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "About Solflare: our mission and vision",
+        "url": "https://www.solflare.com/about/"
+      },
+      {
+        "accessed_at": "2026-08-19",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000031",
+        "event_id": null,
+        "id": "wlr_src_000207",
+        "is_primary": true,
+        "notes": "First-party product documentation says Solflare's Web App and Extension were the first products built in late 2020 and describes the extension product lineage.",
+        "product_id": "wlr_prod_000080",
+        "published_at": null,
+        "publisher": "Solflare",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Web App & Extension | Solflare Wallet",
+        "url": "https://docs.solflare.com/solflare/onboarding/web-app-and-extension"
+      },
+      {
+        "accessed_at": "2026-08-19",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000031",
+        "event_id": null,
+        "id": "wlr_src_000208",
+        "is_primary": true,
+        "notes": "Current first-party site actively distributes the Solflare browser extension and mobile wallet.",
+        "product_id": "wlr_prod_000080",
+        "published_at": null,
+        "publisher": "Solflare",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Solflare",
+        "url": "https://www.solflare.com/"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000031",
+  "identity": {
+    "aliases": [],
+    "name": "Solflare"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/wallets/solflare.json",
+    "relationship_boundary": "wallet-to-product links are preserved as native product_ids but are not emitted as typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_ent_000031",
+    "native_record_type": "wlr.wallet-record.v1",
+    "slug": "solflare"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/solflare/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/wallet--solflare.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/wallets/solflare.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-19"
+  }
+}
