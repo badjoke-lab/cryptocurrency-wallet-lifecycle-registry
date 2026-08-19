@@ -1,0 +1,136 @@
+name: Verify WLR PR193 Production
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  exact-main-ci:
+    if: github.head_ref == 'ops/pr193-production-verify'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Pin exact merged main
+        run: test "$(git rev-parse HEAD)" = "cab7a480b9d08be0e2c7e8d79f727344fc1f4f0a"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - run: npm install --no-audit --no-fund
+      - run: npm run validate:records
+      - run: npm run validate:candidates
+      - run: npm run validate:identity-evidence
+      - run: npm run validate:machine-records
+      - run: npm run validate:structured-discovery
+      - run: npm run test:natural-filters
+      - run: npm run validate:natural-filters
+      - run: npm run validate:compare
+      - run: npm run validate:stats
+      - run: npm run test:monitoring
+      - run: npm run validate:monitoring
+      - run: npm run test:candidates
+      - run: npm run test:identity-evidence
+      - run: npm run check:staging-boundary
+      - run: npm run coverage:audit
+      - run: npm run seed:gate
+      - run: npm run cloudflare:config:print
+      - run: npm run build
+
+  production-verify:
+    if: github.head_ref == 'ops/pr193-production-verify'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build exact-main expected state
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "cab7a480b9d08be0e2c7e8d79f727344fc1f4f0a"
+          node scripts/build-stats.mjs
+          jq -e '.registry.entities == 36 and .registry.products == 85 and .registry.events == 121 and .registry.evidence == 218 and .registry.incident_events == 23 and .registry.remediation_events == 9' public/data/stats.json >/dev/null
+          jq -e '.entities.launch_date.count == 35 and .entities.launch_date.denominator == 36 and .entities.launch_date.percentage == 97.2' public/data/stats.json >/dev/null
+          jq -e '.products.launch_date.count == 78 and .products.launch_date.denominator == 85 and .products.launch_date.percentage == 91.8' public/data/stats.json >/dev/null
+          jq -e '.data_quality.products.support_status_known.count == 75 and .data_quality.products.support_status_known.denominator == 85 and .data_quality.products.support_status_known.percentage == 88.2' public/data/stats.json >/dev/null
+          jq -e '.data_quality.products.sales_status_known.count == 83 and .data_quality.products.sales_status_known.denominator == 85 and .data_quality.products.sales_status_known.percentage == 97.6' public/data/stats.json >/dev/null
+          for id in $(seq 27 36); do printf -v key 'wlr_ent_%06d' "$id"; jq -e --arg id "$key" '.[] | any(.id == $id)' data/entities.json >/dev/null; done
+          for id in $(seq 76 85); do printf -v key 'wlr_prod_%06d' "$id"; jq -e --arg id "$key" '.[] | any(.id == $id)' data/products.json >/dev/null; done
+          for id in $(seq 198 218); do printf -v key 'wlr_src_%06d' "$id"; jq -e --arg id "$key" '.[] | any(.id == $id)' data/evidence.json >/dev/null; done
+      - name: Resolve exact Cloudflare production deployment
+        id: deploy
+        run: |
+          set -euo pipefail
+          expected="cab7a480b9d08be0e2c7e8d79f727344fc1f4f0a"
+          base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
+          auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
+          match=""
+          for attempt in $(seq 1 100); do
+            deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
+            match="$(jq -c --arg sha "$expected" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
+            if [ -n "$match" ] && jq -e '.latest_stage.status == "success"' <<<"$match" >/dev/null; then break; fi
+            echo "Waiting for exact deployment attempt=${attempt}"
+            sleep 10
+          done
+          test -n "$match"
+          jq -e '.latest_stage.status == "success" and .deployment_trigger.metadata.branch == "main" and .deployment_trigger.metadata.commit_dirty == false and (.aliases | index("https://wlr.badjoke-lab.com")) != null' <<<"$match" >/dev/null
+          echo "deployment_url=$(jq -r '.url' <<<"$match")" >> "$GITHUB_OUTPUT"
+          echo "$match" | jq '{id,short_id,url,aliases,latest_stage,deployment_trigger}'
+      - name: Verify exact deployment and public breadth records
+        env:
+          DEPLOYMENT_URL: ${{ steps.deploy.outputs.deployment_url }}
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"; trap 'rm -rf "$work"' EXIT
+          curl -fsSL "${DEPLOYMENT_URL}/data/stats.json?verify=cab7a480" -o "$work/deploy-stats.json"
+          jq -e '.registry.entities == 36 and .registry.products == 85 and .registry.evidence == 218' "$work/deploy-stats.json" >/dev/null
+          ready=0
+          for attempt in $(seq 1 60); do
+            nonce="cab7a480-${attempt}-$(date +%s)"
+            ok=1
+            for name in entities products evidence stats; do
+              curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/${name}.json?verify=${nonce}" -o "$work/${name}.json" || ok=0
+            done
+            if [ "$ok" -eq 1 ] \
+              && jq -e '.registry.entities == 36 and .registry.products == 85 and .registry.events == 121 and .registry.evidence == 218' "$work/stats.json" >/dev/null 2>&1 \
+              && jq -e '.entities.launch_date.count == 35 and .products.launch_date.count == 78' "$work/stats.json" >/dev/null 2>&1; then
+              records=1
+              for id in $(seq 27 36); do printf -v key 'wlr_ent_%06d' "$id"; jq -e --arg id "$key" '.[] | any(.id == $id)' "$work/entities.json" >/dev/null || records=0; done
+              for id in $(seq 76 85); do printf -v key 'wlr_prod_%06d' "$id"; jq -e --arg id "$key" '.[] | any(.id == $id)' "$work/products.json" >/dev/null || records=0; done
+              for id in $(seq 198 218); do printf -v key 'wlr_src_%06d' "$id"; jq -e --arg id "$key" '.[] | any(.id == $id)' "$work/evidence.json" >/dev/null || records=0; done
+              if [ "$records" -eq 1 ]; then ready=1; echo "Public breadth records exact on attempt=${attempt}"; break; fi
+            fi
+            sleep 10
+          done
+          test "$ready" -eq 1
+          nonce="$(date +%s)"
+          wallet_slugs=(myetherwallet okx-wallet imtoken tokenpocket solflare atomic-wallet guarda-wallet coinomi ellipal edge)
+          product_slugs=(mew-mobile okx-wallet-app imtoken-app tokenpocket-mobile-wallet solflare-browser-extension atomic-wallet-desktop guarda-wallet coinomi-wallet ellipal-titan-2-0 edge-wallet)
+          for slug in "${wallet_slugs[@]}"; do
+            url="https://wlr.badjoke-lab.com/wallet/${slug}/?verify=${nonce}"
+            code="$(curl -sS -o /dev/null -w '%{http_code}' "$url")"
+            test "$code" -ge 200 && test "$code" -lt 400
+            echo "WLR wallet route ${slug} -> ${code}"
+          done
+          for slug in "${product_slugs[@]}"; do
+            url="https://wlr.badjoke-lab.com/product/${slug}/?verify=${nonce}"
+            code="$(curl -sS -o /dev/null -w '%{http_code}' "$url")"
+            test "$code" -ge 200 && test "$code" -lt 400
+            echo "WLR product route ${slug} -> ${code}"
+          done
+          echo 'PR193_PRODUCTION_VERIFY_OK entities=36 products=85 events=121 evidence=218'
