@@ -69,9 +69,9 @@ jobs:
           jq -e '.products.launch_date.count == 78 and .products.launch_date.denominator == 85 and .products.launch_date.percentage == 91.8' public/data/stats.json >/dev/null
           jq -e '.data_quality.products.support_status_known.count == 75 and .data_quality.products.support_status_known.denominator == 85 and .data_quality.products.support_status_known.percentage == 88.2' public/data/stats.json >/dev/null
           jq -e '.data_quality.products.sales_status_known.count == 83 and .data_quality.products.sales_status_known.denominator == 85 and .data_quality.products.sales_status_known.percentage == 97.6' public/data/stats.json >/dev/null
-          for id in $(seq 27 36); do printf -v key 'wlr_ent_%06d' "$id"; jq -e --arg id "$key" '.[] | any(.id == $id)' data/entities.json >/dev/null; done
-          for id in $(seq 76 85); do printf -v key 'wlr_prod_%06d' "$id"; jq -e --arg id "$key" '.[] | any(.id == $id)' data/products.json >/dev/null; done
-          for id in $(seq 198 218); do printf -v key 'wlr_src_%06d' "$id"; jq -e --arg id "$key" '.[] | any(.id == $id)' data/evidence.json >/dev/null; done
+          for id in $(seq 27 36); do printf -v key 'wlr_ent_%06d' "$id"; jq -e --arg id "$key" 'any(.[]; .id == $id)' data/entities.json >/dev/null; done
+          for id in $(seq 76 85); do printf -v key 'wlr_prod_%06d' "$id"; jq -e --arg id "$key" 'any(.[]; .id == $id)' data/products.json >/dev/null; done
+          for id in $(seq 198 218); do printf -v key 'wlr_src_%06d' "$id"; jq -e --arg id "$key" 'any(.[]; .id == $id)' data/evidence.json >/dev/null; done
       - name: Resolve exact Cloudflare production deployment
         id: deploy
         run: |
@@ -110,9 +110,9 @@ jobs:
               && jq -e '.registry.entities == 36 and .registry.products == 85 and .registry.events == 121 and .registry.evidence == 218' "$work/stats.json" >/dev/null 2>&1 \
               && jq -e '.entities.launch_date.count == 35 and .products.launch_date.count == 78' "$work/stats.json" >/dev/null 2>&1; then
               records=1
-              for id in $(seq 27 36); do printf -v key 'wlr_ent_%06d' "$id"; jq -e --arg id "$key" '.[] | any(.id == $id)' "$work/entities.json" >/dev/null || records=0; done
-              for id in $(seq 76 85); do printf -v key 'wlr_prod_%06d' "$id"; jq -e --arg id "$key" '.[] | any(.id == $id)' "$work/products.json" >/dev/null || records=0; done
-              for id in $(seq 198 218); do printf -v key 'wlr_src_%06d' "$id"; jq -e --arg id "$key" '.[] | any(.id == $id)' "$work/evidence.json" >/dev/null || records=0; done
+              for id in $(seq 27 36); do printf -v key 'wlr_ent_%06d' "$id"; jq -e --arg id "$key" 'any(.[]; .id == $id)' "$work/entities.json" >/dev/null || records=0; done
+              for id in $(seq 76 85); do printf -v key 'wlr_prod_%06d' "$id"; jq -e --arg id "$key" 'any(.[]; .id == $id)' "$work/products.json" >/dev/null || records=0; done
+              for id in $(seq 198 218); do printf -v key 'wlr_src_%06d' "$id"; jq -e --arg id "$key" 'any(.[]; .id == $id)' "$work/evidence.json" >/dev/null || records=0; done
               if [ "$records" -eq 1 ]; then ready=1; echo "Public breadth records exact on attempt=${attempt}"; break; fi
             fi
             sleep 10
