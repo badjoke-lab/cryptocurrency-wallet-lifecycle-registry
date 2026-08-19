@@ -2,8 +2,8 @@
   "bundle_version": "1.0.0",
   "candidate_id": "wlr_cand_safe-bybit-2025-compromise",
   "title": "Safe{Wallet} Web 2025 Bybit-targeted supply-chain compromise",
-  "review_state": "researching",
-  "notes": "Candidate-only review bundle for the targeted Safe{Wallet} Web development/delivery-environment compromise used in the 2025 Bybit theft and the subsequent Safe infrastructure rebuild. Canonical publication is prohibited until candidate CI and manual review complete.",
+  "review_state": "review_ready",
+  "notes": "Candidate-only review bundle for the targeted Safe{Wallet} Web development/delivery-environment compromise used in the 2025 Bybit theft and the subsequent Safe infrastructure rebuild. Product scope, supply-chain taxonomy, source-code/smart-contract negative boundary, funds impact and remediation boundary were manually reviewed after candidate/identity-evidence validation. Canonical publication still requires a separate explicit main-based PR.",
   "records": {
     "entities": [],
     "products": [],
