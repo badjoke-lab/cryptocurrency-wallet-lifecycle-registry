@@ -2,7 +2,7 @@
   "bundle_version": "1.0.0",
   "candidate_id": "wlr_cand_entity-growth-batch-03-e",
   "title": "Entity growth batch 03 — group E",
-  "review_state": "researching",
+  "review_state": "review_ready",
   "notes": "Breadth-first candidate group for Issue #199. Canonical publication prohibited until candidate validation and manual review complete.",
   "records": {
     "entities": [
@@ -10,7 +10,9 @@
         "id": "wlr_ent_000071",
         "slug": "secux",
         "canonical_name": "SecuX",
-        "aliases": ["SecuX Wallet"],
+        "aliases": [
+          "SecuX Wallet"
+        ],
         "wallet_type": "hardware",
         "status": "active",
         "summary": "Hardware-wallet ecosystem from SecuX covering touchscreen cold wallets and companion wallet software.",
@@ -30,7 +32,9 @@
         "id": "wlr_ent_000072",
         "slug": "arculus",
         "canonical_name": "Arculus",
-        "aliases": ["Arculus Cold Storage"],
+        "aliases": [
+          "Arculus Cold Storage"
+        ],
         "wallet_type": "hardware",
         "status": "active",
         "summary": "Self-custody cold-storage wallet ecosystem from CompoSecure built around an NFC secure-element card and mobile application.",
@@ -80,7 +84,9 @@
         "launch_date": null,
         "official_url": "https://seedsigner.com/",
         "official_domain": "seedsigner.com",
-        "source_code_urls": ["https://github.com/SeedSigner/seedsigner"],
+        "source_code_urls": [
+          "https://github.com/SeedSigner/seedsigner"
+        ],
         "custody_model": "self_custody",
         "key_management_model": "stateless_air_gapped_user_generated_seed_and_qr_signing",
         "confidence": "high",
@@ -100,7 +106,9 @@
         "launch_date": null,
         "official_url": "https://novawallet.io/",
         "official_domain": "novawallet.io",
-        "source_code_urls": ["https://github.com/novasamatech/nova-wallet-android"],
+        "source_code_urls": [
+          "https://github.com/novasamatech/nova-wallet-android"
+        ],
         "custody_model": "self_custody",
         "key_management_model": "device_local_encrypted_private_keys_or_external_hardware_wallet_keys",
         "confidence": "high",
@@ -140,7 +148,11 @@
         "support_status": "unknown",
         "launch_date": "2021",
         "launch_date_precision": "year",
-        "platform": ["Arculus Card", "iOS", "Android"],
+        "platform": [
+          "Arculus Card",
+          "iOS",
+          "Android"
+        ],
         "official_url": "https://www.getarculus.com/products/cold-storage-wallet/",
         "source_code_url": null,
         "custody_model": "self_custody",
@@ -180,7 +192,9 @@
         "sales_status": "not_applicable",
         "support_status": "unknown",
         "launch_date": null,
-        "platform": ["Raspberry Pi Zero and compatible DIY hardware"],
+        "platform": [
+          "Raspberry Pi Zero and compatible DIY hardware"
+        ],
         "official_url": "https://seedsigner.com/",
         "source_code_url": "https://github.com/SeedSigner/seedsigner",
         "custody_model": "self_custody",
@@ -200,7 +214,10 @@
         "sales_status": "not_applicable",
         "support_status": "unknown",
         "launch_date": null,
-        "platform": ["iOS", "Android"],
+        "platform": [
+          "iOS",
+          "Android"
+        ],
         "official_url": "https://novawallet.io/",
         "source_code_url": "https://github.com/novasamatech/nova-wallet-android",
         "custody_model": "self_custody",

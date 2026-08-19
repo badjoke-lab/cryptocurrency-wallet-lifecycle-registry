@@ -2,7 +2,7 @@
   "bundle_version": "1.0.0",
   "candidate_id": "wlr_cand_entity-growth-batch-03-d",
   "title": "Entity growth batch 03 — group D",
-  "review_state": "researching",
+  "review_state": "review_ready",
   "notes": "Breadth-first candidate group for Issue #199. Canonical publication prohibited until candidate validation and manual review complete.",
   "records": {
     "entities": [
@@ -10,7 +10,9 @@
         "id": "wlr_ent_000066",
         "slug": "talisman",
         "canonical_name": "Talisman",
-        "aliases": ["Talisman Wallet"],
+        "aliases": [
+          "Talisman Wallet"
+        ],
         "wallet_type": "software",
         "status": "active",
         "summary": "Non-custodial multichain browser wallet focused on Polkadot, Ethereum and related ecosystems.",
@@ -50,7 +52,9 @@
         "id": "wlr_ent_000068",
         "slug": "petra",
         "canonical_name": "Petra",
-        "aliases": ["Petra Wallet"],
+        "aliases": [
+          "Petra Wallet"
+        ],
         "wallet_type": "software",
         "status": "active",
         "summary": "Self-custodial Aptos wallet ecosystem developed by Aptos Labs and distributed across browser, mobile and web wallet surfaces.",
@@ -70,7 +74,10 @@
         "id": "wlr_ent_000069",
         "slug": "slush-wallet",
         "canonical_name": "Slush",
-        "aliases": ["Sui Wallet", "Stashed"],
+        "aliases": [
+          "Sui Wallet",
+          "Stashed"
+        ],
         "wallet_type": "software",
         "status": "active",
         "summary": "Non-custodial Sui wallet ecosystem created by combining the Sui Wallet and Stashed product lineages under the Slush brand in 2025.",
@@ -118,7 +125,12 @@
         "sales_status": "not_applicable",
         "support_status": "unknown",
         "launch_date": null,
-        "platform": ["Chrome", "Firefox", "Brave", "Edge"],
+        "platform": [
+          "Chrome",
+          "Firefox",
+          "Brave",
+          "Edge"
+        ],
         "official_url": "https://www.talisman.xyz/",
         "source_code_url": null,
         "custody_model": "self_custody",
@@ -138,7 +150,12 @@
         "sales_status": "not_applicable",
         "support_status": "unknown",
         "launch_date": null,
-        "platform": ["Chrome", "Brave", "Firefox", "Edge"],
+        "platform": [
+          "Chrome",
+          "Brave",
+          "Firefox",
+          "Edge"
+        ],
         "official_url": "https://www.subwallet.app/download.html",
         "source_code_url": null,
         "custody_model": "self_custody",
@@ -158,7 +175,9 @@
         "sales_status": "not_applicable",
         "support_status": "unknown",
         "launch_date": null,
-        "platform": ["browser extension"],
+        "platform": [
+          "browser extension"
+        ],
         "official_url": "https://petra.app/",
         "source_code_url": null,
         "custody_model": "self_custody",
@@ -173,13 +192,17 @@
         "entity_id": "wlr_ent_000069",
         "slug": "slush-extension",
         "product_name": "Slush Browser Extension",
-        "aliases": ["Sui Wallet Extension"],
+        "aliases": [
+          "Sui Wallet Extension"
+        ],
         "product_type": "browser_extension",
         "status": "active",
         "sales_status": "not_applicable",
         "support_status": "unknown",
         "launch_date": null,
-        "platform": ["browser extension"],
+        "platform": [
+          "browser extension"
+        ],
         "official_url": "https://slush.app/",
         "source_code_url": null,
         "custody_model": "self_custody",

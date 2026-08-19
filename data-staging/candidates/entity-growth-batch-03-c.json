@@ -2,7 +2,7 @@
   "bundle_version": "1.0.0",
   "candidate_id": "wlr_cand_entity-growth-batch-03-c",
   "title": "Entity growth batch 03 — group C",
-  "review_state": "researching",
+  "review_state": "review_ready",
   "notes": "Breadth-first candidate group for Issue #199. Canonical publication prohibited until candidate validation and manual review complete.",
   "records": {
     "entities": [
@@ -10,21 +10,23 @@
         "id": "wlr_ent_000061",
         "slug": "backpack-wallet",
         "canonical_name": "Backpack",
-        "aliases": ["Backpack Wallet"],
+        "aliases": [
+          "Backpack Wallet"
+        ],
         "wallet_type": "software",
         "status": "active",
-        "summary": "Cryptocurrency wallet ecosystem distributed through mobile applications and a browser extension by Backpack.",
+        "summary": "Self-custodial cryptocurrency wallet ecosystem distributed through mobile applications and a browser extension by Backpack.",
         "developer_or_company": "Backpack",
         "country_or_origin": null,
         "launch_date": null,
         "official_url": "https://backpack.app/",
         "official_domain": "backpack.app",
         "source_code_urls": [],
-        "custody_model": "unknown",
-        "key_management_model": null,
-        "confidence": "medium",
+        "custody_model": "self_custody",
+        "key_management_model": "device_local_user_controlled_private_keys_and_recovery_phrases",
+        "confidence": "high",
         "last_verified_at": "2026-08-20",
-        "notes": "Current first-party downloads establish active mobile and browser wallet distribution. Custody and initial launch remain unresolved until stronger first-party wallet-specific terms or security documentation are attached."
+        "notes": "Current first-party Backpack support explicitly describes Backpack Wallet as self-custodial, states private keys never leave the user device, and confirms mobile/browser distribution. Initial launch date remains unresolved."
       },
       {
         "id": "wlr_ent_000062",
@@ -51,7 +53,10 @@
         "id": "wlr_ent_000063",
         "slug": "xaman",
         "canonical_name": "Xaman",
-        "aliases": ["Xumm", "XUMM"],
+        "aliases": [
+          "Xumm",
+          "XUMM"
+        ],
         "wallet_type": "software",
         "status": "active",
         "summary": "Self-custodial XRP Ledger wallet formerly branded Xumm and rebranded to Xaman in 2023.",
@@ -71,7 +76,9 @@
         "id": "wlr_ent_000064",
         "slug": "pera-wallet",
         "canonical_name": "Pera Wallet",
-        "aliases": ["Pera Algo Wallet"],
+        "aliases": [
+          "Pera Algo Wallet"
+        ],
         "wallet_type": "software",
         "status": "active",
         "summary": "Open-source self-custodial Algorand wallet ecosystem distributed on mobile and web.",
@@ -91,7 +98,9 @@
         "id": "wlr_ent_000065",
         "slug": "yoroi",
         "canonical_name": "Yoroi",
-        "aliases": ["Yoroi Wallet"],
+        "aliases": [
+          "Yoroi Wallet"
+        ],
         "wallet_type": "software",
         "status": "deprecated",
         "summary": "Open-source self-custodial Cardano light-wallet ecosystem from EMURGO that is currently being wound down following a security incident.",
@@ -120,15 +129,19 @@
         "sales_status": "not_applicable",
         "support_status": "unknown",
         "launch_date": null,
-        "platform": ["Chrome", "Brave", "Edge"],
+        "platform": [
+          "Chrome",
+          "Brave",
+          "Edge"
+        ],
         "official_url": "https://backpack.app/downloads",
         "source_code_url": null,
-        "custody_model": "unknown",
-        "key_management_model": null,
-        "summary": "Current Backpack browser extension for wallet and dApp use on supported desktop browsers.",
-        "confidence": "medium",
+        "custody_model": "self_custody",
+        "key_management_model": "browser_local_user_controlled_private_keys_and_recovery_phrases",
+        "summary": "Current self-custodial Backpack browser extension for wallet and dApp use on supported desktop browsers.",
+        "confidence": "high",
         "last_verified_at": "2026-08-20",
-        "notes": "Selected browser-extension boundary only; mobile is deferred. Current first-party download page establishes active distribution but custody and original extension launch remain unresolved."
+        "notes": "Selected browser-extension boundary only; mobile is deferred. Current first-party wallet support explicitly describes Backpack as self-custodial, while the official download page establishes Chrome, Brave and Edge distribution. Original extension launch remains unresolved."
       },
       {
         "id": "wlr_prod_000111",
@@ -141,7 +154,9 @@
         "support_status": "unknown",
         "launch_date": "2021-10",
         "launch_date_precision": "month",
-        "platform": ["browser extension"],
+        "platform": [
+          "browser extension"
+        ],
         "official_url": "https://www.hashpack.app/",
         "source_code_url": null,
         "custody_model": "self_custody",
@@ -156,13 +171,18 @@
         "entity_id": "wlr_ent_000063",
         "slug": "xaman-mobile",
         "product_name": "Xaman Mobile",
-        "aliases": ["Xumm"],
+        "aliases": [
+          "Xumm"
+        ],
         "product_type": "mobile_app",
         "status": "active",
         "sales_status": "not_applicable",
         "support_status": "unknown",
         "launch_date": null,
-        "platform": ["iOS", "Android"],
+        "platform": [
+          "iOS",
+          "Android"
+        ],
         "official_url": "https://xaman.app/",
         "source_code_url": null,
         "custody_model": "self_custody",
@@ -182,7 +202,10 @@
         "sales_status": "not_applicable",
         "support_status": "unknown",
         "launch_date": null,
-        "platform": ["iOS", "Android"],
+        "platform": [
+          "iOS",
+          "Android"
+        ],
         "official_url": "https://perawallet.app/",
         "source_code_url": null,
         "custody_model": "self_custody",
@@ -202,7 +225,11 @@
         "sales_status": "not_applicable",
         "support_status": "unknown",
         "launch_date": null,
-        "platform": ["Chrome", "Brave", "Edge"],
+        "platform": [
+          "Chrome",
+          "Brave",
+          "Edge"
+        ],
         "official_url": "https://www.yoroi-wallet.com/",
         "source_code_url": null,
         "custody_model": "self_custody",
@@ -221,15 +248,15 @@
         "product_id": null,
         "event_id": null,
         "source_type": "official_statement",
-        "title": "Download Backpack",
-        "url": "https://backpack.app/downloads",
+        "title": "What is Backpack Wallet?",
+        "url": "https://support.backpack.exchange/wallet/what-is-backpack-wallet",
         "publisher": "Backpack",
         "published_at": null,
         "accessed_at": "2026-08-20",
         "reliability": "high",
         "claim_scope": "entity",
         "is_primary": true,
-        "notes": "Current first-party Backpack download page establishes an active crypto-wallet product family across mobile and browser extension. It does not by itself resolve custody."
+        "notes": "Current first-party Backpack support explicitly describes Backpack as a self-custodial crypto wallet and links browser, iOS and Android distribution."
       },
       {
         "id": "wlr_src_000268",
