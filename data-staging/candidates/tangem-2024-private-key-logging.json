@@ -1,0 +1,128 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_tangem-2024-private-key-logging",
+  "title": "Tangem App 2024 private-key logging issue",
+  "review_state": "researching",
+  "notes": "Candidate-only bundle adding the missing Tangem companion-app product boundary plus the December 2024 mobile-app logging issue and fixed releases. Canonical publication is prohibited until candidate validation and manual review complete.",
+  "records": {
+    "entities": [],
+    "products": [
+      {
+        "id": "wlr_prod_000075",
+        "entity_id": "wlr_ent_000014",
+        "slug": "tangem-app",
+        "product_name": "Tangem App",
+        "product_type": "companion_app",
+        "status": "active",
+        "sales_status": "not_applicable",
+        "support_status": "supported",
+        "launch_date": null,
+        "platform": ["iOS", "Android"],
+        "custody_model": "self_custody",
+        "key_management_model": "Mobile NFC companion/interface for Tangem Wallet cards and wearables. Hardware-backed card/ring keys remain associated with the wallet devices, while optional seed-phrase activation workflows can generate or import seed material through the app during setup.",
+        "summary": "Official iOS and Android companion application used to set up, view, manage, and sign with Tangem Wallet cards and wearables over NFC; distinct from the standalone cardless Tangem Mobile Wallet capability introduced inside the app in 2026.",
+        "confidence": "high",
+        "last_verified_at": "2026-08-19",
+        "notes": "Launch date is intentionally unresolved. First-party material establishes the companion app and its 2023-2024 operation but does not establish one defensible initial public launch date. The 2026 Tangem Mobile Wallet is modeled separately because it added a standalone phone-based wallet capability that does not require a Tangem card or ring."
+      }
+    ],
+    "events": [
+      {
+        "id": "wlr_ev_000120",
+        "entity_id": "wlr_ent_000014",
+        "product_id": "wlr_prod_000075",
+        "affected_product_ids": ["wlr_prod_000075"],
+        "event_type": "software_issue",
+        "event_date": "2024-12-31",
+        "event_date_basis": "disclosure",
+        "title": "Tangem App logging bug could include private-key material in diagnostic logs",
+        "description": "Tangem disclosed that when a wallet was activated with a generated or imported seed phrase, a bug in the mobile app's NFC logging mechanism could write the private key into app logs. Potential exposure required the user to also contact Tangem support through the app within seven days, allowing those logs to be included with the support interaction.",
+        "confidence": "high",
+        "impact_level": "high",
+        "security_scope": "mobile_app",
+        "funds_affected": "no",
+        "event_status_effect": "none",
+        "affected_users_text": "Fewer than 0.1% potentially affected under the combined seed-phrase activation and in-app support contact within seven days conditions",
+        "is_major_event": true,
+        "user_actions_required": ["update", "move_funds", "rotate_seed"],
+        "affected_components": ["seed_phrase_import", "seed_phrase_generation", "mobile_app_diagnostic_logs", "in_app_support_log_attachments"],
+        "notes": "Tangem states that no private keys were compromised, no funds were lost, and no unauthorized account access occurred. Seedless activation was not affected by this bug, and users who did not contact support through the app during the seven-day log-retention window were not affected. WLR therefore records funds_affected=no while retaining the material key-exposure risk of the logging defect. No affected-version start or range is inferred."
+      },
+      {
+        "id": "wlr_ev_000121",
+        "entity_id": "wlr_ent_000014",
+        "product_id": "wlr_prod_000075",
+        "affected_product_ids": ["wlr_prod_000075"],
+        "event_type": "software_fix",
+        "event_date": "2024-12-27",
+        "event_date_basis": "release",
+        "title": "Tangem released iOS 5.19.1 and Android 5.19.2 to fix mobile-app log exposure",
+        "description": "Tangem's official security changelog records a December 27, 2024 security/bugfix release that fixed the mobile-app logging bug for the same seed-phrase plus in-app-support condition.",
+        "confidence": "high",
+        "impact_level": "high",
+        "security_scope": "mobile_app",
+        "funds_affected": "no",
+        "event_status_effect": "active",
+        "fixed_versions": [
+          {"product_ids": ["wlr_prod_000075"], "track": "ios", "version": "5.19.1"},
+          {"product_ids": ["wlr_prod_000075"], "track": "android", "version": "5.19.2"}
+        ],
+        "is_major_event": true,
+        "user_actions_required": ["update"],
+        "affected_components": ["mobile_app_diagnostic_logs"],
+        "notes": "The fixed-release date is taken from Tangem's first-party security changelog. No affected-version start or range is recorded because the reviewed first-party sources do not establish one."
+      }
+    ],
+    "evidence": [
+      {
+        "id": "wlr_src_000195",
+        "entity_id": "wlr_ent_000014",
+        "product_id": "wlr_prod_000075",
+        "event_id": null,
+        "source_type": "official_blog",
+        "title": "What to Know Before Buying a Tangem Wallet 2 or 3-card Set",
+        "url": "https://tangem.com/en/blog/post/before-buying-tangem/",
+        "publisher": "Tangem",
+        "published_at": "2023-12-24",
+        "accessed_at": "2026-08-19",
+        "reliability": "high",
+        "claim_scope": "product",
+        "is_primary": true,
+        "notes": "First-party Tangem product explanation defining the Tangem app as a mobile application/interface for interacting with Tangem Wallet cards and wearables via NFC, with iOS and Android distribution. Used for product identity and companion-app boundary, not an initial launch date."
+      },
+      {
+        "id": "wlr_src_000196",
+        "entity_id": "wlr_ent_000014",
+        "product_id": "wlr_prod_000075",
+        "event_id": "wlr_ev_000120",
+        "event_ids": ["wlr_ev_000120", "wlr_ev_000121"],
+        "source_type": "official_blog",
+        "title": "Tangem Identifies and Resolves Potential Vulnerability",
+        "url": "https://tangem.com/en/blog/post/tangem-resolves-log-issue/",
+        "publisher": "Tangem",
+        "published_at": "2024-12-31",
+        "accessed_at": "2026-08-19",
+        "reliability": "high",
+        "claim_scope": "vulnerability",
+        "is_primary": true,
+        "notes": "First-party disclosure establishing the private-key logging defect, narrow affected-user conditions, seedless exclusion, explicit no-compromise/no-loss/no-unauthorized-access boundary, fixed iOS/Android versions, log deletion and recommended user actions."
+      },
+      {
+        "id": "wlr_src_000197",
+        "entity_id": "wlr_ent_000014",
+        "product_id": "wlr_prod_000075",
+        "event_id": "wlr_ev_000121",
+        "source_type": "release_notes",
+        "title": "Tangem Firmware & App Changelog — iOS 5.19.1 / Android 5.19.2",
+        "url": "https://tangem.com/en/security/changelog/",
+        "publisher": "Tangem",
+        "published_at": "2024-12-27",
+        "accessed_at": "2026-08-19",
+        "reliability": "high",
+        "claim_scope": "security_fix",
+        "is_primary": true,
+        "notes": "First-party security changelog dating the fixed mobile-app release to 2024-12-27 and explicitly identifying iOS 5.19.1 and Android 5.19.2 as the versions fixing the app-log bug."
+      }
+    ]
+  }
+}
