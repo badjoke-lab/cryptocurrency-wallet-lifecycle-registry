@@ -22,7 +22,25 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000100"
+        ],
+        "confidence": "high",
+        "description": "Brave launched a browser-native self-custody wallet built directly into the Brave desktop browser, replacing extension dependence for Brave's primary built-in wallet path while allowing users to import from the legacy Crypto Wallets extension.",
+        "entity_id": "wlr_ent_000051",
+        "event_date": "2021-11-16",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000133",
+        "is_major_event": true,
+        "notes": "This is retained as material product-history depth because Brave explicitly introduced a new browser-native wallet boundary with no extension required and documented migration/import from its legacy Crypto Wallets extension. It is not a generic launch added solely to reduce the zero-event count. Mobile availability was still future-facing in this launch announcement and is not included in the affected product scope.",
+        "product_id": "wlr_prod_000100",
+        "title": "Browser-native Brave Wallet launched"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -42,6 +60,22 @@
         "source_type": "official_statement",
         "title": "What is Brave Wallet?",
         "url": "https://support.brave.com/hc/en-us/articles/12747992885389-What-is-Brave-Wallet"
+      },
+      {
+        "accessed_at": "2026-08-20",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000051",
+        "event_id": "wlr_ev_000133",
+        "id": "wlr_src_000359",
+        "is_primary": true,
+        "notes": "First-party Brave launch post states that Brave Wallet launched on 2021-11-16 as a browser-native desktop wallet requiring no extension and documents import from Brave's legacy Crypto Wallets extension.",
+        "product_id": "wlr_prod_000100",
+        "published_at": "2021-11-16",
+        "publisher": "Brave",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Introducing the Brave Wallet, a Browser-Native Crypto Wallet With No Extension Required",
+        "url": "https://brave.com/blog/brave-wallet-launch/"
       }
     ]
   },
