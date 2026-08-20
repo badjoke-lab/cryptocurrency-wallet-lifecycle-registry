@@ -16,7 +16,42 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000125"
+        ],
+        "confidence": "high",
+        "description": "At Base's A New Day One event, Base announced that Coinbase Wallet was becoming the Base App, describing Base App as the next evolution of Coinbase Wallet and beginning a beta rollout for the renamed and expanded application.",
+        "entity_id": "wlr_ent_000076",
+        "event_date": "2025-07-16",
+        "event_date_basis": "announcement",
+        "event_status_effect": "rebranded",
+        "event_type": "rebranded",
+        "id": "wlr_ev_000139",
+        "is_major_event": true,
+        "notes": "This is a continuity/rebrand event, not the launch of a separate successor wallet. Base first-party material says Base App is formerly Coinbase Wallet and that Coinbase Wallet is now Base App. The exact 2025-07-16 announcement boundary is corroborated by contemporaneous dated reporting from the event. Existing WLR IDs and slugs remain stable.",
+        "product_id": "wlr_prod_000125",
+        "title": "Coinbase Wallet announced transition to Base App"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000125"
+        ],
+        "confidence": "high",
+        "description": "Coinbase closed the classic Coinbase Wallet experience on August 15, 2026 and replaced it with the updated Base App experience while preserving the user's recovery phrase, supported-network assets and wallet addresses.",
+        "entity_id": "wlr_ent_000076",
+        "event_date": "2026-08-15",
+        "event_date_basis": "effective",
+        "event_status_effect": "active",
+        "event_type": "service_shutdown",
+        "id": "wlr_ev_000140",
+        "is_major_event": true,
+        "notes": "This is a shutdown of the legacy/classic experience, not a shutdown of the continuing wallet product. Coinbase says there is nothing to transfer or sign merely to continue in the updated wallet. Some legacy networks are not supported in Base App and may require importing the same recovery phrase into another compatible wallet.",
+        "product_id": "wlr_prod_000125",
+        "title": "Classic Coinbase Wallet experience closed"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -52,13 +87,79 @@
         "source_type": "official_statement",
         "title": "Web3 wallet, Coinbase.com & Coinbase Wallet",
         "url": "https://help.coinbase.com/en/dapps/getting-started/comparing-coinbase-wallets"
+      },
+      {
+        "accessed_at": "2026-08-20",
+        "claim_scope": "rebrand",
+        "entity_id": "wlr_ent_000076",
+        "event_id": "wlr_ev_000139",
+        "id": "wlr_src_000364",
+        "is_primary": true,
+        "notes": "First-party Base announcement explicitly calls Base App formerly Coinbase Wallet, describes it as the next evolution of Coinbase Wallet, and says Coinbase Wallet is now Base App. Exact event-day corroboration is stored separately rather than inventing missing page publication metadata.",
+        "product_id": "wlr_prod_000125",
+        "published_at": null,
+        "publisher": "Base",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Base's Next Chapter: Everything We Announced At A New Day One",
+        "url": "https://blog.base.org/a-new-day-one"
+      },
+      {
+        "accessed_at": "2026-08-20",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000076",
+        "event_id": "wlr_ev_000139",
+        "id": "wlr_src_000365",
+        "is_primary": false,
+        "notes": "Contemporaneous dated report from the A New Day One event used only to anchor the exact 2025-07-16 announcement boundary. The continuity/rebrand claim itself is backed by Base first-party material.",
+        "product_id": "wlr_prod_000125",
+        "published_at": "2025-07-16",
+        "publisher": "The Block",
+        "reliability": "high",
+        "source_type": "news_article",
+        "title": "Coinbase unveils Base App, rebrands wallet as all-in-one social and trading platform",
+        "url": "https://www.theblock.co/post/362713/coinbase-unveils-base-app-rebrands-wallet-as-all-in-one-social-and-trading-platform"
+      },
+      {
+        "accessed_at": "2026-08-20",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000076",
+        "event_id": "wlr_ev_000140",
+        "id": "wlr_src_000366",
+        "is_primary": true,
+        "notes": "Coinbase Help gives the exact 2026-08-15 closure date and states that the updated wallet preserves recovery phrase, supported-network assets and addresses with nothing to transfer merely to continue.",
+        "product_id": "wlr_prod_000125",
+        "published_at": null,
+        "publisher": "Coinbase",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Classic wallet closing",
+        "url": "https://help.coinbase.com/en/wallet/other-topics/classic-wallet-closing"
+      },
+      {
+        "accessed_at": "2026-08-20",
+        "claim_scope": "rebrand",
+        "entity_id": "wlr_ent_000076",
+        "event_id": "wlr_ev_000139",
+        "id": "wlr_src_000367",
+        "is_primary": true,
+        "notes": "Current Coinbase distribution page says Coinbase Wallet is now Base App, existing users do not need a new app, and Base App is distributed on iOS and Android. It separately exposes the Coinbase Wallet browser extension, which is outside wlr_prod_000125's mobile boundary.",
+        "product_id": "wlr_prod_000125",
+        "published_at": null,
+        "publisher": "Coinbase",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Download Base App",
+        "url": "https://www.coinbase.com/wallet/downloads"
       }
     ]
   },
   "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000076",
   "identity": {
-    "aliases": [],
-    "name": "Coinbase Wallet"
+    "aliases": [
+      "Coinbase Wallet"
+    ],
+    "name": "Base App"
   },
   "object_type": "record_envelope",
   "provenance": {
