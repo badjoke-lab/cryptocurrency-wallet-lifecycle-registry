@@ -16,7 +16,25 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000144"
+        ],
+        "confidence": "high",
+        "description": "U.S. authorities seized Samourai Wallet web servers and the samourai.io domain, served a seizure warrant on the mobile application, and the FBI stated that Samourai Wallet was closed for business.",
+        "entity_id": "wlr_ent_000095",
+        "event_date": "2024-04-24",
+        "event_date_basis": "occurrence",
+        "event_status_effect": "dead",
+        "event_type": "service_shutdown",
+        "id": "wlr_ev_000125",
+        "is_major_event": true,
+        "notes": "This event records the operational seizure and shutdown boundary only. It does not restate criminal allegations as adjudicated facts. The canonical Android product already records discontinued_date=2024-04-24 and support_status=ended.",
+        "product_id": "wlr_prod_000144",
+        "title": "Samourai Wallet infrastructure seized and service closed"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -51,6 +69,22 @@
         "reliability": "high",
         "source_type": "regulatory_notice",
         "title": "Founders And CEO Of Cryptocurrency Mixing Service Arrested And Charged",
+        "url": "https://www.justice.gov/usao-sdny/pr/founders-and-ceo-cryptocurrency-mixing-service-arrested-and-charged-money-laundering"
+      },
+      {
+        "accessed_at": "2026-08-20",
+        "claim_scope": "discontinuation",
+        "entity_id": "wlr_ent_000095",
+        "event_id": "wlr_ev_000125",
+        "id": "wlr_src_000350",
+        "is_primary": true,
+        "notes": "Official notice states Samourai's web servers/domain were seized, a seizure warrant was served on the mobile application, and the FBI stated the service was closed for business. Used only for the operational shutdown boundary.",
+        "product_id": "wlr_prod_000144",
+        "published_at": "2024-04-24",
+        "publisher": "U.S. Department of Justice, Southern District of New York",
+        "reliability": "high",
+        "source_type": "regulatory_notice",
+        "title": "Founders And CEO Of Cryptocurrency Mixing Service Arrested And Charged With Money Laundering And Unlicensed Money Transmitting Offenses",
         "url": "https://www.justice.gov/usao-sdny/pr/founders-and-ceo-cryptocurrency-mixing-service-arrested-and-charged-money-laundering"
       }
     ]
