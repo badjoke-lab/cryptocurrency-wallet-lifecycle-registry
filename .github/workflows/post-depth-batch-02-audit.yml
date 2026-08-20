@@ -1,0 +1,39 @@
+name: Audit WLR after depth batch 02
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    if: github.head_ref == 'ops/post-depth-batch-02-audit'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - name: Pin accepted depth-batch-02 main
+        run: test "$(git rev-parse HEAD)" = "e04c0663bfc5b9d7d14f756debf3dcd01bb3edbe"
+      - name: Generate deterministic coverage audit
+        run: |
+          set -euo pipefail
+          python3 scripts/report_coverage.py --json > /tmp/coverage.json
+          jq '.summary' /tmp/coverage.json
+          echo 'ZERO_EVENT_ENTITIES'
+          jq -r '.entities[] | select(.events == 0) | [.entity_id,.slug,.name,.products,.evidence,.primary_evidence] | @tsv' /tmp/coverage.json
+          echo 'ONE_EVENT_ENTITIES'
+          jq -r '.entities[] | select(.events == 1) | [.entity_id,.slug,.name,.events,.evidence,.primary_evidence] | @tsv' /tmp/coverage.json
+          echo 'MULTI_EVENT_ENTITIES_FROM_POST100'
+          jq -r '.entities[] | select((.entity_id == "wlr_ent_000027" or .entity_id == "wlr_ent_000032" or .entity_id == "wlr_ent_000036" or .entity_id == "wlr_ent_000046" or .entity_id == "wlr_ent_000052" or .entity_id == "wlr_ent_000059" or .entity_id == "wlr_ent_000063" or .entity_id == "wlr_ent_000069" or .entity_id == "wlr_ent_000087" or .entity_id == "wlr_ent_000095")) | [.entity_id,.slug,.events,.evidence] | @tsv' /tmp/coverage.json
+          test "$(jq '.summary.entities' /tmp/coverage.json)" = "100"
+          test "$(jq '.summary.products' /tmp/coverage.json)" = "149"
+          test "$(jq '.summary.events' /tmp/coverage.json)" = "131"
+          test "$(jq '.summary.evidence' /tmp/coverage.json)" = "357"
+          test "$(jq '.summary.entities_with_zero_events' /tmp/coverage.json)" = "64"
+          test "$(jq '.summary.entities_with_one_event' /tmp/coverage.json)" = "10"
+          test "$(jq '.structural_errors | length' /tmp/coverage.json)" = "0"
