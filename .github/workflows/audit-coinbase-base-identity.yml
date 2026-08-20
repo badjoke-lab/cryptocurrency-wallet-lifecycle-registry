@@ -52,5 +52,8 @@ jobs:
           test -f out/sitemap.xml && grep -oE 'https?://[^<]*(coinbase-wallet|base-app)[^<]*' out/sitemap.xml || true
           echo 'PUBLIC_ROUTE_FILES'
           find out -maxdepth 4 -type f | sort | grep -E 'coinbase-wallet|base-app' || true
-      - name: Confirm no mutation
-        run: git diff --exit-code
+      - name: Show build-generated drift and confirm no canonical mutation
+        run: |
+          set -euo pipefail
+          git status --short
+          git diff --exit-code -- data/entities.json data/products.json data/events.json data/evidence.json
