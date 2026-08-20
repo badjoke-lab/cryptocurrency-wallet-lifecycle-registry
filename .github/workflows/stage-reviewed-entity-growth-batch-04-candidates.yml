@@ -57,13 +57,26 @@ jobs:
             return row;
           };
           const slugs = new Set(entities.map(x => x.slug));
-          for (const rejected of ['sollet','slope-wallet','slope']) {
-            if (slugs.has(rejected)) throw new Error(`rejected candidate still present: ${rejected}`);
+          for (const rejected of ['sollet','slope-wallet','slope','cake-wallet','onekey-wallet','blockstream-app']) {
+            if (slugs.has(rejected)) throw new Error(`rejected or duplicate candidate still present: ${rejected}`);
           }
-          if (!slugs.has('cake-wallet') || !slugs.has('onekey-wallet')) throw new Error('replacement candidates missing');
+          for (const replacement of ['taho','sequence','nightly-wallet']) {
+            if (!slugs.has(replacement)) throw new Error(`replacement candidate missing: ${replacement}`);
+          }
           if (by(entities,'wlr_ent_000076').custody_model !== 'self_custody') throw new Error('Coinbase Wallet custody boundary changed');
           if (!by(entities,'wlr_ent_000080').aliases.includes('MyTonWallet')) throw new Error('My Wallet rebrand continuity missing');
-          if (!by(entities,'wlr_ent_000089').aliases.includes('Blockstream Green') || !by(entities,'wlr_ent_000089').aliases.includes('GreenAddress')) throw new Error('Blockstream lineage continuity missing');
+          const taho = by(entities,'wlr_ent_000087');
+          if (taho.slug !== 'taho' || taho.custody_model !== 'self_custody' || !taho.aliases.includes('Tally Ho')) throw new Error('Taho lineage/custody boundary changed');
+          const tahoProduct = by(products,'wlr_prod_000136');
+          if (tahoProduct.slug !== 'taho-browser-extension' || tahoProduct.product_type !== 'browser_extension') throw new Error('Taho product boundary changed');
+          const sequence = by(entities,'wlr_ent_000088');
+          if (sequence.slug !== 'sequence' || sequence.custody_model !== 'self_custody') throw new Error('Sequence custody boundary changed');
+          const sequenceProduct = by(products,'wlr_prod_000137');
+          if (sequenceProduct.slug !== 'sequence-universal-wallet' || sequenceProduct.product_type !== 'web_app') throw new Error('Sequence Universal Wallet boundary changed');
+          const nightly = by(entities,'wlr_ent_000089');
+          if (nightly.slug !== 'nightly-wallet' || nightly.custody_model !== 'self_custody') throw new Error('Nightly Wallet boundary changed');
+          const nightlyProduct = by(products,'wlr_prod_000138');
+          if (nightlyProduct.slug !== 'nightly-browser-extension' || nightlyProduct.product_type !== 'browser_extension') throw new Error('Nightly extension boundary changed');
           if (by(products,'wlr_prod_000141').slug !== 'breez-mobile') throw new Error('Breez wallet/SDK boundary changed');
           if (by(entities,'wlr_ent_000095').status !== 'dead') throw new Error('Samourai entity must remain dead');
           const samourai = by(products,'wlr_prod_000144');
