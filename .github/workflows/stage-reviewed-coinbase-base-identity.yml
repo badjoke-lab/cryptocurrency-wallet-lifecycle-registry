@@ -37,26 +37,22 @@ jobs:
           const events=read('data/events.json');
           const evidence=read('data/evidence.json');
           if(entities.length!==100||products.length!==149||events.length!==138||evidence.length!==363) throw new Error(`unexpected base counts ${entities.length}/${products.length}/${events.length}/${evidence.length}`);
-
           const entity=entities.find(x=>x.id==='wlr_ent_000076');
           const product=products.find(x=>x.id==='wlr_prod_000125');
           if(!entity||entity.slug!=='coinbase-wallet'||entity.canonical_name!=='Coinbase Wallet'||entity.status!=='active') throw new Error('unexpected Coinbase Wallet entity base');
           if(!product||product.slug!=='coinbase-wallet-mobile'||product.product_name!=='Coinbase Wallet Mobile'||product.status!=='active') throw new Error('unexpected Coinbase Wallet Mobile product base');
-
           entity.canonical_name='Base App';
           entity.aliases=[...new Set([...(entity.aliases||[]),'Coinbase Wallet'])];
           entity.summary='Self-custody wallet lineage from Coinbase now branded Base App, continuing the former Coinbase Wallet mobile experience while preserving user-controlled wallet credentials and supported-network assets.';
           entity.official_url='https://www.coinbase.com/wallet';
           entity.last_verified_at='2026-08-20';
           entity.notes='Base App is the continuing Coinbase Wallet lineage, not a separate successor entity. Base announced the rebrand in July 2025, and Coinbase closed the classic wallet experience on 2026-08-15 while preserving recovery phrases, supported-network assets and addresses. WLR intentionally retains the historical slug coinbase-wallet so existing human, native-machine, Series and global-record URLs remain stable. Coinbase continues to distribute a separately branded Coinbase Wallet browser extension; that extension is not silently collapsed into the existing mobile-product record.';
-
           product.product_name='Base App Mobile';
           product.aliases=[...new Set([...(product.aliases||[]),'Coinbase Wallet Mobile'])];
           product.summary='Self-custody iOS and Android mobile wallet formerly branded Coinbase Wallet Mobile and now distributed as Base App, with continuity of the installed wallet and user-controlled credentials.';
           product.official_url='https://www.coinbase.com/wallet/downloads';
           product.last_verified_at='2026-08-20';
           product.notes='Existing Coinbase Wallet mobile users continue in Base App without downloading a separate successor app. Coinbase states that the classic experience closed on 2026-08-15 but the recovery phrase, supported-network assets and addresses remain continuous. WLR intentionally retains the historical product slug coinbase-wallet-mobile for stable public and machine URLs.';
-
           const E=[
             {"id":"wlr_ev_000139","entity_id":"wlr_ent_000076","product_id":"wlr_prod_000125","affected_product_ids":["wlr_prod_000125"],"event_type":"rebranded","event_date":"2025-07-16","event_date_basis":"announcement","title":"Coinbase Wallet announced transition to Base App","description":"At Base's A New Day One event, Base announced that Coinbase Wallet was becoming the Base App, describing Base App as the next evolution of Coinbase Wallet and beginning a beta rollout for the renamed and expanded application.","confidence":"high","event_status_effect":"rebranded","is_major_event":true,"notes":"This is a continuity/rebrand event, not the launch of a separate successor wallet. Base first-party material says Base App is formerly Coinbase Wallet and that Coinbase Wallet is now Base App. The exact 2025-07-16 announcement boundary is corroborated by contemporaneous dated reporting from the event. Existing WLR IDs and slugs remain stable."},
             {"id":"wlr_ev_000140","entity_id":"wlr_ent_000076","product_id":"wlr_prod_000125","affected_product_ids":["wlr_prod_000125"],"event_type":"service_shutdown","event_date":"2026-08-15","event_date_basis":"effective","title":"Classic Coinbase Wallet experience closed","description":"Coinbase closed the classic Coinbase Wallet experience on August 15, 2026 and replaced it with the updated Base App experience while preserving the user's recovery phrase, supported-network assets and wallet addresses.","confidence":"high","event_status_effect":"active","is_major_event":true,"notes":"This is a shutdown of the legacy/classic experience, not a shutdown of the continuing wallet product. Coinbase says there is nothing to transfer or sign merely to continue in the updated wallet. Some legacy networks are not supported in Base App and may require importing the same recovery phrase into another compatible wallet."}
@@ -100,8 +96,8 @@ jobs:
           test -f public/data/series/records/product--coinbase-wallet-mobile.json
           test ! -f public/data/series/records/wallet--base-app.json
           test ! -f public/data/series/records/product--base-app-mobile.json
-          jq -e '.identity.name == "Base App" and .identity.slug == "coinbase-wallet" and .human_url == "https://wlr.badjoke-lab.com/wallet/coinbase-wallet/"' public/data/series/records/wallet--coinbase-wallet.json >/dev/null
-          jq -e '.identity.name == "Base App Mobile" and .identity.slug == "coinbase-wallet-mobile" and .human_url == "https://wlr.badjoke-lab.com/product/coinbase-wallet-mobile/"' public/data/series/records/product--coinbase-wallet-mobile.json >/dev/null
+          jq -e '.identity.name == "Base App" and .record_key.slug == "coinbase-wallet" and .urls.human == "https://wlr.badjoke-lab.com/wallet/coinbase-wallet/"' public/data/series/records/wallet--coinbase-wallet.json >/dev/null
+          jq -e '.identity.name == "Base App Mobile" and .record_key.slug == "coinbase-wallet-mobile" and .urls.human == "https://wlr.badjoke-lab.com/product/coinbase-wallet-mobile/"' public/data/series/records/product--coinbase-wallet-mobile.json >/dev/null
           grep -q 'https://wlr.badjoke-lab.com/wallet/coinbase-wallet/' out/sitemap.xml
           grep -q 'https://wlr.badjoke-lab.com/product/coinbase-wallet-mobile/' out/sitemap.xml
       - name: Commit reviewed canonical and deterministic Series edits
