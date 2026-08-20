@@ -1,0 +1,56 @@
+name: Audit Coinbase Wallet Base App identity
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    if: github.head_ref == 'ops/coinbase-base-identity-audit'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - name: Pin exact accepted main
+        run: test "$(git rev-parse HEAD)" = "674b0e0e0548b05fdef5f9a2fcde797b3f1330f0"
+      - name: Print canonical Coinbase Wallet records
+        run: |
+          set -euo pipefail
+          echo 'ENTITY'
+          jq '.[] | select(.id == "wlr_ent_000076")' data/entities.json
+          echo 'PRODUCT'
+          jq '.[] | select(.id == "wlr_prod_000125")' data/products.json
+          echo 'EVENTS_BY_ENTITY_OR_PRODUCT'
+          jq '[.[] | select(.entity_id == "wlr_ent_000076" or .product_id == "wlr_prod_000125" or ((.affected_product_ids // []) | index("wlr_prod_000125")) != null)]' data/events.json
+          echo 'EVIDENCE_BY_ENTITY_OR_PRODUCT'
+          jq '[.[] | select(.entity_id == "wlr_ent_000076" or .product_id == "wlr_prod_000125" or ((.product_ids // []) | index("wlr_prod_000125")) != null)]' data/evidence.json
+      - name: Print repository identity references
+        run: |
+          set -euo pipefail
+          git grep -n -I -E 'coinbase-wallet|coinbase wallet|Coinbase Wallet|wlr_ent_000076|wlr_prod_000125|Base App' -- ':!.github/workflows/audit-coinbase-base-identity.yml' || true
+      - name: Print current Series envelopes
+        run: |
+          set -euo pipefail
+          echo 'SERIES_FILES'
+          find public/data/series/records -maxdepth 1 -type f | sort | grep -E 'coinbase|base-app' || true
+          echo 'WALLET_SERIES'
+          test -f public/data/series/records/wallet--coinbase-wallet.json && cat public/data/series/records/wallet--coinbase-wallet.json || true
+          echo 'PRODUCT_SERIES'
+          test -f public/data/series/records/product--coinbase-wallet-mobile.json && cat public/data/series/records/product--coinbase-wallet-mobile.json || true
+      - name: Print generated route and SEO references
+        run: |
+          set -euo pipefail
+          npm install --no-audit --no-fund
+          npm run build >/tmp/build.log 2>&1
+          grep -E '/wallet/coinbase-wallet|/product/coinbase-wallet-mobile' /tmp/build.log || true
+          test -f out/sitemap.xml && grep -oE 'https?://[^<]*(coinbase-wallet|base-app)[^<]*' out/sitemap.xml || true
+          echo 'PUBLIC_ROUTE_FILES'
+          find out -maxdepth 4 -type f | sort | grep -E 'coinbase-wallet|base-app' || true
+      - name: Confirm no mutation
+        run: git diff --exit-code
