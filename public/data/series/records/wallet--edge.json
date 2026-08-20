@@ -16,7 +16,25 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000085"
+        ],
+        "confidence": "high",
+        "description": "Airbitz announced that the wallet company and platform were becoming Edge while carrying the existing client-side security and wallet lineage into the new brand.",
+        "entity_id": "wlr_ent_000036",
+        "event_date": "2017-10-28",
+        "event_date_basis": "announcement",
+        "event_status_effect": "none",
+        "event_type": "rebranded",
+        "id": "wlr_ev_000127",
+        "is_major_event": true,
+        "notes": "This is an entity/product-lineage rebrand event, not the public launch date of the later Edge Wallet release.",
+        "product_id": "wlr_prod_000085",
+        "title": "Airbitz announced its rebrand to Edge"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -52,6 +70,22 @@
         "source_type": "official_blog",
         "title": "Edge Wallet Is LIVE!!",
         "url": "https://edge.app/blog/company-news/edge-wallet-is-live/"
+      },
+      {
+        "accessed_at": "2026-08-20",
+        "claim_scope": "rebrand",
+        "entity_id": "wlr_ent_000036",
+        "event_id": "wlr_ev_000127",
+        "id": "wlr_src_000353",
+        "is_primary": true,
+        "notes": "First-party Edge announcement explicitly states that Airbitz is now Edge while carrying forward the company's client-side security platform and wallet lineage.",
+        "product_id": "wlr_prod_000085",
+        "published_at": "2017-10-28",
+        "publisher": "Edge",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Airbitz is now Edge!",
+        "url": "https://edge.app/blog/company-news/airbitz-is-now-edge/"
       }
     ]
   },

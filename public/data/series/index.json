@@ -1302,7 +1302,7 @@
       "native_record_type": "wlr.product-record.v1",
       "series_slug": "product--ctrl-wallet-extension",
       "slug": "ctrl-wallet-extension",
-      "status": "active"
+      "status": "discontinued"
     },
     {
       "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000109",
@@ -2502,7 +2502,7 @@
       "native_record_type": "wlr.wallet-record.v1",
       "series_slug": "wallet--ctrl-wallet",
       "slug": "ctrl-wallet",
-      "status": "active"
+      "status": "dead"
     },
     {
       "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000060",

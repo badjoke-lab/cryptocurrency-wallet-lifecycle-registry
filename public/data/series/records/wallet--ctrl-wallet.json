@@ -8,15 +8,33 @@
       "product_ids": [
         "wlr_prod_000108"
       ],
-      "status": "active",
+      "status": "dead",
       "wallet_type": "software",
       "website_status": null
     },
-    "status": "active"
+    "status": "dead"
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000108"
+        ],
+        "confidence": "high",
+        "description": "Ctrl announced a permanent shutdown: after removal from app and browser-extension stores on July 7, 2026, normal wallet functionality remained available through August 2 and from August 3 only recovery-phrase export remained while wallet features were disabled.",
+        "entity_id": "wlr_ent_000059",
+        "event_date": "2026-08-03",
+        "event_date_basis": "effective",
+        "event_status_effect": "dead",
+        "event_type": "service_shutdown",
+        "id": "wlr_ev_000131",
+        "is_major_event": true,
+        "notes": "The surviving recovery-phrase export path is a recovery mechanism, not normal wallet operation. The canonical Ctrl entity is therefore corrected to dead and the extension product to discontinued/support ended as of 2026-08-03.",
+        "product_id": "wlr_prod_000108",
+        "title": "Ctrl Wallet shut down normal wallet functionality"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -52,6 +70,22 @@
         "source_type": "official_statement",
         "title": "Ctrl Wallet",
         "url": "https://ctrl.xyz/"
+      },
+      {
+        "accessed_at": "2026-08-20",
+        "claim_scope": "discontinuation",
+        "entity_id": "wlr_ent_000059",
+        "event_id": "wlr_ev_000131",
+        "id": "wlr_src_000357",
+        "is_primary": true,
+        "notes": "First-party Ctrl notice states the wallet is permanently shutting down, was removed from stores on July 7, remains normally functional only through August 2, and from August 3 allows only recovery-phrase export while wallet features are disabled.",
+        "product_id": "wlr_prod_000108",
+        "published_at": "2026-07-07",
+        "publisher": "Ctrl",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Ctrl Wallet Deprecation: What You Need to Know",
+        "url": "https://ctrl.xyz/news/ctrl-wallet-deprecation-what-you-need-to-know/"
       }
     ]
   },

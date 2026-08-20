@@ -22,7 +22,25 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000112"
+        ],
+        "confidence": "high",
+        "description": "The XUMM wallet team announced the Xaman brand and a gradual transition while preserving the existing wallet functionality and operational lineage.",
+        "entity_id": "wlr_ent_000063",
+        "event_date": "2023-05-26",
+        "event_date_basis": "announcement",
+        "event_status_effect": "none",
+        "event_type": "rebranded",
+        "id": "wlr_ev_000128",
+        "is_major_event": true,
+        "notes": "The rebrand announcement does not reset the wallet/product launch chronology.",
+        "product_id": "wlr_prod_000112",
+        "title": "XUMM announced its rebrand to Xaman"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -42,6 +60,22 @@
         "source_type": "official_statement",
         "title": "What is Xaman?",
         "url": "https://help.xaman.app/app/getting-started-with-xaman/what-is-xumm"
+      },
+      {
+        "accessed_at": "2026-08-20",
+        "claim_scope": "rebrand",
+        "entity_id": "wlr_ent_000063",
+        "event_id": "wlr_ev_000128",
+        "id": "wlr_src_000354",
+        "is_primary": true,
+        "notes": "First-party Xaman announcement explicitly introduces the XUMM-to-Xaman rebrand and describes a gradual transition without a new wallet lineage.",
+        "product_id": "wlr_prod_000112",
+        "published_at": "2023-05-26",
+        "publisher": "Xaman",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "XUMM evolves into a new era: Welcome Xaman",
+        "url": "https://xaman.app/blog/xumm-evolves-into-a-new-era-welcome-xaman"
       }
     ]
   },

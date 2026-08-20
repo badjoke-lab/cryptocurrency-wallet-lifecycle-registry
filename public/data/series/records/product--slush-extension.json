@@ -22,7 +22,25 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000118"
+        ],
+        "confidence": "high",
+        "description": "Mysten Labs announced that Sui Wallet and Stashed were becoming Slush, with existing Sui Wallet users receiving the new name and interface through the standard update path rather than a separate wallet migration.",
+        "entity_id": "wlr_ent_000069",
+        "event_date": "2025-04-24",
+        "event_date_basis": "announcement",
+        "event_status_effect": "none",
+        "event_type": "rebranded",
+        "id": "wlr_ev_000130",
+        "is_major_event": true,
+        "notes": "WLR uses `rebranded` rather than `merged` because the selected existing wallet product continues through the standard update path under the Slush identity; Stashed functionality is acknowledged in the description without creating an unsupported second canonical product relationship.",
+        "product_id": "wlr_prod_000118",
+        "title": "Sui Wallet and Stashed unified under the Slush brand"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -42,6 +60,22 @@
         "source_type": "official_statement",
         "title": "Slush Terms of Service",
         "url": "https://slush.app/terms-of-service"
+      },
+      {
+        "accessed_at": "2026-08-20",
+        "claim_scope": "rebrand",
+        "entity_id": "wlr_ent_000069",
+        "event_id": "wlr_ev_000130",
+        "id": "wlr_src_000356",
+        "is_primary": true,
+        "notes": "First-party Mysten Labs announcement states Sui Wallet and Stashed are now Slush and says existing Sui Wallet users receive the change through a standard update without a new download or account migration.",
+        "product_id": "wlr_prod_000118",
+        "published_at": "2025-04-24",
+        "publisher": "Mysten Labs",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Sui Wallet and Stashed are Now Slush",
+        "url": "https://www.mystenlabs.com/blog/sui-wallet-and-stashed-are-now-slush"
       }
     ]
   },
