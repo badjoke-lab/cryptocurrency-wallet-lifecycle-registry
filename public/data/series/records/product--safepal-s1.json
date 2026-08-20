@@ -2,7 +2,8 @@
   "current_state": {
     "native": {
       "confidence": "high",
-      "launch_year": null,
+      "launch_date": "2019-05-27",
+      "launch_date_precision": "day",
       "parent_entity": {
         "canonical_name": "SafePal",
         "id": "wlr_ent_000026",
@@ -113,7 +114,8 @@
   },
   "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000070",
   "identity": {
-    "aliases": []
+    "aliases": [],
+    "name": "SafePal S1"
   },
   "object_type": "record_envelope",
   "provenance": {
@@ -135,7 +137,7 @@
   "relationships": [],
   "series_schema_version": "1.0.0",
   "urls": {
-    "human": "https://wlr.badjoke-lab.com/wallet/safepal/",
+    "human": "https://wlr.badjoke-lab.com/product/safepal-s1/",
     "machine": "https://wlr.badjoke-lab.com/data/series/records/product--safepal-s1.json",
     "native_machine": "https://wlr.badjoke-lab.com/data/products/safepal-s1.json"
   },

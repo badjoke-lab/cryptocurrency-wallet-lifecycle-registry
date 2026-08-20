@@ -2,7 +2,8 @@
   "current_state": {
     "native": {
       "confidence": "high",
-      "launch_year": null,
+      "launch_date": null,
+      "launch_date_precision": null,
       "parent_entity": {
         "canonical_name": "Backpack",
         "id": "wlr_ent_000061",
@@ -46,7 +47,8 @@
   },
   "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000110",
   "identity": {
-    "aliases": []
+    "aliases": [],
+    "name": "Backpack Browser Extension"
   },
   "object_type": "record_envelope",
   "provenance": {
@@ -68,7 +70,7 @@
   "relationships": [],
   "series_schema_version": "1.0.0",
   "urls": {
-    "human": "https://wlr.badjoke-lab.com/wallet/backpack-wallet/",
+    "human": "https://wlr.badjoke-lab.com/product/backpack-extension/",
     "machine": "https://wlr.badjoke-lab.com/data/series/records/product--backpack-extension.json",
     "native_machine": "https://wlr.badjoke-lab.com/data/products/backpack-extension.json"
   },

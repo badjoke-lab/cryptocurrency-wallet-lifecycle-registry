@@ -2,7 +2,8 @@
   "current_state": {
     "native": {
       "confidence": "high",
-      "launch_year": null,
+      "launch_date": "2019",
+      "launch_date_precision": "year",
       "parent_entity": {
         "canonical_name": "Leather",
         "id": "wlr_ent_000024",
@@ -157,7 +158,8 @@
     "aliases": [
       "Hiro Wallet Desktop",
       "Leather Desktop Wallet"
-    ]
+    ],
+    "name": "Leather Desktop (legacy)"
   },
   "object_type": "record_envelope",
   "provenance": {
@@ -179,7 +181,7 @@
   "relationships": [],
   "series_schema_version": "1.0.0",
   "urls": {
-    "human": "https://wlr.badjoke-lab.com/wallet/leather/",
+    "human": "https://wlr.badjoke-lab.com/product/leather-desktop-legacy/",
     "machine": "https://wlr.badjoke-lab.com/data/series/records/product--leather-desktop-legacy.json",
     "native_machine": "https://wlr.badjoke-lab.com/data/products/leather-desktop-legacy.json"
   },

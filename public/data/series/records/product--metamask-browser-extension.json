@@ -2,7 +2,8 @@
   "current_state": {
     "native": {
       "confidence": "high",
-      "launch_year": null,
+      "launch_date": "2016-07-14",
+      "launch_date_precision": "day",
       "parent_entity": {
         "canonical_name": "MetaMask",
         "id": "wlr_ent_000004",
@@ -209,7 +210,8 @@
   "identity": {
     "aliases": [
       "MetaMask Extension"
-    ]
+    ],
+    "name": "MetaMask Browser Extension"
   },
   "object_type": "record_envelope",
   "provenance": {
@@ -231,7 +233,7 @@
   "relationships": [],
   "series_schema_version": "1.0.0",
   "urls": {
-    "human": "https://wlr.badjoke-lab.com/wallet/metamask/",
+    "human": "https://wlr.badjoke-lab.com/product/metamask-browser-extension/",
     "machine": "https://wlr.badjoke-lab.com/data/series/records/product--metamask-browser-extension.json",
     "native_machine": "https://wlr.badjoke-lab.com/data/products/metamask-browser-extension.json"
   },

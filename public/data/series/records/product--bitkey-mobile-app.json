@@ -2,7 +2,8 @@
   "current_state": {
     "native": {
       "confidence": "high",
-      "launch_year": null,
+      "launch_date": "2024-03-13",
+      "launch_date_precision": "day",
       "parent_entity": {
         "canonical_name": "Bitkey",
         "id": "wlr_ent_000006",
@@ -112,7 +113,8 @@
   "identity": {
     "aliases": [
       "Bitkey app"
-    ]
+    ],
+    "name": "Bitkey Mobile App"
   },
   "object_type": "record_envelope",
   "provenance": {
@@ -134,7 +136,7 @@
   "relationships": [],
   "series_schema_version": "1.0.0",
   "urls": {
-    "human": "https://wlr.badjoke-lab.com/wallet/bitkey/",
+    "human": "https://wlr.badjoke-lab.com/product/bitkey-mobile-app/",
     "machine": "https://wlr.badjoke-lab.com/data/series/records/product--bitkey-mobile-app.json",
     "native_machine": "https://wlr.badjoke-lab.com/data/products/bitkey-mobile-app.json"
   },

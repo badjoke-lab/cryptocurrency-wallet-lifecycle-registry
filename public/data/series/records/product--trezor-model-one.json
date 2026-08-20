@@ -2,7 +2,8 @@
   "current_state": {
     "native": {
       "confidence": "high",
-      "launch_year": null,
+      "launch_date": "2014-07-29",
+      "launch_date_precision": null,
       "parent_entity": {
         "canonical_name": "Trezor",
         "id": "wlr_ent_000001",
@@ -184,7 +185,8 @@
   },
   "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000001",
   "identity": {
-    "aliases": []
+    "aliases": [],
+    "name": "Trezor Model One"
   },
   "object_type": "record_envelope",
   "provenance": {
@@ -206,7 +208,7 @@
   "relationships": [],
   "series_schema_version": "1.0.0",
   "urls": {
-    "human": "https://wlr.badjoke-lab.com/wallet/trezor/",
+    "human": "https://wlr.badjoke-lab.com/product/trezor-model-one/",
     "machine": "https://wlr.badjoke-lab.com/data/series/records/product--trezor-model-one.json",
     "native_machine": "https://wlr.badjoke-lab.com/data/products/trezor-model-one.json"
   },

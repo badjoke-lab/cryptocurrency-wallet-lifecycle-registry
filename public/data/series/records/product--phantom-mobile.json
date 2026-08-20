@@ -2,7 +2,8 @@
   "current_state": {
     "native": {
       "confidence": "high",
-      "launch_year": null,
+      "launch_date": "2022-01-31",
+      "launch_date_precision": "day",
       "parent_entity": {
         "canonical_name": "Phantom",
         "id": "wlr_ent_000015",
@@ -135,7 +136,8 @@
   },
   "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000046",
   "identity": {
-    "aliases": []
+    "aliases": [],
+    "name": "Phantom Mobile"
   },
   "object_type": "record_envelope",
   "provenance": {
@@ -157,7 +159,7 @@
   "relationships": [],
   "series_schema_version": "1.0.0",
   "urls": {
-    "human": "https://wlr.badjoke-lab.com/wallet/phantom/",
+    "human": "https://wlr.badjoke-lab.com/product/phantom-mobile/",
     "machine": "https://wlr.badjoke-lab.com/data/series/records/product--phantom-mobile.json",
     "native_machine": "https://wlr.badjoke-lab.com/data/products/phantom-mobile.json"
   },

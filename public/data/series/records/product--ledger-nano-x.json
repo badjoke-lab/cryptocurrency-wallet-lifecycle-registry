@@ -2,7 +2,8 @@
   "current_state": {
     "native": {
       "confidence": "high",
-      "launch_year": null,
+      "launch_date": "2019",
+      "launch_date_precision": "year",
       "parent_entity": {
         "canonical_name": "Ledger",
         "id": "wlr_ent_000002",
@@ -29,7 +30,8 @@
   },
   "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000008",
   "identity": {
-    "aliases": []
+    "aliases": [],
+    "name": "Ledger Nano X"
   },
   "object_type": "record_envelope",
   "provenance": {
@@ -51,7 +53,7 @@
   "relationships": [],
   "series_schema_version": "1.0.0",
   "urls": {
-    "human": "https://wlr.badjoke-lab.com/wallet/ledger/",
+    "human": "https://wlr.badjoke-lab.com/product/ledger-nano-x/",
     "machine": "https://wlr.badjoke-lab.com/data/series/records/product--ledger-nano-x.json",
     "native_machine": "https://wlr.badjoke-lab.com/data/products/ledger-nano-x.json"
   },

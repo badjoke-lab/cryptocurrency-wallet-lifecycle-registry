@@ -2,7 +2,8 @@
   "current_state": {
     "native": {
       "confidence": "high",
-      "launch_year": null,
+      "launch_date": null,
+      "launch_date_precision": null,
       "parent_entity": {
         "canonical_name": "Ctrl Wallet",
         "id": "wlr_ent_000059",
@@ -48,7 +49,8 @@
   "identity": {
     "aliases": [
       "XDEFI Wallet Extension"
-    ]
+    ],
+    "name": "Ctrl Wallet Extension"
   },
   "object_type": "record_envelope",
   "provenance": {
@@ -70,7 +72,7 @@
   "relationships": [],
   "series_schema_version": "1.0.0",
   "urls": {
-    "human": "https://wlr.badjoke-lab.com/wallet/ctrl-wallet/",
+    "human": "https://wlr.badjoke-lab.com/product/ctrl-wallet-extension/",
     "machine": "https://wlr.badjoke-lab.com/data/series/records/product--ctrl-wallet-extension.json",
     "native_machine": "https://wlr.badjoke-lab.com/data/products/ctrl-wallet-extension.json"
   },

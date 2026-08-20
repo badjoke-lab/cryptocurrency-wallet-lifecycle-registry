@@ -2,7 +2,8 @@
   "current_state": {
     "native": {
       "confidence": "high",
-      "launch_year": null,
+      "launch_date": "2021-12-08",
+      "launch_date_precision": "day",
       "parent_entity": {
         "canonical_name": "Ready",
         "id": "wlr_ent_000011",
@@ -156,7 +157,8 @@
   "identity": {
     "aliases": [
       "Argent X"
-    ]
+    ],
+    "name": "Ready X"
   },
   "object_type": "record_envelope",
   "provenance": {
@@ -178,7 +180,7 @@
   "relationships": [],
   "series_schema_version": "1.0.0",
   "urls": {
-    "human": "https://wlr.badjoke-lab.com/wallet/ready/",
+    "human": "https://wlr.badjoke-lab.com/product/ready-x/",
     "machine": "https://wlr.badjoke-lab.com/data/series/records/product--ready-x.json",
     "native_machine": "https://wlr.badjoke-lab.com/data/products/ready-x.json"
   },

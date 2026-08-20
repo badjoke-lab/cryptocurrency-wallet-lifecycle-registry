@@ -2,7 +2,8 @@
   "current_state": {
     "native": {
       "confidence": "high",
-      "launch_year": null,
+      "launch_date": "2021-01-03",
+      "launch_date_precision": "day",
       "parent_entity": {
         "canonical_name": "Blockstream Jade",
         "id": "wlr_ent_000008",
@@ -173,7 +174,8 @@
     "aliases": [
       "Jade Classic",
       "Original Jade"
-    ]
+    ],
+    "name": "Blockstream Jade"
   },
   "object_type": "record_envelope",
   "provenance": {
@@ -195,7 +197,7 @@
   "relationships": [],
   "series_schema_version": "1.0.0",
   "urls": {
-    "human": "https://wlr.badjoke-lab.com/wallet/blockstream-jade/",
+    "human": "https://wlr.badjoke-lab.com/product/blockstream-jade-classic/",
     "machine": "https://wlr.badjoke-lab.com/data/series/records/product--blockstream-jade-classic.json",
     "native_machine": "https://wlr.badjoke-lab.com/data/products/blockstream-jade-classic.json"
   },

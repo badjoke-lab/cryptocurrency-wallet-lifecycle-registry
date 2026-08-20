@@ -2,7 +2,8 @@
   "current_state": {
     "native": {
       "confidence": "medium",
-      "launch_year": null,
+      "launch_date": "2019",
+      "launch_date_precision": "year",
       "parent_entity": {
         "canonical_name": "COLDCARD",
         "id": "wlr_ent_000003",
@@ -357,7 +358,8 @@
   },
   "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000014",
   "identity": {
-    "aliases": []
+    "aliases": [],
+    "name": "COLDCARD Mk2"
   },
   "object_type": "record_envelope",
   "provenance": {
@@ -379,7 +381,7 @@
   "relationships": [],
   "series_schema_version": "1.0.0",
   "urls": {
-    "human": "https://wlr.badjoke-lab.com/wallet/coldcard/",
+    "human": "https://wlr.badjoke-lab.com/product/coldcard-mk2/",
     "machine": "https://wlr.badjoke-lab.com/data/series/records/product--coldcard-mk2.json",
     "native_machine": "https://wlr.badjoke-lab.com/data/products/coldcard-mk2.json"
   },

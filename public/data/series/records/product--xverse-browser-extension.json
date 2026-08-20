@@ -2,7 +2,8 @@
   "current_state": {
     "native": {
       "confidence": "high",
-      "launch_year": null,
+      "launch_date": "2022-12-08",
+      "launch_date_precision": "day",
       "parent_entity": {
         "canonical_name": "Xverse",
         "id": "wlr_ent_000020",
@@ -148,7 +149,8 @@
     "aliases": [
       "Xverse Extension",
       "Xverse Desktop Browser Extension"
-    ]
+    ],
+    "name": "Xverse Browser Extension"
   },
   "object_type": "record_envelope",
   "provenance": {
@@ -170,7 +172,7 @@
   "relationships": [],
   "series_schema_version": "1.0.0",
   "urls": {
-    "human": "https://wlr.badjoke-lab.com/wallet/xverse/",
+    "human": "https://wlr.badjoke-lab.com/product/xverse-browser-extension/",
     "machine": "https://wlr.badjoke-lab.com/data/series/records/product--xverse-browser-extension.json",
     "native_machine": "https://wlr.badjoke-lab.com/data/products/xverse-browser-extension.json"
   },

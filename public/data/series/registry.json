@@ -60,7 +60,7 @@
       "/data/series/records/wallet--{slug}.json",
       "/data/series/records/product--{slug}.json"
     ],
-    "search": "/explorer/",
+    "search": "/",
     "stats": "/stats/"
   },
   "series_schema_version": "1.0.0",

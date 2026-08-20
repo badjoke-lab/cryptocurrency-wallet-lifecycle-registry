@@ -2,7 +2,8 @@
   "current_state": {
     "native": {
       "confidence": "medium",
-      "launch_year": null,
+      "launch_date": "2019",
+      "launch_date_precision": "approximate",
       "parent_entity": {
         "canonical_name": "Safe",
         "id": "wlr_ent_000005",
@@ -177,7 +178,8 @@
     "aliases": [
       "Gnosis Safe for teams",
       "Gnosis Safe"
-    ]
+    ],
+    "name": "Safe{Wallet} Web"
   },
   "object_type": "record_envelope",
   "provenance": {
@@ -199,7 +201,7 @@
   "relationships": [],
   "series_schema_version": "1.0.0",
   "urls": {
-    "human": "https://wlr.badjoke-lab.com/wallet/safe/",
+    "human": "https://wlr.badjoke-lab.com/product/safe-wallet-web/",
     "machine": "https://wlr.badjoke-lab.com/data/series/records/product--safe-wallet-web.json",
     "native_machine": "https://wlr.badjoke-lab.com/data/products/safe-wallet-web.json"
   },

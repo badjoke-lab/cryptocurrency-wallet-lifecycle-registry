@@ -2,7 +2,8 @@
   "current_state": {
     "native": {
       "confidence": "high",
-      "launch_year": null,
+      "launch_date": "2021",
+      "launch_date_precision": "year",
       "parent_entity": {
         "canonical_name": "Tangem",
         "id": "wlr_ent_000014",
@@ -86,7 +87,8 @@
   "identity": {
     "aliases": [
       "Tangem Wallet"
-    ]
+    ],
+    "name": "Tangem Wallet Card"
   },
   "object_type": "record_envelope",
   "provenance": {
@@ -108,7 +110,7 @@
   "relationships": [],
   "series_schema_version": "1.0.0",
   "urls": {
-    "human": "https://wlr.badjoke-lab.com/wallet/tangem/",
+    "human": "https://wlr.badjoke-lab.com/product/tangem-wallet-card/",
     "machine": "https://wlr.badjoke-lab.com/data/series/records/product--tangem-wallet-card.json",
     "native_machine": "https://wlr.badjoke-lab.com/data/products/tangem-wallet-card.json"
   },

@@ -2,7 +2,8 @@
   "current_state": {
     "native": {
       "confidence": "high",
-      "launch_year": null,
+      "launch_date": "2020-08-29",
+      "launch_date_precision": "day",
       "parent_entity": {
         "canonical_name": "Sparrow Wallet",
         "id": "wlr_ent_000021",
@@ -240,7 +241,8 @@
   "identity": {
     "aliases": [
       "Sparrow Wallet"
-    ]
+    ],
+    "name": "Sparrow Wallet Desktop"
   },
   "object_type": "record_envelope",
   "provenance": {
@@ -262,7 +264,7 @@
   "relationships": [],
   "series_schema_version": "1.0.0",
   "urls": {
-    "human": "https://wlr.badjoke-lab.com/wallet/sparrow-wallet/",
+    "human": "https://wlr.badjoke-lab.com/product/sparrow-desktop/",
     "machine": "https://wlr.badjoke-lab.com/data/series/records/product--sparrow-desktop.json",
     "native_machine": "https://wlr.badjoke-lab.com/data/products/sparrow-desktop.json"
   },

@@ -2,7 +2,8 @@
   "current_state": {
     "native": {
       "confidence": "high",
-      "launch_year": null,
+      "launch_date": "2025-10-16",
+      "launch_date_precision": "day",
       "parent_entity": {
         "canonical_name": "Safe",
         "id": "wlr_ent_000005",
@@ -88,7 +89,8 @@
   "identity": {
     "aliases": [
       "Safe{Mobile}"
-    ]
+    ],
+    "name": "Safe Mobile"
   },
   "object_type": "record_envelope",
   "provenance": {
@@ -110,7 +112,7 @@
   "relationships": [],
   "series_schema_version": "1.0.0",
   "urls": {
-    "human": "https://wlr.badjoke-lab.com/wallet/safe/",
+    "human": "https://wlr.badjoke-lab.com/product/safe-mobile/",
     "machine": "https://wlr.badjoke-lab.com/data/series/records/product--safe-mobile.json",
     "native_machine": "https://wlr.badjoke-lab.com/data/products/safe-mobile.json"
   },

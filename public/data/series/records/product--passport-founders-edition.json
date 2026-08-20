@@ -2,7 +2,8 @@
   "current_state": {
     "native": {
       "confidence": "high",
-      "launch_year": null,
+      "launch_date": "2020",
+      "launch_date_precision": "year",
       "parent_entity": {
         "canonical_name": "Foundation Passport",
         "id": "wlr_ent_000017",
@@ -97,7 +98,8 @@
     "aliases": [
       "Passport Founders Edition",
       "Passport Gen 1"
-    ]
+    ],
+    "name": "Passport Founder’s Edition"
   },
   "object_type": "record_envelope",
   "provenance": {
@@ -119,7 +121,7 @@
   "relationships": [],
   "series_schema_version": "1.0.0",
   "urls": {
-    "human": "https://wlr.badjoke-lab.com/wallet/foundation-passport/",
+    "human": "https://wlr.badjoke-lab.com/product/passport-founders-edition/",
     "machine": "https://wlr.badjoke-lab.com/data/series/records/product--passport-founders-edition.json",
     "native_machine": "https://wlr.badjoke-lab.com/data/products/passport-founders-edition.json"
   },

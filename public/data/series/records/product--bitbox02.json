@@ -2,7 +2,8 @@
   "current_state": {
     "native": {
       "confidence": "high",
-      "launch_year": null,
+      "launch_date": "2019-09-25",
+      "launch_date_precision": "day",
       "parent_entity": {
         "canonical_name": "BitBox",
         "id": "wlr_ent_000007",
@@ -67,7 +68,8 @@
   },
   "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000029",
   "identity": {
-    "aliases": []
+    "aliases": [],
+    "name": "BitBox02"
   },
   "object_type": "record_envelope",
   "provenance": {
@@ -89,7 +91,7 @@
   "relationships": [],
   "series_schema_version": "1.0.0",
   "urls": {
-    "human": "https://wlr.badjoke-lab.com/wallet/bitbox/",
+    "human": "https://wlr.badjoke-lab.com/product/bitbox02/",
     "machine": "https://wlr.badjoke-lab.com/data/series/records/product--bitbox02.json",
     "native_machine": "https://wlr.badjoke-lab.com/data/products/bitbox02.json"
   },

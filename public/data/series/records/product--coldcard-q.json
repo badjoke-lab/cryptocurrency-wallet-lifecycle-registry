@@ -2,7 +2,8 @@
   "current_state": {
     "native": {
       "confidence": "high",
-      "launch_year": null,
+      "launch_date": "2024",
+      "launch_date_precision": "year",
       "parent_entity": {
         "canonical_name": "COLDCARD",
         "id": "wlr_ent_000003",
@@ -254,7 +255,8 @@
   },
   "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000018",
   "identity": {
-    "aliases": []
+    "aliases": [],
+    "name": "COLDCARD Q"
   },
   "object_type": "record_envelope",
   "provenance": {
@@ -276,7 +278,7 @@
   "relationships": [],
   "series_schema_version": "1.0.0",
   "urls": {
-    "human": "https://wlr.badjoke-lab.com/wallet/coldcard/",
+    "human": "https://wlr.badjoke-lab.com/product/coldcard-q/",
     "machine": "https://wlr.badjoke-lab.com/data/series/records/product--coldcard-q.json",
     "native_machine": "https://wlr.badjoke-lab.com/data/products/coldcard-q.json"
   },

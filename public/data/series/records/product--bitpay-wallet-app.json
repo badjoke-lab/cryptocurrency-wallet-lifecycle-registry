@@ -2,7 +2,8 @@
   "current_state": {
     "native": {
       "confidence": "high",
-      "launch_year": null,
+      "launch_date": null,
+      "launch_date_precision": null,
       "parent_entity": {
         "canonical_name": "BitPay Wallet",
         "id": "wlr_ent_000055",
@@ -46,7 +47,8 @@
   },
   "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000104",
   "identity": {
-    "aliases": []
+    "aliases": [],
+    "name": "BitPay Wallet App"
   },
   "object_type": "record_envelope",
   "provenance": {
@@ -68,7 +70,7 @@
   "relationships": [],
   "series_schema_version": "1.0.0",
   "urls": {
-    "human": "https://wlr.badjoke-lab.com/wallet/bitpay-wallet/",
+    "human": "https://wlr.badjoke-lab.com/product/bitpay-wallet-app/",
     "machine": "https://wlr.badjoke-lab.com/data/series/records/product--bitpay-wallet-app.json",
     "native_machine": "https://wlr.badjoke-lab.com/data/products/bitpay-wallet-app.json"
   },

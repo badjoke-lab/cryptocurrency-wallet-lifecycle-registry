@@ -2,7 +2,8 @@
   "current_state": {
     "native": {
       "confidence": "high",
-      "launch_year": null,
+      "launch_date": "2020-08-28",
+      "launch_date_precision": "day",
       "parent_entity": {
         "canonical_name": "BlueWallet",
         "id": "wlr_ent_000023",
@@ -84,7 +85,8 @@
   },
   "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000064",
   "identity": {
-    "aliases": []
+    "aliases": [],
+    "name": "BlueWallet Desktop"
   },
   "object_type": "record_envelope",
   "provenance": {
@@ -106,7 +108,7 @@
   "relationships": [],
   "series_schema_version": "1.0.0",
   "urls": {
-    "human": "https://wlr.badjoke-lab.com/wallet/bluewallet/",
+    "human": "https://wlr.badjoke-lab.com/product/bluewallet-desktop/",
     "machine": "https://wlr.badjoke-lab.com/data/series/records/product--bluewallet-desktop.json",
     "native_machine": "https://wlr.badjoke-lab.com/data/products/bluewallet-desktop.json"
   },

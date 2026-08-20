@@ -2,7 +2,8 @@
   "current_state": {
     "native": {
       "confidence": "high",
-      "launch_year": null,
+      "launch_date": "2015",
+      "launch_date_precision": "year",
       "parent_entity": {
         "canonical_name": "Exodus",
         "id": "wlr_ent_000016",
@@ -51,7 +52,8 @@
   },
   "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000047",
   "identity": {
-    "aliases": []
+    "aliases": [],
+    "name": "Exodus Desktop"
   },
   "object_type": "record_envelope",
   "provenance": {
@@ -73,7 +75,7 @@
   "relationships": [],
   "series_schema_version": "1.0.0",
   "urls": {
-    "human": "https://wlr.badjoke-lab.com/wallet/exodus/",
+    "human": "https://wlr.badjoke-lab.com/product/exodus-desktop/",
     "machine": "https://wlr.badjoke-lab.com/data/series/records/product--exodus-desktop.json",
     "native_machine": "https://wlr.badjoke-lab.com/data/products/exodus-desktop.json"
   },
