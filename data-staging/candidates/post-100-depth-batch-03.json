@@ -1,0 +1,77 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_post-100-depth-batch-03",
+  "title": "Post-100 depth batch 03",
+  "review_state": "researching",
+  "notes": "Bounded depth batch under Issue #221. Includes only two source-backed material histories from the remaining zero-event queue. Pera and Yoroi were investigated but excluded because an exact first-party dated event boundary was not sufficiently fixed for this batch. Canonical publication prohibited until manual review and final validation complete.",
+  "records": {
+    "entities": [],
+    "products": [],
+    "events": [
+      {
+        "id": "wlr_ev_000132",
+        "entity_id": "wlr_ent_000053",
+        "product_id": "wlr_prod_000102",
+        "affected_product_ids": ["wlr_prod_000102"],
+        "event_type": "rebranded",
+        "event_date": "2024-12",
+        "event_date_basis": "approximate",
+        "title": "Binance Web3 Wallet rebranded as Binance Wallet",
+        "description": "Binance's self-custodial wallet, originally launched as Binance Web3 Wallet, was rebranded as Binance Wallet in December 2024 with a refreshed interface and additional features.",
+        "confidence": "high",
+        "event_status_effect": "none",
+        "is_major_event": true,
+        "notes": "Current first-party Binance Academy material supports December 2024 but not a defensible day-level rebrand date in this review. WLR therefore preserves month precision and uses an approximate date basis. This is continuity, not a new wallet or product launch."
+      },
+      {
+        "id": "wlr_ev_000133",
+        "entity_id": "wlr_ent_000051",
+        "product_id": "wlr_prod_000100",
+        "affected_product_ids": ["wlr_prod_000100"],
+        "event_type": "product_released",
+        "event_date": "2021-11-16",
+        "event_date_basis": "release",
+        "title": "Browser-native Brave Wallet launched",
+        "description": "Brave launched a browser-native self-custody wallet built directly into the Brave desktop browser, replacing extension dependence for Brave's primary built-in wallet path while allowing users to import from the legacy Crypto Wallets extension.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": true,
+        "notes": "This is retained as material product-history depth because Brave explicitly introduced a new browser-native wallet boundary with no extension required and documented migration/import from its legacy Crypto Wallets extension. It is not a generic launch added solely to reduce the zero-event count. Mobile availability was still future-facing in this launch announcement and is not included in the affected product scope."
+      }
+    ],
+    "evidence": [
+      {
+        "id": "wlr_src_000358",
+        "entity_id": "wlr_ent_000053",
+        "product_id": "wlr_prod_000102",
+        "event_id": "wlr_ev_000132",
+        "source_type": "official_statement",
+        "title": "What Is the Binance Wallet and How to Use It?",
+        "url": "https://academy.binance.com/ur-PK/articles/what-is-binance-web3-wallet-and-how-does-it-work",
+        "publisher": "Binance Academy",
+        "published_at": null,
+        "accessed_at": "2026-08-20",
+        "reliability": "high",
+        "claim_scope": "rebrand",
+        "is_primary": true,
+        "notes": "Current official Binance Academy material states that Binance Wallet was originally launched as Binance Web3 Wallet and was rebranded in December 2024. The source is retrospective, so WLR does not infer an exact day or treat the article's current update date as the event date."
+      },
+      {
+        "id": "wlr_src_000359",
+        "entity_id": "wlr_ent_000051",
+        "product_id": "wlr_prod_000100",
+        "event_id": "wlr_ev_000133",
+        "source_type": "official_blog",
+        "title": "Introducing the Brave Wallet, a Browser-Native Crypto Wallet With No Extension Required",
+        "url": "https://brave.com/blog/brave-wallet-launch/",
+        "publisher": "Brave",
+        "published_at": "2021-11-16",
+        "accessed_at": "2026-08-20",
+        "reliability": "high",
+        "claim_scope": "product",
+        "is_primary": true,
+        "notes": "First-party Brave launch post states that Brave Wallet launched on 2021-11-16 as a browser-native desktop wallet requiring no extension and documents import from Brave's legacy Crypto Wallets extension."
+      }
+    ]
+  }
+}
