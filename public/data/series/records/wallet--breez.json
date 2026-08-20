@@ -1,0 +1,92 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "current_vendor": null,
+      "custody_model": "self_custody",
+      "open_source_status": null,
+      "product_ids": [
+        "wlr_prod_000141"
+      ],
+      "status": "active",
+      "wallet_type": "software",
+      "website_status": null
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": []
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-20",
+        "claim_scope": "entity",
+        "entity_id": "wlr_ent_000092",
+        "event_id": null,
+        "id": "wlr_src_000329",
+        "is_primary": true,
+        "notes": "Current first-party Breez page identifies Breez Mobile as a wallet and states a non-custodial Lightning node runs on the mobile device.",
+        "product_id": null,
+        "published_at": null,
+        "publisher": "Breez",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Breez Mobile",
+        "url": "https://breez.technology/mobile/"
+      },
+      {
+        "accessed_at": "2026-08-20",
+        "claim_scope": "product_lineage",
+        "entity_id": "wlr_ent_000092",
+        "event_id": null,
+        "id": "wlr_src_000330",
+        "is_primary": true,
+        "notes": "Current company page establishes the broader Breez non-custodial Bitcoin infrastructure context; the distinct Breez Mobile wallet remains documented separately and is the selected product.",
+        "product_id": "wlr_prod_000141",
+        "published_at": null,
+        "publisher": "Breez",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Breez — Bitcoin in Every App",
+        "url": "https://breez.technology/"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000092",
+  "identity": {
+    "aliases": [
+      "Breez Mobile"
+    ],
+    "name": "Breez"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/wallets/breez.json",
+    "relationship_boundary": "wallet-to-product links are preserved as native product_ids but are not emitted as typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_ent_000092",
+    "native_record_type": "wlr.wallet-record.v1",
+    "slug": "breez"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/breez/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/wallet--breez.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/wallets/breez.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-20"
+  }
+}

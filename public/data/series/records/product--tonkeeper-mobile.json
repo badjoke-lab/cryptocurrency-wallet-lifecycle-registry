@@ -1,0 +1,80 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_date": "2021",
+      "launch_date_precision": "year",
+      "parent_entity": {
+        "canonical_name": "Tonkeeper",
+        "id": "wlr_ent_000079",
+        "slug": "tonkeeper",
+        "status": "active",
+        "wallet_type": "software"
+      },
+      "predecessor_product_id": null,
+      "product_type": "mobile_app",
+      "sales_status": "not_applicable",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "unknown"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": []
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-20",
+        "claim_scope": "product_lineage",
+        "entity_id": "wlr_ent_000079",
+        "event_id": null,
+        "id": "wlr_src_000304",
+        "is_primary": true,
+        "notes": "Current first-party Tonkeeper page describes Tonkeeper as the non-custodial TON wallet and states it was founded in 2021; used only for year-level lineage.",
+        "product_id": "wlr_prod_000128",
+        "published_at": null,
+        "publisher": "Tonkeeper",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Tonkeeper Signer",
+        "url": "https://tonkeeper.com/signer"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000128",
+  "identity": {
+    "aliases": [],
+    "name": "Tonkeeper Mobile"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/tonkeeper-mobile.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000128",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "tonkeeper-mobile"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/product/tonkeeper-mobile/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--tonkeeper-mobile.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/tonkeeper-mobile.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-20"
+  }
+}

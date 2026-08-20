@@ -1,0 +1,92 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "current_vendor": null,
+      "custody_model": "hybrid",
+      "open_source_status": null,
+      "product_ids": [
+        "wlr_prod_000146"
+      ],
+      "status": "active",
+      "wallet_type": "hybrid",
+      "website_status": null
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": []
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-20",
+        "claim_scope": "architecture",
+        "entity_id": "wlr_ent_000097",
+        "event_id": null,
+        "id": "wlr_src_000339",
+        "is_primary": true,
+        "notes": "Current Casa support describes Casa as non-custodial, explains 2-of-3/3-of-5 vaults, and states Casa holds one Recovery Key that cannot move funds alone.",
+        "product_id": null,
+        "published_at": "2026-05-29",
+        "publisher": "Casa",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "What is a bitcoin wallet?",
+        "url": "https://support.casa.io/knowledge/what-is-a-bitcoin-wallet"
+      },
+      {
+        "accessed_at": "2026-08-20",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000097",
+        "event_id": null,
+        "id": "wlr_src_000340",
+        "is_primary": true,
+        "notes": "First-party Casa support defines the 3-key vault as a 2-of-3 multisig arrangement and says Casa holds only one emergency recovery key, insufficient to send funds by itself.",
+        "product_id": "wlr_prod_000146",
+        "published_at": "2026-04-22",
+        "publisher": "Casa",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "What is the Casa app?",
+        "url": "https://support.casa.io/knowledge/what-is-the-casa-app"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000097",
+  "identity": {
+    "aliases": [
+      "Casa Vault"
+    ],
+    "name": "Casa"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/wallets/casa.json",
+    "relationship_boundary": "wallet-to-product links are preserved as native product_ids but are not emitted as typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_ent_000097",
+    "native_record_type": "wlr.wallet-record.v1",
+    "slug": "casa"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/casa/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/wallet--casa.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/wallets/casa.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-20"
+  }
+}
