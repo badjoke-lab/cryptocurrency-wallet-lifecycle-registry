@@ -1,0 +1,90 @@
+name: Stage reviewed post-100 depth batch 01
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  stage:
+    if: github.head_ref == 'review/post-100-depth-batch-01'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: review/post-100-depth-batch-01
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          python -m pip install -r requirements.txt
+          npm install --no-audit --no-fund
+      - name: Apply manually reviewed fixed history records
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs=require('fs');
+          const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
+          const write=(p,v)=>fs.writeFileSync(p,JSON.stringify(v)+'\n');
+          const events=read('data/events.json');
+          const evidence=read('data/evidence.json');
+          if(events.length!==121||evidence.length!==346) throw new Error(`unexpected base events=${events.length} evidence=${evidence.length}`);
+          const E=[
+            {"id":"wlr_ev_000122","entity_id":"wlr_ent_000087","product_id":"wlr_prod_000136","affected_product_ids":["wlr_prod_000136"],"event_type":"rebranded","event_date":"2023-02-21","event_date_basis":"announcement","title":"Tally Ho renamed Taho","description":"The community-owned Web3 wallet formerly known as Tally Ho announced its new Taho name while preserving the existing wallet lineage and project identity.","confidence":"high","event_status_effect":"none","is_major_event":true,"notes":"This is a continuity/rebrand event, not a new wallet or browser-extension launch. The first-party announcement states that Tally Ho is now Taho and that the wallet lineage began in 2021."},
+            {"id":"wlr_ev_000123","entity_id":"wlr_ent_000046","product_id":"wlr_prod_000095","affected_product_ids":["wlr_prod_000095"],"event_type":"rebranded","event_date":"2023-08-10","event_date_basis":"announcement","title":"BitKeep upgraded its brand to Bitget Wallet","description":"The BitKeep wallet lineage formally adopted the Bitget Wallet brand after Bitget acquired a controlling stake earlier in 2023.","confidence":"high","event_status_effect":"none","is_major_event":true,"notes":"The 2023-08-10 date is rebrand chronology, not an initial product-launch date. The selected mobile product retains BitKeep Wallet as an alias and its initial launch date remains unresolved."},
+            {"id":"wlr_ev_000124","entity_id":"wlr_ent_000032","product_id":null,"affected_product_ids":[],"event_type":"unauthorized_access","event_date":"2023-06-03","event_date_basis":"occurrence","title":"Atomic Wallet users reported unauthorized transactions","description":"Atomic Wallet reported receiving user complaints on June 3, 2023 about unauthorized transactions from affected wallets and said funds associated with the incident were being mixed and laundered while the company investigated.","confidence":"high","impact_level":"high","security_scope":"other","funds_affected":"yes","event_status_effect":"none","affected_users_text":"Atomic Wallet stated that fewer than 0.1% of monthly active app users were affected.","is_major_event":true,"notes":"Atomic Wallet examined several possible causes, including local malware, infrastructure compromise, malware code injection and man-in-the-middle attack, but stated that none had been confirmed. WLR therefore does not assign an affected version range, product runtime, root cause or total loss amount."},
+            {"id":"wlr_ev_000125","entity_id":"wlr_ent_000095","product_id":"wlr_prod_000144","affected_product_ids":["wlr_prod_000144"],"event_type":"service_shutdown","event_date":"2024-04-24","event_date_basis":"occurrence","title":"Samourai Wallet infrastructure seized and service closed","description":"U.S. authorities seized Samourai Wallet web servers and the samourai.io domain, served a seizure warrant on the mobile application, and the FBI stated that Samourai Wallet was closed for business.","confidence":"high","event_status_effect":"dead","is_major_event":true,"notes":"This event records the operational seizure and shutdown boundary only. It does not restate criminal allegations as adjudicated facts. The canonical Android product already records discontinued_date=2024-04-24 and support_status=ended."},
+            {"id":"wlr_ev_000126","entity_id":"wlr_ent_000027","product_id":null,"affected_product_ids":[],"event_type":"phishing_campaign","event_date":"2018-04-24","event_date_basis":"occurrence","title":"BGP and DNS hijack redirected MyEtherWallet web users to a phishing site","description":"A BGP route hijack affecting Amazon Route 53 DNS infrastructure redirected some DNS resolution for myetherwallet.com to a malicious server. Users who proceeded through the invalid TLS certificate warning could submit wallet credentials to the phishing site, and the attacker used stolen information to transfer Ethereum.","confidence":"high","impact_level":"high","security_scope":"other","funds_affected":"yes","event_status_effect":"none","is_major_event":true,"notes":"The incident is scoped to the public web/DNS path rather than a compromise of MEW application code or wallet servers. MEW stated that its Chrome extension and locally run/offline copies were not affected. Cloudflare's network analysis attributes the hijacked DNS routes to Amazon Route 53; WLR does not preserve the early Google-DNS attribution from the initial MEW statement. No exact loss amount is canonicalized in this candidate."}
+          ];
+          const S=[
+            {"id":"wlr_src_000347","entity_id":"wlr_ent_000087","product_id":"wlr_prod_000136","event_id":"wlr_ev_000122","source_type":"official_blog","title":"Hello World. Meet Taho","url":"https://blog.taho.xyz/rename-announcement/","publisher":"Taho","published_at":"2023-02-21","accessed_at":"2026-08-20","reliability":"high","claim_scope":"rebrand","is_primary":true,"notes":"First-party announcement states that Tally Ho is now Taho and describes the existing wallet lineage as beginning in 2021."},
+            {"id":"wlr_src_000348","entity_id":"wlr_ent_000046","product_id":"wlr_prod_000095","event_id":"wlr_ev_000123","source_type":"official_blog","title":"BitKeep Upgrades to Bitget Wallet: A Letter From the Team","url":"https://web3.bitget.com/en/blog/articles/bitkeep-upgrades-to-bitget-wallet-a-letter-from-the-team","publisher":"Bitget Wallet","published_at":"2023-08-10","accessed_at":"2026-08-20","reliability":"high","claim_scope":"rebrand","is_primary":true,"notes":"First-party history states BitKeep began in 2018 and formally upgraded its brand to Bitget Wallet on 2023-08-10 after Bitget acquired a controlling stake earlier that year."},
+            {"id":"wlr_src_000349","entity_id":"wlr_ent_000032","product_id":null,"event_id":"wlr_ev_000124","source_type":"official_blog","title":"June 3rd Event Statement","url":"https://atomicwallet.io/blog/articles/june-3rd-event-statement","publisher":"Atomic Wallet","published_at":null,"accessed_at":"2026-08-20","reliability":"high","claim_scope":"event","is_primary":true,"notes":"Atomic Wallet states that on June 3 it received reports of unauthorized transactions, that fewer than 0.1% of monthly active app users were affected, and that several possible causes were investigated without a confirmed root cause."},
+            {"id":"wlr_src_000350","entity_id":"wlr_ent_000095","product_id":"wlr_prod_000144","event_id":"wlr_ev_000125","source_type":"regulatory_notice","title":"Founders And CEO Of Cryptocurrency Mixing Service Arrested And Charged With Money Laundering And Unlicensed Money Transmitting Offenses","url":"https://www.justice.gov/usao-sdny/pr/founders-and-ceo-cryptocurrency-mixing-service-arrested-and-charged-money-laundering","publisher":"U.S. Department of Justice, Southern District of New York","published_at":"2024-04-24","accessed_at":"2026-08-20","reliability":"high","claim_scope":"discontinuation","is_primary":true,"notes":"Official notice states Samourai's web servers/domain were seized, a seizure warrant was served on the mobile application, and the FBI stated the service was closed for business. Used only for the operational shutdown boundary."},
+            {"id":"wlr_src_000351","entity_id":"wlr_ent_000027","product_id":null,"event_id":"wlr_ev_000126","source_type":"official_statement","title":"Official statement regarding DNS spoofing of MyEtherWallet domain","url":"https://www.reddit.com/r/MyEtherWallet/comments/8eloo9/official_statement_regarding_dns_spoofing_of/","publisher":"MyEtherWallet","published_at":null,"accessed_at":"2026-08-20","reliability":"high","claim_scope":"event","is_primary":true,"notes":"MEW's official incident statement says its domain's public DNS path was hijacked and users were redirected to a phishing site. Follow-up statements from the MEW team say the Chrome extension and locally run copies were not affected."},
+            {"id":"wlr_src_000352","entity_id":"wlr_ent_000027","product_id":null,"event_id":"wlr_ev_000126","source_type":"official_blog","title":"BGP leaks and cryptocurrencies","url":"https://blog.cloudflare.com/bgp-leaks-and-crypto-currencies/","publisher":"Cloudflare","published_at":"2018-04-24","accessed_at":"2026-08-20","reliability":"high","claim_scope":"event","is_primary":true,"notes":"Cloudflare's first-hand BGP and DNS-resolver analysis attributes the hijacked prefixes to Amazon Route 53 DNS, observes malicious responses specifically for myetherwallet.com, and reports that stolen login information was used to transfer Ethereum."}
+          ];
+          const add=(arr,row)=>{const old=arr.find(x=>x.id===row.id); if(old&&JSON.stringify(old)!==JSON.stringify(row)) throw new Error(`collision ${row.id}`); if(!old) arr.push(row)};
+          E.forEach(x=>add(events,x)); S.forEach(x=>add(evidence,x));
+          if(events.length!==126||evidence.length!==352) throw new Error(`unexpected promoted counts events=${events.length} evidence=${evidence.length}`);
+          write('data/events.json',events); write('data/evidence.json',evidence);
+          NODE
+      - name: Validate canonical and regenerate Series adapter
+        run: |
+          set -euo pipefail
+          npm run validate:records
+          npm run validate:machine-records
+          npm run validate:structured-discovery
+          npm run validate:stats
+          npm run coverage:audit
+          npm run seed:gate
+          npm run prebuild
+          node scripts/generate-series-adapter.mjs
+          node scripts/validate-series-adapter.mjs
+          npm run build
+          jq -e '.registry.entities == 100 and .registry.products == 149 and .registry.events == 126 and .registry.evidence == 352 and .registry.incident_events == 25 and .registry.remediation_events == 9 and .registry.eol_events == 7' public/data/stats.json >/dev/null
+          jq -e '.data_quality.events.incident_impact_level.count == 25 and .data_quality.events.incident_funds_affected.count == 25' public/data/stats.json >/dev/null
+          jq -e '.record_counts.primary_records == 100 and .record_counts.native.events == 126 and .record_counts.native.evidence == 352' public/data/series/registry.json >/dev/null
+          jq -e '.record_count == 249 and .record_counts.wallets == 100 and .record_counts.products == 149' public/data/series/index.json >/dev/null
+          for n in $(seq 122 126); do id=$(printf 'wlr_ev_%06d' "$n"); jq -e --arg id "$id" '.[] | select(.id == $id)' data/events.json >/dev/null; done
+          for n in $(seq 347 352); do id=$(printf 'wlr_src_%06d' "$n"); jq -e --arg id "$id" '.[] | select(.id == $id)' data/evidence.json >/dev/null; done
+          jq -e '.[] | select(.id == "wlr_ev_000124") | .event_type == "unauthorized_access" and .impact_level == "high" and .funds_affected == "yes" and .security_scope == "other" and (.versions == null)' data/events.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_ev_000125") | .event_type == "service_shutdown" and .event_status_effect == "dead" and .event_date == "2024-04-24"' data/events.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_ev_000126") | .event_type == "phishing_campaign" and .funds_affected == "yes" and .security_scope == "other" and .product_id == null' data/events.json >/dev/null
+      - name: Commit explicit canonical and deterministic Series edits
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/events.json data/evidence.json public/data/series
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Add reviewed post-100 depth batch 01'
+          git push origin HEAD:review/post-100-depth-batch-01
