@@ -1,0 +1,88 @@
+name: Stage reviewed post-100 depth batch 04
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  stage:
+    if: github.head_ref == 'review/post-100-depth-batch-04'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: review/post-100-depth-batch-04
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          python -m pip install -r requirements.txt
+          npm install --no-audit --no-fund
+      - name: Apply manually reviewed fixed lifecycle records
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs=require('fs');
+          const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
+          const write=(p,v)=>fs.writeFileSync(p,JSON.stringify(v)+'\n');
+          const events=read('data/events.json');
+          const evidence=read('data/evidence.json');
+          if(events.length!==133||evidence.length!==359) throw new Error(`unexpected base events=${events.length} evidence=${evidence.length}`);
+          const E=[
+            {"id":"wlr_ev_000134","entity_id":"wlr_ent_000065","product_id":"wlr_prod_000114","affected_product_ids":["wlr_prod_000114"],"event_type":"rebranded","event_date":"2026-06-08","event_date_basis":"effective","title":"Yoroi Wallet transitioned to SecondFi","description":"SecondFi announced that Yoroi Wallet had officially transitioned into SecondFi and that the existing Yoroi application would update into the SecondFi experience while preserving the user's self-custody wallet continuity.","confidence":"high","event_status_effect":"rebranded","is_major_event":true,"notes":"This is modeled as a rebrand/continuity event rather than a new wallet launch. First-party SecondFi material explicitly says the existing Yoroi wallet and app transition into SecondFi without creating a new wallet."},
+            {"id":"wlr_ev_000135","entity_id":"wlr_ent_000065","product_id":"wlr_prod_000114","affected_product_ids":["wlr_prod_000114"],"event_type":"exploit","event_date":"2026-06-21","event_date_basis":"occurrence","title":"SecondFi security incident exploited per-transaction signature flaw","description":"SecondFi reported that between June 21 and June 23 external attackers exploited a cryptographic flaw in per-transaction signature generation, resulting in approximately 16.1 million ADA being stolen from 374 wallets.","confidence":"high","impact_level":"critical","security_scope":"transaction_signing","funds_affected":"yes","event_status_effect":"limited","affected_users_text":"374 wallets","amount_text":"Approximately 16.1 million ADA (~$2.6 million)","is_major_event":true,"user_actions_required":["migrate","monitor"],"notes":"The first-party incident log describes a June 21-23 incident window. WLR uses June 21 as the event_date start boundary and preserves the full window in this note rather than inventing a single exact transfer time. The root cause is described as a flaw in how wallet software generated per-transaction signatures that could expose private-key material from public transaction data."},
+            {"id":"wlr_ev_000136","entity_id":"wlr_ent_000065","product_id":"wlr_prod_000114","affected_product_ids":["wlr_prod_000114"],"event_type":"service_shutdown","event_date":"2026-07-06","event_date_basis":"announcement","title":"SecondFi announced normal operations would not resume","description":"SecondFi announced that it would not resume normal operations even after security audits and asked all users to migrate away, with the team's continuing role limited to asset recovery work.","confidence":"high","impact_level":"critical","security_scope":"software","funds_affected":"yes","event_status_effect":"deprecated","is_major_event":true,"user_actions_required":["migrate"],"notes":"The July 6 first-party update is an explicit shutdown boundary for normal wallet operations, but WLR keeps the status effect conservative at deprecated because the same application remains available in quarantine/recovery modes. Canonical entity/product status remains unchanged in this batch."},
+            {"id":"wlr_ev_000137","entity_id":"wlr_ent_000098","product_id":"wlr_prod_000147","affected_product_ids":["wlr_prod_000147"],"event_type":"acquired","event_date":"2017","event_date_basis":"approximate","title":"ShapeShift acquired KeepKey","description":"ShapeShift acquired the KeepKey hardware-wallet business in 2017 and integrated the hardware wallet with the ShapeShift platform.","confidence":"high","event_status_effect":"acquired","is_major_event":true,"notes":"Reviewed first-party ShapeShift material consistently establishes the acquisition year as 2017 but does not provide a defensible exact acquisition day in this review, so WLR keeps year precision."},
+            {"id":"wlr_ev_000138","entity_id":"wlr_ent_000098","product_id":"wlr_prod_000147","affected_product_ids":["wlr_prod_000147"],"event_type":"other","event_date":"2022-01-01","event_date_basis":"effective","title":"KeepKey returned to independent ownership","description":"ShapeShift DAO material states that from January 1, 2022 KeepKey was independently owned and operated by its new owners after ShapeShift's decentralization and spinout of the hardware-wallet business.","confidence":"high","event_status_effect":"active","is_major_event":true,"notes":"The current event taxonomy has no dedicated divestiture/spinout value, so this ownership change is conservatively recorded as other rather than misclassified as a rebrand, merger, or product launch."}
+          ];
+          const S=[
+            {"id":"wlr_src_000360","entity_id":"wlr_ent_000065","product_id":"wlr_prod_000114","event_id":"wlr_ev_000134","source_type":"official_blog","title":"Yoroi Is Now SecondFi: How to Update and Get Started","url":"https://secondfi.io/yoroi-is-now-secondfi-how-to-update-and-get-started","publisher":"SecondFi","published_at":"2026-06-08","accessed_at":"2026-08-20","reliability":"high","claim_scope":"rebrand","is_primary":true,"notes":"First-party SecondFi announcement states that Yoroi Wallet officially transitioned into SecondFi, that the Yoroi app updates into SecondFi, and that the existing self-custody wallet remains continuous."},
+            {"id":"wlr_src_000361","entity_id":"wlr_ent_000065","product_id":"wlr_prod_000114","event_id":null,"event_ids":["wlr_ev_000135","wlr_ev_000136"],"source_type":"official_security_advisory","title":"Security Incident Update","url":"https://kb.secondfi.io/en/article/security-incident-update-dxv72a/","publisher":"SecondFi","published_at":null,"accessed_at":"2026-08-20","reliability":"high","claim_scope":"event","is_primary":true,"notes":"Continuously updated first-party incident log. The July 22 update records the June 21-23 theft window, approximately 16.1M ADA stolen from 374 wallets, and the per-transaction-signature cryptographic flaw. The July 6 update states that normal operations will not resume and users must migrate away."},
+            {"id":"wlr_src_000362","entity_id":"wlr_ent_000098","product_id":"wlr_prod_000147","event_id":"wlr_ev_000137","source_type":"official_blog","title":"ShapeShift's KeepKey Support Grows","url":"https://shapeshift.com/library/shapeshifts-keepkey-support-grows","publisher":"ShapeShift","published_at":"2022-04-14","accessed_at":"2026-08-20","reliability":"high","claim_scope":"ownership","is_primary":true,"notes":"First-party ShapeShift retrospective states that ShapeShift announced its acquisition of KeepKey in 2017 and later spun KeepKey back into its own entity during decentralization."},
+            {"id":"wlr_src_000363","entity_id":"wlr_ent_000098","product_id":"wlr_prod_000147","event_id":"wlr_ev_000138","source_type":"official_statement","title":"[SCP-71] Proposal to Create the KeepKey Workstream","url":"https://forum.shapeshift.com/t/scp-71-proposal-to-create-the-keepkey-workstream/429","publisher":"ShapeShift DAO Forum","published_at":"2022-04-25","accessed_at":"2026-08-20","reliability":"high","claim_scope":"ownership","is_primary":true,"notes":"Official ShapeShift DAO governance material states that as of 2022-01-01 KeepKey was owned by its new owners and independently owned and operated. The post date is later than the effective ownership date and is not reused as the event date."}
+          ];
+          const add=(arr,row)=>{const old=arr.find(x=>x.id===row.id);if(old&&JSON.stringify(old)!==JSON.stringify(row))throw new Error(`collision ${row.id}`);if(!old)arr.push(row)};
+          E.forEach(x=>add(events,x)); S.forEach(x=>add(evidence,x));
+          if(events.length!==138||evidence.length!==363) throw new Error(`unexpected promoted counts events=${events.length} evidence=${evidence.length}`);
+          write('data/events.json',events);write('data/evidence.json',evidence);
+          NODE
+      - name: Validate canonical and regenerate Series adapter
+        run: |
+          set -euo pipefail
+          npm run validate:records
+          npm run validate:identity-evidence
+          npm run validate:machine-records
+          npm run validate:structured-discovery
+          npm run validate:stats
+          npm run coverage:audit
+          npm run seed:gate
+          npm run prebuild
+          node scripts/generate-series-adapter.mjs
+          node scripts/validate-series-adapter.mjs
+          npm run build
+          jq -e '.registry.entities == 100 and .registry.products == 149 and .registry.events == 138 and .registry.evidence == 363' public/data/stats.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_ev_000134") | .event_type == "rebranded" and .event_date == "2026-06-08"' data/events.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_ev_000135") | .event_type == "exploit" and .event_date == "2026-06-21" and .funds_affected == "yes"' data/events.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_ev_000136") | .event_type == "service_shutdown" and .event_date == "2026-07-06" and .event_status_effect == "deprecated"' data/events.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_ev_000137") | .event_type == "acquired" and .event_date == "2017" and .event_date_basis == "approximate"' data/events.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_ev_000138") | .event_type == "other" and .event_date == "2022-01-01"' data/events.json >/dev/null
+          jq -e '.record_counts.primary_records == 100 and .record_counts.native.events == 138 and .record_counts.native.evidence == 363' public/data/series/registry.json >/dev/null
+          jq -e '.record_count == 249 and .record_counts.wallets == 100 and .record_counts.products == 149' public/data/series/index.json >/dev/null
+      - name: Commit explicit canonical and deterministic Series edits
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/events.json data/evidence.json public/data/series
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Add reviewed post-100 depth batch 04'
+          git push origin HEAD:review/post-100-depth-batch-04
