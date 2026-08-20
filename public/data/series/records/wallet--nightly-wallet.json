@@ -1,0 +1,92 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "current_vendor": null,
+      "custody_model": "self_custody",
+      "open_source_status": null,
+      "product_ids": [
+        "wlr_prod_000138"
+      ],
+      "status": "active",
+      "wallet_type": "software",
+      "website_status": null
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": []
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-20",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000089",
+        "event_id": null,
+        "id": "wlr_src_000323",
+        "is_primary": true,
+        "notes": "First-party launch post introduced Nightly Wallet on 2022-07-04 as a multichain wallet and described the browser extension as the initial product surface.",
+        "product_id": null,
+        "published_at": "2022-07-04",
+        "publisher": "Nightly",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Hello World! Nightly Wallet",
+        "url": "https://wallet.nightly.app/blog/hello_wallet"
+      },
+      {
+        "accessed_at": "2026-08-20",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000089",
+        "event_id": null,
+        "id": "wlr_src_000324",
+        "is_primary": true,
+        "notes": "Current first-party feature page lists browser-extension and mobile runtimes separately and states private keys are encrypted and never leave the device.",
+        "product_id": "wlr_prod_000138",
+        "published_at": null,
+        "publisher": "Nightly",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Nightly Wallet Features",
+        "url": "https://nightly.app/features"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000089",
+  "identity": {
+    "aliases": [
+      "Nightly"
+    ],
+    "name": "Nightly Wallet"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/wallets/nightly-wallet.json",
+    "relationship_boundary": "wallet-to-product links are preserved as native product_ids but are not emitted as typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_ent_000089",
+    "native_record_type": "wlr.wallet-record.v1",
+    "slug": "nightly-wallet"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/nightly-wallet/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/wallet--nightly-wallet.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/wallets/nightly-wallet.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-20"
+  }
+}

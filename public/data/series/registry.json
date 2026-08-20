@@ -23,14 +23,14 @@
   "object_type": "registry_descriptor",
   "record_counts": {
     "native": {
-      "entities": 75,
+      "entities": 100,
       "events": 121,
-      "evidence": 296,
-      "product_records": 124,
-      "products": 124,
-      "wallet_records": 75
+      "evidence": 346,
+      "product_records": 149,
+      "products": 149,
+      "wallet_records": 100
     },
-    "primary_records": 75
+    "primary_records": 100
   },
   "record_types": [
     {
