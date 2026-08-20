@@ -34,6 +34,6 @@ jobs:
           test "$(jq '.summary.products' /tmp/coverage.json)" = "149"
           test "$(jq '.summary.events' /tmp/coverage.json)" = "126"
           test "$(jq '.summary.evidence' /tmp/coverage.json)" = "352"
-          test "$(jq '.summary.entities_zero_events' /tmp/coverage.json)" = "69"
-          test "$(jq '.summary.entities_one_event' /tmp/coverage.json)" = "5"
+          test "$(jq '.summary.entities_with_zero_events' /tmp/coverage.json)" = "69"
+          test "$(jq '.summary.entities_with_one_event' /tmp/coverage.json)" = "5"
           test "$(jq '.structural_errors | length' /tmp/coverage.json)" = "0"
