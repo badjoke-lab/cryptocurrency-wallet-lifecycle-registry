@@ -2,8 +2,8 @@
   "bundle_version": "1.0.0",
   "candidate_id": "wlr_cand_post-100-depth-batch-03",
   "title": "Post-100 depth batch 03",
-  "review_state": "researching",
-  "notes": "Bounded depth batch under Issue #221. Includes only two source-backed material histories from the remaining zero-event queue. Pera and Yoroi were investigated but excluded because an exact first-party dated event boundary was not sufficiently fixed for this batch. Canonical publication prohibited until manual review and final validation complete.",
+  "review_state": "review_ready",
+  "notes": "Bounded depth batch under Issue #221. Includes only two source-backed material histories from the remaining zero-event queue. Pera and Yoroi were investigated but excluded because an exact first-party dated event boundary was not sufficiently fixed for this batch. Manual source/date/taxonomy review completed 2026-08-20: Binance remains month precision with approximate basis; Brave remains an exact browser-native product release boundary. Canonical publication prohibited until final validation completes.",
   "records": {
     "entities": [],
     "products": [],
