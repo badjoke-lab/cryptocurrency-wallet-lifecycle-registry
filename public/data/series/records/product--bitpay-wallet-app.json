@@ -1,0 +1,80 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_date": null,
+      "launch_date_precision": null,
+      "parent_entity": {
+        "canonical_name": "BitPay Wallet",
+        "id": "wlr_ent_000055",
+        "slug": "bitpay-wallet",
+        "status": "active",
+        "wallet_type": "software"
+      },
+      "predecessor_product_id": null,
+      "product_type": "multi_platform_app",
+      "sales_status": "not_applicable",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "unknown"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": []
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-20",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000055",
+        "event_id": null,
+        "id": "wlr_src_000256",
+        "is_primary": true,
+        "notes": "Current BitPay support confirms self-custody and current iOS, Android, Windows, macOS and Linux distribution.",
+        "product_id": "wlr_prod_000104",
+        "published_at": null,
+        "publisher": "BitPay",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "How to create a wallet using the BitPay app",
+        "url": "https://support.bitpay.com/hc/en-us/articles/115005884803-How-to-create-a-wallet-using-the-BitPay-app"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000104",
+  "identity": {
+    "aliases": [],
+    "name": "BitPay Wallet App"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/bitpay-wallet-app.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000104",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "bitpay-wallet-app"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/product/bitpay-wallet-app/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--bitpay-wallet-app.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/bitpay-wallet-app.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-20"
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_date": "2019",
+      "launch_date_precision": "year",
+      "parent_entity": {
+        "canonical_name": "Leather",
+        "id": "wlr_ent_000024",
+        "slug": "leather",
+        "status": "active",
+        "wallet_type": "software"
+      },
+      "predecessor_product_id": null,
+      "product_type": "desktop_app",
+      "sales_status": "not_applicable",
+      "status": "deprecated",
+      "successor_product_id": "wlr_prod_000066",
+      "support_status": "ended"
+    },
+    "status": "deprecated"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000065",
+          "wlr_prod_000066"
+        ],
+        "confidence": "high",
+        "description": "Leather Wallet LLC, a Trust Machines subsidiary, announced that it had acquired the wallet assets from Hiro Systems PBC while preserving the wallet lineage.",
+        "entity_id": "wlr_ent_000024",
+        "event_date": "2023-08-31",
+        "event_date_basis": "announcement",
+        "event_status_effect": "none",
+        "event_type": "acquired",
+        "id": "wlr_ev_000059",
+        "is_major_event": true,
+        "product_id": null,
+        "title": "Leather Wallet LLC acquired Hiro Wallet assets"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000065",
+          "wlr_prod_000066"
+        ],
+        "confidence": "high",
+        "description": "The existing Hiro Wallet desktop and browser-extension lineage was rebranded to Leather as the wallet became an independent brand under Leather Wallet LLC.",
+        "entity_id": "wlr_ent_000024",
+        "event_date": "2023-08-31",
+        "event_date_basis": "announcement",
+        "event_status_effect": "none",
+        "event_type": "rebranded",
+        "id": "wlr_ev_000060",
+        "is_major_event": true,
+        "product_id": null,
+        "title": "Hiro Wallet rebranded to Leather"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000065"
+        ],
+        "confidence": "high",
+        "description": "Leather deprecated its desktop wallet and stated that it would no longer receive updates or security fixes, directing users toward the browser extension.",
+        "entity_id": "wlr_ent_000024",
+        "event_date": "2025-10-03",
+        "event_date_basis": "announcement",
+        "event_status_effect": "deprecated",
+        "event_type": "deprecation_announced",
+        "id": "wlr_ev_000063",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000065",
+        "title": "Leather Desktop deprecated",
+        "user_actions_required": [
+          "migrate"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "rebrand",
+        "entity_id": "wlr_ent_000024",
+        "event_id": null,
+        "event_ids": [
+          "wlr_ev_000059",
+          "wlr_ev_000060"
+        ],
+        "id": "wlr_src_000100",
+        "is_primary": true,
+        "notes": "Primary announcement for Hiro Wallet -> Leather continuity, the Leather Wallet LLC/Trust Machines structure, and acquisition of Hiro wallet assets.",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000065",
+          "wlr_prod_000066"
+        ],
+        "published_at": "2023-08-31",
+        "publisher": "Leather",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Introducing Leather",
+        "url": "https://leather.io/posts/introducing-leather"
+      },
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "product_lineage",
+        "entity_id": "wlr_ent_000024",
+        "event_id": null,
+        "event_ids": [
+          "wlr_ev_000062",
+          "wlr_ev_000063"
+        ],
+        "id": "wlr_src_000102",
+        "is_primary": true,
+        "notes": "Primary chronology for the September 1, 2025 mobile launch and October 3, 2025 desktop-wallet deprecation; also states the desktop lineage began in 2019.",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000065",
+          "wlr_prod_000067"
+        ],
+        "published_at": null,
+        "publisher": "Leather",
+        "reliability": "high",
+        "source_type": "release_notes",
+        "title": "Leather Changelog",
+        "url": "https://leather.io/changelog"
+      },
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "discontinuation",
+        "entity_id": "wlr_ent_000024",
+        "event_id": "wlr_ev_000063",
+        "event_ids": [
+          "wlr_ev_000063"
+        ],
+        "id": "wlr_src_000104",
+        "is_primary": true,
+        "notes": "Primary deprecation announcement stating that desktop wallet updates and security fixes would end and users should migrate to the web extension.",
+        "product_id": "wlr_prod_000065",
+        "product_ids": [
+          "wlr_prod_000065"
+        ],
+        "published_at": "2025-10-03",
+        "publisher": "Leather",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Leather Desktop Wallet Deprecation",
+        "url": "https://leather.io/posts/desktop-wallet-deprecation"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000065",
+  "identity": {
+    "aliases": [
+      "Hiro Wallet Desktop",
+      "Leather Desktop Wallet"
+    ],
+    "name": "Leather Desktop (legacy)"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/leather-desktop-legacy.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000065",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "leather-desktop-legacy"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/product/leather-desktop-legacy/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--leather-desktop-legacy.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/leather-desktop-legacy.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-15"
+  }
+}

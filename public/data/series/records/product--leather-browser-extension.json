@@ -1,0 +1,260 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_date": "2021-08-10",
+      "launch_date_precision": "day",
+      "parent_entity": {
+        "canonical_name": "Leather",
+        "id": "wlr_ent_000024",
+        "slug": "leather",
+        "status": "active",
+        "wallet_type": "software"
+      },
+      "predecessor_product_id": "wlr_prod_000065",
+      "product_type": "browser_extension",
+      "sales_status": "not_applicable",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "supported"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000065",
+          "wlr_prod_000066"
+        ],
+        "confidence": "high",
+        "description": "Leather Wallet LLC, a Trust Machines subsidiary, announced that it had acquired the wallet assets from Hiro Systems PBC while preserving the wallet lineage.",
+        "entity_id": "wlr_ent_000024",
+        "event_date": "2023-08-31",
+        "event_date_basis": "announcement",
+        "event_status_effect": "none",
+        "event_type": "acquired",
+        "id": "wlr_ev_000059",
+        "is_major_event": true,
+        "product_id": null,
+        "title": "Leather Wallet LLC acquired Hiro Wallet assets"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000065",
+          "wlr_prod_000066"
+        ],
+        "confidence": "high",
+        "description": "The existing Hiro Wallet desktop and browser-extension lineage was rebranded to Leather as the wallet became an independent brand under Leather Wallet LLC.",
+        "entity_id": "wlr_ent_000024",
+        "event_date": "2023-08-31",
+        "event_date_basis": "announcement",
+        "event_status_effect": "none",
+        "event_type": "rebranded",
+        "id": "wlr_ev_000060",
+        "is_major_event": true,
+        "product_id": null,
+        "title": "Hiro Wallet rebranded to Leather"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000066"
+        ],
+        "confidence": "high",
+        "description": "Leather's security history records a browser-extension issue where browser textarea caching could leave a private key or mnemonic in local storage under certain conditions, creating exposure if another party gained access to the computer.",
+        "entity_id": "wlr_ent_000024",
+        "event_date": "2023-08-08",
+        "event_date_basis": "discovery",
+        "event_status_effect": "none",
+        "event_type": "vulnerability_disclosed",
+        "fixed_versions": [
+          {
+            "product_ids": [
+              "wlr_prod_000066"
+            ],
+            "track": "browser extension",
+            "version": "6.3.1"
+          }
+        ],
+        "funds_affected": "unknown",
+        "id": "wlr_ev_000061",
+        "impact_level": "high",
+        "is_major_event": true,
+        "notes": "Leather records the report on August 8, 2023 and resolution on August 10, 2023 in extension version 6.3.1.",
+        "product_id": "wlr_prod_000066",
+        "security_scope": "key_storage",
+        "title": "Browser-extension cached secret-key vulnerability reported",
+        "user_actions_required": [
+          "update"
+        ]
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000066"
+        ],
+        "confidence": "high",
+        "description": "Hiro announced general store availability of its wallet browser extension on 2021-08-10 for Chrome and Firefox. This browser-extension lineage was later acquired and rebranded to Leather in 2023.",
+        "entity_id": "wlr_ent_000024",
+        "event_date": "2021-08-10",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000087",
+        "is_major_event": true,
+        "notes": "This launch event belongs to the current Leather Browser Extension lineage under its historical Hiro Wallet branding. Chrome/Firefox are historical launch-time distribution facts and do not replace the current-platform list.",
+        "product_id": "wlr_prod_000066",
+        "title": "Hiro Wallet browser extension became available in Chrome and Firefox stores"
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "rebrand",
+        "entity_id": "wlr_ent_000024",
+        "event_id": null,
+        "event_ids": [
+          "wlr_ev_000059",
+          "wlr_ev_000060"
+        ],
+        "id": "wlr_src_000100",
+        "is_primary": true,
+        "notes": "Primary announcement for Hiro Wallet -> Leather continuity, the Leather Wallet LLC/Trust Machines structure, and acquisition of Hiro wallet assets.",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000065",
+          "wlr_prod_000066"
+        ],
+        "published_at": "2023-08-31",
+        "publisher": "Leather",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Introducing Leather",
+        "url": "https://leather.io/posts/introducing-leather"
+      },
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "vulnerability",
+        "entity_id": "wlr_ent_000024",
+        "event_id": "wlr_ev_000061",
+        "event_ids": [
+          "wlr_ev_000061"
+        ],
+        "id": "wlr_src_000101",
+        "is_primary": true,
+        "notes": "Primary retrospective security record for the August 2023 cached-secret-key browser extension issue and version 6.3.1 resolution.",
+        "product_id": "wlr_prod_000066",
+        "product_ids": [
+          "wlr_prod_000066"
+        ],
+        "published_at": null,
+        "publisher": "Leather",
+        "reliability": "high",
+        "source_type": "official_security_advisory",
+        "title": "Leather Security",
+        "url": "https://leather.io/security"
+      },
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "status",
+        "entity_id": "wlr_ent_000024",
+        "event_id": null,
+        "event_ids": [],
+        "id": "wlr_src_000103",
+        "is_primary": true,
+        "notes": "Current first-party product page for Leather browser-extension and mobile availability.",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000066",
+          "wlr_prod_000067"
+        ],
+        "published_at": null,
+        "publisher": "Leather",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Leather Wallet",
+        "url": "https://leather.io/wallet"
+      },
+      {
+        "accessed_at": "2026-08-17",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000024",
+        "event_id": null,
+        "event_ids": [],
+        "id": "wlr_src_000120",
+        "is_primary": true,
+        "notes": "Current first-party Leather page dedicated to the supported browser-extension product and its Chrome distribution path.",
+        "product_id": "wlr_prod_000066",
+        "product_ids": [
+          "wlr_prod_000066"
+        ],
+        "published_at": null,
+        "publisher": "Leather",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Extension – Leather",
+        "url": "https://leather.io/wallet/extension"
+      },
+      {
+        "accessed_at": "2026-08-17",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000024",
+        "event_id": "wlr_ev_000087",
+        "event_ids": [
+          "wlr_ev_000087"
+        ],
+        "id": "wlr_src_000143",
+        "is_primary": true,
+        "notes": "First-party Hiro press-release page recording browser-store availability for the wallet extension before the later Leather acquisition and rebrand.",
+        "product_id": "wlr_prod_000066",
+        "product_ids": [
+          "wlr_prod_000066"
+        ],
+        "published_at": "2021-08-10",
+        "publisher": "Hiro",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Hiro Wallet Available in Chrome and Firefox Stores",
+        "url": "https://www.hiro.so/press-release/hiro-wallet-available-in-chrome-and-firefox-stores"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000066",
+  "identity": {
+    "aliases": [
+      "Hiro Wallet Extension",
+      "Leather Extension"
+    ],
+    "name": "Leather Browser Extension"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/leather-browser-extension.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000066",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "leather-browser-extension"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/product/leather-browser-extension/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--leather-browser-extension.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/leather-browser-extension.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-17"
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_date": "2018",
+      "launch_date_precision": "year",
+      "parent_entity": {
+        "canonical_name": "Safe",
+        "id": "wlr_ent_000005",
+        "slug": "safe",
+        "status": "active",
+        "wallet_type": "smart_contract"
+      },
+      "predecessor_product_id": null,
+      "product_type": "smart_contract_wallet",
+      "sales_status": "not_applicable",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "supported"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000021"
+        ],
+        "confidence": "high",
+        "description": "Gnosis Safe was introduced in 2018 as a general-purpose smart account.",
+        "entity_id": "wlr_ent_000005",
+        "event_date": "2018",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000023",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000021",
+        "title": "Gnosis Safe smart account introduced"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000021",
+          "wlr_prod_000023"
+        ],
+        "confidence": "high",
+        "description": "The project rebranded from Gnosis Safe to Safe after spinning out from GnosisDAO; Safe states that the protocol, audited contracts, accounts, funds, and security model did not change.",
+        "entity_id": "wlr_ent_000005",
+        "event_date": "2022",
+        "event_date_basis": "announcement",
+        "event_status_effect": "none",
+        "event_type": "rebranded",
+        "id": "wlr_ev_000025",
+        "is_major_event": true,
+        "product_id": null,
+        "title": "Gnosis Safe rebranded to Safe"
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "product_lineage",
+        "entity_id": "wlr_ent_000005",
+        "event_id": "wlr_ev_000023",
+        "id": "wlr_src_000028",
+        "is_primary": true,
+        "notes": "Primary history source for 2018 Gnosis Safe, legacy mobile wallet, web product evolution and 2022 rebrand.",
+        "product_id": null,
+        "published_at": "2024-04-12",
+        "publisher": "Safe",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "History of Safe",
+        "url": "https://safe.global/blog/history-of-safe"
+      },
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "rebrand",
+        "entity_id": "wlr_ent_000005",
+        "event_id": "wlr_ev_000025",
+        "id": "wlr_src_000030",
+        "is_primary": true,
+        "notes": "",
+        "product_id": null,
+        "published_at": "2024-04-12",
+        "publisher": "Safe",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "History of Safe",
+        "url": "https://safe.global/blog/history-of-safe"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000021",
+  "identity": {
+    "aliases": [
+      "Gnosis Safe"
+    ],
+    "name": "Safe Smart Account"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/safe-smart-account.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000021",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "safe-smart-account"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/product/safe-smart-account/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--safe-smart-account.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/safe-smart-account.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-14"
+  }
+}

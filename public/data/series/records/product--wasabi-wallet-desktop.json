@@ -1,0 +1,194 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_date": "2018-10-31",
+      "launch_date_precision": "day",
+      "parent_entity": {
+        "canonical_name": "Wasabi Wallet",
+        "id": "wlr_ent_000022",
+        "slug": "wasabi-wallet",
+        "status": "active",
+        "wallet_type": "software"
+      },
+      "predecessor_product_id": null,
+      "product_type": "desktop_app",
+      "sales_status": "not_applicable",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "supported"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000062"
+        ],
+        "affected_versions": [
+          "1.0"
+        ],
+        "confidence": "high",
+        "description": "Wasabi Wallet 1.0 was released after the earlier 2018 beta period, establishing the public desktop-wallet lineage.",
+        "entity_id": "wlr_ent_000022",
+        "event_date": "2018-10-31",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000055",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000062",
+        "title": "Wasabi Wallet 1.0 released"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000062"
+        ],
+        "affected_versions": [
+          "2.0"
+        ],
+        "confidence": "high",
+        "description": "Wasabi released its 2.0 generation as a major redesign of the existing desktop-wallet lineage.",
+        "entity_id": "wlr_ent_000022",
+        "event_date": "2022-06-15",
+        "event_date_basis": "release",
+        "event_status_effect": "none",
+        "event_type": "product_released",
+        "id": "wlr_ev_000056",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000062",
+        "title": "Wasabi Wallet 2.0 released"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000062"
+        ],
+        "confidence": "high",
+        "description": "The zkSNACKs-operated Wasabi CoinJoin coordinator stopped operating on June 1, 2024. The open-source wallet remained active and current Wasabi clients can be configured to use other coordinators.",
+        "entity_id": "wlr_ent_000022",
+        "event_date": "2024-06-01",
+        "event_date_basis": "effective",
+        "event_status_effect": "none",
+        "event_type": "service_shutdown",
+        "funds_affected": "no",
+        "id": "wlr_ev_000057",
+        "is_major_event": true,
+        "notes": "This was a hosted coordinator-service shutdown, not discontinuation of the Wasabi Wallet software.",
+        "product_id": "wlr_prod_000062",
+        "security_scope": "none",
+        "title": "zkSNACKs CoinJoin coordinator shut down",
+        "user_actions_required": [
+          "reconfigure"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "product_lineage",
+        "entity_id": "wlr_ent_000022",
+        "event_id": null,
+        "event_ids": [
+          "wlr_ev_000055",
+          "wlr_ev_000056",
+          "wlr_ev_000057"
+        ],
+        "id": "wlr_src_000092",
+        "is_primary": true,
+        "notes": "Primary chronology for Wasabi 1.0 beta, 1.0, 2.0, and the June 1, 2024 zkSNACKs coordinator shutdown.",
+        "product_id": "wlr_prod_000062",
+        "product_ids": [
+          "wlr_prod_000062"
+        ],
+        "published_at": null,
+        "publisher": "Wasabi Wallet",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Wasabi Wallet FAQ — introduction and history",
+        "url": "https://docs.wasabiwallet.io/FAQ/FAQ-Introduction.html"
+      },
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "status",
+        "entity_id": "wlr_ent_000022",
+        "event_id": null,
+        "event_ids": [],
+        "id": "wlr_src_000093",
+        "is_primary": true,
+        "notes": "Current documentation describes Wasabi as an open-source, non-custodial desktop Bitcoin wallet.",
+        "product_id": "wlr_prod_000062",
+        "product_ids": [
+          "wlr_prod_000062"
+        ],
+        "published_at": null,
+        "publisher": "Wasabi Wallet",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Wasabi Wallet documentation",
+        "url": "https://docs.wasabiwallet.io/"
+      },
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "status",
+        "entity_id": "wlr_ent_000022",
+        "event_id": "wlr_ev_000057",
+        "event_ids": [
+          "wlr_ev_000057"
+        ],
+        "id": "wlr_src_000094",
+        "is_primary": true,
+        "notes": "Current documentation confirms that CoinJoin remains coordinator-based and clients can use configured coordinators after the zkSNACKs service shutdown.",
+        "product_id": "wlr_prod_000062",
+        "product_ids": [
+          "wlr_prod_000062"
+        ],
+        "published_at": null,
+        "publisher": "Wasabi Wallet",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Wasabi CoinJoin coordinator configuration",
+        "url": "https://docs.wasabiwallet.io/using-wasabi/CoinJoin.html"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000062",
+  "identity": {
+    "aliases": [
+      "Wasabi 1.0",
+      "Wasabi 2.0"
+    ],
+    "name": "Wasabi Wallet"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/wasabi-wallet-desktop.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000062",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "wasabi-wallet-desktop"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/product/wasabi-wallet-desktop/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--wasabi-wallet-desktop.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/wasabi-wallet-desktop.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-15"
+  }
+}

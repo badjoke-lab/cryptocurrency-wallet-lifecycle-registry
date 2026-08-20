@@ -1,0 +1,138 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_date": "2018-07-09",
+      "launch_date_precision": "day",
+      "parent_entity": {
+        "canonical_name": "Ledger",
+        "id": "wlr_ent_000002",
+        "slug": "ledger",
+        "status": "active",
+        "wallet_type": "hardware"
+      },
+      "predecessor_product_id": null,
+      "product_type": "companion_app",
+      "sales_status": "not_applicable",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "supported"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000013"
+        ],
+        "confidence": "high",
+        "description": "Ledger transitioned the companion application branding from Ledger Live to Ledger Wallet.",
+        "entity_id": "wlr_ent_000002",
+        "event_date": "2025-10",
+        "event_date_basis": "announcement",
+        "event_status_effect": "none",
+        "event_type": "rebranded",
+        "id": "wlr_ev_000018",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000013",
+        "title": "Ledger Live renamed Ledger Wallet"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000013"
+        ],
+        "confidence": "high",
+        "description": "Ledger launched Ledger Live as a new all-in-one companion application for Ledger devices on Windows, Mac, and Linux. The same product lineage was later renamed Ledger Wallet in 2025.",
+        "entity_id": "wlr_ent_000002",
+        "event_date": "2018-07-09",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000084",
+        "is_major_event": true,
+        "notes": "This launch event belongs to the existing Ledger Wallet product lineage, which retains Ledger Live as a historical alias. The later 2025 rebrand event remains separate.",
+        "product_id": "wlr_prod_000013",
+        "title": "Ledger Live launched as Ledger companion application"
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "rebrand",
+        "entity_id": "wlr_ent_000002",
+        "event_id": "wlr_ev_000018",
+        "id": "wlr_src_000022",
+        "is_primary": true,
+        "notes": "Current official app is Ledger Wallet; current listings describe it as formerly Ledger Live.",
+        "product_id": "wlr_prod_000013",
+        "published_at": null,
+        "publisher": "Ledger",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Ledger Wallet official download page",
+        "url": "https://www.ledger.com/start"
+      },
+      {
+        "accessed_at": "2026-08-17",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000002",
+        "event_id": "wlr_ev_000084",
+        "event_ids": [
+          "wlr_ev_000084"
+        ],
+        "id": "wlr_src_000140",
+        "is_primary": true,
+        "notes": "First-party Ledger launch announcement explicitly introducing Ledger Live as the new all-in-one companion application.",
+        "product_id": "wlr_prod_000013",
+        "product_ids": [
+          "wlr_prod_000013"
+        ],
+        "published_at": "2018-07-09",
+        "publisher": "Ledger",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Ledger launches Ledger Live, the all-in-one companion app to your Ledger device",
+        "url": "https://www.ledger.com/ledger-launches-ledger-live-the-all-in-one-companion-app-to-your-ledger-device"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000013",
+  "identity": {
+    "aliases": [
+      "Ledger Live"
+    ],
+    "name": "Ledger Wallet"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/ledger-wallet.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000013",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "ledger-wallet"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/product/ledger-wallet/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--ledger-wallet.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/ledger-wallet.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-14"
+  }
+}

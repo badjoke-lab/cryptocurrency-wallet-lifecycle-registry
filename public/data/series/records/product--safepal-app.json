@@ -1,0 +1,171 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_date": "2019",
+      "launch_date_precision": "year",
+      "parent_entity": {
+        "canonical_name": "SafePal",
+        "id": "wlr_ent_000026",
+        "slug": "safepal",
+        "status": "active",
+        "wallet_type": "hybrid"
+      },
+      "predecessor_product_id": null,
+      "product_type": "mobile_app",
+      "sales_status": "not_applicable",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "supported"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000073"
+        ],
+        "confidence": "high",
+        "description": "SafePal officially released SafePal Lite inside the SafePal App, allowing users to create or import self-custody software wallets in addition to using the App as a companion for SafePal hardware wallets.",
+        "entity_id": "wlr_ent_000026",
+        "event_date": "2020-05-11",
+        "event_date_basis": "release",
+        "event_status_effect": "none",
+        "event_type": "product_released",
+        "id": "wlr_ev_000095",
+        "is_major_event": true,
+        "notes": "This event records the software-wallet capability release, not the initial SafePal App launch. First-party SafePal posts show that the App already existed in 2019.",
+        "product_id": "wlr_prod_000073",
+        "title": "SafePal App added self-custody software-wallet capability"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000073"
+        ],
+        "confidence": "high",
+        "description": "SafePal's first-party 2019 history establishes an active mobile-app release lineage, including an official App version announcement and a later statement that nine App versions had already been released.",
+        "entity_id": "wlr_ent_000026",
+        "event_date": "2019",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000110",
+        "is_major_event": true,
+        "notes": "Year precision only. The July 2019 source concerns a DEX-capable official App version and already refers to the SafePal App; it is not treated as the exact initial App launch day. The May 2020 Software Wallet milestone is modeled as a later capability expansion rather than the initial App release.",
+        "product_id": "wlr_prod_000073",
+        "title": "SafePal App released in 2019"
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-17",
+        "claim_scope": "status",
+        "entity_id": "wlr_ent_000026",
+        "event_id": null,
+        "event_ids": [],
+        "id": "wlr_src_000146",
+        "is_primary": true,
+        "notes": "Current first-party distribution page confirming the active SafePal App, SafePal Extension Wallet, and supported SafePal S1, S1 Pro, and X1 hardware-wallet lines.",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000070",
+          "wlr_prod_000071",
+          "wlr_prod_000072",
+          "wlr_prod_000073",
+          "wlr_prod_000074"
+        ],
+        "published_at": null,
+        "publisher": "SafePal",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "SafePal Download Center",
+        "url": "https://www.safepal.com/en/download/index"
+      },
+      {
+        "accessed_at": "2026-08-17",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000026",
+        "event_id": "wlr_ev_000095",
+        "id": "wlr_src_000153",
+        "is_primary": true,
+        "notes": "Primary SafePal announcement for the 2020-05-11 release of decentralized software-wallet functionality inside the existing SafePal App. It explicitly distinguishes this from the earlier hardware-wallet companion App.",
+        "product_id": "wlr_prod_000073",
+        "published_at": "2020-05-11",
+        "publisher": "SafePal",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "SafePal Lite Software Wallet is now ALIVE",
+        "url": "https://www.safepal.com/en/blog/safepal-lite-software-wallet-is-now-alive"
+      },
+      {
+        "accessed_at": "2026-08-18",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000026",
+        "event_id": "wlr_ev_000110",
+        "id": "wlr_src_000173",
+        "is_primary": true,
+        "notes": "First-party SafePal article referring to users trading through the SafePal App and announcing an official App/firmware version for July 2019. Used to establish the 2019 App release lineage, not as proof that the announced DEX version date was the initial App launch day.",
+        "product_id": "wlr_prod_000073",
+        "published_at": "2019-07-13",
+        "publisher": "SafePal",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Pre-announcement: Trade on DEX, with SafePal",
+        "url": "https://www.safepal.com/en/blog/pre-announcement-trade-on-dex-with-safepal"
+      },
+      {
+        "accessed_at": "2026-08-18",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000026",
+        "event_id": "wlr_ev_000110",
+        "id": "wlr_src_000174",
+        "is_primary": true,
+        "notes": "First-party SafePal progress report stating that nine App versions and three firmware updates had already been released. This directly establishes an active SafePal App release lineage in 2019 while leaving the exact first public store-release day unresolved.",
+        "product_id": "wlr_prod_000073",
+        "published_at": "2019-09-11",
+        "publisher": "SafePal",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "SafePal Progress Update",
+        "url": "https://www.safepal.com/en/blog/safepal-progress-update"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000073",
+  "identity": {
+    "aliases": [],
+    "name": "SafePal App"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/safepal-app.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000073",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "safepal-app"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/product/safepal-app/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--safepal-app.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/safepal-app.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-18"
+  }
+}

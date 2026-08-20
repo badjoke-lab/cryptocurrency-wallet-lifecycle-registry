@@ -1,0 +1,157 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_date": "2024",
+      "launch_date_precision": "year",
+      "parent_entity": {
+        "canonical_name": "Rabby",
+        "id": "wlr_ent_000018",
+        "slug": "rabby",
+        "status": "active",
+        "wallet_type": "software"
+      },
+      "predecessor_product_id": null,
+      "product_type": "mobile_app",
+      "sales_status": "not_applicable",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "supported"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000055"
+        ],
+        "confidence": "high",
+        "description": "Rabby's official mobile repository establishes the transition from late-2023 development into a public mobile release lineage during 2024, including 0.1.0 publish preparation and an explicit 0.1.1 publish commit.",
+        "entity_id": "wlr_ent_000018",
+        "event_date": "2024",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000107",
+        "is_major_event": true,
+        "notes": "Year precision only. The initial repository commit in 2023 is development evidence, not launch evidence; the 2024 publish-history does not establish one exact first public store-release day.",
+        "product_id": "wlr_prod_000055",
+        "title": "Rabby Mobile released in 2024"
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "status",
+        "entity_id": "wlr_ent_000018",
+        "event_id": null,
+        "event_ids": [],
+        "id": "wlr_src_000079",
+        "is_primary": true,
+        "notes": "Current first-party distribution page lists Extension, Mobile, and Desktop products.",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000054",
+          "wlr_prod_000055",
+          "wlr_prod_000056"
+        ],
+        "published_at": null,
+        "publisher": "Rabby",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Rabby Wallet",
+        "url": "https://rabby.io/"
+      },
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000018",
+        "event_id": null,
+        "event_ids": [],
+        "id": "wlr_src_000081",
+        "is_primary": true,
+        "notes": "Official organization listing identifies rabby-mobile and RabbyDesktop as separate applications.",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000055",
+          "wlr_prod_000056"
+        ],
+        "published_at": null,
+        "publisher": "RabbyHub",
+        "reliability": "high",
+        "source_type": "source_code",
+        "title": "RabbyHub official repositories",
+        "url": "https://github.com/orgs/RabbyHub/repositories"
+      },
+      {
+        "accessed_at": "2026-08-18",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000018",
+        "event_id": "wlr_ev_000107",
+        "id": "wlr_src_000167",
+        "is_primary": true,
+        "notes": "Official Rabby Mobile repository commit that sets version 0.1.0 for publish and includes iOS App Store publishing configuration and Android build/deploy work. Used to establish the 2024 release lineage, not as an exact public launch-day assertion.",
+        "product_id": "wlr_prod_000055",
+        "published_at": "2024-01-29",
+        "publisher": "RabbyHub",
+        "reliability": "high",
+        "source_type": "source_code",
+        "title": "Rabby Mobile 0.1.0 publish preparation",
+        "url": "https://github.com/RabbyHub/rabby-mobile/commit/0bd8fbe6ea265e5fc265a975facc9eb1cb9ff2a0"
+      },
+      {
+        "accessed_at": "2026-08-18",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000018",
+        "event_id": "wlr_ev_000107",
+        "id": "wlr_src_000168",
+        "is_primary": true,
+        "notes": "Official Rabby Mobile repository commit explicitly publishing version 0.1.1. Used as first-party corroboration that the public release lineage was active during 2024, not as proof that 2024-03-01 was the first launch day.",
+        "product_id": "wlr_prod_000055",
+        "published_at": "2024-03-01",
+        "publisher": "RabbyHub",
+        "reliability": "high",
+        "source_type": "source_code",
+        "title": "Rabby Mobile publish 0.1.1",
+        "url": "https://github.com/RabbyHub/rabby-mobile/commit/60b0e0536e515da399bfb8664357c47e7c4b3d71"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000055",
+  "identity": {
+    "aliases": [],
+    "name": "Rabby Mobile"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/rabby-mobile.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000055",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "rabby-mobile"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/product/rabby-mobile/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--rabby-mobile.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/rabby-mobile.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-18"
+  }
+}

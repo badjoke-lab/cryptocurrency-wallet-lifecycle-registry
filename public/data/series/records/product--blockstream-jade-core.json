@@ -1,0 +1,127 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_date": "2026-04-28",
+      "launch_date_precision": "day",
+      "parent_entity": {
+        "canonical_name": "Blockstream Jade",
+        "id": "wlr_ent_000008",
+        "slug": "blockstream-jade",
+        "status": "active",
+        "wallet_type": "hardware"
+      },
+      "predecessor_product_id": null,
+      "product_type": "hardware_device",
+      "sales_status": "on_sale",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "supported"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000034"
+        ],
+        "confidence": "high",
+        "description": "Blockstream launched Jade Core as a streamlined additional hardware-wallet model.",
+        "entity_id": "wlr_ent_000008",
+        "event_date": "2026-04-28",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000038",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000034",
+        "title": "Blockstream Jade Core introduced"
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000008",
+        "event_id": "wlr_ev_000038",
+        "event_ids": [
+          "wlr_ev_000038"
+        ],
+        "id": "wlr_src_000044",
+        "is_primary": true,
+        "notes": "",
+        "product_id": "wlr_prod_000034",
+        "product_ids": [
+          "wlr_prod_000034"
+        ],
+        "published_at": "2026-04-28",
+        "publisher": "Blockstream",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Less Complexity, Same Security: Blockstream Introduces Jade Core",
+        "url": "https://blockstream.com/press-releases/2026-04-28-blockstream-introduces-jade-core/"
+      },
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "status",
+        "entity_id": "wlr_ent_000008",
+        "event_id": null,
+        "event_ids": [],
+        "id": "wlr_src_000045",
+        "is_primary": true,
+        "notes": "Confirms three concurrent models and original Jade remains in production.",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000032",
+          "wlr_prod_000033",
+          "wlr_prod_000034"
+        ],
+        "published_at": "2026-07-03",
+        "publisher": "Blockstream",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Blockstream Quarterly Update - Q2 2026",
+        "url": "https://blog.blockstream.com/blockstream-quarterly-update-q2-2026/"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000034",
+  "identity": {
+    "aliases": [
+      "Jade Core"
+    ],
+    "name": "Blockstream Jade Core"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/blockstream-jade-core.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000034",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "blockstream-jade-core"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/product/blockstream-jade-core/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--blockstream-jade-core.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/blockstream-jade-core.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-14"
+  }
+}

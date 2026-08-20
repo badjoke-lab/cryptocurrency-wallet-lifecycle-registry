@@ -1,0 +1,80 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_date": null,
+      "launch_date_precision": null,
+      "parent_entity": {
+        "canonical_name": "TokenPocket",
+        "id": "wlr_ent_000030",
+        "slug": "tokenpocket",
+        "status": "active",
+        "wallet_type": "software"
+      },
+      "predecessor_product_id": null,
+      "product_type": "mobile_app",
+      "sales_status": "not_applicable",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "unknown"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": []
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-19",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000030",
+        "event_id": null,
+        "id": "wlr_src_000205",
+        "is_primary": true,
+        "notes": "Current first-party about page identifies TokenPocket as a multi-chain decentralized wallet with a mobile wallet among its user-facing products.",
+        "product_id": "wlr_prod_000079",
+        "published_at": null,
+        "publisher": "TokenPocket",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "TokenPocket About Us",
+        "url": "https://www.tokenpocket.pro/en/about"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000079",
+  "identity": {
+    "aliases": [],
+    "name": "TokenPocket Mobile Wallet"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/tokenpocket-mobile-wallet.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000079",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "tokenpocket-mobile-wallet"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/product/tokenpocket-mobile-wallet/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--tokenpocket-mobile-wallet.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/tokenpocket-mobile-wallet.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-19"
+  }
+}

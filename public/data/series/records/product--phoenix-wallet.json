@@ -1,0 +1,80 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_date": null,
+      "launch_date_precision": null,
+      "parent_entity": {
+        "canonical_name": "Phoenix Wallet",
+        "id": "wlr_ent_000049",
+        "slug": "phoenix-wallet",
+        "status": "active",
+        "wallet_type": "software"
+      },
+      "predecessor_product_id": null,
+      "product_type": "mobile_app",
+      "sales_status": "not_applicable",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "unknown"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": []
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-19",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000049",
+        "event_id": null,
+        "id": "wlr_src_000244",
+        "is_primary": true,
+        "notes": "Current first-party Phoenix site establishes the active self-custodial Bitcoin/Lightning wallet product.",
+        "product_id": "wlr_prod_000098",
+        "published_at": null,
+        "publisher": "ACINQ",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Phoenix Wallet",
+        "url": "https://phoenix.acinq.co/"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000098",
+  "identity": {
+    "aliases": [],
+    "name": "Phoenix Wallet"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/phoenix-wallet.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000098",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "phoenix-wallet"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/product/phoenix-wallet/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--phoenix-wallet.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/phoenix-wallet.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-19"
+  }
+}

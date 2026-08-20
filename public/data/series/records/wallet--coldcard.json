@@ -1,0 +1,533 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "current_vendor": null,
+      "custody_model": "self_custody",
+      "open_source_status": null,
+      "product_ids": [
+        "wlr_prod_000014",
+        "wlr_prod_000015",
+        "wlr_prod_000016",
+        "wlr_prod_000017",
+        "wlr_prod_000018"
+      ],
+      "status": "active",
+      "wallet_type": "hardware",
+      "website_status": null
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000014",
+          "wlr_prod_000015",
+          "wlr_prod_000016",
+          "wlr_prod_000017",
+          "wlr_prod_000018"
+        ],
+        "affected_version_rules": [
+          {
+            "product_ids": [
+              "wlr_prod_000014",
+              "wlr_prod_000015"
+            ],
+            "range": "4.0.1 through 4.1.9 inclusive",
+            "track": "standard"
+          },
+          {
+            "product_ids": [
+              "wlr_prod_000016",
+              "wlr_prod_000017"
+            ],
+            "range": "before 5.6.0",
+            "track": "standard"
+          },
+          {
+            "product_ids": [
+              "wlr_prod_000018"
+            ],
+            "range": "before 1.5.0Q",
+            "track": "standard"
+          },
+          {
+            "product_ids": [
+              "wlr_prod_000016",
+              "wlr_prod_000017"
+            ],
+            "range": "before 6.6.0X",
+            "track": "edge"
+          },
+          {
+            "product_ids": [
+              "wlr_prod_000018"
+            ],
+            "range": "before 6.6.0QX",
+            "track": "edge"
+          }
+        ],
+        "confidence": "high",
+        "description": "COLDCARD disclosed a seed-generation defect in affected firmware lines. Fixed releases restore the intended hardware-randomness path for future seed generation, but existing affected seeds require migration unless an advisory exception applies.",
+        "entity_id": "wlr_ent_000003",
+        "event_date": "2026-07-30",
+        "event_date_basis": "disclosure",
+        "event_status_effect": "none",
+        "event_type": "vulnerability_disclosed",
+        "fixed_versions": [
+          {
+            "product_ids": [
+              "wlr_prod_000014",
+              "wlr_prod_000015"
+            ],
+            "track": "standard",
+            "version": "4.2.0"
+          },
+          {
+            "product_ids": [
+              "wlr_prod_000016",
+              "wlr_prod_000017"
+            ],
+            "track": "standard",
+            "version": "5.6.0"
+          },
+          {
+            "product_ids": [
+              "wlr_prod_000018"
+            ],
+            "track": "standard",
+            "version": "1.5.0Q"
+          },
+          {
+            "product_ids": [
+              "wlr_prod_000016",
+              "wlr_prod_000017"
+            ],
+            "track": "edge",
+            "version": "6.6.0X"
+          },
+          {
+            "product_ids": [
+              "wlr_prod_000018"
+            ],
+            "track": "edge",
+            "version": "6.6.0QX"
+          }
+        ],
+        "funds_affected": "unknown",
+        "id": "wlr_ev_000019",
+        "impact_level": "critical",
+        "is_major_event": true,
+        "notes": "A firmware update fixes future seed generation but does not repair a seed that was already generated on affected firmware.",
+        "product_id": null,
+        "security_scope": "seed_generation",
+        "title": "Seed-generation entropy defect disclosed",
+        "user_actions_required": [
+          "update",
+          "migrate"
+        ]
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000014",
+          "wlr_prod_000015",
+          "wlr_prod_000016",
+          "wlr_prod_000017",
+          "wlr_prod_000018"
+        ],
+        "confidence": "high",
+        "description": "Coinkite released fixed firmware for the supported COLDCARD model and track matrix and published migration guidance for existing affected seeds.",
+        "entity_id": "wlr_ent_000003",
+        "event_date": "2026-07-31",
+        "event_date_basis": "release",
+        "event_status_effect": "none",
+        "event_type": "firmware_fix",
+        "fixed_versions": [
+          {
+            "product_ids": [
+              "wlr_prod_000014",
+              "wlr_prod_000015"
+            ],
+            "track": "standard",
+            "version": "4.2.0"
+          },
+          {
+            "product_ids": [
+              "wlr_prod_000016",
+              "wlr_prod_000017"
+            ],
+            "track": "standard",
+            "version": "5.6.0"
+          },
+          {
+            "product_ids": [
+              "wlr_prod_000018"
+            ],
+            "track": "standard",
+            "version": "1.5.0Q"
+          },
+          {
+            "product_ids": [
+              "wlr_prod_000016",
+              "wlr_prod_000017"
+            ],
+            "track": "edge",
+            "version": "6.6.0X"
+          },
+          {
+            "product_ids": [
+              "wlr_prod_000018"
+            ],
+            "track": "edge",
+            "version": "6.6.0QX"
+          }
+        ],
+        "funds_affected": "unknown",
+        "id": "wlr_ev_000020",
+        "impact_level": "critical",
+        "is_major_event": true,
+        "product_id": null,
+        "security_scope": "seed_generation",
+        "title": "Fixed COLDCARD firmware released across supported model lines",
+        "user_actions_required": [
+          "update",
+          "migrate"
+        ]
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000016"
+        ],
+        "confidence": "high",
+        "description": "COLDCARD documentation records the Mk4 generation as introduced in 2022.",
+        "entity_id": "wlr_ent_000003",
+        "event_date": "2022",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000096",
+        "is_major_event": true,
+        "notes": "Year-level precision is retained because the first-party documentation does not provide an exact release day in its launch statement.",
+        "product_id": "wlr_prod_000016",
+        "title": "COLDCARD Mk4 introduced"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000015"
+        ],
+        "confidence": "high",
+        "description": "Coinkite announced COLDCARD Mark 3, opened first-batch preorders, and stated that units were planned to ship by October 2019.",
+        "entity_id": "wlr_ent_000003",
+        "event_date": "2019-08-26",
+        "event_date_basis": "announcement",
+        "event_status_effect": "none",
+        "event_type": "product_announced",
+        "id": "wlr_ev_000097",
+        "is_major_event": true,
+        "notes": "This records the announcement and preorder opening only. It does not infer an exact commercial ship or release date.",
+        "product_id": "wlr_prod_000015",
+        "title": "COLDCARD Mk3 announced and first-batch preorders opened"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000014"
+        ],
+        "confidence": "high",
+        "description": "Coinkite publicly described the new COLDCARD Mk2, including mechanical buttons and hardware and firmware changes intended to harden the device against PIN-bypass attacks.",
+        "entity_id": "wlr_ent_000003",
+        "event_date": "2019-01-28",
+        "event_date_basis": "announcement",
+        "event_status_effect": "none",
+        "event_type": "product_announced",
+        "id": "wlr_ev_000098",
+        "is_major_event": true,
+        "notes": "This is a first-party public Mk2 disclosure milestone. It does not establish an exact commercial shipment or release date, so the product launch_date remains unresolved.",
+        "product_id": "wlr_prod_000014",
+        "title": "COLDCARD Mk2 publicly described with new hardware and firmware changes"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000015"
+        ],
+        "confidence": "high",
+        "description": "Coinkite's first-party production and retrospective sales history establishes that COLDCARD Mk3 entered the released/sold product lineage during 2019.",
+        "entity_id": "wlr_ent_000003",
+        "event_date": "2019",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000112",
+        "is_major_event": true,
+        "notes": "Year precision only. The August 2019 announcement is explicitly preorder evidence and is not treated as launch; the reviewed sources do not establish one exact first shipping or sale day.",
+        "product_id": "wlr_prod_000015",
+        "title": "COLDCARD Mk3 released in 2019"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000014"
+        ],
+        "confidence": "high",
+        "description": "Coinkite first-party product history and official firmware hardware support establish the mechanical-key COLDCARD Mk2 lineage during 2019.",
+        "entity_id": "wlr_ent_000003",
+        "event_date": "2019",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000113",
+        "is_major_event": true,
+        "notes": "Year precision only. Late-2018 firmware still documents the older touch-key hardware lineage; January/February 2019 first-party history establishes the Mk2 hardware boundary without one exact first sale or shipping day.",
+        "product_id": "wlr_prod_000014",
+        "title": "COLDCARD Mk2 released in 2019"
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "vulnerability",
+        "entity_id": "wlr_ent_000003",
+        "event_id": "wlr_ev_000019",
+        "id": "wlr_src_000023",
+        "is_primary": true,
+        "notes": "Primary status page for affected seed-generation defect, model/track fixed releases, and migration requirement.",
+        "product_id": null,
+        "published_at": null,
+        "publisher": "Coinkite",
+        "reliability": "high",
+        "source_type": "official_security_advisory",
+        "title": "Current COLDCARD Security Status",
+        "url": "https://coldcard.com/security/status"
+      },
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "security_fix",
+        "entity_id": "wlr_ent_000003",
+        "event_id": "wlr_ev_000020",
+        "id": "wlr_src_000024",
+        "is_primary": true,
+        "notes": "",
+        "product_id": null,
+        "published_at": null,
+        "publisher": "Coinkite",
+        "reliability": "high",
+        "source_type": "release_notes",
+        "title": "COLDCARD Firmware Downloads - Latest Versions",
+        "url": "https://coldcard.com/downloads"
+      },
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "security_fix",
+        "entity_id": "wlr_ent_000003",
+        "event_id": "wlr_ev_000020",
+        "id": "wlr_src_000025",
+        "is_primary": true,
+        "notes": "Primary upgrade guidance listing July 31, 2026 hotfix versions and warning that affected seeds must be regenerated/migrated.",
+        "product_id": null,
+        "published_at": null,
+        "publisher": "Coinkite",
+        "reliability": "high",
+        "source_type": "release_notes",
+        "title": "Upgrade Firmware",
+        "url": "https://coldcard.com/docs/upgrade/"
+      },
+      {
+        "accessed_at": "2026-08-17",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000003",
+        "event_id": "wlr_ev_000096",
+        "event_ids": [
+          "wlr_ev_000096"
+        ],
+        "id": "wlr_src_000154",
+        "is_primary": true,
+        "notes": "First-party COLDCARD documentation states that the Mk4 was introduced in 2022.",
+        "product_id": "wlr_prod_000016",
+        "product_ids": [
+          "wlr_prod_000016"
+        ],
+        "published_at": null,
+        "publisher": "COLDCARD / Coinkite",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "COLDCARD Mk4 vs. Mk3",
+        "url": "https://coldcard.com/docs/coldcard-mk4/"
+      },
+      {
+        "accessed_at": "2026-08-17",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000003",
+        "event_id": "wlr_ev_000097",
+        "event_ids": [
+          "wlr_ev_000097"
+        ],
+        "id": "wlr_src_000155",
+        "is_primary": true,
+        "notes": "First-party Coinkite announcement introducing Mark 3, opening first-batch preorders, and stating planned shipment by October 2019.",
+        "product_id": "wlr_prod_000015",
+        "product_ids": [
+          "wlr_prod_000015"
+        ],
+        "published_at": "2019-08-26",
+        "publisher": "Coinkite",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "COLDCARD Mark 3",
+        "url": "https://blog.coinkite.com/coldcard-mark3/"
+      },
+      {
+        "accessed_at": "2026-08-17",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000003",
+        "event_id": "wlr_ev_000098",
+        "event_ids": [
+          "wlr_ev_000098"
+        ],
+        "id": "wlr_src_000156",
+        "is_primary": true,
+        "notes": "First-party Coinkite security post explicitly refers to the new Coldcard Mk2 and describes its mechanical-button, PCB-trace, bootrom and firmware hardening changes.",
+        "product_id": "wlr_prod_000014",
+        "product_ids": [
+          "wlr_prod_000014"
+        ],
+        "published_at": "2019-01-28",
+        "publisher": "Coinkite",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Keep Your Pins Long, and Your Peace of Mind Intact",
+        "url": "https://blog.coinkite.com/use-long-pins/"
+      },
+      {
+        "accessed_at": "2026-08-18",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000003",
+        "event_id": "wlr_ev_000112",
+        "id": "wlr_src_000176",
+        "is_primary": true,
+        "notes": "First-party Coinkite article publishing the Mark3 rev B schematic and BOM during 2019. Used as production-lineage evidence, not as proof that 2019-10-25 was the exact first sale day.",
+        "product_id": "wlr_prod_000015",
+        "published_at": "2019-10-25",
+        "publisher": "Coinkite",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Coldcard Hardware Details",
+        "url": "https://blog.coinkite.com/coldcard-hardware-shared/"
+      },
+      {
+        "accessed_at": "2026-08-18",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000003",
+        "event_id": "wlr_ev_000112",
+        "id": "wlr_src_000177",
+        "is_primary": true,
+        "notes": "First-party Coinkite retrospective stating that Mk3 was the product being sold at the time and had been sold for the last year. Used to confirm sales during 2019 while preserving year precision.",
+        "product_id": "wlr_prod_000015",
+        "published_at": "2020-05-18",
+        "publisher": "Coinkite",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Laser Fault Injection",
+        "url": "https://blog.coinkite.com/laser-fault-injection/"
+      },
+      {
+        "accessed_at": "2026-08-18",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000003",
+        "event_id": "wlr_ev_000113",
+        "id": "wlr_src_000178",
+        "is_primary": true,
+        "notes": "First-party Coinkite article explicitly describing the new Coldcard Mk2, its mechanical buttons, and Mk2-specific hardware/firmware mitigations. Used to establish the 2019 product boundary, not an exact first sale day.",
+        "product_id": "wlr_prod_000014",
+        "published_at": "2019-01-28",
+        "publisher": "Coinkite",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Keep Your Pins Long, and Your Peace of Mind Intact",
+        "url": "https://blog.coinkite.com/use-long-pins/"
+      },
+      {
+        "accessed_at": "2026-08-18",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000003",
+        "event_id": "wlr_ev_000113",
+        "id": "wlr_src_000179",
+        "is_primary": true,
+        "notes": "Official Coldcard firmware commit adding explicit is_mark2() hardware detection, with PA10 distinguishing Mk2 from previous revisions. Used as first-party corroboration for the 2019 Mk2 hardware lineage, not as an exact sale date.",
+        "product_id": "wlr_prod_000014",
+        "published_at": "2019-02-08",
+        "publisher": "Coldcard",
+        "reliability": "high",
+        "source_type": "source_code",
+        "title": "Coldcard firmware Mark2 support",
+        "url": "https://github.com/Coldcard/firmware/commit/972d4782902352b551a89e1794245886df6ede46"
+      },
+      {
+        "accessed_at": "2026-08-18",
+        "claim_scope": "sales_status",
+        "entity_id": "wlr_ent_000003",
+        "id": "wlr_src_000186",
+        "is_primary": true,
+        "notes": "Current first-party Mk4 product page presents the device as a current product and includes a Buy Now commercial action. Used only for current sales status.",
+        "product_id": "wlr_prod_000016",
+        "published_at": null,
+        "publisher": "COLDCARD / Coinkite",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "COLDCARD Mk4 — Secure Bitcoin Hardware Wallet",
+        "url": "https://coldcard.com/mk4"
+      },
+      {
+        "accessed_at": "2026-08-18",
+        "claim_scope": "sales_status",
+        "entity_id": "wlr_ent_000003",
+        "id": "wlr_src_000188",
+        "is_primary": true,
+        "notes": "First-party Coinkite article describing Mk2 as the older COLDCARD and stating that Mk3 was the product Coinkite was selling at that time and had been selling for the prior year. Establishes Mk2 end-of-sale status by 2020-05-18, but not one exact sales-end day.",
+        "product_id": "wlr_prod_000014",
+        "published_at": "2020-05-18",
+        "publisher": "Coinkite",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Laser Fault Injection",
+        "url": "https://blog.coinkite.com/laser-fault-injection/"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000003",
+  "identity": {
+    "aliases": [
+      "Coldcard"
+    ],
+    "name": "COLDCARD"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/wallets/coldcard.json",
+    "relationship_boundary": "wallet-to-product links are preserved as native product_ids but are not emitted as typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_ent_000003",
+    "native_record_type": "wlr.wallet-record.v1",
+    "slug": "coldcard"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/coldcard/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/wallet--coldcard.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/wallets/coldcard.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-14"
+  }
+}

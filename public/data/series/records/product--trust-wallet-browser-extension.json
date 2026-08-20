@@ -1,0 +1,185 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_date": "2022-11-14",
+      "launch_date_precision": "day",
+      "parent_entity": {
+        "canonical_name": "Trust Wallet",
+        "id": "wlr_ent_000009",
+        "slug": "trust-wallet",
+        "status": "active",
+        "wallet_type": "software"
+      },
+      "predecessor_product_id": null,
+      "product_type": "browser_extension",
+      "sales_status": "not_applicable",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "supported"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000036"
+        ],
+        "affected_users_text": "2,520 affected wallet addresses identified by Trust Wallet as of the July 17, 2026 update",
+        "affected_versions": [
+          "2.68"
+        ],
+        "amount_text": "Approximately $8.5 million in assets impacted",
+        "confidence": "high",
+        "description": "An unauthorized malicious Browser Extension v2.68 was published to the Chrome Web Store using a leaked publishing API key, enabling theft from users who logged in during the affected period.",
+        "entity_id": "wlr_ent_000009",
+        "event_date": "2025-12-24",
+        "event_date_basis": "occurrence",
+        "event_status_effect": "none",
+        "event_type": "supply_chain_compromise",
+        "fixed_versions": [
+          {
+            "product_ids": [
+              "wlr_prod_000036"
+            ],
+            "track": "clean rollback release",
+            "version": "2.69"
+          }
+        ],
+        "funds_affected": "yes",
+        "id": "wlr_ev_000040",
+        "impact_level": "critical",
+        "is_major_event": true,
+        "notes": "Trust Wallet stated the mobile app was not affected; investigation linked the incident to exposed developer secrets and Chrome Web Store API access.",
+        "product_id": "wlr_prod_000036",
+        "security_scope": "supply_chain",
+        "title": "Malicious Trust Wallet Browser Extension v2.68 published",
+        "user_actions_required": [
+          "move_funds",
+          "update"
+        ]
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000036"
+        ],
+        "confidence": "high",
+        "description": "Trust Wallet announced the launch of its new browser extension wallet on 2022-11-14, with availability for Chrome, Brave, and Opera at launch and support for EVM chains and Solana.",
+        "entity_id": "wlr_ent_000009",
+        "event_date": "2022-11-14",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000085",
+        "is_major_event": true,
+        "notes": "This event is scoped to the Browser Extension product and does not alter the separate Trust Wallet Mobile product lineage. WLR does not infer launch-day support for browsers not named in the launch statement.",
+        "product_id": "wlr_prod_000036",
+        "title": "Trust Wallet Browser Extension launched for desktop browsers"
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "status",
+        "entity_id": "wlr_ent_000009",
+        "event_id": null,
+        "event_ids": [],
+        "id": "wlr_src_000047",
+        "is_primary": true,
+        "notes": "",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000035",
+          "wlr_prod_000036"
+        ],
+        "published_at": null,
+        "publisher": "Trust Wallet",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Download Trust Wallet",
+        "url": "https://trustwallet.com/download"
+      },
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000009",
+        "event_id": "wlr_ev_000040",
+        "event_ids": [
+          "wlr_ev_000040"
+        ],
+        "id": "wlr_src_000048",
+        "is_primary": true,
+        "notes": "",
+        "product_id": "wlr_prod_000036",
+        "product_ids": [
+          "wlr_prod_000036"
+        ],
+        "published_at": "2025-12-30",
+        "publisher": "Trust Wallet",
+        "reliability": "high",
+        "source_type": "official_security_advisory",
+        "title": "Trust Wallet Browser Extension v2.68 Incident: An Update to Our Community",
+        "url": "https://trustwallet.com/blog/company/trust-wallet-browser-extension-v268-incident-community-update"
+      },
+      {
+        "accessed_at": "2026-08-17",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000009",
+        "event_id": "wlr_ev_000085",
+        "event_ids": [
+          "wlr_ev_000085"
+        ],
+        "id": "wlr_src_000141",
+        "is_primary": true,
+        "notes": "Trust Wallet-provided press release distributed through PR Newswire, explicitly announcing the browser extension launch and its launch-day browser availability.",
+        "product_id": "wlr_prod_000036",
+        "product_ids": [
+          "wlr_prod_000036"
+        ],
+        "published_at": "2022-11-14",
+        "publisher": "Trust Wallet",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Trust Wallet launches highly anticipated browser extension wallet for desktop",
+        "url": "https://www.prnewswire.com/news-releases/trust-wallet-launches-highly-anticipated-browser-extension-wallet-for-desktop-301676375.html"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000036",
+  "identity": {
+    "aliases": [],
+    "name": "Trust Wallet Browser Extension"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/trust-wallet-browser-extension.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000036",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "trust-wallet-browser-extension"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/product/trust-wallet-browser-extension/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--trust-wallet-browser-extension.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/trust-wallet-browser-extension.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-14"
+  }
+}

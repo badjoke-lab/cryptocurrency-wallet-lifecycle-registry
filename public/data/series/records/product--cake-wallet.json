@@ -1,0 +1,80 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_date": "2018",
+      "launch_date_precision": "year",
+      "parent_entity": {
+        "canonical_name": "Cake Wallet",
+        "id": "wlr_ent_000042",
+        "slug": "cake-wallet",
+        "status": "active",
+        "wallet_type": "software"
+      },
+      "predecessor_product_id": null,
+      "product_type": "multi_platform_app",
+      "sales_status": "not_applicable",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "unknown"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": []
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-19",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000042",
+        "event_id": null,
+        "id": "wlr_src_000230",
+        "is_primary": true,
+        "notes": "Current first-party site identifies Cake Wallet as open-source and non-custodial and provides current downloads across supported platforms.",
+        "product_id": "wlr_prod_000091",
+        "published_at": null,
+        "publisher": "Cake Wallet",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Cake Wallet: Payments Made Easy",
+        "url": "https://cakewallet.com/"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000091",
+  "identity": {
+    "aliases": [],
+    "name": "Cake Wallet"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/cake-wallet.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000091",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "cake-wallet"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/product/cake-wallet/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--cake-wallet.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/cake-wallet.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-19"
+  }
+}

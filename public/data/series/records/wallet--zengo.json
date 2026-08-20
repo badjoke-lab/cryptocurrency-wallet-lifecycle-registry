@@ -1,0 +1,286 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "current_vendor": null,
+      "custody_model": "self_custody",
+      "open_source_status": null,
+      "product_ids": [
+        "wlr_prod_000040"
+      ],
+      "status": "active",
+      "wallet_type": "mpc_threshold",
+      "website_status": null
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000040"
+        ],
+        "confidence": "high",
+        "description": "Zengo launched its consumer-facing wallet in 2019 using MPC/threshold signing rather than a traditional seed phrase model.",
+        "entity_id": "wlr_ent_000012",
+        "event_date": "2019",
+        "event_date_basis": "approximate",
+        "event_status_effect": "active",
+        "event_type": "launched",
+        "id": "wlr_ev_000044",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000040",
+        "title": "Zengo consumer MPC wallet launched"
+      },
+      {
+        "affected_components": [
+          "Lindell17 two-party ECDSA implementation"
+        ],
+        "affected_product_ids": [
+          "wlr_prod_000040"
+        ],
+        "confidence": "high",
+        "cve_ids": [
+          "CVE-2023-33242"
+        ],
+        "description": "Fireblocks publicly disclosed a Lindell17 implementation vulnerability initially discovered in Zengo that could leak key material across repeated failed signing attempts when an attacker had privileged access. Fireblocks and Zengo state that Zengo mitigated the issue through responsible disclosure and that no Zengo wallets were exploited.",
+        "disclosed_at": "2023-08-09",
+        "entity_id": "wlr_ent_000012",
+        "event_date": "2023-08-09",
+        "event_date_basis": "disclosure",
+        "event_status_effect": "none",
+        "event_type": "vulnerability_disclosed",
+        "funds_affected": "no",
+        "id": "wlr_ev_000077",
+        "impact_level": "high",
+        "is_major_event": true,
+        "notes": "The public sources do not establish a Zengo app version range or an exact private remediation date, so WLR does not invent either. Fireblocks describes privileged access and repeated signing attempts as preconditions for the demonstrated attack.",
+        "product_id": "wlr_prod_000040",
+        "security_scope": "transaction_signing",
+        "title": "BitForge Lindell17 key-exfiltration vulnerability disclosed",
+        "user_actions_required": [
+          "none"
+        ]
+      },
+      {
+        "affected_components": [
+          "Lindell17 two-party ECDSA implementation"
+        ],
+        "affected_product_ids": [
+          "wlr_prod_000040"
+        ],
+        "confidence": "high",
+        "cve_ids": [
+          "CVE-2023-33242"
+        ],
+        "description": "Zengo published its response to the BitForge disclosure, stating that its research team worked with Fireblocks and promptly addressed the identified issue and that no Zengo users were impacted. Fireblocks separately confirmed Zengo had mitigated the Lindell17 issue.",
+        "entity_id": "wlr_ent_000012",
+        "event_date": "2023-08-10",
+        "event_date_basis": "announcement",
+        "event_status_effect": "none",
+        "event_type": "security_fix",
+        "funds_affected": "no",
+        "id": "wlr_ev_000078",
+        "impact_level": "high",
+        "is_major_event": true,
+        "notes": "This event records the public remediation confirmation date, not an inferred patch-release date. No Zengo app version or exact private mitigation timestamp is asserted.",
+        "product_id": "wlr_prod_000040",
+        "security_scope": "transaction_signing",
+        "title": "Zengo publicly confirmed BitForge issue was addressed",
+        "user_actions_required": [
+          "none"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "product_lineage",
+        "entity_id": "wlr_ent_000012",
+        "event_id": "wlr_ev_000044",
+        "event_ids": [
+          "wlr_ev_000044"
+        ],
+        "id": "wlr_src_000054",
+        "is_primary": true,
+        "notes": "States the company was founded in 2018 and the Zengo wallet launched in 2019.",
+        "product_id": "wlr_prod_000040",
+        "product_ids": [
+          "wlr_prod_000040"
+        ],
+        "published_at": "2023-11-07",
+        "publisher": "Zengo",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "1,000,000 Safe Customers, 0 Hacks: A Proud Milestone",
+        "url": "https://zengo.com/onemillion-customers-0-hacks-a-proud-milestone/"
+      },
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "architecture",
+        "entity_id": "wlr_ent_000012",
+        "event_id": null,
+        "event_ids": [],
+        "id": "wlr_src_000055",
+        "is_primary": true,
+        "notes": "",
+        "product_id": "wlr_prod_000040",
+        "product_ids": [
+          "wlr_prod_000040"
+        ],
+        "published_at": null,
+        "publisher": "Zengo",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "MPC Wallet - What is MPC?",
+        "url": "https://zengo.com/mpc-wallet/"
+      },
+      {
+        "accessed_at": "2026-08-14",
+        "claim_scope": "architecture",
+        "entity_id": "wlr_ent_000012",
+        "event_id": null,
+        "event_ids": [],
+        "id": "wlr_src_000056",
+        "is_primary": true,
+        "notes": "Describes Personal Share on the mobile device and Remote Share on Zengo servers.",
+        "product_id": "wlr_prod_000040",
+        "product_ids": [
+          "wlr_prod_000040"
+        ],
+        "published_at": null,
+        "publisher": "Zengo",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Zengo Security",
+        "url": "https://zengo.com/security/"
+      },
+      {
+        "accessed_at": "2026-08-17",
+        "claim_scope": "vulnerability",
+        "entity_id": "wlr_ent_000012",
+        "event_id": "wlr_ev_000077",
+        "event_ids": [
+          "wlr_ev_000077"
+        ],
+        "id": "wlr_src_000126",
+        "is_primary": true,
+        "notes": "Primary researcher report: vulnerability initially discovered in Zengo, public disclosure on 2023-08-09, CVE-2023-33242, privileged-access/repeated-signing attack model, and prompt Zengo mitigation with no exploited wallets reported.",
+        "product_id": "wlr_prod_000040",
+        "product_ids": [
+          "wlr_prod_000040"
+        ],
+        "published_at": "2023-08-09",
+        "publisher": "Fireblocks",
+        "reliability": "high",
+        "source_type": "security_research",
+        "title": "Lindell17 Abort Vulnerability [CVE-2023-33242]: Technical Report",
+        "url": "https://www.fireblocks.com/blog/lindell17-abort-vulnerability-technical-report"
+      },
+      {
+        "accessed_at": "2026-08-17",
+        "claim_scope": "vulnerability",
+        "entity_id": "wlr_ent_000012",
+        "event_id": "wlr_ev_000077",
+        "event_ids": [
+          "wlr_ev_000077"
+        ],
+        "id": "wlr_src_000127",
+        "is_primary": true,
+        "notes": "First-party Zengo response confirming Zengo was among affected MPC wallets, describing the device-malware precondition, and stating no Zengo users were impacted.",
+        "product_id": "wlr_prod_000040",
+        "product_ids": [
+          "wlr_prod_000040"
+        ],
+        "published_at": "2023-08-10",
+        "publisher": "Zengo",
+        "reliability": "high",
+        "source_type": "official_security_advisory",
+        "title": "BitForge: Strengthening Zengo’s security",
+        "url": "https://zengo.com/bitforge-strengthening-zengos-security/"
+      },
+      {
+        "accessed_at": "2026-08-17",
+        "claim_scope": "security_fix",
+        "entity_id": "wlr_ent_000012",
+        "event_id": "wlr_ev_000078",
+        "event_ids": [
+          "wlr_ev_000078"
+        ],
+        "id": "wlr_src_000128",
+        "is_primary": true,
+        "notes": "Separate remediation claim scope: Zengo states it collaborated with Fireblocks and promptly addressed the discovery, with no Zengo users impacted.",
+        "product_id": "wlr_prod_000040",
+        "product_ids": [
+          "wlr_prod_000040"
+        ],
+        "published_at": "2023-08-10",
+        "publisher": "Zengo",
+        "reliability": "high",
+        "source_type": "official_security_advisory",
+        "title": "BitForge: Strengthening Zengo’s security",
+        "url": "https://zengo.com/bitforge-strengthening-zengos-security/"
+      },
+      {
+        "accessed_at": "2026-08-17",
+        "claim_scope": "security_fix",
+        "entity_id": "wlr_ent_000012",
+        "event_id": "wlr_ev_000078",
+        "event_ids": [
+          "wlr_ev_000078"
+        ],
+        "id": "wlr_src_000129",
+        "is_primary": true,
+        "notes": "Separate remediation claim scope: Fireblocks states Zengo promptly mitigated the issue during responsible disclosure and reported that no wallets were exploited.",
+        "product_id": "wlr_prod_000040",
+        "product_ids": [
+          "wlr_prod_000040"
+        ],
+        "published_at": "2023-08-09",
+        "publisher": "Fireblocks",
+        "reliability": "high",
+        "source_type": "security_research",
+        "title": "Lindell17 Abort Vulnerability [CVE-2023-33242]: Technical Report",
+        "url": "https://www.fireblocks.com/blog/lindell17-abort-vulnerability-technical-report"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000012",
+  "identity": {
+    "aliases": [
+      "ZenGo"
+    ],
+    "name": "Zengo"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/wallets/zengo.json",
+    "relationship_boundary": "wallet-to-product links are preserved as native product_ids but are not emitted as typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_ent_000012",
+    "native_record_type": "wlr.wallet-record.v1",
+    "slug": "zengo"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/zengo/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/wallet--zengo.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/wallets/zengo.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-14"
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_date": "2019-05-27",
+      "launch_date_precision": "day",
+      "parent_entity": {
+        "canonical_name": "SafePal",
+        "id": "wlr_ent_000026",
+        "slug": "safepal",
+        "status": "active",
+        "wallet_type": "hybrid"
+      },
+      "predecessor_product_id": null,
+      "product_type": "hardware_device",
+      "sales_status": "on_sale",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "supported"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000070"
+        ],
+        "confidence": "high",
+        "description": "SafePal states that the S1 hardware wallet opened for sale on May 27, 2019, marking the commercial release of its first hardware wallet.",
+        "entity_id": "wlr_ent_000026",
+        "event_date": "2019-05-27",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000091",
+        "is_major_event": true,
+        "notes": "The release date uses SafePal’s first-party progress update. Current SafePal history independently places the official S1 launch in May 2019.",
+        "product_id": "wlr_prod_000070",
+        "title": "SafePal S1 opened for sale"
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-17",
+        "claim_scope": "status",
+        "entity_id": "wlr_ent_000026",
+        "event_id": null,
+        "event_ids": [],
+        "id": "wlr_src_000146",
+        "is_primary": true,
+        "notes": "Current first-party distribution page confirming the active SafePal App, SafePal Extension Wallet, and supported SafePal S1, S1 Pro, and X1 hardware-wallet lines.",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000070",
+          "wlr_prod_000071",
+          "wlr_prod_000072",
+          "wlr_prod_000073",
+          "wlr_prod_000074"
+        ],
+        "published_at": null,
+        "publisher": "SafePal",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "SafePal Download Center",
+        "url": "https://www.safepal.com/en/download/index"
+      },
+      {
+        "accessed_at": "2026-08-17",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000026",
+        "event_id": "wlr_ev_000091",
+        "event_ids": [
+          "wlr_ev_000091"
+        ],
+        "id": "wlr_src_000149",
+        "is_primary": true,
+        "notes": "First-party SafePal update explicitly states that SafePal S1 was open for sale on May 27, 2019.",
+        "product_id": "wlr_prod_000070",
+        "product_ids": [
+          "wlr_prod_000070"
+        ],
+        "published_at": "2019-09-11",
+        "publisher": "SafePal",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "SafePal Progress Update",
+        "url": "https://www.safepal.com/en/blog/safepal-progress-update"
+      },
+      {
+        "accessed_at": "2026-08-18",
+        "claim_scope": "sales_status",
+        "entity_id": "wlr_ent_000026",
+        "id": "wlr_src_000187",
+        "is_primary": true,
+        "notes": "Current first-party SafePal store lists S1, X1 and S1 Pro with prices and active Buy Now purchase actions. Used only for current sales status.",
+        "product_ids": [
+          "wlr_prod_000070",
+          "wlr_prod_000071",
+          "wlr_prod_000072"
+        ],
+        "published_at": null,
+        "publisher": "SafePal",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "SafePal Products — Hardware Wallets",
+        "url": "https://www.safepal.com/en/store"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000070",
+  "identity": {
+    "aliases": [],
+    "name": "SafePal S1"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/safepal-s1.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000070",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "safepal-s1"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/product/safepal-s1/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--safepal-s1.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/safepal-s1.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-18"
+  }
+}

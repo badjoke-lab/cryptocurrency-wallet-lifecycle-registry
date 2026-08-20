@@ -1,0 +1,80 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_date": "2025-05-08",
+      "launch_date_precision": "day",
+      "parent_entity": {
+        "canonical_name": "Ambire Wallet",
+        "id": "wlr_ent_000058",
+        "slug": "ambire-wallet",
+        "status": "active",
+        "wallet_type": "software"
+      },
+      "predecessor_product_id": null,
+      "product_type": "browser_extension",
+      "sales_status": "not_applicable",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "unknown"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": []
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-20",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000058",
+        "event_id": null,
+        "id": "wlr_src_000262",
+        "is_primary": true,
+        "notes": "First-party announcement establishes the public Ambire Extension launch on 2025-05-08 and its self-custody mission.",
+        "product_id": "wlr_prod_000107",
+        "published_at": "2025-05-08",
+        "publisher": "Ambire",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "The Ambire Extension Launches Officially",
+        "url": "https://blog.ambire.com/ambire-extension-launch/"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000107",
+  "identity": {
+    "aliases": [],
+    "name": "Ambire Extension"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/ambire-extension.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000107",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "ambire-extension"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/product/ambire-extension/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--ambire-extension.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/ambire-extension.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-20"
+  }
+}

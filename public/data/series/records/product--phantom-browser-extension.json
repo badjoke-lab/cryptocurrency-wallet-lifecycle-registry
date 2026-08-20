@@ -1,0 +1,146 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_date": "2021",
+      "launch_date_precision": "year",
+      "parent_entity": {
+        "canonical_name": "Phantom",
+        "id": "wlr_ent_000015",
+        "slug": "phantom",
+        "status": "active",
+        "wallet_type": "software"
+      },
+      "predecessor_product_id": null,
+      "product_type": "browser_extension",
+      "sales_status": "not_applicable",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "supported"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000045"
+        ],
+        "confidence": "high",
+        "description": "Phantom disclosed a critical browser-extension vulnerability reported by Halborn in September 2021 and stated that fixes began rolling out in January 2022, with Phantom users protected by April 2022.",
+        "entity_id": "wlr_ent_000015",
+        "event_date": "2022-06-15",
+        "event_date_basis": "disclosure",
+        "event_status_effect": "none",
+        "event_type": "vulnerability_disclosed",
+        "funds_affected": "unknown",
+        "id": "wlr_ev_000048",
+        "impact_level": "critical",
+        "is_major_event": true,
+        "notes": "The first-party disclosure characterizes the vulnerability as critical; this record does not infer confirmed Phantom-user theft from the disclosure.",
+        "product_id": "wlr_prod_000045",
+        "security_scope": "browser_extension",
+        "title": "Phantom disclosed remediation of the Demonic browser-extension vulnerability",
+        "user_actions_required": [
+          "update"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "architecture",
+        "entity_id": "wlr_ent_000015",
+        "event_id": null,
+        "id": "wlr_src_000063",
+        "is_primary": true,
+        "notes": "Primary legal source identifying Phantom Technologies, Inc. and the self-custody application/browser-extension wallet boundary.",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000045",
+          "wlr_prod_000046"
+        ],
+        "published_at": "2026-03-17",
+        "publisher": "Phantom Technologies, Inc.",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Terms of Use",
+        "url": "https://phantom.com/terms"
+      },
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "status",
+        "entity_id": "wlr_ent_000015",
+        "event_id": null,
+        "id": "wlr_src_000065",
+        "is_primary": true,
+        "notes": "Current first-party download page for browser and iOS/Android products.",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000045",
+          "wlr_prod_000046"
+        ],
+        "published_at": null,
+        "publisher": "Phantom",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Download Phantom",
+        "url": "https://phantom.com/download"
+      },
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "vulnerability",
+        "entity_id": "wlr_ent_000015",
+        "event_id": "wlr_ev_000048",
+        "id": "wlr_src_000068",
+        "is_primary": true,
+        "notes": "Primary vendor disclosure describing the critical extension vulnerability and rollout of fixes.",
+        "product_id": "wlr_prod_000045",
+        "published_at": "2022-06-15",
+        "publisher": "Phantom",
+        "reliability": "high",
+        "source_type": "official_security_advisory",
+        "title": "Keeping Phantom safe from the Demonic critical vulnerability",
+        "url": "https://phantom.com/learn/blog/keeping-phantom-safe-from-the-demonic-critical-vulnerability"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000045",
+  "identity": {
+    "aliases": [
+      "Phantom Extension"
+    ],
+    "name": "Phantom Browser Extension"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/phantom-browser-extension.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000045",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "phantom-browser-extension"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/product/phantom-browser-extension/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--phantom-browser-extension.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/phantom-browser-extension.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-15"
+  }
+}

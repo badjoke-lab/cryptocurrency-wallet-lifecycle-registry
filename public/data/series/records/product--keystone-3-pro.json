@@ -1,0 +1,208 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "launch_date": "2023",
+      "launch_date_precision": "year",
+      "parent_entity": {
+        "canonical_name": "Keystone",
+        "id": "wlr_ent_000013",
+        "slug": "keystone",
+        "status": "active",
+        "wallet_type": "hardware"
+      },
+      "predecessor_product_id": null,
+      "product_type": "hardware_device",
+      "sales_status": "on_sale",
+      "status": "active",
+      "successor_product_id": null,
+      "support_status": "supported"
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000041"
+        ],
+        "confidence": "high",
+        "description": "Keystone published its official Keystone 3 Pro product-design article as part of the 2023 Keystone 3 rollout chronology following the July forthcoming-launch announcement.",
+        "entity_id": "wlr_ent_000013",
+        "event_date": "2023-09-04",
+        "event_date_basis": "announcement",
+        "event_status_effect": "none",
+        "event_type": "other",
+        "id": "wlr_ev_000068",
+        "is_major_event": true,
+        "notes": "This is an introduction/announcement anchor, not an asserted exact retail availability date.",
+        "product_id": "wlr_prod_000041",
+        "title": "Keystone 3 Pro publicly introduced in official product design article"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000041"
+        ],
+        "confidence": "high",
+        "description": "Keystone published a first-party product article detailing the Keystone 3 Pro hardware wallet and its community-driven design and security architecture.",
+        "entity_id": "wlr_ent_000013",
+        "event_date": "2023-09-04",
+        "event_date_basis": "announcement",
+        "event_status_effect": "none",
+        "event_type": "product_announced",
+        "id": "wlr_ev_000100",
+        "is_major_event": true,
+        "notes": "This is a first-party public product-announcement milestone. It does not establish the exact first commercial shipment or general-release day, so the product launch_date remains unresolved.",
+        "product_id": "wlr_prod_000041",
+        "title": "Keystone publicly detailed the Keystone 3 Pro"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000041"
+        ],
+        "confidence": "high",
+        "description": "Keystone's first-party product history and official Keystone 3 firmware release lineage establish Keystone 3 Pro as a released product during 2023.",
+        "entity_id": "wlr_ent_000013",
+        "event_date": "2023",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000106",
+        "is_major_event": true,
+        "notes": "Year precision only. A July 2023 Keystone article still described the launch as forthcoming, while Pro-specific first-party content and firmware release history appear later in 2023; no exact commercial launch day is inferred.",
+        "product_id": "wlr_prod_000041",
+        "title": "Keystone 3 Pro released in 2023"
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000013",
+        "event_id": null,
+        "id": "wlr_src_000058",
+        "is_primary": true,
+        "notes": "Current first-party product page confirming active sale and hardware-wallet identity.",
+        "product_id": "wlr_prod_000041",
+        "published_at": null,
+        "publisher": "Keystone",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Keystone 3 Pro",
+        "url": "https://keyst.one/shop/products/keystone-3-pro"
+      },
+      {
+        "accessed_at": "2026-08-15",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000013",
+        "event_id": "wlr_ev_000068",
+        "event_ids": [
+          "wlr_ev_000068"
+        ],
+        "id": "wlr_src_000114",
+        "is_primary": true,
+        "notes": "Current official Keystone site lists the July 7, 2023 forthcoming Keystone 3 launch article and the September 4, 2023 Keystone 3 Pro product-design article in its first-party chronology.",
+        "product_id": "wlr_prod_000041",
+        "product_ids": [
+          "wlr_prod_000041"
+        ],
+        "published_at": null,
+        "publisher": "Keystone",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Keystone Wallet — Deep Dive into Keystone chronology",
+        "url": "https://keyst.one/"
+      },
+      {
+        "accessed_at": "2026-08-17",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000013",
+        "event_id": "wlr_ev_000100",
+        "event_ids": [
+          "wlr_ev_000100"
+        ],
+        "id": "wlr_src_000158",
+        "is_primary": true,
+        "notes": "First-party Keystone article used to anchor the public Keystone 3 Pro announcement milestone; it is not treated as proof of the exact first commercial shipment date.",
+        "product_id": "wlr_prod_000041",
+        "product_ids": [
+          "wlr_prod_000041"
+        ],
+        "published_at": "2023-09-04",
+        "publisher": "Keystone",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Keystone 3 Pro: A Community-Centric Designed Hardware Wallet",
+        "url": "https://blog.keyst.one/keystone-3-pro-a-community-centric-designed-hardware-wallet-3d5f8f5b41e5"
+      },
+      {
+        "accessed_at": "2026-08-18",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000013",
+        "event_id": "wlr_ev_000106",
+        "id": "wlr_src_000165",
+        "is_primary": true,
+        "notes": "Keystone's own site indexes this Keystone 3 Pro-specific article as published on 2023-09-04. It supports the 2023 product boundary but is not treated as proof of an exact first release day.",
+        "product_id": "wlr_prod_000041",
+        "published_at": "2023-09-04",
+        "publisher": "Keystone",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Keystone 3 Pro: A Community-Centric Designed Hardware Wallet",
+        "url": "https://keyst.one/"
+      },
+      {
+        "accessed_at": "2026-08-18",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000013",
+        "event_id": "wlr_ev_000106",
+        "id": "wlr_src_000166",
+        "is_primary": true,
+        "notes": "Official Keystone 3 firmware repository commit merging release/v0.9.0 during 2023. Used as first-party release-lineage corroboration for year-level chronology, not as an exact commercial launch date.",
+        "product_id": "wlr_prod_000041",
+        "published_at": "2023-09-11",
+        "publisher": "KeystoneHQ",
+        "reliability": "high",
+        "source_type": "source_code",
+        "title": "Keystone 3 firmware release v0.9.0 lineage",
+        "url": "https://github.com/KeystoneHQ/keystone3-firmware/commit/fc0acf531cd5593ae08f745c8febeb35c939c317"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000041",
+  "identity": {
+    "aliases": [],
+    "name": "Keystone 3 Pro"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/products/keystone-3-pro.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_prod_000041",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "keystone-3-pro"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/product/keystone-3-pro/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--keystone-3-pro.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/keystone-3-pro.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-18"
+  }
+}
