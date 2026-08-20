@@ -1,0 +1,41 @@
+name: Audit WLR post-100 depth
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    if: github.head_ref == 'ops/post-100-depth-audit'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - name: Pin accepted 100-entity main
+        run: test "$(git rev-parse HEAD)" = "02afb7036d43817d264b69ac1ef2886bca5c4afa"
+      - name: Generate deterministic coverage audit
+        run: |
+          set -euo pipefail
+          python3 scripts/report_coverage.py --json > /tmp/coverage.json
+          jq '.summary' /tmp/coverage.json
+          echo 'ZERO_EVENT_ENTITIES'
+          jq -r '.entities[] | select(.events == 0) | [.entity_id,.slug,.name,.products,.evidence,([.flags[]] | join(","))] | @tsv' /tmp/coverage.json
+          echo 'ONE_EVENT_ENTITIES'
+          jq -r '.entities[] | select(.events == 1) | [.entity_id,.slug,.name,.events,.evidence,([.flags[]] | join(","))] | @tsv' /tmp/coverage.json
+          echo 'LT2_EVIDENCE_ENTITIES'
+          jq -r '.entities[] | select(.evidence < 2) | [.entity_id,.slug,.name,.evidence] | @tsv' /tmp/coverage.json
+          echo 'ZERO_EVENT_WITH_PRIMARY_EVIDENCE'
+          jq -r '.entities[] | select(.events == 0 and .primary_evidence >= 2) | [.entity_id,.slug,.name,.primary_evidence,.evidence] | @tsv' /tmp/coverage.json
+          echo 'THIN_ENTITY_IDS'
+          jq -r '.thin_entity_ids[]?' /tmp/coverage.json
+          test "$(jq '.summary.entities' /tmp/coverage.json)" = "100"
+          test "$(jq '.summary.products' /tmp/coverage.json)" = "149"
+          test "$(jq '.summary.events' /tmp/coverage.json)" = "121"
+          test "$(jq '.summary.evidence' /tmp/coverage.json)" = "346"
+          test "$(jq '.structural_errors | length' /tmp/coverage.json)" = "0"
