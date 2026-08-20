@@ -1,0 +1,100 @@
+name: Stage reviewed entity growth batch 04 canonical
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  stage:
+    if: github.head_ref == 'review/entity-growth-batch-04-canonical'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: review/entity-growth-batch-04-canonical
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          python -m pip install -r requirements.txt
+          npm install --no-audit --no-fund
+      - name: Apply manually reviewed fixed records
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs = require('fs');
+          const read = p => JSON.parse(fs.readFileSync(p, 'utf8'));
+          const write = (p,v) => fs.writeFileSync(p, JSON.stringify(v) + '\n');
+          const entities = read('data/entities.json');
+          const products = read('data/products.json');
+          const events = read('data/events.json');
+          const evidence = read('data/evidence.json');
+          if (entities.length !== 75 || products.length !== 124 || events.length !== 121 || evidence.length !== 296) {
+            throw new Error(`unexpected canonical base counts e=${entities.length} p=${products.length} ev=${events.length} s=${evidence.length}`);
+          }
+          const fixed = ['a','b','c','d','e'].map(g => read(`.github/reviewed-fixed/batch04-${g}.json`));
+          const E = fixed.flatMap(x => x.entities || []);
+          const P = fixed.flatMap(x => x.products || []);
+          const S = fixed.flatMap(x => x.evidence || []);
+          if (E.length !== 25 || P.length !== 25 || S.length !== 50) throw new Error(`fixed literal count mismatch E=${E.length} P=${P.length} S=${S.length}`);
+          const exactRange = (rows,prefix,start,end) => {
+            const actual = rows.map(x=>x.id).sort(); const expected=[];
+            for(let i=start;i<=end;i++) expected.push(`${prefix}${String(i).padStart(6,'0')}`);
+            if(JSON.stringify(actual)!==JSON.stringify(expected)) throw new Error(`unexpected ${prefix} range`);
+          };
+          exactRange(E,'wlr_ent_',76,100); exactRange(P,'wlr_prod_',125,149); exactRange(S,'wlr_src_',297,346);
+          const add = (arr,row) => {
+            const old = arr.find(x=>x.id===row.id);
+            if(old && JSON.stringify(old)!==JSON.stringify(row)) throw new Error(`id collision ${row.id}`);
+            if(!old) arr.push(row);
+          };
+          E.forEach(x=>add(entities,x)); P.forEach(x=>add(products,x)); S.forEach(x=>add(evidence,x));
+          if (entities.length !== 100 || products.length !== 149 || events.length !== 121 || evidence.length !== 346) {
+            throw new Error(`unexpected promoted counts e=${entities.length} p=${products.length} ev=${events.length} s=${evidence.length}`);
+          }
+          const by=(rows,id)=>{const r=rows.find(x=>x.id===id); if(!r) throw new Error(`missing ${id}`); return r};
+          if(by(entities,'wlr_ent_000087').slug!=='taho'||!by(entities,'wlr_ent_000087').aliases.includes('Tally Ho')) throw new Error('Taho boundary');
+          if(by(products,'wlr_prod_000137').slug!=='sequence-universal-wallet'||by(products,'wlr_prod_000137').product_type!=='web_app') throw new Error('Sequence boundary');
+          if(by(products,'wlr_prod_000138').slug!=='nightly-browser-extension'||by(products,'wlr_prod_000138').product_type!=='browser_extension') throw new Error('Nightly boundary');
+          if(by(products,'wlr_prod_000141').slug!=='breez-mobile') throw new Error('Breez boundary');
+          if(by(entities,'wlr_ent_000095').status!=='dead') throw new Error('Samourai entity boundary');
+          const sam=by(products,'wlr_prod_000144'); if(sam.status!=='dead'||sam.support_status!=='ended'||sam.discontinued_date!=='2024-04-24') throw new Error('Samourai product boundary');
+          const casa=by(entities,'wlr_ent_000097'); if(casa.custody_model!=='hybrid'||!Array.isArray(casa.system_components)||casa.system_components.filter(x=>x.controlled_by==='provider').length!==1) throw new Error('Casa boundary');
+          const keep=by(products,'wlr_prod_000147'); if(keep.sales_status!=='on_sale'||keep.support_status!=='supported'||keep.launch_date!=='2014') throw new Error('KeepKey boundary');
+          if(by(products,'wlr_prod_000148').sales_status!=='on_sale') throw new Error('Satochip boundary');
+          const pro=by(products,'wlr_prod_000149'); if(pro.sales_status!=='on_sale'||pro.launch_date!=='2020-07-02') throw new Error('Prokey boundary');
+          write('data/entities.json', entities);
+          write('data/products.json', products);
+          write('data/evidence.json', evidence);
+          NODE
+      - name: Validate promoted canonical state
+        run: |
+          set -euo pipefail
+          npm run validate:records
+          npm run validate:identity-evidence
+          npm run validate:machine-records
+          npm run validate:structured-discovery
+          npm run validate:stats
+          npm run coverage:audit
+          npm run seed:gate
+          npm run build
+          node scripts/build-stats.mjs
+          jq -e '.registry.entities == 100 and .registry.products == 149 and .registry.events == 121 and .registry.evidence == 346' public/data/stats.json >/dev/null
+      - name: Commit explicit canonical edit
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/entities.json data/products.json data/evidence.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Add reviewed entity growth batch 04'
+          git push origin HEAD:review/entity-growth-batch-04-canonical
