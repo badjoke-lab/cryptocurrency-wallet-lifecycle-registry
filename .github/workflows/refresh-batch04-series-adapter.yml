@@ -1,0 +1,43 @@
+name: Refresh Batch 04 Series adapter
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    if: github.head_ref == 'review/entity-growth-batch-04-canonical'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: review/entity-growth-batch-04-canonical
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Build native machine layer
+        run: npm run prebuild
+      - name: Regenerate and validate Series adapter
+        run: |
+          set -euo pipefail
+          node scripts/generate-series-adapter.mjs
+          node scripts/validate-series-adapter.mjs
+          jq -e '.record_counts.primary_records == 100 and .record_counts.native.entities == 100 and .record_counts.native.products == 149 and .record_counts.native.product_records == 149 and .record_counts.native.wallet_records == 100 and .record_counts.native.events == 121 and .record_counts.native.evidence == 346' public/data/series/registry.json >/dev/null
+          jq -e '.record_count == 249 and .record_counts.wallets == 100 and .record_counts.products == 149' public/data/series/index.json >/dev/null
+          test "$(find public/data/series/records -maxdepth 1 -type f -name '*.json' | wc -l | tr -d ' ')" = "249"
+      - name: Commit deterministic Series output only
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/data/series
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Refresh Series adapter for entity growth batch 04'
+          git push origin HEAD:review/entity-growth-batch-04-canonical
