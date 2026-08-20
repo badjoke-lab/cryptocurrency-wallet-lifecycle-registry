@@ -26,6 +26,9 @@ if (descriptor.canonical_only !== true) fail('descriptor canonical boundary mism
 if (descriptor.record_counts?.primary_records !== manifest.record_counts.entities) fail('primary wallet count mismatch');
 if (descriptor.record_counts?.native?.products !== manifest.record_counts.products) fail('native product count mismatch');
 if (descriptor.capabilities?.relationships !== 'adapter') fail('relationship capability mismatch');
+if (descriptor.routes?.search !== '/') fail('search route must point to the home registry table');
+if (descriptor.routes?.compare !== '/compare/') fail('compare route mismatch');
+if (descriptor.routes?.stats !== '/stats/') fail('stats route mismatch');
 if ('build_commit' in (descriptor.verification ?? {})) fail('adapter must not invent a WLR build commit');
 if (descriptor.verification?.last_verified_at !== manifest.last_verified_at) fail('last_verified_at mismatch');
 
@@ -47,6 +50,8 @@ for (const row of index.records ?? []) {
     const expectedKey = `cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:${nativeRow.id}`;
     if (row.global_record_key !== expectedKey || envelope.global_record_key !== expectedKey) fail(`${row.series_slug}: wallet global key mismatch`);
     if (envelope.record_key?.native_record_id !== dossier.entity?.id) fail(`${row.series_slug}: wallet native ID mismatch`);
+    if (envelope.identity?.name !== dossier.entity?.canonical_name) fail(`${row.series_slug}: wallet identity name mismatch`);
+    if (envelope.urls?.human !== `https://wlr.badjoke-lab.com/wallet/${nativeRow.slug}/`) fail(`${row.series_slug}: wallet human URL mismatch`);
     if (envelope.current_state?.status !== dossier.entity?.status) fail(`${row.series_slug}: wallet status mismatch`);
     if (!same(envelope.events?.records ?? [], dossier.events ?? [])) fail(`${row.series_slug}: wallet events mismatch`);
     if (!same(envelope.evidence?.records ?? [], dossier.evidence ?? [])) fail(`${row.series_slug}: wallet evidence mismatch`);
@@ -60,8 +65,14 @@ for (const row of index.records ?? []) {
     const expectedKey = `cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:${nativeRow.id}`;
     if (row.global_record_key !== expectedKey || envelope.global_record_key !== expectedKey) fail(`${row.series_slug}: product global key mismatch`);
     if (envelope.record_key?.native_record_id !== dossier.product?.id) fail(`${row.series_slug}: product native ID mismatch`);
+    if (envelope.identity?.name !== dossier.product?.product_name) fail(`${row.series_slug}: product identity name mismatch`);
+    if (row.name !== dossier.product?.product_name) fail(`${row.series_slug}: product index name mismatch`);
+    if (envelope.urls?.human !== `https://wlr.badjoke-lab.com/product/${nativeRow.slug}/`) fail(`${row.series_slug}: product human URL mismatch`);
+    if (row.human_url !== envelope.urls?.human) fail(`${row.series_slug}: product index human URL mismatch`);
     if (envelope.current_state?.status !== dossier.product?.status) fail(`${row.series_slug}: product status mismatch`);
     if (envelope.current_state?.native?.parent_entity?.id !== dossier.entity?.id) fail(`${row.series_slug}: parent entity mismatch`);
+    if (envelope.current_state?.native?.launch_date !== (dossier.product?.launch_date ?? null)) fail(`${row.series_slug}: launch date mismatch`);
+    if (envelope.current_state?.native?.launch_date_precision !== (dossier.product?.launch_date_precision ?? null)) fail(`${row.series_slug}: launch date precision mismatch`);
     if (!same(envelope.events?.records ?? [], dossier.events ?? [])) fail(`${row.series_slug}: product events mismatch`);
     if (!same(envelope.evidence?.records ?? [], dossier.evidence ?? [])) fail(`${row.series_slug}: product evidence mismatch`);
     if ((envelope.relationships ?? []).length !== 0) fail(`${row.series_slug}: product typed relationships emitted during Stage 3`);
