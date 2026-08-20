@@ -1,0 +1,86 @@
+name: Verify WLR Phase 9 Series Production
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify-production:
+    if: github.head_ref == 'ops/phase9-series-production-verify'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - name: Pin exact merged main
+        run: test "$(git rev-parse HEAD)" = "5c0a102f5d82261e1deddf7b8a45e9fee95ddb61"
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Rebuild and validate exact-main Series layer
+        run: |
+          set -euo pipefail
+          npm run prebuild
+          node scripts/generate-series-adapter.mjs
+          node scripts/validate-series-adapter.mjs
+          jq -e '.record_counts.primary_records == 75 and .record_counts.native.products == 124 and .record_counts.native.events == 121 and .record_counts.native.evidence == 296 and .routes.search == "/"' public/data/series/registry.json >/dev/null
+          jq -e '.record_count == 199 and .record_counts.wallets == 75 and .record_counts.products == 124' public/data/series/index.json >/dev/null
+          jq -e '.identity.name == "Trezor Model One" and .urls.human == "https://wlr.badjoke-lab.com/product/trezor-model-one/" and .record_key.native_record_id == "wlr_prod_000001"' public/data/series/records/product--trezor-model-one.json >/dev/null
+      - name: Resolve exact Cloudflare production deployment
+        id: cf
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          expected="5c0a102f5d82261e1deddf7b8a45e9fee95ddb61"
+          base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
+          auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
+          match=""
+          for attempt in $(seq 1 60); do
+            deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
+            match="$(jq -c --arg sha "$expected" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
+            if [ -n "$match" ] && jq -e '.latest_stage.status == "success"' <<<"$match" >/dev/null; then break; fi
+            echo "Waiting for exact production deployment attempt=${attempt}"
+            sleep 10
+          done
+          test -n "$match"
+          jq -e '.latest_stage.status == "success" and .deployment_trigger.metadata.branch == "main" and .deployment_trigger.metadata.commit_dirty == false and (.aliases | index("https://wlr.badjoke-lab.com")) != null' <<<"$match" >/dev/null
+          echo "deployment_url=$(jq -r '.url' <<<"$match")" >> "$GITHUB_OUTPUT"
+          echo "$match" | jq '{id,url,aliases,latest_stage,deployment_trigger}'
+      - name: Verify deployment and custom-domain Series equality
+        env:
+          DEPLOYMENT_URL: ${{ steps.cf.outputs.deployment_url }}
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"; trap 'rm -rf "$work"' EXIT
+          for origin in "$DEPLOYMENT_URL" "https://wlr.badjoke-lab.com"; do
+            ready=0
+            for attempt in $(seq 1 60); do
+              nonce="5c0a102f-${attempt}-$(date +%s)"
+              if curl -fsSL --retry 2 --retry-all-errors --retry-delay 1 "${origin}/data/series/registry.json?verify=${nonce}" -o "$work/registry.json" \
+                && curl -fsSL --retry 2 --retry-all-errors --retry-delay 1 "${origin}/data/series/index.json?verify=${nonce}" -o "$work/index.json" \
+                && curl -fsSL --retry 2 --retry-all-errors --retry-delay 1 "${origin}/data/series/records/wallet--trezor.json?verify=${nonce}" -o "$work/wallet.json" \
+                && curl -fsSL --retry 2 --retry-all-errors --retry-delay 1 "${origin}/data/series/records/product--trezor-model-one.json?verify=${nonce}" -o "$work/product.json" \
+                && cmp -s public/data/series/registry.json "$work/registry.json" \
+                && cmp -s public/data/series/index.json "$work/index.json" \
+                && cmp -s public/data/series/records/wallet--trezor.json "$work/wallet.json" \
+                && cmp -s public/data/series/records/product--trezor-model-one.json "$work/product.json"; then
+                ready=1
+                echo "Series equality PASS origin=${origin} attempt=${attempt}"
+                break
+              fi
+              sleep 10
+            done
+            test "$ready" -eq 1
+          done
+          jq -e '[.records[].global_record_key] | length == (unique | length)' "$work/index.json" >/dev/null
+          wallet_code="$(curl -sS -o /dev/null -w '%{http_code}' "https://wlr.badjoke-lab.com/wallet/trezor/?verify=$(date +%s)")"
+          product_code="$(curl -sS -o /dev/null -w '%{http_code}' "https://wlr.badjoke-lab.com/product/trezor-model-one/?verify=$(date +%s)")"
+          test "$wallet_code" -ge 200 && test "$wallet_code" -lt 400
+          test "$product_code" -ge 200 && test "$product_code" -lt 400
+          echo "WLR_PHASE9_SERIES_PRODUCTION_OK records=199 wallets=75 products=124 wallet_route=${wallet_code} product_route=${product_code}"
