@@ -2,15 +2,17 @@
   "bundle_version": "1.0.0",
   "candidate_id": "wlr_cand_entity-growth-batch-04-c",
   "title": "Entity growth batch 04 — group C",
-  "review_state": "researching",
-  "notes": "Breadth-first candidate group for Issue #203. Sollet and Slope were rejected for insufficient first-party lifecycle boundaries; later duplicate checks also rejected Cake Wallet, OneKey Wallet, and Blockstream App as already-canonical identities. They are replaced here by Taho, Sequence, and Nightly. Canonical publication prohibited until validation and manual review complete.",
+  "review_state": "review_ready",
+  "notes": "Breadth-first candidate group for Issue #203. Sollet and Slope were rejected for insufficient first-party lifecycle boundaries; later duplicate checks also rejected Cake Wallet, OneKey Wallet, and Blockstream App as already-canonical identities. They are replaced here by Taho, Sequence, and Nightly. Canonical publication prohibited until validation and manual review complete. Manual review completed 2026-08-20: identity, selected runtime, lifecycle, custody, dates and evidence boundaries accepted for canonical promotion subject to final validation.",
   "records": {
     "entities": [
       {
         "id": "wlr_ent_000086",
         "slug": "glow-wallet",
         "canonical_name": "Glow",
-        "aliases": ["Glow Wallet"],
+        "aliases": [
+          "Glow Wallet"
+        ],
         "wallet_type": "software",
         "status": "active",
         "summary": "Non-custodial Solana wallet ecosystem distributed as browser extensions and mobile applications.",
@@ -30,7 +32,9 @@
         "id": "wlr_ent_000087",
         "slug": "taho",
         "canonical_name": "Taho",
-        "aliases": ["Tally Ho"],
+        "aliases": [
+          "Tally Ho"
+        ],
         "wallet_type": "software",
         "status": "active",
         "summary": "Community-owned open-source self-custodial Web3 wallet lineage originally launched as Tally Ho and renamed Taho in 2023.",
@@ -51,7 +55,9 @@
         "id": "wlr_ent_000088",
         "slug": "sequence",
         "canonical_name": "Sequence",
-        "aliases": ["Sequence Wallet"],
+        "aliases": [
+          "Sequence Wallet"
+        ],
         "wallet_type": "software",
         "status": "active",
         "summary": "Non-custodial smart-wallet ecosystem using programmable multi-key smart-contract wallets for standalone and embedded Web3 access.",
@@ -71,7 +77,9 @@
         "id": "wlr_ent_000089",
         "slug": "nightly-wallet",
         "canonical_name": "Nightly Wallet",
-        "aliases": ["Nightly"],
+        "aliases": [
+          "Nightly"
+        ],
         "wallet_type": "software",
         "status": "active",
         "summary": "Multichain software wallet distributed as browser extensions and mobile applications with user-controlled encrypted wallet keys.",
@@ -92,7 +100,9 @@
         "id": "wlr_ent_000090",
         "slug": "aqua-wallet",
         "canonical_name": "AQUA Wallet",
-        "aliases": ["AQUA"],
+        "aliases": [
+          "AQUA"
+        ],
         "wallet_type": "software",
         "status": "active",
         "summary": "Non-custodial Bitcoin and Layer 2 mobile wallet operated by JAN3, supporting Bitcoin, Liquid, Lightning-related flows and USDt integrations.",
@@ -120,7 +130,12 @@
         "sales_status": "not_applicable",
         "support_status": "unknown",
         "launch_date": null,
-        "platform": ["Chrome", "Edge", "Firefox", "Brave"],
+        "platform": [
+          "Chrome",
+          "Edge",
+          "Firefox",
+          "Brave"
+        ],
         "official_url": "https://glow.app/",
         "source_code_url": null,
         "custody_model": "self_custody",
@@ -141,7 +156,10 @@
         "support_status": "unknown",
         "launch_date": "2021",
         "launch_date_precision": "year",
-        "platform": ["Chrome", "Brave"],
+        "platform": [
+          "Chrome",
+          "Brave"
+        ],
         "official_url": "https://taho.xyz/download/",
         "source_code_url": null,
         "custody_model": "self_custody",
@@ -161,7 +179,9 @@
         "sales_status": "not_applicable",
         "support_status": "unknown",
         "launch_date": null,
-        "platform": ["Web"],
+        "platform": [
+          "Web"
+        ],
         "official_url": "https://sequence.app/",
         "source_code_url": null,
         "custody_model": "self_custody",
@@ -182,7 +202,14 @@
         "support_status": "unknown",
         "launch_date": "2022-07-04",
         "launch_date_precision": "day",
-        "platform": ["Chrome", "Firefox", "Brave", "Edge", "Opera", "Safari"],
+        "platform": [
+          "Chrome",
+          "Firefox",
+          "Brave",
+          "Edge",
+          "Opera",
+          "Safari"
+        ],
         "official_url": "https://nightly.app/download",
         "source_code_url": null,
         "custody_model": "self_custody",
@@ -202,7 +229,10 @@
         "sales_status": "not_applicable",
         "support_status": "unknown",
         "launch_date": null,
-        "platform": ["iOS", "Android"],
+        "platform": [
+          "iOS",
+          "Android"
+        ],
         "official_url": "https://aqua.net/download",
         "source_code_url": null,
         "custody_model": "self_custody",

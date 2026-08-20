@@ -2,8 +2,8 @@
   "bundle_version": "1.0.0",
   "candidate_id": "wlr_cand_entity-growth-batch-04-d",
   "title": "Entity growth batch 04 — group D",
-  "review_state": "researching",
-  "notes": "Breadth-first candidate group for Issue #203. Includes explicit historical lifecycle treatment for Samourai Wallet. Canonical publication prohibited until validation and manual review complete.",
+  "review_state": "review_ready",
+  "notes": "Breadth-first candidate group for Issue #203. Includes explicit historical lifecycle treatment for Samourai Wallet. Canonical publication prohibited until validation and manual review complete. Manual review completed 2026-08-20: identity, selected runtime, lifecycle, custody, dates and evidence boundaries accepted for canonical promotion subject to final validation.",
   "records": {
     "entities": [
       {
@@ -30,7 +30,9 @@
         "id": "wlr_ent_000092",
         "slug": "breez",
         "canonical_name": "Breez",
-        "aliases": ["Breez Mobile"],
+        "aliases": [
+          "Breez Mobile"
+        ],
         "wallet_type": "software",
         "status": "active",
         "summary": "Bitcoin Lightning software ecosystem whose Breez Mobile wallet runs a non-custodial Lightning node on the user's mobile device.",
@@ -50,7 +52,9 @@
         "id": "wlr_ent_000093",
         "slug": "zeus-wallet",
         "canonical_name": "ZEUS Wallet",
-        "aliases": ["ZEUS"],
+        "aliases": [
+          "ZEUS"
+        ],
         "wallet_type": "software",
         "status": "active",
         "summary": "Open-source self-custodial Bitcoin and Lightning wallet supporting embedded-node and bring-your-own-node configurations.",
@@ -91,7 +95,9 @@
         "id": "wlr_ent_000095",
         "slug": "samourai-wallet",
         "canonical_name": "Samourai Wallet",
-        "aliases": ["Samourai"],
+        "aliases": [
+          "Samourai"
+        ],
         "wallet_type": "software",
         "status": "dead",
         "summary": "Historical Android Bitcoin privacy wallet whose web servers/domain were seized by law enforcement in April 2024 and whose business was closed.",
@@ -101,7 +107,9 @@
         "launch_date_precision": "year",
         "official_url": "https://samouraiwallet.com/",
         "official_domain": "samouraiwallet.com",
-        "source_code_urls": ["https://github.com/Samourai-Wallet/samourai-wallet-android"],
+        "source_code_urls": [
+          "https://github.com/Samourai-Wallet/samourai-wallet-android"
+        ],
         "custody_model": "self_custody",
         "key_management_model": "android_local_seed_and_private_keys",
         "confidence": "high",
@@ -120,7 +128,10 @@
         "sales_status": "not_applicable",
         "support_status": "unknown",
         "launch_date": null,
-        "platform": ["iOS", "Android"],
+        "platform": [
+          "iOS",
+          "Android"
+        ],
         "official_url": "https://bitkit.to/",
         "source_code_url": null,
         "custody_model": "self_custody",
@@ -140,7 +151,9 @@
         "sales_status": "not_applicable",
         "support_status": "unknown",
         "launch_date": null,
-        "platform": ["mobile"],
+        "platform": [
+          "mobile"
+        ],
         "official_url": "https://breez.technology/mobile/",
         "source_code_url": null,
         "custody_model": "self_custody",
@@ -161,7 +174,10 @@
         "support_status": "unknown",
         "launch_date": "2019",
         "launch_date_precision": "year",
-        "platform": ["iOS", "Android"],
+        "platform": [
+          "iOS",
+          "Android"
+        ],
         "official_url": "https://zeusln.com/wallet",
         "source_code_url": null,
         "custody_model": "self_custody",
@@ -181,7 +197,10 @@
         "sales_status": "not_applicable",
         "support_status": "unknown",
         "launch_date": null,
-        "platform": ["Android", "iOS"],
+        "platform": [
+          "Android",
+          "iOS"
+        ],
         "official_url": "https://blixtwallet.github.io/",
         "source_code_url": null,
         "custody_model": "self_custody",
@@ -203,7 +222,9 @@
         "launch_date": "2015",
         "launch_date_precision": "year",
         "discontinued_date": "2024-04-24",
-        "platform": ["Android"],
+        "platform": [
+          "Android"
+        ],
         "official_url": "https://github.com/Samourai-Wallet/samourai-wallet-android",
         "source_code_url": "https://github.com/Samourai-Wallet/samourai-wallet-android",
         "custody_model": "self_custody",

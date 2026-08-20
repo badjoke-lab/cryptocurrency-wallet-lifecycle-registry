@@ -2,15 +2,17 @@
   "bundle_version": "1.0.0",
   "candidate_id": "wlr_cand_entity-growth-batch-04-e",
   "title": "Entity growth batch 04 — group E",
-  "review_state": "researching",
-  "notes": "Breadth-first candidate group for Issue #203. Casa is modeled with a hybrid custody/key boundary because Casa holds one recovery key that cannot independently move funds. Canonical publication prohibited until validation and manual review complete.",
+  "review_state": "review_ready",
+  "notes": "Breadth-first candidate group for Issue #203. Casa is modeled with a hybrid custody/key boundary because Casa holds one recovery key that cannot independently move funds. Canonical publication prohibited until validation and manual review complete. Manual review completed 2026-08-20: identity, selected runtime, lifecycle, custody, dates and evidence boundaries accepted for canonical promotion subject to final validation.",
   "records": {
     "entities": [
       {
         "id": "wlr_ent_000096",
         "slug": "specter-desktop",
         "canonical_name": "Specter Desktop",
-        "aliases": ["Specter"],
+        "aliases": [
+          "Specter"
+        ],
         "wallet_type": "software",
         "status": "active",
         "summary": "Open-source Bitcoin desktop wallet and node interface focused on hardware-wallet and multisignature setups, with Bitcoin Core and Electrum backends.",
@@ -19,7 +21,9 @@
         "launch_date": null,
         "official_url": "https://github.com/cryptoadvance/specter-desktop",
         "official_domain": "github.com",
-        "source_code_urls": ["https://github.com/cryptoadvance/specter-desktop"],
+        "source_code_urls": [
+          "https://github.com/cryptoadvance/specter-desktop"
+        ],
         "custody_model": "self_custody",
         "key_management_model": "watch_only_multisig_coordinator_with_external_signing_devices_and_optional_hot_wallet",
         "confidence": "high",
@@ -30,7 +34,9 @@
         "id": "wlr_ent_000097",
         "slug": "casa",
         "canonical_name": "Casa",
-        "aliases": ["Casa Vault"],
+        "aliases": [
+          "Casa Vault"
+        ],
         "wallet_type": "hybrid",
         "status": "active",
         "summary": "Non-custodial multisignature Bitcoin and Ethereum vault service in which users control the signing quorum while Casa holds one emergency recovery key that cannot move funds by itself.",
@@ -45,9 +51,24 @@
         "confidence": "high",
         "last_verified_at": "2026-08-20",
         "system_components": [
-          {"component_type":"mobile_key","controlled_by":"user","role":"signing_key","custody_note":"Held by the user on the mobile device."},
-          {"component_type":"hardware_key","controlled_by":"user","role":"signing_key","custody_note":"One or more user-controlled hardware-wallet keys participate in the multisig quorum."},
-          {"component_type":"casa_recovery_key","controlled_by":"provider","role":"emergency_recovery_signing_key","custody_note":"Casa holds one recovery key, but that key alone cannot move funds or satisfy the multisig quorum."}
+          {
+            "component_type": "mobile_key",
+            "controlled_by": "user",
+            "role": "signing_key",
+            "custody_note": "Held by the user on the mobile device."
+          },
+          {
+            "component_type": "hardware_key",
+            "controlled_by": "user",
+            "role": "signing_key",
+            "custody_note": "One or more user-controlled hardware-wallet keys participate in the multisig quorum."
+          },
+          {
+            "component_type": "casa_recovery_key",
+            "controlled_by": "provider",
+            "role": "emergency_recovery_signing_key",
+            "custody_note": "Casa holds one recovery key, but that key alone cannot move funds or satisfy the multisig quorum."
+          }
         ],
         "notes": "Casa explicitly calls the vault non-custodial because Casa never holds enough keys to move funds. WLR still records `custody_model=hybrid` to preserve the material provider-held recovery-key component rather than flattening the architecture into a pure user-only key model."
       },
@@ -125,7 +146,11 @@
         "sales_status": "not_applicable",
         "support_status": "supported",
         "launch_date": null,
-        "platform": ["Windows", "macOS", "Linux"],
+        "platform": [
+          "Windows",
+          "macOS",
+          "Linux"
+        ],
         "official_url": "https://github.com/cryptoadvance/specter-desktop",
         "source_code_url": "https://github.com/cryptoadvance/specter-desktop",
         "custody_model": "self_custody",
@@ -145,7 +170,10 @@
         "sales_status": "not_applicable",
         "support_status": "unknown",
         "launch_date": null,
-        "platform": ["Casa app", "hardware wallets"],
+        "platform": [
+          "Casa app",
+          "hardware wallets"
+        ],
         "official_url": "https://support.casa.io/knowledge/what-is-the-casa-app",
         "source_code_url": null,
         "custody_model": "hybrid",
@@ -166,7 +194,10 @@
         "support_status": "supported",
         "launch_date": "2014",
         "launch_date_precision": "year",
-        "platform": ["hardware", "KeepKey Desktop"],
+        "platform": [
+          "hardware",
+          "KeepKey Desktop"
+        ],
         "official_url": "https://www.keepkey.com/product",
         "source_code_url": null,
         "custody_model": "self_custody",
@@ -186,7 +217,12 @@
         "sales_status": "on_sale",
         "support_status": "unknown",
         "launch_date": null,
-        "platform": ["smart card", "NFC", "desktop", "mobile"],
+        "platform": [
+          "smart card",
+          "NFC",
+          "desktop",
+          "mobile"
+        ],
         "official_url": "https://satochip.io/product/satochip/",
         "source_code_url": null,
         "custody_model": "self_custody",
@@ -207,7 +243,14 @@
         "support_status": "unknown",
         "launch_date": "2020-07-02",
         "launch_date_precision": "day",
-        "platform": ["hardware", "web wallet", "Windows", "macOS", "Linux", "Android"],
+        "platform": [
+          "hardware",
+          "web wallet",
+          "Windows",
+          "macOS",
+          "Linux",
+          "Android"
+        ],
         "official_url": "https://prokey.io/prokey-optimum",
         "source_code_url": null,
         "custody_model": "self_custody",
