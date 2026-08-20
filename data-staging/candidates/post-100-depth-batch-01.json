@@ -2,8 +2,8 @@
   "bundle_version": "1.0.0",
   "candidate_id": "wlr_cand_post-100-depth-batch-01",
   "title": "Post-100 depth batch 01",
-  "review_state": "researching",
-  "notes": "Bounded depth batch under Issue #210. Adds only material reviewed-history candidates; no entity/product records and no count-padding events. Canonical publication prohibited until manual review and final candidate validation complete.",
+  "review_state": "review_ready",
+  "notes": "Bounded depth batch under Issue #210. Adds only material reviewed-history candidates; no entity/product records and no count-padding events. Manual source/date/scope/impact review completed 2026-08-20; accepted boundaries are fixed for canonical promotion subject to final candidate validation.",
   "records": {
     "entities": [],
     "products": [],
