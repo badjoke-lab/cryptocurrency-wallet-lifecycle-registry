@@ -1,0 +1,146 @@
+name: Verify WLR PR229 Production
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  exact-main-ci:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - name: Pin exact merged main
+        run: test "$(git rev-parse HEAD)" = "674b0e0e0548b05fdef5f9a2fcde797b3f1330f0"
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python -m pip install -r requirements.txt
+      - run: npm install --no-audit --no-fund
+      - run: npm run validate:records
+      - run: npm run validate:candidates
+      - run: npm run validate:identity-evidence
+      - run: npm run validate:machine-records
+      - run: npm run validate:structured-discovery
+      - run: npm run test:natural-filters
+      - run: npm run validate:natural-filters
+      - run: npm run validate:compare
+      - run: npm run validate:stats
+      - run: npm run test:monitoring
+      - run: npm run validate:monitoring
+      - run: npm run test:candidates
+      - run: npm run test:identity-evidence
+      - run: npm run check:staging-boundary
+      - run: npm run coverage:audit
+      - run: npm run seed:gate
+      - run: npm run cloudflare:config:print
+      - run: npm run build
+      - name: Verify Phase 9 Series contract
+        run: |
+          set -euo pipefail
+          node scripts/generate-series-adapter.mjs
+          node scripts/validate-series-adapter.mjs
+          git diff --exit-code -- public/data/series
+
+  production-verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Build exact-main expected state
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "674b0e0e0548b05fdef5f9a2fcde797b3f1330f0"
+          npm install --no-audit --no-fund
+          npm run prebuild
+          node scripts/generate-series-adapter.mjs
+          node scripts/validate-series-adapter.mjs
+          git diff --exit-code -- public/data/series
+          jq -e '.registry.entities == 100 and .registry.products == 149 and .registry.events == 138 and .registry.evidence == 363' public/data/stats.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_ev_000134") | .event_type == "rebranded" and .event_date == "2026-06-08"' data/events.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_ev_000135") | .event_type == "exploit" and .event_date == "2026-06-21" and .funds_affected == "yes"' data/events.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_ev_000136") | .event_type == "service_shutdown" and .event_date == "2026-07-06" and .event_status_effect == "deprecated"' data/events.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_ev_000137") | .event_type == "acquired" and .event_date == "2017" and .event_date_basis == "approximate"' data/events.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_ev_000138") | .event_type == "other" and .event_date == "2022-01-01"' data/events.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_src_000360") | .event_id == "wlr_ev_000134" and .reliability == "high"' data/evidence.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_src_000361") | (.event_ids | index("wlr_ev_000135")) != null and (.event_ids | index("wlr_ev_000136")) != null' data/evidence.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_src_000362") | .event_id == "wlr_ev_000137" and .reliability == "high"' data/evidence.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_src_000363") | .event_id == "wlr_ev_000138" and .reliability == "high"' data/evidence.json >/dev/null
+          jq -e '.record_counts.primary_records == 100 and .record_counts.native.events == 138 and .record_counts.native.evidence == 363' public/data/series/registry.json >/dev/null
+          jq -e '.record_count == 249 and .record_counts.wallets == 100 and .record_counts.products == 149' public/data/series/index.json >/dev/null
+          echo 'Exact-main stats:'
+          jq '{registry, support_known:.data_quality.products.support_status_known, sales_known:.data_quality.products.sales_status_known}' public/data/stats.json
+      - name: Resolve exact Cloudflare production deployment
+        id: cf
+        run: |
+          set -euo pipefail
+          expected="674b0e0e0548b05fdef5f9a2fcde797b3f1330f0"
+          base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
+          auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
+          match=""
+          for attempt in $(seq 1 100); do
+            deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
+            match="$(jq -c --arg sha "$expected" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
+            if [ -n "$match" ] && jq -e '.latest_stage.status == "success"' <<<"$match" >/dev/null; then break; fi
+            echo "Waiting for exact deployment attempt=${attempt}"; sleep 10
+          done
+          test -n "$match"
+          jq -e '.latest_stage.status == "success" and .deployment_trigger.metadata.branch == "main" and .deployment_trigger.metadata.commit_dirty == false and (.aliases | index("https://wlr.badjoke-lab.com")) != null' <<<"$match" >/dev/null
+          echo "deployment_url=$(jq -r '.url' <<<"$match")" >> "$GITHUB_OUTPUT"
+          echo "$match" | jq '{id,short_id,url,aliases,latest_stage,deployment_trigger}'
+      - name: Verify public depth batch 04
+        env:
+          DEPLOYMENT_URL: ${{ steps.cf.outputs.deployment_url }}
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"; trap 'rm -rf "$work"' EXIT
+          curl -fsSL "${DEPLOYMENT_URL}/data/stats.json?verify=674b0e0e" -o "$work/deploy-stats.json"
+          jq -e '.registry.events == 138 and .registry.evidence == 363' "$work/deploy-stats.json" >/dev/null
+          ready=0
+          for attempt in $(seq 1 60); do
+            nonce="674b0e0e-${attempt}-$(date +%s)"; ok=1
+            for name in entities products events evidence stats; do curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/${name}.json?verify=${nonce}" -o "$work/${name}.json" || ok=0; done
+            curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/series/registry.json?verify=${nonce}" -o "$work/series-registry.json" || ok=0
+            if [ "$ok" -eq 1 ] && jq -e '.registry.events == 138 and .registry.evidence == 363' "$work/stats.json" >/dev/null 2>&1 && jq -e '.record_counts.native.events == 138 and .record_counts.native.evidence == 363' "$work/series-registry.json" >/dev/null 2>&1; then
+              good=1
+              jq -e '.[] | select(.id == "wlr_ev_000134") | .event_type == "rebranded" and .event_date == "2026-06-08"' "$work/events.json" >/dev/null 2>&1 || good=0
+              jq -e '.[] | select(.id == "wlr_ev_000135") | .event_type == "exploit" and .event_date == "2026-06-21"' "$work/events.json" >/dev/null 2>&1 || good=0
+              jq -e '.[] | select(.id == "wlr_ev_000136") | .event_type == "service_shutdown" and .event_date == "2026-07-06"' "$work/events.json" >/dev/null 2>&1 || good=0
+              jq -e '.[] | select(.id == "wlr_ev_000137") | .event_type == "acquired" and .event_date == "2017"' "$work/events.json" >/dev/null 2>&1 || good=0
+              jq -e '.[] | select(.id == "wlr_ev_000138") | .event_type == "other" and .event_date == "2022-01-01"' "$work/events.json" >/dev/null 2>&1 || good=0
+              jq -e '.[] | select(.id == "wlr_src_000360")' "$work/evidence.json" >/dev/null 2>&1 || good=0
+              jq -e '.[] | select(.id == "wlr_src_000361")' "$work/evidence.json" >/dev/null 2>&1 || good=0
+              jq -e '.[] | select(.id == "wlr_src_000362")' "$work/evidence.json" >/dev/null 2>&1 || good=0
+              jq -e '.[] | select(.id == "wlr_src_000363")' "$work/evidence.json" >/dev/null 2>&1 || good=0
+              if [ "$good" -eq 1 ]; then ready=1; echo "Public depth batch 04 exact on attempt=${attempt}"; break; fi
+            fi
+            sleep 10
+          done
+          test "$ready" -eq 1
+          routes=(
+            wallet/yoroi product/yoroi-extension data/series/records/wallet--yoroi.json data/series/records/product--yoroi-extension.json
+            wallet/keepkey product/keepkey-hardware-wallet data/series/records/wallet--keepkey.json data/series/records/product--keepkey-hardware-wallet.json
+          )
+          nonce="$(date +%s)"
+          for route in "${routes[@]}"; do
+            suffix="/"; [[ "$route" == *.json ]] && suffix=""
+            code="$(curl -sS -o /dev/null -w '%{http_code}' "https://wlr.badjoke-lab.com/${route}${suffix}?verify=${nonce}")"
+            test "$code" -ge 200 && test "$code" -lt 400
+            echo "WLR route ${route}${suffix} -> ${code}"
+          done
+          echo 'PR229_PRODUCTION_VERIFY_OK entities=100 products=149 events=138 evidence=363 series_records=249'
