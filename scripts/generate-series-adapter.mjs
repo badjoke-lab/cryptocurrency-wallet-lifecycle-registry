@@ -101,7 +101,7 @@ for (const row of [...productIndex].sort((a, b) => a.slug.localeCompare(b.slug))
   const nativeRecordType = dossier.schema;
   const globalKey = `${REGISTRY_ID}:${nativeRecordType}:${product.id}`;
   const seriesPath = `/data/series/records/product--${product.slug}.json`;
-  const humanUrl = `${ORIGIN}/wallet/${parent.slug}/`;
+  const humanUrl = `${ORIGIN}/product/${product.slug}/`;
   const nativeMachineUrl = `${ORIGIN}${row.path}`;
 
   const envelope = {
@@ -111,13 +111,14 @@ for (const row of [...productIndex].sort((a, b) => a.slug.localeCompare(b.slug))
     global_record_key: globalKey,
     record_key: { native_record_type: nativeRecordType, native_record_id: product.id, slug: product.slug },
     urls: { human: humanUrl, machine: `${ORIGIN}${seriesPath}`, native_machine: nativeMachineUrl },
-    identity: { name: product.canonical_name, aliases: product.aliases ?? [] },
+    identity: { name: product.product_name, aliases: product.aliases ?? [] },
     current_state: {
       status: product.status ?? null,
       native: {
         status: product.status ?? null,
         parent_entity: parent,
-        launch_year: product.launch_year ?? null,
+        launch_date: product.launch_date ?? null,
+        launch_date_precision: product.launch_date_precision ?? null,
         product_type: product.product_type ?? null,
         support_status: product.support_status ?? null,
         sales_status: product.sales_status ?? null,
@@ -145,7 +146,7 @@ for (const row of [...productIndex].sort((a, b) => a.slug.localeCompare(b.slug))
     native_record_id: product.id,
     slug: product.slug,
     series_slug: `product--${product.slug}`,
-    name: product.canonical_name,
+    name: product.product_name,
     status: product.status ?? null,
     human_url: humanUrl,
     machine_url: `${ORIGIN}${seriesPath}`,
@@ -182,7 +183,7 @@ const descriptor = {
     descriptor: '/data/series/registry.json',
     index: '/data/series/index.json',
     record_templates: ['/data/series/records/wallet--{slug}.json', '/data/series/records/product--{slug}.json'],
-    search: '/explorer/',
+    search: '/',
     compare: '/compare/',
     stats: '/stats/',
   },
