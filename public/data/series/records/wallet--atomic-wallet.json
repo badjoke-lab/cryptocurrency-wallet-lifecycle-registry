@@ -16,7 +16,27 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [],
+        "affected_users_text": "Atomic Wallet stated that fewer than 0.1% of monthly active app users were affected.",
+        "confidence": "high",
+        "description": "Atomic Wallet reported receiving user complaints on June 3, 2023 about unauthorized transactions from affected wallets and said funds associated with the incident were being mixed and laundered while the company investigated.",
+        "entity_id": "wlr_ent_000032",
+        "event_date": "2023-06-03",
+        "event_date_basis": "occurrence",
+        "event_status_effect": "none",
+        "event_type": "unauthorized_access",
+        "funds_affected": "yes",
+        "id": "wlr_ev_000124",
+        "impact_level": "high",
+        "is_major_event": true,
+        "notes": "Atomic Wallet examined several possible causes, including local malware, infrastructure compromise, malware code injection and man-in-the-middle attack, but stated that none had been confirmed. WLR therefore does not assign an affected version range, product runtime, root cause or total loss amount.",
+        "product_id": null,
+        "security_scope": "other",
+        "title": "Atomic Wallet users reported unauthorized transactions"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -52,6 +72,22 @@
         "source_type": "official_statement",
         "title": "Atomic: Best Crypto Wallet",
         "url": "https://atomicwallet.io/"
+      },
+      {
+        "accessed_at": "2026-08-20",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000032",
+        "event_id": "wlr_ev_000124",
+        "id": "wlr_src_000349",
+        "is_primary": true,
+        "notes": "Atomic Wallet states that on June 3 it received reports of unauthorized transactions, that fewer than 0.1% of monthly active app users were affected, and that several possible causes were investigated without a confirmed root cause.",
+        "product_id": null,
+        "published_at": null,
+        "publisher": "Atomic Wallet",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "June 3rd Event Statement",
+        "url": "https://atomicwallet.io/blog/articles/june-3rd-event-statement"
       }
     ]
   },

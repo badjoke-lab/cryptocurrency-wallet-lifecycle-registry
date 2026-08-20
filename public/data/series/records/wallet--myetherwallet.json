@@ -16,7 +16,26 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [],
+        "confidence": "high",
+        "description": "A BGP route hijack affecting Amazon Route 53 DNS infrastructure redirected some DNS resolution for myetherwallet.com to a malicious server. Users who proceeded through the invalid TLS certificate warning could submit wallet credentials to the phishing site, and the attacker used stolen information to transfer Ethereum.",
+        "entity_id": "wlr_ent_000027",
+        "event_date": "2018-04-24",
+        "event_date_basis": "occurrence",
+        "event_status_effect": "none",
+        "event_type": "phishing_campaign",
+        "funds_affected": "yes",
+        "id": "wlr_ev_000126",
+        "impact_level": "high",
+        "is_major_event": true,
+        "notes": "The incident is scoped to the public web/DNS path rather than a compromise of MEW application code or wallet servers. MEW stated that its Chrome extension and locally run/offline copies were not affected. Cloudflare's network analysis attributes the hijacked DNS routes to Amazon Route 53; WLR does not preserve the early Google-DNS attribution from the initial MEW statement. No exact loss amount is canonicalized in this candidate.",
+        "product_id": null,
+        "security_scope": "other",
+        "title": "BGP and DNS hijack redirected MyEtherWallet web users to a phishing site"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -52,6 +71,38 @@
         "source_type": "official_statement",
         "title": "MyEtherWallet: An Introduction",
         "url": "https://help.myetherwallet.com/en/articles/5377591-myetherwallet-an-introduction"
+      },
+      {
+        "accessed_at": "2026-08-20",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000027",
+        "event_id": "wlr_ev_000126",
+        "id": "wlr_src_000351",
+        "is_primary": true,
+        "notes": "MEW's official incident statement says its domain's public DNS path was hijacked and users were redirected to a phishing site. Follow-up statements from the MEW team say the Chrome extension and locally run copies were not affected.",
+        "product_id": null,
+        "published_at": null,
+        "publisher": "MyEtherWallet",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Official statement regarding DNS spoofing of MyEtherWallet domain",
+        "url": "https://www.reddit.com/r/MyEtherWallet/comments/8eloo9/official_statement_regarding_dns_spoofing_of/"
+      },
+      {
+        "accessed_at": "2026-08-20",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000027",
+        "event_id": "wlr_ev_000126",
+        "id": "wlr_src_000352",
+        "is_primary": true,
+        "notes": "Cloudflare's first-hand BGP and DNS-resolver analysis attributes the hijacked prefixes to Amazon Route 53 DNS, observes malicious responses specifically for myetherwallet.com, and reports that stolen login information was used to transfer Ethereum.",
+        "product_id": null,
+        "published_at": "2018-04-24",
+        "publisher": "Cloudflare",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "BGP leaks and cryptocurrencies",
+        "url": "https://blog.cloudflare.com/bgp-leaks-and-crypto-currencies/"
       }
     ]
   },
