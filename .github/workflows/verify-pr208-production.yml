@@ -1,0 +1,161 @@
+name: Verify WLR PR208 Production
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  exact-main-ci:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - name: Pin exact merged main
+        run: test "$(git rev-parse HEAD)" = "02afb7036d43817d264b69ac1ef2886bca5c4afa"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - run: npm install --no-audit --no-fund
+      - run: npm run validate:records
+      - run: npm run validate:candidates
+      - run: npm run validate:identity-evidence
+      - run: npm run validate:machine-records
+      - run: npm run validate:structured-discovery
+      - run: npm run test:natural-filters
+      - run: npm run validate:natural-filters
+      - run: npm run validate:compare
+      - run: npm run validate:stats
+      - run: npm run test:monitoring
+      - run: npm run validate:monitoring
+      - run: npm run test:candidates
+      - run: npm run test:identity-evidence
+      - run: npm run check:staging-boundary
+      - run: npm run coverage:audit
+      - run: npm run seed:gate
+      - run: npm run cloudflare:config:print
+      - run: npm run build
+      - name: Verify Phase 9 Series contract at exact main
+        run: |
+          set -euo pipefail
+          node scripts/generate-series-adapter.mjs
+          node scripts/validate-series-adapter.mjs
+          git diff --exit-code -- public/data/series
+
+  production-verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build exact-main expected state
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "02afb7036d43817d264b69ac1ef2886bca5c4afa"
+          npm install --no-audit --no-fund
+          npm run prebuild
+          node scripts/generate-series-adapter.mjs
+          node scripts/validate-series-adapter.mjs
+          git diff --exit-code -- public/data/series
+          jq -e '.registry.entities == 100 and .registry.products == 149 and .registry.events == 121 and .registry.evidence == 346 and .registry.incident_events == 23 and .registry.remediation_events == 9 and .registry.eol_events == 7' public/data/stats.json >/dev/null
+          jq -e '.record_counts.primary_records == 100 and .record_counts.native.entities == 100 and .record_counts.native.products == 149 and .record_counts.native.product_records == 149 and .record_counts.native.wallet_records == 100 and .record_counts.native.events == 121 and .record_counts.native.evidence == 346' public/data/series/registry.json >/dev/null
+          jq -e '.record_count == 249 and .record_counts.wallets == 100 and .record_counts.products == 149' public/data/series/index.json >/dev/null
+          for n in $(seq 76 100); do id=$(printf 'wlr_ent_%06d' "$n"); jq -e --arg id "$id" '.[] | select(.id == $id)' data/entities.json >/dev/null; done
+          for n in $(seq 125 149); do id=$(printf 'wlr_prod_%06d' "$n"); jq -e --arg id "$id" '.[] | select(.id == $id)' data/products.json >/dev/null; done
+          for n in $(seq 297 346); do id=$(printf 'wlr_src_%06d' "$n"); jq -e --arg id "$id" '.[] | select(.id == $id)' data/evidence.json >/dev/null; done
+          jq -e '.[] | select(.id == "wlr_ent_000095") | .status == "dead"' data/entities.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_prod_000144") | .status == "dead" and .support_status == "ended" and .discontinued_date == "2024-04-24"' data/products.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_ent_000097") | .custody_model == "hybrid" and ([.system_components[] | select(.controlled_by == "provider")] | length) == 1' data/entities.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_prod_000137") | .slug == "sequence-universal-wallet" and .product_type == "web_app"' data/products.json >/dev/null
+          jq -e '.[] | select(.id == "wlr_prod_000138") | .slug == "nightly-browser-extension" and .product_type == "browser_extension"' data/products.json >/dev/null
+          echo 'Exact-main stats:'
+          jq '{registry, entity_launch:.entities.launch_date, product_launch:.products.launch_date, support_known:.data_quality.products.support_status_known, sales_known:.data_quality.products.sales_status_known, incident_impact:.data_quality.events.incident_impact_level, incident_funds:.data_quality.events.incident_funds_affected}' public/data/stats.json
+      - name: Resolve exact Cloudflare production deployment
+        id: cf
+        run: |
+          set -euo pipefail
+          expected="02afb7036d43817d264b69ac1ef2886bca5c4afa"
+          base="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/cryptocurrency-wallet-lifecycle-registry"
+          auth="Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
+          match=""
+          for attempt in $(seq 1 100); do
+            deployments="$(curl -fsS "${base}/deployments?env=production&per_page=20" -H "$auth")"
+            match="$(jq -c --arg sha "$expected" '[.result[] | select(.environment == "production" and .deployment_trigger.metadata.commit_hash == $sha)] | first // empty' <<<"$deployments")"
+            if [ -n "$match" ] && jq -e '.latest_stage.status == "success"' <<<"$match" >/dev/null; then break; fi
+            echo "Waiting for exact deployment attempt=${attempt}"
+            sleep 10
+          done
+          test -n "$match"
+          jq -e '.latest_stage.status == "success" and .deployment_trigger.metadata.branch == "main" and .deployment_trigger.metadata.commit_dirty == false and (.aliases | index("https://wlr.badjoke-lab.com")) != null' <<<"$match" >/dev/null
+          echo "deployment_url=$(jq -r '.url' <<<"$match")" >> "$GITHUB_OUTPUT"
+          echo "$match" | jq '{id,short_id,url,aliases,latest_stage,deployment_trigger}'
+      - name: Verify exact deployment and public Batch 04 state
+        env:
+          DEPLOYMENT_URL: ${{ steps.cf.outputs.deployment_url }}
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"; trap 'rm -rf "$work"' EXIT
+          curl -fsSL "${DEPLOYMENT_URL}/data/stats.json?verify=02afb703" -o "$work/deploy-stats.json"
+          curl -fsSL "${DEPLOYMENT_URL}/data/series/registry.json?verify=02afb703" -o "$work/deploy-series-registry.json"
+          curl -fsSL "${DEPLOYMENT_URL}/data/series/index.json?verify=02afb703" -o "$work/deploy-series-index.json"
+          jq -e '.registry.entities == 100 and .registry.products == 149 and .registry.events == 121 and .registry.evidence == 346' "$work/deploy-stats.json" >/dev/null
+          jq -e '.record_counts.primary_records == 100 and .record_counts.native.products == 149 and .record_counts.native.evidence == 346' "$work/deploy-series-registry.json" >/dev/null
+          jq -e '.record_count == 249 and .record_counts.wallets == 100 and .record_counts.products == 149' "$work/deploy-series-index.json" >/dev/null
+
+          ready=0
+          for attempt in $(seq 1 60); do
+            nonce="02afb703-${attempt}-$(date +%s)"; ok=1
+            for name in entities products evidence stats; do
+              curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/${name}.json?verify=${nonce}" -o "$work/${name}.json" || ok=0
+            done
+            curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/series/registry.json?verify=${nonce}" -o "$work/series-registry.json" || ok=0
+            curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/series/index.json?verify=${nonce}" -o "$work/series-index.json" || ok=0
+            if [ "$ok" -eq 1 ] && jq -e '.registry.entities == 100 and .registry.products == 149 and .registry.events == 121 and .registry.evidence == 346' "$work/stats.json" >/dev/null 2>&1 && jq -e '.record_counts.primary_records == 100 and .record_counts.native.products == 149 and .record_counts.native.evidence == 346' "$work/series-registry.json" >/dev/null 2>&1 && jq -e '.record_count == 249 and .record_counts.wallets == 100 and .record_counts.products == 149' "$work/series-index.json" >/dev/null 2>&1; then
+              good=1
+              for n in $(seq 76 100); do id=$(printf 'wlr_ent_%06d' "$n"); jq -e --arg id "$id" '.[] | select(.id == $id)' "$work/entities.json" >/dev/null 2>&1 || good=0; done
+              for n in $(seq 125 149); do id=$(printf 'wlr_prod_%06d' "$n"); jq -e --arg id "$id" '.[] | select(.id == $id)' "$work/products.json" >/dev/null 2>&1 || good=0; done
+              for n in $(seq 297 346); do id=$(printf 'wlr_src_%06d' "$n"); jq -e --arg id "$id" '.[] | select(.id == $id)' "$work/evidence.json" >/dev/null 2>&1 || good=0; done
+              jq -e '.[] | select(.id == "wlr_ent_000095") | .status == "dead"' "$work/entities.json" >/dev/null 2>&1 || good=0
+              jq -e '.[] | select(.id == "wlr_prod_000144") | .status == "dead" and .support_status == "ended" and .discontinued_date == "2024-04-24"' "$work/products.json" >/dev/null 2>&1 || good=0
+              jq -e '.[] | select(.id == "wlr_ent_000097") | .custody_model == "hybrid" and ([.system_components[] | select(.controlled_by == "provider")] | length) == 1' "$work/entities.json" >/dev/null 2>&1 || good=0
+              if [ "$good" -eq 1 ]; then ready=1; echo "Public Batch 04 canonical+Series exact on attempt=${attempt}"; break; fi
+            fi
+            sleep 10
+          done
+          test "$ready" -eq 1
+
+          wallet_slugs=(coinbase-wallet core-wallet unisat-wallet tonkeeper my-wallet tonhub eternl nufi vespr begin-wallet glow-wallet taho sequence nightly-wallet aqua-wallet bitkit breez zeus-wallet blixt-wallet samourai-wallet specter-desktop casa keepkey satochip prokey)
+          product_slugs=(coinbase-wallet-mobile core-extension unisat-wallet-extension tonkeeper-mobile my-wallet-mobile tonhub-mobile eternl-extension nufi-extension vespr-mobile begin-wallet-mobile glow-extension taho-browser-extension sequence-universal-wallet nightly-browser-extension aqua-wallet-mobile bitkit-mobile breez-mobile zeus-wallet-mobile blixt-wallet-mobile samourai-wallet-android specter-desktop-app casa-3-key-vault keepkey-hardware-wallet satochip-hardware-wallet prokey-optimum)
+          nonce="$(date +%s)"
+          for slug in "${wallet_slugs[@]}"; do
+            for route in "wallet/${slug}/" "data/series/records/wallet--${slug}.json"; do
+              code="$(curl -sS -o /dev/null -w '%{http_code}' "https://wlr.badjoke-lab.com/${route}?verify=${nonce}")"
+              test "$code" -ge 200 && test "$code" -lt 400
+              echo "WLR route ${route} -> ${code}"
+            done
+          done
+          for slug in "${product_slugs[@]}"; do
+            for route in "product/${slug}/" "data/series/records/product--${slug}.json"; do
+              code="$(curl -sS -o /dev/null -w '%{http_code}' "https://wlr.badjoke-lab.com/${route}?verify=${nonce}")"
+              test "$code" -ge 200 && test "$code" -lt 400
+              echo "WLR route ${route} -> ${code}"
+            done
+          done
+          echo 'PR208_PRODUCTION_VERIFY_OK entities=100 products=149 events=121 evidence=346 series_records=249'
