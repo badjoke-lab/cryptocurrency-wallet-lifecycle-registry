@@ -1,0 +1,39 @@
+name: Audit WLR after depth batch 01
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    if: github.head_ref == 'ops/post-depth-batch-01-audit'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - name: Pin accepted depth-batch-01 main
+        run: test "$(git rev-parse HEAD)" = "fb6880a751d274949a2d4ca42f6b33b8fbfdf0ad"
+      - name: Generate deterministic coverage audit
+        run: |
+          set -euo pipefail
+          python3 scripts/report_coverage.py --json > /tmp/coverage.json
+          jq '.summary' /tmp/coverage.json
+          echo 'ZERO_EVENT_ENTITIES'
+          jq -r '.entities[] | select(.events == 0) | [.entity_id,.slug,.name,.products,.evidence,.primary_evidence] | @tsv' /tmp/coverage.json
+          echo 'ONE_EVENT_ENTITIES'
+          jq -r '.entities[] | select(.events == 1) | [.entity_id,.slug,.name,.events,.evidence,.primary_evidence] | @tsv' /tmp/coverage.json
+          echo 'THIN_ENTITY_IDS'
+          jq -r '.thin_entity_ids[]?' /tmp/coverage.json
+          test "$(jq '.summary.entities' /tmp/coverage.json)" = "100"
+          test "$(jq '.summary.products' /tmp/coverage.json)" = "149"
+          test "$(jq '.summary.events' /tmp/coverage.json)" = "126"
+          test "$(jq '.summary.evidence' /tmp/coverage.json)" = "352"
+          test "$(jq '.summary.entities_zero_events' /tmp/coverage.json)" = "69"
+          test "$(jq '.summary.entities_one_event' /tmp/coverage.json)" = "5"
+          test "$(jq '.structural_errors | length' /tmp/coverage.json)" = "0"
