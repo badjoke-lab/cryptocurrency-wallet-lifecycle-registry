@@ -38,6 +38,7 @@ jobs:
           cp .promotion-preview/evidence.json data/evidence.json
           npm run validate:records
           npm run validate:identity-evidence
+          npm run prebuild
           node scripts/generate-series-adapter.mjs
           node scripts/validate-series-adapter.mjs
       - name: Commit bounded generated delta
