@@ -41,11 +41,11 @@ jobs:
           node-version: 22
       - name: Install dependencies
         run: npm install --progress=false
-      - name: Build native machine layer
+      - name: Build native machine layer and production-derived Series output
         run: npm run prebuild
       - name: Regenerate Series adapter and reviewed relationships
         run: node scripts/generate-series-adapter.mjs && node scripts/generate-stage5-relationships.mjs
       - name: Validate Series adapter and reviewed relationships
         run: node scripts/validate-series-adapter.mjs && node scripts/validate-stage5-relationships.mjs
-      - name: Fail on tracked Series drift
-        run: git diff --exit-code -- public/data/series
+      - name: Fail on tracked Stage 3 envelope/index drift
+        run: git diff --exit-code -- public/data/series/records public/data/series/index.json
