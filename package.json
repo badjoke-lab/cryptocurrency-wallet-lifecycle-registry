@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/sync-public-data.mjs && node scripts/build-machine-layer.mjs && node scripts/build-stats.mjs",
+    "prebuild": "node scripts/sync-public-data.mjs && node scripts/build-machine-layer.mjs && node scripts/build-stats.mjs && node scripts/generate-series-adapter.mjs && node scripts/generate-stage5-relationships.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
@@ -17,6 +17,7 @@
     "validate:compare": "node scripts/validate-compare.mjs",
     "validate:stats": "node scripts/build-machine-layer.mjs && node scripts/build-stats.mjs && node scripts/validate-stats.mjs",
     "validate:monitoring": "node scripts/validate-lifecycle-monitoring.mjs",
+    "validate:series": "node scripts/generate-series-adapter.mjs && node scripts/generate-stage5-relationships.mjs && node scripts/validate-series-adapter.mjs && node scripts/validate-stage5-relationships.mjs",
     "test:candidates": "python3 scripts/test_candidate_validator.py",
     "test:identity-evidence": "python3 scripts/test_identity_evidence_policy.py",
     "test:monitoring": "node scripts/test-lifecycle-monitoring.mjs",
