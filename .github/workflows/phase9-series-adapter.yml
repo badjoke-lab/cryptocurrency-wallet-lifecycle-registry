@@ -5,8 +5,12 @@ on:
     paths:
       - 'data/**'
       - 'public/data/series/**'
+      - 'config/ledger-series-phase9-stage5-relationship-authority.json'
       - 'scripts/generate-series-adapter.mjs'
+      - 'scripts/generate-stage5-relationships.mjs'
       - 'scripts/validate-series-adapter.mjs'
+      - 'scripts/validate-stage5-relationships.mjs'
+      - 'package.json'
       - '.github/workflows/phase9-series-adapter.yml'
   push:
     branches:
@@ -14,8 +18,12 @@ on:
     paths:
       - 'data/**'
       - 'public/data/series/**'
+      - 'config/ledger-series-phase9-stage5-relationship-authority.json'
       - 'scripts/generate-series-adapter.mjs'
+      - 'scripts/generate-stage5-relationships.mjs'
       - 'scripts/validate-series-adapter.mjs'
+      - 'scripts/validate-stage5-relationships.mjs'
+      - 'package.json'
       - '.github/workflows/phase9-series-adapter.yml'
 
 permissions:
@@ -35,9 +43,9 @@ jobs:
         run: npm install --progress=false
       - name: Build native machine layer
         run: npm run prebuild
-      - name: Regenerate Series adapter
-        run: node scripts/generate-series-adapter.mjs
-      - name: Validate Series adapter
-        run: node scripts/validate-series-adapter.mjs
-      - name: Fail on Series drift
+      - name: Regenerate Series adapter and reviewed relationships
+        run: node scripts/generate-series-adapter.mjs && node scripts/generate-stage5-relationships.mjs
+      - name: Validate Series adapter and reviewed relationships
+        run: node scripts/validate-series-adapter.mjs && node scripts/validate-stage5-relationships.mjs
+      - name: Fail on tracked Series drift
         run: git diff --exit-code -- public/data/series
