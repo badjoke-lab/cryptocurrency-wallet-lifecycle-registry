@@ -1,0 +1,27 @@
+name: Project network integrity
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify public project network
+        shell: bash
+        run: |
+          set -euo pipefail
+          file=src/app/layout.tsx
+          for url in \
+            'https://badjoke-lab.com/' \
+            'https://hei.badjoke-lab.com/' \
+            'https://www.stableorgone.com/' \
+            'https://cya.badjoke-lab.com/' \
+            'https://bir.badjoke-lab.com/' \
+            'https://mag.badjoke-lab.com/' \
+            'https://wlr.badjoke-lab.com/'; do
+            grep -Fq "$url" "$file" || { echo "Missing project network URL: $url"; exit 1; }
+          done
