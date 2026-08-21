@@ -16,7 +16,25 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000089"
+        ],
+        "confidence": "high",
+        "description": "NGRAVE announced that its ZERO hardware wallet was ready to ship and would soon be in the hands of backers.",
+        "entity_id": "wlr_ent_000040",
+        "event_date": "2021-11-02",
+        "event_date_basis": "announcement",
+        "event_status_effect": "none",
+        "event_type": "product_announced",
+        "id": "wlr_ev_000142",
+        "is_major_event": true,
+        "notes": "This records the first-party ready-to-ship milestone only. It does not infer general retail availability or an exact first-customer delivery date.",
+        "product_id": "wlr_prod_000089",
+        "title": "NGRAVE announced ZERO was ready to ship"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -52,6 +70,22 @@
         "source_type": "official_statement",
         "title": "NGRAVE ZERO",
         "url": "https://ngrave.io/en/zero"
+      },
+      {
+        "accessed_at": "2026-08-21",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000040",
+        "event_id": "wlr_ev_000142",
+        "id": "wlr_src_000369",
+        "is_primary": true,
+        "notes": "First-party NGRAVE post dated 2021-11-02 states ZERO was ready to ship and would soon be in the hands of backers.",
+        "product_id": "wlr_prod_000089",
+        "published_at": "2021-11-02",
+        "publisher": "NGRAVE",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "We are ready to Ship!",
+        "url": "https://ngrave.io/en/blog/we-are-ready-to-ship"
       }
     ]
   },

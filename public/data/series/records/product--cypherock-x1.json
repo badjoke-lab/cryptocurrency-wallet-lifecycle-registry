@@ -22,7 +22,25 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000122"
+        ],
+        "confidence": "high",
+        "description": "Cypherock states that the X1 hardware vault launched in private beta in 2022.",
+        "entity_id": "wlr_ent_000073",
+        "event_date": "2022",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000143",
+        "is_major_event": true,
+        "notes": "The source establishes private beta in 2022 only. WLR does not convert this to general availability or infer a more precise date.",
+        "product_id": "wlr_prod_000122",
+        "title": "Cypherock X1 launched in private beta"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -42,6 +60,22 @@
         "source_type": "official_statement",
         "title": "Cypherock X1",
         "url": "https://store.cypherock.com/product/cypherock-x1"
+      },
+      {
+        "accessed_at": "2026-08-21",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000073",
+        "event_id": "wlr_ev_000143",
+        "id": "wlr_src_000370",
+        "is_primary": true,
+        "notes": "First-party Cypherock history states that Cypherock X1 launched in private beta in 2022.",
+        "product_id": "wlr_prod_000122",
+        "published_at": null,
+        "publisher": "Cypherock",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Cypherock Cover",
+        "url": "https://www.cypherock.com/blogs/cypherock-cover"
       }
     ]
   },
