@@ -1,0 +1,21 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_post-100-depth-batch-06",
+  "title": "Post-100 depth batch 06",
+  "review_state": "review_ready",
+  "notes": "Bounded zero-history hardware-wallet depth batch under Issue #239. Only first-party launch-history claims with preserved source precision are included. NGRAVE is recorded as a ready-to-ship announcement rather than general availability; Cypherock preserves private-beta scope; SecuX preserves month precision for its first official V20 sale.",
+  "records": {
+    "entities": [],
+    "products": [],
+    "events": [
+      {"id":"wlr_ev_000142","entity_id":"wlr_ent_000040","product_id":"wlr_prod_000089","affected_product_ids":["wlr_prod_000089"],"event_type":"product_announced","event_date":"2021-11-02","event_date_basis":"announcement","title":"NGRAVE announced ZERO was ready to ship","description":"NGRAVE announced that its ZERO hardware wallet was ready to ship and would soon be in the hands of backers.","confidence":"high","event_status_effect":"none","is_major_event":true,"notes":"This records the first-party ready-to-ship milestone only. It does not infer general retail availability or an exact first-customer delivery date."},
+      {"id":"wlr_ev_000143","entity_id":"wlr_ent_000073","product_id":"wlr_prod_000122","affected_product_ids":["wlr_prod_000122"],"event_type":"product_released","event_date":"2022","event_date_basis":"release","title":"Cypherock X1 launched in private beta","description":"Cypherock states that the X1 hardware vault launched in private beta in 2022.","confidence":"high","event_status_effect":"active","is_major_event":true,"notes":"The source establishes private beta in 2022 only. WLR does not convert this to general availability or infer a more precise date."},
+      {"id":"wlr_ev_000144","entity_id":"wlr_ent_000071","product_id":"wlr_prod_000120","affected_product_ids":["wlr_prod_000120"],"event_type":"product_released","event_date":"2019-01","event_date_basis":"release","title":"SecuX V20 recorded its first official sale at CES Las Vegas","description":"SecuX states that its first official sale took place at CES Las Vegas in January 2019, where the V20 was sold to its first customer.","confidence":"high","event_status_effect":"active","is_major_event":true,"notes":"The retrospective provides January 2019 month precision but no exact day, so WLR preserves month precision."}
+    ],
+    "evidence": [
+      {"id":"wlr_src_000369","entity_id":"wlr_ent_000040","product_id":"wlr_prod_000089","event_id":"wlr_ev_000142","source_type":"official_blog","title":"We are ready to Ship!","url":"https://ngrave.io/en/blog/we-are-ready-to-ship","publisher":"NGRAVE","published_at":"2021-11-02","accessed_at":"2026-08-21","reliability":"high","claim_scope":"event","is_primary":true,"notes":"First-party NGRAVE post dated 2021-11-02 states ZERO was ready to ship and would soon be in the hands of backers."},
+      {"id":"wlr_src_000370","entity_id":"wlr_ent_000073","product_id":"wlr_prod_000122","event_id":"wlr_ev_000143","source_type":"official_blog","title":"Cypherock Cover","url":"https://www.cypherock.com/blogs/cypherock-cover","publisher":"Cypherock","published_at":null,"accessed_at":"2026-08-21","reliability":"high","claim_scope":"event","is_primary":true,"notes":"First-party Cypherock history states that Cypherock X1 launched in private beta in 2022."},
+      {"id":"wlr_src_000371","entity_id":"wlr_ent_000071","product_id":"wlr_prod_000120","event_id":"wlr_ev_000144","source_type":"official_blog","title":"SecuX 7th Anniversary: 7 Years of Innovation in Crypto and Digital Security","url":"https://secuxtech.com/blogs/blog/secux-7th-anniversary-7-years-of-innovation-in-crypto-and-digital-security","publisher":"SecuX","published_at":null,"accessed_at":"2026-08-21","reliability":"high","claim_scope":"event","is_primary":true,"notes":"First-party retrospective states SecuX's first official sale took place at CES Las Vegas in January 2019, with the V20 sold to its first customer."}
+    ]
+  }
+}
