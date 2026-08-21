@@ -1,0 +1,58 @@
+name: Promote batch 05 staging
+
+on:
+  push:
+    branches:
+      - promote/post-100-depth-batch-05
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: promote/post-100-depth-batch-05
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install dependencies
+        run: npm install --progress=false
+      - name: Validate reviewed candidate
+        run: |
+          npm run validate:candidates
+          npm run validate:identity-evidence
+      - name: Render canonical promotion
+        run: |
+          rm -rf .tmp/promotion
+          python3 scripts/render_candidate_promotion.py \
+            --candidate data-staging/candidates/post-100-depth-batch-05.json \
+            --output-dir .tmp/promotion
+          cp .tmp/promotion/events.json data/events.json
+          cp .tmp/promotion/evidence.json data/evidence.json
+      - name: Regenerate public and Series outputs
+        run: |
+          npm run prebuild
+          node scripts/generate-series-adapter.mjs
+          node scripts/validate-series-adapter.mjs
+      - name: Validate canonical records
+        run: |
+          npm run validate:records
+          npm run coverage:audit
+      - name: Commit generated promotion
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data/events.json data/evidence.json public/data public/data/series
+          if git diff --cached --quiet; then
+            echo "No generated diff"
+            exit 1
+          fi
+          git commit -m "Promote reviewed imToken lifecycle event"
+          git push origin HEAD:promote/post-100-depth-batch-05
