@@ -1,0 +1,130 @@
+{
+  "schema_version": "1.0.0",
+  "authority_id": "wlr-ledger-series-phase9-stage5-relationship-2026-08-21",
+  "status": "review_required_before_implementation",
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "repository": "badjoke-lab/cryptocurrency-wallet-lifecycle-registry",
+  "base_main": "88ae10d12494b77f788e528d5d022ee0f5af9212",
+  "coordination": {
+    "repository": "badjoke-lab/historical-exchange-index",
+    "issue": 780,
+    "audit_pr": 791,
+    "audit_merge": "562419348b48bd7d3ab7e521c8a654e0cbe15413",
+    "publication_authority_pr": 792,
+    "publication_authority_merge": "6b4925d894908de6b043269405af794b60031f54"
+  },
+  "accepted_count": 161,
+  "accepted_counts_by_type": {
+    "product_of": 149,
+    "predecessor_of": 6,
+    "successor_of": 6
+  },
+  "publication_contract": {
+    "object_type": "relationship_record",
+    "transport": "/data/series/relationships.json",
+    "record_envelope_relationship_arrays_remain_empty": true,
+    "canonical_records_unchanged": true,
+    "cross_registry_relationships": 0,
+    "direction": "directed",
+    "provenance_basis": "native_reviewed_relationship",
+    "id_algorithm": "series_rel_ + lowercase hex SHA-256 of UTF-8 relation_type + newline + source_global_record_key + newline + target_global_record_key"
+  },
+  "identity_contract": {
+    "product_global_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:<wlr_prod_id>",
+    "wallet_global_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:<wlr_ent_id>",
+    "range_notation_is_audit_only_compression": true,
+    "raw_native_ids_are_not_series_global_ids": true,
+    "publication_must_expand_every_product_to_an_individual_namespaced_endpoint": true
+  },
+  "reviewed_product_of_groups": [
+    {"product_ranges":[[1,6]],"wallet":1},
+    {"product_ranges":[[7,13]],"wallet":2},
+    {"product_ranges":[[14,18]],"wallet":3},
+    {"product_ranges":[[19,20]],"wallet":4},
+    {"product_ranges":[[21,24]],"wallet":5},
+    {"product_ranges":[[25,27]],"wallet":6},
+    {"product_ranges":[[28,31]],"wallet":7},
+    {"product_ranges":[[32,34]],"wallet":8},
+    {"product_ranges":[[35,36]],"wallet":9},
+    {"product_ranges":[[37,37]],"wallet":10},
+    {"product_ranges":[[38,39]],"wallet":11},
+    {"product_ranges":[[40,40]],"wallet":12},
+    {"product_ranges":[[41,41]],"wallet":13},
+    {"product_ranges":[[42,44],[75,75]],"wallet":14},
+    {"product_ranges":[[45,46]],"wallet":15},
+    {"product_ranges":[[47,49]],"wallet":16},
+    {"product_ranges":[[50,53]],"wallet":17},
+    {"product_ranges":[[54,56]],"wallet":18},
+    {"product_ranges":[[57,58]],"wallet":19},
+    {"product_ranges":[[59,60]],"wallet":20},
+    {"product_ranges":[[61,61]],"wallet":21},
+    {"product_ranges":[[62,62]],"wallet":22},
+    {"product_ranges":[[63,64]],"wallet":23},
+    {"product_ranges":[[65,67]],"wallet":24},
+    {"product_ranges":[[68,69]],"wallet":25},
+    {"product_ranges":[[70,74]],"wallet":26},
+    {"product_ranges":[[76,76]],"wallet":27}
+  ],
+  "reviewed_product_of_sequential_singletons": {
+    "product_start": 77,
+    "product_end": 149,
+    "wallet_start": 28,
+    "wallet_end": 100,
+    "mapping_rule": "for each product number p from 77 through 149 inclusive, map wlr_prod_<p padded 6 digits> product_of wlr_ent_<p-49 padded 6 digits>",
+    "expected_count": 73
+  },
+  "reviewed_lineage_allowlist": [
+    ["predecessor_of", "wlr_prod_000025", "wlr_prod_000027"],
+    ["predecessor_of", "wlr_prod_000028", "wlr_prod_000029"],
+    ["predecessor_of", "wlr_prod_000029", "wlr_prod_000030"],
+    ["predecessor_of", "wlr_prod_000032", "wlr_prod_000033"],
+    ["predecessor_of", "wlr_prod_000050", "wlr_prod_000051"],
+    ["predecessor_of", "wlr_prod_000065", "wlr_prod_000066"],
+    ["successor_of", "wlr_prod_000027", "wlr_prod_000025"],
+    ["successor_of", "wlr_prod_000029", "wlr_prod_000028"],
+    ["successor_of", "wlr_prod_000030", "wlr_prod_000029"],
+    ["successor_of", "wlr_prod_000033", "wlr_prod_000032"],
+    ["successor_of", "wlr_prod_000051", "wlr_prod_000050"],
+    ["successor_of", "wlr_prod_000066", "wlr_prod_000065"]
+  ],
+  "expansion_acceptance": [
+    "reviewed_product_of_groups expand to 76 unique product_of rows",
+    "reviewed_product_of_sequential_singletons expands to 73 unique product_of rows",
+    "product_of expansion total is exactly 149",
+    "lineage expansion total is exactly 12",
+    "overall relationship total is exactly 161",
+    "every expanded endpoint is converted to the required namespaced Series global key before publication",
+    "no range token or raw WLR native ID appears as a relationship_record endpoint"
+  ],
+  "concurrent_work_boundary": {
+    "open_pr_235": "candidate-only research authority; must remain unmerged and must not be consumed by this Stage 5 implementation",
+    "candidate_or_research_auto_promotion": false,
+    "future_native_growth_auto_promotion": false
+  },
+  "allowed_work": [
+    "after authority merge, deterministically expand only the reviewed finite compression above into exactly 161 relationship_record objects",
+    "add deterministic relationship generation and validation",
+    "advertise only the relationship route, exact count and adapter capability in the existing Series descriptor",
+    "run existing WLR canonical Series build and production equality gates"
+  ],
+  "forbidden": [
+    "canonical entity product event or evidence mutation",
+    "consuming data-staging or open PR 235 material",
+    "record-envelope typed relationship mutation",
+    "dynamic relationship discovery from native fields",
+    "publication beyond the reviewed 161 rows",
+    "cross-registry relationship publication",
+    "Search Compare Stats UI or Cloudflare changes",
+    "Stage 6 continuation"
+  ],
+  "acceptance": [
+    "authority merges before Stage 5 relationship runtime changes",
+    "generated relationship count is exactly 161",
+    "generated type counts are exactly 149 product_of / 6 predecessor_of / 6 successor_of",
+    "every endpoint resolves to an existing Stage 3 Series record",
+    "all IDs match the deterministic SHA-256 contract",
+    "record envelope relationship arrays remain empty",
+    "existing WLR validation and production equality gates are green"
+  ],
+  "automatic_continuation": false
+}
