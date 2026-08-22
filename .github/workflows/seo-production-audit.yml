@@ -58,9 +58,25 @@ jobs:
           check_html '/product/imtoken-app/' "$base/product/imtoken-app/" 'imToken App lifecycle' "$work/product.html"
 
           if grep -Eq 'googletagmanager\.com/gtag/js|gtag\(' "$work/home.html"; then
-            echo 'ga4_tag_present=true'
+            echo 'wlr_ga4_tag_present=true'
           else
-            echo 'ga4_tag_present=false'
+            echo 'wlr_ga4_tag_present=false'
           fi
+
+          echo '--- ledger-series GA4 IDs ---'
+          for site in \
+            'hei|https://hei.badjoke-lab.com/' \
+            'sog|https://www.stableorgone.com/' \
+            'cya|https://cya.badjoke-lab.com/' \
+            'bir|https://bir.badjoke-lab.com/' \
+            'mag|https://mag.badjoke-lab.com/'; do
+            name="${site%%|*}"; url="${site#*|}"; out="$work/${name}.html"
+            if curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "$url" -o "$out"; then
+              id="$(grep -Eo 'G-[A-Z0-9]+' "$out" | sort -u | paste -sd, - || true)"
+              if [ -n "$id" ]; then echo "${name}_ga4_ids=${id}"; else echo "${name}_ga4_ids=NONE"; fi
+            else
+              echo "${name}_ga4_ids=UNREACHABLE"
+            fi
+          done
 
           echo 'SEO_PRODUCTION_AUDIT_OK'
