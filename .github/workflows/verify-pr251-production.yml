@@ -33,14 +33,14 @@ jobs:
         run: |
           set -euo pipefail
           npm run prebuild
-          node scripts/generate-series-adapter.mjs
           node scripts/validate-series-adapter.mjs
+          node scripts/validate-stage5-relationships.mjs
           git diff --exit-code -- public/data/series
           jq -e '.registry.entities == 100 and .registry.products == 149 and .registry.events == 147 and .registry.evidence == 374' public/data/stats.json >/dev/null
           jq -e '.[] | select(.id == "wlr_ev_000145") | .entity_id == "wlr_ent_000038" and .event_date == "2021-04-08" and .event_type == "other"' data/events.json >/dev/null
           jq -e '.[] | select(.id == "wlr_ev_000146") | .entity_id == "wlr_ent_000039" and .event_date == "2021-05-20" and .event_type == "product_released"' data/events.json >/dev/null
           jq -e '.[] | select(.id == "wlr_ev_000147") | .entity_id == "wlr_ent_000062" and .event_date == "2021-10-23" and .event_type == "product_released"' data/events.json >/dev/null
-          jq -e '.record_counts.primary_records == 100 and .record_counts.native.events == 147 and .record_counts.native.evidence == 374' public/data/series/registry.json >/dev/null
+          jq -e '.record_counts.primary_records == 100 and .record_counts.native.events == 147 and .record_counts.native.evidence == 374 and .record_counts.relationships == 161' public/data/series/registry.json >/dev/null
 
   production-verify:
     runs-on: ubuntu-latest
@@ -82,7 +82,7 @@ jobs:
             curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/series/records/wallet--dcent.json?verify=${nonce}" -o "$work/dcent.json" || ok=0
             curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/series/records/wallet--coolwallet.json?verify=${nonce}" -o "$work/coolwallet.json" || ok=0
             curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "https://wlr.badjoke-lab.com/data/series/records/wallet--hashpack.json?verify=${nonce}" -o "$work/hashpack.json" || ok=0
-            if [ "$ok" -eq 1 ] && jq -e '.registry.events == 147 and .registry.evidence == 374' "$work/stats.json" >/dev/null 2>&1 && jq -e '.record_counts.native.events == 147 and .record_counts.native.evidence == 374' "$work/series-registry.json" >/dev/null 2>&1; then
+            if [ "$ok" -eq 1 ] && jq -e '.registry.events == 147 and .registry.evidence == 374' "$work/stats.json" >/dev/null 2>&1 && jq -e '.record_counts.native.events == 147 and .record_counts.native.evidence == 374 and .record_counts.relationships == 161' "$work/series-registry.json" >/dev/null 2>&1; then
               good=1
               jq -e '.[] | select(.id == "wlr_ev_000145")' "$work/events.json" >/dev/null 2>&1 || good=0
               jq -e '.[] | select(.id == "wlr_ev_000146")' "$work/events.json" >/dev/null 2>&1 || good=0
@@ -95,4 +95,4 @@ jobs:
             sleep 10
           done
           test "$ready" -eq 1
-          echo 'PR251_PRODUCTION_VERIFY_OK entities=100 products=149 events=147 evidence=374 series_records=249'
+          echo 'PR251_PRODUCTION_VERIFY_OK entities=100 products=149 events=147 evidence=374 series_records=249 relationships=161'
