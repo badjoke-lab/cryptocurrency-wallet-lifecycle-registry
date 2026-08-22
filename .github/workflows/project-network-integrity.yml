@@ -10,18 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Verify public project network
+      - name: Verify public project network against HEI authority
         shell: bash
         run: |
           set -euo pipefail
-          file=src/app/layout.tsx
-          for url in \
-            'https://badjoke-lab.com/' \
-            'https://hei.badjoke-lab.com/' \
-            'https://www.stableorgone.com/' \
-            'https://cya.badjoke-lab.com/' \
-            'https://bir.badjoke-lab.com/' \
-            'https://mag.badjoke-lab.com/' \
-            'https://wlr.badjoke-lab.com/'; do
-            grep -Fq "$url" "$file" || { echo "Missing project network URL: $url"; exit 1; }
-          done
+          authority_url='https://raw.githubusercontent.com/badjoke-lab/historical-exchange-index/main/config/public-project-network.json'
+          curl -fsSL "$authority_url" -o /tmp/public-project-network.json
+          jq -e '.schema_version == "1.0.0" and (.members | length) >= 1' /tmp/public-project-network.json >/dev/null
+          source=src/app/layout.tsx
+          while IFS= read -r url; do
+            grep -Fq "$url" "$source" || { echo "Missing project network URL: $url"; exit 1; }
+          done < <(jq -r '.members[].url' /tmp/public-project-network.json)
