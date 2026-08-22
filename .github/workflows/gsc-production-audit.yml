@@ -1,0 +1,37 @@
+name: Ledger Series GSC Production Audit
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check Google site verification metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+          for site in \
+            'wlr|https://wlr.badjoke-lab.com/' \
+            'hei|https://hei.badjoke-lab.com/' \
+            'sog|https://www.stableorgone.com/' \
+            'cya|https://cya.badjoke-lab.com/' \
+            'bir|https://bir.badjoke-lab.com/' \
+            'mag|https://mag.badjoke-lab.com/'; do
+            name="${site%%|*}"; url="${site#*|}"; out="$(mktemp)"
+            if curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 "$url" -o "$out"; then
+              if grep -Eiq '<meta[^>]+name="google-site-verification"' "$out"; then
+                echo "${name}_gsc_meta=true"
+              else
+                echo "${name}_gsc_meta=false"
+              fi
+            else
+              echo "${name}_gsc_meta=UNREACHABLE"
+            fi
+            rm -f "$out"
+          done
