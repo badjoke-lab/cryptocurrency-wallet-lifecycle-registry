@@ -1,0 +1,66 @@
+name: WLR SEO Production Audit
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - name: Audit production SEO surfaces
+        shell: bash
+        run: |
+          set -euo pipefail
+          base='https://wlr.badjoke-lab.com'
+          work="$(mktemp -d)"
+          trap 'rm -rf "$work"' EXIT
+
+          fetch() {
+            local path="$1" out="$2"
+            code="$(curl -fsSL --retry 4 --retry-all-errors --retry-delay 2 -o "$out" -w '%{http_code}' "$base$path")"
+            test "$code" = '200'
+          }
+
+          fetch '/robots.txt' "$work/robots.txt"
+          grep -F 'User-Agent: *' "$work/robots.txt"
+          grep -F 'Allow: /' "$work/robots.txt"
+          grep -F 'Sitemap: https://wlr.badjoke-lab.com/sitemap.xml' "$work/robots.txt"
+
+          fetch '/sitemap.xml' "$work/sitemap.xml"
+          count="$(grep -o '<url>' "$work/sitemap.xml" | wc -l | tr -d ' ')"
+          echo "sitemap_url_count=$count"
+          test "$count" -eq 258
+          grep -F '<loc>https://wlr.badjoke-lab.com/</loc>' "$work/sitemap.xml"
+          grep -F '<loc>https://wlr.badjoke-lab.com/wallet/imtoken/</loc>' "$work/sitemap.xml"
+          grep -F '<loc>https://wlr.badjoke-lab.com/product/imtoken-app/</loc>' "$work/sitemap.xml"
+
+          check_html() {
+            local path="$1" canonical="$2" title_fragment="$3" out="$4"
+            fetch "$path" "$out"
+            grep -Eiq '<meta[^>]+name="robots"[^>]+content="index, follow"|<meta[^>]+content="index, follow"[^>]+name="robots"' "$out"
+            grep -Fq "<link rel=\"canonical\" href=\"$canonical\"" "$out" || grep -Fq "href=\"$canonical\" rel=\"canonical\"" "$out"
+            grep -Fqi "$title_fragment" "$out"
+            grep -Eiq '<meta[^>]+name="description"' "$out"
+            grep -Fq 'application/ld+json' "$out"
+          }
+
+          check_html '/' "$base/" 'Wallet Lifecycle Registry' "$work/home.html"
+          check_html '/wallet/imtoken/' "$base/wallet/imtoken/" 'imToken wallet history' "$work/wallet.html"
+          check_html '/product/imtoken-app/' "$base/product/imtoken-app/" 'imToken App lifecycle' "$work/product.html"
+
+          if grep -Eq 'googletagmanager\.com/gtag/js|gtag\(' "$work/home.html"; then
+            echo 'ga4_tag_present=true'
+          else
+            echo 'ga4_tag_present=false'
+          fi
+
+          echo 'SEO_PRODUCTION_AUDIT_OK'
