@@ -77,7 +77,7 @@
       "reliability": "high",
       "claim_scope": "event",
       "is_primary": true,
-      "notes": "First-party D'CENT announcement of Cardano support for the Biometric Wallet and the associated firmware/app update path."
+      "notes": "First-party Cardano support announcement."
     }
   ]
 }

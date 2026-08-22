@@ -30,7 +30,7 @@
         "event_type": "product_released",
         "id": "wlr_ev_000147",
         "is_major_event": true,
-        "notes": "The exact date comes from HashPack's own one-year retrospective and is attached to the existing HashPack Extension product boundary.",
+        "notes": "Exact date from HashPack first-party retrospective.",
         "product_id": "wlr_prod_000111",
         "title": "HashPack launched publicly"
       }
@@ -78,7 +78,7 @@
         "event_id": "wlr_ev_000147",
         "id": "wlr_src_000374",
         "is_primary": true,
-        "notes": "First-party retrospective explicitly states HashPack launched on 2021-10-23.",
+        "notes": "First-party retrospective states launch on 2021-10-23.",
         "product_id": "wlr_prod_000111",
         "published_at": "2022-10-24",
         "publisher": "HashPack",

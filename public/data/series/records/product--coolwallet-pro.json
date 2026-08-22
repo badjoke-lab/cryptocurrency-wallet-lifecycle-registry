@@ -36,7 +36,7 @@
         "event_type": "product_released",
         "id": "wlr_ev_000146",
         "is_major_event": true,
-        "notes": "The event preserves the first-party release announcement date and separately notes the later stated fulfillment start; it does not backdate shipping.",
+        "notes": "Release announcement date retained; later fulfillment start not backdated.",
         "product_id": "wlr_prod_000088",
         "title": "CoolWallet Pro released"
       }
@@ -68,7 +68,7 @@
         "event_id": "wlr_ev_000146",
         "id": "wlr_src_000373",
         "is_primary": true,
-        "notes": "First-party release text dated Taipei, 20 May 2021 states CoolBitX announced the release of CoolWallet Pro, available to order with fulfillment from 24 May 2021. Evidence publication metadata is left null rather than conflating page metadata with the release date stated in the article body.",
+        "notes": "First-party release text dated 20 May 2021; fulfillment from 24 May 2021.",
         "product_id": "wlr_prod_000088",
         "published_at": null,
         "publisher": "CoolWallet / CoolBitX",
