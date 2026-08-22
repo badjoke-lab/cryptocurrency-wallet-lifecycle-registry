@@ -1,0 +1,83 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000091",
+    "slug": "bitkit",
+    "canonical_name": "Bitkit",
+    "aliases": [],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Open-source self-custodial Bitcoin and Lightning mobile wallet from Synonym with an embedded Lightning node.",
+    "developer_or_company": "Synonym",
+    "country_or_origin": null,
+    "launch_date": null,
+    "official_url": "https://bitkit.to/",
+    "official_domain": "bitkit.to",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "user_controlled_recovery_phrase_and_embedded_lightning_node_keys",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Current first-party Bitkit material explicitly describes Bitkit as a fully self-custodial mobile wallet and states the Lightning node runs inside the wallet. Initial launch date remains unresolved."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000140",
+      "entity_id": "wlr_ent_000091",
+      "slug": "bitkit-mobile",
+      "product_name": "Bitkit Mobile",
+      "product_type": "mobile_app",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "unknown",
+      "launch_date": null,
+      "platform": [
+        "iOS",
+        "Android"
+      ],
+      "official_url": "https://bitkit.to/",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "user_controlled_recovery_phrase_and_embedded_lightning_node_keys",
+      "summary": "Bitkit open-source self-custodial Bitcoin and Lightning mobile wallet.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-20",
+      "notes": "First-party material explicitly distinguishes its embedded Lightning node from custodial wallet architecture."
+    }
+  ],
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000327",
+      "entity_id": "wlr_ent_000091",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "What is Bitkit?",
+      "url": "https://help.bitkit.to/hc/help-center/articles/1702396382-what-is-bitkit",
+      "publisher": "Bitkit / Synonym",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "entity",
+      "is_primary": true,
+      "notes": "First-party help explicitly calls Bitkit a fully open-source self-custodial mobile Bitcoin wallet combining on-chain and Lightning functionality."
+    },
+    {
+      "id": "wlr_src_000328",
+      "entity_id": "wlr_ent_000091",
+      "product_id": "wlr_prod_000140",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Bitkit",
+      "url": "https://bitkit.to/",
+      "publisher": "Bitkit",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current official product page describes Bitkit as a self-custodial Bitcoin wallet and links current mobile distribution."
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000015",
+    "slug": "phantom",
+    "canonical_name": "Phantom",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000046",
+    "entity_id": "wlr_ent_000015",
+    "slug": "phantom-mobile",
+    "product_name": "Phantom Mobile",
+    "aliases": [],
+    "product_type": "mobile_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "supported",
+    "launch_date": "2022-01-31",
+    "launch_date_precision": "day",
+    "platform": [
+      "iOS",
+      "Android"
+    ],
+    "official_url": "https://phantom.com/download",
+    "custody_model": "self_custody",
+    "key_management_model": "mobile_device_local_key_storage",
+    "variants": [],
+    "summary": "Phantom mobile wallet, first released on iOS and subsequently released on Android in 2022.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-15",
+    "notes": "Product launch date uses the first general mobile release on iOS; Android release is tracked as a separate event."
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000046",
+      "entity_id": "wlr_ent_000015",
+      "product_id": "wlr_prod_000046",
+      "affected_product_ids": [
+        "wlr_prod_000046"
+      ],
+      "event_type": "product_released",
+      "event_date": "2022-01-31",
+      "event_date_basis": "release",
+      "title": "Phantom launched its iOS app",
+      "description": "Phantom announced the general launch of its iOS mobile wallet application.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    },
+    {
+      "id": "wlr_ev_000047",
+      "entity_id": "wlr_ent_000015",
+      "product_id": "wlr_prod_000046",
+      "affected_product_ids": [
+        "wlr_prod_000046"
+      ],
+      "event_type": "product_released",
+      "event_date": "2022-04-18",
+      "event_date_basis": "release",
+      "title": "Phantom launched on Android",
+      "description": "Phantom released its mobile wallet for Android after the earlier iOS launch.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000063",
+      "entity_id": "wlr_ent_000015",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Terms of Use",
+      "url": "https://phantom.com/terms",
+      "publisher": "Phantom Technologies, Inc.",
+      "published_at": "2026-03-17",
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "architecture",
+      "is_primary": true,
+      "product_ids": [
+        "wlr_prod_000045",
+        "wlr_prod_000046"
+      ],
+      "notes": "Primary legal source identifying Phantom Technologies, Inc. and the self-custody application/browser-extension wallet boundary."
+    },
+    {
+      "id": "wlr_src_000065",
+      "entity_id": "wlr_ent_000015",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Download Phantom",
+      "url": "https://phantom.com/download",
+      "publisher": "Phantom",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "status",
+      "is_primary": true,
+      "product_ids": [
+        "wlr_prod_000045",
+        "wlr_prod_000046"
+      ],
+      "notes": "Current first-party download page for browser and iOS/Android products."
+    },
+    {
+      "id": "wlr_src_000066",
+      "entity_id": "wlr_ent_000015",
+      "product_id": "wlr_prod_000046",
+      "event_id": "wlr_ev_000046",
+      "source_type": "official_blog",
+      "title": "Phantom raises $109M Series B round and launches iOS App",
+      "url": "https://phantom.com/learn/blog/phantom-s-usd109m-series-b-and-launch-of-ios-app",
+      "publisher": "Phantom",
+      "published_at": "2022-01-31",
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Primary source for the iOS launch."
+    },
+    {
+      "id": "wlr_src_000067",
+      "entity_id": "wlr_ent_000015",
+      "product_id": "wlr_prod_000046",
+      "event_id": "wlr_ev_000047",
+      "source_type": "official_blog",
+      "title": "Phantom Launches on Android",
+      "url": "https://phantom.com/learn/blog/phantom-launches-on-android",
+      "publisher": "Phantom",
+      "published_at": "2022-04-18",
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Primary source for the Android launch."
+    }
+  ]
+}

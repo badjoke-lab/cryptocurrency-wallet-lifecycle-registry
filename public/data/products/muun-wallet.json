@@ -1,0 +1,53 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000050",
+    "slug": "muun",
+    "canonical_name": "Muun",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000099",
+    "entity_id": "wlr_ent_000050",
+    "slug": "muun-wallet",
+    "product_name": "Muun Wallet",
+    "product_type": "mobile_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": "2018-10-10",
+    "launch_date_precision": "day",
+    "platform": [
+      "Android",
+      "iOS"
+    ],
+    "official_url": "https://muun.com/",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "user_controlled_bitcoin_wallet_keys",
+    "summary": "Muun mobile wallet for self-custodial Bitcoin and Lightning use across Android and iOS.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-19",
+    "notes": "First-party launch material establishes the Android product lineage on 2018-10-10; first-party iOS release material establishes iOS addition on 2019-10-21."
+  },
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000246",
+      "entity_id": "wlr_ent_000050",
+      "product_id": "wlr_prod_000099",
+      "event_id": null,
+      "source_type": "official_blog",
+      "title": "Muun releases non-custodial Bitcoin and Lightning wallet for iOS",
+      "url": "https://blog.muun.com/muun-releases-non-custodial-bitcoin-and-lightning-wallet-for-ios/amp/",
+      "publisher": "Muun",
+      "published_at": "2019-10-21",
+      "accessed_at": "2026-08-19",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "First-party iOS release establishes the iOS product surface and states that the Android version already existed."
+    }
+  ]
+}

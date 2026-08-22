@@ -1,0 +1,49 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000035",
+    "slug": "ellipal",
+    "canonical_name": "ELLIPAL",
+    "wallet_type": "hardware",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000084",
+    "entity_id": "wlr_ent_000035",
+    "slug": "ellipal-titan-2-0",
+    "product_name": "ELLIPAL Titan 2.0",
+    "product_type": "hardware_device",
+    "status": "active",
+    "sales_status": "on_sale",
+    "support_status": "unknown",
+    "launch_date": null,
+    "platform": null,
+    "official_url": "https://www.ellipal.com/",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "air_gapped_hardware_isolated_private_keys",
+    "summary": "Current ELLIPAL air-gapped hardware wallet with on-device transaction review and QR-based signing.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-19",
+    "notes": "Current first-party pages present Titan 2.0 as an active purchasable hardware wallet. This batch leaves its exact initial launch date unresolved."
+  },
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000216",
+      "entity_id": "wlr_ent_000035",
+      "product_id": "wlr_prod_000084",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "ELLIPAL: Crypto Hardware Wallets | Secure Cold Wallets",
+      "url": "https://www.ellipal.com/",
+      "publisher": "ELLIPAL",
+      "published_at": null,
+      "accessed_at": "2026-08-19",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party storefront presents ELLIPAL Titan 2.0 as an active air-gapped self-custody hardware wallet available for purchase."
+    }
+  ]
+}

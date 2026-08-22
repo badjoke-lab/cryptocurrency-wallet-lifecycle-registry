@@ -1,0 +1,3383 @@
+[
+  {
+    "direction": "directed",
+    "id": "series_rel_0e51ec9c737b72900085210df6040ad62eb043eae3ea22f801400353d8829fbc",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000001",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000001",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_c44080c5a03ed0bf31118194a28301c2841163be4e51cf8987d6dbd54a26f683",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000002",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000001",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_f71f6bab575d926df3072bfd70ff66429c8cff594364d50e2b6d6f4a0a710bdb",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000003",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000001",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_5951d62e299cfcc167c119570a275b4d6c485fe5bb8796b2d793ea963a47952d",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000004",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000001",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_aa67a6037b458cba5ea11e93da547e3e4a6ff6be9737a5ed749e19f169476286",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000005",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000001",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_7382872cde8bd74bd386f74e77f27863e1e752e434946e06db0329a217522543",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000006",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000001",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_6e6d3c472a587eb76f4c4c27d134f6fc7533652a3abf5a71955034f4b4b3642a",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000007",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000002",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_0a8420cd8dc3a381f05c466a1c3d4da88da428623d3d0dcbf355481a9466386f",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000008",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000002",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_f0e9eaeaec034867db9c4c50b110ecffdd117644f7ed3a58625a7e3f574ed688",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000009",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000002",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_bf832f8699c1a9564b8849f129ffa23282b1859a40c7ce5c1bc185c730b32c38",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000010",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000002",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_bf1289a45866e670d76bb3de643a58d1bcdaf326f68bb89a6df47ca5f3519de3",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000011",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000002",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_50481ac1c1cabd6a280d99a598e990d471b5e0e008b4396ada1b3cb6901323a3",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000012",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000002",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_78c25acd09578ac440356b529dec7d1647f73c4a6aa4eca5f52e615ea4e01b5f",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000013",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000002",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_083a2255c99ee0447df9aecea098795a6d1c34c0f49bccc1ac3ee2f3acf4801b",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000014",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000003",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_2b035e45b9a63cdc50e4268bb43d187dcf7afa369b0e96adfcdcb2bdfaa9db20",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000015",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000003",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_10079c61528608368fb7c4b0330358b9e10c30ef85dd9bf89540725847af263e",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000016",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000003",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_b85aaa247b57b8881975674b1a8ef885cc375ec61e42d4a2c44e5008aa893dba",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000017",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000003",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_e4b3c9a19cea21c97ae37c41b14e7e324c840d5955b056e773de42dd741f8c61",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000018",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000003",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_4c11f1cf944bbca58641372b82fc6b1d4ba3e2081b3b2bd44111e57a5090b913",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000019",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000004",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_40c890c9555f3f1bfec72fb6582abc7c5a3f14aba581527a18cf0099cba6d700",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000020",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000004",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_d30acf08b0ddb745156a18af52ac42dfed1f7084049a7112842f877af25c596b",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000021",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000005",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_6a17f8e5bad89226639e35b14c7ac66503d8154dff78b79619a2fa0700eb7b26",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000022",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000005",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_ddfd286016fce8f9258cd91b79875ebacb4f274721da0f00236ac0cb1ddb60b2",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000023",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000005",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_d6b7c8cc151b309acd19376b317daa9b256aa7ccb852692a85894f1aab7352d3",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000024",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000005",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_da9b7ad73347c5ae44022120fb95b9e58c7eec55be9b55df294f36bfe640c0c9",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000025",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000006",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_2c90e3a5c7f59a5012d1d5aa2ad5248c2fd8d7f408f167f8ed0b4ea5b9e430ce",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000026",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000006",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_0ef2d514167a46a29889632209eba75b0b080e302b501f9c94783d8d8b7293dc",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000027",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000006",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_f0560a5feae7c9006f5815c8a7dff9d3a7de859f355ee81ee0d7271ea27c9056",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000028",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000007",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_8a31b554605a8aa8523db39899d1e6333b35afb5f8c74f20ad23fbe4565c5db5",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000029",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000007",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_ea293954e6043b2e0af78ac09cfe11a49a4dd750f6126a856568c7a30a877ec0",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000030",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000007",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_927237d71b369159b1a530e31faeb692fd8f5326e78fe075654f6e0fc76addbb",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000031",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000007",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_34da39328ecbab055362c95ee0436fcfd0d5c0461905fb46abaa64a591748e35",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000032",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000008",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_7bf21fa69516fac4128b0473625f869a4754575580a0a8610bcac2d481d62c28",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000033",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000008",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_7de52748d3e1c03022d5614f723f00e11a50bdbf9dd19baaab0a5d1ee2a1c6b3",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000034",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000008",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_0b6cac30b4886677590d65ca0de624645891b99b3c078cc9354f09e867c97a84",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000035",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000009",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_62ffb68d5721c1a564d78701e18e983d5226d241c83dafbdb2ff965166651c71",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000036",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000009",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_e8edd0f9544a009f2453076cc7d98e60ef4dda739783ab56be8bc7b174bbfa8d",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000037",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000010",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_a42fcb658bbfa58849e44a7a87c7cc40ae8c6698489713fc3776648aa20fa5f8",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000038",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000011",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_9627ac098655bb4d029ab34fff609565b051275eae974375207fa7582342a4bf",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000039",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000011",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_c047792816c44273836918a87563837f1cbb89d573e27f469fcb2db912d7a177",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000040",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000012",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_1504cd279da18744ac95cf81bab9d42193871821b2947cc711976e7b29d05260",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000041",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000013",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_f74d88a907a3c6c232df7f2e57a65965fa7241982d1679c3f1b898077f738442",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000042",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000014",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_5c60714a34cadebb9b28da33ba14667d7649ce40e16a04e96c3c41631a31799e",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000043",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000014",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_f0ae467586ca8bb9edc80b848041b74c8330e786d30895248f4b9ac5d1f964c8",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000044",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000014",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_bc07df70b4ccf254b29a960c53f026a1681853d91d9b1bf982be31fa20a352a1",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000075",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000014",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_f8f07758f31c959830c4fa0311bd6ffc312361c13b374c4ccc9e703ad4ba016c",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000045",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000015",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_6086722f5864b76a779c7c3b1e8e20e1a9ed1fdcce1cf80750d4647029159c06",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000046",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000015",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_c1f4a93c9458f6dd072ee325418aa5513ae3a0620e68b5570354eaca4e946c35",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000047",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000016",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_4acdb4753edddc4314e2497af4919251228b0bdad053d48ab0e5e198ba7c0a3e",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000048",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000016",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_4d558523cf196bc7210c42458619171ceac79423c02de0ec01326eef36cda38b",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000049",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000016",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_fb59035cedd109e8a9a3201de257e672c662b83698bfe48e08b78771d37949a4",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000050",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000017",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_0322c19f948184468420a3a70e3eaf7a51134b3ece1fde1107d1b9ec86a1ec55",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000051",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000017",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_c311287a4d649dd1201b70188214331d4a096a6f00225b0040d74d5a7e567513",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000052",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000017",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_9eb420a72081b5c5a2edcf73a65364a253b5ad3f2998587342f8ce6174ce18c6",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000053",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000017",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_32d6b914dcd2d9cedfc0929f7f0e928c656972ac32aec87f1f0584cbafc252fd",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000054",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000018",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_90695fd15ef04337504d840510c4907c2c6d7aa3b32f89f943d2ce3b6a615281",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000055",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000018",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_c61f176d2503183b4165e405e556079793bc89f0e36c4d5e997a29128628e173",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000056",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000018",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_b1632f528cedd48bdd86716fe7fcf3f6c086eb3b358eb77c4fed94de5ce599a8",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000057",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000019",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_59bb897cf2c6df3b01f17517a785f754d36b730711ed9ba3250e258aeb11c828",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000058",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000019",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_b574175aa5409cb16bba29c9596afcffa449db1976e75cf8c4f0ca95a9d38346",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000059",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000020",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_e886dbaf953f9c54899b9c0a19e35f9da77ff4c5d545742b982f8ce6b3995c9e",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000060",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000020",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_2cfcc8e118597a09377afd230bd27a40ce242794311bdf881a3b6de26096d0ac",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000061",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000021",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_3e9c763ef19e4c60587aab8a7bb069dbb3c3938ca6103849556028c751935533",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000062",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000022",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_2bf90690927b967ffeb98a9a9eaa7b61505d501fd27f4a3411d7f573eea6b27f",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000063",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000023",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_6e4a4359db1151acf63e6add9ca7588e435075b992e477407019e6d018871442",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000064",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000023",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_457f5ac11dddfcabf938b949985f1740ffef413af1900f324d144b5ce0e8a3ea",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000065",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000024",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_ea1fcc6c37c9c93e8383fe723ff5d3e8c3ab04e1924a59c2b8c69f52cda210c8",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000066",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000024",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_3d8b713418b409f4c5b3660ec1d27ca7fbeb8a87fbf15a42ba68085d9d449003",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000067",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000024",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_2c9851940b848507bba71598f064fb464794eeb62187af59c1b16c8436e6cfac",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000068",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000025",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_5bcea603c996dccd2601ed25043e4eb87c5cf6ab1d7bf00a666b62bdfbe12a15",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000069",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000025",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_e9d3021483d76ac660d4f2d0b02f11322587e3eb6fb3272d607d3068c68e16f9",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000070",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000026",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_0971b13693f010424c06117186da8ef95853f2e0dda0471a4366c24ea9b2ed67",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000071",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000026",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_d7bca1aac53be3ee9ef3dd4c05b6691cdd6394fb3fd9b3bfc30f37697a55ba63",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000072",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000026",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_ba655a603f276d403dd33aececc646807f730a2ea0d11a3976705408ba0dd842",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000073",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000026",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_8aa335f63ee07b6fe57b0008250a3d1c93392e8bb51d36bb823c27ef2c8cfa13",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000074",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000026",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_74cd6da4392088610587823ac8f7ae36505deec8cbafb332f5eec9c524e0bc6c",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000076",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000027",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_921a90d9f8317431eaa4fe675dc8ed5e8e9a36a4b27f601d79b3f762f8fe9d7e",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000077",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000028",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_96e6032594debb11e323ba40e5c684d75c9dad7b54a5a00b4d05a50ffcf6212c",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000078",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000029",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_7628badc69af483545a511e1259d49a833207dfa644cecf5fb2b7290f83e53a7",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000079",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000030",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_3a4a6aea124f111164de324df527bf8d2cf6d450fa4b4fd9acaf9185621ade83",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000080",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000031",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_1cdb33a25384fd0b92bb029bfc95caa2ac349a13b6a817cf6880e19017750420",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000081",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000032",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_18af2f92d2bc790fafc9709b644af6398b5d26df0bfdf0c627b1d0d396ef9f6e",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000082",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000033",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_b377159b8539efb48de4987d22e8b20adc9559e6af3ba89e74251c59983ac12d",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000083",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000034",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_0c70956670cc73a601d9b12917e21bd9c99279d7ef36eb7438dcf4c5cde4fda2",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000084",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000035",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_2c95c4f9594cf37454518b87d26280c944f553ecc6af7dc224eaa91f4ceb2526",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000085",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000036",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_6d13a2ca1becf1677e61d1cbd6959ff6e64748e4100d06f5dbe4126e8086df10",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000086",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000037",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_8df0b9c5570215a914e1fd198cfcc5803029cbb95bd4e1ec69a616410b872dfd",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000087",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000038",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_7479032ff749041c41a3fe68a51a83c5ab27dbe8c6e22036efd213a7c51d1d45",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000088",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000039",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_f960cad11bdcf3011e4ca7ccf43c40aacbe028345be0f41d2fb26e42c08af384",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000089",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000040",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_405cad2b8a28fb7b2d2330005a563c30d5bf1bb15800dcaf84efe64ca99cb57e",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000090",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000041",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_7a8b4db5c91226bb7bbd1fdbffa0a322830ba00686a2ae81205d7af202223206",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000091",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000042",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_a017687e052a72d849c0c92c571abeb14626b68c8607e5b1a96ba54c774aebc2",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000092",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000043",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_345e153301b467c11bd3538ac1885a7d7f9a1947b99911d2eb048c5058363e6b",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000093",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000044",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_2a64713f1ca36c9a82e0af6e61f704db6493db560efff9c3302df44a985cb64b",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000094",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000045",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_f9beadccbc0cf84a0952df7a8dbf325b8de11347c3bd1d2181175f120216bf56",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000095",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000046",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_fbdf6b6b8fd3a2cef91a5bb0cb70c01d54ddcc4942839099f53e58f9c8feb31f",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000096",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000047",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_9926a2357e77de19b3e487203d9acdd0657f5140dff09ce517c1734499e04000",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000097",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000048",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_79d6996e987e238c399464a647191fe7849430de66ebea54dd342eabdb126384",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000098",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000049",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_d887c828d8f41e4089ebc07369c2fcefca793e9661d1d501b34cb245d2f79f33",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000099",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000050",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_cfe9196b9a9cd963b5c26bbeb68c9bbd0800bae59562343af2471964dc3d95ba",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000100",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000051",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_acc719092772f5fc80f762578ba4fb357519e21ede01b84fdd6d3a97811b5ded",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000101",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000052",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_0d38d9815ebe33e18c1eec1b2d2ef5e09171b831f6d7cab5d6cbab19748aa826",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000102",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000053",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_e9450b4b4e079815f4e013b0fba6c76f1f19477bb69161018df4a3234ddeaf3d",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000103",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000054",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_409e5ec5c1c2a99a78180ad34f3fd48bda1255fccc024904bd539815516e1b15",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000104",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000055",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_035cdb5532185a433dd06cd0306273836f91fe15bdabb57a45073eee232998d7",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000105",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000056",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_8519b084a45b32306b3bd42ed011ebcd41e85c4c5745fa5a80bc1af53be52680",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000106",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000057",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_bc88b3e1c083d7579c555700afe967604246979a3ba0aa1bb69a8ba1f0bf1356",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000107",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000058",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_c7146af01b78dc79c0f2c190d5d6c9458f463b33c41d41f4997bf7fd8d1e68a9",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000108",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000059",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_be79dd317a025868d64f3abab0357272430938da7b762a3724b37af4d28c9bb4",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000109",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000060",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_e1837b566fadb65f11a385ebf05d78321d50ed788be5e26787103dc79e091a60",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000110",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000061",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_ff0eb74867b16cf082b568cc9f4c8c4023af33edf144bdc7209eb5eea94302f5",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000111",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000062",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_684968b1b2305849a5b3099164686a3e018758d65becd563ce32b8b6cba46c57",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000112",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000063",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_de4c19abf3f17d4cdce964b7f4939d87e46d67dcf11c9c2a6577430419b52ba9",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000113",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000064",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_15f008f85acac7e1b672abec561841ebaab5546c321263371a194443e56bf7a1",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000114",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000065",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_b46771d52c90911a5b90b640fa3ac4051bb930148492f1c1e457525fea878d42",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000115",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000066",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_a25c9b4c116487522417ae838c3d3e9061b563bc0dd2b7aac8b0b9457bdbf651",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000116",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000067",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_c580670f0f807a99efb2465ea170a757d2f0ef316ed4e71a95d05fd8d9514070",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000117",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000068",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_cab4677861577add066d1b1fb1c6ab8488fc8c2bd8105fde427d5f1e4dd26a50",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000118",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000069",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_46ce0cee42cbbbadf9c412d1ded6e9755e151cece95f7cefb1bf15a9e55d96ba",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000119",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000070",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_8f95ceaa04e676f38c89c849c5d3d41a3869f6aeff8f15b946ebaccea0b5c71f",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000120",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000071",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_9751187ec6f3cbbde233603b9af0707bea85056fd48272d4e244e7019e13794c",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000121",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000072",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_5b0206d56bbfb1c6f0edbd84538e2f79b2581dd7a20c4a3317206af279d5846a",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000122",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000073",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_059beec8e2a60a1f6d9dbe9217f55457579b44eb657677d31f5e0aed201f029d",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000123",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000074",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_013e6161ca88b2e138f018cfeb9065cfe4eec536322d9e059b1d09a46576251d",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000124",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000075",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_6b8a6bc044e0322e2585e4fc791cbde232d036958e50efc473a7479f770b626f",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000125",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000076",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_fcfb7c7c608b6923146dfe9d7fc75a8bb7485924ec46f87e9ba831778a103fba",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000126",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000077",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_96b8a3a59bf0ec5daed848e46f661a9fd3664261a7346393d9359fa464f29d27",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000127",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000078",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_bf021cd75655db7134ba2f5261eb76555ad6e7e071a8f2066c2471177e88f887",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000128",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000079",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_98933ae8a9f7af0b36ea6f89e6668b4c8aadd32c3bfabb2b6f576c0a2657a1e7",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000129",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000080",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_3295d6d177cb6580db9682838fc5a9163578cb6bb946bd399b7338121db84cb8",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000130",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000081",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_860fd86231d957c39a2a6f5ef53923808a4cc95c291996106be74db4600e912c",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000131",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000082",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_7e252d45b3480e650daa252f626c666f50015dd3325158a26b8b15d0e7d84d55",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000132",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000083",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_f239819373923cfc25f3a3ae39171ee24b2cf619ab074ba5410109098746331b",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000133",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000084",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_1361a3d43ba993d9c6272d52b66abbfdf213be3380b3f1972ad58f11631512bb",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000134",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000085",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_6a496ef7cefb05f99c4304cf0b1dd7396ce41dad923e4da3ce43192a9df9dec0",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000135",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000086",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_b275bf19275c08106f05b2f46f8573e52a3ceaf31a68b5c0766f42ec70833a62",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000136",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000087",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_3ff824f4f87663dc34ec32857c81125b2c9d013a490bfda79490e684ffe2750d",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000137",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000088",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_4df33609c19208d051add0596c8c0939cbea73724fc933b155e4699c87188e1c",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000138",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000089",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_0a06143b22687660dc9e5c9051e4dc478d6c6f7451bd655c34b6eddd9daffbbb",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000139",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000090",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_a6a0294d361311ad98ccad805c3c268360c917feb74bbb39f9ebc92a4d90d2ab",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000140",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000091",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_8ea54efa16d737f61923e501e5c39eafa01d094f72678475ad47471585c8a960",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000141",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000092",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_7f5670f0a670a384680958e0221fdaa3a871bc06ca15479c7d345111e4e9ae51",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000142",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000093",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_5f381e8ff155ba4e11501d584b1cb9530c4845d9e5f838e341156e3cadf7463c",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000143",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000094",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_910324bf3c548ef08f83adcd37d2c1b2655cc106c35a7b17eed1c71add7a8904",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000144",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000095",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_cd8bb2593770bcf9b3d1b3aa0ef12773428bcbe62bfb9540696ba5ed8e653785",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000145",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000096",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_7226982777ea941d533a0ccfeb2b103ae48a5019cefe17f9de6f5cd5b03df4bf",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000146",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000097",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_a83a6887036a5c0ba48077587f2209eeed769d803e16fa3d6e20cbb3e9ad8192",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000147",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000098",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_5e09f6e7a26d356934d63b993f5e1f683fee9bae290d37125d3967dc25491a82",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000148",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000099",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_c82354560a4f3b5ce947fe6f141e3bc26f3527222b5ddadec4a554721a67e799",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "product_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000149",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_ent_000100",
+      "native_record_type": "wlr.wallet-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_839c88a3b58945691438f35b311f6d570d2d81df295befa329812f502112a75b",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "predecessor_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000025",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_prod_000027",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_5f50498a0bd03d118321ca9bb00474d0500e91646919a54ecd8eb7942f717277",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "predecessor_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000028",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_prod_000029",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_9166ea13d365759e4232d0e324032fa178e02a4848d98e210f2b16880e73940f",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "predecessor_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000029",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_prod_000030",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_23790c74b12c55795f8ddd0fbc6f71ee38641c26ceca33a1c80ff7588166401a",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "predecessor_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000032",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_prod_000033",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_0b0488353877397b32d9bc1468e487b90c05bde87f33826b1b12cc9572df9846",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "predecessor_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000050",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_prod_000051",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_0099837de221b0aca6756fdd4fdb2199eeb1f90e0109547a86af6c0ebd141192",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "predecessor_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000065",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_prod_000066",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_24d649f62484cc3a81e5bd1afdcb625bfe6204d5354aaa804d1947341d98ea98",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "successor_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000027",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_prod_000025",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_f2730b0ac6758556bce45d474802a67aaf71cc2898a741f39edc260c48ee99a6",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "successor_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000029",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_prod_000028",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_41a345454929b91eb368007682f8a68b86d4630848ff3c21fa54b33549ad9000",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "successor_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000030",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_prod_000029",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_501fcaa9c4a7f7b014c7c01d9664aef7421766efdb7bfbda91ded08c76269d4e",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "successor_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000033",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_prod_000032",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_a605e8bf2a4fe1e524bfae4e6d36d27f382169de950ab565feacc4184f91ac78",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "successor_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000051",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_prod_000050",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  },
+  {
+    "direction": "directed",
+    "id": "series_rel_bb17fcb832dff9544c0d9674d7bd1465257c23110b8adf3387a9e32b7bc227b4",
+    "object_type": "relationship_record",
+    "provenance": {
+      "basis": "native_reviewed_relationship",
+      "native_evidence_refs": []
+    },
+    "relation_type": "successor_of",
+    "series_schema_version": "1.0.0",
+    "source": {
+      "native_record_id": "wlr_prod_000066",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    },
+    "target": {
+      "native_record_id": "wlr_prod_000065",
+      "native_record_type": "wlr.product-record.v1",
+      "registry_id": "cryptocurrency-wallet-lifecycle-registry"
+    }
+  }
+]

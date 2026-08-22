@@ -1,0 +1,172 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000011",
+    "slug": "ready",
+    "canonical_name": "Ready",
+    "wallet_type": "hybrid",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000039",
+    "entity_id": "wlr_ent_000011",
+    "slug": "ready-x",
+    "product_name": "Ready X",
+    "aliases": [
+      "Argent X"
+    ],
+    "product_type": "multi_platform_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "supported",
+    "launch_date": "2021-12-08",
+    "launch_date_precision": "day",
+    "generation": null,
+    "platform": [
+      "Chrome",
+      "Firefox",
+      "Edge",
+      "Brave",
+      "iOS",
+      "Android"
+    ],
+    "official_url": "https://www.ready.co/download-ready-x",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "traditional_seed_phrase_wallet",
+    "variants": [],
+    "summary": "Starknet-focused self-custody wallet lineage formerly known as Argent X, available as browser extension and mobile app.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "Ready's own support material explicitly distinguishes Ready X from the seedless Ready mobile product."
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000042",
+      "entity_id": "wlr_ent_000011",
+      "product_id": null,
+      "affected_product_ids": [
+        "wlr_prod_000038",
+        "wlr_prod_000039"
+      ],
+      "event_type": "rebranded",
+      "event_date": "2025-06-24",
+      "event_date_basis": "announcement",
+      "title": "Argent rebranded to Ready",
+      "description": "The wallet organization rebranded from Argent to Ready, retaining the lineage while clarifying distinct Ready product directions.",
+      "confidence": "high",
+      "event_status_effect": "none",
+      "is_major_event": true
+    },
+    {
+      "id": "wlr_ev_000088",
+      "entity_id": "wlr_ent_000011",
+      "product_id": "wlr_prod_000039",
+      "affected_product_ids": [
+        "wlr_prod_000039"
+      ],
+      "event_type": "product_released",
+      "event_date": "2021-12-08",
+      "event_date_basis": "release",
+      "title": "Argent X launched on the Chrome Store for StarkNet",
+      "description": "Argent launched Argent X on 2021-12-08 as a Chrome browser-extension wallet for StarkNet. The launch article explicitly distinguished Argent X from Argent’s separate mobile wallet. This product lineage later continued under the Ready X name.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "This event is scoped only to the current Ready X / historical Argent X product lineage. Chrome Store availability is the launch-time distribution fact established by the source; later Ready X platforms are not backdated to launch day."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000051",
+      "entity_id": "wlr_ent_000011",
+      "product_ids": [
+        "wlr_prod_000038",
+        "wlr_prod_000039"
+      ],
+      "event_ids": [
+        "wlr_ev_000042"
+      ],
+      "product_id": null,
+      "event_id": "wlr_ev_000042",
+      "source_type": "official_blog",
+      "title": "Argent is now Ready",
+      "url": "https://www.ready.co/blog/argent-is-now-ready",
+      "publisher": "Ready",
+      "published_at": "2025-06-24",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "rebrand",
+      "is_primary": true,
+      "notes": ""
+    },
+    {
+      "id": "wlr_src_000052",
+      "entity_id": "wlr_ent_000011",
+      "product_ids": [
+        "wlr_prod_000038",
+        "wlr_prod_000039"
+      ],
+      "event_ids": [],
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Why do you say there is no seed phrase if Ready also mentions seed phrases?",
+      "url": "https://help.ready.co/hc/en-us/articles/28334367814685-Why-do-you-say-there-is-no-seed-phrase-if-Ready-also-mentions-seed-phrases",
+      "publisher": "Ready",
+      "published_at": "2026-07-20",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "architecture",
+      "is_primary": true,
+      "notes": "Primary source explicitly distinguishes two wallet products and their different security models."
+    },
+    {
+      "id": "wlr_src_000053",
+      "entity_id": "wlr_ent_000011",
+      "product_ids": [
+        "wlr_prod_000038",
+        "wlr_prod_000039"
+      ],
+      "event_ids": [
+        "wlr_ev_000043"
+      ],
+      "product_id": null,
+      "event_id": "wlr_ev_000043",
+      "source_type": "official_statement",
+      "title": "Ready is moving to Base",
+      "url": "https://help.ready.co/hc/en-us/articles/37609718066589-Ready-is-moving-to-Base",
+      "publisher": "Ready",
+      "published_at": "2026-08-12",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": ""
+    },
+    {
+      "id": "wlr_src_000144",
+      "entity_id": "wlr_ent_000011",
+      "product_ids": [
+        "wlr_prod_000039"
+      ],
+      "event_ids": [
+        "wlr_ev_000088"
+      ],
+      "product_id": "wlr_prod_000039",
+      "event_id": "wlr_ev_000088",
+      "source_type": "official_blog",
+      "title": "Argent X StarkNet launch",
+      "url": "https://www.argent.xyz/blog/argent-x-starknet",
+      "publisher": "Argent",
+      "published_at": "2021-12-08",
+      "accessed_at": "2026-08-17",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party Argent launch article stating that Argent X was available from the Chrome Store on 2021-12-08 and explicitly distinguishing it from Argent’s mobile wallet."
+    }
+  ]
+}

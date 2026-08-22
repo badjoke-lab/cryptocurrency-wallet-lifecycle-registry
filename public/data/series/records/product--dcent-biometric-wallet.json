@@ -22,7 +22,25 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000087"
+        ],
+        "confidence": "high",
+        "description": "D'CENT announced Cardano (ADA) support for the Biometric Wallet through a firmware and mobile-app update path.",
+        "entity_id": "wlr_ent_000038",
+        "event_date": "2021-04-08",
+        "event_date_basis": "announcement",
+        "event_status_effect": "none",
+        "event_type": "other",
+        "id": "wlr_ev_000145",
+        "is_major_event": false,
+        "notes": "This is a product capability/integration milestone. It is not treated as the D'CENT product launch date.",
+        "product_id": "wlr_prod_000087",
+        "title": "D'CENT Biometric Wallet added Cardano support"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -42,6 +60,22 @@
         "source_type": "official_statement",
         "title": "D'CENT Biometric Wallet",
         "url": "https://store.dcentwallet.com/products/biometric-wallet"
+      },
+      {
+        "accessed_at": "2026-08-23",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000038",
+        "event_id": "wlr_ev_000145",
+        "id": "wlr_src_000372",
+        "is_primary": true,
+        "notes": "First-party D'CENT announcement of Cardano support for the Biometric Wallet and the associated firmware/app update path.",
+        "product_id": "wlr_prod_000087",
+        "published_at": "2021-04-08",
+        "publisher": "D'CENT Wallet",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "D'CENT Biometric Wallet Integrates Cardano (ADA)",
+        "url": "https://store.dcentwallet.com/blogs/post/d-cent-biometric-wallet-integrates-cardano-ada"
       }
     ]
   },

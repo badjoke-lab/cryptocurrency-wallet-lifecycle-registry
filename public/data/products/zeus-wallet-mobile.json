@@ -1,0 +1,53 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000093",
+    "slug": "zeus-wallet",
+    "canonical_name": "ZEUS Wallet",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000142",
+    "entity_id": "wlr_ent_000093",
+    "slug": "zeus-wallet-mobile",
+    "product_name": "ZEUS Wallet Mobile",
+    "product_type": "mobile_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": "2019",
+    "launch_date_precision": "year",
+    "platform": [
+      "iOS",
+      "Android"
+    ],
+    "official_url": "https://zeusln.com/wallet",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "embedded_or_user_managed_lightning_node_and_bitcoin_keys",
+    "summary": "ZEUS self-custodial Bitcoin and Lightning mobile wallet supporting embedded and remote-node configurations.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "First-party current page states ZEUS has been shipping since 2019; year precision only."
+  },
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000332",
+      "entity_id": "wlr_ent_000093",
+      "product_id": "wlr_prod_000142",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "ZEUS Wallet — Your keys, your way",
+      "url": "https://zeusln.com/wallet",
+      "publisher": "ZEUS",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Same current first-party product surface establishes mobile wallet distribution and embedded-node/remote-node self-custody configurations; reused for a separate product claim, not to inflate source diversity."
+    }
+  ]
+}

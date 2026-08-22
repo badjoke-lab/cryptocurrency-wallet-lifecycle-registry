@@ -1,0 +1,87 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000066",
+    "slug": "talisman",
+    "canonical_name": "Talisman",
+    "aliases": [
+      "Talisman Wallet"
+    ],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Non-custodial multichain browser wallet focused on Polkadot, Ethereum and related ecosystems.",
+    "developer_or_company": "Talisman",
+    "country_or_origin": null,
+    "launch_date": null,
+    "official_url": "https://www.talisman.xyz/",
+    "official_domain": "talisman.xyz",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "browser_local_user_controlled_private_keys",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Current first-party Talisman documentation explicitly describes the wallet as non-custodial and states Talisman cannot access user private keys. Initial public launch date remains unresolved."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000115",
+      "entity_id": "wlr_ent_000066",
+      "slug": "talisman-extension",
+      "product_name": "Talisman Wallet Extension",
+      "product_type": "browser_extension",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "unknown",
+      "launch_date": null,
+      "platform": [
+        "Chrome",
+        "Firefox",
+        "Brave",
+        "Edge"
+      ],
+      "official_url": "https://www.talisman.xyz/",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "browser_local_user_controlled_private_keys",
+      "summary": "Current non-custodial Talisman browser-extension wallet for supported Polkadot, Ethereum and related networks.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-20",
+      "notes": "Current first-party installation documentation supports Chrome, Firefox, Brave and Edge. Initial extension launch date remains unresolved."
+    }
+  ],
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000277",
+      "entity_id": "wlr_ent_000066",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Talisman Wallet",
+      "url": "https://docs.talisman.xyz/talisman/introduction/talisman-wallet",
+      "publisher": "Talisman",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "entity",
+      "is_primary": true,
+      "notes": "Current first-party documentation describes Talisman Wallet as non-custodial and browser-extension based."
+    },
+    {
+      "id": "wlr_src_000278",
+      "entity_id": "wlr_ent_000066",
+      "product_id": "wlr_prod_000115",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Download the extension",
+      "url": "https://docs.talisman.xyz/talisman/start/installing-talisman/download-the-extension",
+      "publisher": "Talisman",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party installation guide establishes Talisman Extension distribution for Chrome, Firefox, Brave and Edge."
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000028",
+    "slug": "okx-wallet",
+    "canonical_name": "OKX Wallet",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000077",
+    "entity_id": "wlr_ent_000028",
+    "slug": "okx-wallet-app",
+    "product_name": "OKX Wallet App",
+    "product_type": "mobile_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": "2025-04-16",
+    "launch_date_precision": "day",
+    "platform": [
+      "iOS",
+      "Android"
+    ],
+    "official_url": "https://web3.okx.com/",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "product_specific_self_custody_keys",
+    "summary": "Standalone OKX Wallet mobile application separated from the primary OKX exchange app and distributed on iOS and Android.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-19",
+    "notes": "The standalone OKX Wallet App was explicitly announced as available on 2025-04-16. This does not define the earlier entity-level wallet launch date."
+  },
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000201",
+      "entity_id": "wlr_ent_000028",
+      "product_id": "wlr_prod_000077",
+      "event_id": null,
+      "source_type": "official_blog",
+      "title": "Announcing the new OKX Wallet app",
+      "url": "https://www.okx.com/en-us/learn/okx-new-wallet-app",
+      "publisher": "OKX",
+      "published_at": "2025-04-16",
+      "accessed_at": "2026-08-19",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party announcement states that the standalone OKX Wallet App was available on the App Store and Google Play on 2025-04-16."
+    }
+  ]
+}

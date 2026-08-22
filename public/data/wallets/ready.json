@@ -1,0 +1,281 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000011",
+    "slug": "ready",
+    "canonical_name": "Ready",
+    "aliases": [
+      "Argent"
+    ],
+    "wallet_type": "hybrid",
+    "status": "active",
+    "summary": "Self-custody wallet ecosystem formerly branded Argent, now operating distinct Ready mobile and Ready X products with materially different recovery and key-management models.",
+    "developer_or_company": "Ready",
+    "country_or_origin": "United Kingdom",
+    "launch_date": "2018",
+    "launch_date_precision": "year",
+    "official_url": "https://www.ready.co/",
+    "official_domain": "ready.co",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "product_specific_smart_account_and_seed_phrase_models",
+    "confidence": "high",
+    "last_verified_at": "2026-08-18",
+    "notes": "Ready preserves the continuous Argent wallet lineage. First-party Argent/Ready history establishes that Argent launched on Ethereum in 2018, and Ready's later rebrand history preserves continuity into the current Ready products. WLR therefore records the entity launch at 2018 year precision without inventing an exact first launch day."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000038",
+      "entity_id": "wlr_ent_000011",
+      "slug": "ready-mobile",
+      "product_name": "Ready Mobile",
+      "aliases": [
+        "Ready app",
+        "Argent mobile"
+      ],
+      "product_type": "mobile_app",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "supported",
+      "launch_date": "2018",
+      "launch_date_precision": "year",
+      "generation": null,
+      "platform": [
+        "iOS",
+        "Android"
+      ],
+      "official_url": "https://www.ready.co/",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "seedless_smart_contract_account_with_passkeys_guardians_and_recovery_delay",
+      "variants": [],
+      "summary": "Seedless Ready mobile product using smart-contract-enforced recovery and authentication rather than a traditional seed phrase.",
+      "predecessor_product_id": null,
+      "successor_product_id": null,
+      "confidence": "high",
+      "last_verified_at": "2026-08-18",
+      "notes": "As of August 2026 the Ready app is transitioning from Starknet to Base while Ready X continues Starknet support. The current Ready Mobile lineage continues the former Argent Mobile product; first-party Argent history states that Argent launched on Ethereum in 2018, so WLR records year precision only."
+    },
+    {
+      "id": "wlr_prod_000039",
+      "entity_id": "wlr_ent_000011",
+      "slug": "ready-x",
+      "product_name": "Ready X",
+      "aliases": [
+        "Argent X"
+      ],
+      "product_type": "multi_platform_app",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "supported",
+      "launch_date": "2021-12-08",
+      "launch_date_precision": "day",
+      "generation": null,
+      "platform": [
+        "Chrome",
+        "Firefox",
+        "Edge",
+        "Brave",
+        "iOS",
+        "Android"
+      ],
+      "official_url": "https://www.ready.co/download-ready-x",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "traditional_seed_phrase_wallet",
+      "variants": [],
+      "summary": "Starknet-focused self-custody wallet lineage formerly known as Argent X, available as browser extension and mobile app.",
+      "predecessor_product_id": null,
+      "successor_product_id": null,
+      "confidence": "high",
+      "last_verified_at": "2026-08-14",
+      "notes": "Ready's own support material explicitly distinguishes Ready X from the seedless Ready mobile product."
+    }
+  ],
+  "events": [
+    {
+      "id": "wlr_ev_000042",
+      "entity_id": "wlr_ent_000011",
+      "product_id": null,
+      "affected_product_ids": [
+        "wlr_prod_000038",
+        "wlr_prod_000039"
+      ],
+      "event_type": "rebranded",
+      "event_date": "2025-06-24",
+      "event_date_basis": "announcement",
+      "title": "Argent rebranded to Ready",
+      "description": "The wallet organization rebranded from Argent to Ready, retaining the lineage while clarifying distinct Ready product directions.",
+      "confidence": "high",
+      "event_status_effect": "none",
+      "is_major_event": true
+    },
+    {
+      "id": "wlr_ev_000043",
+      "entity_id": "wlr_ent_000011",
+      "product_id": "wlr_prod_000038",
+      "affected_product_ids": [
+        "wlr_prod_000038"
+      ],
+      "event_type": "network_migration_announced",
+      "event_date": "2026-08-12",
+      "event_date_basis": "announcement",
+      "title": "Ready announced migration of its mobile app from Starknet to Base",
+      "description": "Ready announced that the Ready mobile app would move from Starknet to Base in mid-August 2026, while Ready X would continue supporting Starknet.",
+      "confidence": "high",
+      "user_actions_required": [
+        "migrate"
+      ],
+      "event_status_effect": "none",
+      "is_major_event": true,
+      "notes": "Users with Starknet assets were advised to move or recover them through Ready X or another wallet before the app transition; assets remained self-custodial."
+    },
+    {
+      "id": "wlr_ev_000088",
+      "entity_id": "wlr_ent_000011",
+      "product_id": "wlr_prod_000039",
+      "affected_product_ids": [
+        "wlr_prod_000039"
+      ],
+      "event_type": "product_released",
+      "event_date": "2021-12-08",
+      "event_date_basis": "release",
+      "title": "Argent X launched on the Chrome Store for StarkNet",
+      "description": "Argent launched Argent X on 2021-12-08 as a Chrome browser-extension wallet for StarkNet. The launch article explicitly distinguished Argent X from Argent’s separate mobile wallet. This product lineage later continued under the Ready X name.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "This event is scoped only to the current Ready X / historical Argent X product lineage. Chrome Store availability is the launch-time distribution fact established by the source; later Ready X platforms are not backdated to launch day."
+    },
+    {
+      "id": "wlr_ev_000102",
+      "entity_id": "wlr_ent_000011",
+      "product_id": "wlr_prod_000038",
+      "affected_product_ids": [
+        "wlr_prod_000038"
+      ],
+      "event_type": "product_released",
+      "event_date": "2018",
+      "event_date_basis": "release",
+      "title": "Argent mobile wallet launched on Ethereum",
+      "description": "Argent launched its consumer smart-wallet product on Ethereum in 2018. This mobile product lineage later continued as Ready Mobile after the 2025 Argent-to-Ready rebrand.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "Year precision only. The first-party retrospective establishes the 2018 Ethereum launch but not a defensible month or day. Ready/Argent brand continuity is separately supported by existing canonical evidence wlr_src_000051."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000051",
+      "entity_id": "wlr_ent_000011",
+      "product_ids": [
+        "wlr_prod_000038",
+        "wlr_prod_000039"
+      ],
+      "event_ids": [
+        "wlr_ev_000042"
+      ],
+      "product_id": null,
+      "event_id": "wlr_ev_000042",
+      "source_type": "official_blog",
+      "title": "Argent is now Ready",
+      "url": "https://www.ready.co/blog/argent-is-now-ready",
+      "publisher": "Ready",
+      "published_at": "2025-06-24",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "rebrand",
+      "is_primary": true,
+      "notes": ""
+    },
+    {
+      "id": "wlr_src_000052",
+      "entity_id": "wlr_ent_000011",
+      "product_ids": [
+        "wlr_prod_000038",
+        "wlr_prod_000039"
+      ],
+      "event_ids": [],
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Why do you say there is no seed phrase if Ready also mentions seed phrases?",
+      "url": "https://help.ready.co/hc/en-us/articles/28334367814685-Why-do-you-say-there-is-no-seed-phrase-if-Ready-also-mentions-seed-phrases",
+      "publisher": "Ready",
+      "published_at": "2026-07-20",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "architecture",
+      "is_primary": true,
+      "notes": "Primary source explicitly distinguishes two wallet products and their different security models."
+    },
+    {
+      "id": "wlr_src_000053",
+      "entity_id": "wlr_ent_000011",
+      "product_ids": [
+        "wlr_prod_000038",
+        "wlr_prod_000039"
+      ],
+      "event_ids": [
+        "wlr_ev_000043"
+      ],
+      "product_id": null,
+      "event_id": "wlr_ev_000043",
+      "source_type": "official_statement",
+      "title": "Ready is moving to Base",
+      "url": "https://help.ready.co/hc/en-us/articles/37609718066589-Ready-is-moving-to-Base",
+      "publisher": "Ready",
+      "published_at": "2026-08-12",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": ""
+    },
+    {
+      "id": "wlr_src_000144",
+      "entity_id": "wlr_ent_000011",
+      "product_ids": [
+        "wlr_prod_000039"
+      ],
+      "event_ids": [
+        "wlr_ev_000088"
+      ],
+      "product_id": "wlr_prod_000039",
+      "event_id": "wlr_ev_000088",
+      "source_type": "official_blog",
+      "title": "Argent X StarkNet launch",
+      "url": "https://www.argent.xyz/blog/argent-x-starknet",
+      "publisher": "Argent",
+      "published_at": "2021-12-08",
+      "accessed_at": "2026-08-17",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party Argent launch article stating that Argent X was available from the Chrome Store on 2021-12-08 and explicitly distinguishing it from Argent’s mobile wallet."
+    },
+    {
+      "id": "wlr_src_000160",
+      "entity_id": "wlr_ent_000011",
+      "product_ids": [
+        "wlr_prod_000038"
+      ],
+      "event_ids": [
+        "wlr_ev_000102"
+      ],
+      "product_id": "wlr_prod_000038",
+      "event_id": "wlr_ev_000102",
+      "source_type": "official_blog",
+      "title": "Doubling down on Starknet",
+      "url": "https://www.argent.xyz/blog/doubling-down-on-starknet",
+      "publisher": "Argent / Ready",
+      "published_at": "2023-12-19",
+      "accessed_at": "2026-08-18",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party Argent history explicitly states that Argent launched on Ethereum in 2018. WLR retains year precision and uses existing wlr_src_000051 for the later Argent Mobile -> Ready Mobile continuity."
+    }
+  ]
+}

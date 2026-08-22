@@ -1,0 +1,217 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000025",
+    "slug": "mycrypto",
+    "canonical_name": "MyCrypto",
+    "wallet_type": "software",
+    "status": "acquired"
+  },
+  "product": {
+    "id": "wlr_prod_000068",
+    "entity_id": "wlr_ent_000025",
+    "slug": "mycrypto-web-app",
+    "product_name": "MyCrypto Web App",
+    "aliases": [
+      "MyCrypto.com"
+    ],
+    "product_type": "web_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "supported",
+    "launch_date": "2018-02",
+    "launch_date_precision": "month",
+    "platform": [
+      "web"
+    ],
+    "official_url": "https://app.mycrypto.com/",
+    "source_code_url": "https://github.com/MyCryptoHQ/MyCrypto",
+    "custody_model": "self_custody",
+    "key_management_model": "browser_interface_with_external_wallet_and_device_connections",
+    "variants": [],
+    "summary": "Browser-based MyCrypto Ethereum account-management interface, currently reachable at app.mycrypto.com.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-18",
+    "notes": "The official MyCrypto web application remains publicly available at app.mycrypto.com with current account-access options and a Contact Support path. MyCrypto's official Knowledge Base explicitly distinguishes the desktop application as an older version that is not actively maintained while directing users to the latest version of MyCrypto on mycrypto.com. WLR therefore records the web product as supported. This support classification does not assert active feature development or a current source-code release cadence; the public MyCrypto source repository's mainline implementation history has been quiet since 2022."
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000064",
+      "entity_id": "wlr_ent_000025",
+      "product_id": "wlr_prod_000068",
+      "affected_product_ids": [
+        "wlr_prod_000068"
+      ],
+      "event_type": "launched",
+      "event_date": "2018-02",
+      "event_date_basis": "approximate",
+      "title": "MyCrypto brand launched",
+      "description": "MyCrypto launched as a new Ethereum wallet-interface brand following the split between Taylor Monahan and the MyEtherWallet project.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "The February 10 launch FAQ describes the brand launch as having occurred within the preceding day; WLR retains month-level precision rather than inventing an exact launch timestamp."
+    },
+    {
+      "id": "wlr_ev_000066",
+      "entity_id": "wlr_ent_000025",
+      "product_id": null,
+      "affected_product_ids": [
+        "wlr_prod_000068",
+        "wlr_prod_000069"
+      ],
+      "event_type": "acquired",
+      "event_date": "2022-02-01",
+      "event_date_basis": "announcement",
+      "title": "Consensys acquired MyCrypto",
+      "description": "Consensys announced the acquisition of MyCrypto to combine its work with MetaMask while MyCrypto stated that its existing products would continue operating in the short term.",
+      "confidence": "high",
+      "event_status_effect": "acquired",
+      "is_major_event": true,
+      "notes": "The acquisition announcement described gradual product convergence rather than an immediate MyCrypto shutdown."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000105",
+      "entity_id": "wlr_ent_000025",
+      "product_ids": [
+        "wlr_prod_000068"
+      ],
+      "event_ids": [
+        "wlr_ev_000064"
+      ],
+      "product_id": "wlr_prod_000068",
+      "event_id": "wlr_ev_000064",
+      "source_type": "official_blog",
+      "title": "MyCrypto Launch FAQ",
+      "url": "https://blog.mycrypto.com/mycrypto-launch-faq/",
+      "publisher": "MyCrypto",
+      "published_at": "2018-02-10",
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "product_lineage",
+      "is_primary": true,
+      "notes": "Primary source for the MyCrypto brand launch, split from MyEtherWallet, non-custodial model, and early web/desktop product development."
+    },
+    {
+      "id": "wlr_src_000107",
+      "entity_id": "wlr_ent_000025",
+      "product_ids": [
+        "wlr_prod_000068",
+        "wlr_prod_000069"
+      ],
+      "event_ids": [
+        "wlr_ev_000066"
+      ],
+      "product_id": null,
+      "event_id": "wlr_ev_000066",
+      "source_type": "official_blog",
+      "title": "Consensys Acquires MyCrypto to Strengthen MetaMask Partnership and Enhance Web3 Experiences",
+      "url": "https://consensys.io/blog/consensys-acquires-mycrypto-to-strengthen-metamask-partnership-and-enhance-web3-experiences",
+      "publisher": "Consensys",
+      "published_at": "2022-02-01",
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "ownership",
+      "is_primary": true,
+      "notes": "Primary acquiring-company announcement for the MyCrypto acquisition and planned MetaMask collaboration."
+    },
+    {
+      "id": "wlr_src_000108",
+      "entity_id": "wlr_ent_000025",
+      "product_ids": [
+        "wlr_prod_000068",
+        "wlr_prod_000069"
+      ],
+      "event_ids": [
+        "wlr_ev_000066"
+      ],
+      "product_id": null,
+      "event_id": "wlr_ev_000066",
+      "source_type": "official_blog",
+      "title": "MyCrypto is Joining MetaMask to Lead The Way to Web3",
+      "url": "https://blog.mycrypto.com/mycrypto-is-joining-metamask/",
+      "publisher": "MyCrypto",
+      "published_at": "2022-02-01",
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "ownership",
+      "is_primary": true,
+      "notes": "Primary MyCrypto-side acquisition announcement stating products would not immediately go away and longer-term convergence would be gradual."
+    },
+    {
+      "id": "wlr_src_000109",
+      "entity_id": "wlr_ent_000025",
+      "product_ids": [
+        "wlr_prod_000068"
+      ],
+      "event_ids": [],
+      "product_id": "wlr_prod_000068",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "MyCrypto Web App",
+      "url": "https://app.mycrypto.com/",
+      "publisher": "MyCrypto",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "status",
+      "is_primary": true,
+      "notes": "Current MyCrypto web application endpoint remains reachable."
+    },
+    {
+      "id": "wlr_src_000111",
+      "entity_id": "wlr_ent_000025",
+      "product_ids": [
+        "wlr_prod_000068",
+        "wlr_prod_000069"
+      ],
+      "event_ids": [],
+      "product_id": null,
+      "event_id": null,
+      "source_type": "source_code",
+      "title": "MyCrypto official source repository",
+      "url": "https://github.com/MyCryptoHQ/MyCrypto",
+      "publisher": "MyCryptoHQ",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Official public repository remains non-archived; repository metadata identifies MyCrypto as an open-source Ethereum account-management tool."
+    },
+    {
+      "id": "wlr_src_000184",
+      "entity_id": "wlr_ent_000025",
+      "product_id": "wlr_prod_000068",
+      "source_type": "official_statement",
+      "title": "MyCrypto Web App — Add Account",
+      "url": "https://app.mycrypto.com/",
+      "publisher": "MyCrypto",
+      "published_at": null,
+      "accessed_at": "2026-08-18",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "Current official MyCrypto web application surface. The live product exposes supported account-access paths including Web3, WalletConnect, Ledger, Trezor, GridPlus and View Address, plus a Contact Support action. Used to establish current product operation/support, not active development cadence."
+    },
+    {
+      "id": "wlr_src_000185",
+      "entity_id": "wlr_ent_000025",
+      "product_id": "wlr_prod_000068",
+      "source_type": "official_statement",
+      "title": "How to Access Your Wallet with a Secret Recovery Phrase",
+      "url": "https://support.mycrypto.com/how-to/accessing-wallet/how-to-access-your-wallet-with-mnemonic-phrase/",
+      "publisher": "MyCrypto",
+      "published_at": "2021-10-26",
+      "accessed_at": "2026-08-18",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "Official MyCrypto Knowledge Base explicitly says the desktop application is an older version that is not actively maintained and directs users to the latest version of MyCrypto on mycrypto.com. Used to distinguish the current web product from the separately ended-maintenance desktop product."
+    }
+  ]
+}

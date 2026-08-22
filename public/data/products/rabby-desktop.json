@@ -1,0 +1,118 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000018",
+    "slug": "rabby",
+    "canonical_name": "Rabby",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000056",
+    "entity_id": "wlr_ent_000018",
+    "slug": "rabby-desktop",
+    "product_name": "Rabby Desktop",
+    "aliases": [],
+    "product_type": "desktop_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "supported",
+    "launch_date": "2022",
+    "platform": [
+      "macOS",
+      "Windows"
+    ],
+    "official_url": "https://rabby.io/",
+    "source_code_url": "https://github.com/RabbyHub/RabbyDesktop",
+    "custody_model": "self_custody",
+    "key_management_model": "desktop_local_key_storage",
+    "variants": [],
+    "summary": "Rabby desktop wallet application distributed for macOS and Windows.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-18",
+    "notes": "First-party Rabby Desktop source history establishes a 2022 release series, including desktop release packaging in September and Release v0.1.1 on 2022-09-30. WLR records year precision only because the reviewed history does not establish a defensible exact initial launch day or a surfaced v0.1.0 release commit.",
+    "launch_date_precision": "year"
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000104",
+      "entity_id": "wlr_ent_000018",
+      "product_id": "wlr_prod_000056",
+      "affected_product_ids": [
+        "wlr_prod_000056"
+      ],
+      "event_type": "product_released",
+      "event_date": "2022",
+      "event_date_basis": "release",
+      "title": "Rabby Desktop released in 2022",
+      "description": "Rabby's official desktop source repository records desktop release packaging and a v0.1.1 release during 2022, establishing the desktop product as released by that year.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "Year precision only. The reviewed repository does not surface a v0.1.0 release commit, so WLR does not infer an exact initial launch day from the 2022-09-30 v0.1.1 commit."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000079",
+      "entity_id": "wlr_ent_000018",
+      "product_ids": [
+        "wlr_prod_000054",
+        "wlr_prod_000055",
+        "wlr_prod_000056"
+      ],
+      "event_ids": [],
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Rabby Wallet",
+      "url": "https://rabby.io/",
+      "publisher": "Rabby",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "status",
+      "is_primary": true,
+      "notes": "Current first-party distribution page lists Extension, Mobile, and Desktop products."
+    },
+    {
+      "id": "wlr_src_000081",
+      "entity_id": "wlr_ent_000018",
+      "product_ids": [
+        "wlr_prod_000055",
+        "wlr_prod_000056"
+      ],
+      "event_ids": [],
+      "product_id": null,
+      "event_id": null,
+      "source_type": "source_code",
+      "title": "RabbyHub official repositories",
+      "url": "https://github.com/orgs/RabbyHub/repositories",
+      "publisher": "RabbyHub",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Official organization listing identifies rabby-mobile and RabbyDesktop as separate applications."
+    },
+    {
+      "id": "wlr_src_000163",
+      "entity_id": "wlr_ent_000018",
+      "product_id": "wlr_prod_000056",
+      "event_id": "wlr_ev_000104",
+      "source_type": "source_code",
+      "title": "Rabby Desktop Release v0.1.1",
+      "url": "https://github.com/RabbyHub/RabbyDesktop/commit/87c9f355475992cf7902b13900679fd50b3482e4",
+      "publisher": "RabbyHub",
+      "published_at": "2022-09-30",
+      "accessed_at": "2026-08-18",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "Official Rabby Desktop source-repository release commit establishing that the desktop product was in release during 2022. WLR uses it to support year-level launch chronology, not as proof of the exact initial launch day."
+    }
+  ]
+}

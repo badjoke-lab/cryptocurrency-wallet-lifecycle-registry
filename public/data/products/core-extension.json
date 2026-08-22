@@ -1,0 +1,51 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000077",
+    "slug": "core-wallet",
+    "canonical_name": "Core",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000126",
+    "entity_id": "wlr_ent_000077",
+    "slug": "core-extension",
+    "product_name": "Core Extension",
+    "product_type": "browser_extension",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": null,
+    "platform": [
+      "Chrome"
+    ],
+    "official_url": "https://support.core.app/en/articles/6114992-what-is-the-core-extension",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "browser_extension_user_wallet_keys",
+    "summary": "Core non-custodial browser extension for Avalanche and supported networks.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Selected extension runtime only; Core mobile and web are distinct surfaces and deferred. Current first-party support says the extension is officially supported on Chrome."
+  },
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000300",
+      "entity_id": "wlr_ent_000077",
+      "product_id": "wlr_prod_000126",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "What is the Core extension?",
+      "url": "https://support.core.app/en/articles/6114992-what-is-the-core-extension",
+      "publisher": "Core / Avalanche",
+      "published_at": "2025-12-16",
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party support identifies Core extension as a free non-custodial browser extension and states current official Chrome support."
+    }
+  ]
+}

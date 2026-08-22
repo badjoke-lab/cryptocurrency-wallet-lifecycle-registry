@@ -1,0 +1,83 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000071",
+    "slug": "secux",
+    "canonical_name": "SecuX",
+    "wallet_type": "hardware",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000120",
+    "entity_id": "wlr_ent_000071",
+    "slug": "secux-v20",
+    "product_name": "SecuX V20",
+    "product_type": "hardware_device",
+    "status": "active",
+    "sales_status": "on_sale",
+    "support_status": "unknown",
+    "launch_date": null,
+    "platform": null,
+    "official_url": "https://secuxtech.com/products/secux-v20-plus",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "hardware_offline_seed_and_private_key_storage",
+    "summary": "SecuX V20 touchscreen hardware wallet with secure-element protection and offline private-key generation/storage.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Current official shop lists V20 with price and purchase controls, supporting on_sale. Initial product launch date remains unresolved."
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000144",
+      "entity_id": "wlr_ent_000071",
+      "product_id": "wlr_prod_000120",
+      "affected_product_ids": [
+        "wlr_prod_000120"
+      ],
+      "event_type": "product_released",
+      "event_date": "2019-01",
+      "event_date_basis": "release",
+      "title": "SecuX V20 recorded its first official sale at CES Las Vegas",
+      "description": "SecuX states that its first official sale took place at CES Las Vegas in January 2019, where the V20 was sold to its first customer.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "The retrospective provides January 2019 month precision but no exact day, so WLR preserves month precision."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000288",
+      "entity_id": "wlr_ent_000071",
+      "product_id": "wlr_prod_000120",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "SecuX V20 Hardware Wallet",
+      "url": "https://secuxtech.com/products/secux-v20-plus",
+      "publisher": "SecuX",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current official shop establishes SecuX V20 as an active purchasable hardware wallet and states seed phrase/private keys are generated and stored offline."
+    },
+    {
+      "id": "wlr_src_000371",
+      "entity_id": "wlr_ent_000071",
+      "product_id": "wlr_prod_000120",
+      "event_id": "wlr_ev_000144",
+      "source_type": "official_blog",
+      "title": "SecuX 7th Anniversary: 7 Years of Innovation in Crypto and Digital Security",
+      "url": "https://secuxtech.com/blogs/blog/secux-7th-anniversary-7-years-of-innovation-in-crypto-and-digital-security",
+      "publisher": "SecuX",
+      "published_at": null,
+      "accessed_at": "2026-08-21",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party retrospective states SecuX's first official sale took place at CES Las Vegas in January 2019, with the V20 sold to its first customer."
+    }
+  ]
+}

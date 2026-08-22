@@ -1,0 +1,52 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000057",
+    "slug": "mathwallet",
+    "canonical_name": "MathWallet",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000106",
+    "entity_id": "wlr_ent_000057",
+    "slug": "mathwallet-mobile",
+    "product_name": "MathWallet Mobile",
+    "product_type": "mobile_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": null,
+    "platform": [
+      "iOS",
+      "Android"
+    ],
+    "official_url": "https://www.mathwallet.org/",
+    "source_code_url": null,
+    "custody_model": "unknown",
+    "key_management_model": "user_held_mnemonic_and_private_key_workflows_per_official_security_guidance",
+    "summary": "Current MathWallet mobile wallet application for multichain Web3 use on iOS and Android.",
+    "confidence": "medium",
+    "last_verified_at": "2026-08-20",
+    "notes": "Selected mobile boundary only; browser wallet is deferred. Custody remains unknown pending stronger current first-party terms rather than being inferred from security guidance alone."
+  },
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000260",
+      "entity_id": "wlr_ent_000057",
+      "product_id": "wlr_prod_000106",
+      "event_id": null,
+      "source_type": "official_blog",
+      "title": "Security Guide of Math Wallet",
+      "url": "https://blog.mathwallet.org/?p=399",
+      "publisher": "MathWallet",
+      "published_at": "2019-05-16",
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Official security guidance establishes user-held mnemonic/private-key backup workflows but does not by itself justify a stronger current provider-custody claim, so custody remains unknown."
+    }
+  ]
+}

@@ -1,0 +1,275 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000016",
+    "slug": "exodus",
+    "canonical_name": "Exodus",
+    "aliases": [],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Self-custody cryptocurrency wallet ecosystem founded in 2015 and distributed across desktop, mobile, and a Web3 browser extension.",
+    "developer_or_company": "Exodus Movement, Inc.",
+    "country_or_origin": "United States",
+    "launch_date": "2015",
+    "launch_date_precision": "year",
+    "official_url": "https://www.exodus.com/",
+    "official_domain": "exodus.com",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "locally_encrypted_private_keys",
+    "confidence": "high",
+    "last_verified_at": "2026-08-15",
+    "notes": "Exodus states it was founded and launched in 2015. Current legal material describes the platform as unhosted and non-custodial with users controlling locally encrypted private keys."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000047",
+      "entity_id": "wlr_ent_000016",
+      "slug": "exodus-desktop",
+      "product_name": "Exodus Desktop",
+      "aliases": [],
+      "product_type": "desktop_app",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "supported",
+      "launch_date": "2015",
+      "launch_date_precision": "year",
+      "platform": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "official_url": "https://www.exodus.com/download",
+      "custody_model": "self_custody",
+      "key_management_model": "locally_encrypted_private_keys",
+      "variants": [],
+      "summary": "Desktop Exodus wallet for macOS, Windows and Linux in the original Exodus software lineage.",
+      "predecessor_product_id": null,
+      "successor_product_id": null,
+      "confidence": "high",
+      "last_verified_at": "2026-08-15",
+      "notes": "2015 is the official Exodus launch year; this batch does not assert an exact first desktop release date."
+    },
+    {
+      "id": "wlr_prod_000048",
+      "entity_id": "wlr_ent_000016",
+      "slug": "exodus-mobile",
+      "product_name": "Exodus Mobile",
+      "aliases": [],
+      "product_type": "mobile_app",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "supported",
+      "launch_date": "2019",
+      "platform": [
+        "iOS",
+        "Android"
+      ],
+      "official_url": "https://www.exodus.com/download",
+      "custody_model": "self_custody",
+      "key_management_model": "locally_encrypted_private_keys",
+      "variants": [],
+      "summary": "Mobile Exodus wallet for iOS and Android with locally controlled private keys.",
+      "predecessor_product_id": null,
+      "successor_product_id": null,
+      "confidence": "high",
+      "last_verified_at": "2026-08-15",
+      "notes": "Exodus first-party investor filings state that the mobile Exodus platform was released in 2019 and available on iOS and Android. The source does not establish a defensible exact release day, so year precision is retained.",
+      "launch_date_precision": "year"
+    },
+    {
+      "id": "wlr_prod_000049",
+      "entity_id": "wlr_ent_000016",
+      "slug": "exodus-web3-wallet",
+      "product_name": "Exodus Web3 Wallet",
+      "aliases": [],
+      "product_type": "browser_extension",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "supported",
+      "launch_date": "2022-08-16",
+      "platform": [
+        "Chrome",
+        "Brave"
+      ],
+      "official_url": "https://www.exodus.com/download",
+      "custody_model": "self_custody",
+      "key_management_model": "browser_extension_local_key_storage",
+      "variants": [],
+      "summary": "Self-custody Exodus browser-extension wallet for Chrome and Brave, distinct from the in-app browser feature of Exodus Mobile.",
+      "predecessor_product_id": null,
+      "successor_product_id": null,
+      "confidence": "high",
+      "last_verified_at": "2026-08-17",
+      "notes": "Do not confuse Exodus Web3 Wallet browser extension with the separate Web3 browser feature inside Exodus Mobile. Launch date is established by the reviewed August 16, 2022 first-party Exodus browser-extension release event and official Exodus announcement.",
+      "launch_date_precision": "day"
+    }
+  ],
+  "events": [
+    {
+      "id": "wlr_ev_000049",
+      "entity_id": "wlr_ent_000016",
+      "product_id": "wlr_prod_000048",
+      "affected_product_ids": [
+        "wlr_prod_000048"
+      ],
+      "event_type": "deprecation_announced",
+      "event_date": "2026-04-22",
+      "event_date_basis": "effective",
+      "title": "Exodus Mobile Web3 browser became unavailable to newly created wallets",
+      "description": "Exodus made the in-app Web3 browser unavailable for Exodus Mobile wallets created after April 22, 2026 while retaining the feature for eligible older wallets.",
+      "confidence": "high",
+      "event_status_effect": "none",
+      "is_major_event": false,
+      "notes": "This affects a feature inside Exodus Mobile and does not mean the separate Exodus Web3 Wallet browser extension was discontinued."
+    },
+    {
+      "id": "wlr_ev_000073",
+      "entity_id": "wlr_ent_000016",
+      "product_id": "wlr_prod_000049",
+      "affected_product_ids": [
+        "wlr_prod_000049"
+      ],
+      "event_type": "product_released",
+      "event_date": "2022-08-16",
+      "event_date_basis": "release",
+      "title": "Exodus Web3 Wallet browser extension released",
+      "description": "Exodus announced the release of its multi-chain browser extension, adding the Web3 Wallet product alongside its existing desktop and mobile applications.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    },
+    {
+      "id": "wlr_ev_000101",
+      "entity_id": "wlr_ent_000016",
+      "product_id": "wlr_prod_000048",
+      "affected_product_ids": [
+        "wlr_prod_000048"
+      ],
+      "event_type": "product_released",
+      "event_date": "2019",
+      "event_date_basis": "release",
+      "title": "Exodus Mobile released",
+      "description": "Exodus released the mobile version of its self-custody wallet platform in 2019 for iOS and Android.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "Year precision only; the reviewed first-party filing does not establish an exact first release day."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000069",
+      "entity_id": "wlr_ent_000016",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "About Exodus",
+      "url": "https://www.exodus.com/about",
+      "publisher": "Exodus",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "product_lineage",
+      "is_primary": true,
+      "notes": "Primary source for the 2015 founding and continuous desktop/mobile software lineage."
+    },
+    {
+      "id": "wlr_src_000070",
+      "entity_id": "wlr_ent_000016",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Exodus Crypto App Download",
+      "url": "https://www.exodus.com/download",
+      "publisher": "Exodus",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "status",
+      "is_primary": true,
+      "product_ids": [
+        "wlr_prod_000047",
+        "wlr_prod_000048",
+        "wlr_prod_000049"
+      ],
+      "notes": "Current first-party download page confirming Desktop, Mobile, and Web3 browser-extension products and supported platforms."
+    },
+    {
+      "id": "wlr_src_000071",
+      "entity_id": "wlr_ent_000016",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Legal Inquiries",
+      "url": "https://www.exodus.com/legal-inquiries",
+      "publisher": "Exodus Movement, Inc.",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "architecture",
+      "is_primary": true,
+      "notes": "Primary legal source identifying Exodus Movement, Inc. as a Texas corporation and describing the platform as unhosted/non-custodial with locally controlled private keys."
+    },
+    {
+      "id": "wlr_src_000072",
+      "entity_id": "wlr_ent_000016",
+      "product_id": "wlr_prod_000048",
+      "event_id": "wlr_ev_000049",
+      "source_type": "official_statement",
+      "title": "Web3 browser in Exodus Mobile",
+      "url": "https://www.exodus.com/support/en/articles/8598986-web3-browser-in-exodus-mobile",
+      "publisher": "Exodus",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Primary current support source stating that the Mobile Web3 browser is unavailable to wallets created after April 22, 2026 while eligible earlier wallets retain it."
+    },
+    {
+      "id": "wlr_src_000119",
+      "entity_id": "wlr_ent_000016",
+      "product_ids": [
+        "wlr_prod_000049"
+      ],
+      "event_ids": [
+        "wlr_ev_000073"
+      ],
+      "product_id": "wlr_prod_000049",
+      "event_id": "wlr_ev_000073",
+      "source_type": "official_statement",
+      "title": "Exodus Announces Release of Browser Extension",
+      "url": "https://www.exodus.com/investors/news-events/press-releases/detail/21/exodus-announces-release-of-browser-extension",
+      "publisher": "Exodus Movement, Inc.",
+      "published_at": "2022-08-16",
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Primary Exodus investor-relations release announcing the multi-chain browser extension and its role alongside mobile and desktop."
+    },
+    {
+      "id": "wlr_src_000159",
+      "entity_id": "wlr_ent_000016",
+      "product_ids": [
+        "wlr_prod_000048"
+      ],
+      "event_ids": [
+        "wlr_ev_000101"
+      ],
+      "product_id": "wlr_prod_000048",
+      "event_id": "wlr_ev_000101",
+      "source_type": "official_statement",
+      "title": "Regulation A Offering Statement — Our mobile platform",
+      "url": "https://www.exodus.com/investors/sec-filings/all-sec-filings/content/0001140361-21-008799/nt10013846x10_1aa.htm",
+      "publisher": "Exodus Movement, Inc.",
+      "published_at": "2021-03-17",
+      "accessed_at": "2026-08-17",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party Exodus filing states the mobile Exodus Platform was released in 2019 and was available on both iOS and Android."
+    }
+  ]
+}

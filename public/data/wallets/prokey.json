@@ -1,0 +1,89 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000100",
+    "slug": "prokey",
+    "canonical_name": "Prokey",
+    "aliases": [],
+    "wallet_type": "hardware",
+    "status": "active",
+    "summary": "Hardware-wallet ecosystem whose Prokey Optimum device keeps private keys offline and uses a web-based companion wallet interface.",
+    "developer_or_company": "Prokey",
+    "country_or_origin": null,
+    "launch_date": "2020-07-02",
+    "launch_date_precision": "day",
+    "official_url": "https://prokey.io/",
+    "official_domain": "prokey.io",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "hardware_device_offline_private_keys",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Prokey's first-party launch post dated 2020-07-02 explicitly announces the launch of the first product in its hardware-wallet lineup, Prokey Optimum. The current product page continues to offer the device for sale."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000149",
+      "entity_id": "wlr_ent_000100",
+      "slug": "prokey-optimum",
+      "product_name": "Prokey Optimum",
+      "product_type": "hardware_device",
+      "status": "active",
+      "sales_status": "on_sale",
+      "support_status": "unknown",
+      "launch_date": "2020-07-02",
+      "launch_date_precision": "day",
+      "platform": [
+        "hardware",
+        "web wallet",
+        "Windows",
+        "macOS",
+        "Linux",
+        "Android"
+      ],
+      "official_url": "https://prokey.io/prokey-optimum",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "hardware_device_offline_private_keys",
+      "summary": "Prokey Optimum hardware wallet with offline device-held private keys and a web-based wallet interface.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-20",
+      "notes": "First-party launch article explicitly launches Prokey Optimum on 2020-07-02; the current product page offers it for purchase. Support status remains conservative `unknown`."
+    }
+  ],
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000345",
+      "entity_id": "wlr_ent_000100",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_blog",
+      "title": "Official Launching Of The Prokey Optimum",
+      "url": "https://prokey.io/blog/official-launching-of-the-prokey-optimum",
+      "publisher": "Prokey",
+      "published_at": "2020-07-02",
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party Prokey launch article explicitly announces the launch of Prokey Optimum, the first product in the hardware-wallet lineup, on 2020-07-02."
+    },
+    {
+      "id": "wlr_src_000346",
+      "entity_id": "wlr_ent_000100",
+      "product_id": "wlr_prod_000149",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Prokey Optimum",
+      "url": "https://prokey.io/prokey-optimum",
+      "publisher": "Prokey",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party product page offers Prokey Optimum for sale and states private keys remain offline on the hardware device."
+    }
+  ]
+}

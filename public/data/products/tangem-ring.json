@@ -1,0 +1,113 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000014",
+    "slug": "tangem",
+    "canonical_name": "Tangem",
+    "wallet_type": "hybrid",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000043",
+    "entity_id": "wlr_ent_000014",
+    "slug": "tangem-ring",
+    "product_name": "Tangem Ring",
+    "aliases": [],
+    "product_type": "hardware_device",
+    "status": "active",
+    "sales_status": "on_sale",
+    "support_status": "supported",
+    "launch_date": "2024",
+    "launch_date_precision": "year",
+    "official_url": "https://tangem.com/en/ring/",
+    "custody_model": "self_custody",
+    "key_management_model": "secure_element_held_private_key",
+    "variants": [],
+    "summary": "Wearable NFC hardware wallet that shares the current Tangem hardware-wallet architecture in a ring form factor.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-15",
+    "notes": "Tangem's current material describes Ring as functionally equivalent to current wallet cards except for form factor. Year-level launch anchor is used rather than an unsupported exact release day."
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000071",
+      "entity_id": "wlr_ent_000014",
+      "product_id": "wlr_prod_000043",
+      "affected_product_ids": [
+        "wlr_prod_000043"
+      ],
+      "event_type": "other",
+      "event_date": "2024-07-17",
+      "event_date_basis": "announcement",
+      "title": "Tangem Ring opened for public preorders",
+      "description": "Tangem opened public preorders for the Tangem Ring on July 17, 2024 after unveiling the wearable hardware wallet at the 2023 Cardano Summit.",
+      "confidence": "high",
+      "event_status_effect": "none",
+      "is_major_event": true,
+      "notes": "This is a preorder milestone, not an asserted general-availability or shipping date. Tangem stated deliveries would begin later in 2024."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000060",
+      "entity_id": "wlr_ent_000014",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Wallet Types: Mobile vs Hardware",
+      "url": "https://tangem.com/en/help-center/introduction-to-tangem-wallet/wallet-types-mobile-vs-hardware/",
+      "publisher": "Tangem",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "architecture",
+      "is_primary": true,
+      "product_ids": [
+        "wlr_prod_000042",
+        "wlr_prod_000043",
+        "wlr_prod_000044"
+      ],
+      "notes": "Primary source separating Mobile Wallet from hardware card/ring wallet and describing their different key-storage boundaries."
+    },
+    {
+      "id": "wlr_src_000062",
+      "entity_id": "wlr_ent_000014",
+      "product_id": "wlr_prod_000043",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Tangem Ring",
+      "url": "https://tangem.com/en/ring/",
+      "publisher": "Tangem",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party product page confirming the ring-shaped hardware wallet, current sale, and functional relationship to current Tangem cards."
+    },
+    {
+      "id": "wlr_src_000117",
+      "entity_id": "wlr_ent_000014",
+      "product_ids": [
+        "wlr_prod_000043"
+      ],
+      "event_ids": [
+        "wlr_ev_000071"
+      ],
+      "product_id": "wlr_prod_000043",
+      "event_id": "wlr_ev_000071",
+      "source_type": "official_blog",
+      "title": "What is the Tangem Ring?",
+      "url": "https://tangem.com/en/blog/post/about-tangem-ring/",
+      "publisher": "Tangem",
+      "published_at": "2024-07-17",
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Primary Tangem source stating the Ring was unveiled at the 2023 Cardano Summit and became available for preorders on July 17, 2024."
+    }
+  ]
+}

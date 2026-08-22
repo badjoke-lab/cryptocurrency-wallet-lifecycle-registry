@@ -1,0 +1,81 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000007",
+    "slug": "bitbox",
+    "canonical_name": "BitBox",
+    "wallet_type": "hardware",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000029",
+    "entity_id": "wlr_ent_000007",
+    "slug": "bitbox02",
+    "product_name": "BitBox02",
+    "aliases": [],
+    "product_type": "hardware_device",
+    "status": "active",
+    "sales_status": "on_sale",
+    "support_status": "supported",
+    "launch_date": "2019-09-25",
+    "launch_date_precision": "day",
+    "generation": "2",
+    "platform": [
+      "hardware"
+    ],
+    "official_url": "https://bitbox.swiss/bitbox02/",
+    "source_code_url": "https://github.com/BitBoxSwiss/bitbox02-firmware",
+    "custody_model": "self_custody",
+    "key_management_model": "dual_chip_device_held_seed",
+    "variants": [
+      "Multi edition",
+      "Bitcoin-only edition"
+    ],
+    "summary": "Second-generation BitBox hardware wallet; Multi and Bitcoin-only editions use the same hardware with different firmware scope.",
+    "predecessor_product_id": "wlr_prod_000028",
+    "successor_product_id": "wlr_prod_000030",
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "The Bitcoin-only edition is a firmware edition/variant, not a distinct hardware product."
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000030",
+      "entity_id": "wlr_ent_000007",
+      "product_id": "wlr_prod_000029",
+      "affected_product_ids": [
+        "wlr_prod_000029"
+      ],
+      "event_type": "product_released",
+      "event_date": "2019-09-25",
+      "event_date_basis": "release",
+      "title": "BitBox02 launched",
+      "description": "BitBox launched the BitBox02 Multi and Bitcoin-only editions; both editions use the same hardware with different firmware scope.",
+      "confidence": "high"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000038",
+      "entity_id": "wlr_ent_000007",
+      "product_ids": [
+        "wlr_prod_000029"
+      ],
+      "event_ids": [
+        "wlr_ev_000030"
+      ],
+      "product_id": "wlr_prod_000029",
+      "event_id": "wlr_ev_000030",
+      "source_type": "official_blog",
+      "title": "It's happening!",
+      "url": "https://blog.bitbox.swiss/en/its-happening/",
+      "publisher": "Shift Cryptosecurity",
+      "published_at": "2019-09-25",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "States Multi and Bitcoin-only use the same hardware."
+    }
+  ]
+}

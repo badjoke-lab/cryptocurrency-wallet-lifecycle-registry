@@ -1,0 +1,53 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000045",
+    "slug": "ronin-wallet",
+    "canonical_name": "Ronin Wallet",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000094",
+    "entity_id": "wlr_ent_000045",
+    "slug": "ronin-wallet-extension",
+    "product_name": "Ronin Wallet Extension",
+    "product_type": "browser_extension",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": null,
+    "platform": [
+      "Chrome",
+      "Edge",
+      "Firefox"
+    ],
+    "official_url": "https://wallet.roninchain.com/",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "browser_wallet_keys_or_supported_keyless_mode",
+    "summary": "Ronin Wallet browser extension for managing Ronin and supported assets from desktop browsers.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-19",
+    "notes": "The extension is modeled separately from Ronin Mobile because browser and mobile runtimes have distinct distribution and security lifecycles. Current first-party documentation supports Chrome, Edge and Firefox; initial extension launch date remains unresolved."
+  },
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000236",
+      "entity_id": "wlr_ent_000045",
+      "product_id": "wlr_prod_000094",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Ronin Wallet Desktop Guide",
+      "url": "https://support.roninchain.com/hc/en-us/articles/14046513767195-Ronin-Wallet-Desktop-Guide",
+      "publisher": "Ronin / Sky Mavis",
+      "published_at": null,
+      "accessed_at": "2026-08-19",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party desktop guide explicitly distributes Ronin Wallet Extension for Chrome, Edge and Firefox, supporting the separate browser-extension product boundary."
+    }
+  ]
+}

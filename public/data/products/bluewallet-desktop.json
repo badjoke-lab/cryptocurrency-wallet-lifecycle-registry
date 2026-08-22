@@ -1,0 +1,94 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000023",
+    "slug": "bluewallet",
+    "canonical_name": "BlueWallet",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000064",
+    "entity_id": "wlr_ent_000023",
+    "slug": "bluewallet-desktop",
+    "product_name": "BlueWallet Desktop",
+    "aliases": [],
+    "product_type": "desktop_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "supported",
+    "launch_date": "2020-08-28",
+    "platform": [
+      "macOS"
+    ],
+    "official_url": "https://bluewallet.io/desktop-bitcoin-wallet/",
+    "source_code_url": "https://github.com/BlueWallet/BlueWallet",
+    "custody_model": "self_custody",
+    "key_management_model": "desktop_local_bitcoin_keys",
+    "variants": [],
+    "summary": "Separately distributed BlueWallet desktop application; current first-party material directly documents the macOS build.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-18",
+    "notes": "BlueWallet's first-party 2020-08-28 article announces that BlueWallet for Desktop was out on the Mac Store and explicitly calls it the team's first desktop product. WLR therefore records the public desktop launch at day precision on 2020-08-28. The reviewed launch source establishes macOS availability only; earlier implementation work is not used to backdate the public launch.",
+    "launch_date_precision": "day"
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000111",
+      "entity_id": "wlr_ent_000023",
+      "product_id": "wlr_prod_000064",
+      "affected_product_ids": [
+        "wlr_prod_000064"
+      ],
+      "event_type": "product_released",
+      "event_date": "2020-08-28",
+      "event_date_basis": "release",
+      "title": "BlueWallet Desktop released for macOS",
+      "description": "BlueWallet announced that its first desktop product was out on the Mac Store on 2020-08-28.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "The first-party article directly states current Mac Store availability and identifies this as BlueWallet’s first desktop product, supporting day precision. No earlier source-code preparation is used to backdate launch."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000097",
+      "entity_id": "wlr_ent_000023",
+      "product_ids": [
+        "wlr_prod_000064"
+      ],
+      "event_ids": [],
+      "product_id": "wlr_prod_000064",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "BlueWallet Desktop Bitcoin Wallet",
+      "url": "https://bluewallet.io/desktop-bitcoin-wallet/",
+      "publisher": "BlueWallet",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party product page directly documents the desktop/macOS wallet distribution."
+    },
+    {
+      "id": "wlr_src_000175",
+      "entity_id": "wlr_ent_000023",
+      "product_id": "wlr_prod_000064",
+      "event_id": "wlr_ev_000111",
+      "source_type": "official_blog",
+      "title": "Bitcoin Wallet for Desktop - v5.5.6",
+      "url": "https://bluewallet.io/Bitcoin-Wallet-for-Desktop-v5-5-6-4f2172406155/",
+      "publisher": "BlueWallet",
+      "published_at": "2020-08-28",
+      "accessed_at": "2026-08-18",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party BlueWallet release article stating that BlueWallet for Desktop was out on the Mac Store and was the team’s first desktop product. Supports the 2020-08-28 public launch date for the macOS desktop product."
+    }
+  ]
+}

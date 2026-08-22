@@ -1,0 +1,53 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000048",
+    "slug": "zerion-wallet",
+    "canonical_name": "Zerion Wallet",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000097",
+    "entity_id": "wlr_ent_000048",
+    "slug": "zerion-wallet-mobile",
+    "product_name": "Zerion Wallet Mobile",
+    "product_type": "mobile_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": "2022-05-26",
+    "launch_date_precision": "day",
+    "platform": [
+      "iOS",
+      "Android"
+    ],
+    "official_url": "https://www.zerion.io/download",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "user_controlled_device_local_private_keys",
+    "summary": "Zerion self-custody mobile wallet for multichain Web3 asset management and dApp access on iOS and Android.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-19",
+    "notes": "The 2022-05-26 launch establishes the mobile wallet lineage. Zerion's later browser extension has its own 2023 release lifecycle and is intentionally not collapsed into this mobile product."
+  },
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000242",
+      "entity_id": "wlr_ent_000048",
+      "product_id": "wlr_prod_000097",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Install Zerion",
+      "url": "https://help.zerion.io/en/articles/11326422-install-zerion",
+      "publisher": "Zerion",
+      "published_at": "2025-10-07",
+      "accessed_at": "2026-08-19",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party installation guide separately documents the Zerion mobile app for iOS/Android and Zerion browser extension, supporting WLR's decision to keep the mobile product boundary separate."
+    }
+  ]
+}

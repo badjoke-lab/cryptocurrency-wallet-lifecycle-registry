@@ -1,0 +1,82 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000001",
+    "slug": "trezor",
+    "canonical_name": "Trezor",
+    "wallet_type": "hardware",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000004",
+    "entity_id": "wlr_ent_000001",
+    "slug": "trezor-safe-5",
+    "product_name": "Trezor Safe 5",
+    "product_type": "hardware_device",
+    "status": "active",
+    "sales_status": "on_sale",
+    "support_status": "supported",
+    "launch_date": "2024-06-14",
+    "variants": [
+      "Bitcoin-only"
+    ],
+    "summary": "Premium touchscreen member of the Trezor Safe family.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "Bitcoin-only is treated as a variant rather than a separate product.",
+    "official_url": "https://trezor.io/trezor-safe-5",
+    "source_code_url": "https://github.com/trezor/trezor-firmware"
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000007",
+      "entity_id": "wlr_ent_000001",
+      "product_id": "wlr_prod_000004",
+      "affected_product_ids": [
+        "wlr_prod_000004"
+      ],
+      "event_type": "product_released",
+      "event_date": "2024-06-14",
+      "event_date_basis": "release",
+      "title": "Trezor Safe 5 released",
+      "description": "Trezor released Safe 5 as a premium touchscreen member of the Safe family.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000001",
+      "entity_id": "wlr_ent_000001",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Trezor fundamentals",
+      "url": "https://trezor.io/guides/trezor-devices/trezor-fundamentals/trezor-fundamentals",
+      "publisher": "Trezor",
+      "published_at": null,
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "entity",
+      "is_primary": true,
+      "notes": "Primary source for the product lineage and launch dates of Model One, Model T, Safe 3, Safe 5 and Safe 7.",
+      "product_ids": [
+        "wlr_prod_000001",
+        "wlr_prod_000002",
+        "wlr_prod_000003",
+        "wlr_prod_000004",
+        "wlr_prod_000005"
+      ],
+      "event_ids": [
+        "wlr_ev_000001",
+        "wlr_ev_000002",
+        "wlr_ev_000006",
+        "wlr_ev_000007",
+        "wlr_ev_000008"
+      ]
+    }
+  ]
+}

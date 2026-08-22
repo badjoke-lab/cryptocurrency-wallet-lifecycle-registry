@@ -1,0 +1,502 @@
+[
+  {
+    "id": "wlr_ent_000001",
+    "slug": "trezor",
+    "path": "/data/wallets/trezor.json"
+  },
+  {
+    "id": "wlr_ent_000002",
+    "slug": "ledger",
+    "path": "/data/wallets/ledger.json"
+  },
+  {
+    "id": "wlr_ent_000003",
+    "slug": "coldcard",
+    "path": "/data/wallets/coldcard.json"
+  },
+  {
+    "id": "wlr_ent_000004",
+    "slug": "metamask",
+    "path": "/data/wallets/metamask.json"
+  },
+  {
+    "id": "wlr_ent_000005",
+    "slug": "safe",
+    "path": "/data/wallets/safe.json"
+  },
+  {
+    "id": "wlr_ent_000006",
+    "slug": "bitkey",
+    "path": "/data/wallets/bitkey.json"
+  },
+  {
+    "id": "wlr_ent_000007",
+    "slug": "bitbox",
+    "path": "/data/wallets/bitbox.json"
+  },
+  {
+    "id": "wlr_ent_000008",
+    "slug": "blockstream-jade",
+    "path": "/data/wallets/blockstream-jade.json"
+  },
+  {
+    "id": "wlr_ent_000009",
+    "slug": "trust-wallet",
+    "path": "/data/wallets/trust-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000010",
+    "slug": "electrum",
+    "path": "/data/wallets/electrum.json"
+  },
+  {
+    "id": "wlr_ent_000011",
+    "slug": "ready",
+    "path": "/data/wallets/ready.json"
+  },
+  {
+    "id": "wlr_ent_000012",
+    "slug": "zengo",
+    "path": "/data/wallets/zengo.json"
+  },
+  {
+    "id": "wlr_ent_000013",
+    "slug": "keystone",
+    "path": "/data/wallets/keystone.json"
+  },
+  {
+    "id": "wlr_ent_000014",
+    "slug": "tangem",
+    "path": "/data/wallets/tangem.json"
+  },
+  {
+    "id": "wlr_ent_000015",
+    "slug": "phantom",
+    "path": "/data/wallets/phantom.json"
+  },
+  {
+    "id": "wlr_ent_000016",
+    "slug": "exodus",
+    "path": "/data/wallets/exodus.json"
+  },
+  {
+    "id": "wlr_ent_000017",
+    "slug": "foundation-passport",
+    "path": "/data/wallets/foundation-passport.json"
+  },
+  {
+    "id": "wlr_ent_000018",
+    "slug": "rabby",
+    "path": "/data/wallets/rabby.json"
+  },
+  {
+    "id": "wlr_ent_000019",
+    "slug": "rainbow",
+    "path": "/data/wallets/rainbow.json"
+  },
+  {
+    "id": "wlr_ent_000020",
+    "slug": "xverse",
+    "path": "/data/wallets/xverse.json"
+  },
+  {
+    "id": "wlr_ent_000021",
+    "slug": "sparrow-wallet",
+    "path": "/data/wallets/sparrow-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000022",
+    "slug": "wasabi-wallet",
+    "path": "/data/wallets/wasabi-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000023",
+    "slug": "bluewallet",
+    "path": "/data/wallets/bluewallet.json"
+  },
+  {
+    "id": "wlr_ent_000024",
+    "slug": "leather",
+    "path": "/data/wallets/leather.json"
+  },
+  {
+    "id": "wlr_ent_000025",
+    "slug": "mycrypto",
+    "path": "/data/wallets/mycrypto.json"
+  },
+  {
+    "id": "wlr_ent_000026",
+    "slug": "safepal",
+    "path": "/data/wallets/safepal.json"
+  },
+  {
+    "id": "wlr_ent_000027",
+    "slug": "myetherwallet",
+    "path": "/data/wallets/myetherwallet.json"
+  },
+  {
+    "id": "wlr_ent_000028",
+    "slug": "okx-wallet",
+    "path": "/data/wallets/okx-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000029",
+    "slug": "imtoken",
+    "path": "/data/wallets/imtoken.json"
+  },
+  {
+    "id": "wlr_ent_000030",
+    "slug": "tokenpocket",
+    "path": "/data/wallets/tokenpocket.json"
+  },
+  {
+    "id": "wlr_ent_000031",
+    "slug": "solflare",
+    "path": "/data/wallets/solflare.json"
+  },
+  {
+    "id": "wlr_ent_000032",
+    "slug": "atomic-wallet",
+    "path": "/data/wallets/atomic-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000033",
+    "slug": "guarda-wallet",
+    "path": "/data/wallets/guarda-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000034",
+    "slug": "coinomi",
+    "path": "/data/wallets/coinomi.json"
+  },
+  {
+    "id": "wlr_ent_000035",
+    "slug": "ellipal",
+    "path": "/data/wallets/ellipal.json"
+  },
+  {
+    "id": "wlr_ent_000036",
+    "slug": "edge",
+    "path": "/data/wallets/edge.json"
+  },
+  {
+    "id": "wlr_ent_000037",
+    "slug": "onekey",
+    "path": "/data/wallets/onekey.json"
+  },
+  {
+    "id": "wlr_ent_000038",
+    "slug": "dcent",
+    "path": "/data/wallets/dcent.json"
+  },
+  {
+    "id": "wlr_ent_000039",
+    "slug": "coolwallet",
+    "path": "/data/wallets/coolwallet.json"
+  },
+  {
+    "id": "wlr_ent_000040",
+    "slug": "ngrave",
+    "path": "/data/wallets/ngrave.json"
+  },
+  {
+    "id": "wlr_ent_000041",
+    "slug": "nunchuk",
+    "path": "/data/wallets/nunchuk.json"
+  },
+  {
+    "id": "wlr_ent_000042",
+    "slug": "cake-wallet",
+    "path": "/data/wallets/cake-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000043",
+    "slug": "keplr",
+    "path": "/data/wallets/keplr.json"
+  },
+  {
+    "id": "wlr_ent_000044",
+    "slug": "lace",
+    "path": "/data/wallets/lace.json"
+  },
+  {
+    "id": "wlr_ent_000045",
+    "slug": "ronin-wallet",
+    "path": "/data/wallets/ronin-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000046",
+    "slug": "bitget-wallet",
+    "path": "/data/wallets/bitget-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000047",
+    "slug": "uniswap-wallet",
+    "path": "/data/wallets/uniswap-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000048",
+    "slug": "zerion-wallet",
+    "path": "/data/wallets/zerion-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000049",
+    "slug": "phoenix-wallet",
+    "path": "/data/wallets/phoenix-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000050",
+    "slug": "muun",
+    "path": "/data/wallets/muun.json"
+  },
+  {
+    "id": "wlr_ent_000051",
+    "slug": "brave-wallet",
+    "path": "/data/wallets/brave-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000052",
+    "slug": "crypto-com-onchain",
+    "path": "/data/wallets/crypto-com-onchain.json"
+  },
+  {
+    "id": "wlr_ent_000053",
+    "slug": "binance-wallet",
+    "path": "/data/wallets/binance-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000054",
+    "slug": "bitcoin-com-wallet",
+    "path": "/data/wallets/bitcoin-com-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000055",
+    "slug": "bitpay-wallet",
+    "path": "/data/wallets/bitpay-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000056",
+    "slug": "coin98-wallet",
+    "path": "/data/wallets/coin98-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000057",
+    "slug": "mathwallet",
+    "path": "/data/wallets/mathwallet.json"
+  },
+  {
+    "id": "wlr_ent_000058",
+    "slug": "ambire-wallet",
+    "path": "/data/wallets/ambire-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000059",
+    "slug": "ctrl-wallet",
+    "path": "/data/wallets/ctrl-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000060",
+    "slug": "enkrypt",
+    "path": "/data/wallets/enkrypt.json"
+  },
+  {
+    "id": "wlr_ent_000061",
+    "slug": "backpack-wallet",
+    "path": "/data/wallets/backpack-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000062",
+    "slug": "hashpack",
+    "path": "/data/wallets/hashpack.json"
+  },
+  {
+    "id": "wlr_ent_000063",
+    "slug": "xaman",
+    "path": "/data/wallets/xaman.json"
+  },
+  {
+    "id": "wlr_ent_000064",
+    "slug": "pera-wallet",
+    "path": "/data/wallets/pera-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000065",
+    "slug": "yoroi",
+    "path": "/data/wallets/yoroi.json"
+  },
+  {
+    "id": "wlr_ent_000066",
+    "slug": "talisman",
+    "path": "/data/wallets/talisman.json"
+  },
+  {
+    "id": "wlr_ent_000067",
+    "slug": "subwallet",
+    "path": "/data/wallets/subwallet.json"
+  },
+  {
+    "id": "wlr_ent_000068",
+    "slug": "petra",
+    "path": "/data/wallets/petra.json"
+  },
+  {
+    "id": "wlr_ent_000069",
+    "slug": "slush-wallet",
+    "path": "/data/wallets/slush-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000070",
+    "slug": "gridplus",
+    "path": "/data/wallets/gridplus.json"
+  },
+  {
+    "id": "wlr_ent_000071",
+    "slug": "secux",
+    "path": "/data/wallets/secux.json"
+  },
+  {
+    "id": "wlr_ent_000072",
+    "slug": "arculus",
+    "path": "/data/wallets/arculus.json"
+  },
+  {
+    "id": "wlr_ent_000073",
+    "slug": "cypherock",
+    "path": "/data/wallets/cypherock.json"
+  },
+  {
+    "id": "wlr_ent_000074",
+    "slug": "seedsigner",
+    "path": "/data/wallets/seedsigner.json"
+  },
+  {
+    "id": "wlr_ent_000075",
+    "slug": "nova-wallet",
+    "path": "/data/wallets/nova-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000076",
+    "slug": "coinbase-wallet",
+    "path": "/data/wallets/coinbase-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000077",
+    "slug": "core-wallet",
+    "path": "/data/wallets/core-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000078",
+    "slug": "unisat-wallet",
+    "path": "/data/wallets/unisat-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000079",
+    "slug": "tonkeeper",
+    "path": "/data/wallets/tonkeeper.json"
+  },
+  {
+    "id": "wlr_ent_000080",
+    "slug": "my-wallet",
+    "path": "/data/wallets/my-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000081",
+    "slug": "tonhub",
+    "path": "/data/wallets/tonhub.json"
+  },
+  {
+    "id": "wlr_ent_000082",
+    "slug": "eternl",
+    "path": "/data/wallets/eternl.json"
+  },
+  {
+    "id": "wlr_ent_000083",
+    "slug": "nufi",
+    "path": "/data/wallets/nufi.json"
+  },
+  {
+    "id": "wlr_ent_000084",
+    "slug": "vespr",
+    "path": "/data/wallets/vespr.json"
+  },
+  {
+    "id": "wlr_ent_000085",
+    "slug": "begin-wallet",
+    "path": "/data/wallets/begin-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000086",
+    "slug": "glow-wallet",
+    "path": "/data/wallets/glow-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000087",
+    "slug": "taho",
+    "path": "/data/wallets/taho.json"
+  },
+  {
+    "id": "wlr_ent_000088",
+    "slug": "sequence",
+    "path": "/data/wallets/sequence.json"
+  },
+  {
+    "id": "wlr_ent_000089",
+    "slug": "nightly-wallet",
+    "path": "/data/wallets/nightly-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000090",
+    "slug": "aqua-wallet",
+    "path": "/data/wallets/aqua-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000091",
+    "slug": "bitkit",
+    "path": "/data/wallets/bitkit.json"
+  },
+  {
+    "id": "wlr_ent_000092",
+    "slug": "breez",
+    "path": "/data/wallets/breez.json"
+  },
+  {
+    "id": "wlr_ent_000093",
+    "slug": "zeus-wallet",
+    "path": "/data/wallets/zeus-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000094",
+    "slug": "blixt-wallet",
+    "path": "/data/wallets/blixt-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000095",
+    "slug": "samourai-wallet",
+    "path": "/data/wallets/samourai-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000096",
+    "slug": "specter-desktop",
+    "path": "/data/wallets/specter-desktop.json"
+  },
+  {
+    "id": "wlr_ent_000097",
+    "slug": "casa",
+    "path": "/data/wallets/casa.json"
+  },
+  {
+    "id": "wlr_ent_000098",
+    "slug": "keepkey",
+    "path": "/data/wallets/keepkey.json"
+  },
+  {
+    "id": "wlr_ent_000099",
+    "slug": "satochip",
+    "path": "/data/wallets/satochip.json"
+  },
+  {
+    "id": "wlr_ent_000100",
+    "slug": "prokey",
+    "path": "/data/wallets/prokey.json"
+  }
+]

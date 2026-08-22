@@ -1,0 +1,134 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000019",
+    "slug": "rainbow",
+    "canonical_name": "Rainbow",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000057",
+    "entity_id": "wlr_ent_000019",
+    "slug": "rainbow-mobile",
+    "product_name": "Rainbow Mobile",
+    "aliases": [
+      "Rainbow Wallet App"
+    ],
+    "product_type": "mobile_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "supported",
+    "launch_date": "2019",
+    "platform": [
+      "iOS",
+      "Android"
+    ],
+    "official_url": "https://rainbow.me/",
+    "custody_model": "self_custody",
+    "key_management_model": "mobile_device_local_private_keys",
+    "variants": [],
+    "summary": "Rainbow self-custody mobile wallet for iOS and Android.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-18",
+    "notes": "Rainbow's official repository preserves the mobile wallet's earlier Balance Wallet release lineage. A 2019-02-05 commit explicitly records a beta external release and the exact README identifies the product as a mobile wallet focused on iOS; the repository then records a v1.0.0 Production Release on 2019-06-20. WLR records 2019 at year precision because the reviewed history establishes external/public release during 2019 but not one defensible exact first App Store release day. Earlier 2018 beta-release commits are not used because their external/public status is ambiguous.",
+    "launch_date_precision": "year"
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000108",
+      "entity_id": "wlr_ent_000019",
+      "product_id": "wlr_prod_000057",
+      "affected_product_ids": [
+        "wlr_prod_000057"
+      ],
+      "event_type": "product_released",
+      "event_date": "2019",
+      "event_date_basis": "release",
+      "title": "Rainbow Mobile released externally in 2019",
+      "description": "Rainbow's official mobile-wallet repository records an external beta release in February 2019 and a v1.0.0 production release in June 2019, establishing the public mobile release lineage during 2019.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "Year precision only. Earlier 2018 beta-release commits do not clearly establish an external/public boundary; neither the 2019 external-beta commit nor the later production-release commit is treated as proof of one exact initial App Store launch day."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000082",
+      "entity_id": "wlr_ent_000019",
+      "product_ids": [
+        "wlr_prod_000057",
+        "wlr_prod_000058"
+      ],
+      "event_ids": [],
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Rainbow Terms of Use",
+      "url": "https://rainbow.me/terms-of-use",
+      "publisher": "Rainbow Studio, Inc.",
+      "published_at": "2023-12-13",
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "entity",
+      "is_primary": true,
+      "notes": "Primary legal source identifies Rainbow Studio, Inc., mobile/extension services, and non-custodial device-local private keys."
+    },
+    {
+      "id": "wlr_src_000083",
+      "entity_id": "wlr_ent_000019",
+      "product_ids": [
+        "wlr_prod_000057",
+        "wlr_prod_000058"
+      ],
+      "event_ids": [],
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Rainbow",
+      "url": "https://rainbow.me/",
+      "publisher": "Rainbow",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "status",
+      "is_primary": true,
+      "notes": "Current first-party page offers both Rainbow Mobile and Rainbow Extension."
+    },
+    {
+      "id": "wlr_src_000169",
+      "entity_id": "wlr_ent_000019",
+      "product_id": "wlr_prod_000057",
+      "event_id": "wlr_ev_000108",
+      "source_type": "source_code",
+      "title": "Rainbow predecessor mobile wallet beta external release v0.3.0 (22)",
+      "url": "https://github.com/rainbow-me/rainbow/commit/9f6fcd4946f45ff9cea500ad2dd7fd2cefd0e8fc",
+      "publisher": "Rainbow",
+      "published_at": "2019-02-05",
+      "accessed_at": "2026-08-18",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "Official Rainbow repository history from the earlier Balance Wallet naming. The commit explicitly records a beta external release, adds release tag v0.3.0-22, increments the iOS CFBundleVersion, and bumps the wallet package version. Used to establish the 2019 external-release boundary, not an exact first App Store launch day."
+    },
+    {
+      "id": "wlr_src_000170",
+      "entity_id": "wlr_ent_000019",
+      "product_id": "wlr_prod_000057",
+      "event_id": "wlr_ev_000108",
+      "source_type": "source_code",
+      "title": "Rainbow v1.0.0 (11) Production Release",
+      "url": "https://github.com/rainbow-me/rainbow/commit/80dc8fd0bbb230432946e8a4b6a79f0322702b3f",
+      "publisher": "Rainbow",
+      "published_at": "2019-06-20",
+      "accessed_at": "2026-08-18",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "Official Rainbow repository commit explicitly marking v1.0.0 (11) Production Release. Used as first-party corroboration that the public mobile release lineage was established during 2019, not as proof that 2019-06-20 was the initial launch day."
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000002",
+    "slug": "ledger",
+    "canonical_name": "Ledger",
+    "wallet_type": "hardware",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000011",
+    "entity_id": "wlr_ent_000002",
+    "slug": "ledger-flex",
+    "product_name": "Ledger Flex",
+    "aliases": [],
+    "product_type": "hardware_device",
+    "status": "active",
+    "sales_status": "on_sale",
+    "support_status": "supported",
+    "launch_date": "2024-07",
+    "launch_date_precision": "month",
+    "generation": null,
+    "variants": [],
+    "summary": "Secure touchscreen signer introduced in 2024.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "Secure touchscreen signer introduced in 2024."
+  },
+  "events": [],
+  "evidence": []
+}

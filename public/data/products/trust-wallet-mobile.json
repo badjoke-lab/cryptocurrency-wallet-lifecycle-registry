@@ -1,0 +1,104 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000009",
+    "slug": "trust-wallet",
+    "canonical_name": "Trust Wallet",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000035",
+    "entity_id": "wlr_ent_000009",
+    "slug": "trust-wallet-mobile",
+    "product_name": "Trust Wallet Mobile",
+    "aliases": [
+      "Trust Wallet App"
+    ],
+    "product_type": "mobile_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "supported",
+    "launch_date": "2017",
+    "launch_date_precision": "year",
+    "generation": null,
+    "platform": [
+      "iOS",
+      "Android"
+    ],
+    "official_url": "https://trustwallet.com/download",
+    "source_code_url": "https://github.com/trustwallet/wallet-core",
+    "custody_model": "self_custody",
+    "key_management_model": "device_software_seed_phrase_wallet",
+    "variants": [],
+    "summary": "Original mobile Trust Wallet product for iOS and Android.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "Current source confirms mobile remains a separate product from the browser extension."
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000039",
+      "entity_id": "wlr_ent_000009",
+      "product_id": "wlr_prod_000035",
+      "affected_product_ids": [
+        "wlr_prod_000035"
+      ],
+      "event_type": "launched",
+      "event_date": "2017",
+      "event_date_basis": "approximate",
+      "title": "Trust Wallet founded and mobile wallet launched",
+      "description": "Trust Wallet began in 2017 as a mobile wallet before expanding to additional products.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000046",
+      "entity_id": "wlr_ent_000009",
+      "product_ids": [
+        "wlr_prod_000035"
+      ],
+      "event_ids": [
+        "wlr_ev_000039"
+      ],
+      "product_id": "wlr_prod_000035",
+      "event_id": "wlr_ev_000039",
+      "source_type": "official_blog",
+      "title": "What is Trust Wallet?",
+      "url": "https://trustwallet.com/blog/academy/what-is-trust-wallet",
+      "publisher": "Trust Wallet",
+      "published_at": "2024-06-28",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "product_lineage",
+      "is_primary": true,
+      "notes": ""
+    },
+    {
+      "id": "wlr_src_000047",
+      "entity_id": "wlr_ent_000009",
+      "product_ids": [
+        "wlr_prod_000035",
+        "wlr_prod_000036"
+      ],
+      "event_ids": [],
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Download Trust Wallet",
+      "url": "https://trustwallet.com/download",
+      "publisher": "Trust Wallet",
+      "published_at": null,
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "status",
+      "is_primary": true,
+      "notes": ""
+    }
+  ]
+}

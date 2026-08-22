@@ -1,0 +1,123 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000095",
+    "slug": "samourai-wallet",
+    "canonical_name": "Samourai Wallet",
+    "aliases": [
+      "Samourai"
+    ],
+    "wallet_type": "software",
+    "status": "dead",
+    "summary": "Historical Android Bitcoin privacy wallet whose web servers/domain were seized by law enforcement in April 2024 and whose business was closed.",
+    "developer_or_company": "Samourai Wallet",
+    "country_or_origin": null,
+    "launch_date": "2015",
+    "launch_date_precision": "year",
+    "official_url": "https://samouraiwallet.com/",
+    "official_domain": "samouraiwallet.com",
+    "source_code_urls": [
+      "https://github.com/Samourai-Wallet/samourai-wallet-android"
+    ],
+    "custody_model": "self_custody",
+    "key_management_model": "android_local_seed_and_private_keys",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "The official source repository establishes the historical Android wallet. U.S. DOJ records say Samourai was developed/operated from about 2015 and that its web servers/domain were seized on 2024-04-24, with the FBI stating the business was closed. The still-accessible source repository is not treated as active-service evidence."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000144",
+      "entity_id": "wlr_ent_000095",
+      "slug": "samourai-wallet-android",
+      "product_name": "Samourai Wallet Android",
+      "product_type": "mobile_app",
+      "status": "dead",
+      "sales_status": "not_applicable",
+      "support_status": "ended",
+      "launch_date": "2015",
+      "launch_date_precision": "year",
+      "discontinued_date": "2024-04-24",
+      "platform": [
+        "Android"
+      ],
+      "official_url": "https://github.com/Samourai-Wallet/samourai-wallet-android",
+      "source_code_url": "https://github.com/Samourai-Wallet/samourai-wallet-android",
+      "custody_model": "self_custody",
+      "key_management_model": "android_local_seed_and_private_keys",
+      "summary": "Historical Samourai Android Bitcoin wallet, no longer operating after the April 2024 law-enforcement seizure and closure.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-20",
+      "notes": "DOJ states Samourai's web servers/domain were seized on 2024-04-24, a seizure warrant was served on the Google Play app, and the business was closed. The source repository remains available but is not evidence of current service/support."
+    }
+  ],
+  "events": [
+    {
+      "id": "wlr_ev_000125",
+      "entity_id": "wlr_ent_000095",
+      "product_id": "wlr_prod_000144",
+      "affected_product_ids": [
+        "wlr_prod_000144"
+      ],
+      "event_type": "service_shutdown",
+      "event_date": "2024-04-24",
+      "event_date_basis": "occurrence",
+      "title": "Samourai Wallet infrastructure seized and service closed",
+      "description": "U.S. authorities seized Samourai Wallet web servers and the samourai.io domain, served a seizure warrant on the mobile application, and the FBI stated that Samourai Wallet was closed for business.",
+      "confidence": "high",
+      "event_status_effect": "dead",
+      "is_major_event": true,
+      "notes": "This event records the operational seizure and shutdown boundary only. It does not restate criminal allegations as adjudicated facts. The canonical Android product already records discontinued_date=2024-04-24 and support_status=ended."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000335",
+      "entity_id": "wlr_ent_000095",
+      "product_id": "wlr_prod_000144",
+      "event_id": null,
+      "source_type": "source_code",
+      "title": "Samourai Wallet Android source repository",
+      "url": "https://github.com/Samourai-Wallet/samourai-wallet-android",
+      "publisher": "Samourai-Wallet",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Official Samourai organization repository establishes the historical Android wallet identity and prior Google Play release lineage."
+    },
+    {
+      "id": "wlr_src_000336",
+      "entity_id": "wlr_ent_000095",
+      "product_id": "wlr_prod_000144",
+      "event_id": null,
+      "source_type": "regulatory_notice",
+      "title": "Founders And CEO Of Cryptocurrency Mixing Service Arrested And Charged",
+      "url": "https://www.justice.gov/usao-sdny/pr/founders-and-ceo-cryptocurrency-mixing-service-arrested-and-charged-money-laundering",
+      "publisher": "U.S. Department of Justice, Southern District of New York",
+      "published_at": "2024-04-24",
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "discontinuation",
+      "is_primary": true,
+      "notes": "Official law-enforcement notice states Samourai's servers/domain were seized, a seizure warrant was served on the mobile application, and the FBI stated Samourai Wallet was closed for business; it also dates the operated service lineage to about 2015."
+    },
+    {
+      "id": "wlr_src_000350",
+      "entity_id": "wlr_ent_000095",
+      "product_id": "wlr_prod_000144",
+      "event_id": "wlr_ev_000125",
+      "source_type": "regulatory_notice",
+      "title": "Founders And CEO Of Cryptocurrency Mixing Service Arrested And Charged With Money Laundering And Unlicensed Money Transmitting Offenses",
+      "url": "https://www.justice.gov/usao-sdny/pr/founders-and-ceo-cryptocurrency-mixing-service-arrested-and-charged-money-laundering",
+      "publisher": "U.S. Department of Justice, Southern District of New York",
+      "published_at": "2024-04-24",
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "discontinuation",
+      "is_primary": true,
+      "notes": "Official notice states Samourai's web servers/domain were seized, a seizure warrant was served on the mobile application, and the FBI stated the service was closed for business. Used only for the operational shutdown boundary."
+    }
+  ]
+}

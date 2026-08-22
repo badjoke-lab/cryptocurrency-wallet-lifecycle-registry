@@ -1,0 +1,140 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000007",
+    "slug": "bitbox",
+    "canonical_name": "BitBox",
+    "wallet_type": "hardware",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000030",
+    "entity_id": "wlr_ent_000007",
+    "slug": "bitbox02-nova",
+    "product_name": "BitBox02 Nova",
+    "aliases": [],
+    "product_type": "hardware_device",
+    "status": "active",
+    "sales_status": "on_sale",
+    "support_status": "supported",
+    "launch_date": "2025-06-20",
+    "launch_date_precision": "day",
+    "generation": "3",
+    "platform": [
+      "hardware"
+    ],
+    "official_url": "https://bitbox.swiss/bitbox02/",
+    "source_code_url": "https://github.com/BitBoxSwiss/bitbox02-firmware",
+    "custody_model": "self_custody",
+    "key_management_model": "dual_chip_device_held_seed_with_secure_chip",
+    "variants": [
+      "Multi edition",
+      "Bitcoin-only edition",
+      "Midnight Black",
+      "Polar White",
+      "Bitcoin Orange"
+    ],
+    "summary": "Next-generation BitBox hardware wallet introduced in 2025 with iPhone/iPad support and a new certified secure chip.",
+    "predecessor_product_id": "wlr_prod_000029",
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "June 20, 2025 marks introduction and preorder availability; shipping followed afterward."
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000033",
+      "entity_id": "wlr_ent_000007",
+      "product_id": "wlr_prod_000030",
+      "affected_product_ids": [
+        "wlr_prod_000030"
+      ],
+      "event_type": "product_released",
+      "event_date": "2025-06-20",
+      "event_date_basis": "announcement",
+      "title": "BitBox02 Nova introduced",
+      "description": "BitBox introduced its next-generation BitBox02 Nova and opened pre-orders, with the original BitBox02 remaining in the lineup.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    },
+    {
+      "id": "wlr_ev_000034",
+      "entity_id": "wlr_ent_000007",
+      "product_id": "wlr_prod_000030",
+      "affected_product_ids": [
+        "wlr_prod_000030"
+      ],
+      "event_type": "vulnerability_disclosed",
+      "event_date": "2026-01-26",
+      "event_date_basis": "disclosure",
+      "title": "Two BitBox02 Nova firmware security issues disclosed and fixed",
+      "description": "BitBox disclosed two physical-access firmware issues in BitBox02 Nova. The more relevant scenario could reveal a reused device password after an advanced attack, while the attacked device's seed remained protected.",
+      "confidence": "high",
+      "impact_level": "medium",
+      "security_scope": "firmware",
+      "funds_affected": "no",
+      "fixed_versions": [
+        {
+          "product_ids": [
+            "wlr_prod_000030"
+          ],
+          "track": "firmware",
+          "version": "9.25.0"
+        }
+      ],
+      "user_actions_required": [
+        "update"
+      ],
+      "event_status_effect": "none",
+      "is_major_event": true,
+      "notes": "Original BitBox02 was explicitly not affected; BitBox reported no lost funds or evidence of exploitation."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000039",
+      "entity_id": "wlr_ent_000007",
+      "product_ids": [
+        "wlr_prod_000030"
+      ],
+      "event_ids": [
+        "wlr_ev_000033"
+      ],
+      "product_id": "wlr_prod_000030",
+      "event_id": "wlr_ev_000033",
+      "source_type": "official_blog",
+      "title": "Introducing BitBox02 Nova",
+      "url": "https://blog.bitbox.swiss/en/introducing-bitbox02-nova/",
+      "publisher": "BitBox",
+      "published_at": "2025-06-20",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": ""
+    },
+    {
+      "id": "wlr_src_000040",
+      "entity_id": "wlr_ent_000007",
+      "product_ids": [
+        "wlr_prod_000030"
+      ],
+      "event_ids": [
+        "wlr_ev_000034"
+      ],
+      "product_id": "wlr_prod_000030",
+      "event_id": "wlr_ev_000034",
+      "source_type": "official_security_advisory",
+      "title": "BitBox 01.2026 Marmorera update",
+      "url": "https://blog.bitbox.swiss/en/bitbox-01-2026-marmorera-update/",
+      "publisher": "BitBox",
+      "published_at": "2026-01-26",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "vulnerability",
+      "is_primary": true,
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000026",
+    "slug": "safepal",
+    "canonical_name": "SafePal",
+    "wallet_type": "hybrid",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000072",
+    "entity_id": "wlr_ent_000026",
+    "slug": "safepal-x1",
+    "product_name": "SafePal X1",
+    "aliases": [],
+    "product_type": "hardware_device",
+    "status": "active",
+    "sales_status": "on_sale",
+    "support_status": "supported",
+    "launch_date": "2023-09",
+    "launch_date_precision": "month",
+    "platform": null,
+    "official_url": "https://www.safepal.com/en/download/index",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "device_held_private_keys",
+    "variants": [],
+    "summary": "Bluetooth-capable SafePal X1 hardware wallet in the current supported hardware lineup.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-18",
+    "notes": "SafePal X1 is listed in SafePal's current first-party hardware-wallet store with a current price and active purchase action. WLR therefore records sales_status=on_sale while retaining the separately reviewed launch/support boundaries."
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000093",
+      "entity_id": "wlr_ent_000026",
+      "product_id": "wlr_prod_000072",
+      "affected_product_ids": [
+        "wlr_prod_000072"
+      ],
+      "event_type": "product_released",
+      "event_date": "2023-09",
+      "event_date_basis": "release",
+      "title": "SafePal X1 Bluetooth hardware wallet officially launched",
+      "description": "SafePal records the official launch and open-source release of its X1 Bluetooth hardware wallet in September 2023.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "Month-level precision is retained because the contemporaneous 2023-09-13 CEO letter announced the launch while still referencing preorder availability; no exact commercial-release day is inferred."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000146",
+      "entity_id": "wlr_ent_000026",
+      "product_ids": [
+        "wlr_prod_000070",
+        "wlr_prod_000071",
+        "wlr_prod_000072",
+        "wlr_prod_000073",
+        "wlr_prod_000074"
+      ],
+      "event_ids": [],
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "SafePal Download Center",
+      "url": "https://www.safepal.com/en/download/index",
+      "publisher": "SafePal",
+      "published_at": null,
+      "accessed_at": "2026-08-17",
+      "reliability": "high",
+      "claim_scope": "status",
+      "is_primary": true,
+      "notes": "Current first-party distribution page confirming the active SafePal App, SafePal Extension Wallet, and supported SafePal S1, S1 Pro, and X1 hardware-wallet lines."
+    },
+    {
+      "id": "wlr_src_000151",
+      "entity_id": "wlr_ent_000026",
+      "product_ids": [
+        "wlr_prod_000072"
+      ],
+      "event_ids": [
+        "wlr_ev_000093"
+      ],
+      "product_id": "wlr_prod_000072",
+      "event_id": "wlr_ev_000093",
+      "source_type": "official_statement",
+      "title": "About SafePal — Our History",
+      "url": "https://www.safepal.com/en/about",
+      "publisher": "SafePal",
+      "published_at": null,
+      "accessed_at": "2026-08-17",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party SafePal history records the official launch and open-source release of the X1 Bluetooth hardware wallet in September 2023."
+    },
+    {
+      "id": "wlr_src_000187",
+      "entity_id": "wlr_ent_000026",
+      "product_ids": [
+        "wlr_prod_000070",
+        "wlr_prod_000071",
+        "wlr_prod_000072"
+      ],
+      "source_type": "official_statement",
+      "title": "SafePal Products — Hardware Wallets",
+      "url": "https://www.safepal.com/en/store",
+      "publisher": "SafePal",
+      "published_at": null,
+      "accessed_at": "2026-08-18",
+      "reliability": "high",
+      "claim_scope": "sales_status",
+      "is_primary": true,
+      "notes": "Current first-party SafePal store lists S1, X1 and S1 Pro with prices and active Buy Now purchase actions. Used only for current sales status."
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000005",
+    "slug": "safe",
+    "canonical_name": "Safe",
+    "wallet_type": "smart_contract",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000022",
+    "entity_id": "wlr_ent_000005",
+    "slug": "gnosis-safe-mobile-legacy",
+    "product_name": "Gnosis Safe Mobile (legacy)",
+    "aliases": [],
+    "product_type": "mobile_app",
+    "status": "discontinued",
+    "sales_status": "not_applicable",
+    "support_status": "ended",
+    "launch_date": "2018",
+    "launch_date_precision": "year",
+    "generation": "legacy retail",
+    "platform": [
+      "mobile"
+    ],
+    "custody_model": "self_custody",
+    "key_management_model": "smart_account_mobile_interface",
+    "variants": [],
+    "summary": "Retail-focused Gnosis Safe mobile wallet launched in 2018 and later discontinued after minimal adoption.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "The exact discontinuation date is not fixed in the current source."
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000024",
+      "entity_id": "wlr_ent_000005",
+      "product_id": "wlr_prod_000022",
+      "affected_product_ids": [
+        "wlr_prod_000022"
+      ],
+      "event_type": "discontinued",
+      "event_date": "2019",
+      "event_date_basis": "approximate",
+      "title": "Retail-focused Gnosis Safe mobile wallet discontinued",
+      "description": "Safe later described the 2018 retail-focused mobile wallet as discontinued because of minimal adoption.",
+      "confidence": "medium",
+      "event_status_effect": "discontinued",
+      "is_major_event": true,
+      "notes": "The source establishes the lifecycle but not a precise discontinuation date; 2019 is an approximate ordering anchor."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000029",
+      "entity_id": "wlr_ent_000005",
+      "product_id": "wlr_prod_000022",
+      "event_id": "wlr_ev_000024",
+      "source_type": "official_blog",
+      "title": "History of Safe",
+      "url": "https://safe.global/blog/history-of-safe",
+      "publisher": "Safe",
+      "published_at": "2024-04-12",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "discontinuation",
+      "is_primary": true,
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000079",
+    "slug": "tonkeeper",
+    "canonical_name": "Tonkeeper",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000128",
+    "entity_id": "wlr_ent_000079",
+    "slug": "tonkeeper-mobile",
+    "product_name": "Tonkeeper Mobile",
+    "product_type": "mobile_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": "2021",
+    "launch_date_precision": "year",
+    "platform": [
+      "iOS",
+      "Android"
+    ],
+    "official_url": "https://tonkeeper.com/",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "user_controlled_private_keys_and_backup_phrase",
+    "summary": "Tonkeeper non-custodial mobile wallet application for TON and supported assets/services.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Current first-party privacy material identifies Tonkeeper's App Store/Google Play application and dates the privacy policy to 2021; Tonkeeper also states it was founded in 2021. Year precision only."
+  },
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000304",
+      "entity_id": "wlr_ent_000079",
+      "product_id": "wlr_prod_000128",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Tonkeeper Signer",
+      "url": "https://tonkeeper.com/signer",
+      "publisher": "Tonkeeper",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product_lineage",
+      "is_primary": true,
+      "notes": "Current first-party Tonkeeper page describes Tonkeeper as the non-custodial TON wallet and states it was founded in 2021; used only for year-level lineage."
+    }
+  ]
+}

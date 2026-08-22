@@ -1,0 +1,68 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000031",
+    "slug": "solflare",
+    "canonical_name": "Solflare",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000080",
+    "entity_id": "wlr_ent_000031",
+    "slug": "solflare-browser-extension",
+    "product_name": "Solflare Browser Extension",
+    "product_type": "browser_extension",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": "2020",
+    "launch_date_precision": "year",
+    "platform": [
+      "Chrome-compatible browsers"
+    ],
+    "official_url": "https://www.solflare.com/",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "browser_local_wallet_keys",
+    "summary": "Solflare browser extension for self-custody Solana wallet access and dApp interaction.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-19",
+    "notes": "Solflare documentation states that the Web App and Extension were the first products built in late 2020. WLR records year precision only."
+  },
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000207",
+      "entity_id": "wlr_ent_000031",
+      "product_id": "wlr_prod_000080",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Web App & Extension | Solflare Wallet",
+      "url": "https://docs.solflare.com/solflare/onboarding/web-app-and-extension",
+      "publisher": "Solflare",
+      "published_at": null,
+      "accessed_at": "2026-08-19",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party product documentation says Solflare's Web App and Extension were the first products built in late 2020 and describes the extension product lineage."
+    },
+    {
+      "id": "wlr_src_000208",
+      "entity_id": "wlr_ent_000031",
+      "product_id": "wlr_prod_000080",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Solflare",
+      "url": "https://www.solflare.com/",
+      "publisher": "Solflare",
+      "published_at": null,
+      "accessed_at": "2026-08-19",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party site actively distributes the Solflare browser extension and mobile wallet."
+    }
+  ]
+}

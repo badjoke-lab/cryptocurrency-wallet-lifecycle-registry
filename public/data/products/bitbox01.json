@@ -1,0 +1,137 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000007",
+    "slug": "bitbox",
+    "canonical_name": "BitBox",
+    "wallet_type": "hardware",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000028",
+    "entity_id": "wlr_ent_000007",
+    "slug": "bitbox01",
+    "product_name": "BitBox01",
+    "aliases": [
+      "Digital Bitbox"
+    ],
+    "product_type": "hardware_device",
+    "status": "discontinued",
+    "sales_status": "end_of_sale",
+    "support_status": "ended",
+    "launch_date": "2016-03-25",
+    "launch_date_precision": "day",
+    "discontinued_date": "2020",
+    "generation": "1",
+    "platform": [
+      "hardware"
+    ],
+    "official_url": null,
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "device_held_seed",
+    "variants": [],
+    "summary": "First-generation BitBox hardware wallet, originally branded Digital Bitbox.",
+    "predecessor_product_id": null,
+    "successor_product_id": "wlr_prod_000029",
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "EOL did not immediately make the device unusable, but updates ended and dependent integrations later degraded."
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000029",
+      "entity_id": "wlr_ent_000007",
+      "product_id": "wlr_prod_000028",
+      "affected_product_ids": [
+        "wlr_prod_000028"
+      ],
+      "event_type": "product_released",
+      "event_date": "2016-03-25",
+      "event_date_basis": "release",
+      "title": "BitBox01 came to market",
+      "description": "The first BitBox01 hardware wallet, later also known as Digital Bitbox, came to market.",
+      "confidence": "high"
+    },
+    {
+      "id": "wlr_ev_000031",
+      "entity_id": "wlr_ent_000007",
+      "product_id": "wlr_prod_000028",
+      "affected_product_ids": [
+        "wlr_prod_000028"
+      ],
+      "event_type": "deprecation_announced",
+      "event_date": "2019-11-12",
+      "event_date_basis": "announcement",
+      "title": "BitBox01 end-of-sale and end-of-life announced",
+      "description": "Shift Cryptosecurity announced the BitBox01 end-of-sale and EOL process and encouraged migration to BitBox02.",
+      "confidence": "high",
+      "event_status_effect": "deprecated",
+      "is_major_event": true
+    },
+    {
+      "id": "wlr_ev_000032",
+      "entity_id": "wlr_ent_000007",
+      "product_id": "wlr_prod_000028",
+      "affected_product_ids": [
+        "wlr_prod_000028"
+      ],
+      "event_type": "discontinued",
+      "event_date": "2020",
+      "event_date_basis": "approximate",
+      "title": "BitBox01 entered end-of-life",
+      "description": "BitBox later described the BitBox01 as end-of-life, meaning it no longer received updates while some functionality could continue temporarily.",
+      "confidence": "medium",
+      "event_status_effect": "discontinued",
+      "is_major_event": true,
+      "notes": "Year-level lifecycle anchor; later 2023 guidance confirms the device had been EOL for multiple years."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000036",
+      "entity_id": "wlr_ent_000007",
+      "product_ids": [
+        "wlr_prod_000028"
+      ],
+      "event_ids": [
+        "wlr_ev_000029",
+        "wlr_ev_000031"
+      ],
+      "product_id": "wlr_prod_000028",
+      "event_id": null,
+      "source_type": "official_blog",
+      "title": "Announcing the BitBox01 (aka Digital Bitbox) end-of-sale and end-of-life dates and process",
+      "url": "https://blog.bitbox.swiss/en/announcing-the-bitbox01-aka-digital-bitbox-end-of-sale-and-end-of-life-dates-and-process/",
+      "publisher": "BitBox / Shift Cryptosecurity",
+      "published_at": "2019-11-12",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "product_lineage",
+      "is_primary": true,
+      "notes": "Establishes March 25, 2016 launch and the EOL announcement."
+    },
+    {
+      "id": "wlr_src_000037",
+      "entity_id": "wlr_ent_000007",
+      "product_ids": [
+        "wlr_prod_000028"
+      ],
+      "event_ids": [
+        "wlr_ev_000032"
+      ],
+      "product_id": "wlr_prod_000028",
+      "event_id": "wlr_ev_000032",
+      "source_type": "official_blog",
+      "title": "The end of the road for the BitBox01",
+      "url": "https://blog.bitbox.swiss/en/the-end-of-the-road-for-the-bitbox01/",
+      "publisher": "BitBox",
+      "published_at": "2023-01-18",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "discontinuation",
+      "is_primary": true,
+      "notes": ""
+    }
+  ]
+}

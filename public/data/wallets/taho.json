@@ -1,0 +1,121 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000087",
+    "slug": "taho",
+    "canonical_name": "Taho",
+    "aliases": [
+      "Tally Ho"
+    ],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Community-owned open-source self-custodial Web3 wallet lineage originally launched as Tally Ho and renamed Taho in 2023.",
+    "developer_or_company": "Taho",
+    "country_or_origin": null,
+    "launch_date": "2021",
+    "launch_date_precision": "year",
+    "official_url": "https://taho.xyz/",
+    "official_domain": "taho.xyz",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "device_local_private_keys_and_recovery_phrases",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "First-party history says Tally Ho launched in 2021 and was renamed Taho on 2023-02-21. Current first-party security material says private keys remain on the user's computer."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000136",
+      "entity_id": "wlr_ent_000087",
+      "slug": "taho-browser-extension",
+      "product_name": "Taho Browser Extension",
+      "product_type": "browser_extension",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "unknown",
+      "launch_date": "2021",
+      "launch_date_precision": "year",
+      "platform": [
+        "Chrome",
+        "Brave"
+      ],
+      "official_url": "https://taho.xyz/download/",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "device_local_private_keys_and_recovery_phrases",
+      "summary": "Current Taho self-custodial browser-extension wallet, preserving the earlier Tally Ho wallet lineage.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-20",
+      "notes": "First-party Taho history says Tally Ho launched in 2021; exact initial public release day is not asserted. Current download page lists Chrome and Brave."
+    }
+  ],
+  "events": [
+    {
+      "id": "wlr_ev_000122",
+      "entity_id": "wlr_ent_000087",
+      "product_id": "wlr_prod_000136",
+      "affected_product_ids": [
+        "wlr_prod_000136"
+      ],
+      "event_type": "rebranded",
+      "event_date": "2023-02-21",
+      "event_date_basis": "announcement",
+      "title": "Tally Ho renamed Taho",
+      "description": "The community-owned Web3 wallet formerly known as Tally Ho announced its new Taho name while preserving the existing wallet lineage and project identity.",
+      "confidence": "high",
+      "event_status_effect": "none",
+      "is_major_event": true,
+      "notes": "This is a continuity/rebrand event, not a new wallet or browser-extension launch. The first-party announcement states that Tally Ho is now Taho and that the wallet lineage began in 2021."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000319",
+      "entity_id": "wlr_ent_000087",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_blog",
+      "title": "Meet Taho, the first community-owned Web3 wallet",
+      "url": "https://blog.taho.xyz/rename-announcement/",
+      "publisher": "Taho",
+      "published_at": "2023-02-21",
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product_lineage",
+      "is_primary": true,
+      "notes": "First-party rebrand announcement states Tally Ho is now Taho and says the wallet lineage began in 2021."
+    },
+    {
+      "id": "wlr_src_000320",
+      "entity_id": "wlr_ent_000087",
+      "product_id": "wlr_prod_000136",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Taho Security",
+      "url": "https://taho.xyz/security/",
+      "publisher": "Taho",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party security page states Taho is 100% self-custodial, private keys stay on the user's computer, and the browser wallet is currently downloadable."
+    },
+    {
+      "id": "wlr_src_000347",
+      "entity_id": "wlr_ent_000087",
+      "product_id": "wlr_prod_000136",
+      "event_id": "wlr_ev_000122",
+      "source_type": "official_blog",
+      "title": "Hello World. Meet Taho",
+      "url": "https://blog.taho.xyz/rename-announcement/",
+      "publisher": "Taho",
+      "published_at": "2023-02-21",
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "rebrand",
+      "is_primary": true,
+      "notes": "First-party announcement states that Tally Ho is now Taho and describes the existing wallet lineage as beginning in 2021."
+    }
+  ]
+}

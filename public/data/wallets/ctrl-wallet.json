@@ -1,0 +1,124 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000059",
+    "slug": "ctrl-wallet",
+    "canonical_name": "Ctrl Wallet",
+    "aliases": [
+      "XDEFI Wallet",
+      "XDEFI"
+    ],
+    "wallet_type": "software",
+    "status": "dead",
+    "summary": "Historical non-custodial multichain wallet ecosystem formerly branded XDEFI Wallet; normal Ctrl Wallet functionality was shut down in August 2026.",
+    "developer_or_company": "Ctrl",
+    "country_or_origin": null,
+    "launch_date": null,
+    "official_url": "https://ctrl.xyz/",
+    "official_domain": "ctrl.xyz",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "locally_stored_user_controlled_private_keys",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "First-party XDEFI/Ctrl material preserves one wallet lineage. Ctrl's 2026-07-07 deprecation notice states permanent shutdown: store distribution ended July 7, normal functionality ended after August 2, and from 2026-08-03 only recovery-phrase export remains. WLR therefore records the wallet entity as dead from the effective shutdown date.",
+    "discontinued_date": "2026-08-03"
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000108",
+      "entity_id": "wlr_ent_000059",
+      "slug": "ctrl-wallet-extension",
+      "product_name": "Ctrl Wallet Extension",
+      "aliases": [
+        "XDEFI Wallet Extension"
+      ],
+      "product_type": "browser_extension",
+      "status": "discontinued",
+      "sales_status": "not_applicable",
+      "support_status": "ended",
+      "launch_date": null,
+      "platform": [
+        "Chrome-compatible browsers"
+      ],
+      "official_url": "https://ctrl.xyz/",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "locally_stored_user_controlled_private_keys",
+      "summary": "Discontinued Ctrl browser wallet extension, continuing the former XDEFI Wallet extension lineage; from 2026-08-03 only recovery-phrase export remains.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-20",
+      "notes": "Selected extension boundary only; Ctrl mobile apps are separate. The 2024 rebrand is not treated as initial extension launch. Ctrl removed the wallet from stores on 2026-07-07, left normal wallet functionality available through 2026-08-02, and from 2026-08-03 disabled wallet features except recovery-phrase export. WLR records the extension as discontinued with support ended.",
+      "discontinued_date": "2026-08-03"
+    }
+  ],
+  "events": [
+    {
+      "id": "wlr_ev_000131",
+      "entity_id": "wlr_ent_000059",
+      "product_id": "wlr_prod_000108",
+      "affected_product_ids": [
+        "wlr_prod_000108"
+      ],
+      "event_type": "service_shutdown",
+      "event_date": "2026-08-03",
+      "event_date_basis": "effective",
+      "title": "Ctrl Wallet shut down normal wallet functionality",
+      "description": "Ctrl announced a permanent shutdown: after removal from app and browser-extension stores on July 7, 2026, normal wallet functionality remained available through August 2 and from August 3 only recovery-phrase export remained while wallet features were disabled.",
+      "confidence": "high",
+      "event_status_effect": "dead",
+      "is_major_event": true,
+      "notes": "The surviving recovery-phrase export path is a recovery mechanism, not normal wallet operation. The canonical Ctrl entity is therefore corrected to dead and the extension product to discontinued/support ended as of 2026-08-03."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000263",
+      "entity_id": "wlr_ent_000059",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_blog",
+      "title": "XDEFI Wallet is becoming Ctrl Wallet: discover the new features",
+      "url": "https://ctrl.xyz/xdefi-wallet-rebranding-to-ctrl/",
+      "publisher": "Ctrl",
+      "published_at": "2024-07-17",
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "rebrand",
+      "is_primary": true,
+      "notes": "First-party rebrand announcement explicitly establishes XDEFI→Ctrl continuity and states existing wallets automatically update while keys remain locally stored."
+    },
+    {
+      "id": "wlr_src_000264",
+      "entity_id": "wlr_ent_000059",
+      "product_id": "wlr_prod_000108",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Ctrl Wallet",
+      "url": "https://ctrl.xyz/",
+      "publisher": "Ctrl",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party site states Ctrl is non-custodial and confirms migration of the former XDEFI browser extension to Ctrl."
+    },
+    {
+      "id": "wlr_src_000357",
+      "entity_id": "wlr_ent_000059",
+      "product_id": "wlr_prod_000108",
+      "event_id": "wlr_ev_000131",
+      "source_type": "official_blog",
+      "title": "Ctrl Wallet Deprecation: What You Need to Know",
+      "url": "https://ctrl.xyz/news/ctrl-wallet-deprecation-what-you-need-to-know/",
+      "publisher": "Ctrl",
+      "published_at": "2026-07-07",
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "discontinuation",
+      "is_primary": true,
+      "notes": "First-party Ctrl notice states the wallet is permanently shutting down, was removed from stores on July 7, remains normally functional only through August 2, and from August 3 allows only recovery-phrase export while wallet features are disabled."
+    }
+  ]
+}

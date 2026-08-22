@@ -1,0 +1,53 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000061",
+    "slug": "backpack-wallet",
+    "canonical_name": "Backpack",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000110",
+    "entity_id": "wlr_ent_000061",
+    "slug": "backpack-extension",
+    "product_name": "Backpack Browser Extension",
+    "product_type": "browser_extension",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": null,
+    "platform": [
+      "Chrome",
+      "Brave",
+      "Edge"
+    ],
+    "official_url": "https://backpack.app/downloads",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "browser_local_user_controlled_private_keys_and_recovery_phrases",
+    "summary": "Current self-custodial Backpack browser extension for wallet and dApp use on supported desktop browsers.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Selected browser-extension boundary only; mobile is deferred. Current first-party wallet support explicitly describes Backpack as self-custodial, while the official download page establishes Chrome, Brave and Edge distribution. Original extension launch remains unresolved."
+  },
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000268",
+      "entity_id": "wlr_ent_000061",
+      "product_id": "wlr_prod_000110",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Backpack Browser Extension",
+      "url": "https://backpack.app/downloads",
+      "publisher": "Backpack",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Same first-party download authority specifically lists Backpack Browser Extension for Chrome, Brave and Edge. Kept as one source URL because a second custody source has not yet been established; candidate remains researching."
+    }
+  ]
+}

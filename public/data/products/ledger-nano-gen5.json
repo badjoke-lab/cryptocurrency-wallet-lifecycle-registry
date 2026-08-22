@@ -1,0 +1,67 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000002",
+    "slug": "ledger",
+    "canonical_name": "Ledger",
+    "wallet_type": "hardware",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000012",
+    "entity_id": "wlr_ent_000002",
+    "slug": "ledger-nano-gen5",
+    "product_name": "Ledger Nano Gen5",
+    "aliases": [],
+    "product_type": "hardware_device",
+    "status": "active",
+    "sales_status": "on_sale",
+    "support_status": "supported",
+    "launch_date": "2025-10-23",
+    "launch_date_precision": "day",
+    "generation": null,
+    "variants": [],
+    "summary": "Touchscreen Nano generation launched at Ledger Op3n 2025.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "Touchscreen Nano generation launched at Ledger Op3n 2025."
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000017",
+      "entity_id": "wlr_ent_000002",
+      "product_id": "wlr_prod_000012",
+      "affected_product_ids": [
+        "wlr_prod_000012"
+      ],
+      "event_type": "product_released",
+      "event_date": "2025-10-23",
+      "event_date_basis": "release",
+      "title": "Ledger Nano Gen5 launched",
+      "description": "Ledger launched Nano Gen5 at Ledger Op3n 2025.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000021",
+      "entity_id": "wlr_ent_000002",
+      "product_id": "wlr_prod_000012",
+      "event_id": "wlr_ev_000017",
+      "source_type": "official_blog",
+      "title": "Introducing Ledger Nano Gen5",
+      "url": "https://www.ledger.com/academy/topics/ledgersolutions/introducing-ledger-nano-gen5",
+      "publisher": "Ledger",
+      "published_at": "2025-10-23",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": ""
+    }
+  ]
+}

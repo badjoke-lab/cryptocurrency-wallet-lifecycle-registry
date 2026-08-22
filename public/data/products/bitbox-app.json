@@ -1,0 +1,88 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000007",
+    "slug": "bitbox",
+    "canonical_name": "BitBox",
+    "wallet_type": "hardware",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000031",
+    "entity_id": "wlr_ent_000007",
+    "slug": "bitbox-app",
+    "product_name": "BitBoxApp",
+    "aliases": [
+      "BitBox App"
+    ],
+    "product_type": "companion_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "supported",
+    "launch_date": "2018",
+    "launch_date_precision": "year",
+    "generation": null,
+    "platform": [
+      "Windows",
+      "macOS",
+      "Linux",
+      "Android",
+      "iOS",
+      "iPadOS"
+    ],
+    "official_url": "https://bitbox.swiss/download/",
+    "source_code_url": "https://github.com/BitBoxSwiss/bitbox-wallet-app",
+    "custody_model": "self_custody",
+    "key_management_model": "companion_interface_no_primary_seed_custody",
+    "variants": [],
+    "summary": "Open-source companion application used to manage BitBox hardware wallets.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "Exact initial release date is left unset in this seed."
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000086",
+      "entity_id": "wlr_ent_000007",
+      "product_id": "wlr_prod_000031",
+      "affected_product_ids": [
+        "wlr_prod_000031"
+      ],
+      "event_type": "product_released",
+      "event_date": "2018",
+      "event_date_basis": "release",
+      "title": "BitBoxApp launched as BitBox companion application",
+      "description": "BitBox states that the BitBoxApp was launched in 2018 as the companion application for its hardware-wallet ecosystem. The reviewed first-party retrospective establishes the launch year but not a month or day.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "WLR records year precision only. This event describes the BitBoxApp product lineage and does not alter hardware-product launch dates or the later Android general-release timeline."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000142",
+      "entity_id": "wlr_ent_000007",
+      "product_ids": [
+        "wlr_prod_000031"
+      ],
+      "event_ids": [
+        "wlr_ev_000086"
+      ],
+      "product_id": "wlr_prod_000031",
+      "event_id": "wlr_ev_000086",
+      "source_type": "official_blog",
+      "title": "BitBoxApp for Android: who needs a computer anyway?",
+      "url": "https://blog.bitbox.swiss/en/bitboxapp-for-android-who-needs-a-computer-anyway/",
+      "publisher": "BitBox",
+      "published_at": "2020-07-21",
+      "accessed_at": "2026-08-17",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party retrospective explicitly stating that the BitBoxApp was launched in 2018. The 2020 article date is not treated as the app launch date."
+    }
+  ]
+}

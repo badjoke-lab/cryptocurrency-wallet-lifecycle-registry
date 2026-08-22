@@ -1,0 +1,52 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000085",
+    "slug": "begin-wallet",
+    "canonical_name": "Begin Wallet",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000134",
+    "entity_id": "wlr_ent_000085",
+    "slug": "begin-wallet-mobile",
+    "product_name": "Begin Wallet Mobile",
+    "product_type": "mobile_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": null,
+    "platform": [
+      "iOS",
+      "Android"
+    ],
+    "official_url": "https://begin.is/",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "device_local_user_controlled_seed_phrase_and_private_keys",
+    "summary": "Begin self-custodial multichain mobile wallet application.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Selected mobile runtime only; Chrome extension is deferred."
+  },
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000316",
+      "entity_id": "wlr_ent_000085",
+      "product_id": "wlr_prod_000134",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Begin Wallet",
+      "url": "https://begin.is/",
+      "publisher": "Begin Wallet",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party product page describes Begin as self-custodial/open-source and lists iOS, Android and Chrome extension distribution."
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000016",
+    "slug": "exodus",
+    "canonical_name": "Exodus",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000047",
+    "entity_id": "wlr_ent_000016",
+    "slug": "exodus-desktop",
+    "product_name": "Exodus Desktop",
+    "aliases": [],
+    "product_type": "desktop_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "supported",
+    "launch_date": "2015",
+    "launch_date_precision": "year",
+    "platform": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "official_url": "https://www.exodus.com/download",
+    "custody_model": "self_custody",
+    "key_management_model": "locally_encrypted_private_keys",
+    "variants": [],
+    "summary": "Desktop Exodus wallet for macOS, Windows and Linux in the original Exodus software lineage.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-15",
+    "notes": "2015 is the official Exodus launch year; this batch does not assert an exact first desktop release date."
+  },
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000070",
+      "entity_id": "wlr_ent_000016",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Exodus Crypto App Download",
+      "url": "https://www.exodus.com/download",
+      "publisher": "Exodus",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "status",
+      "is_primary": true,
+      "product_ids": [
+        "wlr_prod_000047",
+        "wlr_prod_000048",
+        "wlr_prod_000049"
+      ],
+      "notes": "Current first-party download page confirming Desktop, Mobile, and Web3 browser-extension products and supported platforms."
+    }
+  ]
+}

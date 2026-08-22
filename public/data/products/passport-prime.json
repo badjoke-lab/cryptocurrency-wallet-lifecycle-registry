@@ -1,0 +1,157 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000017",
+    "slug": "foundation-passport",
+    "canonical_name": "Foundation Passport",
+    "wallet_type": "hardware",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000052",
+    "entity_id": "wlr_ent_000017",
+    "slug": "passport-prime",
+    "product_name": "Passport Prime",
+    "aliases": [],
+    "product_type": "hardware_device",
+    "status": "active",
+    "sales_status": "on_sale",
+    "support_status": "supported",
+    "launch_date": "2025",
+    "platform": [
+      "hardware"
+    ],
+    "official_url": "https://foundation.xyz/buy-passport-prime/",
+    "custody_model": "self_custody",
+    "key_management_model": "device_master_key_with_nfc_keycard_backup_architecture",
+    "variants": [],
+    "summary": "Current Foundation hardware device combining a Bitcoin wallet with additional security functions under the KeyOS platform.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-18",
+    "notes": "Foundation announced Passport Prime in December 2024, but WLR does not treat announcement or preorder chronology as release. Foundation's May 2025 shipping update still described production ramp and future Early Access shipments, while its 2025-10-16 first-party security-audit article states that Passport Prime begins shipping. WLR therefore records the public release/shipping lineage at 2025 year precision without asserting an exact first shipment day.",
+    "launch_date_precision": "year"
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000114",
+      "entity_id": "wlr_ent_000017",
+      "product_id": "wlr_prod_000052",
+      "affected_product_ids": [
+        "wlr_prod_000052"
+      ],
+      "event_type": "product_released",
+      "event_date": "2025",
+      "event_date_basis": "release",
+      "title": "Passport Prime began shipping in 2025",
+      "description": "Foundation first-party shipping history establishes that Passport Prime entered its shipping/release lineage during 2025 after the 2024 announcement and preorder period.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "Year precision only. Foundation still described future Early Access shipping in May 2025 and later stated that Passport Prime was beginning to ship in October 2025; no exact first shipment day is asserted."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000074",
+      "entity_id": "wlr_ent_000017",
+      "product_ids": [
+        "wlr_prod_000050",
+        "wlr_prod_000051",
+        "wlr_prod_000052",
+        "wlr_prod_000053"
+      ],
+      "event_ids": [
+        "wlr_ev_000050",
+        "wlr_ev_000051"
+      ],
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_blog",
+      "title": "Passport is now Passport Core",
+      "url": "https://foundation.xyz/blog/passport-is-now-passport-core",
+      "publisher": "Foundation",
+      "published_at": "2025-03-17",
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "product_lineage",
+      "is_primary": true,
+      "notes": "Primary history source for the 2020 first generation, Founder’s Edition, Batch 2/Core continuity, 2025 rename, Prime, and Envoy product family."
+    },
+    {
+      "id": "wlr_src_000076",
+      "entity_id": "wlr_ent_000017",
+      "product_ids": [
+        "wlr_prod_000051",
+        "wlr_prod_000052"
+      ],
+      "event_ids": [],
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Compare Products",
+      "url": "https://foundation.xyz/compare-products/",
+      "publisher": "Foundation",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "status",
+      "is_primary": true,
+      "notes": "Current first-party product comparison for Passport Core and Passport Prime."
+    },
+    {
+      "id": "wlr_src_000077",
+      "entity_id": "wlr_ent_000017",
+      "product_ids": [
+        "wlr_prod_000052",
+        "wlr_prod_000053"
+      ],
+      "event_ids": [],
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Passport Prime Terms of Use",
+      "url": "https://foundation.xyz/terms-prime/",
+      "publisher": "Foundation Devices, Inc.",
+      "published_at": "2025-11-11",
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "architecture",
+      "is_primary": true,
+      "notes": "Describes Prime as an offline Bitcoin key-management device and Envoy as its companion app, while noting Envoy can hold keys for its own built-in hot wallet."
+    },
+    {
+      "id": "wlr_src_000180",
+      "entity_id": "wlr_ent_000017",
+      "product_id": "wlr_prod_000052",
+      "event_id": "wlr_ev_000114",
+      "source_type": "official_blog",
+      "title": "Passport Prime Security Audit",
+      "url": "https://foundation.xyz/2025/10/passport-prime-security-audit/",
+      "publisher": "Foundation",
+      "published_at": "2025-10-16",
+      "accessed_at": "2026-08-18",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party Foundation article stating that Passport Prime begins shipping. Used to establish the 2025 release/shipping year, not an exact first shipment day."
+    },
+    {
+      "id": "wlr_src_000181",
+      "entity_id": "wlr_ent_000017",
+      "product_id": "wlr_prod_000052",
+      "event_id": "wlr_ev_000114",
+      "source_type": "official_statement",
+      "title": "Shipping Updates for Passport Prime and Core",
+      "url": "https://community.foundation.xyz/t/shipping-updates-for-passport-prime-and-core/426",
+      "publisher": "Foundation",
+      "published_at": "2025-05-07",
+      "accessed_at": "2026-08-18",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party Foundation customer shipping update stating that remaining components were still arriving and the 1,000 Early Access orders were expected to be assembled and shipped afterward. Used to avoid backdating the release to the 2024 announcement/preorder period."
+    }
+  ]
+}

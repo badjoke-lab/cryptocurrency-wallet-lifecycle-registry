@@ -1,0 +1,87 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000001",
+    "slug": "trezor",
+    "canonical_name": "Trezor",
+    "wallet_type": "hardware",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000006",
+    "entity_id": "wlr_ent_000001",
+    "slug": "trezor-suite",
+    "product_name": "Trezor Suite",
+    "product_type": "companion_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "supported",
+    "launch_date": "2021-07-14",
+    "platform": [
+      "desktop",
+      "web",
+      "mobile"
+    ],
+    "source_code_url": "https://github.com/trezor/trezor-suite",
+    "variants": [],
+    "summary": "Official software interface for managing Trezor hardware wallets across desktop, web and mobile environments.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "Companion software is retained as a product because it has an independent software release and security lifecycle.",
+    "official_url": "https://trezor.io/trezor-suite"
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000004",
+      "entity_id": "wlr_ent_000001",
+      "product_id": "wlr_prod_000006",
+      "affected_product_ids": [
+        "wlr_prod_000006"
+      ],
+      "event_type": "product_released",
+      "event_date": "2021-07-14",
+      "event_date_basis": "release",
+      "title": "Trezor Suite officially launched",
+      "description": "Trezor officially launched Trezor Suite as its desktop and web interface for Trezor hardware wallets.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000005",
+      "entity_id": "wlr_ent_000001",
+      "product_id": "wlr_prod_000006",
+      "event_id": "wlr_ev_000004",
+      "source_type": "official_blog",
+      "title": "Trezor Suite launches!",
+      "url": "https://blog.trezor.io/trezor-suite-launches-8958c1d37d33",
+      "publisher": "Trezor / SatoshiLabs",
+      "published_at": "2021-07-14",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Primary source for the official Trezor Suite launch."
+    },
+    {
+      "id": "wlr_src_000006",
+      "entity_id": "wlr_ent_000001",
+      "product_id": "wlr_prod_000006",
+      "event_id": null,
+      "source_type": "source_code",
+      "title": "Trezor Suite Monorepo",
+      "url": "https://github.com/trezor/trezor-suite",
+      "publisher": "Trezor",
+      "published_at": null,
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Official source repository covering Trezor Suite desktop/web, Connect and Trezor Suite Mobile."
+    }
+  ]
+}

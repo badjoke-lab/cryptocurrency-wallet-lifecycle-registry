@@ -1,0 +1,84 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000077",
+    "slug": "core-wallet",
+    "canonical_name": "Core",
+    "aliases": [
+      "Core Wallet"
+    ],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Non-custodial multichain wallet ecosystem from Ava Labs covering Avalanche, EVM networks and Bitcoin across extension, mobile and web surfaces.",
+    "developer_or_company": "Ava Labs",
+    "country_or_origin": null,
+    "launch_date": null,
+    "official_url": "https://core.app/",
+    "official_domain": "core.app",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "product_specific_user_controlled_wallet_keys",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Current first-party Core documentation explicitly describes Core as non-custodial and separates web, browser-extension and mobile surfaces. Avalanche ecosystem history is not reused as a wallet launch date."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000126",
+      "entity_id": "wlr_ent_000077",
+      "slug": "core-extension",
+      "product_name": "Core Extension",
+      "product_type": "browser_extension",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "unknown",
+      "launch_date": null,
+      "platform": [
+        "Chrome"
+      ],
+      "official_url": "https://support.core.app/en/articles/6114992-what-is-the-core-extension",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "browser_extension_user_wallet_keys",
+      "summary": "Core non-custodial browser extension for Avalanche and supported networks.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-20",
+      "notes": "Selected extension runtime only; Core mobile and web are distinct surfaces and deferred. Current first-party support says the extension is officially supported on Chrome."
+    }
+  ],
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000299",
+      "entity_id": "wlr_ent_000077",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Core Documentation — Introduction",
+      "url": "https://docs.core.app/docs/intro/",
+      "publisher": "Core / Ava Labs",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "entity",
+      "is_primary": true,
+      "notes": "Current first-party Core documentation describes Core as a non-custodial crypto wallet and lists web, extension, iOS and Android surfaces."
+    },
+    {
+      "id": "wlr_src_000300",
+      "entity_id": "wlr_ent_000077",
+      "product_id": "wlr_prod_000126",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "What is the Core extension?",
+      "url": "https://support.core.app/en/articles/6114992-what-is-the-core-extension",
+      "publisher": "Core / Avalanche",
+      "published_at": "2025-12-16",
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party support identifies Core extension as a free non-custodial browser extension and states current official Chrome support."
+    }
+  ]
+}

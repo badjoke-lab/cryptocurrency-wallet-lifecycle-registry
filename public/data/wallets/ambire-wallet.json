@@ -1,0 +1,83 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000058",
+    "slug": "ambire-wallet",
+    "canonical_name": "Ambire Wallet",
+    "aliases": [],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Self-custodial EVM wallet ecosystem from Ambire, currently centered on its browser extension with EOA and smart-account capabilities.",
+    "developer_or_company": "Ambire",
+    "country_or_origin": null,
+    "launch_date": null,
+    "official_url": "https://www.ambire.com/",
+    "official_domain": "ambire.com",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "user_controlled_eoa_or_smart_account_signers",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Ambire's current first-party material repeatedly describes Ambire Wallet and its extension as self-custodial. The older web-wallet lineage predates the current extension, so entity launch remains unresolved here."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000107",
+      "entity_id": "wlr_ent_000058",
+      "slug": "ambire-extension",
+      "product_name": "Ambire Extension",
+      "product_type": "browser_extension",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "unknown",
+      "launch_date": "2025-05-08",
+      "launch_date_precision": "day",
+      "platform": [
+        "Chrome-compatible browsers"
+      ],
+      "official_url": "https://www.ambire.com/",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "user_controlled_eoa_or_smart_account_signers",
+      "summary": "Current self-custodial Ambire Wallet browser extension supporting EOAs, smart accounts and hardware-wallet signers.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-20",
+      "notes": "First-party launch announcement states the extension became publicly available without invite codes on 2025-05-08. Older Ambire Web Wallet remains separate historical product lineage."
+    }
+  ],
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000261",
+      "entity_id": "wlr_ent_000058",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_blog",
+      "title": "How To Make The Most Out Of Ambire Wallet",
+      "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/",
+      "publisher": "Ambire",
+      "published_at": "2025-10-24",
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "entity",
+      "is_primary": true,
+      "notes": "Current first-party Ambire article explicitly describes Ambire as a self-custodial Web3 wallet."
+    },
+    {
+      "id": "wlr_src_000262",
+      "entity_id": "wlr_ent_000058",
+      "product_id": "wlr_prod_000107",
+      "event_id": null,
+      "source_type": "official_blog",
+      "title": "The Ambire Extension Launches Officially",
+      "url": "https://blog.ambire.com/ambire-extension-launch/",
+      "publisher": "Ambire",
+      "published_at": "2025-05-08",
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party announcement establishes the public Ambire Extension launch on 2025-05-08 and its self-custody mission."
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000096",
+    "slug": "specter-desktop",
+    "canonical_name": "Specter Desktop",
+    "aliases": [
+      "Specter"
+    ],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Open-source Bitcoin desktop wallet and node interface focused on hardware-wallet and multisignature setups, with Bitcoin Core and Electrum backends.",
+    "developer_or_company": "CryptoAdvance / Specter contributors",
+    "country_or_origin": null,
+    "launch_date": null,
+    "official_url": "https://github.com/cryptoadvance/specter-desktop",
+    "official_domain": "github.com",
+    "source_code_urls": [
+      "https://github.com/cryptoadvance/specter-desktop"
+    ],
+    "custody_model": "self_custody",
+    "key_management_model": "watch_only_multisig_coordinator_with_external_signing_devices_and_optional_hot_wallet",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Official project documentation describes Specter Desktop primarily as a watch-only Bitcoin Core/Electrum wallet GUI whose signing keys live on user-controlled hardware/signing devices; an optional hot-wallet mode exists but is not the normal security boundary. The repository remains actively maintained in August 2026. Initial launch date remains unresolved."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000145",
+      "entity_id": "wlr_ent_000096",
+      "slug": "specter-desktop-app",
+      "product_name": "Specter Desktop App",
+      "product_type": "desktop_app",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "supported",
+      "launch_date": null,
+      "platform": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "official_url": "https://github.com/cryptoadvance/specter-desktop",
+      "source_code_url": "https://github.com/cryptoadvance/specter-desktop",
+      "custody_model": "self_custody",
+      "key_management_model": "watch_only_multisig_coordinator_with_external_signing_devices_and_optional_hot_wallet",
+      "summary": "Actively maintained Specter Desktop Bitcoin wallet GUI for hardware-wallet, multisig and Bitcoin Core/Electrum workflows.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-20",
+      "notes": "Support status is `supported` because the official repository contains current August 2026 wallet, dependency and security-related maintenance commits. This does not imply Specter normally holds the user's signing keys."
+    }
+  ],
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000337",
+      "entity_id": "wlr_ent_000096",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "source_code",
+      "title": "Specter Desktop source repository",
+      "url": "https://github.com/cryptoadvance/specter-desktop",
+      "publisher": "CryptoAdvance / Specter contributors",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "entity",
+      "is_primary": true,
+      "notes": "Official repository README identifies Specter Desktop as a Bitcoin Core GUI focused on hardware-wallet and multisig setups and documents desktop installation."
+    },
+    {
+      "id": "wlr_src_000338",
+      "entity_id": "wlr_ent_000096",
+      "product_id": "wlr_prod_000145",
+      "event_id": null,
+      "source_type": "source_code",
+      "title": "Specter Desktop current maintenance history",
+      "url": "https://github.com/cryptoadvance/specter-desktop/commit/8843e2f0640a9adc129f9ab6afe5ecb9632e7c5b",
+      "publisher": "CryptoAdvance / Specter contributors",
+      "published_at": "2026-08-08",
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "Official August 2026 commit fixes wallet import behavior; additional August 2026 repository commits include auth/security and compatibility maintenance. Used to establish current supported maintenance state."
+    }
+  ]
+}

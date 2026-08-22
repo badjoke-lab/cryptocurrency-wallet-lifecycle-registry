@@ -1,0 +1,83 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000039",
+    "slug": "coolwallet",
+    "canonical_name": "CoolWallet",
+    "wallet_type": "hardware",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000088",
+    "entity_id": "wlr_ent_000039",
+    "slug": "coolwallet-pro",
+    "product_name": "CoolWallet Pro",
+    "product_type": "hardware_device",
+    "status": "active",
+    "sales_status": "on_sale",
+    "support_status": "unknown",
+    "launch_date": null,
+    "platform": null,
+    "official_url": "https://www.coolwallet.io/",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "hardware_offline_private_keys",
+    "summary": "Premium credit-card-sized CoolWallet hardware wallet for offline key protection and companion-app use.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-19",
+    "notes": "Current first-party storefront lists CoolWallet Pro as an active purchasable hardware wallet. Exact initial launch date remains unresolved."
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000146",
+      "entity_id": "wlr_ent_000039",
+      "product_id": "wlr_prod_000088",
+      "affected_product_ids": [
+        "wlr_prod_000088"
+      ],
+      "event_type": "product_released",
+      "event_date": "2021-05-20",
+      "event_date_basis": "release",
+      "title": "CoolWallet Pro released",
+      "description": "CoolBitX announced the release of CoolWallet Pro on 2021-05-20, with the device available to order and order fulfillment stated to begin from 2021-05-24.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "The event preserves the first-party release announcement date and separately notes the later stated fulfillment start; it does not backdate shipping."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000224",
+      "entity_id": "wlr_ent_000039",
+      "product_id": "wlr_prod_000088",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "CoolWallet Hardware Wallets",
+      "url": "https://www.coolwallet.io/",
+      "publisher": "CoolWallet",
+      "published_at": null,
+      "accessed_at": "2026-08-19",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party storefront identifies CoolWallet Pro as the advanced hardware model and the CoolWallet App as decentralized and self-custodial."
+    },
+    {
+      "id": "wlr_src_000373",
+      "entity_id": "wlr_ent_000039",
+      "product_id": "wlr_prod_000088",
+      "event_id": "wlr_ev_000146",
+      "source_type": "official_blog",
+      "title": "Introducing the CoolWallet Pro For Enhanced Staking, DeFi, DApp, and NFT Support",
+      "url": "https://www.coolwallet.io/blogs/blog/introducing-the-coolwallet-pro-for-enhanced-staking-defi-dapp-and-nft-support",
+      "publisher": "CoolWallet / CoolBitX",
+      "published_at": null,
+      "accessed_at": "2026-08-23",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party release text dated Taipei, 20 May 2021 states CoolBitX announced the release of CoolWallet Pro, available to order with fulfillment from 24 May 2021. Evidence publication metadata is left null rather than conflating page metadata with the release date stated in the article body."
+    }
+  ]
+}

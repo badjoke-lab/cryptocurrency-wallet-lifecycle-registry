@@ -1,0 +1,122 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000006",
+    "slug": "bitkey",
+    "canonical_name": "Bitkey",
+    "wallet_type": "hybrid",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000026",
+    "entity_id": "wlr_ent_000006",
+    "slug": "bitkey-mobile-app",
+    "product_name": "Bitkey Mobile App",
+    "aliases": [
+      "Bitkey app"
+    ],
+    "product_type": "mobile_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "supported",
+    "launch_date": "2024-03-13",
+    "launch_date_precision": "day",
+    "generation": null,
+    "platform": [
+      "iOS",
+      "Android"
+    ],
+    "custody_model": "hybrid",
+    "key_management_model": "app_key_in_2_of_3_multisig",
+    "variants": [],
+    "summary": "Mobile application holding the app key and coordinating Bitkey wallet functions.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": ""
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000026",
+      "entity_id": "wlr_ent_000006",
+      "product_id": null,
+      "affected_product_ids": [
+        "wlr_prod_000025",
+        "wlr_prod_000026"
+      ],
+      "event_type": "product_released",
+      "event_date": "2024-03-13",
+      "event_date_basis": "release",
+      "title": "Bitkey began shipping",
+      "description": "Bitkey exited pre-order status and began shipping its integrated hardware-and-mobile self-custody system.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    },
+    {
+      "id": "wlr_ev_000028",
+      "entity_id": "wlr_ent_000006",
+      "product_id": "wlr_prod_000026",
+      "affected_product_ids": [
+        "wlr_prod_000026",
+        "wlr_prod_000027"
+      ],
+      "affected_components": [
+        "app_key",
+        "relationship_enrollment_flow"
+      ],
+      "event_type": "software_issue",
+      "event_date": "2026-08-02",
+      "event_date_basis": "disclosure",
+      "title": "Relationship-enrollment randomness bug disclosed",
+      "description": "Bitkey disclosed that the mobile app used a non-cryptographic random-number generator for a one-time relationship-enrollment secret. The demonstrated practical path was limited to narrow second-generation recovery-contact or inheritance flows and did not weaken wallet spending keys.",
+      "confidence": "high",
+      "impact_level": "high",
+      "security_scope": "mobile_app",
+      "funds_affected": "no",
+      "user_actions_required": [
+        "update",
+        "reconfigure"
+      ],
+      "event_status_effect": "none",
+      "is_major_event": true,
+      "affected_versions": [],
+      "notes": "Bitkey reported no evidence that customers were exploited or that funds were impacted; selected second-generation inheritance users were advised to update the app and re-enroll beneficiaries."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000033",
+      "entity_id": "wlr_ent_000006",
+      "product_id": null,
+      "event_id": "wlr_ev_000026",
+      "source_type": "official_blog",
+      "title": "Bitkey starts shipping today",
+      "url": "https://bitkey.world/blog/bitkey-starts-shipping-today",
+      "publisher": "Bitkey",
+      "published_at": "2024-03-13",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": ""
+    },
+    {
+      "id": "wlr_src_000035",
+      "entity_id": "wlr_ent_000006",
+      "product_id": "wlr_prod_000026",
+      "event_id": "wlr_ev_000028",
+      "source_type": "official_security_advisory",
+      "title": "Relationship-enrollment bug in Bitkey",
+      "url": "https://bitkey.world/blog/relationship-enrollment-bug-in-bitkey",
+      "publisher": "Bitkey",
+      "published_at": "2026-08-02",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": ""
+    }
+  ]
+}

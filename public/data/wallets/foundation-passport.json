@@ -1,0 +1,436 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000017",
+    "slug": "foundation-passport",
+    "canonical_name": "Foundation Passport",
+    "aliases": [
+      "Passport",
+      "Foundation Devices"
+    ],
+    "wallet_type": "hardware",
+    "status": "active",
+    "summary": "Bitcoin self-custody hardware wallet ecosystem from Foundation Devices, spanning the Passport Founder’s Edition, the second-generation Passport now called Passport Core, Passport Prime, and the Envoy mobile wallet/companion application.",
+    "developer_or_company": "Foundation Devices, Inc.",
+    "country_or_origin": "United States",
+    "launch_date": "2020",
+    "launch_date_precision": "year",
+    "official_url": "https://foundation.xyz/",
+    "official_domain": "foundation.xyz",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "hardware_device_keys_with_optional_envoy_software_wallet",
+    "confidence": "high",
+    "last_verified_at": "2026-08-15",
+    "notes": "Entity remains hardware-classified because Passport is the primary wallet lineage; Envoy is modeled separately as a mobile wallet and companion product."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000050",
+      "entity_id": "wlr_ent_000017",
+      "slug": "passport-founders-edition",
+      "product_name": "Passport Founder’s Edition",
+      "aliases": [
+        "Passport Founders Edition",
+        "Passport Gen 1"
+      ],
+      "product_type": "hardware_device",
+      "status": "active",
+      "sales_status": "end_of_sale",
+      "support_status": "supported",
+      "launch_date": "2020",
+      "launch_date_precision": "year",
+      "platform": [
+        "hardware"
+      ],
+      "official_url": "https://foundation.xyz/blog/passport-is-now-passport-core",
+      "custody_model": "self_custody",
+      "key_management_model": "device_held_bitcoin_seed",
+      "variants": [],
+      "summary": "First-generation Passport hardware wallet introduced in 2020; no longer sold, while current Passport Core documentation remains applicable to Founder’s Edition devices on supported firmware.",
+      "predecessor_product_id": null,
+      "successor_product_id": "wlr_prod_000051",
+      "confidence": "high",
+      "last_verified_at": "2026-08-15",
+      "notes": "End-of-sale is distinct from support status; no unsupported EOL date is asserted."
+    },
+    {
+      "id": "wlr_prod_000051",
+      "entity_id": "wlr_ent_000017",
+      "slug": "passport-core",
+      "product_name": "Passport Core",
+      "aliases": [
+        "Passport",
+        "Passport Batch 2"
+      ],
+      "product_type": "hardware_device",
+      "status": "active",
+      "sales_status": "on_sale",
+      "support_status": "supported",
+      "launch_date": "2022-03",
+      "launch_date_precision": "month",
+      "platform": [
+        "hardware"
+      ],
+      "official_url": "https://foundation.xyz/passport/",
+      "custody_model": "self_custody",
+      "key_management_model": "device_held_bitcoin_seed",
+      "variants": [
+        "Classic",
+        "Stealth"
+      ],
+      "summary": "Second-generation Passport hardware wallet, originally referred to as Passport Batch 2 and renamed Passport Core in March 2025.",
+      "predecessor_product_id": "wlr_prod_000050",
+      "successor_product_id": null,
+      "confidence": "high",
+      "last_verified_at": "2026-08-15",
+      "notes": "The 2025 naming change is modeled as a rebrand of the same second-generation product, not a new hardware product."
+    },
+    {
+      "id": "wlr_prod_000052",
+      "entity_id": "wlr_ent_000017",
+      "slug": "passport-prime",
+      "product_name": "Passport Prime",
+      "aliases": [],
+      "product_type": "hardware_device",
+      "status": "active",
+      "sales_status": "on_sale",
+      "support_status": "supported",
+      "launch_date": "2025",
+      "platform": [
+        "hardware"
+      ],
+      "official_url": "https://foundation.xyz/buy-passport-prime/",
+      "custody_model": "self_custody",
+      "key_management_model": "device_master_key_with_nfc_keycard_backup_architecture",
+      "variants": [],
+      "summary": "Current Foundation hardware device combining a Bitcoin wallet with additional security functions under the KeyOS platform.",
+      "predecessor_product_id": null,
+      "successor_product_id": null,
+      "confidence": "high",
+      "last_verified_at": "2026-08-18",
+      "notes": "Foundation announced Passport Prime in December 2024, but WLR does not treat announcement or preorder chronology as release. Foundation's May 2025 shipping update still described production ramp and future Early Access shipments, while its 2025-10-16 first-party security-audit article states that Passport Prime begins shipping. WLR therefore records the public release/shipping lineage at 2025 year precision without asserting an exact first shipment day.",
+      "launch_date_precision": "year"
+    },
+    {
+      "id": "wlr_prod_000053",
+      "entity_id": "wlr_ent_000017",
+      "slug": "foundation-envoy",
+      "product_name": "Envoy",
+      "aliases": [
+        "Envoy Mobile Wallet"
+      ],
+      "product_type": "mobile_app",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "supported",
+      "launch_date": "2022",
+      "platform": [
+        "iOS",
+        "Android"
+      ],
+      "official_url": "https://foundation.xyz/envoy/",
+      "custody_model": "self_custody",
+      "key_management_model": "mobile_hot_wallet_and_passport_companion",
+      "variants": [],
+      "summary": "Foundation mobile wallet that can operate as its own self-custody hot wallet and also serves as the companion application for Passport hardware devices.",
+      "predecessor_product_id": null,
+      "successor_product_id": null,
+      "confidence": "high",
+      "last_verified_at": "2026-08-18",
+      "notes": "Foundation announced Envoy as a forthcoming Passport companion/mobile wallet in March 2022, and first-party distribution evidence shows Envoy was publicly released during 2022. WLR records year precision only because the reviewed sources do not establish a single defensible initial app-store release day. The later 2023 standalone-hot-wallet expansion is not treated as the initial Envoy launch.",
+      "launch_date_precision": "year"
+    }
+  ],
+  "events": [
+    {
+      "id": "wlr_ev_000050",
+      "entity_id": "wlr_ent_000017",
+      "product_id": "wlr_prod_000050",
+      "affected_product_ids": [
+        "wlr_prod_000050"
+      ],
+      "event_type": "product_released",
+      "event_date": "2020",
+      "event_date_basis": "approximate",
+      "title": "First-generation Passport introduced",
+      "description": "Foundation states that its first-generation Passport hardware wallet, later described as the Passport Founder’s Edition, was introduced in mid-2020.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    },
+    {
+      "id": "wlr_ev_000051",
+      "entity_id": "wlr_ent_000017",
+      "product_id": "wlr_prod_000051",
+      "affected_product_ids": [
+        "wlr_prod_000051"
+      ],
+      "event_type": "rebranded",
+      "event_date": "2025-03-17",
+      "event_date_basis": "announcement",
+      "title": "Second-generation Passport renamed Passport Core",
+      "description": "Foundation renamed its existing second-generation Passport, previously referred to as Passport Batch 2, to Passport Core while keeping it in the product line alongside Passport Prime.",
+      "confidence": "high",
+      "event_status_effect": "none",
+      "is_major_event": true,
+      "notes": "This is modeled as a product rebrand, not a new hardware generation."
+    },
+    {
+      "id": "wlr_ev_000090",
+      "entity_id": "wlr_ent_000017",
+      "product_id": "wlr_prod_000051",
+      "affected_product_ids": [
+        "wlr_prod_000051"
+      ],
+      "event_type": "product_released",
+      "event_date": "2022-03",
+      "event_date_basis": "release",
+      "title": "Second-generation Passport launched as Passport Batch 2",
+      "description": "Foundation later stated that it launched its second-generation Passport device in March 2022. This second-generation product was originally known as Passport Batch 2 and was renamed Passport Core in 2025.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "WLR records month precision only. The contemporaneous March 10, 2022 Batch 2 announcement was still at the presale stage, so that announcement date is not treated as an exact shipment or general-availability day."
+    },
+    {
+      "id": "wlr_ev_000103",
+      "entity_id": "wlr_ent_000017",
+      "product_id": "wlr_prod_000053",
+      "affected_product_ids": [
+        "wlr_prod_000053"
+      ],
+      "event_type": "product_released",
+      "event_date": "2022",
+      "event_date_basis": "release",
+      "title": "Foundation Envoy released on mobile platforms",
+      "description": "Foundation released Envoy during 2022 as a mobile Passport companion and Bitcoin software-wallet application for iOS and Android.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "Year precision only. Foundation stated on 2022-03-10 that Envoy would launch later, while the official Envoy repository published v1.0.7 Android/iOS release artifacts in October 2022 and Foundation subsequently described v1.0.7 as live on mobile platforms."
+    },
+    {
+      "id": "wlr_ev_000114",
+      "entity_id": "wlr_ent_000017",
+      "product_id": "wlr_prod_000052",
+      "affected_product_ids": [
+        "wlr_prod_000052"
+      ],
+      "event_type": "product_released",
+      "event_date": "2025",
+      "event_date_basis": "release",
+      "title": "Passport Prime began shipping in 2025",
+      "description": "Foundation first-party shipping history establishes that Passport Prime entered its shipping/release lineage during 2025 after the 2024 announcement and preorder period.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "Year precision only. Foundation still described future Early Access shipping in May 2025 and later stated that Passport Prime was beginning to ship in October 2025; no exact first shipment day is asserted."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000073",
+      "entity_id": "wlr_ent_000017",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Foundation Terms of Use",
+      "url": "https://foundation.xyz/legal/",
+      "publisher": "Foundation Devices, Inc.",
+      "published_at": "2024-07-09",
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "entity",
+      "is_primary": true,
+      "notes": "Primary legal source for Foundation Devices, Inc., its U.S. location, and Envoy's role as a mobile companion application."
+    },
+    {
+      "id": "wlr_src_000074",
+      "entity_id": "wlr_ent_000017",
+      "product_ids": [
+        "wlr_prod_000050",
+        "wlr_prod_000051",
+        "wlr_prod_000052",
+        "wlr_prod_000053"
+      ],
+      "event_ids": [
+        "wlr_ev_000050",
+        "wlr_ev_000051"
+      ],
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_blog",
+      "title": "Passport is now Passport Core",
+      "url": "https://foundation.xyz/blog/passport-is-now-passport-core",
+      "publisher": "Foundation",
+      "published_at": "2025-03-17",
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "product_lineage",
+      "is_primary": true,
+      "notes": "Primary history source for the 2020 first generation, Founder’s Edition, Batch 2/Core continuity, 2025 rename, Prime, and Envoy product family."
+    },
+    {
+      "id": "wlr_src_000075",
+      "entity_id": "wlr_ent_000017",
+      "product_ids": [
+        "wlr_prod_000050",
+        "wlr_prod_000051"
+      ],
+      "event_ids": [],
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Passport Core Home",
+      "url": "https://docs.foundation.xyz/passport",
+      "publisher": "Foundation",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "Current documentation identifies Passport Core and states that instructions also apply to Founder’s Edition devices on version 2.1.0 and above."
+    },
+    {
+      "id": "wlr_src_000076",
+      "entity_id": "wlr_ent_000017",
+      "product_ids": [
+        "wlr_prod_000051",
+        "wlr_prod_000052"
+      ],
+      "event_ids": [],
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Compare Products",
+      "url": "https://foundation.xyz/compare-products/",
+      "publisher": "Foundation",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "status",
+      "is_primary": true,
+      "notes": "Current first-party product comparison for Passport Core and Passport Prime."
+    },
+    {
+      "id": "wlr_src_000077",
+      "entity_id": "wlr_ent_000017",
+      "product_ids": [
+        "wlr_prod_000052",
+        "wlr_prod_000053"
+      ],
+      "event_ids": [],
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Passport Prime Terms of Use",
+      "url": "https://foundation.xyz/terms-prime/",
+      "publisher": "Foundation Devices, Inc.",
+      "published_at": "2025-11-11",
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "architecture",
+      "is_primary": true,
+      "notes": "Describes Prime as an offline Bitcoin key-management device and Envoy as its companion app, while noting Envoy can hold keys for its own built-in hot wallet."
+    },
+    {
+      "id": "wlr_src_000148",
+      "entity_id": "wlr_ent_000017",
+      "product_ids": [
+        "wlr_prod_000051"
+      ],
+      "event_ids": [
+        "wlr_ev_000090"
+      ],
+      "product_id": "wlr_prod_000051",
+      "event_id": "wlr_ev_000090",
+      "source_type": "official_blog",
+      "title": "Announcing Our $7M Seed Round",
+      "url": "https://foundation.xyz/2022/12/announcing-our-7m-seed-round/",
+      "publisher": "Foundation",
+      "published_at": "2022-12-19",
+      "accessed_at": "2026-08-17",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party Foundation retrospective explicitly stating that in March 2022 Foundation launched its second-generation Passport device."
+    },
+    {
+      "id": "wlr_src_000161",
+      "entity_id": "wlr_ent_000017",
+      "product_ids": [
+        "wlr_prod_000053"
+      ],
+      "event_ids": [
+        "wlr_ev_000103"
+      ],
+      "product_id": "wlr_prod_000053",
+      "event_id": "wlr_ev_000103",
+      "source_type": "official_blog",
+      "title": "Introducing Passport Batch 2 & Envoy Mobile App",
+      "url": "https://foundation.xyz/2022/03/introducing-passport-batch-2-envoy/",
+      "publisher": "Foundation",
+      "published_at": "2022-03-10",
+      "accessed_at": "2026-08-18",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party pre-launch boundary: Foundation announces Envoy and explicitly says it will launch in app stores later alongside Passport Batch 2. This source is not treated as the release date itself."
+    },
+    {
+      "id": "wlr_src_000162",
+      "entity_id": "wlr_ent_000017",
+      "product_ids": [
+        "wlr_prod_000053"
+      ],
+      "event_ids": [
+        "wlr_ev_000103"
+      ],
+      "product_id": "wlr_prod_000053",
+      "event_id": "wlr_ev_000103",
+      "source_type": "release_notes",
+      "title": "Envoy Release 1.0.7",
+      "url": "https://github.com/Foundation-Devices/envoy/releases/tag/v1.0.7",
+      "publisher": "Foundation Devices",
+      "published_at": "2022-10-17",
+      "accessed_at": "2026-08-18",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "Official Envoy repository release containing Android App Bundle/APK and iOS IPA artifacts in October 2022. Used with the March pre-launch announcement to establish only that the initial public product launch occurred in 2022."
+    },
+    {
+      "id": "wlr_src_000180",
+      "entity_id": "wlr_ent_000017",
+      "product_id": "wlr_prod_000052",
+      "event_id": "wlr_ev_000114",
+      "source_type": "official_blog",
+      "title": "Passport Prime Security Audit",
+      "url": "https://foundation.xyz/2025/10/passport-prime-security-audit/",
+      "publisher": "Foundation",
+      "published_at": "2025-10-16",
+      "accessed_at": "2026-08-18",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party Foundation article stating that Passport Prime begins shipping. Used to establish the 2025 release/shipping year, not an exact first shipment day."
+    },
+    {
+      "id": "wlr_src_000181",
+      "entity_id": "wlr_ent_000017",
+      "product_id": "wlr_prod_000052",
+      "event_id": "wlr_ev_000114",
+      "source_type": "official_statement",
+      "title": "Shipping Updates for Passport Prime and Core",
+      "url": "https://community.foundation.xyz/t/shipping-updates-for-passport-prime-and-core/426",
+      "publisher": "Foundation",
+      "published_at": "2025-05-07",
+      "accessed_at": "2026-08-18",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party Foundation customer shipping update stating that remaining components were still arriving and the 1,000 Early Access orders were expected to be assembled and shipped afterward. Used to avoid backdating the release to the 2024 announcement/preorder period."
+    }
+  ]
+}

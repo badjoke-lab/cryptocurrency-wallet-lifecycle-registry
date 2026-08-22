@@ -1,0 +1,83 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000054",
+    "slug": "bitcoin-com-wallet",
+    "canonical_name": "Bitcoin.com Wallet",
+    "aliases": [],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Self-custodial cryptocurrency wallet application published by Bitcoin.com for managing supported digital assets.",
+    "developer_or_company": "Bitcoin.com",
+    "country_or_origin": null,
+    "launch_date": null,
+    "official_url": "https://www.bitcoin.com/wallet/",
+    "official_domain": "bitcoin.com",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "user_controlled_recovery_phrase_and_private_keys",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Current Bitcoin.com support and legal material explicitly states that the wallet is self-custodial and Bitcoin.com does not take custody of wallet assets. Initial wallet launch date remains unresolved."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000103",
+      "entity_id": "wlr_ent_000054",
+      "slug": "bitcoin-com-wallet-app",
+      "product_name": "Bitcoin.com Wallet App",
+      "product_type": "mobile_app",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "unknown",
+      "launch_date": null,
+      "platform": [
+        "iOS",
+        "Android"
+      ],
+      "official_url": "https://www.bitcoin.com/wallet/",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "user_controlled_recovery_phrase_and_private_keys",
+      "summary": "Bitcoin.com self-custodial mobile wallet application for supported cryptocurrency assets.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-20",
+      "notes": "Current app boundary is established by Bitcoin.com support material. Exact original app launch date remains unresolved."
+    }
+  ],
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000253",
+      "entity_id": "wlr_ent_000054",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Wallet Service Terms",
+      "url": "https://www.bitcoin.com/legal/wallet-service-terms/",
+      "publisher": "Bitcoin.com",
+      "published_at": "2021-03-10",
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "entity",
+      "is_primary": true,
+      "notes": "Bitcoin.com wallet terms state that the wallet software permits users to self-custody virtual currency and that Bitcoin.com does not take custody."
+    },
+    {
+      "id": "wlr_src_000254",
+      "entity_id": "wlr_ent_000054",
+      "product_id": "wlr_prod_000103",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Cryptocurrency security",
+      "url": "https://support.bitcoin.com/en/articles/5343935-cryptocurrency-security",
+      "publisher": "Bitcoin.com",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current Bitcoin.com support explicitly identifies the Bitcoin.com Wallet app as self-custodial with user-controlled keys."
+    }
+  ]
+}

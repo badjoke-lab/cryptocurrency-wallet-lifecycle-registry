@@ -1,0 +1,82 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000078",
+    "slug": "unisat-wallet",
+    "canonical_name": "UniSat Wallet",
+    "aliases": [],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Open-source non-custodial Bitcoin wallet ecosystem from UniSat for BTC and newer Bitcoin asset standards across browser and mobile surfaces.",
+    "developer_or_company": "UniSat",
+    "country_or_origin": null,
+    "launch_date": null,
+    "official_url": "https://unisat.io/download",
+    "official_domain": "unisat.io",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "locally_encrypted_user_controlled_private_keys",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Current UniSat first-party documentation explicitly describes UniSat Wallet as open-source and non-custodial and distinguishes the wallet from UniSat Marketplace, Inscribe and other services. Initial launch date remains unresolved."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000127",
+      "entity_id": "wlr_ent_000078",
+      "slug": "unisat-wallet-extension",
+      "product_name": "UniSat Wallet Extension",
+      "product_type": "browser_extension",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "unknown",
+      "launch_date": null,
+      "platform": [
+        "Chrome-compatible browsers"
+      ],
+      "official_url": "https://unisat.io/download",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "locally_encrypted_user_controlled_private_keys",
+      "summary": "UniSat open-source non-custodial Bitcoin browser-extension wallet.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-20",
+      "notes": "Selected browser-extension runtime only; iOS and Android wallet applications are deferred."
+    }
+  ],
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000301",
+      "entity_id": "wlr_ent_000078",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "UniSat Wallet",
+      "url": "https://docs.unisat.io/products/unisat-wallet",
+      "publisher": "UniSat",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "entity",
+      "is_primary": true,
+      "notes": "Current first-party documentation describes UniSat Wallet as open-source, non-custodial and separate from marketplace/inscription/other integrated services."
+    },
+    {
+      "id": "wlr_src_000302",
+      "entity_id": "wlr_ent_000078",
+      "product_id": "wlr_prod_000127",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "UniSat Wallet Download",
+      "url": "https://unisat.io/download",
+      "publisher": "UniSat",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party distribution page confirms the open-source non-custodial Chrome extension and separately lists iOS/Android downloads."
+    }
+  ]
+}

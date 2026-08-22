@@ -1,0 +1,82 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000081",
+    "slug": "tonhub",
+    "canonical_name": "Tonhub",
+    "aliases": [],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Open-source non-custodial wallet for The Open Network maintained by the Ton Whales team.",
+    "developer_or_company": "Ton Whales",
+    "country_or_origin": null,
+    "launch_date": null,
+    "official_url": "https://tonhub.com/",
+    "official_domain": "tonhub.com",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "user_controlled_seed_phrase_and_wallet_keys",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Current first-party Tonhub documentation explicitly describes Tonhub as non-custodial and states that users own the data and seed phrase. Initial launch date remains unresolved."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000130",
+      "entity_id": "wlr_ent_000081",
+      "slug": "tonhub-mobile",
+      "product_name": "Tonhub Mobile",
+      "product_type": "mobile_app",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "unknown",
+      "launch_date": null,
+      "platform": [
+        "mobile"
+      ],
+      "official_url": "https://tonhub.com/",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "user_controlled_seed_phrase_and_wallet_keys",
+      "summary": "Tonhub non-custodial TON wallet application for asset management, payments and service connections.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-20",
+      "notes": "Selected user-facing wallet runtime for the breadth pass. Exact original release date remains unresolved."
+    }
+  ],
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000307",
+      "entity_id": "wlr_ent_000081",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Tonhub — Overview",
+      "url": "https://docs.tonhub.com/docs/overview-wallet",
+      "publisher": "Tonhub / Ton Whales",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "entity",
+      "is_primary": true,
+      "notes": "First-party Tonhub developer documentation identifies Tonhub as a TON wallet maintained by the Ton Whales team and explicitly states it is non-custodial."
+    },
+    {
+      "id": "wlr_src_000308",
+      "entity_id": "wlr_ent_000081",
+      "product_id": "wlr_prod_000130",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Tonhub",
+      "url": "https://tonhub.com/",
+      "publisher": "Tonhub",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current official Tonhub distribution surface for the user-facing wallet application."
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000062",
+    "slug": "hashpack",
+    "canonical_name": "HashPack",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000111",
+    "entity_id": "wlr_ent_000062",
+    "slug": "hashpack-extension",
+    "product_name": "HashPack Extension",
+    "product_type": "browser_extension",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": "2021-10",
+    "launch_date_precision": "month",
+    "platform": [
+      "browser extension"
+    ],
+    "official_url": "https://www.hashpack.app/",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "browser_local_encrypted_private_keys_or_recovery_phrase",
+    "summary": "HashPack non-custodial Hedera browser-extension wallet.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "First-party HashPack history explicitly says the wallet launched in October 2021 as a browser-based app and dedicated Chrome extension. Mobile remains a separate runtime and is deferred."
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000147",
+      "entity_id": "wlr_ent_000062",
+      "product_id": "wlr_prod_000111",
+      "affected_product_ids": [
+        "wlr_prod_000111"
+      ],
+      "event_type": "product_released",
+      "event_date": "2021-10-23",
+      "event_date_basis": "release",
+      "title": "HashPack launched publicly",
+      "description": "HashPack's first-party one-year retrospective states that HashPack launched into the public sphere on 2021-10-23; first-party history describes the launch as a browser-based app and dedicated Chrome extension.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "The exact date comes from HashPack's own one-year retrospective and is attached to the existing HashPack Extension product boundary."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000270",
+      "entity_id": "wlr_ent_000062",
+      "product_id": "wlr_prod_000111",
+      "event_id": null,
+      "source_type": "official_blog",
+      "title": "Solving 3 user experience challenges in crypto",
+      "url": "https://www.hashpack.app/post/solving-3-user-experience-challenges-in-crypto",
+      "publisher": "HashPack",
+      "published_at": "2022-01-16",
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party HashPack history states the wallet launched in October 2021 as a browser app and dedicated Chrome extension, supporting month precision and the selected extension boundary."
+    },
+    {
+      "id": "wlr_src_000374",
+      "entity_id": "wlr_ent_000062",
+      "product_id": "wlr_prod_000111",
+      "event_id": "wlr_ev_000147",
+      "source_type": "official_blog",
+      "title": "HashPack – one year anniversary",
+      "url": "https://www.hashpack.app/post/hashpack-one-year-anniversary",
+      "publisher": "HashPack",
+      "published_at": "2022-10-24",
+      "accessed_at": "2026-08-23",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party retrospective explicitly states HashPack launched on 2021-10-23."
+    }
+  ]
+}

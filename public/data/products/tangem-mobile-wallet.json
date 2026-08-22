@@ -1,0 +1,100 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000014",
+    "slug": "tangem",
+    "canonical_name": "Tangem",
+    "wallet_type": "hybrid",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000044",
+    "entity_id": "wlr_ent_000014",
+    "slug": "tangem-mobile-wallet",
+    "product_name": "Tangem Mobile Wallet",
+    "aliases": [],
+    "product_type": "mobile_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "supported",
+    "launch_date": "2026-02-27",
+    "platform": [
+      "iOS",
+      "Android"
+    ],
+    "official_url": "https://tangem.com/en/help-center/getting-started-with-mobile-wallet/",
+    "custody_model": "self_custody",
+    "key_management_model": "encrypted_phone_secure_environment",
+    "variants": [],
+    "summary": "App-based Tangem self-custody wallet that does not require a Tangem card or ring and stores encrypted wallet data in the phone security environment.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-17",
+    "notes": "Kept separate from the Tangem hardware wallet because its private-key storage and recovery boundary is the smartphone rather than a Tangem secure element. Launch date is established by the reviewed February 27, 2026 first-party Tangem Mobile Wallet release event and official Tangem blog evidence.",
+    "launch_date_precision": "day"
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000072",
+      "entity_id": "wlr_ent_000014",
+      "product_id": "wlr_prod_000044",
+      "affected_product_ids": [
+        "wlr_prod_000044"
+      ],
+      "event_type": "product_released",
+      "event_date": "2026-02-27",
+      "event_date_basis": "release",
+      "title": "Tangem Mobile Wallet launched",
+      "description": "Tangem introduced the Mobile Wallet as a free self-custody wallet available directly inside the Tangem app, with encrypted wallet keys stored in the smartphone security environment rather than a Tangem card or ring.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000060",
+      "entity_id": "wlr_ent_000014",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Wallet Types: Mobile vs Hardware",
+      "url": "https://tangem.com/en/help-center/introduction-to-tangem-wallet/wallet-types-mobile-vs-hardware/",
+      "publisher": "Tangem",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "architecture",
+      "is_primary": true,
+      "product_ids": [
+        "wlr_prod_000042",
+        "wlr_prod_000043",
+        "wlr_prod_000044"
+      ],
+      "notes": "Primary source separating Mobile Wallet from hardware card/ring wallet and describing their different key-storage boundaries."
+    },
+    {
+      "id": "wlr_src_000118",
+      "entity_id": "wlr_ent_000014",
+      "product_ids": [
+        "wlr_prod_000044"
+      ],
+      "event_ids": [
+        "wlr_ev_000072"
+      ],
+      "product_id": "wlr_prod_000044",
+      "event_id": "wlr_ev_000072",
+      "source_type": "official_blog",
+      "title": "What is the Tangem Mobile Wallet",
+      "url": "https://tangem.com/en/blog/post/about-mobile-wallet/",
+      "publisher": "Tangem",
+      "published_at": "2026-02-27",
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Primary launch source stating the Mobile Wallet was available that day in the latest Tangem app and describing smartphone-based key storage."
+    }
+  ]
+}

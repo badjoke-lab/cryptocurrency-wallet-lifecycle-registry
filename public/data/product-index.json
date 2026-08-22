@@ -1,0 +1,896 @@
+[
+  {
+    "id": "wlr_prod_000001",
+    "entity_id": "wlr_ent_000001",
+    "slug": "trezor-model-one",
+    "path": "/data/products/trezor-model-one.json"
+  },
+  {
+    "id": "wlr_prod_000002",
+    "entity_id": "wlr_ent_000001",
+    "slug": "trezor-model-t",
+    "path": "/data/products/trezor-model-t.json"
+  },
+  {
+    "id": "wlr_prod_000003",
+    "entity_id": "wlr_ent_000001",
+    "slug": "trezor-safe-3",
+    "path": "/data/products/trezor-safe-3.json"
+  },
+  {
+    "id": "wlr_prod_000004",
+    "entity_id": "wlr_ent_000001",
+    "slug": "trezor-safe-5",
+    "path": "/data/products/trezor-safe-5.json"
+  },
+  {
+    "id": "wlr_prod_000005",
+    "entity_id": "wlr_ent_000001",
+    "slug": "trezor-safe-7",
+    "path": "/data/products/trezor-safe-7.json"
+  },
+  {
+    "id": "wlr_prod_000006",
+    "entity_id": "wlr_ent_000001",
+    "slug": "trezor-suite",
+    "path": "/data/products/trezor-suite.json"
+  },
+  {
+    "id": "wlr_prod_000007",
+    "entity_id": "wlr_ent_000002",
+    "slug": "ledger-nano-s",
+    "path": "/data/products/ledger-nano-s.json"
+  },
+  {
+    "id": "wlr_prod_000008",
+    "entity_id": "wlr_ent_000002",
+    "slug": "ledger-nano-x",
+    "path": "/data/products/ledger-nano-x.json"
+  },
+  {
+    "id": "wlr_prod_000009",
+    "entity_id": "wlr_ent_000002",
+    "slug": "ledger-nano-s-plus",
+    "path": "/data/products/ledger-nano-s-plus.json"
+  },
+  {
+    "id": "wlr_prod_000010",
+    "entity_id": "wlr_ent_000002",
+    "slug": "ledger-stax",
+    "path": "/data/products/ledger-stax.json"
+  },
+  {
+    "id": "wlr_prod_000011",
+    "entity_id": "wlr_ent_000002",
+    "slug": "ledger-flex",
+    "path": "/data/products/ledger-flex.json"
+  },
+  {
+    "id": "wlr_prod_000012",
+    "entity_id": "wlr_ent_000002",
+    "slug": "ledger-nano-gen5",
+    "path": "/data/products/ledger-nano-gen5.json"
+  },
+  {
+    "id": "wlr_prod_000013",
+    "entity_id": "wlr_ent_000002",
+    "slug": "ledger-wallet",
+    "path": "/data/products/ledger-wallet.json"
+  },
+  {
+    "id": "wlr_prod_000014",
+    "entity_id": "wlr_ent_000003",
+    "slug": "coldcard-mk2",
+    "path": "/data/products/coldcard-mk2.json"
+  },
+  {
+    "id": "wlr_prod_000015",
+    "entity_id": "wlr_ent_000003",
+    "slug": "coldcard-mk3",
+    "path": "/data/products/coldcard-mk3.json"
+  },
+  {
+    "id": "wlr_prod_000016",
+    "entity_id": "wlr_ent_000003",
+    "slug": "coldcard-mk4",
+    "path": "/data/products/coldcard-mk4.json"
+  },
+  {
+    "id": "wlr_prod_000017",
+    "entity_id": "wlr_ent_000003",
+    "slug": "coldcard-mk5",
+    "path": "/data/products/coldcard-mk5.json"
+  },
+  {
+    "id": "wlr_prod_000018",
+    "entity_id": "wlr_ent_000003",
+    "slug": "coldcard-q",
+    "path": "/data/products/coldcard-q.json"
+  },
+  {
+    "id": "wlr_prod_000019",
+    "entity_id": "wlr_ent_000004",
+    "slug": "metamask-browser-extension",
+    "path": "/data/products/metamask-browser-extension.json"
+  },
+  {
+    "id": "wlr_prod_000020",
+    "entity_id": "wlr_ent_000004",
+    "slug": "metamask-mobile",
+    "path": "/data/products/metamask-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000021",
+    "entity_id": "wlr_ent_000005",
+    "slug": "safe-smart-account",
+    "path": "/data/products/safe-smart-account.json"
+  },
+  {
+    "id": "wlr_prod_000022",
+    "entity_id": "wlr_ent_000005",
+    "slug": "gnosis-safe-mobile-legacy",
+    "path": "/data/products/gnosis-safe-mobile-legacy.json"
+  },
+  {
+    "id": "wlr_prod_000023",
+    "entity_id": "wlr_ent_000005",
+    "slug": "safe-wallet-web",
+    "path": "/data/products/safe-wallet-web.json"
+  },
+  {
+    "id": "wlr_prod_000024",
+    "entity_id": "wlr_ent_000005",
+    "slug": "safe-mobile",
+    "path": "/data/products/safe-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000025",
+    "entity_id": "wlr_ent_000006",
+    "slug": "bitkey-hardware-gen1",
+    "path": "/data/products/bitkey-hardware-gen1.json"
+  },
+  {
+    "id": "wlr_prod_000026",
+    "entity_id": "wlr_ent_000006",
+    "slug": "bitkey-mobile-app",
+    "path": "/data/products/bitkey-mobile-app.json"
+  },
+  {
+    "id": "wlr_prod_000027",
+    "entity_id": "wlr_ent_000006",
+    "slug": "bitkey-hardware-gen2",
+    "path": "/data/products/bitkey-hardware-gen2.json"
+  },
+  {
+    "id": "wlr_prod_000028",
+    "entity_id": "wlr_ent_000007",
+    "slug": "bitbox01",
+    "path": "/data/products/bitbox01.json"
+  },
+  {
+    "id": "wlr_prod_000029",
+    "entity_id": "wlr_ent_000007",
+    "slug": "bitbox02",
+    "path": "/data/products/bitbox02.json"
+  },
+  {
+    "id": "wlr_prod_000030",
+    "entity_id": "wlr_ent_000007",
+    "slug": "bitbox02-nova",
+    "path": "/data/products/bitbox02-nova.json"
+  },
+  {
+    "id": "wlr_prod_000031",
+    "entity_id": "wlr_ent_000007",
+    "slug": "bitbox-app",
+    "path": "/data/products/bitbox-app.json"
+  },
+  {
+    "id": "wlr_prod_000032",
+    "entity_id": "wlr_ent_000008",
+    "slug": "blockstream-jade-classic",
+    "path": "/data/products/blockstream-jade-classic.json"
+  },
+  {
+    "id": "wlr_prod_000033",
+    "entity_id": "wlr_ent_000008",
+    "slug": "blockstream-jade-plus",
+    "path": "/data/products/blockstream-jade-plus.json"
+  },
+  {
+    "id": "wlr_prod_000034",
+    "entity_id": "wlr_ent_000008",
+    "slug": "blockstream-jade-core",
+    "path": "/data/products/blockstream-jade-core.json"
+  },
+  {
+    "id": "wlr_prod_000035",
+    "entity_id": "wlr_ent_000009",
+    "slug": "trust-wallet-mobile",
+    "path": "/data/products/trust-wallet-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000036",
+    "entity_id": "wlr_ent_000009",
+    "slug": "trust-wallet-browser-extension",
+    "path": "/data/products/trust-wallet-browser-extension.json"
+  },
+  {
+    "id": "wlr_prod_000037",
+    "entity_id": "wlr_ent_000010",
+    "slug": "electrum-client",
+    "path": "/data/products/electrum-client.json"
+  },
+  {
+    "id": "wlr_prod_000038",
+    "entity_id": "wlr_ent_000011",
+    "slug": "ready-mobile",
+    "path": "/data/products/ready-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000039",
+    "entity_id": "wlr_ent_000011",
+    "slug": "ready-x",
+    "path": "/data/products/ready-x.json"
+  },
+  {
+    "id": "wlr_prod_000040",
+    "entity_id": "wlr_ent_000012",
+    "slug": "zengo-crypto-wallet",
+    "path": "/data/products/zengo-crypto-wallet.json"
+  },
+  {
+    "id": "wlr_prod_000041",
+    "entity_id": "wlr_ent_000013",
+    "slug": "keystone-3-pro",
+    "path": "/data/products/keystone-3-pro.json"
+  },
+  {
+    "id": "wlr_prod_000042",
+    "entity_id": "wlr_ent_000014",
+    "slug": "tangem-wallet-card",
+    "path": "/data/products/tangem-wallet-card.json"
+  },
+  {
+    "id": "wlr_prod_000043",
+    "entity_id": "wlr_ent_000014",
+    "slug": "tangem-ring",
+    "path": "/data/products/tangem-ring.json"
+  },
+  {
+    "id": "wlr_prod_000044",
+    "entity_id": "wlr_ent_000014",
+    "slug": "tangem-mobile-wallet",
+    "path": "/data/products/tangem-mobile-wallet.json"
+  },
+  {
+    "id": "wlr_prod_000045",
+    "entity_id": "wlr_ent_000015",
+    "slug": "phantom-browser-extension",
+    "path": "/data/products/phantom-browser-extension.json"
+  },
+  {
+    "id": "wlr_prod_000046",
+    "entity_id": "wlr_ent_000015",
+    "slug": "phantom-mobile",
+    "path": "/data/products/phantom-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000047",
+    "entity_id": "wlr_ent_000016",
+    "slug": "exodus-desktop",
+    "path": "/data/products/exodus-desktop.json"
+  },
+  {
+    "id": "wlr_prod_000048",
+    "entity_id": "wlr_ent_000016",
+    "slug": "exodus-mobile",
+    "path": "/data/products/exodus-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000049",
+    "entity_id": "wlr_ent_000016",
+    "slug": "exodus-web3-wallet",
+    "path": "/data/products/exodus-web3-wallet.json"
+  },
+  {
+    "id": "wlr_prod_000050",
+    "entity_id": "wlr_ent_000017",
+    "slug": "passport-founders-edition",
+    "path": "/data/products/passport-founders-edition.json"
+  },
+  {
+    "id": "wlr_prod_000051",
+    "entity_id": "wlr_ent_000017",
+    "slug": "passport-core",
+    "path": "/data/products/passport-core.json"
+  },
+  {
+    "id": "wlr_prod_000052",
+    "entity_id": "wlr_ent_000017",
+    "slug": "passport-prime",
+    "path": "/data/products/passport-prime.json"
+  },
+  {
+    "id": "wlr_prod_000053",
+    "entity_id": "wlr_ent_000017",
+    "slug": "foundation-envoy",
+    "path": "/data/products/foundation-envoy.json"
+  },
+  {
+    "id": "wlr_prod_000054",
+    "entity_id": "wlr_ent_000018",
+    "slug": "rabby-browser-extension",
+    "path": "/data/products/rabby-browser-extension.json"
+  },
+  {
+    "id": "wlr_prod_000055",
+    "entity_id": "wlr_ent_000018",
+    "slug": "rabby-mobile",
+    "path": "/data/products/rabby-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000056",
+    "entity_id": "wlr_ent_000018",
+    "slug": "rabby-desktop",
+    "path": "/data/products/rabby-desktop.json"
+  },
+  {
+    "id": "wlr_prod_000057",
+    "entity_id": "wlr_ent_000019",
+    "slug": "rainbow-mobile",
+    "path": "/data/products/rainbow-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000058",
+    "entity_id": "wlr_ent_000019",
+    "slug": "rainbow-browser-extension",
+    "path": "/data/products/rainbow-browser-extension.json"
+  },
+  {
+    "id": "wlr_prod_000059",
+    "entity_id": "wlr_ent_000020",
+    "slug": "xverse-mobile",
+    "path": "/data/products/xverse-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000060",
+    "entity_id": "wlr_ent_000020",
+    "slug": "xverse-browser-extension",
+    "path": "/data/products/xverse-browser-extension.json"
+  },
+  {
+    "id": "wlr_prod_000061",
+    "entity_id": "wlr_ent_000021",
+    "slug": "sparrow-desktop",
+    "path": "/data/products/sparrow-desktop.json"
+  },
+  {
+    "id": "wlr_prod_000062",
+    "entity_id": "wlr_ent_000022",
+    "slug": "wasabi-wallet-desktop",
+    "path": "/data/products/wasabi-wallet-desktop.json"
+  },
+  {
+    "id": "wlr_prod_000063",
+    "entity_id": "wlr_ent_000023",
+    "slug": "bluewallet-mobile",
+    "path": "/data/products/bluewallet-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000064",
+    "entity_id": "wlr_ent_000023",
+    "slug": "bluewallet-desktop",
+    "path": "/data/products/bluewallet-desktop.json"
+  },
+  {
+    "id": "wlr_prod_000065",
+    "entity_id": "wlr_ent_000024",
+    "slug": "leather-desktop-legacy",
+    "path": "/data/products/leather-desktop-legacy.json"
+  },
+  {
+    "id": "wlr_prod_000066",
+    "entity_id": "wlr_ent_000024",
+    "slug": "leather-browser-extension",
+    "path": "/data/products/leather-browser-extension.json"
+  },
+  {
+    "id": "wlr_prod_000067",
+    "entity_id": "wlr_ent_000024",
+    "slug": "leather-mobile",
+    "path": "/data/products/leather-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000068",
+    "entity_id": "wlr_ent_000025",
+    "slug": "mycrypto-web-app",
+    "path": "/data/products/mycrypto-web-app.json"
+  },
+  {
+    "id": "wlr_prod_000069",
+    "entity_id": "wlr_ent_000025",
+    "slug": "mycrypto-desktop",
+    "path": "/data/products/mycrypto-desktop.json"
+  },
+  {
+    "id": "wlr_prod_000070",
+    "entity_id": "wlr_ent_000026",
+    "slug": "safepal-s1",
+    "path": "/data/products/safepal-s1.json"
+  },
+  {
+    "id": "wlr_prod_000071",
+    "entity_id": "wlr_ent_000026",
+    "slug": "safepal-s1-pro",
+    "path": "/data/products/safepal-s1-pro.json"
+  },
+  {
+    "id": "wlr_prod_000072",
+    "entity_id": "wlr_ent_000026",
+    "slug": "safepal-x1",
+    "path": "/data/products/safepal-x1.json"
+  },
+  {
+    "id": "wlr_prod_000073",
+    "entity_id": "wlr_ent_000026",
+    "slug": "safepal-app",
+    "path": "/data/products/safepal-app.json"
+  },
+  {
+    "id": "wlr_prod_000074",
+    "entity_id": "wlr_ent_000026",
+    "slug": "safepal-extension-wallet",
+    "path": "/data/products/safepal-extension-wallet.json"
+  },
+  {
+    "id": "wlr_prod_000075",
+    "entity_id": "wlr_ent_000014",
+    "slug": "tangem-app",
+    "path": "/data/products/tangem-app.json"
+  },
+  {
+    "id": "wlr_prod_000076",
+    "entity_id": "wlr_ent_000027",
+    "slug": "mew-mobile",
+    "path": "/data/products/mew-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000077",
+    "entity_id": "wlr_ent_000028",
+    "slug": "okx-wallet-app",
+    "path": "/data/products/okx-wallet-app.json"
+  },
+  {
+    "id": "wlr_prod_000078",
+    "entity_id": "wlr_ent_000029",
+    "slug": "imtoken-app",
+    "path": "/data/products/imtoken-app.json"
+  },
+  {
+    "id": "wlr_prod_000079",
+    "entity_id": "wlr_ent_000030",
+    "slug": "tokenpocket-mobile-wallet",
+    "path": "/data/products/tokenpocket-mobile-wallet.json"
+  },
+  {
+    "id": "wlr_prod_000080",
+    "entity_id": "wlr_ent_000031",
+    "slug": "solflare-browser-extension",
+    "path": "/data/products/solflare-browser-extension.json"
+  },
+  {
+    "id": "wlr_prod_000081",
+    "entity_id": "wlr_ent_000032",
+    "slug": "atomic-wallet-desktop",
+    "path": "/data/products/atomic-wallet-desktop.json"
+  },
+  {
+    "id": "wlr_prod_000082",
+    "entity_id": "wlr_ent_000033",
+    "slug": "guarda-wallet",
+    "path": "/data/products/guarda-wallet.json"
+  },
+  {
+    "id": "wlr_prod_000083",
+    "entity_id": "wlr_ent_000034",
+    "slug": "coinomi-wallet",
+    "path": "/data/products/coinomi-wallet.json"
+  },
+  {
+    "id": "wlr_prod_000084",
+    "entity_id": "wlr_ent_000035",
+    "slug": "ellipal-titan-2-0",
+    "path": "/data/products/ellipal-titan-2-0.json"
+  },
+  {
+    "id": "wlr_prod_000085",
+    "entity_id": "wlr_ent_000036",
+    "slug": "edge-wallet",
+    "path": "/data/products/edge-wallet.json"
+  },
+  {
+    "id": "wlr_prod_000086",
+    "entity_id": "wlr_ent_000037",
+    "slug": "onekey-pro",
+    "path": "/data/products/onekey-pro.json"
+  },
+  {
+    "id": "wlr_prod_000087",
+    "entity_id": "wlr_ent_000038",
+    "slug": "dcent-biometric-wallet",
+    "path": "/data/products/dcent-biometric-wallet.json"
+  },
+  {
+    "id": "wlr_prod_000088",
+    "entity_id": "wlr_ent_000039",
+    "slug": "coolwallet-pro",
+    "path": "/data/products/coolwallet-pro.json"
+  },
+  {
+    "id": "wlr_prod_000089",
+    "entity_id": "wlr_ent_000040",
+    "slug": "ngrave-zero",
+    "path": "/data/products/ngrave-zero.json"
+  },
+  {
+    "id": "wlr_prod_000090",
+    "entity_id": "wlr_ent_000041",
+    "slug": "nunchuk-wallet",
+    "path": "/data/products/nunchuk-wallet.json"
+  },
+  {
+    "id": "wlr_prod_000091",
+    "entity_id": "wlr_ent_000042",
+    "slug": "cake-wallet",
+    "path": "/data/products/cake-wallet.json"
+  },
+  {
+    "id": "wlr_prod_000092",
+    "entity_id": "wlr_ent_000043",
+    "slug": "keplr-extension",
+    "path": "/data/products/keplr-extension.json"
+  },
+  {
+    "id": "wlr_prod_000093",
+    "entity_id": "wlr_ent_000044",
+    "slug": "lace-wallet",
+    "path": "/data/products/lace-wallet.json"
+  },
+  {
+    "id": "wlr_prod_000094",
+    "entity_id": "wlr_ent_000045",
+    "slug": "ronin-wallet-extension",
+    "path": "/data/products/ronin-wallet-extension.json"
+  },
+  {
+    "id": "wlr_prod_000095",
+    "entity_id": "wlr_ent_000046",
+    "slug": "bitget-wallet-mobile",
+    "path": "/data/products/bitget-wallet-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000096",
+    "entity_id": "wlr_ent_000047",
+    "slug": "uniswap-wallet",
+    "path": "/data/products/uniswap-wallet.json"
+  },
+  {
+    "id": "wlr_prod_000097",
+    "entity_id": "wlr_ent_000048",
+    "slug": "zerion-wallet-mobile",
+    "path": "/data/products/zerion-wallet-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000098",
+    "entity_id": "wlr_ent_000049",
+    "slug": "phoenix-wallet",
+    "path": "/data/products/phoenix-wallet.json"
+  },
+  {
+    "id": "wlr_prod_000099",
+    "entity_id": "wlr_ent_000050",
+    "slug": "muun-wallet",
+    "path": "/data/products/muun-wallet.json"
+  },
+  {
+    "id": "wlr_prod_000100",
+    "entity_id": "wlr_ent_000051",
+    "slug": "brave-wallet-browser",
+    "path": "/data/products/brave-wallet-browser.json"
+  },
+  {
+    "id": "wlr_prod_000101",
+    "entity_id": "wlr_ent_000052",
+    "slug": "crypto-com-onchain-extension",
+    "path": "/data/products/crypto-com-onchain-extension.json"
+  },
+  {
+    "id": "wlr_prod_000102",
+    "entity_id": "wlr_ent_000053",
+    "slug": "binance-wallet-mobile",
+    "path": "/data/products/binance-wallet-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000103",
+    "entity_id": "wlr_ent_000054",
+    "slug": "bitcoin-com-wallet-app",
+    "path": "/data/products/bitcoin-com-wallet-app.json"
+  },
+  {
+    "id": "wlr_prod_000104",
+    "entity_id": "wlr_ent_000055",
+    "slug": "bitpay-wallet-app",
+    "path": "/data/products/bitpay-wallet-app.json"
+  },
+  {
+    "id": "wlr_prod_000105",
+    "entity_id": "wlr_ent_000056",
+    "slug": "coin98-super-wallet-mobile",
+    "path": "/data/products/coin98-super-wallet-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000106",
+    "entity_id": "wlr_ent_000057",
+    "slug": "mathwallet-mobile",
+    "path": "/data/products/mathwallet-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000107",
+    "entity_id": "wlr_ent_000058",
+    "slug": "ambire-extension",
+    "path": "/data/products/ambire-extension.json"
+  },
+  {
+    "id": "wlr_prod_000108",
+    "entity_id": "wlr_ent_000059",
+    "slug": "ctrl-wallet-extension",
+    "path": "/data/products/ctrl-wallet-extension.json"
+  },
+  {
+    "id": "wlr_prod_000109",
+    "entity_id": "wlr_ent_000060",
+    "slug": "enkrypt-extension",
+    "path": "/data/products/enkrypt-extension.json"
+  },
+  {
+    "id": "wlr_prod_000110",
+    "entity_id": "wlr_ent_000061",
+    "slug": "backpack-extension",
+    "path": "/data/products/backpack-extension.json"
+  },
+  {
+    "id": "wlr_prod_000111",
+    "entity_id": "wlr_ent_000062",
+    "slug": "hashpack-extension",
+    "path": "/data/products/hashpack-extension.json"
+  },
+  {
+    "id": "wlr_prod_000112",
+    "entity_id": "wlr_ent_000063",
+    "slug": "xaman-mobile",
+    "path": "/data/products/xaman-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000113",
+    "entity_id": "wlr_ent_000064",
+    "slug": "pera-mobile",
+    "path": "/data/products/pera-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000114",
+    "entity_id": "wlr_ent_000065",
+    "slug": "yoroi-extension",
+    "path": "/data/products/yoroi-extension.json"
+  },
+  {
+    "id": "wlr_prod_000115",
+    "entity_id": "wlr_ent_000066",
+    "slug": "talisman-extension",
+    "path": "/data/products/talisman-extension.json"
+  },
+  {
+    "id": "wlr_prod_000116",
+    "entity_id": "wlr_ent_000067",
+    "slug": "subwallet-extension",
+    "path": "/data/products/subwallet-extension.json"
+  },
+  {
+    "id": "wlr_prod_000117",
+    "entity_id": "wlr_ent_000068",
+    "slug": "petra-extension",
+    "path": "/data/products/petra-extension.json"
+  },
+  {
+    "id": "wlr_prod_000118",
+    "entity_id": "wlr_ent_000069",
+    "slug": "slush-extension",
+    "path": "/data/products/slush-extension.json"
+  },
+  {
+    "id": "wlr_prod_000119",
+    "entity_id": "wlr_ent_000070",
+    "slug": "lattice1",
+    "path": "/data/products/lattice1.json"
+  },
+  {
+    "id": "wlr_prod_000120",
+    "entity_id": "wlr_ent_000071",
+    "slug": "secux-v20",
+    "path": "/data/products/secux-v20.json"
+  },
+  {
+    "id": "wlr_prod_000121",
+    "entity_id": "wlr_ent_000072",
+    "slug": "arculus-cold-storage-wallet",
+    "path": "/data/products/arculus-cold-storage-wallet.json"
+  },
+  {
+    "id": "wlr_prod_000122",
+    "entity_id": "wlr_ent_000073",
+    "slug": "cypherock-x1",
+    "path": "/data/products/cypherock-x1.json"
+  },
+  {
+    "id": "wlr_prod_000123",
+    "entity_id": "wlr_ent_000074",
+    "slug": "seedsigner-diy-signing-device",
+    "path": "/data/products/seedsigner-diy-signing-device.json"
+  },
+  {
+    "id": "wlr_prod_000124",
+    "entity_id": "wlr_ent_000075",
+    "slug": "nova-wallet-mobile",
+    "path": "/data/products/nova-wallet-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000125",
+    "entity_id": "wlr_ent_000076",
+    "slug": "coinbase-wallet-mobile",
+    "path": "/data/products/coinbase-wallet-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000126",
+    "entity_id": "wlr_ent_000077",
+    "slug": "core-extension",
+    "path": "/data/products/core-extension.json"
+  },
+  {
+    "id": "wlr_prod_000127",
+    "entity_id": "wlr_ent_000078",
+    "slug": "unisat-wallet-extension",
+    "path": "/data/products/unisat-wallet-extension.json"
+  },
+  {
+    "id": "wlr_prod_000128",
+    "entity_id": "wlr_ent_000079",
+    "slug": "tonkeeper-mobile",
+    "path": "/data/products/tonkeeper-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000129",
+    "entity_id": "wlr_ent_000080",
+    "slug": "my-wallet-mobile",
+    "path": "/data/products/my-wallet-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000130",
+    "entity_id": "wlr_ent_000081",
+    "slug": "tonhub-mobile",
+    "path": "/data/products/tonhub-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000131",
+    "entity_id": "wlr_ent_000082",
+    "slug": "eternl-extension",
+    "path": "/data/products/eternl-extension.json"
+  },
+  {
+    "id": "wlr_prod_000132",
+    "entity_id": "wlr_ent_000083",
+    "slug": "nufi-extension",
+    "path": "/data/products/nufi-extension.json"
+  },
+  {
+    "id": "wlr_prod_000133",
+    "entity_id": "wlr_ent_000084",
+    "slug": "vespr-mobile",
+    "path": "/data/products/vespr-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000134",
+    "entity_id": "wlr_ent_000085",
+    "slug": "begin-wallet-mobile",
+    "path": "/data/products/begin-wallet-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000135",
+    "entity_id": "wlr_ent_000086",
+    "slug": "glow-extension",
+    "path": "/data/products/glow-extension.json"
+  },
+  {
+    "id": "wlr_prod_000136",
+    "entity_id": "wlr_ent_000087",
+    "slug": "taho-browser-extension",
+    "path": "/data/products/taho-browser-extension.json"
+  },
+  {
+    "id": "wlr_prod_000137",
+    "entity_id": "wlr_ent_000088",
+    "slug": "sequence-universal-wallet",
+    "path": "/data/products/sequence-universal-wallet.json"
+  },
+  {
+    "id": "wlr_prod_000138",
+    "entity_id": "wlr_ent_000089",
+    "slug": "nightly-browser-extension",
+    "path": "/data/products/nightly-browser-extension.json"
+  },
+  {
+    "id": "wlr_prod_000139",
+    "entity_id": "wlr_ent_000090",
+    "slug": "aqua-wallet-mobile",
+    "path": "/data/products/aqua-wallet-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000140",
+    "entity_id": "wlr_ent_000091",
+    "slug": "bitkit-mobile",
+    "path": "/data/products/bitkit-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000141",
+    "entity_id": "wlr_ent_000092",
+    "slug": "breez-mobile",
+    "path": "/data/products/breez-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000142",
+    "entity_id": "wlr_ent_000093",
+    "slug": "zeus-wallet-mobile",
+    "path": "/data/products/zeus-wallet-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000143",
+    "entity_id": "wlr_ent_000094",
+    "slug": "blixt-wallet-mobile",
+    "path": "/data/products/blixt-wallet-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000144",
+    "entity_id": "wlr_ent_000095",
+    "slug": "samourai-wallet-android",
+    "path": "/data/products/samourai-wallet-android.json"
+  },
+  {
+    "id": "wlr_prod_000145",
+    "entity_id": "wlr_ent_000096",
+    "slug": "specter-desktop-app",
+    "path": "/data/products/specter-desktop-app.json"
+  },
+  {
+    "id": "wlr_prod_000146",
+    "entity_id": "wlr_ent_000097",
+    "slug": "casa-3-key-vault",
+    "path": "/data/products/casa-3-key-vault.json"
+  },
+  {
+    "id": "wlr_prod_000147",
+    "entity_id": "wlr_ent_000098",
+    "slug": "keepkey-hardware-wallet",
+    "path": "/data/products/keepkey-hardware-wallet.json"
+  },
+  {
+    "id": "wlr_prod_000148",
+    "entity_id": "wlr_ent_000099",
+    "slug": "satochip-hardware-wallet",
+    "path": "/data/products/satochip-hardware-wallet.json"
+  },
+  {
+    "id": "wlr_prod_000149",
+    "entity_id": "wlr_ent_000100",
+    "slug": "prokey-optimum",
+    "path": "/data/products/prokey-optimum.json"
+  }
+]

@@ -1,0 +1,118 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000052",
+    "slug": "crypto-com-onchain",
+    "canonical_name": "Crypto.com Onchain",
+    "aliases": [
+      "Crypto.com DeFi Wallet"
+    ],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Non-custodial Crypto.com wallet ecosystem formerly branded Crypto.com DeFi Wallet and rebranded to Crypto.com Onchain in 2024.",
+    "developer_or_company": "Crypto.com",
+    "country_or_origin": null,
+    "launch_date": null,
+    "official_url": "https://crypto.com/onchain",
+    "official_domain": "crypto.com",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "product_specific_non_custodial_wallet_keys",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "First-party material explicitly preserves Crypto.com DeFi Wallet continuity into the Crypto.com Onchain rebrand on 2024-11-20. The rebrand date is not treated as the original wallet launch date."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000101",
+      "entity_id": "wlr_ent_000052",
+      "slug": "crypto-com-onchain-extension",
+      "product_name": "Crypto.com Onchain Extension",
+      "product_type": "browser_extension",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "unknown",
+      "launch_date": null,
+      "platform": [
+        "Chrome-compatible browsers"
+      ],
+      "official_url": "https://crypto.com/en/product-news/onchain-extension-revamp/",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "non_custodial_browser_wallet_keys",
+      "summary": "Current Crypto.com Onchain browser extension for non-custodial multichain wallet management.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-20",
+      "notes": "Selected as the breadth-pass product boundary. Mobile and other Onchain wallet surfaces are distinct distribution/runtime products and are deferred. The 2025 extension revamp is not treated as the original extension launch."
+    }
+  ],
+  "events": [
+    {
+      "id": "wlr_ev_000129",
+      "entity_id": "wlr_ent_000052",
+      "product_id": "wlr_prod_000101",
+      "affected_product_ids": [
+        "wlr_prod_000101"
+      ],
+      "event_type": "rebranded",
+      "event_date": "2024-11-20",
+      "event_date_basis": "announcement",
+      "title": "Crypto.com DeFi Wallet became Crypto.com Onchain",
+      "description": "Crypto.com announced a new Crypto.com Onchain identity for its existing non-custodial DeFi Wallet lineage.",
+      "confidence": "high",
+      "event_status_effect": "none",
+      "is_major_event": true,
+      "notes": "This records brand continuity only. It is not treated as a new wallet or selected-product launch."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000249",
+      "entity_id": "wlr_ent_000052",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_blog",
+      "title": "Introducing Crypto.com Onchain: The New and Improved DeFi Wallet",
+      "url": "https://crypto.com/us/product-news/introducing-crypto-com-onchain-the-new-and-improved-defi-wallet",
+      "publisher": "Crypto.com",
+      "published_at": "2024-11-20",
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "rebrand",
+      "is_primary": true,
+      "notes": "First-party announcement explicitly renames Crypto.com DeFi Wallet to Crypto.com Onchain and describes Onchain as non-custodial."
+    },
+    {
+      "id": "wlr_src_000250",
+      "entity_id": "wlr_ent_000052",
+      "product_id": "wlr_prod_000101",
+      "event_id": null,
+      "source_type": "official_blog",
+      "title": "Introducing the New Crypto.com Onchain Extension",
+      "url": "https://crypto.com/en/product-news/onchain-extension-revamp/",
+      "publisher": "Crypto.com",
+      "published_at": "2025-06-26",
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "First-party product update confirms the active non-custodial Onchain browser extension and distinguishes mobile and desktop wallet surfaces."
+    },
+    {
+      "id": "wlr_src_000355",
+      "entity_id": "wlr_ent_000052",
+      "product_id": "wlr_prod_000101",
+      "event_id": "wlr_ev_000129",
+      "source_type": "official_blog",
+      "title": "Introducing Crypto.com Onchain: The New and Improved DeFi Wallet",
+      "url": "https://crypto.com/uk/product-news/introducing-crypto-com-onchain-the-new-and-improved-defi-wallet",
+      "publisher": "Crypto.com",
+      "published_at": "2024-11-20",
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "rebrand",
+      "is_primary": true,
+      "notes": "First-party Crypto.com announcement says the existing DeFi Wallet received a new identity as Crypto.com Onchain and continues as the non-custodial wallet product."
+    }
+  ]
+}

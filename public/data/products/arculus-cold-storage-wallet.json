@@ -1,0 +1,54 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000072",
+    "slug": "arculus",
+    "canonical_name": "Arculus",
+    "wallet_type": "hardware",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000121",
+    "entity_id": "wlr_ent_000072",
+    "slug": "arculus-cold-storage-wallet",
+    "product_name": "Arculus Cold Storage Wallet",
+    "product_type": "hardware_device",
+    "status": "active",
+    "sales_status": "on_sale",
+    "support_status": "unknown",
+    "launch_date": "2021",
+    "launch_date_precision": "year",
+    "platform": [
+      "Arculus Card",
+      "iOS",
+      "Android"
+    ],
+    "official_url": "https://www.getarculus.com/products/cold-storage-wallet/",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "private_keys_generated_and_stored_in_card_secure_element",
+    "summary": "Arculus self-custody cold-storage wallet combining an NFC secure-element card with the Arculus mobile app and three-factor authentication.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Arculus first-party history states the Cold Storage Wallet launched in 2021. Current official product page lists stock, price and Buy Now controls, supporting on_sale."
+  },
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000290",
+      "entity_id": "wlr_ent_000072",
+      "product_id": "wlr_prod_000121",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Arculus Cold Storage Wallet",
+      "url": "https://www.getarculus.com/products/cold-storage-wallet/",
+      "publisher": "Arculus / CompoSecure",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current official product page establishes self-custody, card/app architecture, current stock and purchase availability."
+    }
+  ]
+}

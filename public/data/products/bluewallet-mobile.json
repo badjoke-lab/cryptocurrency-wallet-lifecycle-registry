@@ -1,0 +1,219 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000023",
+    "slug": "bluewallet",
+    "canonical_name": "BlueWallet",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000063",
+    "entity_id": "wlr_ent_000023",
+    "slug": "bluewallet-mobile",
+    "product_name": "BlueWallet Mobile",
+    "aliases": [
+      "BlueWallet"
+    ],
+    "product_type": "mobile_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "supported",
+    "launch_date": "2018",
+    "platform": [
+      "iOS",
+      "Android"
+    ],
+    "official_url": "https://bluewallet.io/",
+    "source_code_url": "https://github.com/BlueWallet/BlueWallet",
+    "custody_model": "self_custody",
+    "key_management_model": "mobile_device_local_bitcoin_keys",
+    "variants": [],
+    "summary": "BlueWallet mobile Bitcoin wallet for iOS and Android with user-controlled keys.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-18",
+    "notes": "First-party BlueWallet source history shows the mobile app in a store-versioned release lineage during 2018, including store version 1.2.0 with iOS bundle/build metadata on 2018-05-12. WLR records year precision only because the reviewed history does not establish a defensible exact initial public-release day.",
+    "launch_date_precision": "year"
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000058",
+      "entity_id": "wlr_ent_000023",
+      "product_id": null,
+      "affected_product_ids": [
+        "wlr_prod_000063"
+      ],
+      "event_type": "service_shutdown",
+      "event_date": "2023-05-31",
+      "event_date_basis": "effective",
+      "disclosed_at": "2023-02-23",
+      "title": "BlueWallet hosted lndhub.io Lightning service shut down",
+      "description": "BlueWallet sunset its hosted lndhub.io Lightning service, ending new wallet creation and refill support before the May 31, 2023 shutdown while leaving regular Bitcoin wallets unaffected.",
+      "confidence": "high",
+      "security_scope": "none",
+      "funds_affected": "no",
+      "user_actions_required": [
+        "migrate"
+      ],
+      "event_status_effect": "none",
+      "is_major_event": true,
+      "notes": "BlueWallet continued to support self-hosted LndHub and its self-custody Bitcoin wallet; this event does not represent a BlueWallet shutdown."
+    },
+    {
+      "id": "wlr_ev_000081",
+      "entity_id": "wlr_ent_000023",
+      "product_id": "wlr_prod_000063",
+      "affected_product_ids": [
+        "wlr_prod_000063"
+      ],
+      "event_type": "software_fix",
+      "event_date": "2025-01-31",
+      "event_date_basis": "release",
+      "title": "BlueWallet v7.0.9 fixed preferred Electrum server persistence",
+      "description": "BlueWallet v7.0.9 fixed the preferred Electrum server persistence issue tracked as #7532, where a saved custom preferred server could be replaced by a suggested server after app restarts on the documented iOS reproductions.",
+      "confidence": "high",
+      "security_scope": "mobile_app",
+      "event_status_effect": "none",
+      "fixed_versions": [
+        {
+          "product_ids": [
+            "wlr_prod_000063"
+          ],
+          "track": "BlueWallet Mobile",
+          "version": "7.0.9"
+        }
+      ],
+      "user_actions_required": [
+        "update"
+      ],
+      "affected_components": [
+        "Electrum preferred server settings"
+      ],
+      "is_major_event": false,
+      "notes": "This is recorded as a software fix, not a vulnerability or exploit. WLR scopes the event only to BlueWallet Mobile because the reviewed reproductions are iOS/mobile; Desktop impact, server compromise, an affected pre-fix version range, and fund loss are not inferred."
+    },
+    {
+      "id": "wlr_ev_000105",
+      "entity_id": "wlr_ent_000023",
+      "product_id": "wlr_prod_000063",
+      "affected_product_ids": [
+        "wlr_prod_000063"
+      ],
+      "event_type": "product_released",
+      "event_date": "2018",
+      "event_date_basis": "release",
+      "title": "BlueWallet Mobile released by 2018",
+      "description": "BlueWallet's official source history records a store-versioned mobile build during 2018, establishing the mobile product as released by that year.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "Year precision only. The reviewed source history establishes a store/release lineage in 2018 but does not establish a defensible exact initial public-release day."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000096",
+      "entity_id": "wlr_ent_000023",
+      "product_ids": [
+        "wlr_prod_000063"
+      ],
+      "event_ids": [],
+      "product_id": "wlr_prod_000063",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "BlueWallet — Bitcoin wallet for iOS and Android",
+      "url": "https://bluewallet.io/",
+      "publisher": "BlueWallet",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "status",
+      "is_primary": true,
+      "notes": "Current first-party source for self-custody mobile-wallet status and device-local keys."
+    },
+    {
+      "id": "wlr_src_000098",
+      "entity_id": "wlr_ent_000023",
+      "product_ids": [
+        "wlr_prod_000063"
+      ],
+      "event_ids": [
+        "wlr_ev_000058"
+      ],
+      "product_id": null,
+      "event_id": "wlr_ev_000058",
+      "source_type": "official_blog",
+      "title": "Sunsetting Lndhub.io",
+      "url": "https://bluewallet.io/sunsetting-lndhub/",
+      "publisher": "BlueWallet",
+      "published_at": "2023-02-23",
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Primary announcement establishing the May 31, 2023 hosted Lightning-service shutdown, regular Bitcoin-wallet exclusion, and continued self-hosted LndHub support."
+    },
+    {
+      "id": "wlr_src_000134",
+      "entity_id": "wlr_ent_000023",
+      "product_ids": [
+        "wlr_prod_000063"
+      ],
+      "event_ids": [
+        "wlr_ev_000081"
+      ],
+      "product_id": "wlr_prod_000063",
+      "event_id": "wlr_ev_000081",
+      "source_type": "release_notes",
+      "title": "BlueWallet v7.0.9",
+      "url": "https://github.com/BlueWallet/BlueWallet/releases/tag/v7.0.9",
+      "publisher": "BlueWallet",
+      "published_at": "2025-01-31",
+      "accessed_at": "2026-08-17",
+      "reliability": "high",
+      "claim_scope": "security_fix",
+      "is_primary": true,
+      "notes": "Official BlueWallet release notes explicitly list the operational-security preferred Electrum server persistence/reset issue #7532 as fixed in v7.0.9."
+    },
+    {
+      "id": "wlr_src_000135",
+      "entity_id": "wlr_ent_000023",
+      "product_ids": [
+        "wlr_prod_000063"
+      ],
+      "event_ids": [
+        "wlr_ev_000081"
+      ],
+      "product_id": "wlr_prod_000063",
+      "event_id": "wlr_ev_000081",
+      "source_type": "source_code",
+      "title": "BlueWallet PR #7546 — Electrum preferred server persistence fix",
+      "url": "https://github.com/BlueWallet/BlueWallet/pull/7546",
+      "publisher": "BlueWallet",
+      "published_at": "2025-01-28",
+      "accessed_at": "2026-08-17",
+      "reliability": "high",
+      "claim_scope": "security_fix",
+      "is_primary": true,
+      "notes": "Merged official BlueWallet source-code change for issue #7532. The patch changes Electrum preferred-server/reset/history behavior and settings refresh logic."
+    },
+    {
+      "id": "wlr_src_000164",
+      "entity_id": "wlr_ent_000023",
+      "product_id": "wlr_prod_000063",
+      "event_id": "wlr_ev_000105",
+      "source_type": "source_code",
+      "title": "BlueWallet store version 1.2.0",
+      "url": "https://github.com/BlueWallet/BlueWallet/commit/8646f1d06ed9c874c1b11e729cb091e191f6e921",
+      "publisher": "BlueWallet",
+      "published_at": "2018-05-12",
+      "accessed_at": "2026-08-18",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "Official BlueWallet source history showing a 2018 store-versioned mobile build with BlueWallet iOS bundle/build metadata. Used for year-level launch chronology, not as proof of the exact initial release day."
+    }
+  ]
+}

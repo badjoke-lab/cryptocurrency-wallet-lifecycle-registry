@@ -1,0 +1,102 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000024",
+    "slug": "leather",
+    "canonical_name": "Leather",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000067",
+    "entity_id": "wlr_ent_000024",
+    "slug": "leather-mobile",
+    "product_name": "Leather Mobile",
+    "aliases": [],
+    "product_type": "mobile_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "supported",
+    "launch_date": "2025-09-01",
+    "launch_date_precision": "day",
+    "platform": [
+      "iOS",
+      "Android"
+    ],
+    "official_url": "https://leather.io/wallet",
+    "custody_model": "self_custody",
+    "key_management_model": "mobile_device_local_software_keys",
+    "variants": [],
+    "summary": "Leather mobile wallet released for iOS and Android in 2025.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-15",
+    "notes": "Modeled separately from the browser extension because distribution and device-security boundaries differ."
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000062",
+      "entity_id": "wlr_ent_000024",
+      "product_id": "wlr_prod_000067",
+      "affected_product_ids": [
+        "wlr_prod_000067"
+      ],
+      "event_type": "product_released",
+      "event_date": "2025-09-01",
+      "event_date_basis": "release",
+      "title": "Leather Mobile launched",
+      "description": "Leather launched its mobile wallet application for iOS and Android.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000102",
+      "entity_id": "wlr_ent_000024",
+      "product_ids": [
+        "wlr_prod_000065",
+        "wlr_prod_000067"
+      ],
+      "event_ids": [
+        "wlr_ev_000062",
+        "wlr_ev_000063"
+      ],
+      "product_id": null,
+      "event_id": null,
+      "source_type": "release_notes",
+      "title": "Leather Changelog",
+      "url": "https://leather.io/changelog",
+      "publisher": "Leather",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "product_lineage",
+      "is_primary": true,
+      "notes": "Primary chronology for the September 1, 2025 mobile launch and October 3, 2025 desktop-wallet deprecation; also states the desktop lineage began in 2019."
+    },
+    {
+      "id": "wlr_src_000103",
+      "entity_id": "wlr_ent_000024",
+      "product_ids": [
+        "wlr_prod_000066",
+        "wlr_prod_000067"
+      ],
+      "event_ids": [],
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Leather Wallet",
+      "url": "https://leather.io/wallet",
+      "publisher": "Leather",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "status",
+      "is_primary": true,
+      "notes": "Current first-party product page for Leather browser-extension and mobile availability."
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000005",
+    "slug": "safe",
+    "canonical_name": "Safe",
+    "wallet_type": "smart_contract",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000021",
+    "entity_id": "wlr_ent_000005",
+    "slug": "safe-smart-account",
+    "product_name": "Safe Smart Account",
+    "aliases": [
+      "Gnosis Safe"
+    ],
+    "product_type": "smart_contract_wallet",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "supported",
+    "launch_date": "2018",
+    "launch_date_precision": "year",
+    "generation": null,
+    "platform": [
+      "EVM smart contracts"
+    ],
+    "custody_model": "self_custody",
+    "key_management_model": "configurable_multisig_smart_account",
+    "variants": [],
+    "summary": "General-purpose smart account and multisig protocol introduced as Gnosis Safe.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": ""
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000023",
+      "entity_id": "wlr_ent_000005",
+      "product_id": "wlr_prod_000021",
+      "affected_product_ids": [
+        "wlr_prod_000021"
+      ],
+      "event_type": "product_released",
+      "event_date": "2018",
+      "event_date_basis": "release",
+      "title": "Gnosis Safe smart account introduced",
+      "description": "Gnosis Safe was introduced in 2018 as a general-purpose smart account.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    },
+    {
+      "id": "wlr_ev_000025",
+      "entity_id": "wlr_ent_000005",
+      "product_id": null,
+      "affected_product_ids": [
+        "wlr_prod_000021",
+        "wlr_prod_000023"
+      ],
+      "event_type": "rebranded",
+      "event_date": "2022",
+      "event_date_basis": "announcement",
+      "title": "Gnosis Safe rebranded to Safe",
+      "description": "The project rebranded from Gnosis Safe to Safe after spinning out from GnosisDAO; Safe states that the protocol, audited contracts, accounts, funds, and security model did not change.",
+      "confidence": "high",
+      "event_status_effect": "none",
+      "is_major_event": true
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000028",
+      "entity_id": "wlr_ent_000005",
+      "product_id": null,
+      "event_id": "wlr_ev_000023",
+      "source_type": "official_blog",
+      "title": "History of Safe",
+      "url": "https://safe.global/blog/history-of-safe",
+      "publisher": "Safe",
+      "published_at": "2024-04-12",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "product_lineage",
+      "is_primary": true,
+      "notes": "Primary history source for 2018 Gnosis Safe, legacy mobile wallet, web product evolution and 2022 rebrand."
+    },
+    {
+      "id": "wlr_src_000030",
+      "entity_id": "wlr_ent_000005",
+      "product_id": null,
+      "event_id": "wlr_ev_000025",
+      "source_type": "official_blog",
+      "title": "History of Safe",
+      "url": "https://safe.global/blog/history-of-safe",
+      "publisher": "Safe",
+      "published_at": "2024-04-12",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "rebrand",
+      "is_primary": true,
+      "notes": ""
+    }
+  ]
+}

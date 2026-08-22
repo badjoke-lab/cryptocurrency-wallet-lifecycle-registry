@@ -1,0 +1,156 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000065",
+    "slug": "yoroi",
+    "canonical_name": "Yoroi",
+    "wallet_type": "software",
+    "status": "deprecated"
+  },
+  "product": {
+    "id": "wlr_prod_000114",
+    "entity_id": "wlr_ent_000065",
+    "slug": "yoroi-extension",
+    "product_name": "Yoroi Browser Extension",
+    "product_type": "browser_extension",
+    "status": "deprecated",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": null,
+    "platform": [
+      "Chrome",
+      "Brave",
+      "Edge"
+    ],
+    "official_url": "https://www.yoroi-wallet.com/",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "browser_local_encrypted_private_keys",
+    "summary": "Yoroi self-custodial Cardano browser extension, now within the wallet's announced wind-down phase.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Current Yoroi site announces a wallet wind-down, so this product is not marked active. Firefox support already ended separately; current guidance points remaining extension users to Chrome, Brave or Edge. Initial extension launch date is not inferred from the entity's 2018 history."
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000134",
+      "entity_id": "wlr_ent_000065",
+      "product_id": "wlr_prod_000114",
+      "affected_product_ids": [
+        "wlr_prod_000114"
+      ],
+      "event_type": "rebranded",
+      "event_date": "2026-06-08",
+      "event_date_basis": "effective",
+      "title": "Yoroi Wallet transitioned to SecondFi",
+      "description": "SecondFi announced that Yoroi Wallet had officially transitioned into SecondFi and that the existing Yoroi application would update into the SecondFi experience while preserving the user's self-custody wallet continuity.",
+      "confidence": "high",
+      "event_status_effect": "rebranded",
+      "is_major_event": true,
+      "notes": "This is modeled as a rebrand/continuity event rather than a new wallet launch. First-party SecondFi material explicitly says the existing Yoroi wallet and app transition into SecondFi without creating a new wallet."
+    },
+    {
+      "id": "wlr_ev_000135",
+      "entity_id": "wlr_ent_000065",
+      "product_id": "wlr_prod_000114",
+      "affected_product_ids": [
+        "wlr_prod_000114"
+      ],
+      "event_type": "exploit",
+      "event_date": "2026-06-21",
+      "event_date_basis": "occurrence",
+      "title": "SecondFi security incident exploited per-transaction signature flaw",
+      "description": "SecondFi reported that between June 21 and June 23 external attackers exploited a cryptographic flaw in per-transaction signature generation, resulting in approximately 16.1 million ADA being stolen from 374 wallets.",
+      "confidence": "high",
+      "impact_level": "critical",
+      "security_scope": "transaction_signing",
+      "funds_affected": "yes",
+      "event_status_effect": "limited",
+      "affected_users_text": "374 wallets",
+      "amount_text": "Approximately 16.1 million ADA (~$2.6 million)",
+      "is_major_event": true,
+      "user_actions_required": [
+        "migrate",
+        "monitor"
+      ],
+      "notes": "The first-party incident log describes a June 21-23 incident window. WLR uses June 21 as the event_date start boundary and preserves the full window in this note rather than inventing a single exact transfer time. The root cause is described as a flaw in how wallet software generated per-transaction signatures that could expose private-key material from public transaction data."
+    },
+    {
+      "id": "wlr_ev_000136",
+      "entity_id": "wlr_ent_000065",
+      "product_id": "wlr_prod_000114",
+      "affected_product_ids": [
+        "wlr_prod_000114"
+      ],
+      "event_type": "service_shutdown",
+      "event_date": "2026-07-06",
+      "event_date_basis": "announcement",
+      "title": "SecondFi announced normal operations would not resume",
+      "description": "SecondFi announced that it would not resume normal operations even after security audits and asked all users to migrate away, with the team's continuing role limited to asset recovery work.",
+      "confidence": "high",
+      "impact_level": "critical",
+      "security_scope": "software",
+      "funds_affected": "yes",
+      "event_status_effect": "deprecated",
+      "is_major_event": true,
+      "user_actions_required": [
+        "migrate"
+      ],
+      "notes": "The July 6 first-party update is an explicit shutdown boundary for normal wallet operations, but WLR keeps the status effect conservative at deprecated because the same application remains available in quarantine/recovery modes. Canonical entity/product status remains unchanged in this batch."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000276",
+      "entity_id": "wlr_ent_000065",
+      "product_id": "wlr_prod_000114",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Yoroi Terms and Conditions",
+      "url": "https://yoroi-wallet.com/terms_and_conditions",
+      "publisher": "Yoroi / EMURGO",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "First-party terms define Yoroi as free open-source wallet software that does not make EMURGO or third parties custodians of user assets; the current site banner simultaneously establishes the wind-down phase."
+    },
+    {
+      "id": "wlr_src_000360",
+      "entity_id": "wlr_ent_000065",
+      "product_id": "wlr_prod_000114",
+      "event_id": "wlr_ev_000134",
+      "source_type": "official_blog",
+      "title": "Yoroi Is Now SecondFi: How to Update and Get Started",
+      "url": "https://secondfi.io/yoroi-is-now-secondfi-how-to-update-and-get-started",
+      "publisher": "SecondFi",
+      "published_at": "2026-06-08",
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "rebrand",
+      "is_primary": true,
+      "notes": "First-party SecondFi announcement states that Yoroi Wallet officially transitioned into SecondFi, that the Yoroi app updates into SecondFi, and that the existing self-custody wallet remains continuous."
+    },
+    {
+      "id": "wlr_src_000361",
+      "entity_id": "wlr_ent_000065",
+      "product_id": "wlr_prod_000114",
+      "event_id": null,
+      "event_ids": [
+        "wlr_ev_000135",
+        "wlr_ev_000136"
+      ],
+      "source_type": "official_security_advisory",
+      "title": "Security Incident Update",
+      "url": "https://kb.secondfi.io/en/article/security-incident-update-dxv72a/",
+      "publisher": "SecondFi",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Continuously updated first-party incident log. The July 22 update records the June 21-23 theft window, approximately 16.1M ADA stolen from 374 wallets, and the per-transaction-signature cryptographic flaw. The July 6 update states that normal operations will not resume and users must migrate away."
+    }
+  ]
+}
