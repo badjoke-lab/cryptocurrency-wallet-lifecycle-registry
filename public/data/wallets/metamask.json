@@ -1,0 +1,300 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000004",
+    "slug": "metamask",
+    "canonical_name": "MetaMask",
+    "aliases": [],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Self-custodial software wallet ecosystem launched as a browser wallet and later expanded to a mobile application.",
+    "developer_or_company": "Consensys",
+    "country_or_origin": null,
+    "launch_date": "2016-07-14",
+    "launch_date_precision": "day",
+    "official_url": "https://metamask.io/",
+    "official_domain": "metamask.io",
+    "source_code_urls": [
+      "https://github.com/MetaMask/metamask-extension",
+      "https://github.com/MetaMask/metamask-mobile"
+    ],
+    "custody_model": "self_custody",
+    "key_management_model": "device_software_key_vault",
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "Browser extension and mobile app are separate products because their distribution and security boundaries differ."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000019",
+      "entity_id": "wlr_ent_000004",
+      "slug": "metamask-browser-extension",
+      "product_name": "MetaMask Browser Extension",
+      "aliases": [
+        "MetaMask Extension"
+      ],
+      "product_type": "browser_extension",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "supported",
+      "launch_date": "2016-07-14",
+      "launch_date_precision": "day",
+      "generation": null,
+      "platform": [
+        "browser"
+      ],
+      "official_url": "https://metamask.io/download",
+      "source_code_url": "https://github.com/MetaMask/metamask-extension",
+      "custody_model": "self_custody",
+      "key_management_model": "software_key_vault",
+      "variants": [],
+      "summary": "Original MetaMask browser-wallet product.",
+      "predecessor_product_id": null,
+      "successor_product_id": null,
+      "confidence": "high",
+      "last_verified_at": "2026-08-14",
+      "notes": ""
+    },
+    {
+      "id": "wlr_prod_000020",
+      "entity_id": "wlr_ent_000004",
+      "slug": "metamask-mobile",
+      "product_name": "MetaMask Mobile",
+      "aliases": [],
+      "product_type": "mobile_app",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "supported",
+      "launch_date": "2020-09-03",
+      "launch_date_precision": "day",
+      "generation": null,
+      "platform": [
+        "iOS",
+        "Android"
+      ],
+      "official_url": "https://metamask.io/download",
+      "source_code_url": "https://github.com/MetaMask/metamask-mobile",
+      "custody_model": "self_custody",
+      "key_management_model": "software_key_vault",
+      "variants": [],
+      "summary": "MetaMask mobile wallet for iOS and Android.",
+      "predecessor_product_id": null,
+      "successor_product_id": null,
+      "confidence": "high",
+      "last_verified_at": "2026-08-14",
+      "notes": ""
+    }
+  ],
+  "events": [
+    {
+      "id": "wlr_ev_000021",
+      "entity_id": "wlr_ent_000004",
+      "product_id": "wlr_prod_000019",
+      "affected_product_ids": [
+        "wlr_prod_000019"
+      ],
+      "event_type": "product_released",
+      "event_date": "2016-07-14",
+      "event_date_basis": "release",
+      "title": "First MetaMask version shipped",
+      "description": "MetaMask shipped its first public browser-wallet version.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    },
+    {
+      "id": "wlr_ev_000022",
+      "entity_id": "wlr_ent_000004",
+      "product_id": "wlr_prod_000020",
+      "affected_product_ids": [
+        "wlr_prod_000020"
+      ],
+      "event_type": "product_released",
+      "event_date": "2020-09-03",
+      "event_date_basis": "release",
+      "title": "MetaMask Mobile released on iOS and Android",
+      "description": "Consensys announced the general release of MetaMask Mobile on iOS and Android.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    },
+    {
+      "id": "wlr_ev_000116",
+      "entity_id": "wlr_ent_000004",
+      "product_id": "wlr_prod_000019",
+      "affected_product_ids": [
+        "wlr_prod_000019"
+      ],
+      "event_type": "vulnerability_disclosed",
+      "event_date": "2022-06",
+      "event_date_basis": "disclosure",
+      "title": "MetaMask Extension critical clickjacking vulnerability disclosed",
+      "description": "MetaMask reported a critical Extension-only clickjacking vulnerability that could render the wallet UI as a hidden layer over a malicious site and trick users into revealing private data or sending crypto-assets. MetaMask awarded the reporting team a $120,000 bounty and stated that Extension 10.14.6 and later were protected.",
+      "confidence": "high",
+      "impact_level": "critical",
+      "security_scope": "browser_extension",
+      "funds_affected": "unknown",
+      "event_status_effect": "none",
+      "affected_version_rules": [
+        {
+          "product_ids": [
+            "wlr_prod_000019"
+          ],
+          "track": "extension",
+          "range": "<10.14.6"
+        }
+      ],
+      "fixed_versions": [
+        {
+          "product_ids": [
+            "wlr_prod_000019"
+          ],
+          "track": "extension",
+          "version": "10.14.6"
+        }
+      ],
+      "is_major_event": true,
+      "user_actions_required": [
+        "update"
+      ],
+      "affected_components": [
+        "extension_ui"
+      ],
+      "notes": "Month precision is intentional: the reviewed first-party source establishes a June 2022 disclosure but not one defensible exact public disclosure day. MetaMask reported no known exploitation before the patch, but WLR does not convert that into a stronger funds_affected=no claim."
+    },
+    {
+      "id": "wlr_ev_000117",
+      "entity_id": "wlr_ent_000004",
+      "product_id": "wlr_prod_000019",
+      "affected_product_ids": [
+        "wlr_prod_000019"
+      ],
+      "event_type": "vulnerability_disclosed",
+      "event_date": "2022-06-15",
+      "event_date_basis": "disclosure",
+      "title": "Demonic vulnerability exposed MetaMask Extension recovery phrases on disk",
+      "description": "Halborn disclosed CVE-2022-32969, known as Demonic, in which browser session-restore behavior could cache an imported Secret Recovery Phrase to disk in plaintext under specified conditions. MetaMask Extension versions before 10.11.3 were affected; MetaMask implemented mitigations in 10.11.3 and later, and MetaMask Mobile was not affected.",
+      "confidence": "high",
+      "impact_level": "medium",
+      "security_scope": "browser_extension",
+      "funds_affected": "unknown",
+      "event_status_effect": "none",
+      "cve_ids": [
+        "CVE-2022-32969"
+      ],
+      "affected_version_rules": [
+        {
+          "product_ids": [
+            "wlr_prod_000019"
+          ],
+          "track": "extension",
+          "range": "<10.11.3"
+        }
+      ],
+      "fixed_versions": [
+        {
+          "product_ids": [
+            "wlr_prod_000019"
+          ],
+          "track": "extension",
+          "version": "10.11.3"
+        }
+      ],
+      "is_major_event": true,
+      "user_actions_required": [
+        "update"
+      ],
+      "affected_components": [
+        "secret_recovery_phrase_import",
+        "browser_session_restore"
+      ],
+      "notes": "Halborn's 2022-06-15 coordinated public disclosure supplies the event date. NVD rates CVE-2022-32969 at CVSS 3.1 5.9 MEDIUM and records MetaMask versions before 10.11.3 as affected. First-party MetaMask reporting explicitly excludes MetaMask Mobile. No confirmed funds-loss statement is established, so funds_affected remains unknown."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000026",
+      "entity_id": "wlr_ent_000004",
+      "product_id": "wlr_prod_000019",
+      "event_id": "wlr_ev_000021",
+      "source_type": "official_blog",
+      "title": "Ten Years After the First Commit",
+      "url": "https://metamask.io/news/ten-years-after-the-first-commit",
+      "publisher": "MetaMask",
+      "published_at": "2026-07-14",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "MetaMask states the first version shipped on July 14, 2016."
+    },
+    {
+      "id": "wlr_src_000027",
+      "entity_id": "wlr_ent_000004",
+      "product_id": "wlr_prod_000020",
+      "event_id": "wlr_ev_000022",
+      "source_type": "official_blog",
+      "title": "MetaMask Mobile is Now Available on iOS and Android",
+      "url": "https://consensys.io/blog/metamask-mobile-ethereum-wallet-web3-browser-now-available-on-ios-and-android",
+      "publisher": "Consensys",
+      "published_at": "2020-09-03",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": ""
+    },
+    {
+      "id": "wlr_src_000189",
+      "entity_id": "wlr_ent_000004",
+      "product_id": "wlr_prod_000019",
+      "event_id": null,
+      "event_ids": [
+        "wlr_ev_000116",
+        "wlr_ev_000117"
+      ],
+      "source_type": "official_blog",
+      "title": "MetaMask Security Monthly: June 2022",
+      "url": "https://metamask.io/ru/news/metamask-security-monthly-june-2022",
+      "publisher": "MetaMask",
+      "published_at": "2022-06-30",
+      "accessed_at": "2026-08-18",
+      "reliability": "high",
+      "claim_scope": "vulnerability",
+      "is_primary": true,
+      "notes": "First-party MetaMask security report. Supports the Extension-only critical clickjacking vulnerability, protected version 10.14.6+, the Demonic disk-caching issue, mitigation in 10.11.3+, and explicit exclusion of MetaMask Mobile from Demonic."
+    },
+    {
+      "id": "wlr_src_000190",
+      "entity_id": "wlr_ent_000004",
+      "product_id": "wlr_prod_000019",
+      "event_id": "wlr_ev_000117",
+      "source_type": "security_research",
+      "title": "Halborn MetaMask Demonic Vulnerability Discovery",
+      "url": "https://www.halborn.com/disclosures/demonic-vulnerability",
+      "publisher": "Halborn",
+      "published_at": "2022-06-15",
+      "accessed_at": "2026-08-18",
+      "reliability": "high",
+      "claim_scope": "vulnerability",
+      "is_primary": true,
+      "notes": "Primary researcher disclosure published 2022-06-15 after coordinated mitigation work. Describes plaintext Secret Recovery Phrase persistence through browser session-restore behavior and the attacker's remote/physical access path."
+    },
+    {
+      "id": "wlr_src_000191",
+      "entity_id": "wlr_ent_000004",
+      "product_id": "wlr_prod_000019",
+      "event_id": "wlr_ev_000117",
+      "source_type": "cve",
+      "title": "CVE-2022-32969 Detail",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-32969",
+      "publisher": "NIST National Vulnerability Database",
+      "published_at": "2022-06-29",
+      "accessed_at": "2026-08-18",
+      "reliability": "high",
+      "claim_scope": "affected_versions",
+      "is_primary": false,
+      "notes": "NVD enrichment records CVSS 3.1 score 5.9 MEDIUM and MetaMask versions up to but excluding 10.11.3 as affected, with the MetaMask 10.11.2-to-10.11.3 comparison referenced as a patch boundary."
+    }
+  ]
+}

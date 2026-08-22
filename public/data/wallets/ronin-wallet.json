@@ -1,0 +1,86 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000045",
+    "slug": "ronin-wallet",
+    "canonical_name": "Ronin Wallet",
+    "aliases": [
+      "Ronin"
+    ],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Non-custodial wallet ecosystem for Ronin and supported networks, distributed as browser-extension and mobile wallet surfaces.",
+    "developer_or_company": "Sky Mavis",
+    "country_or_origin": null,
+    "launch_date": null,
+    "official_url": "https://wallet.roninchain.com/",
+    "official_domain": "roninchain.com",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "user_controlled_wallet_keys_or_supported_keyless_mode",
+    "confidence": "high",
+    "last_verified_at": "2026-08-19",
+    "notes": "Current first-party documentation establishes Ronin Wallet as a non-custodial wallet available as extension and mobile app. Initial launch date remains unresolved."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000094",
+      "entity_id": "wlr_ent_000045",
+      "slug": "ronin-wallet-extension",
+      "product_name": "Ronin Wallet Extension",
+      "product_type": "browser_extension",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "unknown",
+      "launch_date": null,
+      "platform": [
+        "Chrome",
+        "Edge",
+        "Firefox"
+      ],
+      "official_url": "https://wallet.roninchain.com/",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "browser_wallet_keys_or_supported_keyless_mode",
+      "summary": "Ronin Wallet browser extension for managing Ronin and supported assets from desktop browsers.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-19",
+      "notes": "The extension is modeled separately from Ronin Mobile because browser and mobile runtimes have distinct distribution and security lifecycles. Current first-party documentation supports Chrome, Edge and Firefox; initial extension launch date remains unresolved."
+    }
+  ],
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000235",
+      "entity_id": "wlr_ent_000045",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Ronin Wallet Overview",
+      "url": "https://support.roninchain.com/hc/en-us/articles/21919788607131-Ronin-Wallet-Overview",
+      "publisher": "Ronin / Sky Mavis",
+      "published_at": "2024-06-26",
+      "accessed_at": "2026-08-19",
+      "reliability": "high",
+      "claim_scope": "entity",
+      "is_primary": true,
+      "notes": "First-party support article describes Ronin Wallet as non-custodial and available as desktop browser extension and mobile app."
+    },
+    {
+      "id": "wlr_src_000236",
+      "entity_id": "wlr_ent_000045",
+      "product_id": "wlr_prod_000094",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Ronin Wallet Desktop Guide",
+      "url": "https://support.roninchain.com/hc/en-us/articles/14046513767195-Ronin-Wallet-Desktop-Guide",
+      "publisher": "Ronin / Sky Mavis",
+      "published_at": null,
+      "accessed_at": "2026-08-19",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party desktop guide explicitly distributes Ronin Wallet Extension for Chrome, Edge and Firefox, supporting the separate browser-extension product boundary."
+    }
+  ]
+}

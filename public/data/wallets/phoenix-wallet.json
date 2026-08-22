@@ -1,0 +1,82 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000049",
+    "slug": "phoenix-wallet",
+    "canonical_name": "Phoenix Wallet",
+    "aliases": [
+      "Phoenix"
+    ],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Self-custodial Bitcoin wallet from ACINQ with native Lightning Network support.",
+    "developer_or_company": "ACINQ",
+    "country_or_origin": null,
+    "launch_date": null,
+    "official_url": "https://phoenix.acinq.co/",
+    "official_domain": "phoenix.acinq.co",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "user_controlled_bitcoin_keys_with_lightning_channels",
+    "confidence": "high",
+    "last_verified_at": "2026-08-19",
+    "notes": "Current first-party ACINQ/Phoenix material establishes the self-custodial Bitcoin and Lightning wallet. Initial launch date remains unresolved."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000098",
+      "entity_id": "wlr_ent_000049",
+      "slug": "phoenix-wallet",
+      "product_name": "Phoenix Wallet",
+      "product_type": "mobile_app",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "unknown",
+      "launch_date": null,
+      "platform": null,
+      "official_url": "https://phoenix.acinq.co/",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "user_controlled_bitcoin_keys_with_lightning_channels",
+      "summary": "Phoenix mobile Bitcoin wallet with native Lightning support and self-custodial key control.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-19",
+      "notes": "Current first-party product site establishes the active wallet product; initial public launch date remains unresolved."
+    }
+  ],
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000243",
+      "entity_id": "wlr_ent_000049",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "ACINQ",
+      "url": "https://acinq.co/",
+      "publisher": "ACINQ",
+      "published_at": null,
+      "accessed_at": "2026-08-19",
+      "reliability": "high",
+      "claim_scope": "entity",
+      "is_primary": true,
+      "notes": "ACINQ's first-party site identifies Phoenix Wallet as its self-custodial Bitcoin wallet with native Lightning support."
+    },
+    {
+      "id": "wlr_src_000244",
+      "entity_id": "wlr_ent_000049",
+      "product_id": "wlr_prod_000098",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Phoenix Wallet",
+      "url": "https://phoenix.acinq.co/",
+      "publisher": "ACINQ",
+      "published_at": null,
+      "accessed_at": "2026-08-19",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party Phoenix site establishes the active self-custodial Bitcoin/Lightning wallet product."
+    }
+  ]
+}

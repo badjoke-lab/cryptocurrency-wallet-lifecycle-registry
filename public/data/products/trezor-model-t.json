@@ -1,0 +1,177 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000001",
+    "slug": "trezor",
+    "canonical_name": "Trezor",
+    "wallet_type": "hardware",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000002",
+    "entity_id": "wlr_ent_000001",
+    "slug": "trezor-model-t",
+    "product_name": "Trezor Model T",
+    "product_type": "hardware_device",
+    "status": "active",
+    "sales_status": "end_of_sale",
+    "support_status": "supported",
+    "launch_date": "2018-02-26",
+    "sales_end_date": "2026-01-08",
+    "support_commitment": {
+      "new_coin_support_until_at_least": "2031",
+      "basic_maintenance_until_at_least": "2031",
+      "critical_security_updates_until_at_least": "2036"
+    },
+    "variants": [],
+    "summary": "Trezor hardware wallet generation that introduced a touchscreen.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "No longer sold through the Trezor e-shop, but remains supported.",
+    "official_url": "https://trezor.io/trezor-model-t",
+    "source_code_url": "https://github.com/trezor/trezor-firmware"
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000002",
+      "entity_id": "wlr_ent_000001",
+      "product_id": "wlr_prod_000002",
+      "affected_product_ids": [
+        "wlr_prod_000002"
+      ],
+      "event_type": "product_released",
+      "event_date": "2018-02-26",
+      "event_date_basis": "release",
+      "title": "Trezor Model T released",
+      "description": "Trezor released the Model T, adding a touchscreen to the product line.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    },
+    {
+      "id": "wlr_ev_000003",
+      "entity_id": "wlr_ent_000001",
+      "product_id": null,
+      "affected_product_ids": [
+        "wlr_prod_000001",
+        "wlr_prod_000002"
+      ],
+      "event_type": "vulnerability_disclosed",
+      "event_date": "2020-01-31",
+      "event_date_basis": "disclosure",
+      "title": "Physical read-protection downgrade attack disclosed",
+      "description": "Kraken Security Labs disclosed a voltage-glitching attack that could extract seeds from Trezor Model One and Model T after physical access to the device.",
+      "confidence": "high",
+      "impact_level": "high",
+      "security_scope": "device",
+      "funds_affected": "unknown",
+      "event_status_effect": "none",
+      "is_major_event": true,
+      "affected_versions": [],
+      "notes": "The disclosure described a hardware/microcontroller limitation rather than a remote compromise.",
+      "user_actions_required": [
+        "enable_passphrase"
+      ]
+    },
+    {
+      "id": "wlr_ev_000009",
+      "entity_id": "wlr_ent_000001",
+      "product_id": null,
+      "affected_product_ids": [
+        "wlr_prod_000001",
+        "wlr_prod_000002"
+      ],
+      "event_type": "sales_discontinued",
+      "event_date": "2026-01-08",
+      "event_date_basis": "effective",
+      "title": "Model One and Model T e-shop sales ended",
+      "description": "Trezor ended direct e-shop sales of Model One and Model T while committing to continued maintenance and critical security updates.",
+      "confidence": "high",
+      "event_status_effect": "none",
+      "is_major_event": true,
+      "notes": "This is end-of-sale, not end-of-support."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000001",
+      "entity_id": "wlr_ent_000001",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Trezor fundamentals",
+      "url": "https://trezor.io/guides/trezor-devices/trezor-fundamentals/trezor-fundamentals",
+      "publisher": "Trezor",
+      "published_at": null,
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "entity",
+      "is_primary": true,
+      "notes": "Primary source for the product lineage and launch dates of Model One, Model T, Safe 3, Safe 5 and Safe 7.",
+      "product_ids": [
+        "wlr_prod_000001",
+        "wlr_prod_000002",
+        "wlr_prod_000003",
+        "wlr_prod_000004",
+        "wlr_prod_000005"
+      ],
+      "event_ids": [
+        "wlr_ev_000001",
+        "wlr_ev_000002",
+        "wlr_ev_000006",
+        "wlr_ev_000007",
+        "wlr_ev_000008"
+      ]
+    },
+    {
+      "id": "wlr_src_000003",
+      "entity_id": "wlr_ent_000001",
+      "product_id": null,
+      "event_id": "wlr_ev_000003",
+      "source_type": "security_research",
+      "title": "Kraken Identifies Critical Flaw in Trezor Hardware Wallets",
+      "url": "https://blog.kraken.com/product/security/kraken-identifies-critical-flaw-in-trezor-hardware-wallets",
+      "publisher": "Kraken Security Labs",
+      "published_at": "2020-01-31",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "vulnerability",
+      "is_primary": true,
+      "notes": "Primary researcher disclosure describing the physical voltage-glitching attack affecting Model One and Model T."
+    },
+    {
+      "id": "wlr_src_000004",
+      "entity_id": "wlr_ent_000001",
+      "product_id": null,
+      "event_id": "wlr_ev_000003",
+      "source_type": "official_security_advisory",
+      "title": "Our Response to the Read Protection Downgrade Attack",
+      "url": "https://blog.trezor.io/our-response-to-the-read-protection-downgrade-attack-28d23f8949c6",
+      "publisher": "Trezor / SatoshiLabs",
+      "published_at": "2020-01-31",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "vulnerability",
+      "is_primary": true,
+      "notes": "Vendor response to the coordinated disclosure."
+    },
+    {
+      "id": "wlr_src_000009",
+      "entity_id": "wlr_ent_000001",
+      "product_id": null,
+      "event_id": "wlr_ev_000009",
+      "source_type": "official_statement",
+      "title": "How long will Trezor Model One and Model T be supported?",
+      "url": "https://trezor.io/other/product-updates/how-long-will-trezor-model-one-and-model-t-be-supported",
+      "publisher": "Trezor",
+      "published_at": null,
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "discontinuation",
+      "is_primary": true,
+      "notes": "Primary source distinguishing end-of-sale on 2026-01-08 from continued maintenance and critical security support."
+    }
+  ]
+}

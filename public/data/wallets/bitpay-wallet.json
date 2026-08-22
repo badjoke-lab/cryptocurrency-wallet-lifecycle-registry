@@ -1,0 +1,86 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000055",
+    "slug": "bitpay-wallet",
+    "canonical_name": "BitPay Wallet",
+    "aliases": [],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Open-source self-custody cryptocurrency wallet from BitPay, available on mobile and desktop platforms.",
+    "developer_or_company": "BitPay, Inc.",
+    "country_or_origin": "United States",
+    "launch_date": null,
+    "official_url": "https://www.bitpay.com/wallet",
+    "official_domain": "bitpay.com",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "locally_held_recovery_phrase_and_wallet_keys",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Current first-party BitPay material explicitly describes BitPay Wallet as self-custody and available across iOS, Android and desktop. The company's 2011 founding date is not reused as the wallet launch date."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000104",
+      "entity_id": "wlr_ent_000055",
+      "slug": "bitpay-wallet-app",
+      "product_name": "BitPay Wallet App",
+      "product_type": "multi_platform_app",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "unknown",
+      "launch_date": null,
+      "platform": [
+        "iOS",
+        "Android",
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "official_url": "https://www.bitpay.com/wallet",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "locally_held_recovery_phrase_and_wallet_keys",
+      "summary": "BitPay self-custody wallet application distributed across mobile and desktop operating systems from the same wallet lineage.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-20",
+      "notes": "Treated as one multi-platform application product because current first-party material presents the same BitPay Wallet app and recovery phrase model across mobile and desktop."
+    }
+  ],
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000255",
+      "entity_id": "wlr_ent_000055",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "BitPay Wallet",
+      "url": "https://www.bitpay.com/wallet",
+      "publisher": "BitPay",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "entity",
+      "is_primary": true,
+      "notes": "Current BitPay wallet page describes the wallet as open source and self-custody with user-controlled keys."
+    },
+    {
+      "id": "wlr_src_000256",
+      "entity_id": "wlr_ent_000055",
+      "product_id": "wlr_prod_000104",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "How to create a wallet using the BitPay app",
+      "url": "https://support.bitpay.com/hc/en-us/articles/115005884803-How-to-create-a-wallet-using-the-BitPay-app",
+      "publisher": "BitPay",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current BitPay support confirms self-custody and current iOS, Android, Windows, macOS and Linux distribution."
+    }
+  ]
+}

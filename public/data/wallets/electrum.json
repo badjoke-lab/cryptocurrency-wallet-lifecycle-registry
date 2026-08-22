@@ -1,0 +1,331 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000010",
+    "slug": "electrum",
+    "canonical_name": "Electrum",
+    "aliases": [],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Long-running open-source Bitcoin wallet created in 2011, distributed as a multi-platform client while retaining a single software-product lineage.",
+    "developer_or_company": "Electrum Technologies GmbH",
+    "country_or_origin": "Germany",
+    "launch_date": "2011",
+    "launch_date_precision": "year",
+    "official_url": "https://electrum.org/",
+    "official_domain": "electrum.org",
+    "source_code_urls": [
+      "https://github.com/spesmilo/electrum"
+    ],
+    "custody_model": "self_custody",
+    "key_management_model": "locally_encrypted_seed_and_private_keys",
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "WLR treats Electrum as one multi-platform product rather than one product per operating system."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000037",
+      "entity_id": "wlr_ent_000010",
+      "slug": "electrum-client",
+      "product_name": "Electrum",
+      "aliases": [
+        "Electrum Wallet"
+      ],
+      "product_type": "multi_platform_app",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "supported",
+      "launch_date": "2011",
+      "launch_date_precision": "year",
+      "generation": null,
+      "platform": [
+        "Windows",
+        "macOS",
+        "Linux",
+        "Android"
+      ],
+      "official_url": "https://electrum.org/",
+      "source_code_url": "https://github.com/spesmilo/electrum",
+      "custody_model": "self_custody",
+      "key_management_model": "locally_encrypted_seed_and_private_keys",
+      "variants": [],
+      "summary": "Single long-lived Electrum software lineage distributed across desktop operating systems and Android.",
+      "predecessor_product_id": null,
+      "successor_product_id": null,
+      "confidence": "high",
+      "last_verified_at": "2026-08-14",
+      "notes": "This record establishes the multi_platform_app product type instead of splitting the client by OS."
+    }
+  ],
+  "events": [
+    {
+      "id": "wlr_ev_000041",
+      "entity_id": "wlr_ent_000010",
+      "product_id": "wlr_prod_000037",
+      "affected_product_ids": [
+        "wlr_prod_000037"
+      ],
+      "event_type": "launched",
+      "event_date": "2011",
+      "event_date_basis": "approximate",
+      "title": "Electrum created",
+      "description": "Thomas Voegtlin created Electrum in 2011; the project has remained in continuous development as a lightweight Bitcoin wallet.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    },
+    {
+      "id": "wlr_ev_000074",
+      "entity_id": "wlr_ent_000010",
+      "product_id": "wlr_prod_000037",
+      "affected_product_ids": [
+        "wlr_prod_000037"
+      ],
+      "event_type": "vulnerability_disclosed",
+      "event_date": "2026-04-28",
+      "event_date_basis": "disclosure",
+      "disclosed_at": "2026-04-28",
+      "title": "External plugin authorization bypass disclosed",
+      "description": "Electrum disclosed an external-plugin authorization bypass that could allow a rogue local process with filesystem write access to the Electrum data directory to execute arbitrary plugin code inside Electrum. The official advisory states the external-plugin system was affected from Electrum 4.6.0 until the fix in 4.7.2.",
+      "confidence": "high",
+      "impact_level": "medium",
+      "security_scope": "software",
+      "funds_affected": "unknown",
+      "event_status_effect": "none",
+      "affected_versions": [
+        "4.6.0 <= x < 4.7.2"
+      ],
+      "fixed_versions": [
+        {
+          "product_ids": [
+            "wlr_prod_000037"
+          ],
+          "track": "Electrum",
+          "version": "4.7.2"
+        }
+      ],
+      "cve_ids": [],
+      "is_major_event": false,
+      "user_actions_required": [
+        "update"
+      ],
+      "affected_components": [
+        "external plugin system"
+      ],
+      "notes": "Official Electrum GHSA-vw94-r84p-66qf. Private disclosure was received 2026-03-26; public disclosure occurred 2026-04-28. No exploitation or actual fund loss is inferred."
+    },
+    {
+      "id": "wlr_ev_000075",
+      "entity_id": "wlr_ent_000010",
+      "product_id": "wlr_prod_000037",
+      "affected_product_ids": [
+        "wlr_prod_000037"
+      ],
+      "event_type": "vulnerability_disclosed",
+      "event_date": "2026-04-28",
+      "event_date_basis": "disclosure",
+      "disclosed_at": "2026-04-28",
+      "title": "Nostr Wallet Connect spending-limit bypass disclosed",
+      "description": "Electrum disclosed two flaws in its Nostr Wallet Connect plugin that could let a malicious or compromised NWC client spend above the configured daily limit through concurrent budget checks and millisatoshi truncation. The official advisory states the NWC plugin was affected from Electrum 4.6.0 until the fix in 4.7.2.",
+      "confidence": "high",
+      "impact_level": "low",
+      "security_scope": "software",
+      "funds_affected": "unknown",
+      "event_status_effect": "none",
+      "affected_versions": [
+        "4.6.0 <= x < 4.7.2"
+      ],
+      "fixed_versions": [
+        {
+          "product_ids": [
+            "wlr_prod_000037"
+          ],
+          "track": "Electrum",
+          "version": "4.7.2"
+        }
+      ],
+      "cve_ids": [],
+      "is_major_event": false,
+      "user_actions_required": [
+        "update"
+      ],
+      "affected_components": [
+        "Nostr Wallet Connect plugin"
+      ],
+      "notes": "Official Electrum GHSA-q7m2-785w-r585. Private disclosure was received 2026-03-02; public disclosure occurred 2026-04-28. Potential overspending is described by the advisory; no actual exploitation or loss is inferred."
+    },
+    {
+      "id": "wlr_ev_000076",
+      "entity_id": "wlr_ent_000010",
+      "product_id": "wlr_prod_000037",
+      "affected_product_ids": [
+        "wlr_prod_000037"
+      ],
+      "event_type": "software_fix",
+      "event_date": "2026-04-02",
+      "event_date_basis": "release",
+      "title": "Electrum 4.7.2 released with plugin security fixes",
+      "description": "Electrum 4.7.2 was released with fixes for the external-plugin authorization bypass and the Nostr Wallet Connect daily spending-limit bypass later documented in the project security advisories.",
+      "confidence": "high",
+      "impact_level": "medium",
+      "security_scope": "software",
+      "funds_affected": "unknown",
+      "event_status_effect": "none",
+      "affected_versions": [
+        "4.6.0 <= x < 4.7.2"
+      ],
+      "fixed_versions": [
+        {
+          "product_ids": [
+            "wlr_prod_000037"
+          ],
+          "track": "Electrum",
+          "version": "4.7.2"
+        }
+      ],
+      "cve_ids": [],
+      "is_major_event": false,
+      "user_actions_required": [
+        "update"
+      ],
+      "affected_components": [
+        "external plugin system",
+        "Nostr Wallet Connect plugin"
+      ],
+      "notes": "Both first-party Electrum security advisories state that version 4.7.2 was released on 2026-04-02 with the fixes included."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000049",
+      "entity_id": "wlr_ent_000010",
+      "product_ids": [
+        "wlr_prod_000037"
+      ],
+      "event_ids": [
+        "wlr_ev_000041"
+      ],
+      "product_id": "wlr_prod_000037",
+      "event_id": "wlr_ev_000041",
+      "source_type": "official_statement",
+      "title": "Electrum Bitcoin Wallet",
+      "url": "https://electrum.org/",
+      "publisher": "Electrum Technologies GmbH",
+      "published_at": null,
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "product_lineage",
+      "is_primary": true,
+      "notes": ""
+    },
+    {
+      "id": "wlr_src_000050",
+      "entity_id": "wlr_ent_000010",
+      "product_ids": [
+        "wlr_prod_000037"
+      ],
+      "event_ids": [],
+      "product_id": "wlr_prod_000037",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Statement regarding Bitcoin Cash and Electrum",
+      "url": "https://electrum.org/bcc.txt",
+      "publisher": "Electrum Technologies GmbH",
+      "published_at": "2017-07-26",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "entity",
+      "is_primary": true,
+      "notes": "States Electrum was created by Thomas Voegtlin in 2011 and is distributed by Electrum Technologies GmbH in Germany."
+    },
+    {
+      "id": "wlr_src_000122",
+      "entity_id": "wlr_ent_000010",
+      "product_ids": [
+        "wlr_prod_000037"
+      ],
+      "event_ids": [
+        "wlr_ev_000074"
+      ],
+      "product_id": "wlr_prod_000037",
+      "event_id": "wlr_ev_000074",
+      "source_type": "official_security_advisory",
+      "title": "External Plugin authorization bypass: local code execution",
+      "url": "https://github.com/spesmilo/electrum/security/advisories/GHSA-vw94-r84p-66qf",
+      "publisher": "Electrum",
+      "published_at": "2026-04-28",
+      "accessed_at": "2026-08-17",
+      "reliability": "high",
+      "claim_scope": "vulnerability",
+      "is_primary": true,
+      "notes": "First-party Electrum GitHub security advisory for GHSA-vw94-r84p-66qf; states affected range 4.6.0<=x<4.7.2 and patched version 4.7.2."
+    },
+    {
+      "id": "wlr_src_000123",
+      "entity_id": "wlr_ent_000010",
+      "product_ids": [
+        "wlr_prod_000037"
+      ],
+      "event_ids": [
+        "wlr_ev_000075"
+      ],
+      "product_id": "wlr_prod_000037",
+      "event_id": "wlr_ev_000075",
+      "source_type": "official_security_advisory",
+      "title": "Nostr Wallet Connect plugin: daily spending limit bypass",
+      "url": "https://github.com/spesmilo/electrum/security/advisories/GHSA-q7m2-785w-r585",
+      "publisher": "Electrum",
+      "published_at": "2026-04-28",
+      "accessed_at": "2026-08-17",
+      "reliability": "high",
+      "claim_scope": "vulnerability",
+      "is_primary": true,
+      "notes": "First-party Electrum GitHub security advisory for GHSA-q7m2-785w-r585; states affected range 4.6.0<=x<4.7.2 and patched version 4.7.2."
+    },
+    {
+      "id": "wlr_src_000124",
+      "entity_id": "wlr_ent_000010",
+      "product_ids": [
+        "wlr_prod_000037"
+      ],
+      "event_ids": [
+        "wlr_ev_000076"
+      ],
+      "product_id": "wlr_prod_000037",
+      "event_id": "wlr_ev_000076",
+      "source_type": "official_security_advisory",
+      "title": "External Plugin authorization bypass: local code execution",
+      "url": "https://github.com/spesmilo/electrum/security/advisories/GHSA-vw94-r84p-66qf",
+      "publisher": "Electrum",
+      "published_at": "2026-04-28",
+      "accessed_at": "2026-08-17",
+      "reliability": "high",
+      "claim_scope": "security_fix",
+      "is_primary": true,
+      "notes": "Same first-party advisory is reused with a separate security_fix claim scope because its timeline explicitly states Electrum 4.7.2 was released on 2026-04-02 with the fix included."
+    },
+    {
+      "id": "wlr_src_000125",
+      "entity_id": "wlr_ent_000010",
+      "product_ids": [
+        "wlr_prod_000037"
+      ],
+      "event_ids": [
+        "wlr_ev_000076"
+      ],
+      "product_id": "wlr_prod_000037",
+      "event_id": "wlr_ev_000076",
+      "source_type": "official_security_advisory",
+      "title": "Nostr Wallet Connect plugin: daily spending limit bypass",
+      "url": "https://github.com/spesmilo/electrum/security/advisories/GHSA-q7m2-785w-r585",
+      "publisher": "Electrum",
+      "published_at": "2026-04-28",
+      "accessed_at": "2026-08-17",
+      "reliability": "high",
+      "claim_scope": "security_fix",
+      "is_primary": true,
+      "notes": "Same first-party advisory is reused with a separate security_fix claim scope because its timeline explicitly states Electrum 4.7.2 was released on 2026-04-02 with the fixes included."
+    }
+  ]
+}

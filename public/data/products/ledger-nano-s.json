@@ -1,0 +1,99 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000002",
+    "slug": "ledger",
+    "canonical_name": "Ledger",
+    "wallet_type": "hardware",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000007",
+    "entity_id": "wlr_ent_000002",
+    "slug": "ledger-nano-s",
+    "product_name": "Ledger Nano S",
+    "aliases": [],
+    "product_type": "hardware_device",
+    "status": "active",
+    "sales_status": "end_of_sale",
+    "support_status": "supported",
+    "launch_date": "2016",
+    "launch_date_precision": "year",
+    "generation": null,
+    "variants": [],
+    "summary": "Retired from production in 2022, while Ledger stated support and maintenance would continue.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "Retired from production in 2022, while Ledger stated support and maintenance would continue."
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000011",
+      "entity_id": "wlr_ent_000002",
+      "product_id": "wlr_prod_000007",
+      "affected_product_ids": [
+        "wlr_prod_000007"
+      ],
+      "event_type": "product_released",
+      "event_date": "2016",
+      "event_date_basis": "release",
+      "title": "Ledger Nano S launched",
+      "description": "Ledger launched the Nano S hardware signer in 2016.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    },
+    {
+      "id": "wlr_ev_000014",
+      "entity_id": "wlr_ent_000002",
+      "product_id": "wlr_prod_000007",
+      "affected_product_ids": [
+        "wlr_prod_000007"
+      ],
+      "event_type": "sales_discontinued",
+      "event_date": "2022-06-22",
+      "event_date_basis": "announcement",
+      "title": "Ledger announced Nano S retirement from production",
+      "description": "Ledger announced retirement of Nano S production and replacement by Nano S Plus while stating existing Nano S support and maintenance would continue.",
+      "confidence": "high",
+      "event_status_effect": "none",
+      "is_major_event": true
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000014",
+      "entity_id": "wlr_ent_000002",
+      "product_id": "wlr_prod_000007",
+      "event_id": "wlr_ev_000011",
+      "source_type": "official_blog",
+      "title": "Introducing Ledger Nano Gen5",
+      "url": "https://www.ledger.com/academy/topics/ledgersolutions/introducing-ledger-nano-gen5",
+      "publisher": "Ledger",
+      "published_at": "2025-10-23",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current Ledger retrospective confirms Nano S launched in 2016 and gives Nano lineage context."
+    },
+    {
+      "id": "wlr_src_000018",
+      "entity_id": "wlr_ent_000002",
+      "product_id": "wlr_prod_000007",
+      "event_id": "wlr_ev_000014",
+      "source_type": "official_blog",
+      "title": "Ledger to Unveil Broad Slate of Groundbreaking Web3 Products",
+      "url": "https://www.ledger.com/blog/our-security-products-educational-announcements-at-ledger-op3n-during-nft.nyc",
+      "publisher": "Ledger",
+      "published_at": "2022-06-22",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "discontinuation",
+      "is_primary": true,
+      "notes": "Confirms production retirement while support and maintenance continue."
+    }
+  ]
+}

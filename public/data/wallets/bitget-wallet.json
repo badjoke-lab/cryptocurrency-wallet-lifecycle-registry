@@ -1,0 +1,123 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000046",
+    "slug": "bitget-wallet",
+    "canonical_name": "Bitget Wallet",
+    "aliases": [
+      "BitKeep"
+    ],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Non-custodial Web3 wallet ecosystem that began as BitKeep in 2018 and rebranded to Bitget Wallet in 2023.",
+    "developer_or_company": "Bitget Wallet",
+    "country_or_origin": null,
+    "launch_date": "2018",
+    "launch_date_precision": "year",
+    "official_url": "https://web3.bitget.com/",
+    "official_domain": "web3.bitget.com",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "user_controlled_software_private_keys",
+    "confidence": "high",
+    "last_verified_at": "2026-08-19",
+    "notes": "First-party Bitget Wallet history states that BitKeep began in 2018 and was rebranded to Bitget Wallet on 2023-08-10. The rebrand preserves the wallet entity lineage rather than creating a new wallet entity."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000095",
+      "entity_id": "wlr_ent_000046",
+      "slug": "bitget-wallet-mobile",
+      "product_name": "Bitget Wallet Mobile",
+      "aliases": [
+        "BitKeep Wallet"
+      ],
+      "product_type": "mobile_app",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "unknown",
+      "launch_date": null,
+      "platform": [
+        "iOS",
+        "Android"
+      ],
+      "official_url": "https://web3.bitget.com/wallet",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "user_controlled_software_private_keys",
+      "summary": "Current Bitget Wallet mobile application for self-custodial multichain Web3 wallet use on iOS and Android.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-19",
+      "notes": "The 2023-08-10 BitKeep-to-Bitget Wallet change is a brand rebrand, not a defensible initial product-launch date. The mobile product preserves the earlier BitKeep Wallet lineage, but its exact initial launch date remains unresolved. Browser extension distribution has a distinct runtime and is intentionally deferred as a separate product boundary."
+    }
+  ],
+  "events": [
+    {
+      "id": "wlr_ev_000123",
+      "entity_id": "wlr_ent_000046",
+      "product_id": "wlr_prod_000095",
+      "affected_product_ids": [
+        "wlr_prod_000095"
+      ],
+      "event_type": "rebranded",
+      "event_date": "2023-08-10",
+      "event_date_basis": "announcement",
+      "title": "BitKeep upgraded its brand to Bitget Wallet",
+      "description": "The BitKeep wallet lineage formally adopted the Bitget Wallet brand after Bitget acquired a controlling stake earlier in 2023.",
+      "confidence": "high",
+      "event_status_effect": "none",
+      "is_major_event": true,
+      "notes": "The 2023-08-10 date is rebrand chronology, not an initial product-launch date. The selected mobile product retains BitKeep Wallet as an alias and its initial launch date remains unresolved."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000237",
+      "entity_id": "wlr_ent_000046",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_blog",
+      "title": "BitKeep Upgrades to Bitget Wallet: A Letter From the Team",
+      "url": "https://web3.bitget.com/en/blog/articles/bitkeep-upgrades-to-bitget-wallet-a-letter-from-the-team",
+      "publisher": "Bitget Wallet",
+      "published_at": "2023-08-10",
+      "accessed_at": "2026-08-19",
+      "reliability": "high",
+      "claim_scope": "rebrand",
+      "is_primary": true,
+      "notes": "First-party history states BitKeep began in 2018 and records the formal brand upgrade to Bitget Wallet on 2023-08-10. WLR uses it for entity continuity and rebrand chronology, not as a new product-launch date."
+    },
+    {
+      "id": "wlr_src_000238",
+      "entity_id": "wlr_ent_000046",
+      "product_id": "wlr_prod_000095",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Best Free Crypto Wallet for Web3",
+      "url": "https://web3.bitget.com/wallet",
+      "publisher": "Bitget Wallet",
+      "published_at": null,
+      "accessed_at": "2026-08-19",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party wallet page separately offers Google Play, App Store and Android APK mobile distributions and Chrome extension distribution, supporting the mobile-app product boundary and self-custodial current status."
+    },
+    {
+      "id": "wlr_src_000348",
+      "entity_id": "wlr_ent_000046",
+      "product_id": "wlr_prod_000095",
+      "event_id": "wlr_ev_000123",
+      "source_type": "official_blog",
+      "title": "BitKeep Upgrades to Bitget Wallet: A Letter From the Team",
+      "url": "https://web3.bitget.com/en/blog/articles/bitkeep-upgrades-to-bitget-wallet-a-letter-from-the-team",
+      "publisher": "Bitget Wallet",
+      "published_at": "2023-08-10",
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "rebrand",
+      "is_primary": true,
+      "notes": "First-party history states BitKeep began in 2018 and formally upgraded its brand to Bitget Wallet on 2023-08-10 after Bitget acquired a controlling stake earlier that year."
+    }
+  ]
+}

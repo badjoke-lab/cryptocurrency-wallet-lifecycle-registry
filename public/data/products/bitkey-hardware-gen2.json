@@ -1,0 +1,120 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000006",
+    "slug": "bitkey",
+    "canonical_name": "Bitkey",
+    "wallet_type": "hybrid",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000027",
+    "entity_id": "wlr_ent_000006",
+    "slug": "bitkey-hardware-gen2",
+    "product_name": "Bitkey Hardware (2nd generation)",
+    "aliases": [
+      "new Bitkey"
+    ],
+    "product_type": "hardware_device",
+    "status": "active",
+    "sales_status": "on_sale",
+    "support_status": "supported",
+    "launch_date": "2026-04-27",
+    "launch_date_precision": "day",
+    "generation": "2",
+    "platform": [
+      "hardware"
+    ],
+    "custody_model": "hybrid",
+    "key_management_model": "hardware_key_in_2_of_3_multisig",
+    "variants": [],
+    "summary": "Second-generation Bitkey hardware device with an on-device screen for transaction and sensitive-setting verification.",
+    "predecessor_product_id": "wlr_prod_000025",
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": ""
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000027",
+      "entity_id": "wlr_ent_000006",
+      "product_id": "wlr_prod_000027",
+      "affected_product_ids": [
+        "wlr_prod_000027"
+      ],
+      "event_type": "product_released",
+      "event_date": "2026-04-27",
+      "event_date_basis": "announcement",
+      "title": "Second-generation Bitkey introduced",
+      "description": "Bitkey introduced a new hardware generation with an on-device screen while retaining the 2-of-3 multisignature system.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    },
+    {
+      "id": "wlr_ev_000028",
+      "entity_id": "wlr_ent_000006",
+      "product_id": "wlr_prod_000026",
+      "affected_product_ids": [
+        "wlr_prod_000026",
+        "wlr_prod_000027"
+      ],
+      "affected_components": [
+        "app_key",
+        "relationship_enrollment_flow"
+      ],
+      "event_type": "software_issue",
+      "event_date": "2026-08-02",
+      "event_date_basis": "disclosure",
+      "title": "Relationship-enrollment randomness bug disclosed",
+      "description": "Bitkey disclosed that the mobile app used a non-cryptographic random-number generator for a one-time relationship-enrollment secret. The demonstrated practical path was limited to narrow second-generation recovery-contact or inheritance flows and did not weaken wallet spending keys.",
+      "confidence": "high",
+      "impact_level": "high",
+      "security_scope": "mobile_app",
+      "funds_affected": "no",
+      "user_actions_required": [
+        "update",
+        "reconfigure"
+      ],
+      "event_status_effect": "none",
+      "is_major_event": true,
+      "affected_versions": [],
+      "notes": "Bitkey reported no evidence that customers were exploited or that funds were impacted; selected second-generation inheritance users were advised to update the app and re-enroll beneficiaries."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000034",
+      "entity_id": "wlr_ent_000006",
+      "product_id": "wlr_prod_000027",
+      "event_id": "wlr_ev_000027",
+      "source_type": "official_blog",
+      "title": "Meet the new Bitkey",
+      "url": "https://bitkey.world/blog/meet-the-new-bitkey",
+      "publisher": "Bitkey",
+      "published_at": "2026-04-27",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": ""
+    },
+    {
+      "id": "wlr_src_000035",
+      "entity_id": "wlr_ent_000006",
+      "product_id": "wlr_prod_000026",
+      "event_id": "wlr_ev_000028",
+      "source_type": "official_security_advisory",
+      "title": "Relationship-enrollment bug in Bitkey",
+      "url": "https://bitkey.world/blog/relationship-enrollment-bug-in-bitkey",
+      "publisher": "Bitkey",
+      "published_at": "2026-08-02",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": ""
+    }
+  ]
+}

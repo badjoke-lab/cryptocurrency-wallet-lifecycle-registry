@@ -1,0 +1,51 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000081",
+    "slug": "tonhub",
+    "canonical_name": "Tonhub",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000130",
+    "entity_id": "wlr_ent_000081",
+    "slug": "tonhub-mobile",
+    "product_name": "Tonhub Mobile",
+    "product_type": "mobile_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": null,
+    "platform": [
+      "mobile"
+    ],
+    "official_url": "https://tonhub.com/",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "user_controlled_seed_phrase_and_wallet_keys",
+    "summary": "Tonhub non-custodial TON wallet application for asset management, payments and service connections.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Selected user-facing wallet runtime for the breadth pass. Exact original release date remains unresolved."
+  },
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000308",
+      "entity_id": "wlr_ent_000081",
+      "product_id": "wlr_prod_000130",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Tonhub",
+      "url": "https://tonhub.com/",
+      "publisher": "Tonhub",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current official Tonhub distribution surface for the user-facing wallet application."
+    }
+  ]
+}

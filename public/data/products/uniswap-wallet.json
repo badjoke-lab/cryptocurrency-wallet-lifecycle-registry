@@ -1,0 +1,53 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000047",
+    "slug": "uniswap-wallet",
+    "canonical_name": "Uniswap Wallet",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000096",
+    "entity_id": "wlr_ent_000047",
+    "slug": "uniswap-wallet",
+    "product_name": "Uniswap Wallet",
+    "product_type": "mobile_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": "2023-04-13",
+    "launch_date_precision": "day",
+    "platform": [
+      "iOS",
+      "Android"
+    ],
+    "official_url": "https://wallet.uniswap.org/",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "user_controlled_software_private_keys",
+    "summary": "Uniswap Labs self-custody mobile wallet for swaps, token management and onchain application access.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-19",
+    "notes": "The iOS public launch is exactly dated 2023-04-13; Android was added later and is included in the current platform set."
+  },
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000240",
+      "entity_id": "wlr_ent_000047",
+      "product_id": "wlr_prod_000096",
+      "event_id": null,
+      "source_type": "official_blog",
+      "title": "Uniswap Wallet is now available on Android",
+      "url": "https://blog.uniswap.org/uniswap-wallet-android",
+      "publisher": "Uniswap Labs",
+      "published_at": "2023-11-14",
+      "accessed_at": "2026-08-19",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "First-party Android release confirms the continuing Uniswap Wallet mobile-product lineage and notes its original iOS launch in April 2023."
+    }
+  ]
+}

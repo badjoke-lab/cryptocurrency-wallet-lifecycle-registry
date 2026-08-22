@@ -1,0 +1,49 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000030",
+    "slug": "tokenpocket",
+    "canonical_name": "TokenPocket",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000079",
+    "entity_id": "wlr_ent_000030",
+    "slug": "tokenpocket-mobile-wallet",
+    "product_name": "TokenPocket Mobile Wallet",
+    "product_type": "mobile_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": null,
+    "platform": null,
+    "official_url": "https://www.tokenpocket.pro/",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "user_controlled_software_private_keys",
+    "summary": "TokenPocket's current mobile multi-chain decentralized wallet product.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-19",
+    "notes": "The official about page establishes the mobile wallet as a current product; initial mobile-product launch date remains unresolved."
+  },
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000205",
+      "entity_id": "wlr_ent_000030",
+      "product_id": "wlr_prod_000079",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "TokenPocket About Us",
+      "url": "https://www.tokenpocket.pro/en/about",
+      "publisher": "TokenPocket",
+      "published_at": null,
+      "accessed_at": "2026-08-19",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party about page identifies TokenPocket as a multi-chain decentralized wallet with a mobile wallet among its user-facing products."
+    }
+  ]
+}

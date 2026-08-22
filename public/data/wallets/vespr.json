@@ -1,0 +1,85 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000084",
+    "slug": "vespr",
+    "canonical_name": "VESPR",
+    "aliases": [
+      "VESPR Wallet"
+    ],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Non-custodial Cardano wallet ecosystem designed for user-controlled private keys across mobile and browser surfaces.",
+    "developer_or_company": "VESPR",
+    "country_or_origin": null,
+    "launch_date": null,
+    "official_url": "https://vespr.xyz/",
+    "official_domain": "vespr.xyz",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "device_local_user_controlled_recovery_phrase_and_private_keys",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Current first-party VESPR documentation explicitly says VESPR is non-custodial and does not collect or store recovery phrases or private keys. Initial launch date remains unresolved."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000133",
+      "entity_id": "wlr_ent_000084",
+      "slug": "vespr-mobile",
+      "product_name": "VESPR Mobile",
+      "product_type": "mobile_app",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "unknown",
+      "launch_date": null,
+      "platform": [
+        "iOS",
+        "Android"
+      ],
+      "official_url": "https://docs.vespr.xyz/vespr/user-guide/getting-started/download-vespr",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "device_local_user_controlled_recovery_phrase_and_private_keys",
+      "summary": "VESPR non-custodial Cardano mobile wallet for iOS and Android.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-20",
+      "notes": "Selected mobile runtime only; browser wallet support listed by VESPR is deferred."
+    }
+  ],
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000313",
+      "entity_id": "wlr_ent_000084",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "What is VESPR?",
+      "url": "https://docs.vespr.xyz/vespr",
+      "publisher": "VESPR",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "entity",
+      "is_primary": true,
+      "notes": "Current first-party VESPR documentation explicitly calls VESPR non-custodial and says users maintain control and ownership of Cardano private keys/assets."
+    },
+    {
+      "id": "wlr_src_000314",
+      "entity_id": "wlr_ent_000084",
+      "product_id": "wlr_prod_000133",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Download VESPR",
+      "url": "https://docs.vespr.xyz/vespr/user-guide/getting-started/download-vespr",
+      "publisher": "VESPR",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "First-party download documentation lists official iOS, Android and browser versions; mobile is selected for this breadth pass."
+    }
+  ]
+}

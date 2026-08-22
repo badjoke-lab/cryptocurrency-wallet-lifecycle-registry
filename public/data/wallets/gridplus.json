@@ -1,0 +1,80 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000070",
+    "slug": "gridplus",
+    "canonical_name": "GridPlus",
+    "aliases": [],
+    "wallet_type": "hardware",
+    "status": "active",
+    "summary": "Hardware-wallet and cryptographic security-device ecosystem centered on the GridPlus Lattice1 hardware wallet.",
+    "developer_or_company": "GridPlus",
+    "country_or_origin": null,
+    "launch_date": null,
+    "official_url": "https://gridplus.io/",
+    "official_domain": "gridplus.io",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "hardware_secure_enclave_private_keys",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Current first-party GridPlus documentation identifies GridPlus as a hardware-security-device manufacturer and Lattice1 as its flagship wallet. Initial GridPlus wallet launch date remains unresolved."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000119",
+      "entity_id": "wlr_ent_000070",
+      "slug": "lattice1",
+      "product_name": "Lattice1",
+      "product_type": "hardware_device",
+      "status": "active",
+      "sales_status": "unknown",
+      "support_status": "unknown",
+      "launch_date": null,
+      "platform": null,
+      "official_url": "https://gridplus.io/products/gridplus-lattice1",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "hardware_secure_enclave_private_keys",
+      "summary": "GridPlus Lattice1 hardware wallet using a secure enclave for private-key generation, storage and signing.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-20",
+      "notes": "Current first-party documentation establishes the product and on-device secure-enclave key boundary. Sales status remains unknown in this batch because the reviewed documentation does not itself establish current purchase availability."
+    }
+  ],
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000285",
+      "entity_id": "wlr_ent_000070",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "GridPlus Brand Assets",
+      "url": "https://docs.gridplus.io/resources/gridplus-brand-assets",
+      "publisher": "GridPlus",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "entity",
+      "is_primary": true,
+      "notes": "First-party GridPlus documentation identifies GridPlus as a manufacturer of hardware security devices and Lattice1 as its flagship wallet."
+    },
+    {
+      "id": "wlr_src_000286",
+      "entity_id": "wlr_ent_000070",
+      "product_id": "wlr_prod_000119",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Lattice1 Security Features",
+      "url": "https://docs.gridplus.io/lattice1/security-features",
+      "publisher": "GridPlus",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "First-party security documentation states Lattice1 private keys are generated, stored and used for signing inside a secure enclave on the device."
+    }
+  ]
+}

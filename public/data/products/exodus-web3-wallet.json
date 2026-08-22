@@ -1,0 +1,100 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000016",
+    "slug": "exodus",
+    "canonical_name": "Exodus",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000049",
+    "entity_id": "wlr_ent_000016",
+    "slug": "exodus-web3-wallet",
+    "product_name": "Exodus Web3 Wallet",
+    "aliases": [],
+    "product_type": "browser_extension",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "supported",
+    "launch_date": "2022-08-16",
+    "platform": [
+      "Chrome",
+      "Brave"
+    ],
+    "official_url": "https://www.exodus.com/download",
+    "custody_model": "self_custody",
+    "key_management_model": "browser_extension_local_key_storage",
+    "variants": [],
+    "summary": "Self-custody Exodus browser-extension wallet for Chrome and Brave, distinct from the in-app browser feature of Exodus Mobile.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-17",
+    "notes": "Do not confuse Exodus Web3 Wallet browser extension with the separate Web3 browser feature inside Exodus Mobile. Launch date is established by the reviewed August 16, 2022 first-party Exodus browser-extension release event and official Exodus announcement.",
+    "launch_date_precision": "day"
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000073",
+      "entity_id": "wlr_ent_000016",
+      "product_id": "wlr_prod_000049",
+      "affected_product_ids": [
+        "wlr_prod_000049"
+      ],
+      "event_type": "product_released",
+      "event_date": "2022-08-16",
+      "event_date_basis": "release",
+      "title": "Exodus Web3 Wallet browser extension released",
+      "description": "Exodus announced the release of its multi-chain browser extension, adding the Web3 Wallet product alongside its existing desktop and mobile applications.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000070",
+      "entity_id": "wlr_ent_000016",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Exodus Crypto App Download",
+      "url": "https://www.exodus.com/download",
+      "publisher": "Exodus",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "status",
+      "is_primary": true,
+      "product_ids": [
+        "wlr_prod_000047",
+        "wlr_prod_000048",
+        "wlr_prod_000049"
+      ],
+      "notes": "Current first-party download page confirming Desktop, Mobile, and Web3 browser-extension products and supported platforms."
+    },
+    {
+      "id": "wlr_src_000119",
+      "entity_id": "wlr_ent_000016",
+      "product_ids": [
+        "wlr_prod_000049"
+      ],
+      "event_ids": [
+        "wlr_ev_000073"
+      ],
+      "product_id": "wlr_prod_000049",
+      "event_id": "wlr_ev_000073",
+      "source_type": "official_statement",
+      "title": "Exodus Announces Release of Browser Extension",
+      "url": "https://www.exodus.com/investors/news-events/press-releases/detail/21/exodus-announces-release-of-browser-extension",
+      "publisher": "Exodus Movement, Inc.",
+      "published_at": "2022-08-16",
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Primary Exodus investor-relations release announcing the multi-chain browser extension and its role alongside mobile and desktop."
+    }
+  ]
+}

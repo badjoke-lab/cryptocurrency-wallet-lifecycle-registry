@@ -1,0 +1,106 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000017",
+    "slug": "foundation-passport",
+    "canonical_name": "Foundation Passport",
+    "wallet_type": "hardware",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000050",
+    "entity_id": "wlr_ent_000017",
+    "slug": "passport-founders-edition",
+    "product_name": "Passport Founder’s Edition",
+    "aliases": [
+      "Passport Founders Edition",
+      "Passport Gen 1"
+    ],
+    "product_type": "hardware_device",
+    "status": "active",
+    "sales_status": "end_of_sale",
+    "support_status": "supported",
+    "launch_date": "2020",
+    "launch_date_precision": "year",
+    "platform": [
+      "hardware"
+    ],
+    "official_url": "https://foundation.xyz/blog/passport-is-now-passport-core",
+    "custody_model": "self_custody",
+    "key_management_model": "device_held_bitcoin_seed",
+    "variants": [],
+    "summary": "First-generation Passport hardware wallet introduced in 2020; no longer sold, while current Passport Core documentation remains applicable to Founder’s Edition devices on supported firmware.",
+    "predecessor_product_id": null,
+    "successor_product_id": "wlr_prod_000051",
+    "confidence": "high",
+    "last_verified_at": "2026-08-15",
+    "notes": "End-of-sale is distinct from support status; no unsupported EOL date is asserted."
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000050",
+      "entity_id": "wlr_ent_000017",
+      "product_id": "wlr_prod_000050",
+      "affected_product_ids": [
+        "wlr_prod_000050"
+      ],
+      "event_type": "product_released",
+      "event_date": "2020",
+      "event_date_basis": "approximate",
+      "title": "First-generation Passport introduced",
+      "description": "Foundation states that its first-generation Passport hardware wallet, later described as the Passport Founder’s Edition, was introduced in mid-2020.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000074",
+      "entity_id": "wlr_ent_000017",
+      "product_ids": [
+        "wlr_prod_000050",
+        "wlr_prod_000051",
+        "wlr_prod_000052",
+        "wlr_prod_000053"
+      ],
+      "event_ids": [
+        "wlr_ev_000050",
+        "wlr_ev_000051"
+      ],
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_blog",
+      "title": "Passport is now Passport Core",
+      "url": "https://foundation.xyz/blog/passport-is-now-passport-core",
+      "publisher": "Foundation",
+      "published_at": "2025-03-17",
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "product_lineage",
+      "is_primary": true,
+      "notes": "Primary history source for the 2020 first generation, Founder’s Edition, Batch 2/Core continuity, 2025 rename, Prime, and Envoy product family."
+    },
+    {
+      "id": "wlr_src_000075",
+      "entity_id": "wlr_ent_000017",
+      "product_ids": [
+        "wlr_prod_000050",
+        "wlr_prod_000051"
+      ],
+      "event_ids": [],
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Passport Core Home",
+      "url": "https://docs.foundation.xyz/passport",
+      "publisher": "Foundation",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "Current documentation identifies Passport Core and states that instructions also apply to Founder’s Edition devices on version 2.1.0 and above."
+    }
+  ]
+}

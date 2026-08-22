@@ -1,0 +1,88 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000069",
+    "slug": "slush-wallet",
+    "canonical_name": "Slush",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000118",
+    "entity_id": "wlr_ent_000069",
+    "slug": "slush-extension",
+    "product_name": "Slush Browser Extension",
+    "aliases": [
+      "Sui Wallet Extension"
+    ],
+    "product_type": "browser_extension",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": null,
+    "platform": [
+      "browser extension"
+    ],
+    "official_url": "https://slush.app/",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "browser_local_user_controlled_wallet_keys",
+    "summary": "Current Slush browser-extension wallet continuing the former Sui Wallet extension lineage.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Mysten Labs states existing Sui Wallet extension users received Slush through a standard update without a new download or migration. Slush mobile/web surfaces are deferred. The 2025-04-24 rebrand is not used as the original extension launch date."
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000130",
+      "entity_id": "wlr_ent_000069",
+      "product_id": "wlr_prod_000118",
+      "affected_product_ids": [
+        "wlr_prod_000118"
+      ],
+      "event_type": "rebranded",
+      "event_date": "2025-04-24",
+      "event_date_basis": "announcement",
+      "title": "Sui Wallet and Stashed unified under the Slush brand",
+      "description": "Mysten Labs announced that Sui Wallet and Stashed were becoming Slush, with existing Sui Wallet users receiving the new name and interface through the standard update path rather than a separate wallet migration.",
+      "confidence": "high",
+      "event_status_effect": "none",
+      "is_major_event": true,
+      "notes": "WLR uses `rebranded` rather than `merged` because the selected existing wallet product continues through the standard update path under the Slush identity; Stashed functionality is acknowledged in the description without creating an unsupported second canonical product relationship."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000284",
+      "entity_id": "wlr_ent_000069",
+      "product_id": "wlr_prod_000118",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Slush Terms of Service",
+      "url": "https://slush.app/terms-of-service",
+      "publisher": "Slush / Mysten Labs",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current Slush terms describe the wallet as non-custodial/unhosted and state Slush does not take custody or control of assets or keys."
+    },
+    {
+      "id": "wlr_src_000356",
+      "entity_id": "wlr_ent_000069",
+      "product_id": "wlr_prod_000118",
+      "event_id": "wlr_ev_000130",
+      "source_type": "official_blog",
+      "title": "Sui Wallet and Stashed are Now Slush",
+      "url": "https://www.mystenlabs.com/blog/sui-wallet-and-stashed-are-now-slush",
+      "publisher": "Mysten Labs",
+      "published_at": "2025-04-24",
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "rebrand",
+      "is_primary": true,
+      "notes": "First-party Mysten Labs announcement states Sui Wallet and Stashed are now Slush and says existing Sui Wallet users receive the change through a standard update without a new download or account migration."
+    }
+  ]
+}

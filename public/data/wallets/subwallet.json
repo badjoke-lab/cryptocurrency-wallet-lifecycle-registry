@@ -1,0 +1,85 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000067",
+    "slug": "subwallet",
+    "canonical_name": "SubWallet",
+    "aliases": [],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Non-custodial wallet ecosystem for Polkadot, Substrate and EVM-compatible networks, distributed through browser and mobile applications.",
+    "developer_or_company": "SubWallet",
+    "country_or_origin": null,
+    "launch_date": null,
+    "official_url": "https://www.subwallet.app/",
+    "official_domain": "subwallet.app",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "user_controlled_wallet_keys_and_mnemonic",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Current first-party documentation describes SubWallet as non-custodial and documents user-controlled wallet credentials. Initial launch date remains unresolved."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000116",
+      "entity_id": "wlr_ent_000067",
+      "slug": "subwallet-extension",
+      "product_name": "SubWallet Extension",
+      "product_type": "browser_extension",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "unknown",
+      "launch_date": null,
+      "platform": [
+        "Chrome",
+        "Brave",
+        "Firefox",
+        "Edge"
+      ],
+      "official_url": "https://www.subwallet.app/download.html",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "browser_local_user_controlled_wallet_keys",
+      "summary": "Current SubWallet non-custodial browser extension for Polkadot, Substrate and EVM-compatible networks.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-20",
+      "notes": "Selected browser-extension boundary only; SubWallet mobile is deferred. Exact initial extension launch date remains unresolved."
+    }
+  ],
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000279",
+      "entity_id": "wlr_ent_000067",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Install SubWallet",
+      "url": "https://docs.subwallet.app/main/extension-user-guide/getting-started/install-subwallet",
+      "publisher": "SubWallet",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "entity",
+      "is_primary": true,
+      "notes": "Current first-party documentation describes SubWallet as a comprehensive non-custodial wallet."
+    },
+    {
+      "id": "wlr_src_000280",
+      "entity_id": "wlr_ent_000067",
+      "product_id": "wlr_prod_000116",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "SubWallet Extension installation",
+      "url": "https://docs.subwallet.app/main/extension-user-guide/getting-started/install-subwallet",
+      "publisher": "SubWallet",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Same first-party installation authority explicitly lists Chrome, Brave, Firefox and Edge extension distribution."
+    }
+  ]
+}

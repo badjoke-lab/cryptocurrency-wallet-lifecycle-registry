@@ -1,0 +1,87 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000060",
+    "slug": "enkrypt",
+    "canonical_name": "Enkrypt",
+    "aliases": [],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Open-source non-custodial multichain Web3 browser wallet built by the team behind MyEtherWallet.",
+    "developer_or_company": "MyEtherWallet / Enkrypt",
+    "country_or_origin": null,
+    "launch_date": null,
+    "official_url": "https://www.enkrypt.com/",
+    "official_domain": "enkrypt.com",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "browser_local_user_controlled_wallet_keys",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Enkrypt is modeled as a distinct wallet/project identity despite being built by the MEW team because it is separately branded, distributed and maintained as a multichain browser wallet. Initial public launch date remains unresolved."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000109",
+      "entity_id": "wlr_ent_000060",
+      "slug": "enkrypt-extension",
+      "product_name": "Enkrypt Extension",
+      "product_type": "browser_extension",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "unknown",
+      "launch_date": null,
+      "platform": [
+        "Chrome",
+        "Firefox",
+        "Brave",
+        "Edge",
+        "Opera",
+        "Safari"
+      ],
+      "official_url": "https://www.enkrypt.com/",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "browser_local_user_controlled_wallet_keys",
+      "summary": "Enkrypt non-custodial open-source multichain browser-extension wallet.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-20",
+      "notes": "Current first-party Enkrypt site explicitly distributes the extension across multiple browsers. Exact initial extension release date remains unresolved."
+    }
+  ],
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000265",
+      "entity_id": "wlr_ent_000060",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "About Enkrypt",
+      "url": "https://blog.enkrypt.com/about/",
+      "publisher": "Enkrypt",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "entity",
+      "is_primary": true,
+      "notes": "First-party Enkrypt page identifies Enkrypt as a distinct multichain, non-custodial, open-source Web3 browser wallet built by the MEW team."
+    },
+    {
+      "id": "wlr_src_000266",
+      "entity_id": "wlr_ent_000060",
+      "product_id": "wlr_prod_000109",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Enkrypt: Ethereum, Polkadot and Bitcoin Wallet",
+      "url": "https://www.enkrypt.com/index.html",
+      "publisher": "Enkrypt",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party site explicitly distributes Enkrypt as a non-custodial browser extension for Chrome, Firefox, Brave, Edge, Opera and Safari."
+    }
+  ]
+}

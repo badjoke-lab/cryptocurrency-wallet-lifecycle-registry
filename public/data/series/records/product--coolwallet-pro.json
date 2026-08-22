@@ -22,7 +22,25 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000088"
+        ],
+        "confidence": "high",
+        "description": "CoolBitX announced the release of CoolWallet Pro on 2021-05-20, with the device available to order and order fulfillment stated to begin from 2021-05-24.",
+        "entity_id": "wlr_ent_000039",
+        "event_date": "2021-05-20",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000146",
+        "is_major_event": true,
+        "notes": "Release announcement date retained; later fulfillment start not backdated.",
+        "product_id": "wlr_prod_000088",
+        "title": "CoolWallet Pro released"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -42,6 +60,22 @@
         "source_type": "official_statement",
         "title": "CoolWallet Hardware Wallets",
         "url": "https://www.coolwallet.io/"
+      },
+      {
+        "accessed_at": "2026-08-23",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000039",
+        "event_id": "wlr_ev_000146",
+        "id": "wlr_src_000373",
+        "is_primary": true,
+        "notes": "First-party release text dated 20 May 2021; fulfillment from 24 May 2021.",
+        "product_id": "wlr_prod_000088",
+        "published_at": null,
+        "publisher": "CoolWallet / CoolBitX",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Introducing the CoolWallet Pro For Enhanced Staking, DeFi, DApp, and NFT Support",
+        "url": "https://www.coolwallet.io/blogs/blog/introducing-the-coolwallet-pro-for-enhanced-staking-defi-dapp-and-nft-support"
       }
     ]
   },

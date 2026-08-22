@@ -1,0 +1,29 @@
+{
+  "project": "Wallet Lifecycle Registry",
+  "short_name": "WLR",
+  "data_safety": "canonical_only",
+  "generated_from": "reviewed canonical JSON",
+  "record_counts": {
+    "entities": 100,
+    "products": 149,
+    "events": 147,
+    "evidence": 374,
+    "wallet_records": 100,
+    "product_records": 149
+  },
+  "last_verified_at": "2026-08-20",
+  "files": [
+    "/data/entities.json",
+    "/data/products.json",
+    "/data/events.json",
+    "/data/evidence.json",
+    "/data/wallet-index.json",
+    "/data/product-index.json",
+    "/data/stats.json"
+  ],
+  "deterministic_record_paths": {
+    "wallets": "/data/wallets/{entity-slug}.json",
+    "products": "/data/products/{product-slug}.json",
+    "stats": "/data/stats.json"
+  }
+}

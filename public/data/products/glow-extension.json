@@ -1,0 +1,54 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000086",
+    "slug": "glow-wallet",
+    "canonical_name": "Glow",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000135",
+    "entity_id": "wlr_ent_000086",
+    "slug": "glow-extension",
+    "product_name": "Glow Browser Extension",
+    "product_type": "browser_extension",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": null,
+    "platform": [
+      "Chrome",
+      "Edge",
+      "Firefox",
+      "Brave"
+    ],
+    "official_url": "https://glow.app/",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "user_controlled_recovery_phrase_and_local_wallet_keys",
+    "summary": "Glow non-custodial Solana browser-extension wallet.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Selected browser-extension runtime only; iOS and Android products are deferred."
+  },
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000318",
+      "entity_id": "wlr_ent_000086",
+      "product_id": "wlr_prod_000135",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Glow — Your New Favorite Solana Wallet",
+      "url": "https://glow.app/",
+      "publisher": "Glow",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current official distribution page lists Glow desktop browser extensions separately from mobile applications."
+    }
+  ]
+}

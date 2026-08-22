@@ -1,0 +1,88 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000080",
+    "slug": "my-wallet",
+    "canonical_name": "My Wallet",
+    "aliases": [
+      "MyTonWallet"
+    ],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Open-source self-custodial multichain wallet formerly branded MyTonWallet, now distributed as My Wallet across mobile, browser-extension and desktop surfaces.",
+    "developer_or_company": "My Wallet",
+    "country_or_origin": null,
+    "launch_date": null,
+    "official_url": "https://mytonwallet.io/",
+    "official_domain": "mytonwallet.io",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "user_controlled_recovery_phrase_and_private_keys",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Current first-party site explicitly states that My Wallet was formerly known as MyTonWallet. WLR preserves one continuous entity lineage rather than treating the rebrand as a new wallet launch. Initial launch date remains unresolved."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000129",
+      "entity_id": "wlr_ent_000080",
+      "slug": "my-wallet-mobile",
+      "product_name": "My Wallet Mobile",
+      "aliases": [
+        "MyTonWallet Mobile"
+      ],
+      "product_type": "mobile_app",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "unknown",
+      "launch_date": null,
+      "platform": [
+        "iOS",
+        "Android"
+      ],
+      "official_url": "https://mytonwallet.io/",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "user_controlled_recovery_phrase_and_private_keys",
+      "summary": "Current self-custodial My Wallet mobile application, preserving the former MyTonWallet product lineage.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-20",
+      "notes": "Selected mobile runtime only. Browser extension, desktop and Telegram mini-app surfaces are deferred. Rebrand does not reset launch chronology."
+    }
+  ],
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000305",
+      "entity_id": "wlr_ent_000080",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "My Wallet",
+      "url": "https://mytonwallet.io/",
+      "publisher": "My Wallet",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "rebrand",
+      "is_primary": true,
+      "notes": "Current first-party site describes My Wallet as fully self-custodial and explicitly states that it was formerly known as MyTonWallet."
+    },
+    {
+      "id": "wlr_src_000306",
+      "entity_id": "wlr_ent_000080",
+      "product_id": "wlr_prod_000129",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Install My Wallet",
+      "url": "https://get.mytonwallet.io/",
+      "publisher": "My Wallet",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party distribution surface for the renamed My Wallet product family; mobile is selected for this breadth pass while other runtimes are deferred."
+    }
+  ]
+}

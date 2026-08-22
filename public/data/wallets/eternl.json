@@ -1,0 +1,84 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000082",
+    "slug": "eternl",
+    "canonical_name": "Eternl",
+    "aliases": [],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Non-custodial Cardano wallet ecosystem distributed through web, browser-extension and mobile surfaces.",
+    "developer_or_company": "Eternl",
+    "country_or_origin": null,
+    "launch_date": null,
+    "official_url": "https://eternl.io/",
+    "official_domain": "eternl.io",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "locally_stored_encrypted_private_keys_or_hardware_wallet_keys",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Current Eternl first-party wiki states encrypted private keys remain on the user's computer or hardware wallet and never on Eternl servers. Initial launch date remains unresolved in this breadth pass."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000131",
+      "entity_id": "wlr_ent_000082",
+      "slug": "eternl-extension",
+      "product_name": "Eternl Browser Extension",
+      "product_type": "browser_extension",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "unknown",
+      "launch_date": null,
+      "platform": [
+        "Chrome",
+        "Brave",
+        "Chromium-based browsers"
+      ],
+      "official_url": "https://eternl.io/",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "locally_stored_encrypted_private_keys_or_hardware_wallet_keys",
+      "summary": "Eternl non-custodial Cardano browser-extension wallet for DApp integration and wallet management.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-20",
+      "notes": "Selected browser-extension runtime only; web/PWA and mobile surfaces are deferred."
+    }
+  ],
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000309",
+      "entity_id": "wlr_ent_000082",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "About Eternl",
+      "url": "https://wiki.eternl.io/welcome-to-eternl-v2/about-eternl",
+      "publisher": "Eternl",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "entity",
+      "is_primary": true,
+      "notes": "Current first-party wiki states Eternl stores encrypted private keys only on the user's computer or hardware wallet, never on Eternl servers."
+    },
+    {
+      "id": "wlr_src_000310",
+      "entity_id": "wlr_ent_000082",
+      "product_id": "wlr_prod_000131",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Eternl Supported Platforms",
+      "url": "https://wiki.eternl.io/welcome-to-eternl-v2/supported-platforms",
+      "publisher": "Eternl",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "First-party Eternl platform page separates web/PWA, browser extension and mobile and states all versions are fully non-custodial."
+    }
+  ]
+}

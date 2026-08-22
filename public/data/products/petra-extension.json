@@ -1,0 +1,51 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000068",
+    "slug": "petra",
+    "canonical_name": "Petra",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000117",
+    "entity_id": "wlr_ent_000068",
+    "slug": "petra-extension",
+    "product_name": "Petra Browser Extension",
+    "product_type": "browser_extension",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": null,
+    "platform": [
+      "browser extension"
+    ],
+    "official_url": "https://petra.app/",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "browser_local_user_controlled_private_keys",
+    "summary": "Current self-custodial Petra browser-extension wallet for Aptos accounts and applications.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Selected extension boundary only; Petra mobile and Petra Web are deferred as separate runtimes. Initial extension launch date remains unresolved."
+  },
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000282",
+      "entity_id": "wlr_ent_000068",
+      "product_id": "wlr_prod_000117",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Aptos Labs Products — Petra Wallet",
+      "url": "https://aptoslabs.com/products",
+      "publisher": "Aptos Labs",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party product page identifies Petra as self-custodial and states only the user can access wallet keys."
+    }
+  ]
+}

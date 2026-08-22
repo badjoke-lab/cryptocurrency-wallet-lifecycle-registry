@@ -1,0 +1,105 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000097",
+    "slug": "casa",
+    "canonical_name": "Casa",
+    "aliases": [
+      "Casa Vault"
+    ],
+    "wallet_type": "hybrid",
+    "status": "active",
+    "summary": "Non-custodial multisignature Bitcoin and Ethereum vault service in which users control the signing quorum while Casa holds one emergency recovery key that cannot move funds by itself.",
+    "developer_or_company": "Casa, Inc.",
+    "country_or_origin": null,
+    "launch_date": null,
+    "official_url": "https://casa.io/",
+    "official_domain": "casa.io",
+    "source_code_urls": [],
+    "custody_model": "hybrid",
+    "key_management_model": "2_of_3_or_3_of_5_multisig_with_one_provider_held_recovery_key",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "system_components": [
+      {
+        "component_type": "mobile_key",
+        "controlled_by": "user",
+        "role": "signing_key",
+        "custody_note": "Held by the user on the mobile device."
+      },
+      {
+        "component_type": "hardware_key",
+        "controlled_by": "user",
+        "role": "signing_key",
+        "custody_note": "One or more user-controlled hardware-wallet keys participate in the multisig quorum."
+      },
+      {
+        "component_type": "casa_recovery_key",
+        "controlled_by": "provider",
+        "role": "emergency_recovery_signing_key",
+        "custody_note": "Casa holds one recovery key, but that key alone cannot move funds or satisfy the multisig quorum."
+      }
+    ],
+    "notes": "Casa explicitly calls the vault non-custodial because Casa never holds enough keys to move funds. WLR still records `custody_model=hybrid` to preserve the material provider-held recovery-key component rather than flattening the architecture into a pure user-only key model."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000146",
+      "entity_id": "wlr_ent_000097",
+      "slug": "casa-3-key-vault",
+      "product_name": "Casa 3-Key Vault",
+      "product_type": "other",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "unknown",
+      "launch_date": null,
+      "platform": [
+        "Casa app",
+        "hardware wallets"
+      ],
+      "official_url": "https://support.casa.io/knowledge/what-is-the-casa-app",
+      "source_code_url": null,
+      "custody_model": "hybrid",
+      "key_management_model": "2_of_3_multisig_mobile_hardware_and_provider_recovery_key",
+      "summary": "Casa Standard 2-of-3 multisig vault using a user mobile key, a user hardware key and a Casa-held recovery key, where any two signatures are required.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-20",
+      "notes": "Selected vault product rather than treating Casa's advisory/service layer as a wallet. Casa holds only one of three keys and cannot move funds unilaterally."
+    }
+  ],
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000339",
+      "entity_id": "wlr_ent_000097",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "What is a bitcoin wallet?",
+      "url": "https://support.casa.io/knowledge/what-is-a-bitcoin-wallet",
+      "publisher": "Casa",
+      "published_at": "2026-05-29",
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "architecture",
+      "is_primary": true,
+      "notes": "Current Casa support describes Casa as non-custodial, explains 2-of-3/3-of-5 vaults, and states Casa holds one Recovery Key that cannot move funds alone."
+    },
+    {
+      "id": "wlr_src_000340",
+      "entity_id": "wlr_ent_000097",
+      "product_id": "wlr_prod_000146",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "What is the Casa app?",
+      "url": "https://support.casa.io/knowledge/what-is-the-casa-app",
+      "publisher": "Casa",
+      "published_at": "2026-04-22",
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "First-party Casa support defines the 3-key vault as a 2-of-3 multisig arrangement and says Casa holds only one emergency recovery key, insufficient to send funds by itself."
+    }
+  ]
+}

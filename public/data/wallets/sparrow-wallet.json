@@ -1,0 +1,272 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000021",
+    "slug": "sparrow-wallet",
+    "canonical_name": "Sparrow Wallet",
+    "aliases": [
+      "Sparrow"
+    ],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Open-source self-custody Bitcoin desktop wallet focused on transparent transaction construction, hardware-wallet interoperability, and privacy-aware coin control.",
+    "developer_or_company": "Craig Raw / Sparrow Wallet",
+    "country_or_origin": null,
+    "launch_date": "2020-08-29",
+    "launch_date_precision": "day",
+    "official_url": "https://sparrowwallet.com/",
+    "official_domain": "sparrowwallet.com",
+    "source_code_urls": [
+      "https://github.com/sparrowwallet/sparrow"
+    ],
+    "custody_model": "self_custody",
+    "key_management_model": "desktop_local_seed_or_external_signer",
+    "confidence": "high",
+    "last_verified_at": "2026-08-15",
+    "notes": "Modeled as one desktop product across operating systems rather than separate products per OS."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000061",
+      "entity_id": "wlr_ent_000021",
+      "slug": "sparrow-desktop",
+      "product_name": "Sparrow Wallet Desktop",
+      "aliases": [
+        "Sparrow Wallet"
+      ],
+      "product_type": "desktop_app",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "supported",
+      "launch_date": "2020-08-29",
+      "launch_date_precision": "day",
+      "platform": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "official_url": "https://sparrowwallet.com/download/",
+      "source_code_url": "https://github.com/sparrowwallet/sparrow",
+      "custody_model": "self_custody",
+      "key_management_model": "desktop_local_seed_or_external_signer",
+      "variants": [],
+      "summary": "Current Sparrow desktop Bitcoin wallet distributed across Windows, macOS, and Linux.",
+      "predecessor_product_id": null,
+      "successor_product_id": null,
+      "confidence": "high",
+      "last_verified_at": "2026-08-15",
+      "notes": "Operating-system builds share one product lineage and are not split into separate products."
+    }
+  ],
+  "events": [
+    {
+      "id": "wlr_ev_000054",
+      "entity_id": "wlr_ent_000021",
+      "product_id": "wlr_prod_000061",
+      "affected_product_ids": [
+        "wlr_prod_000061"
+      ],
+      "event_type": "product_released",
+      "event_date": "2020-08-29",
+      "event_date_basis": "release",
+      "title": "Initial Sparrow Wallet release published",
+      "description": "Sparrow's source history identifies August 29, 2020 as the initial public release of the desktop wallet.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    },
+    {
+      "id": "wlr_ev_000082",
+      "entity_id": "wlr_ent_000021",
+      "product_id": "wlr_prod_000061",
+      "affected_product_ids": [
+        "wlr_prod_000061"
+      ],
+      "event_type": "software_issue",
+      "event_date": "2026-03-05",
+      "event_date_basis": "disclosure",
+      "disclosed_at": "2026-03-05",
+      "title": "Password-removal crash window could leave Sparrow wallet database unreadable",
+      "description": "A Sparrow Wallet issue documented a narrow crash window during removal of a wallet password where the H2 wallet file could become unencrypted while seed or keystore state remained encrypted, causing Sparrow to reject the resulting inconsistent wallet database. Maintainer Craig Raw later said the race window appeared real but very small.",
+      "confidence": "high",
+      "security_scope": "software",
+      "event_status_effect": "none",
+      "affected_components": [
+        "wallet database",
+        "password removal flow",
+        "seed and keystore encryption state"
+      ],
+      "is_major_event": false,
+      "notes": "WLR records this as a software issue rather than a CVE or exploit. The reviewed sources describe a reproducible but very narrow local crash/interruption window. The wallet file can become unreadable; retained seed material permits recovery, while a corrupted wallet file that is the only remaining seed-material copy can create a serious loss-of-access scenario. Maintainer Craig Raw characterized practical risk as mostly theoretical because the race window appeared to be only single-digit milliseconds under normal load. No confirmed fund loss is established, but the sources do not support a no-funds-affected claim, so funds_affected remains unknown. No general affected-version range is inferred.",
+      "impact_level": "medium",
+      "funds_affected": "unknown"
+    },
+    {
+      "id": "wlr_ev_000083",
+      "entity_id": "wlr_ent_000021",
+      "product_id": "wlr_prod_000061",
+      "affected_product_ids": [
+        "wlr_prod_000061"
+      ],
+      "event_type": "software_fix",
+      "event_date": "2026-03-10",
+      "event_date_basis": "release",
+      "title": "Sparrow 2.4.2 released with password-removal database corruption fix",
+      "description": "Sparrow 2.4.2 included the fix for possible database corruption during password removal, reordering database row and wallet-file encryption changes so a crash between the operations leaves the wallet in a recoverable state.",
+      "confidence": "high",
+      "security_scope": "software",
+      "event_status_effect": "none",
+      "fixed_versions": [
+        {
+          "product_ids": [
+            "wlr_prod_000061"
+          ],
+          "track": "Sparrow Desktop",
+          "version": "2.4.2"
+        }
+      ],
+      "user_actions_required": [
+        "update"
+      ],
+      "affected_components": [
+        "wallet database",
+        "password removal flow",
+        "seed and keystore encryption state"
+      ],
+      "is_major_event": false,
+      "notes": "The underlying mitigation commit was authored on 2026-03-06. WLR uses the 2026-03-10 public 2.4.2 release date for the remediation event and does not infer a broader affected-version range."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000090",
+      "entity_id": "wlr_ent_000021",
+      "product_ids": [
+        "wlr_prod_000061"
+      ],
+      "event_ids": [
+        "wlr_ev_000054"
+      ],
+      "product_id": "wlr_prod_000061",
+      "event_id": "wlr_ev_000054",
+      "source_type": "source_code",
+      "title": "Sparrow Wallet source history — initial release",
+      "url": "https://github.com/sparrowwallet/sparrow",
+      "publisher": "Sparrow Wallet",
+      "published_at": "2020-08-29",
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "product_lineage",
+      "is_primary": true,
+      "notes": "Official source repository and history for the initial Sparrow desktop-wallet release."
+    },
+    {
+      "id": "wlr_src_000091",
+      "entity_id": "wlr_ent_000021",
+      "product_ids": [
+        "wlr_prod_000061"
+      ],
+      "event_ids": [],
+      "product_id": "wlr_prod_000061",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Download Sparrow Wallet",
+      "url": "https://sparrowwallet.com/download/",
+      "publisher": "Sparrow Wallet",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "status",
+      "is_primary": true,
+      "notes": "Current first-party download source for supported desktop operating systems and current product status."
+    },
+    {
+      "id": "wlr_src_000136",
+      "entity_id": "wlr_ent_000021",
+      "product_ids": [
+        "wlr_prod_000061"
+      ],
+      "event_ids": [
+        "wlr_ev_000082"
+      ],
+      "product_id": "wlr_prod_000061",
+      "event_id": "wlr_ev_000082",
+      "source_type": "community_reference",
+      "title": "Sparrow issue #1961 — password removal can corrupt DB wallet",
+      "url": "https://github.com/sparrowwallet/sparrow/issues/1961",
+      "publisher": "Sparrow Wallet GitHub",
+      "published_at": "2026-03-05",
+      "accessed_at": "2026-08-17",
+      "reliability": "medium",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-hand public reproduction report describing the inconsistent database state and resulting Sparrow load failure after forced termination during password removal."
+    },
+    {
+      "id": "wlr_src_000137",
+      "entity_id": "wlr_ent_000021",
+      "product_ids": [
+        "wlr_prod_000061"
+      ],
+      "event_ids": [
+        "wlr_ev_000082"
+      ],
+      "product_id": "wlr_prod_000061",
+      "event_id": "wlr_ev_000082",
+      "source_type": "official_statement",
+      "title": "Sparrow maintainer confirmation and fix note for issue #1961",
+      "url": "https://github.com/sparrowwallet/sparrow/issues/1961#issuecomment-4010642640",
+      "publisher": "Sparrow Wallet",
+      "published_at": "2026-03-06",
+      "accessed_at": "2026-08-17",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Maintainer Craig Raw states the issue was fixed in e9108b85 by reordering file-encryption and database-row updates so interruption leaves a recoverable state."
+    },
+    {
+      "id": "wlr_src_000138",
+      "entity_id": "wlr_ent_000021",
+      "product_ids": [
+        "wlr_prod_000061"
+      ],
+      "event_ids": [
+        "wlr_ev_000083"
+      ],
+      "product_id": "wlr_prod_000061",
+      "event_id": "wlr_ev_000083",
+      "source_type": "source_code",
+      "title": "Sparrow commit e9108b85 — fix possible DB corruption on password removal",
+      "url": "https://github.com/sparrowwallet/sparrow/commit/e9108b85cdd00ffa53c5efd79a30934bd69aca07",
+      "publisher": "Sparrow Wallet",
+      "published_at": "2026-03-06",
+      "accessed_at": "2026-08-17",
+      "reliability": "high",
+      "claim_scope": "security_fix",
+      "is_primary": true,
+      "notes": "Official source commit implementing the operation reordering in DbPersistence.updateWallet()."
+    },
+    {
+      "id": "wlr_src_000139",
+      "entity_id": "wlr_ent_000021",
+      "product_ids": [
+        "wlr_prod_000061"
+      ],
+      "event_ids": [
+        "wlr_ev_000083"
+      ],
+      "product_id": "wlr_prod_000061",
+      "event_id": "wlr_ev_000083",
+      "source_type": "release_notes",
+      "title": "Sparrow 2.4.2",
+      "url": "https://github.com/sparrowwallet/sparrow/releases/tag/2.4.2",
+      "publisher": "Sparrow Wallet",
+      "published_at": "2026-03-10",
+      "accessed_at": "2026-08-17",
+      "reliability": "high",
+      "claim_scope": "security_fix",
+      "is_primary": true,
+      "notes": "Official release notes explicitly list the password-removal DB corruption fix in Sparrow 2.4.2."
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000089",
+    "slug": "nightly-wallet",
+    "canonical_name": "Nightly Wallet",
+    "aliases": [
+      "Nightly"
+    ],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Multichain software wallet distributed as browser extensions and mobile applications with user-controlled encrypted wallet keys.",
+    "developer_or_company": "Nightly",
+    "country_or_origin": null,
+    "launch_date": "2022-07-04",
+    "launch_date_precision": "day",
+    "official_url": "https://nightly.app/",
+    "official_domain": "nightly.app",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "encrypted_device_wallet_keys_and_user_recovery_phrase",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "First-party launch post introduced Nightly Wallet on 2022-07-04. Current first-party security and FAQ material says private keys are encrypted and the wallet can be restored with the user's secret phrase."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000138",
+      "entity_id": "wlr_ent_000089",
+      "slug": "nightly-browser-extension",
+      "product_name": "Nightly Wallet Extension",
+      "product_type": "browser_extension",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "unknown",
+      "launch_date": "2022-07-04",
+      "launch_date_precision": "day",
+      "platform": [
+        "Chrome",
+        "Firefox",
+        "Brave",
+        "Edge",
+        "Opera",
+        "Safari"
+      ],
+      "official_url": "https://nightly.app/download",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "encrypted_device_wallet_keys_and_user_recovery_phrase",
+      "summary": "Nightly multichain browser-extension wallet with device-encrypted private keys.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-20",
+      "notes": "Selected browser-extension runtime only; mobile applications are deferred. First-party launch post introduced the wallet on 2022-07-04, although Chrome-store distribution was still gated at that moment."
+    }
+  ],
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000323",
+      "entity_id": "wlr_ent_000089",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_blog",
+      "title": "Hello World! Nightly Wallet",
+      "url": "https://wallet.nightly.app/blog/hello_wallet",
+      "publisher": "Nightly",
+      "published_at": "2022-07-04",
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party launch post introduced Nightly Wallet on 2022-07-04 as a multichain wallet and described the browser extension as the initial product surface."
+    },
+    {
+      "id": "wlr_src_000324",
+      "entity_id": "wlr_ent_000089",
+      "product_id": "wlr_prod_000138",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Nightly Wallet Features",
+      "url": "https://nightly.app/features",
+      "publisher": "Nightly",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party feature page lists browser-extension and mobile runtimes separately and states private keys are encrypted and never leave the device."
+    }
+  ]
+}

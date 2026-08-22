@@ -1,0 +1,51 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000092",
+    "slug": "breez",
+    "canonical_name": "Breez",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000141",
+    "entity_id": "wlr_ent_000092",
+    "slug": "breez-mobile",
+    "product_name": "Breez Mobile",
+    "product_type": "mobile_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": null,
+    "platform": [
+      "mobile"
+    ],
+    "official_url": "https://breez.technology/mobile/",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "mobile_device_non_custodial_lightning_node",
+    "summary": "Breez non-custodial Lightning mobile wallet with a Lightning node running on the user's device.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Selected wallet product only; Breez SDK infrastructure is not modeled as the user-facing wallet in this breadth pass."
+  },
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000330",
+      "entity_id": "wlr_ent_000092",
+      "product_id": "wlr_prod_000141",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Breez — Bitcoin in Every App",
+      "url": "https://breez.technology/",
+      "publisher": "Breez",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product_lineage",
+      "is_primary": true,
+      "notes": "Current company page establishes the broader Breez non-custodial Bitcoin infrastructure context; the distinct Breez Mobile wallet remains documented separately and is the selected product."
+    }
+  ]
+}

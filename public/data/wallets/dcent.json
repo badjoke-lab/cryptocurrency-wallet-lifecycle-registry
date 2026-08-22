@@ -1,0 +1,116 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000038",
+    "slug": "dcent",
+    "canonical_name": "D'CENT",
+    "aliases": [
+      "D'CENT Wallet"
+    ],
+    "wallet_type": "hardware",
+    "status": "active",
+    "summary": "Hardware-wallet ecosystem from IoTrust spanning biometric, card and companion-app products.",
+    "developer_or_company": "IoTrust Co., Ltd.",
+    "country_or_origin": "South Korea",
+    "launch_date": null,
+    "official_url": "https://www.dcentwallet.com/en",
+    "official_domain": "dcentwallet.com",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "hardware_secure_element_private_keys",
+    "confidence": "high",
+    "last_verified_at": "2026-08-19",
+    "notes": "Current first-party material establishes the D'CENT wallet ecosystem and IoTrust identity. Initial D'CENT wallet launch date remains unresolved in this batch."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000087",
+      "entity_id": "wlr_ent_000038",
+      "slug": "dcent-biometric-wallet",
+      "product_name": "D'CENT Biometric Wallet",
+      "product_type": "hardware_device",
+      "status": "active",
+      "sales_status": "on_sale",
+      "support_status": "unknown",
+      "launch_date": null,
+      "platform": null,
+      "official_url": "https://store.dcentwallet.com/products/biometric-wallet",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "hardware_secure_element_private_keys",
+      "summary": "Biometric cold-wallet device that generates and stores private keys inside secure hardware and unlocks with fingerprint authentication.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-19",
+      "notes": "Current first-party storefront establishes an active purchasable biometric hardware wallet; exact initial launch date remains unresolved."
+    }
+  ],
+  "events": [
+    {
+      "id": "wlr_ev_000145",
+      "entity_id": "wlr_ent_000038",
+      "product_id": "wlr_prod_000087",
+      "affected_product_ids": [
+        "wlr_prod_000087"
+      ],
+      "event_type": "other",
+      "event_date": "2021-04-08",
+      "event_date_basis": "announcement",
+      "title": "D'CENT Biometric Wallet added Cardano support",
+      "description": "D'CENT announced Cardano (ADA) support for the Biometric Wallet through a firmware and mobile-app update path.",
+      "confidence": "high",
+      "event_status_effect": "none",
+      "is_major_event": false,
+      "notes": "This is a product capability/integration milestone. It is not treated as the D'CENT product launch date."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000221",
+      "entity_id": "wlr_ent_000038",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_blog",
+      "title": "About Us: Meet IoTrust, The Company Behind D'CENT Wallet",
+      "url": "https://store.dcentwallet.com/blogs/post/about-dcent-wallet",
+      "publisher": "D'CENT / IoTrust",
+      "published_at": "2020-02-26",
+      "accessed_at": "2026-08-19",
+      "reliability": "high",
+      "claim_scope": "entity",
+      "is_primary": true,
+      "notes": "First-party company article identifies IoTrust as the creator of D'CENT Wallet and describes its hardware, card and software-wallet product family."
+    },
+    {
+      "id": "wlr_src_000222",
+      "entity_id": "wlr_ent_000038",
+      "product_id": "wlr_prod_000087",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "D'CENT Biometric Wallet",
+      "url": "https://store.dcentwallet.com/products/biometric-wallet",
+      "publisher": "D'CENT / IoTrust",
+      "published_at": null,
+      "accessed_at": "2026-08-19",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party storefront lists the D'CENT Biometric Wallet for sale and describes its secure-element and fingerprint wallet boundary."
+    },
+    {
+      "id": "wlr_src_000372",
+      "entity_id": "wlr_ent_000038",
+      "product_id": "wlr_prod_000087",
+      "event_id": "wlr_ev_000145",
+      "source_type": "official_blog",
+      "title": "D'CENT Biometric Wallet Integrates Cardano (ADA)",
+      "url": "https://store.dcentwallet.com/blogs/post/d-cent-biometric-wallet-integrates-cardano-ada",
+      "publisher": "D'CENT Wallet",
+      "published_at": "2021-04-08",
+      "accessed_at": "2026-08-23",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party Cardano support announcement."
+    }
+  ]
+}

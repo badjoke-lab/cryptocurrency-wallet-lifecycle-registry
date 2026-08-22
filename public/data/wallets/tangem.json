@@ -1,0 +1,417 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000014",
+    "slug": "tangem",
+    "canonical_name": "Tangem",
+    "aliases": [],
+    "wallet_type": "hybrid",
+    "status": "active",
+    "summary": "Swiss self-custody wallet ecosystem spanning physical card and ring hardware wallets plus an app-based mobile wallet with a different key-storage boundary.",
+    "developer_or_company": "Tangem AG",
+    "country_or_origin": "Switzerland",
+    "launch_date": "2021",
+    "launch_date_precision": "year",
+    "official_url": "https://tangem.com/en/",
+    "official_domain": "tangem.com",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "product_specific_secure_element_or_phone_secure_storage",
+    "confidence": "high",
+    "last_verified_at": "2026-08-15",
+    "notes": "Tangem states the company began in 2017 and the Tangem wallet launched in late 2021. The entity is hybrid because current official documentation separates Mobile Wallet and Hardware Wallet modes within one ecosystem."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000042",
+      "entity_id": "wlr_ent_000014",
+      "slug": "tangem-wallet-card",
+      "product_name": "Tangem Wallet Card",
+      "aliases": [
+        "Tangem Wallet"
+      ],
+      "product_type": "hardware_device",
+      "status": "active",
+      "sales_status": "on_sale",
+      "support_status": "supported",
+      "launch_date": "2021",
+      "launch_date_precision": "year",
+      "official_url": "https://tangem.com/en/",
+      "custody_model": "self_custody",
+      "key_management_model": "secure_element_held_private_key",
+      "variants": [
+        "2-card set",
+        "3-card set"
+      ],
+      "summary": "NFC card-shaped Tangem hardware wallet whose private key is generated and held inside the device secure element.",
+      "predecessor_product_id": null,
+      "successor_product_id": null,
+      "confidence": "high",
+      "last_verified_at": "2026-08-15",
+      "notes": "Tangem states its card-shaped wallet was introduced in late 2021."
+    },
+    {
+      "id": "wlr_prod_000043",
+      "entity_id": "wlr_ent_000014",
+      "slug": "tangem-ring",
+      "product_name": "Tangem Ring",
+      "aliases": [],
+      "product_type": "hardware_device",
+      "status": "active",
+      "sales_status": "on_sale",
+      "support_status": "supported",
+      "launch_date": "2024",
+      "launch_date_precision": "year",
+      "official_url": "https://tangem.com/en/ring/",
+      "custody_model": "self_custody",
+      "key_management_model": "secure_element_held_private_key",
+      "variants": [],
+      "summary": "Wearable NFC hardware wallet that shares the current Tangem hardware-wallet architecture in a ring form factor.",
+      "predecessor_product_id": null,
+      "successor_product_id": null,
+      "confidence": "high",
+      "last_verified_at": "2026-08-15",
+      "notes": "Tangem's current material describes Ring as functionally equivalent to current wallet cards except for form factor. Year-level launch anchor is used rather than an unsupported exact release day."
+    },
+    {
+      "id": "wlr_prod_000044",
+      "entity_id": "wlr_ent_000014",
+      "slug": "tangem-mobile-wallet",
+      "product_name": "Tangem Mobile Wallet",
+      "aliases": [],
+      "product_type": "mobile_app",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "supported",
+      "launch_date": "2026-02-27",
+      "platform": [
+        "iOS",
+        "Android"
+      ],
+      "official_url": "https://tangem.com/en/help-center/getting-started-with-mobile-wallet/",
+      "custody_model": "self_custody",
+      "key_management_model": "encrypted_phone_secure_environment",
+      "variants": [],
+      "summary": "App-based Tangem self-custody wallet that does not require a Tangem card or ring and stores encrypted wallet data in the phone security environment.",
+      "predecessor_product_id": null,
+      "successor_product_id": null,
+      "confidence": "high",
+      "last_verified_at": "2026-08-17",
+      "notes": "Kept separate from the Tangem hardware wallet because its private-key storage and recovery boundary is the smartphone rather than a Tangem secure element. Launch date is established by the reviewed February 27, 2026 first-party Tangem Mobile Wallet release event and official Tangem blog evidence.",
+      "launch_date_precision": "day"
+    },
+    {
+      "id": "wlr_prod_000075",
+      "entity_id": "wlr_ent_000014",
+      "slug": "tangem-app",
+      "product_name": "Tangem App",
+      "product_type": "companion_app",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "supported",
+      "launch_date": null,
+      "platform": [
+        "iOS",
+        "Android"
+      ],
+      "custody_model": "self_custody",
+      "key_management_model": "Mobile NFC companion/interface for Tangem Wallet cards and wearables. Hardware-backed card/ring keys remain associated with the wallet devices, while optional seed-phrase activation workflows can generate or import seed material through the app during setup.",
+      "summary": "Official iOS and Android companion application used to set up, view, manage, and sign with Tangem Wallet cards and wearables over NFC; distinct from the standalone cardless Tangem Mobile Wallet capability introduced inside the app in 2026.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-19",
+      "notes": "Launch date is intentionally unresolved. First-party material establishes the companion app and its 2023-2024 operation but does not establish one defensible initial public launch date. The 2026 Tangem Mobile Wallet is modeled separately because it added a standalone phone-based wallet capability that does not require a Tangem card or ring."
+    }
+  ],
+  "events": [
+    {
+      "id": "wlr_ev_000045",
+      "entity_id": "wlr_ent_000014",
+      "product_id": "wlr_prod_000042",
+      "affected_product_ids": [
+        "wlr_prod_000042"
+      ],
+      "event_type": "product_released",
+      "event_date": "2021",
+      "event_date_basis": "approximate",
+      "title": "Tangem card-shaped wallet launched",
+      "description": "Tangem states that its card-shaped Tangem Wallet was introduced in late 2021.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    },
+    {
+      "id": "wlr_ev_000071",
+      "entity_id": "wlr_ent_000014",
+      "product_id": "wlr_prod_000043",
+      "affected_product_ids": [
+        "wlr_prod_000043"
+      ],
+      "event_type": "other",
+      "event_date": "2024-07-17",
+      "event_date_basis": "announcement",
+      "title": "Tangem Ring opened for public preorders",
+      "description": "Tangem opened public preorders for the Tangem Ring on July 17, 2024 after unveiling the wearable hardware wallet at the 2023 Cardano Summit.",
+      "confidence": "high",
+      "event_status_effect": "none",
+      "is_major_event": true,
+      "notes": "This is a preorder milestone, not an asserted general-availability or shipping date. Tangem stated deliveries would begin later in 2024."
+    },
+    {
+      "id": "wlr_ev_000072",
+      "entity_id": "wlr_ent_000014",
+      "product_id": "wlr_prod_000044",
+      "affected_product_ids": [
+        "wlr_prod_000044"
+      ],
+      "event_type": "product_released",
+      "event_date": "2026-02-27",
+      "event_date_basis": "release",
+      "title": "Tangem Mobile Wallet launched",
+      "description": "Tangem introduced the Mobile Wallet as a free self-custody wallet available directly inside the Tangem app, with encrypted wallet keys stored in the smartphone security environment rather than a Tangem card or ring.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    },
+    {
+      "id": "wlr_ev_000120",
+      "entity_id": "wlr_ent_000014",
+      "product_id": "wlr_prod_000075",
+      "affected_product_ids": [
+        "wlr_prod_000075"
+      ],
+      "event_type": "software_issue",
+      "event_date": "2024-12-31",
+      "event_date_basis": "disclosure",
+      "title": "Tangem App logging bug could include private-key material in diagnostic logs",
+      "description": "Tangem disclosed that when a wallet was activated with a generated or imported seed phrase, a bug in the mobile app's NFC logging mechanism could write the private key into app logs. Potential exposure required the user to also contact Tangem support through the app within seven days, allowing those logs to be included with the support interaction.",
+      "confidence": "high",
+      "impact_level": "high",
+      "security_scope": "mobile_app",
+      "funds_affected": "no",
+      "event_status_effect": "none",
+      "affected_users_text": "Fewer than 0.1% potentially affected under the combined seed-phrase activation and in-app support contact within seven days conditions",
+      "is_major_event": true,
+      "user_actions_required": [
+        "update",
+        "move_funds",
+        "rotate_seed"
+      ],
+      "affected_components": [
+        "seed_phrase_import",
+        "seed_phrase_generation",
+        "mobile_app_diagnostic_logs",
+        "in_app_support_log_attachments"
+      ],
+      "notes": "Tangem states that no private keys were compromised, no funds were lost, and no unauthorized account access occurred. Seedless activation was not affected by this bug, and users who did not contact support through the app during the seven-day log-retention window were not affected. WLR therefore records funds_affected=no while retaining the material key-exposure risk of the logging defect. No affected-version start or range is inferred."
+    },
+    {
+      "id": "wlr_ev_000121",
+      "entity_id": "wlr_ent_000014",
+      "product_id": "wlr_prod_000075",
+      "affected_product_ids": [
+        "wlr_prod_000075"
+      ],
+      "event_type": "software_fix",
+      "event_date": "2024-12-27",
+      "event_date_basis": "release",
+      "title": "Tangem released iOS 5.19.1 and Android 5.19.2 to fix mobile-app log exposure",
+      "description": "Tangem's official security changelog records a December 27, 2024 security/bugfix release that fixed the mobile-app logging bug for the same seed-phrase plus in-app-support condition.",
+      "confidence": "high",
+      "impact_level": "high",
+      "security_scope": "mobile_app",
+      "funds_affected": "no",
+      "event_status_effect": "active",
+      "fixed_versions": [
+        {
+          "product_ids": [
+            "wlr_prod_000075"
+          ],
+          "track": "ios",
+          "version": "5.19.1"
+        },
+        {
+          "product_ids": [
+            "wlr_prod_000075"
+          ],
+          "track": "android",
+          "version": "5.19.2"
+        }
+      ],
+      "is_major_event": true,
+      "user_actions_required": [
+        "update"
+      ],
+      "affected_components": [
+        "mobile_app_diagnostic_logs"
+      ],
+      "notes": "The fixed-release date is taken from Tangem's first-party security changelog. No affected-version start or range is recorded because the reviewed first-party sources do not establish one."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000059",
+      "entity_id": "wlr_ent_000014",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "The company",
+      "url": "https://tangem.com/en/company/",
+      "publisher": "Tangem AG",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "entity",
+      "is_primary": true,
+      "notes": "Primary current source for Swiss company identity, Zug headquarters, and self-custody positioning."
+    },
+    {
+      "id": "wlr_src_000060",
+      "entity_id": "wlr_ent_000014",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Wallet Types: Mobile vs Hardware",
+      "url": "https://tangem.com/en/help-center/introduction-to-tangem-wallet/wallet-types-mobile-vs-hardware/",
+      "publisher": "Tangem",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "architecture",
+      "is_primary": true,
+      "product_ids": [
+        "wlr_prod_000042",
+        "wlr_prod_000043",
+        "wlr_prod_000044"
+      ],
+      "notes": "Primary source separating Mobile Wallet from hardware card/ring wallet and describing their different key-storage boundaries."
+    },
+    {
+      "id": "wlr_src_000061",
+      "entity_id": "wlr_ent_000014",
+      "product_id": "wlr_prod_000042",
+      "event_id": "wlr_ev_000045",
+      "source_type": "official_blog",
+      "title": "Tangem AMA | 2023 Recap & 2024 Roadmap Part I",
+      "url": "https://tangem.com/en/blog/post/tangem-ama-1/",
+      "publisher": "Tangem",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "product_lineage",
+      "is_primary": true,
+      "notes": "Tangem states it was founded in 2017 and that the Tangem wallet launched in late 2021."
+    },
+    {
+      "id": "wlr_src_000062",
+      "entity_id": "wlr_ent_000014",
+      "product_id": "wlr_prod_000043",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Tangem Ring",
+      "url": "https://tangem.com/en/ring/",
+      "publisher": "Tangem",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party product page confirming the ring-shaped hardware wallet, current sale, and functional relationship to current Tangem cards."
+    },
+    {
+      "id": "wlr_src_000117",
+      "entity_id": "wlr_ent_000014",
+      "product_ids": [
+        "wlr_prod_000043"
+      ],
+      "event_ids": [
+        "wlr_ev_000071"
+      ],
+      "product_id": "wlr_prod_000043",
+      "event_id": "wlr_ev_000071",
+      "source_type": "official_blog",
+      "title": "What is the Tangem Ring?",
+      "url": "https://tangem.com/en/blog/post/about-tangem-ring/",
+      "publisher": "Tangem",
+      "published_at": "2024-07-17",
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Primary Tangem source stating the Ring was unveiled at the 2023 Cardano Summit and became available for preorders on July 17, 2024."
+    },
+    {
+      "id": "wlr_src_000118",
+      "entity_id": "wlr_ent_000014",
+      "product_ids": [
+        "wlr_prod_000044"
+      ],
+      "event_ids": [
+        "wlr_ev_000072"
+      ],
+      "product_id": "wlr_prod_000044",
+      "event_id": "wlr_ev_000072",
+      "source_type": "official_blog",
+      "title": "What is the Tangem Mobile Wallet",
+      "url": "https://tangem.com/en/blog/post/about-mobile-wallet/",
+      "publisher": "Tangem",
+      "published_at": "2026-02-27",
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Primary launch source stating the Mobile Wallet was available that day in the latest Tangem app and describing smartphone-based key storage."
+    },
+    {
+      "id": "wlr_src_000195",
+      "entity_id": "wlr_ent_000014",
+      "product_id": "wlr_prod_000075",
+      "event_id": null,
+      "source_type": "official_blog",
+      "title": "What to Know Before Buying a Tangem Wallet 2 or 3-card Set",
+      "url": "https://tangem.com/en/blog/post/before-buying-tangem/",
+      "publisher": "Tangem",
+      "published_at": "2023-12-24",
+      "accessed_at": "2026-08-19",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "First-party Tangem product explanation defining the Tangem app as a mobile application/interface for interacting with Tangem Wallet cards and wearables via NFC, with iOS and Android distribution. Used for product identity and companion-app boundary, not an initial launch date."
+    },
+    {
+      "id": "wlr_src_000196",
+      "entity_id": "wlr_ent_000014",
+      "product_id": "wlr_prod_000075",
+      "event_id": "wlr_ev_000120",
+      "event_ids": [
+        "wlr_ev_000120",
+        "wlr_ev_000121"
+      ],
+      "source_type": "official_blog",
+      "title": "Tangem Identifies and Resolves Potential Vulnerability",
+      "url": "https://tangem.com/en/blog/post/tangem-resolves-log-issue/",
+      "publisher": "Tangem",
+      "published_at": "2024-12-31",
+      "accessed_at": "2026-08-19",
+      "reliability": "high",
+      "claim_scope": "vulnerability",
+      "is_primary": true,
+      "notes": "First-party disclosure establishing the private-key logging defect, narrow affected-user conditions, seedless exclusion, explicit no-compromise/no-loss/no-unauthorized-access boundary, fixed iOS/Android versions, log deletion and recommended user actions."
+    },
+    {
+      "id": "wlr_src_000197",
+      "entity_id": "wlr_ent_000014",
+      "product_id": "wlr_prod_000075",
+      "event_id": "wlr_ev_000121",
+      "source_type": "release_notes",
+      "title": "Tangem Firmware & App Changelog — iOS 5.19.1 / Android 5.19.2",
+      "url": "https://tangem.com/en/security/changelog/",
+      "publisher": "Tangem",
+      "published_at": "2024-12-27",
+      "accessed_at": "2026-08-19",
+      "reliability": "high",
+      "claim_scope": "security_fix",
+      "is_primary": true,
+      "notes": "First-party security changelog dating the fixed mobile-app release to 2024-12-27 and explicitly identifying iOS 5.19.1 and Android 5.19.2 as the versions fixing the app-log bug."
+    }
+  ]
+}

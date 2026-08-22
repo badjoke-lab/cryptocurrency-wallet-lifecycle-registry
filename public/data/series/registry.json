@@ -24,13 +24,14 @@
   "record_counts": {
     "native": {
       "entities": 100,
-      "events": 144,
-      "evidence": 371,
+      "events": 147,
+      "evidence": 374,
       "product_records": 149,
       "products": 149,
       "wallet_records": 100
     },
-    "primary_records": 100
+    "primary_records": 100,
+    "relationships": 161
   },
   "record_types": [
     {
@@ -60,6 +61,7 @@
       "/data/series/records/wallet--{slug}.json",
       "/data/series/records/product--{slug}.json"
     ],
+    "relationships": "/data/series/relationships.json",
     "search": "/",
     "stats": "/stats/"
   },

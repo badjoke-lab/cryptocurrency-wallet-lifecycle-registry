@@ -22,7 +22,25 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000111"
+        ],
+        "confidence": "high",
+        "description": "HashPack's first-party one-year retrospective states that HashPack launched into the public sphere on 2021-10-23; first-party history describes the launch as a browser-based app and dedicated Chrome extension.",
+        "entity_id": "wlr_ent_000062",
+        "event_date": "2021-10-23",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000147",
+        "is_major_event": true,
+        "notes": "Exact date from HashPack first-party retrospective.",
+        "product_id": "wlr_prod_000111",
+        "title": "HashPack launched publicly"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -42,6 +60,22 @@
         "source_type": "official_blog",
         "title": "Solving 3 user experience challenges in crypto",
         "url": "https://www.hashpack.app/post/solving-3-user-experience-challenges-in-crypto"
+      },
+      {
+        "accessed_at": "2026-08-23",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000062",
+        "event_id": "wlr_ev_000147",
+        "id": "wlr_src_000374",
+        "is_primary": true,
+        "notes": "First-party retrospective states launch on 2021-10-23.",
+        "product_id": "wlr_prod_000111",
+        "published_at": "2022-10-24",
+        "publisher": "HashPack",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "HashPack – one year anniversary",
+        "url": "https://www.hashpack.app/post/hashpack-one-year-anniversary"
       }
     ]
   },

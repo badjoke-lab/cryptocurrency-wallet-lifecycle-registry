@@ -1,0 +1,85 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000034",
+    "slug": "coinomi",
+    "canonical_name": "Coinomi",
+    "aliases": [],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Long-running non-custodial multi-chain wallet ecosystem supporting mobile and desktop access across many blockchain networks.",
+    "developer_or_company": "Coinomi",
+    "country_or_origin": null,
+    "launch_date": "2014",
+    "launch_date_precision": "year",
+    "official_url": "https://www.coinomi.com/",
+    "official_domain": "coinomi.com",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "device_local_private_keys",
+    "confidence": "high",
+    "last_verified_at": "2026-08-19",
+    "notes": "Coinomi's official company history states that Coinomi launched in 2014."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000083",
+      "entity_id": "wlr_ent_000034",
+      "slug": "coinomi-wallet",
+      "product_name": "Coinomi Wallet",
+      "product_type": "multi_platform_app",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "unknown",
+      "launch_date": null,
+      "platform": [
+        "iOS",
+        "Android",
+        "Desktop"
+      ],
+      "official_url": "https://www.coinomi.com/",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "device_local_private_keys",
+      "summary": "Coinomi's current non-custodial multi-chain wallet application across mobile and desktop platforms.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-19",
+      "notes": "Entity launch is established at 2014; this batch does not force a separate product launch date for the current cross-platform lineage."
+    }
+  ],
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000213",
+      "entity_id": "wlr_ent_000034",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "About us | Coinomi",
+      "url": "https://www.coinomi.com/about/",
+      "publisher": "Coinomi",
+      "published_at": null,
+      "accessed_at": "2026-08-19",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "Coinomi's first-party history states that Coinomi was launched in 2014."
+    },
+    {
+      "id": "wlr_src_000214",
+      "entity_id": "wlr_ent_000034",
+      "product_id": "wlr_prod_000083",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Coinomi: The blockchain wallet trusted by millions",
+      "url": "https://www.coinomi.com/en/",
+      "publisher": "Coinomi",
+      "published_at": null,
+      "accessed_at": "2026-08-19",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party site describes Coinomi as a secure non-custodial multi-chain wallet and notes mobile and desktop availability."
+    }
+  ]
+}

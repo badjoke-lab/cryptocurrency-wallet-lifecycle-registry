@@ -1,0 +1,120 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000098",
+    "slug": "keepkey",
+    "canonical_name": "KeepKey",
+    "wallet_type": "hardware",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000147",
+    "entity_id": "wlr_ent_000098",
+    "slug": "keepkey-hardware-wallet",
+    "product_name": "KeepKey Hardware Wallet",
+    "product_type": "hardware_device",
+    "status": "active",
+    "sales_status": "on_sale",
+    "support_status": "supported",
+    "launch_date": "2014",
+    "launch_date_precision": "year",
+    "platform": [
+      "hardware",
+      "KeepKey Desktop"
+    ],
+    "official_url": "https://www.keepkey.com/product",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "device_generated_offline_private_keys",
+    "summary": "Current KeepKey hardware wallet with offline device-held private keys and open-source firmware/hardware design.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Current first-party pages say the device is in stock and promise free firmware updates for life; WLR therefore records current sale and support explicitly."
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000137",
+      "entity_id": "wlr_ent_000098",
+      "product_id": "wlr_prod_000147",
+      "affected_product_ids": [
+        "wlr_prod_000147"
+      ],
+      "event_type": "acquired",
+      "event_date": "2017",
+      "event_date_basis": "approximate",
+      "title": "ShapeShift acquired KeepKey",
+      "description": "ShapeShift acquired the KeepKey hardware-wallet business in 2017 and integrated the hardware wallet with the ShapeShift platform.",
+      "confidence": "high",
+      "event_status_effect": "acquired",
+      "is_major_event": true,
+      "notes": "Reviewed first-party ShapeShift material consistently establishes the acquisition year as 2017 but does not provide a defensible exact acquisition day in this review, so WLR keeps year precision."
+    },
+    {
+      "id": "wlr_ev_000138",
+      "entity_id": "wlr_ent_000098",
+      "product_id": "wlr_prod_000147",
+      "affected_product_ids": [
+        "wlr_prod_000147"
+      ],
+      "event_type": "other",
+      "event_date": "2022-01-01",
+      "event_date_basis": "effective",
+      "title": "KeepKey returned to independent ownership",
+      "description": "ShapeShift DAO material states that from January 1, 2022 KeepKey was independently owned and operated by its new owners after ShapeShift's decentralization and spinout of the hardware-wallet business.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "The current event taxonomy has no dedicated divestiture/spinout value, so this ownership change is conservatively recorded as other rather than misclassified as a rebrand, merger, or product launch."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000342",
+      "entity_id": "wlr_ent_000098",
+      "product_id": "wlr_prod_000147",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "KeepKey — The wallet you can verify",
+      "url": "https://www.keepkey.com/product",
+      "publisher": "KeepKey",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "Current product page identifies the hardware wallet as current, links purchase/setup paths and states free firmware updates for life."
+    },
+    {
+      "id": "wlr_src_000362",
+      "entity_id": "wlr_ent_000098",
+      "product_id": "wlr_prod_000147",
+      "event_id": "wlr_ev_000137",
+      "source_type": "official_blog",
+      "title": "ShapeShift's KeepKey Support Grows",
+      "url": "https://shapeshift.com/library/shapeshifts-keepkey-support-grows",
+      "publisher": "ShapeShift",
+      "published_at": "2022-04-14",
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "ownership",
+      "is_primary": true,
+      "notes": "First-party ShapeShift retrospective states that ShapeShift announced its acquisition of KeepKey in 2017 and later spun KeepKey back into its own entity during decentralization."
+    },
+    {
+      "id": "wlr_src_000363",
+      "entity_id": "wlr_ent_000098",
+      "product_id": "wlr_prod_000147",
+      "event_id": "wlr_ev_000138",
+      "source_type": "official_statement",
+      "title": "[SCP-71] Proposal to Create the KeepKey Workstream",
+      "url": "https://forum.shapeshift.com/t/scp-71-proposal-to-create-the-keepkey-workstream/429",
+      "publisher": "ShapeShift DAO Forum",
+      "published_at": "2022-04-25",
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "ownership",
+      "is_primary": true,
+      "notes": "Official ShapeShift DAO governance material states that as of 2022-01-01 KeepKey was owned by its new owners and independently owned and operated. The post date is later than the effective ownership date and is not reused as the event date."
+    }
+  ]
+}

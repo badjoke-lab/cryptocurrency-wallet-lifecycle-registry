@@ -1,0 +1,83 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000094",
+    "slug": "blixt-wallet",
+    "canonical_name": "Blixt Wallet",
+    "aliases": [],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Open-source non-custodial Bitcoin Lightning mobile wallet running lnd and Neutrino directly on the user's phone.",
+    "developer_or_company": "Blixt Wallet / Hampus Sjöberg",
+    "country_or_origin": "Sweden",
+    "launch_date": null,
+    "official_url": "https://blixtwallet.github.io/",
+    "official_domain": "blixtwallet.github.io",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "device_local_lnd_node_and_wallet_keys",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Current first-party project page explicitly calls Blixt non-custodial and states lnd/Neutrino run directly on the phone without centralized transaction servers. Initial launch date remains unresolved."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000143",
+      "entity_id": "wlr_ent_000094",
+      "slug": "blixt-wallet-mobile",
+      "product_name": "Blixt Wallet Mobile",
+      "product_type": "mobile_app",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "unknown",
+      "launch_date": null,
+      "platform": [
+        "Android",
+        "iOS"
+      ],
+      "official_url": "https://blixtwallet.github.io/",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "device_local_lnd_node_and_wallet_keys",
+      "summary": "Blixt non-custodial open-source Bitcoin Lightning mobile wallet.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-20",
+      "notes": "Current project page states lnd and Neutrino run directly on the phone."
+    }
+  ],
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000333",
+      "entity_id": "wlr_ent_000094",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Blixt Wallet",
+      "url": "https://blixtwallet.github.io/",
+      "publisher": "Blixt Wallet",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "entity",
+      "is_primary": true,
+      "notes": "Current official project page explicitly identifies Blixt as a non-custodial open-source Bitcoin Lightning wallet."
+    },
+    {
+      "id": "wlr_src_000334",
+      "entity_id": "wlr_ent_000094",
+      "product_id": "wlr_prod_000143",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Blixt Wallet Guides",
+      "url": "https://blixtwallet.github.io/guides.html",
+      "publisher": "Blixt Wallet",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "architecture",
+      "is_primary": true,
+      "notes": "First-party guide explains the LSP is not a custodial server/node and the user's funds remain in the device's channel under user control."
+    }
+  ]
+}

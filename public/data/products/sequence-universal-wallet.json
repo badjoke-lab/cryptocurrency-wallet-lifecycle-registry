@@ -1,0 +1,51 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000088",
+    "slug": "sequence",
+    "canonical_name": "Sequence",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000137",
+    "entity_id": "wlr_ent_000088",
+    "slug": "sequence-universal-wallet",
+    "product_name": "Sequence Universal Wallet",
+    "product_type": "web_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": null,
+    "platform": [
+      "Web"
+    ],
+    "official_url": "https://sequence.app/",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "user_controlled_multi_key_smart_contract_wallet",
+    "summary": "Standalone Sequence smart wallet for managing assets and connecting to external Web3 applications.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Selected Universal Wallet boundary only. Sequence Embedded Wallet remains a separate product architecture and is deferred."
+  },
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000322",
+      "entity_id": "wlr_ent_000088",
+      "product_id": "wlr_prod_000137",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Sequence Wallet security",
+      "url": "https://support.sequence.xyz/en/article/your-sequence-wallet-security-mpfh5m/",
+      "publisher": "Sequence",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "First-party security article states Sequence is non-custodial and cannot access wallet contents. The selected product is the standalone Universal Wallet rather than Embedded Wallet."
+    }
+  ]
+}

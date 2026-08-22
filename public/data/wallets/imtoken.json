@@ -1,0 +1,133 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000029",
+    "slug": "imtoken",
+    "canonical_name": "imToken",
+    "aliases": [],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Singapore-based non-custodial multichain software wallet ecosystem supporting major public chains, Layer 2 networks and DApp access.",
+    "developer_or_company": "IMTOKEN PTE. LTD.",
+    "country_or_origin": "Singapore",
+    "launch_date": "2016",
+    "launch_date_precision": "year",
+    "official_url": "https://token.im/",
+    "official_domain": "token.im",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "user_controlled_software_private_keys",
+    "confidence": "high",
+    "last_verified_at": "2026-08-19",
+    "notes": "imToken's current first-party about material states that the project started in 2016 and provides non-custodial wallet services."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000078",
+      "entity_id": "wlr_ent_000029",
+      "slug": "imtoken-app",
+      "product_name": "imToken App",
+      "product_type": "mobile_app",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "unknown",
+      "launch_date": null,
+      "platform": [
+        "iOS",
+        "Android"
+      ],
+      "official_url": "https://token.im/",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "user_controlled_software_private_keys",
+      "summary": "Current imToken mobile wallet application for managing assets across multiple chains and accessing DApps.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-19",
+      "notes": "Product is currently distributed by imToken. Initial app launch date is not asserted separately from the entity's 2016 start."
+    }
+  ],
+  "events": [
+    {
+      "id": "wlr_ev_000141",
+      "entity_id": "wlr_ent_000029",
+      "product_id": "wlr_prod_000078",
+      "affected_product_ids": [
+        "wlr_prod_000078"
+      ],
+      "event_type": "unauthorized_access",
+      "event_date": "2018-06-09",
+      "event_date_basis": "occurrence",
+      "title": "imToken 2.0 Beta AWS account breached",
+      "description": "imToken reported that an attacker reset an email-linked password and obtained access to the Amazon AWS account hosting its 2.0 Beta servers. The company cut off access after detecting the intrusion and said the attacker may have obtained beta-tester device data, wallet addresses and subscribed email addresses.",
+      "confidence": "high",
+      "impact_level": "medium",
+      "security_scope": "customer_data",
+      "funds_affected": "no",
+      "event_status_effect": "none",
+      "affected_versions": [
+        "2.0 Beta/RC"
+      ],
+      "affected_users_text": "Approximately 36,000 devices, 73,000 corresponding wallet addresses and 10,000 subscribed email addresses",
+      "affected_data": [
+        "device_id",
+        "wallet_address",
+        "email_address"
+      ],
+      "is_major_event": true,
+      "user_actions_required": [
+        "monitor"
+      ],
+      "notes": "The first-party disclosure labels the incident Medium severity and limits affected users to the 2.0 Beta international version installed from 2018-03-21 through 2018-06-09 10:30 UTC+8. imToken stated that the decentralized-wallet design meant the breach would not create risk to user tokens; WLR therefore records funds_affected=no without claiming that all user data was harmless. No private-key or mnemonic compromise, affected production release, or broader root cause is inferred."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000202",
+      "entity_id": "wlr_ent_000029",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "About Us | Our Goals, Mission and Values",
+      "url": "https://www.token.im/about",
+      "publisher": "imToken",
+      "published_at": null,
+      "accessed_at": "2026-08-19",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party about page states that imToken started in 2016 and provides non-custodial wallet services."
+    },
+    {
+      "id": "wlr_src_000203",
+      "entity_id": "wlr_ent_000029",
+      "product_id": "wlr_prod_000078",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "What is imToken?",
+      "url": "https://support.token.im/hc/en-us/articles/900000044363-What-is-imToken",
+      "publisher": "imToken",
+      "published_at": "2025-12-12",
+      "accessed_at": "2026-08-19",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party help article identifies imToken as a multichain digital wallet and supports the current mobile-wallet product boundary."
+    },
+    {
+      "id": "wlr_src_000368",
+      "entity_id": "wlr_ent_000029",
+      "product_id": "wlr_prod_000078",
+      "event_id": "wlr_ev_000141",
+      "source_type": "official_security_advisory",
+      "title": "Disclosure of Security Incidents on imToken",
+      "url": "https://support.token.im/hc/en-us/articles/360005681954-Disclosure-of-Security-Incidents-on-imToken",
+      "publisher": "imToken",
+      "published_at": null,
+      "accessed_at": "2026-08-21",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party incident disclosure states that an attacker obtained the AWS account hosting imToken 2.0 Beta servers on 2018-06-09 after an email password reset. It labels the incident Medium severity, identifies 2.0 Beta/RC as affected, gives the 36,000-device / 73,000-address / 10,000-email scope, and states that token security was not affected."
+    }
+  ]
+}

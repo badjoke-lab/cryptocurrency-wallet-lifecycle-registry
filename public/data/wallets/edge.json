@@ -1,0 +1,122 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000036",
+    "slug": "edge",
+    "canonical_name": "Edge",
+    "aliases": [
+      "Airbitz",
+      "AirBitz"
+    ],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Self-custody mobile cryptocurrency wallet lineage that began as Airbitz in 2014 and later rebranded to Edge.",
+    "developer_or_company": "Edge",
+    "country_or_origin": "United States",
+    "launch_date": "2014",
+    "launch_date_precision": "year",
+    "official_url": "https://edge.app/",
+    "official_domain": "edge.app",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "user_controlled_mobile_wallet_keys",
+    "confidence": "high",
+    "last_verified_at": "2026-08-19",
+    "notes": "Edge preserves the Airbitz wallet lineage. First-party material states that the original open-source Airbitz Bitcoin wallet launched in early 2014 and the Edge Wallet product launched publicly in 2018."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000085",
+      "entity_id": "wlr_ent_000036",
+      "slug": "edge-wallet",
+      "product_name": "Edge Wallet",
+      "product_type": "mobile_app",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "unknown",
+      "launch_date": "2018-02-15",
+      "launch_date_precision": "day",
+      "platform": [
+        "iOS",
+        "Android"
+      ],
+      "official_url": "https://edge.app/",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "user_controlled_mobile_wallet_keys",
+      "summary": "Edge's multi-asset mobile self-custody wallet, launched as the successor product to the earlier Airbitz wallet lineage.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-19",
+      "notes": "First-party launch announcement states that Edge Wallet became publicly available on iOS and Android on 2018-02-15."
+    }
+  ],
+  "events": [
+    {
+      "id": "wlr_ev_000127",
+      "entity_id": "wlr_ent_000036",
+      "product_id": "wlr_prod_000085",
+      "affected_product_ids": [
+        "wlr_prod_000085"
+      ],
+      "event_type": "rebranded",
+      "event_date": "2017-10-28",
+      "event_date_basis": "announcement",
+      "title": "Airbitz announced its rebrand to Edge",
+      "description": "Airbitz announced that the wallet company and platform were becoming Edge while carrying the existing client-side security and wallet lineage into the new brand.",
+      "confidence": "high",
+      "event_status_effect": "none",
+      "is_major_event": true,
+      "notes": "This is an entity/product-lineage rebrand event, not the public launch date of the later Edge Wallet release."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000217",
+      "entity_id": "wlr_ent_000036",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_blog",
+      "title": "Why Edge is Open Source",
+      "url": "https://edge.app/blog/tips-and-tutorials/why-edge-is-open-source/",
+      "publisher": "Edge",
+      "published_at": null,
+      "accessed_at": "2026-08-19",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party Edge history states that its founders launched the open-source Airbitz Bitcoin wallet in early 2014, establishing the entity lineage."
+    },
+    {
+      "id": "wlr_src_000218",
+      "entity_id": "wlr_ent_000036",
+      "product_id": "wlr_prod_000085",
+      "event_id": null,
+      "source_type": "official_blog",
+      "title": "Edge Wallet Is LIVE!!",
+      "url": "https://edge.app/blog/company-news/edge-wallet-is-live/",
+      "publisher": "Edge",
+      "published_at": "2018-02-15",
+      "accessed_at": "2026-08-19",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party launch post states that Edge Wallet became publicly available for download on iOS and Android on 2018-02-15."
+    },
+    {
+      "id": "wlr_src_000353",
+      "entity_id": "wlr_ent_000036",
+      "product_id": "wlr_prod_000085",
+      "event_id": "wlr_ev_000127",
+      "source_type": "official_blog",
+      "title": "Airbitz is now Edge!",
+      "url": "https://edge.app/blog/company-news/airbitz-is-now-edge/",
+      "publisher": "Edge",
+      "published_at": "2017-10-28",
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "rebrand",
+      "is_primary": true,
+      "notes": "First-party Edge announcement explicitly states that Airbitz is now Edge while carrying forward the company's client-side security platform and wallet lineage."
+    }
+  ]
+}

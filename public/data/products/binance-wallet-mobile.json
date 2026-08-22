@@ -1,0 +1,88 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000053",
+    "slug": "binance-wallet",
+    "canonical_name": "Binance Wallet",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000102",
+    "entity_id": "wlr_ent_000053",
+    "slug": "binance-wallet-mobile",
+    "product_name": "Binance Wallet Mobile",
+    "aliases": [
+      "Binance Web3 Wallet"
+    ],
+    "product_type": "mobile_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": null,
+    "platform": [
+      "Binance mobile app"
+    ],
+    "official_url": "https://www.binance.com/en/web3wallet",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "self_custodial_mobile_wallet_architecture",
+    "summary": "Self-custodial Binance Wallet mobile surface integrated into the Binance application.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Selected mobile boundary only. Binance's current web wallet has a separate desktop/on-chain-trading architecture and is deferred. December 2024 is rebrand chronology rather than original product launch."
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000132",
+      "entity_id": "wlr_ent_000053",
+      "product_id": "wlr_prod_000102",
+      "affected_product_ids": [
+        "wlr_prod_000102"
+      ],
+      "event_type": "rebranded",
+      "event_date": "2024-12",
+      "event_date_basis": "approximate",
+      "title": "Binance Web3 Wallet rebranded as Binance Wallet",
+      "description": "Binance's self-custodial wallet, originally launched as Binance Web3 Wallet, was rebranded as Binance Wallet in December 2024 with a refreshed interface and additional features.",
+      "confidence": "high",
+      "event_status_effect": "none",
+      "is_major_event": true,
+      "notes": "Current first-party Binance Academy material supports December 2024 but not a defensible day-level rebrand date in this review. WLR therefore preserves month precision and uses an approximate date basis. This is continuity, not a new wallet or product launch."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000252",
+      "entity_id": "wlr_ent_000053",
+      "product_id": "wlr_prod_000102",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Binance Wallet",
+      "url": "https://www.binance.com/en/web3wallet",
+      "publisher": "Binance",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party Binance wallet landing page used for the selected current mobile wallet boundary; exact original launch date is not inferred."
+    },
+    {
+      "id": "wlr_src_000358",
+      "entity_id": "wlr_ent_000053",
+      "product_id": "wlr_prod_000102",
+      "event_id": "wlr_ev_000132",
+      "source_type": "official_statement",
+      "title": "What Is the Binance Wallet and How to Use It?",
+      "url": "https://academy.binance.com/ur-PK/articles/what-is-binance-web3-wallet-and-how-does-it-work",
+      "publisher": "Binance Academy",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "rebrand",
+      "is_primary": true,
+      "notes": "Current official Binance Academy material states that Binance Wallet was originally launched as Binance Web3 Wallet and was rebranded in December 2024. The source is retrospective, so WLR does not infer an exact day or treat the article's current update date as the event date."
+    }
+  ]
+}

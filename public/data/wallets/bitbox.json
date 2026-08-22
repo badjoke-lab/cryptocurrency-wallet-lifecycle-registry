@@ -1,0 +1,425 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000007",
+    "slug": "bitbox",
+    "canonical_name": "BitBox",
+    "aliases": [
+      "Shift Crypto",
+      "Shift Cryptosecurity"
+    ],
+    "wallet_type": "hardware",
+    "status": "active",
+    "summary": "Swiss self-custody hardware wallet ecosystem spanning the BitBox01, BitBox02 and BitBox02 Nova generations with the BitBoxApp companion software.",
+    "developer_or_company": "Shift Crypto AG",
+    "country_or_origin": "Switzerland",
+    "launch_date": "2016-03-25",
+    "launch_date_precision": "day",
+    "official_url": "https://bitbox.swiss/",
+    "official_domain": "bitbox.swiss",
+    "source_code_urls": [
+      "https://github.com/BitBoxSwiss"
+    ],
+    "custody_model": "self_custody",
+    "key_management_model": "device_held_seed",
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "Multi and Bitcoin-only editions share hardware and are modeled as variants rather than separate products."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000028",
+      "entity_id": "wlr_ent_000007",
+      "slug": "bitbox01",
+      "product_name": "BitBox01",
+      "aliases": [
+        "Digital Bitbox"
+      ],
+      "product_type": "hardware_device",
+      "status": "discontinued",
+      "sales_status": "end_of_sale",
+      "support_status": "ended",
+      "launch_date": "2016-03-25",
+      "launch_date_precision": "day",
+      "discontinued_date": "2020",
+      "generation": "1",
+      "platform": [
+        "hardware"
+      ],
+      "official_url": null,
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "device_held_seed",
+      "variants": [],
+      "summary": "First-generation BitBox hardware wallet, originally branded Digital Bitbox.",
+      "predecessor_product_id": null,
+      "successor_product_id": "wlr_prod_000029",
+      "confidence": "high",
+      "last_verified_at": "2026-08-14",
+      "notes": "EOL did not immediately make the device unusable, but updates ended and dependent integrations later degraded."
+    },
+    {
+      "id": "wlr_prod_000029",
+      "entity_id": "wlr_ent_000007",
+      "slug": "bitbox02",
+      "product_name": "BitBox02",
+      "aliases": [],
+      "product_type": "hardware_device",
+      "status": "active",
+      "sales_status": "on_sale",
+      "support_status": "supported",
+      "launch_date": "2019-09-25",
+      "launch_date_precision": "day",
+      "generation": "2",
+      "platform": [
+        "hardware"
+      ],
+      "official_url": "https://bitbox.swiss/bitbox02/",
+      "source_code_url": "https://github.com/BitBoxSwiss/bitbox02-firmware",
+      "custody_model": "self_custody",
+      "key_management_model": "dual_chip_device_held_seed",
+      "variants": [
+        "Multi edition",
+        "Bitcoin-only edition"
+      ],
+      "summary": "Second-generation BitBox hardware wallet; Multi and Bitcoin-only editions use the same hardware with different firmware scope.",
+      "predecessor_product_id": "wlr_prod_000028",
+      "successor_product_id": "wlr_prod_000030",
+      "confidence": "high",
+      "last_verified_at": "2026-08-14",
+      "notes": "The Bitcoin-only edition is a firmware edition/variant, not a distinct hardware product."
+    },
+    {
+      "id": "wlr_prod_000030",
+      "entity_id": "wlr_ent_000007",
+      "slug": "bitbox02-nova",
+      "product_name": "BitBox02 Nova",
+      "aliases": [],
+      "product_type": "hardware_device",
+      "status": "active",
+      "sales_status": "on_sale",
+      "support_status": "supported",
+      "launch_date": "2025-06-20",
+      "launch_date_precision": "day",
+      "generation": "3",
+      "platform": [
+        "hardware"
+      ],
+      "official_url": "https://bitbox.swiss/bitbox02/",
+      "source_code_url": "https://github.com/BitBoxSwiss/bitbox02-firmware",
+      "custody_model": "self_custody",
+      "key_management_model": "dual_chip_device_held_seed_with_secure_chip",
+      "variants": [
+        "Multi edition",
+        "Bitcoin-only edition",
+        "Midnight Black",
+        "Polar White",
+        "Bitcoin Orange"
+      ],
+      "summary": "Next-generation BitBox hardware wallet introduced in 2025 with iPhone/iPad support and a new certified secure chip.",
+      "predecessor_product_id": "wlr_prod_000029",
+      "successor_product_id": null,
+      "confidence": "high",
+      "last_verified_at": "2026-08-14",
+      "notes": "June 20, 2025 marks introduction and preorder availability; shipping followed afterward."
+    },
+    {
+      "id": "wlr_prod_000031",
+      "entity_id": "wlr_ent_000007",
+      "slug": "bitbox-app",
+      "product_name": "BitBoxApp",
+      "aliases": [
+        "BitBox App"
+      ],
+      "product_type": "companion_app",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "supported",
+      "launch_date": "2018",
+      "launch_date_precision": "year",
+      "generation": null,
+      "platform": [
+        "Windows",
+        "macOS",
+        "Linux",
+        "Android",
+        "iOS",
+        "iPadOS"
+      ],
+      "official_url": "https://bitbox.swiss/download/",
+      "source_code_url": "https://github.com/BitBoxSwiss/bitbox-wallet-app",
+      "custody_model": "self_custody",
+      "key_management_model": "companion_interface_no_primary_seed_custody",
+      "variants": [],
+      "summary": "Open-source companion application used to manage BitBox hardware wallets.",
+      "predecessor_product_id": null,
+      "successor_product_id": null,
+      "confidence": "high",
+      "last_verified_at": "2026-08-14",
+      "notes": "Exact initial release date is left unset in this seed."
+    }
+  ],
+  "events": [
+    {
+      "id": "wlr_ev_000029",
+      "entity_id": "wlr_ent_000007",
+      "product_id": "wlr_prod_000028",
+      "affected_product_ids": [
+        "wlr_prod_000028"
+      ],
+      "event_type": "product_released",
+      "event_date": "2016-03-25",
+      "event_date_basis": "release",
+      "title": "BitBox01 came to market",
+      "description": "The first BitBox01 hardware wallet, later also known as Digital Bitbox, came to market.",
+      "confidence": "high"
+    },
+    {
+      "id": "wlr_ev_000030",
+      "entity_id": "wlr_ent_000007",
+      "product_id": "wlr_prod_000029",
+      "affected_product_ids": [
+        "wlr_prod_000029"
+      ],
+      "event_type": "product_released",
+      "event_date": "2019-09-25",
+      "event_date_basis": "release",
+      "title": "BitBox02 launched",
+      "description": "BitBox launched the BitBox02 Multi and Bitcoin-only editions; both editions use the same hardware with different firmware scope.",
+      "confidence": "high"
+    },
+    {
+      "id": "wlr_ev_000031",
+      "entity_id": "wlr_ent_000007",
+      "product_id": "wlr_prod_000028",
+      "affected_product_ids": [
+        "wlr_prod_000028"
+      ],
+      "event_type": "deprecation_announced",
+      "event_date": "2019-11-12",
+      "event_date_basis": "announcement",
+      "title": "BitBox01 end-of-sale and end-of-life announced",
+      "description": "Shift Cryptosecurity announced the BitBox01 end-of-sale and EOL process and encouraged migration to BitBox02.",
+      "confidence": "high",
+      "event_status_effect": "deprecated",
+      "is_major_event": true
+    },
+    {
+      "id": "wlr_ev_000032",
+      "entity_id": "wlr_ent_000007",
+      "product_id": "wlr_prod_000028",
+      "affected_product_ids": [
+        "wlr_prod_000028"
+      ],
+      "event_type": "discontinued",
+      "event_date": "2020",
+      "event_date_basis": "approximate",
+      "title": "BitBox01 entered end-of-life",
+      "description": "BitBox later described the BitBox01 as end-of-life, meaning it no longer received updates while some functionality could continue temporarily.",
+      "confidence": "medium",
+      "event_status_effect": "discontinued",
+      "is_major_event": true,
+      "notes": "Year-level lifecycle anchor; later 2023 guidance confirms the device had been EOL for multiple years."
+    },
+    {
+      "id": "wlr_ev_000033",
+      "entity_id": "wlr_ent_000007",
+      "product_id": "wlr_prod_000030",
+      "affected_product_ids": [
+        "wlr_prod_000030"
+      ],
+      "event_type": "product_released",
+      "event_date": "2025-06-20",
+      "event_date_basis": "announcement",
+      "title": "BitBox02 Nova introduced",
+      "description": "BitBox introduced its next-generation BitBox02 Nova and opened pre-orders, with the original BitBox02 remaining in the lineup.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    },
+    {
+      "id": "wlr_ev_000034",
+      "entity_id": "wlr_ent_000007",
+      "product_id": "wlr_prod_000030",
+      "affected_product_ids": [
+        "wlr_prod_000030"
+      ],
+      "event_type": "vulnerability_disclosed",
+      "event_date": "2026-01-26",
+      "event_date_basis": "disclosure",
+      "title": "Two BitBox02 Nova firmware security issues disclosed and fixed",
+      "description": "BitBox disclosed two physical-access firmware issues in BitBox02 Nova. The more relevant scenario could reveal a reused device password after an advanced attack, while the attacked device's seed remained protected.",
+      "confidence": "high",
+      "impact_level": "medium",
+      "security_scope": "firmware",
+      "funds_affected": "no",
+      "fixed_versions": [
+        {
+          "product_ids": [
+            "wlr_prod_000030"
+          ],
+          "track": "firmware",
+          "version": "9.25.0"
+        }
+      ],
+      "user_actions_required": [
+        "update"
+      ],
+      "event_status_effect": "none",
+      "is_major_event": true,
+      "notes": "Original BitBox02 was explicitly not affected; BitBox reported no lost funds or evidence of exploitation."
+    },
+    {
+      "id": "wlr_ev_000086",
+      "entity_id": "wlr_ent_000007",
+      "product_id": "wlr_prod_000031",
+      "affected_product_ids": [
+        "wlr_prod_000031"
+      ],
+      "event_type": "product_released",
+      "event_date": "2018",
+      "event_date_basis": "release",
+      "title": "BitBoxApp launched as BitBox companion application",
+      "description": "BitBox states that the BitBoxApp was launched in 2018 as the companion application for its hardware-wallet ecosystem. The reviewed first-party retrospective establishes the launch year but not a month or day.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "WLR records year precision only. This event describes the BitBoxApp product lineage and does not alter hardware-product launch dates or the later Android general-release timeline."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000036",
+      "entity_id": "wlr_ent_000007",
+      "product_ids": [
+        "wlr_prod_000028"
+      ],
+      "event_ids": [
+        "wlr_ev_000029",
+        "wlr_ev_000031"
+      ],
+      "product_id": "wlr_prod_000028",
+      "event_id": null,
+      "source_type": "official_blog",
+      "title": "Announcing the BitBox01 (aka Digital Bitbox) end-of-sale and end-of-life dates and process",
+      "url": "https://blog.bitbox.swiss/en/announcing-the-bitbox01-aka-digital-bitbox-end-of-sale-and-end-of-life-dates-and-process/",
+      "publisher": "BitBox / Shift Cryptosecurity",
+      "published_at": "2019-11-12",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "product_lineage",
+      "is_primary": true,
+      "notes": "Establishes March 25, 2016 launch and the EOL announcement."
+    },
+    {
+      "id": "wlr_src_000037",
+      "entity_id": "wlr_ent_000007",
+      "product_ids": [
+        "wlr_prod_000028"
+      ],
+      "event_ids": [
+        "wlr_ev_000032"
+      ],
+      "product_id": "wlr_prod_000028",
+      "event_id": "wlr_ev_000032",
+      "source_type": "official_blog",
+      "title": "The end of the road for the BitBox01",
+      "url": "https://blog.bitbox.swiss/en/the-end-of-the-road-for-the-bitbox01/",
+      "publisher": "BitBox",
+      "published_at": "2023-01-18",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "discontinuation",
+      "is_primary": true,
+      "notes": ""
+    },
+    {
+      "id": "wlr_src_000038",
+      "entity_id": "wlr_ent_000007",
+      "product_ids": [
+        "wlr_prod_000029"
+      ],
+      "event_ids": [
+        "wlr_ev_000030"
+      ],
+      "product_id": "wlr_prod_000029",
+      "event_id": "wlr_ev_000030",
+      "source_type": "official_blog",
+      "title": "It's happening!",
+      "url": "https://blog.bitbox.swiss/en/its-happening/",
+      "publisher": "Shift Cryptosecurity",
+      "published_at": "2019-09-25",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "States Multi and Bitcoin-only use the same hardware."
+    },
+    {
+      "id": "wlr_src_000039",
+      "entity_id": "wlr_ent_000007",
+      "product_ids": [
+        "wlr_prod_000030"
+      ],
+      "event_ids": [
+        "wlr_ev_000033"
+      ],
+      "product_id": "wlr_prod_000030",
+      "event_id": "wlr_ev_000033",
+      "source_type": "official_blog",
+      "title": "Introducing BitBox02 Nova",
+      "url": "https://blog.bitbox.swiss/en/introducing-bitbox02-nova/",
+      "publisher": "BitBox",
+      "published_at": "2025-06-20",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": ""
+    },
+    {
+      "id": "wlr_src_000040",
+      "entity_id": "wlr_ent_000007",
+      "product_ids": [
+        "wlr_prod_000030"
+      ],
+      "event_ids": [
+        "wlr_ev_000034"
+      ],
+      "product_id": "wlr_prod_000030",
+      "event_id": "wlr_ev_000034",
+      "source_type": "official_security_advisory",
+      "title": "BitBox 01.2026 Marmorera update",
+      "url": "https://blog.bitbox.swiss/en/bitbox-01-2026-marmorera-update/",
+      "publisher": "BitBox",
+      "published_at": "2026-01-26",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "vulnerability",
+      "is_primary": true,
+      "notes": ""
+    },
+    {
+      "id": "wlr_src_000142",
+      "entity_id": "wlr_ent_000007",
+      "product_ids": [
+        "wlr_prod_000031"
+      ],
+      "event_ids": [
+        "wlr_ev_000086"
+      ],
+      "product_id": "wlr_prod_000031",
+      "event_id": "wlr_ev_000086",
+      "source_type": "official_blog",
+      "title": "BitBoxApp for Android: who needs a computer anyway?",
+      "url": "https://blog.bitbox.swiss/en/bitboxapp-for-android-who-needs-a-computer-anyway/",
+      "publisher": "BitBox",
+      "published_at": "2020-07-21",
+      "accessed_at": "2026-08-17",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party retrospective explicitly stating that the BitBoxApp was launched in 2018. The 2020 article date is not treated as the app launch date."
+    }
+  ]
+}

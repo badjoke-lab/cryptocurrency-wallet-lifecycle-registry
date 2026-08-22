@@ -1,0 +1,33 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000002",
+    "slug": "ledger",
+    "canonical_name": "Ledger",
+    "wallet_type": "hardware",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000008",
+    "entity_id": "wlr_ent_000002",
+    "slug": "ledger-nano-x",
+    "product_name": "Ledger Nano X",
+    "aliases": [],
+    "product_type": "hardware_device",
+    "status": "active",
+    "sales_status": "on_sale",
+    "support_status": "supported",
+    "launch_date": "2019",
+    "launch_date_precision": "year",
+    "generation": null,
+    "variants": [],
+    "summary": "Bluetooth-enabled Nano generation.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "Bluetooth-enabled Nano generation."
+  },
+  "events": [],
+  "evidence": []
+}

@@ -1,0 +1,170 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000017",
+    "slug": "foundation-passport",
+    "canonical_name": "Foundation Passport",
+    "wallet_type": "hardware",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000051",
+    "entity_id": "wlr_ent_000017",
+    "slug": "passport-core",
+    "product_name": "Passport Core",
+    "aliases": [
+      "Passport",
+      "Passport Batch 2"
+    ],
+    "product_type": "hardware_device",
+    "status": "active",
+    "sales_status": "on_sale",
+    "support_status": "supported",
+    "launch_date": "2022-03",
+    "launch_date_precision": "month",
+    "platform": [
+      "hardware"
+    ],
+    "official_url": "https://foundation.xyz/passport/",
+    "custody_model": "self_custody",
+    "key_management_model": "device_held_bitcoin_seed",
+    "variants": [
+      "Classic",
+      "Stealth"
+    ],
+    "summary": "Second-generation Passport hardware wallet, originally referred to as Passport Batch 2 and renamed Passport Core in March 2025.",
+    "predecessor_product_id": "wlr_prod_000050",
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-15",
+    "notes": "The 2025 naming change is modeled as a rebrand of the same second-generation product, not a new hardware product."
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000051",
+      "entity_id": "wlr_ent_000017",
+      "product_id": "wlr_prod_000051",
+      "affected_product_ids": [
+        "wlr_prod_000051"
+      ],
+      "event_type": "rebranded",
+      "event_date": "2025-03-17",
+      "event_date_basis": "announcement",
+      "title": "Second-generation Passport renamed Passport Core",
+      "description": "Foundation renamed its existing second-generation Passport, previously referred to as Passport Batch 2, to Passport Core while keeping it in the product line alongside Passport Prime.",
+      "confidence": "high",
+      "event_status_effect": "none",
+      "is_major_event": true,
+      "notes": "This is modeled as a product rebrand, not a new hardware generation."
+    },
+    {
+      "id": "wlr_ev_000090",
+      "entity_id": "wlr_ent_000017",
+      "product_id": "wlr_prod_000051",
+      "affected_product_ids": [
+        "wlr_prod_000051"
+      ],
+      "event_type": "product_released",
+      "event_date": "2022-03",
+      "event_date_basis": "release",
+      "title": "Second-generation Passport launched as Passport Batch 2",
+      "description": "Foundation later stated that it launched its second-generation Passport device in March 2022. This second-generation product was originally known as Passport Batch 2 and was renamed Passport Core in 2025.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "WLR records month precision only. The contemporaneous March 10, 2022 Batch 2 announcement was still at the presale stage, so that announcement date is not treated as an exact shipment or general-availability day."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000074",
+      "entity_id": "wlr_ent_000017",
+      "product_ids": [
+        "wlr_prod_000050",
+        "wlr_prod_000051",
+        "wlr_prod_000052",
+        "wlr_prod_000053"
+      ],
+      "event_ids": [
+        "wlr_ev_000050",
+        "wlr_ev_000051"
+      ],
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_blog",
+      "title": "Passport is now Passport Core",
+      "url": "https://foundation.xyz/blog/passport-is-now-passport-core",
+      "publisher": "Foundation",
+      "published_at": "2025-03-17",
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "product_lineage",
+      "is_primary": true,
+      "notes": "Primary history source for the 2020 first generation, Founder’s Edition, Batch 2/Core continuity, 2025 rename, Prime, and Envoy product family."
+    },
+    {
+      "id": "wlr_src_000075",
+      "entity_id": "wlr_ent_000017",
+      "product_ids": [
+        "wlr_prod_000050",
+        "wlr_prod_000051"
+      ],
+      "event_ids": [],
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Passport Core Home",
+      "url": "https://docs.foundation.xyz/passport",
+      "publisher": "Foundation",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "Current documentation identifies Passport Core and states that instructions also apply to Founder’s Edition devices on version 2.1.0 and above."
+    },
+    {
+      "id": "wlr_src_000076",
+      "entity_id": "wlr_ent_000017",
+      "product_ids": [
+        "wlr_prod_000051",
+        "wlr_prod_000052"
+      ],
+      "event_ids": [],
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Compare Products",
+      "url": "https://foundation.xyz/compare-products/",
+      "publisher": "Foundation",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "status",
+      "is_primary": true,
+      "notes": "Current first-party product comparison for Passport Core and Passport Prime."
+    },
+    {
+      "id": "wlr_src_000148",
+      "entity_id": "wlr_ent_000017",
+      "product_ids": [
+        "wlr_prod_000051"
+      ],
+      "event_ids": [
+        "wlr_ev_000090"
+      ],
+      "product_id": "wlr_prod_000051",
+      "event_id": "wlr_ev_000090",
+      "source_type": "official_blog",
+      "title": "Announcing Our $7M Seed Round",
+      "url": "https://foundation.xyz/2022/12/announcing-our-7m-seed-round/",
+      "publisher": "Foundation",
+      "published_at": "2022-12-19",
+      "accessed_at": "2026-08-17",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party Foundation retrospective explicitly stating that in March 2022 Foundation launched its second-generation Passport device."
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000083",
+    "slug": "nufi",
+    "canonical_name": "NUFI",
+    "aliases": [
+      "NuFi"
+    ],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Non-custodial multichain wallet ecosystem offering browser-extension and web-wallet interfaces across multiple blockchain networks.",
+    "developer_or_company": "NUFI",
+    "country_or_origin": null,
+    "launch_date": null,
+    "official_url": "https://nu.fi/",
+    "official_domain": "nu.fi",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "user_controlled_recovery_phrase_or_external_hardware_wallet_keys",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Current first-party NUFI support explicitly describes NUFI as non-custodial and distinguishes extension and web-wallet interfaces. Initial launch date remains unresolved."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000132",
+      "entity_id": "wlr_ent_000083",
+      "slug": "nufi-extension",
+      "product_name": "NUFI Browser Extension",
+      "product_type": "browser_extension",
+      "status": "active",
+      "sales_status": "not_applicable",
+      "support_status": "unknown",
+      "launch_date": null,
+      "platform": [
+        "Chrome-compatible browsers"
+      ],
+      "official_url": "https://nu.fi/",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "user_controlled_recovery_phrase_or_external_hardware_wallet_keys",
+      "summary": "NUFI non-custodial browser-extension wallet for supported blockchain networks and DApps.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-20",
+      "notes": "Selected extension runtime only; NUFI web wallet is a separate interface and deferred."
+    }
+  ],
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000311",
+      "entity_id": "wlr_ent_000083",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "How to move crypto from an exchange to NUFI wallet",
+      "url": "https://support.nu.fi/support/solutions/articles/80001215724-how-to-move-crypto-from-an-exchange-to-nufi-wallet",
+      "publisher": "NUFI",
+      "published_at": "2026-06-23",
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "entity",
+      "is_primary": true,
+      "notes": "Current first-party support explicitly defines NUFI as non-custodial and says the user alone controls wallet private keys."
+    },
+    {
+      "id": "wlr_src_000312",
+      "entity_id": "wlr_ent_000083",
+      "product_id": "wlr_prod_000132",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Create or restore a wallet",
+      "url": "https://support.nu.fi/support/solutions/folders/80000645572",
+      "publisher": "NUFI",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party support explicitly distinguishes NUFI browser-extension and web-wallet interfaces and describes both as non-custodial."
+    }
+  ]
+}

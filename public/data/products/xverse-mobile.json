@@ -1,0 +1,133 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000020",
+    "slug": "xverse",
+    "canonical_name": "Xverse",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000059",
+    "entity_id": "wlr_ent_000020",
+    "slug": "xverse-mobile",
+    "product_name": "Xverse Mobile",
+    "aliases": [
+      "Xverse Mobile Wallet"
+    ],
+    "product_type": "mobile_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "supported",
+    "launch_date": "2021",
+    "platform": [
+      "iOS",
+      "Android"
+    ],
+    "official_url": "https://www.xverse.app/download",
+    "custody_model": "self_custody",
+    "key_management_model": "mobile_device_local_seed_phrase",
+    "variants": [],
+    "summary": "Xverse self-custody mobile wallet for iOS and Android.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-18",
+    "notes": "Contemporaneous 2021 evidence establishes the Xverse mobile-wallet lineage: Least Authority completed a commissioned security audit of Secret Key Labs' Xverse Wallet mobile application in August 2021, and Apple App Store distribution evidence shows public Xverse user activity in November 2021. Xverse's own April 2022 history then describes the product as an iOS/Android mobile wallet after a recent rebrand. WLR records 2021 at year precision without inferring one exact initial App Store or Play Store publication day.",
+    "launch_date_precision": "year"
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000115",
+      "entity_id": "wlr_ent_000020",
+      "product_id": "wlr_prod_000059",
+      "affected_product_ids": [
+        "wlr_prod_000059"
+      ],
+      "event_type": "product_released",
+      "event_date": "2021",
+      "event_date_basis": "release",
+      "title": "Xverse Mobile publicly available during 2021",
+      "description": "Contemporaneous audit and mobile-store distribution evidence establish the Xverse Wallet mobile product during 2021.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "Year precision only. The reviewed evidence safely establishes public mobile availability during 2021 but does not justify one exact initial store-release day."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000086",
+      "entity_id": "wlr_ent_000020",
+      "product_ids": [
+        "wlr_prod_000059",
+        "wlr_prod_000060"
+      ],
+      "event_ids": [],
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Download Xverse Wallet for Android, iOS & Chrome",
+      "url": "https://www.xverse.app/download",
+      "publisher": "Xverse",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "status",
+      "is_primary": true,
+      "notes": "Current first-party download page separates the browser extension from iOS/Android mobile apps."
+    },
+    {
+      "id": "wlr_src_000089",
+      "entity_id": "wlr_ent_000020",
+      "product_ids": [
+        "wlr_prod_000059"
+      ],
+      "event_ids": [],
+      "product_id": "wlr_prod_000059",
+      "event_id": null,
+      "source_type": "official_blog",
+      "title": "Introducing Xverse: the Gateway to the Stacks Ecosystem",
+      "url": "https://www.xverse.app/blog/the-gateway-to-the-stacks-ecosystem-xverse-mobile-wallet",
+      "publisher": "Xverse",
+      "published_at": "2022-04-05",
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "product_lineage",
+      "is_primary": true,
+      "notes": "First-party historical source describing Xverse as a non-custodial iOS/Android mobile wallet before the desktop extension launch."
+    },
+    {
+      "id": "wlr_src_000182",
+      "entity_id": "wlr_ent_000020",
+      "product_id": "wlr_prod_000059",
+      "event_id": "wlr_ev_000115",
+      "source_type": "audit_report",
+      "title": "Secret Key Labs – Xverse Wallet",
+      "url": "https://leastauthority.com/blog/audit-of-secret-key-labs-xverse-wallet/",
+      "publisher": "Least Authority",
+      "published_at": "2021-08-27",
+      "accessed_at": "2026-08-18",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "Contemporaneous commissioned audit identifying Xverse Wallet as Secret Key Labs’ mobile wallet application. Establishes the 2021 mobile product lineage; distribution evidence is used separately to establish public availability during the year."
+    },
+    {
+      "id": "wlr_src_000183",
+      "entity_id": "wlr_ent_000020",
+      "product_id": "wlr_prod_000059",
+      "event_id": "wlr_ev_000115",
+      "source_type": "database_reference",
+      "title": "Xverse: Bitcoin Crypto Wallet — Apple App Store",
+      "url": "https://apps.apple.com/us/app/xverse-bitcoin-crypto-wallet/id1552272513",
+      "publisher": "Apple App Store / Secret Key Labs",
+      "published_at": "2021-11-21",
+      "accessed_at": "2026-08-18",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "Primary distribution-platform listing for the Secret Key Labs Xverse app includes public user review activity dated 2021-11-21. Used only to establish public availability during 2021, not to claim that date as the original release date."
+    }
+  ]
+}

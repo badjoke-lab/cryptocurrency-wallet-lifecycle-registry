@@ -1,0 +1,52 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000027",
+    "slug": "myetherwallet",
+    "canonical_name": "MyEtherWallet",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000076",
+    "entity_id": "wlr_ent_000027",
+    "slug": "mew-mobile",
+    "product_name": "MEW Mobile",
+    "product_type": "mobile_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": null,
+    "platform": [
+      "iOS",
+      "Android"
+    ],
+    "official_url": "https://www.myetherwallet.com/",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "device_local_client_side_wallet_keys",
+    "summary": "Current MEW mobile wallet application for iOS and Android, providing self-custody wallet access and onchain features.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-19",
+    "notes": "Current product identity is first-party supported; initial MEW Mobile launch date is intentionally unresolved in this batch."
+  },
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000199",
+      "entity_id": "wlr_ent_000027",
+      "product_id": "wlr_prod_000076",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "MyEtherWallet: An Introduction",
+      "url": "https://help.myetherwallet.com/en/articles/5377591-myetherwallet-an-introduction",
+      "publisher": "MyEtherWallet",
+      "published_at": "2026-07-02",
+      "accessed_at": "2026-08-19",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "First-party current overview identifies MEW Mobile for iOS and Android and states that MEW remains non-custodial, open-source and client-side."
+    }
+  ]
+}

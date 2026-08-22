@@ -1,0 +1,151 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000017",
+    "slug": "foundation-passport",
+    "canonical_name": "Foundation Passport",
+    "wallet_type": "hardware",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000053",
+    "entity_id": "wlr_ent_000017",
+    "slug": "foundation-envoy",
+    "product_name": "Envoy",
+    "aliases": [
+      "Envoy Mobile Wallet"
+    ],
+    "product_type": "mobile_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "supported",
+    "launch_date": "2022",
+    "platform": [
+      "iOS",
+      "Android"
+    ],
+    "official_url": "https://foundation.xyz/envoy/",
+    "custody_model": "self_custody",
+    "key_management_model": "mobile_hot_wallet_and_passport_companion",
+    "variants": [],
+    "summary": "Foundation mobile wallet that can operate as its own self-custody hot wallet and also serves as the companion application for Passport hardware devices.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-18",
+    "notes": "Foundation announced Envoy as a forthcoming Passport companion/mobile wallet in March 2022, and first-party distribution evidence shows Envoy was publicly released during 2022. WLR records year precision only because the reviewed sources do not establish a single defensible initial app-store release day. The later 2023 standalone-hot-wallet expansion is not treated as the initial Envoy launch.",
+    "launch_date_precision": "year"
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000103",
+      "entity_id": "wlr_ent_000017",
+      "product_id": "wlr_prod_000053",
+      "affected_product_ids": [
+        "wlr_prod_000053"
+      ],
+      "event_type": "product_released",
+      "event_date": "2022",
+      "event_date_basis": "release",
+      "title": "Foundation Envoy released on mobile platforms",
+      "description": "Foundation released Envoy during 2022 as a mobile Passport companion and Bitcoin software-wallet application for iOS and Android.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "Year precision only. Foundation stated on 2022-03-10 that Envoy would launch later, while the official Envoy repository published v1.0.7 Android/iOS release artifacts in October 2022 and Foundation subsequently described v1.0.7 as live on mobile platforms."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000074",
+      "entity_id": "wlr_ent_000017",
+      "product_ids": [
+        "wlr_prod_000050",
+        "wlr_prod_000051",
+        "wlr_prod_000052",
+        "wlr_prod_000053"
+      ],
+      "event_ids": [
+        "wlr_ev_000050",
+        "wlr_ev_000051"
+      ],
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_blog",
+      "title": "Passport is now Passport Core",
+      "url": "https://foundation.xyz/blog/passport-is-now-passport-core",
+      "publisher": "Foundation",
+      "published_at": "2025-03-17",
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "product_lineage",
+      "is_primary": true,
+      "notes": "Primary history source for the 2020 first generation, Founder’s Edition, Batch 2/Core continuity, 2025 rename, Prime, and Envoy product family."
+    },
+    {
+      "id": "wlr_src_000077",
+      "entity_id": "wlr_ent_000017",
+      "product_ids": [
+        "wlr_prod_000052",
+        "wlr_prod_000053"
+      ],
+      "event_ids": [],
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Passport Prime Terms of Use",
+      "url": "https://foundation.xyz/terms-prime/",
+      "publisher": "Foundation Devices, Inc.",
+      "published_at": "2025-11-11",
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "architecture",
+      "is_primary": true,
+      "notes": "Describes Prime as an offline Bitcoin key-management device and Envoy as its companion app, while noting Envoy can hold keys for its own built-in hot wallet."
+    },
+    {
+      "id": "wlr_src_000161",
+      "entity_id": "wlr_ent_000017",
+      "product_ids": [
+        "wlr_prod_000053"
+      ],
+      "event_ids": [
+        "wlr_ev_000103"
+      ],
+      "product_id": "wlr_prod_000053",
+      "event_id": "wlr_ev_000103",
+      "source_type": "official_blog",
+      "title": "Introducing Passport Batch 2 & Envoy Mobile App",
+      "url": "https://foundation.xyz/2022/03/introducing-passport-batch-2-envoy/",
+      "publisher": "Foundation",
+      "published_at": "2022-03-10",
+      "accessed_at": "2026-08-18",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party pre-launch boundary: Foundation announces Envoy and explicitly says it will launch in app stores later alongside Passport Batch 2. This source is not treated as the release date itself."
+    },
+    {
+      "id": "wlr_src_000162",
+      "entity_id": "wlr_ent_000017",
+      "product_ids": [
+        "wlr_prod_000053"
+      ],
+      "event_ids": [
+        "wlr_ev_000103"
+      ],
+      "product_id": "wlr_prod_000053",
+      "event_id": "wlr_ev_000103",
+      "source_type": "release_notes",
+      "title": "Envoy Release 1.0.7",
+      "url": "https://github.com/Foundation-Devices/envoy/releases/tag/v1.0.7",
+      "publisher": "Foundation Devices",
+      "published_at": "2022-10-17",
+      "accessed_at": "2026-08-18",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "Official Envoy repository release containing Android App Bundle/APK and iOS IPA artifacts in October 2022. Used with the March pre-launch announcement to establish only that the initial public product launch occurred in 2022."
+    }
+  ]
+}

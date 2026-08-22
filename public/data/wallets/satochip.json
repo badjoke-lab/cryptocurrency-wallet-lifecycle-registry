@@ -1,0 +1,85 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000099",
+    "slug": "satochip",
+    "canonical_name": "Satochip",
+    "aliases": [],
+    "wallet_type": "hardware",
+    "status": "active",
+    "summary": "Open-source smart-card hardware wallet using an EAL6+ secure element to keep user private keys inside the card.",
+    "developer_or_company": "Satochip",
+    "country_or_origin": null,
+    "launch_date": null,
+    "official_url": "https://satochip.io/",
+    "official_domain": "satochip.io",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "smartcard_secure_element_private_keys",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Current first-party Satochip product and quick-start material establishes an actively sold self-custody hardware wallet whose private keys remain in an EAL6+ secure element. Initial launch date remains unresolved."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000148",
+      "entity_id": "wlr_ent_000099",
+      "slug": "satochip-hardware-wallet",
+      "product_name": "Satochip Hardware Wallet",
+      "product_type": "hardware_device",
+      "status": "active",
+      "sales_status": "on_sale",
+      "support_status": "unknown",
+      "launch_date": null,
+      "platform": [
+        "smart card",
+        "NFC",
+        "desktop",
+        "mobile"
+      ],
+      "official_url": "https://satochip.io/product/satochip/",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "smartcard_secure_element_private_keys",
+      "summary": "Satochip smart-card hardware wallet using an EAL6+ secure element and current desktop/mobile integrations.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-20",
+      "notes": "Current first-party product page offers Satochip for purchase and states private keys cannot be extracted from the secure chip. Support status remains conservative `unknown` rather than inferring a formal maintenance commitment from current documentation alone."
+    }
+  ],
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000343",
+      "entity_id": "wlr_ent_000099",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Satochip — Hardware solutions for your cryptocurrencies",
+      "url": "https://satochip.io/",
+      "publisher": "Satochip",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "entity",
+      "is_primary": true,
+      "notes": "Current first-party homepage describes Satochip as a self-custody hardware wallet using an EAL6+ certified secure element."
+    },
+    {
+      "id": "wlr_src_000344",
+      "entity_id": "wlr_ent_000099",
+      "product_id": "wlr_prod_000148",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Satochip Hardware Wallet",
+      "url": "https://satochip.io/product/satochip/",
+      "publisher": "Satochip",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party product page offers Satochip for sale and states private keys are handled inside an EAL6+ secure element and cannot be extracted from the chip."
+    }
+  ]
+}

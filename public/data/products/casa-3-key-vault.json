@@ -1,0 +1,52 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000097",
+    "slug": "casa",
+    "canonical_name": "Casa",
+    "wallet_type": "hybrid",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000146",
+    "entity_id": "wlr_ent_000097",
+    "slug": "casa-3-key-vault",
+    "product_name": "Casa 3-Key Vault",
+    "product_type": "other",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": null,
+    "platform": [
+      "Casa app",
+      "hardware wallets"
+    ],
+    "official_url": "https://support.casa.io/knowledge/what-is-the-casa-app",
+    "source_code_url": null,
+    "custody_model": "hybrid",
+    "key_management_model": "2_of_3_multisig_mobile_hardware_and_provider_recovery_key",
+    "summary": "Casa Standard 2-of-3 multisig vault using a user mobile key, a user hardware key and a Casa-held recovery key, where any two signatures are required.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Selected vault product rather than treating Casa's advisory/service layer as a wallet. Casa holds only one of three keys and cannot move funds unilaterally."
+  },
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000340",
+      "entity_id": "wlr_ent_000097",
+      "product_id": "wlr_prod_000146",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "What is the Casa app?",
+      "url": "https://support.casa.io/knowledge/what-is-the-casa-app",
+      "publisher": "Casa",
+      "published_at": "2026-04-22",
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "First-party Casa support defines the 3-key vault as a 2-of-3 multisig arrangement and says Casa holds only one emergency recovery key, insufficient to send funds by itself."
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000002",
+    "slug": "ledger",
+    "canonical_name": "Ledger",
+    "wallet_type": "hardware",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000009",
+    "entity_id": "wlr_ent_000002",
+    "slug": "ledger-nano-s-plus",
+    "product_name": "Ledger Nano S Plus",
+    "aliases": [],
+    "product_type": "hardware_device",
+    "status": "active",
+    "sales_status": "on_sale",
+    "support_status": "supported",
+    "launch_date": "2022-04-05",
+    "launch_date_precision": "day",
+    "generation": null,
+    "variants": [],
+    "summary": "Successor to Nano S with larger screen and increased application capacity.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "Successor to Nano S with larger screen and increased application capacity."
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000013",
+      "entity_id": "wlr_ent_000002",
+      "product_id": "wlr_prod_000009",
+      "affected_product_ids": [
+        "wlr_prod_000009"
+      ],
+      "event_type": "product_released",
+      "event_date": "2022-04-05",
+      "event_date_basis": "release",
+      "title": "Ledger Nano S Plus became generally available",
+      "description": "Ledger made the Nano S Plus generally available.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000017",
+      "entity_id": "wlr_ent_000002",
+      "product_id": "wlr_prod_000009",
+      "event_id": "wlr_ev_000013",
+      "source_type": "official_blog",
+      "title": "Explore Web3 Securely: The Ledger Nano S Plus Is Available",
+      "url": "https://www.ledger.com/blog-explore-web3-securely-the-ledger-nano-s-plus-is-available",
+      "publisher": "Ledger",
+      "published_at": "2022-04-05",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": ""
+    }
+  ]
+}

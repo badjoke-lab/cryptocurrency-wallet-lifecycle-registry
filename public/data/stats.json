@@ -1,0 +1,1016 @@
+{
+  "schema": "wlr.stats.v1",
+  "scope": "canonical_only",
+  "interpretation": "Statistics describe reviewed WLR registry records. They are not wallet safety scores, market-share estimates, rankings, recommendations, or inferred vendor-performance metrics.",
+  "generated_from": [
+    "data/entities.json",
+    "data/products.json",
+    "data/events.json",
+    "data/evidence.json",
+    "config/structured-discovery.json"
+  ],
+  "registry": {
+    "entities": 100,
+    "products": 149,
+    "events": 147,
+    "evidence": 374,
+    "incident_events": 27,
+    "remediation_events": 9,
+    "eol_events": 7
+  },
+  "entities": {
+    "wallet_type": [
+      {
+        "value": "hardware",
+        "count": 20,
+        "denominator": 100,
+        "percentage": 20
+      },
+      {
+        "value": "hybrid",
+        "count": 5,
+        "denominator": 100,
+        "percentage": 5
+      },
+      {
+        "value": "mpc_threshold",
+        "count": 1,
+        "denominator": 100,
+        "percentage": 1
+      },
+      {
+        "value": "smart_contract",
+        "count": 1,
+        "denominator": 100,
+        "percentage": 1
+      },
+      {
+        "value": "software",
+        "count": 73,
+        "denominator": 100,
+        "percentage": 73
+      }
+    ],
+    "status": [
+      {
+        "value": "acquired",
+        "count": 1,
+        "denominator": 100,
+        "percentage": 1
+      },
+      {
+        "value": "active",
+        "count": 96,
+        "denominator": 100,
+        "percentage": 96
+      },
+      {
+        "value": "dead",
+        "count": 2,
+        "denominator": 100,
+        "percentage": 2
+      },
+      {
+        "value": "deprecated",
+        "count": 1,
+        "denominator": 100,
+        "percentage": 1
+      }
+    ],
+    "confidence": [
+      {
+        "value": "high",
+        "count": 99,
+        "denominator": 100,
+        "percentage": 99
+      },
+      {
+        "value": "medium",
+        "count": 1,
+        "denominator": 100,
+        "percentage": 1
+      }
+    ],
+    "custody_model": [
+      {
+        "value": "hybrid",
+        "count": 2,
+        "denominator": 100,
+        "percentage": 2
+      },
+      {
+        "value": "self_custody",
+        "count": 97,
+        "denominator": 100,
+        "percentage": 97
+      },
+      {
+        "value": "unknown",
+        "count": 1,
+        "denominator": 100,
+        "percentage": 1
+      }
+    ],
+    "launch_date": {
+      "count": 54,
+      "denominator": 100,
+      "percentage": 54
+    },
+    "launch_precision": [
+      {
+        "value": "approximate",
+        "count": 1,
+        "denominator": 54,
+        "percentage": 1.9
+      },
+      {
+        "value": "day",
+        "count": 12,
+        "denominator": 54,
+        "percentage": 22.2
+      },
+      {
+        "value": "month",
+        "count": 4,
+        "denominator": 54,
+        "percentage": 7.4
+      },
+      {
+        "value": "year",
+        "count": 37,
+        "denominator": 54,
+        "percentage": 68.5
+      }
+    ]
+  },
+  "products": {
+    "product_type": [
+      {
+        "value": "browser_extension",
+        "count": 31,
+        "denominator": 149,
+        "percentage": 20.8
+      },
+      {
+        "value": "companion_app",
+        "count": 4,
+        "denominator": 149,
+        "percentage": 2.7
+      },
+      {
+        "value": "desktop_app",
+        "count": 9,
+        "denominator": 149,
+        "percentage": 6
+      },
+      {
+        "value": "embedded_wallet",
+        "count": 1,
+        "denominator": 149,
+        "percentage": 0.7
+      },
+      {
+        "value": "hardware_device",
+        "count": 46,
+        "denominator": 149,
+        "percentage": 30.9
+      },
+      {
+        "value": "mobile_app",
+        "count": 45,
+        "denominator": 149,
+        "percentage": 30.2
+      },
+      {
+        "value": "mpc_wallet",
+        "count": 1,
+        "denominator": 149,
+        "percentage": 0.7
+      },
+      {
+        "value": "multi_platform_app",
+        "count": 7,
+        "denominator": 149,
+        "percentage": 4.7
+      },
+      {
+        "value": "other",
+        "count": 1,
+        "denominator": 149,
+        "percentage": 0.7
+      },
+      {
+        "value": "smart_contract_wallet",
+        "count": 1,
+        "denominator": 149,
+        "percentage": 0.7
+      },
+      {
+        "value": "web_app",
+        "count": 3,
+        "denominator": 149,
+        "percentage": 2
+      }
+    ],
+    "status": [
+      {
+        "value": "active",
+        "count": 142,
+        "denominator": 149,
+        "percentage": 95.3
+      },
+      {
+        "value": "dead",
+        "count": 1,
+        "denominator": 149,
+        "percentage": 0.7
+      },
+      {
+        "value": "deprecated",
+        "count": 2,
+        "denominator": 149,
+        "percentage": 1.3
+      },
+      {
+        "value": "discontinued",
+        "count": 3,
+        "denominator": 149,
+        "percentage": 2
+      },
+      {
+        "value": "limited",
+        "count": 1,
+        "denominator": 149,
+        "percentage": 0.7
+      }
+    ],
+    "support_status": [
+      {
+        "value": "ended",
+        "count": 6,
+        "denominator": 149,
+        "percentage": 4
+      },
+      {
+        "value": "supported",
+        "count": 73,
+        "denominator": 149,
+        "percentage": 49
+      },
+      {
+        "value": "unknown",
+        "count": 70,
+        "denominator": 149,
+        "percentage": 47
+      }
+    ],
+    "sales_status": [
+      {
+        "value": "end_of_sale",
+        "count": 6,
+        "denominator": 149,
+        "percentage": 4
+      },
+      {
+        "value": "not_applicable",
+        "count": 104,
+        "denominator": 149,
+        "percentage": 69.8
+      },
+      {
+        "value": "on_sale",
+        "count": 36,
+        "denominator": 149,
+        "percentage": 24.2
+      },
+      {
+        "value": "unknown",
+        "count": 3,
+        "denominator": 149,
+        "percentage": 2
+      }
+    ],
+    "confidence": [
+      {
+        "value": "high",
+        "count": 144,
+        "denominator": 149,
+        "percentage": 96.6
+      },
+      {
+        "value": "medium",
+        "count": 5,
+        "denominator": 149,
+        "percentage": 3.4
+      }
+    ],
+    "launch_date": {
+      "count": 93,
+      "denominator": 149,
+      "percentage": 62.4
+    },
+    "launch_precision": [
+      {
+        "value": "approximate",
+        "count": 1,
+        "denominator": 93,
+        "percentage": 1.1
+      },
+      {
+        "value": "day",
+        "count": 46,
+        "denominator": 93,
+        "percentage": 49.5
+      },
+      {
+        "value": "month",
+        "count": 6,
+        "denominator": 93,
+        "percentage": 6.5
+      },
+      {
+        "value": "year",
+        "count": 40,
+        "denominator": 93,
+        "percentage": 43
+      }
+    ],
+    "support_commitment": {
+      "count": 2,
+      "denominator": 149,
+      "percentage": 1.3
+    },
+    "lineage_participation": {
+      "count": 11,
+      "denominator": 149,
+      "percentage": 7.4
+    }
+  },
+  "incidents": {
+    "by_year": [
+      {
+        "value": "2018",
+        "count": 2,
+        "denominator": 27,
+        "percentage": 7.4
+      },
+      {
+        "value": "2020",
+        "count": 2,
+        "denominator": 27,
+        "percentage": 7.4
+      },
+      {
+        "value": "2022",
+        "count": 4,
+        "denominator": 27,
+        "percentage": 14.8
+      },
+      {
+        "value": "2023",
+        "count": 5,
+        "denominator": 27,
+        "percentage": 18.5
+      },
+      {
+        "value": "2024",
+        "count": 2,
+        "denominator": 27,
+        "percentage": 7.4
+      },
+      {
+        "value": "2025",
+        "count": 3,
+        "denominator": 27,
+        "percentage": 11.1
+      },
+      {
+        "value": "2026",
+        "count": 9,
+        "denominator": 27,
+        "percentage": 33.3
+      }
+    ],
+    "event_type": [
+      {
+        "value": "customer_data_breach",
+        "count": 2,
+        "denominator": 27,
+        "percentage": 7.4
+      },
+      {
+        "value": "exploit",
+        "count": 2,
+        "denominator": 27,
+        "percentage": 7.4
+      },
+      {
+        "value": "phishing_campaign",
+        "count": 1,
+        "denominator": 27,
+        "percentage": 3.7
+      },
+      {
+        "value": "software_issue",
+        "count": 3,
+        "denominator": 27,
+        "percentage": 11.1
+      },
+      {
+        "value": "supply_chain_compromise",
+        "count": 3,
+        "denominator": 27,
+        "percentage": 11.1
+      },
+      {
+        "value": "third_party_data_breach",
+        "count": 2,
+        "denominator": 27,
+        "percentage": 7.4
+      },
+      {
+        "value": "unauthorized_access",
+        "count": 2,
+        "denominator": 27,
+        "percentage": 7.4
+      },
+      {
+        "value": "vulnerability_disclosed",
+        "count": 12,
+        "denominator": 27,
+        "percentage": 44.4
+      }
+    ],
+    "impact_level": [
+      {
+        "value": "critical",
+        "count": 7,
+        "denominator": 27,
+        "percentage": 25.9
+      },
+      {
+        "value": "high",
+        "count": 14,
+        "denominator": 27,
+        "percentage": 51.9
+      },
+      {
+        "value": "low",
+        "count": 1,
+        "denominator": 27,
+        "percentage": 3.7
+      },
+      {
+        "value": "medium",
+        "count": 5,
+        "denominator": 27,
+        "percentage": 18.5
+      }
+    ],
+    "security_scope": [
+      {
+        "value": "browser_extension",
+        "count": 4,
+        "denominator": 27,
+        "percentage": 14.8
+      },
+      {
+        "value": "customer_data",
+        "count": 3,
+        "denominator": 27,
+        "percentage": 11.1
+      },
+      {
+        "value": "device",
+        "count": 1,
+        "denominator": 27,
+        "percentage": 3.7
+      },
+      {
+        "value": "firmware",
+        "count": 2,
+        "denominator": 27,
+        "percentage": 7.4
+      },
+      {
+        "value": "key_storage",
+        "count": 1,
+        "denominator": 27,
+        "percentage": 3.7
+      },
+      {
+        "value": "mobile_app",
+        "count": 2,
+        "denominator": 27,
+        "percentage": 7.4
+      },
+      {
+        "value": "other",
+        "count": 2,
+        "denominator": 27,
+        "percentage": 7.4
+      },
+      {
+        "value": "seed_generation",
+        "count": 1,
+        "denominator": 27,
+        "percentage": 3.7
+      },
+      {
+        "value": "smart_contract",
+        "count": 1,
+        "denominator": 27,
+        "percentage": 3.7
+      },
+      {
+        "value": "software",
+        "count": 3,
+        "denominator": 27,
+        "percentage": 11.1
+      },
+      {
+        "value": "supply_chain",
+        "count": 3,
+        "denominator": 27,
+        "percentage": 11.1
+      },
+      {
+        "value": "third_party_vendor",
+        "count": 2,
+        "denominator": 27,
+        "percentage": 7.4
+      },
+      {
+        "value": "transaction_signing",
+        "count": 2,
+        "denominator": 27,
+        "percentage": 7.4
+      }
+    ],
+    "funds_affected": [
+      {
+        "value": "no",
+        "count": 11,
+        "denominator": 27,
+        "percentage": 40.7
+      },
+      {
+        "value": "unknown",
+        "count": 9,
+        "denominator": 27,
+        "percentage": 33.3
+      },
+      {
+        "value": "yes",
+        "count": 7,
+        "denominator": 27,
+        "percentage": 25.9
+      }
+    ],
+    "confidence": [
+      {
+        "value": "high",
+        "count": 27,
+        "denominator": 27,
+        "percentage": 100
+      }
+    ],
+    "cve": {
+      "count": 2,
+      "denominator": 27,
+      "percentage": 7.4
+    },
+    "affected_version_info": {
+      "count": 9,
+      "denominator": 27,
+      "percentage": 33.3
+    },
+    "fixed_version_info_inside_incident": {
+      "count": 10,
+      "denominator": 27,
+      "percentage": 37
+    }
+  },
+  "remediation": {
+    "by_year": [
+      {
+        "value": "2023",
+        "count": 3,
+        "denominator": 9,
+        "percentage": 33.3
+      },
+      {
+        "value": "2024",
+        "count": 1,
+        "denominator": 9,
+        "percentage": 11.1
+      },
+      {
+        "value": "2025",
+        "count": 2,
+        "denominator": 9,
+        "percentage": 22.2
+      },
+      {
+        "value": "2026",
+        "count": 3,
+        "denominator": 9,
+        "percentage": 33.3
+      }
+    ],
+    "event_type": [
+      {
+        "value": "firmware_fix",
+        "count": 1,
+        "denominator": 9,
+        "percentage": 11.1
+      },
+      {
+        "value": "security_fix",
+        "count": 2,
+        "denominator": 9,
+        "percentage": 22.2
+      },
+      {
+        "value": "software_fix",
+        "count": 6,
+        "denominator": 9,
+        "percentage": 66.7
+      }
+    ],
+    "confidence": [
+      {
+        "value": "high",
+        "count": 9,
+        "denominator": 9,
+        "percentage": 100
+      }
+    ],
+    "fixed_versions": {
+      "count": 7,
+      "denominator": 9,
+      "percentage": 77.8
+    },
+    "affected_product_reference": {
+      "count": 9,
+      "denominator": 9,
+      "percentage": 100
+    },
+    "user_actions_required": {
+      "count": 9,
+      "denominator": 9,
+      "percentage": 100
+    },
+    "patch_response_duration": {
+      "status": "unavailable",
+      "reason": "canonical incident-to-remediation linkage is not recorded"
+    }
+  },
+  "eol_lifecycle": {
+    "by_year": [
+      {
+        "value": "2019",
+        "count": 2,
+        "denominator": 7,
+        "percentage": 28.6
+      },
+      {
+        "value": "2020",
+        "count": 1,
+        "denominator": 7,
+        "percentage": 14.3
+      },
+      {
+        "value": "2022",
+        "count": 1,
+        "denominator": 7,
+        "percentage": 14.3
+      },
+      {
+        "value": "2025",
+        "count": 1,
+        "denominator": 7,
+        "percentage": 14.3
+      },
+      {
+        "value": "2026",
+        "count": 2,
+        "denominator": 7,
+        "percentage": 28.6
+      }
+    ],
+    "event_type": [
+      {
+        "value": "deprecation_announced",
+        "count": 3,
+        "denominator": 7,
+        "percentage": 42.9
+      },
+      {
+        "value": "discontinued",
+        "count": 2,
+        "denominator": 7,
+        "percentage": 28.6
+      },
+      {
+        "value": "sales_discontinued",
+        "count": 2,
+        "denominator": 7,
+        "percentage": 28.6
+      }
+    ],
+    "entity_discontinued_date": {
+      "count": 1,
+      "denominator": 100,
+      "percentage": 1
+    },
+    "entity_eol_status": {
+      "count": 3,
+      "denominator": 100,
+      "percentage": 3
+    },
+    "product_discontinued_date": {
+      "count": 4,
+      "denominator": 149,
+      "percentage": 2.7
+    },
+    "product_sales_end_date": {
+      "count": 2,
+      "denominator": 149,
+      "percentage": 1.3
+    },
+    "product_eol_status": {
+      "count": 5,
+      "denominator": 149,
+      "percentage": 3.4
+    },
+    "exact_product_lifespan": {
+      "eligible_count": 0,
+      "eligibility": "launch_date and discontinued_date both day-level; launch_date_precision=day",
+      "records": [],
+      "distribution": null,
+      "distribution_status": "unavailable_insufficient_exact_records"
+    }
+  },
+  "data_quality": {
+    "entities": {
+      "with_product": {
+        "count": 100,
+        "denominator": 100,
+        "percentage": 100
+      },
+      "with_history_event": {
+        "count": 48,
+        "denominator": 100,
+        "percentage": 48
+      },
+      "with_two_history_events": {
+        "count": 29,
+        "denominator": 100,
+        "percentage": 29
+      },
+      "with_evidence": {
+        "count": 100,
+        "denominator": 100,
+        "percentage": 100
+      },
+      "with_two_evidence": {
+        "count": 100,
+        "denominator": 100,
+        "percentage": 100
+      },
+      "launch_date": {
+        "count": 54,
+        "denominator": 100,
+        "percentage": 54
+      },
+      "custody_model": {
+        "count": 100,
+        "denominator": 100,
+        "percentage": 100
+      },
+      "confidence": [
+        {
+          "value": "high",
+          "count": 99,
+          "denominator": 100,
+          "percentage": 99
+        },
+        {
+          "value": "medium",
+          "count": 1,
+          "denominator": 100,
+          "percentage": 1
+        }
+      ]
+    },
+    "products": {
+      "launch_date": {
+        "count": 93,
+        "denominator": 149,
+        "percentage": 62.4
+      },
+      "support_status_known": {
+        "count": 79,
+        "denominator": 149,
+        "percentage": 53
+      },
+      "sales_status_known": {
+        "count": 146,
+        "denominator": 149,
+        "percentage": 98
+      },
+      "support_commitment": {
+        "count": 2,
+        "denominator": 149,
+        "percentage": 1.3
+      },
+      "lineage_participation": {
+        "count": 11,
+        "denominator": 149,
+        "percentage": 7.4
+      },
+      "confidence": [
+        {
+          "value": "high",
+          "count": 144,
+          "denominator": 149,
+          "percentage": 96.6
+        },
+        {
+          "value": "medium",
+          "count": 5,
+          "denominator": 149,
+          "percentage": 3.4
+        }
+      ]
+    },
+    "events": {
+      "event_date_basis": {
+        "count": 147,
+        "denominator": 147,
+        "percentage": 100
+      },
+      "confidence": [
+        {
+          "value": "high",
+          "count": 145,
+          "denominator": 147,
+          "percentage": 98.6
+        },
+        {
+          "value": "medium",
+          "count": 2,
+          "denominator": 147,
+          "percentage": 1.4
+        }
+      ],
+      "incident_impact_level": {
+        "count": 27,
+        "denominator": 27,
+        "percentage": 100
+      },
+      "incident_security_scope": {
+        "count": 27,
+        "denominator": 27,
+        "percentage": 100
+      },
+      "incident_funds_affected": {
+        "count": 27,
+        "denominator": 27,
+        "percentage": 100
+      },
+      "incident_cve": {
+        "count": 2,
+        "denominator": 27,
+        "percentage": 7.4
+      },
+      "incident_affected_version_info": {
+        "count": 9,
+        "denominator": 27,
+        "percentage": 33.3
+      },
+      "remediation_fixed_versions": {
+        "count": 7,
+        "denominator": 9,
+        "percentage": 77.8
+      }
+    },
+    "evidence": {
+      "primary": {
+        "count": 371,
+        "denominator": 374,
+        "percentage": 99.2
+      },
+      "reliability": [
+        {
+          "value": "high",
+          "count": 373,
+          "denominator": 374,
+          "percentage": 99.7
+        },
+        {
+          "value": "medium",
+          "count": 1,
+          "denominator": 374,
+          "percentage": 0.3
+        }
+      ],
+      "source_type": [
+        {
+          "value": "audit_report",
+          "count": 1,
+          "denominator": 374,
+          "percentage": 0.3
+        },
+        {
+          "value": "community_reference",
+          "count": 1,
+          "denominator": 374,
+          "percentage": 0.3
+        },
+        {
+          "value": "cve",
+          "count": 1,
+          "denominator": 374,
+          "percentage": 0.3
+        },
+        {
+          "value": "database_reference",
+          "count": 1,
+          "denominator": 374,
+          "percentage": 0.3
+        },
+        {
+          "value": "news_article",
+          "count": 2,
+          "denominator": 374,
+          "percentage": 0.5
+        },
+        {
+          "value": "official_blog",
+          "count": 111,
+          "denominator": 374,
+          "percentage": 29.7
+        },
+        {
+          "value": "official_security_advisory",
+          "count": 19,
+          "denominator": 374,
+          "percentage": 5.1
+        },
+        {
+          "value": "official_social",
+          "count": 3,
+          "denominator": 374,
+          "percentage": 0.8
+        },
+        {
+          "value": "official_statement",
+          "count": 197,
+          "denominator": 374,
+          "percentage": 52.7
+        },
+        {
+          "value": "regulatory_notice",
+          "count": 2,
+          "denominator": 374,
+          "percentage": 0.5
+        },
+        {
+          "value": "release_notes",
+          "count": 11,
+          "denominator": 374,
+          "percentage": 2.9
+        },
+        {
+          "value": "security_research",
+          "count": 5,
+          "denominator": 374,
+          "percentage": 1.3
+        },
+        {
+          "value": "source_code",
+          "count": 20,
+          "denominator": 374,
+          "percentage": 5.3
+        }
+      ],
+      "linked_to_event": {
+        "count": 168,
+        "denominator": 374,
+        "percentage": 44.9
+      },
+      "linked_to_product": {
+        "count": 266,
+        "denominator": 374,
+        "percentage": 71.1
+      },
+      "entity_only": {
+        "count": 87,
+        "denominator": 374,
+        "percentage": 23.3
+      }
+    }
+  }
+}

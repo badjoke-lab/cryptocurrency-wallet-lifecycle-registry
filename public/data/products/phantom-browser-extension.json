@@ -1,0 +1,123 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000015",
+    "slug": "phantom",
+    "canonical_name": "Phantom",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000045",
+    "entity_id": "wlr_ent_000015",
+    "slug": "phantom-browser-extension",
+    "product_name": "Phantom Browser Extension",
+    "aliases": [
+      "Phantom Extension"
+    ],
+    "product_type": "browser_extension",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "supported",
+    "launch_date": "2021",
+    "launch_date_precision": "year",
+    "platform": [
+      "Chrome",
+      "Brave",
+      "Edge"
+    ],
+    "official_url": "https://phantom.com/download",
+    "custody_model": "self_custody",
+    "key_management_model": "browser_extension_local_key_storage",
+    "variants": [],
+    "summary": "Phantom's browser-extension wallet product for supported Chromium-based browsers.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-15",
+    "notes": "Current public download page lists Chrome, Brave and Edge; Firefox is not treated as currently supported."
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000048",
+      "entity_id": "wlr_ent_000015",
+      "product_id": "wlr_prod_000045",
+      "affected_product_ids": [
+        "wlr_prod_000045"
+      ],
+      "event_type": "vulnerability_disclosed",
+      "event_date": "2022-06-15",
+      "event_date_basis": "disclosure",
+      "title": "Phantom disclosed remediation of the Demonic browser-extension vulnerability",
+      "description": "Phantom disclosed a critical browser-extension vulnerability reported by Halborn in September 2021 and stated that fixes began rolling out in January 2022, with Phantom users protected by April 2022.",
+      "confidence": "high",
+      "impact_level": "critical",
+      "security_scope": "browser_extension",
+      "funds_affected": "unknown",
+      "user_actions_required": [
+        "update"
+      ],
+      "event_status_effect": "none",
+      "is_major_event": true,
+      "notes": "The first-party disclosure characterizes the vulnerability as critical; this record does not infer confirmed Phantom-user theft from the disclosure."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000063",
+      "entity_id": "wlr_ent_000015",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Terms of Use",
+      "url": "https://phantom.com/terms",
+      "publisher": "Phantom Technologies, Inc.",
+      "published_at": "2026-03-17",
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "architecture",
+      "is_primary": true,
+      "product_ids": [
+        "wlr_prod_000045",
+        "wlr_prod_000046"
+      ],
+      "notes": "Primary legal source identifying Phantom Technologies, Inc. and the self-custody application/browser-extension wallet boundary."
+    },
+    {
+      "id": "wlr_src_000065",
+      "entity_id": "wlr_ent_000015",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Download Phantom",
+      "url": "https://phantom.com/download",
+      "publisher": "Phantom",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "status",
+      "is_primary": true,
+      "product_ids": [
+        "wlr_prod_000045",
+        "wlr_prod_000046"
+      ],
+      "notes": "Current first-party download page for browser and iOS/Android products."
+    },
+    {
+      "id": "wlr_src_000068",
+      "entity_id": "wlr_ent_000015",
+      "product_id": "wlr_prod_000045",
+      "event_id": "wlr_ev_000048",
+      "source_type": "official_security_advisory",
+      "title": "Keeping Phantom safe from the Demonic critical vulnerability",
+      "url": "https://phantom.com/learn/blog/keeping-phantom-safe-from-the-demonic-critical-vulnerability",
+      "publisher": "Phantom",
+      "published_at": "2022-06-15",
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "vulnerability",
+      "is_primary": true,
+      "notes": "Primary vendor disclosure describing the critical extension vulnerability and rollout of fixes."
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000013",
+    "slug": "keystone",
+    "canonical_name": "Keystone",
+    "wallet_type": "hardware",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000041",
+    "entity_id": "wlr_ent_000013",
+    "slug": "keystone-3-pro",
+    "product_name": "Keystone 3 Pro",
+    "aliases": [],
+    "product_type": "hardware_device",
+    "status": "active",
+    "sales_status": "on_sale",
+    "support_status": "supported",
+    "launch_date": "2023",
+    "platform": null,
+    "official_url": "https://keyst.one/shop/products/keystone-3-pro",
+    "custody_model": "self_custody",
+    "key_management_model": "device_held_seed_and_private_keys",
+    "variants": [],
+    "summary": "Current Keystone touchscreen hardware wallet with QR-based air-gapped operation and device-held private keys.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-18",
+    "notes": "Keystone's first-party site and official firmware repository establish the Keystone 3 Pro / Keystone 3 release lineage during 2023. WLR records year precision only because the reviewed sources do not establish one defensible exact first public-release day for Keystone 3 Pro.",
+    "launch_date_precision": "year"
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000068",
+      "entity_id": "wlr_ent_000013",
+      "product_id": "wlr_prod_000041",
+      "affected_product_ids": [
+        "wlr_prod_000041"
+      ],
+      "event_type": "other",
+      "event_date": "2023-09-04",
+      "event_date_basis": "announcement",
+      "title": "Keystone 3 Pro publicly introduced in official product design article",
+      "description": "Keystone published its official Keystone 3 Pro product-design article as part of the 2023 Keystone 3 rollout chronology following the July forthcoming-launch announcement.",
+      "confidence": "high",
+      "event_status_effect": "none",
+      "is_major_event": true,
+      "notes": "This is an introduction/announcement anchor, not an asserted exact retail availability date."
+    },
+    {
+      "id": "wlr_ev_000100",
+      "entity_id": "wlr_ent_000013",
+      "product_id": "wlr_prod_000041",
+      "affected_product_ids": [
+        "wlr_prod_000041"
+      ],
+      "event_type": "product_announced",
+      "event_date": "2023-09-04",
+      "event_date_basis": "announcement",
+      "title": "Keystone publicly detailed the Keystone 3 Pro",
+      "description": "Keystone published a first-party product article detailing the Keystone 3 Pro hardware wallet and its community-driven design and security architecture.",
+      "confidence": "high",
+      "event_status_effect": "none",
+      "is_major_event": true,
+      "notes": "This is a first-party public product-announcement milestone. It does not establish the exact first commercial shipment or general-release day, so the product launch_date remains unresolved."
+    },
+    {
+      "id": "wlr_ev_000106",
+      "entity_id": "wlr_ent_000013",
+      "product_id": "wlr_prod_000041",
+      "affected_product_ids": [
+        "wlr_prod_000041"
+      ],
+      "event_type": "product_released",
+      "event_date": "2023",
+      "event_date_basis": "release",
+      "title": "Keystone 3 Pro released in 2023",
+      "description": "Keystone's first-party product history and official Keystone 3 firmware release lineage establish Keystone 3 Pro as a released product during 2023.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "Year precision only. A July 2023 Keystone article still described the launch as forthcoming, while Pro-specific first-party content and firmware release history appear later in 2023; no exact commercial launch day is inferred."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000058",
+      "entity_id": "wlr_ent_000013",
+      "product_id": "wlr_prod_000041",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Keystone 3 Pro",
+      "url": "https://keyst.one/shop/products/keystone-3-pro",
+      "publisher": "Keystone",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party product page confirming active sale and hardware-wallet identity."
+    },
+    {
+      "id": "wlr_src_000114",
+      "entity_id": "wlr_ent_000013",
+      "product_ids": [
+        "wlr_prod_000041"
+      ],
+      "event_ids": [
+        "wlr_ev_000068"
+      ],
+      "product_id": "wlr_prod_000041",
+      "event_id": "wlr_ev_000068",
+      "source_type": "official_statement",
+      "title": "Keystone Wallet — Deep Dive into Keystone chronology",
+      "url": "https://keyst.one/",
+      "publisher": "Keystone",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Current official Keystone site lists the July 7, 2023 forthcoming Keystone 3 launch article and the September 4, 2023 Keystone 3 Pro product-design article in its first-party chronology."
+    },
+    {
+      "id": "wlr_src_000158",
+      "entity_id": "wlr_ent_000013",
+      "product_ids": [
+        "wlr_prod_000041"
+      ],
+      "event_ids": [
+        "wlr_ev_000100"
+      ],
+      "product_id": "wlr_prod_000041",
+      "event_id": "wlr_ev_000100",
+      "source_type": "official_blog",
+      "title": "Keystone 3 Pro: A Community-Centric Designed Hardware Wallet",
+      "url": "https://blog.keyst.one/keystone-3-pro-a-community-centric-designed-hardware-wallet-3d5f8f5b41e5",
+      "publisher": "Keystone",
+      "published_at": "2023-09-04",
+      "accessed_at": "2026-08-17",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party Keystone article used to anchor the public Keystone 3 Pro announcement milestone; it is not treated as proof of the exact first commercial shipment date."
+    },
+    {
+      "id": "wlr_src_000165",
+      "entity_id": "wlr_ent_000013",
+      "product_id": "wlr_prod_000041",
+      "event_id": "wlr_ev_000106",
+      "source_type": "official_blog",
+      "title": "Keystone 3 Pro: A Community-Centric Designed Hardware Wallet",
+      "url": "https://keyst.one/",
+      "publisher": "Keystone",
+      "published_at": "2023-09-04",
+      "accessed_at": "2026-08-18",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "Keystone's own site indexes this Keystone 3 Pro-specific article as published on 2023-09-04. It supports the 2023 product boundary but is not treated as proof of an exact first release day."
+    },
+    {
+      "id": "wlr_src_000166",
+      "entity_id": "wlr_ent_000013",
+      "product_id": "wlr_prod_000041",
+      "event_id": "wlr_ev_000106",
+      "source_type": "source_code",
+      "title": "Keystone 3 firmware release v0.9.0 lineage",
+      "url": "https://github.com/KeystoneHQ/keystone3-firmware/commit/fc0acf531cd5593ae08f745c8febeb35c939c317",
+      "publisher": "KeystoneHQ",
+      "published_at": "2023-09-11",
+      "accessed_at": "2026-08-18",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "Official Keystone 3 firmware repository commit merging release/v0.9.0 during 2023. Used as first-party release-lineage corroboration for year-level chronology, not as an exact commercial launch date."
+    }
+  ]
+}

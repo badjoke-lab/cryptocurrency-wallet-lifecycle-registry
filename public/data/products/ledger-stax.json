@@ -1,0 +1,67 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000002",
+    "slug": "ledger",
+    "canonical_name": "Ledger",
+    "wallet_type": "hardware",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000010",
+    "entity_id": "wlr_ent_000002",
+    "slug": "ledger-stax",
+    "product_name": "Ledger Stax",
+    "aliases": [],
+    "product_type": "hardware_device",
+    "status": "active",
+    "sales_status": "on_sale",
+    "support_status": "supported",
+    "launch_date": "2024-05-28",
+    "launch_date_precision": "day",
+    "generation": null,
+    "variants": [],
+    "summary": "Secure touchscreen signer; shipping began for pre-order customers on 2024-05-28.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "notes": "Secure touchscreen signer; shipping began for pre-order customers on 2024-05-28."
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000016",
+      "entity_id": "wlr_ent_000002",
+      "product_id": "wlr_prod_000010",
+      "affected_product_ids": [
+        "wlr_prod_000010"
+      ],
+      "event_type": "product_released",
+      "event_date": "2024-05-28",
+      "event_date_basis": "release",
+      "title": "Ledger Stax shipping began",
+      "description": "Ledger began shipping Ledger Stax to pre-order customers.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000020",
+      "entity_id": "wlr_ent_000002",
+      "product_id": "wlr_prod_000010",
+      "event_id": "wlr_ev_000016",
+      "source_type": "official_blog",
+      "title": "Ledger Stax Now Shipping: A Message From Ledger’s CEO Pascal Gauthier",
+      "url": "https://www.ledger.com/blog-ledger-stax-now-shipping-a-message-from-ledgers-ceo-pascal-gauthier",
+      "publisher": "Ledger",
+      "published_at": "2024-05-28",
+      "accessed_at": "2026-08-14",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": ""
+    }
+  ]
+}

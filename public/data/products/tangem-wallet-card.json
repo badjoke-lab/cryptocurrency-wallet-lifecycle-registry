@@ -1,0 +1,95 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000014",
+    "slug": "tangem",
+    "canonical_name": "Tangem",
+    "wallet_type": "hybrid",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000042",
+    "entity_id": "wlr_ent_000014",
+    "slug": "tangem-wallet-card",
+    "product_name": "Tangem Wallet Card",
+    "aliases": [
+      "Tangem Wallet"
+    ],
+    "product_type": "hardware_device",
+    "status": "active",
+    "sales_status": "on_sale",
+    "support_status": "supported",
+    "launch_date": "2021",
+    "launch_date_precision": "year",
+    "official_url": "https://tangem.com/en/",
+    "custody_model": "self_custody",
+    "key_management_model": "secure_element_held_private_key",
+    "variants": [
+      "2-card set",
+      "3-card set"
+    ],
+    "summary": "NFC card-shaped Tangem hardware wallet whose private key is generated and held inside the device secure element.",
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-15",
+    "notes": "Tangem states its card-shaped wallet was introduced in late 2021."
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000045",
+      "entity_id": "wlr_ent_000014",
+      "product_id": "wlr_prod_000042",
+      "affected_product_ids": [
+        "wlr_prod_000042"
+      ],
+      "event_type": "product_released",
+      "event_date": "2021",
+      "event_date_basis": "approximate",
+      "title": "Tangem card-shaped wallet launched",
+      "description": "Tangem states that its card-shaped Tangem Wallet was introduced in late 2021.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000060",
+      "entity_id": "wlr_ent_000014",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Wallet Types: Mobile vs Hardware",
+      "url": "https://tangem.com/en/help-center/introduction-to-tangem-wallet/wallet-types-mobile-vs-hardware/",
+      "publisher": "Tangem",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "architecture",
+      "is_primary": true,
+      "product_ids": [
+        "wlr_prod_000042",
+        "wlr_prod_000043",
+        "wlr_prod_000044"
+      ],
+      "notes": "Primary source separating Mobile Wallet from hardware card/ring wallet and describing their different key-storage boundaries."
+    },
+    {
+      "id": "wlr_src_000061",
+      "entity_id": "wlr_ent_000014",
+      "product_id": "wlr_prod_000042",
+      "event_id": "wlr_ev_000045",
+      "source_type": "official_blog",
+      "title": "Tangem AMA | 2023 Recap & 2024 Roadmap Part I",
+      "url": "https://tangem.com/en/blog/post/tangem-ama-1/",
+      "publisher": "Tangem",
+      "published_at": null,
+      "accessed_at": "2026-08-15",
+      "reliability": "high",
+      "claim_scope": "product_lineage",
+      "is_primary": true,
+      "notes": "Tangem states it was founded in 2017 and that the Tangem wallet launched in late 2021."
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000026",
+    "slug": "safepal",
+    "canonical_name": "SafePal",
+    "wallet_type": "hybrid",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000074",
+    "entity_id": "wlr_ent_000026",
+    "slug": "safepal-extension-wallet",
+    "product_name": "SafePal Extension Wallet",
+    "aliases": [],
+    "product_type": "browser_extension",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "supported",
+    "launch_date": "2022-08-19",
+    "launch_date_precision": "day",
+    "platform": [
+      "Chrome",
+      "Edge"
+    ],
+    "official_url": "https://www.safepal.com/en/download/index",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "browser_local_software_keys",
+    "variants": [],
+    "summary": "SafePal self-custody browser-extension wallet for supported desktop browsers.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-17",
+    "notes": "Current first-party download page explicitly lists Chrome and Edge distribution; launch date is left unset pending a separate reviewed launch source."
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000092",
+      "entity_id": "wlr_ent_000026",
+      "product_id": "wlr_prod_000074",
+      "affected_product_ids": [
+        "wlr_prod_000074"
+      ],
+      "event_type": "product_released",
+      "event_date": "2022-08-19",
+      "event_date_basis": "release",
+      "title": "SafePal Extension Wallet officially launched",
+      "description": "SafePal announced the official launch of its browser extension wallet on August 19, 2022.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "The historical launch announcement listed Chrome, Firefox and Microsoft Edge. Current supported-browser status is governed separately by current distribution evidence and is not inferred from this 2022 event."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000146",
+      "entity_id": "wlr_ent_000026",
+      "product_ids": [
+        "wlr_prod_000070",
+        "wlr_prod_000071",
+        "wlr_prod_000072",
+        "wlr_prod_000073",
+        "wlr_prod_000074"
+      ],
+      "event_ids": [],
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "SafePal Download Center",
+      "url": "https://www.safepal.com/en/download/index",
+      "publisher": "SafePal",
+      "published_at": null,
+      "accessed_at": "2026-08-17",
+      "reliability": "high",
+      "claim_scope": "status",
+      "is_primary": true,
+      "notes": "Current first-party distribution page confirming the active SafePal App, SafePal Extension Wallet, and supported SafePal S1, S1 Pro, and X1 hardware-wallet lines."
+    },
+    {
+      "id": "wlr_src_000150",
+      "entity_id": "wlr_ent_000026",
+      "product_ids": [
+        "wlr_prod_000074"
+      ],
+      "event_ids": [
+        "wlr_ev_000092"
+      ],
+      "product_id": "wlr_prod_000074",
+      "event_id": "wlr_ev_000092",
+      "source_type": "official_blog",
+      "title": "The SafePal difference, now available on Chrome: Introducing SafePal Browser Extension Wallet",
+      "url": "https://www.safepal.com/en/blog/safepal-extension-wallet/",
+      "publisher": "SafePal",
+      "published_at": "2022-08-19",
+      "accessed_at": "2026-08-17",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party SafePal announcement explicitly identifies August 19, 2022 as the official launch of the SafePal browser extension wallet."
+    }
+  ]
+}

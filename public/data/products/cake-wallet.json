@@ -1,0 +1,56 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000042",
+    "slug": "cake-wallet",
+    "canonical_name": "Cake Wallet",
+    "wallet_type": "software",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000091",
+    "entity_id": "wlr_ent_000042",
+    "slug": "cake-wallet",
+    "product_name": "Cake Wallet",
+    "product_type": "multi_platform_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": "2018",
+    "launch_date_precision": "year",
+    "platform": [
+      "iOS",
+      "Android",
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "official_url": "https://cakewallet.com/",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "user_controlled_software_private_keys",
+    "summary": "Current open-source non-custodial Cake Wallet application distributed across mobile and desktop platforms.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-19",
+    "notes": "First-party history establishes the Cake Wallet product lineage in 2018; year precision is retained."
+  },
+  "events": [],
+  "evidence": [
+    {
+      "id": "wlr_src_000230",
+      "entity_id": "wlr_ent_000042",
+      "product_id": "wlr_prod_000091",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Cake Wallet: Payments Made Easy",
+      "url": "https://cakewallet.com/",
+      "publisher": "Cake Wallet",
+      "published_at": null,
+      "accessed_at": "2026-08-19",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party site identifies Cake Wallet as open-source and non-custodial and provides current downloads across supported platforms."
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "schema": "wlr.wallet-record.v1",
+  "entity": {
+    "id": "wlr_ent_000073",
+    "slug": "cypherock",
+    "canonical_name": "Cypherock",
+    "aliases": [],
+    "wallet_type": "hardware",
+    "status": "active",
+    "summary": "Self-custody hardware-wallet ecosystem centered on Cypherock X1, which distributes wallet key material across an X1 Vault and four X1 Cards.",
+    "developer_or_company": "Cypherock",
+    "country_or_origin": null,
+    "launch_date": null,
+    "official_url": "https://www.cypherock.com/",
+    "official_domain": "cypherock.com",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "shamir_split_key_shards_across_user_controlled_hardware",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "notes": "Current first-party Cypherock documentation describes the X1 as a self-custody hardware wallet whose key shards are held across user-controlled hardware components. Initial product/company launch date remains unresolved."
+  },
+  "products": [
+    {
+      "id": "wlr_prod_000122",
+      "entity_id": "wlr_ent_000073",
+      "slug": "cypherock-x1",
+      "product_name": "Cypherock X1",
+      "product_type": "hardware_device",
+      "status": "active",
+      "sales_status": "on_sale",
+      "support_status": "unknown",
+      "launch_date": null,
+      "platform": null,
+      "official_url": "https://store.cypherock.com/product/cypherock-x1",
+      "source_code_url": null,
+      "custody_model": "self_custody",
+      "key_management_model": "shamir_split_key_shards_across_x1_vault_and_four_x1_cards",
+      "summary": "Cypherock X1 hardware wallet that distributes wallet key material across an X1 Vault and four user-controlled X1 Cards.",
+      "confidence": "high",
+      "last_verified_at": "2026-08-20",
+      "notes": "Current official store provides Add to cart / Buy Now controls, supporting on_sale. Initial public launch date remains unresolved."
+    }
+  ],
+  "events": [
+    {
+      "id": "wlr_ev_000143",
+      "entity_id": "wlr_ent_000073",
+      "product_id": "wlr_prod_000122",
+      "affected_product_ids": [
+        "wlr_prod_000122"
+      ],
+      "event_type": "product_released",
+      "event_date": "2022",
+      "event_date_basis": "release",
+      "title": "Cypherock X1 launched in private beta",
+      "description": "Cypherock states that the X1 hardware vault launched in private beta in 2022.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "The source establishes private beta in 2022 only. WLR does not convert this to general availability or infer a more precise date."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000291",
+      "entity_id": "wlr_ent_000073",
+      "product_id": null,
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Cypherock Introduction",
+      "url": "https://docs.cypherock.com/",
+      "publisher": "Cypherock",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "entity",
+      "is_primary": true,
+      "notes": "First-party Cypherock docs identify Cypherock X1 as a self-custody hardware wallet project and describe the project's self-sovereignty mission."
+    },
+    {
+      "id": "wlr_src_000292",
+      "entity_id": "wlr_ent_000073",
+      "product_id": "wlr_prod_000122",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Cypherock X1",
+      "url": "https://store.cypherock.com/product/cypherock-x1",
+      "publisher": "Cypherock",
+      "published_at": null,
+      "accessed_at": "2026-08-20",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current official store establishes active X1 purchase availability and explains that the X1 Vault never stores complete private keys."
+    },
+    {
+      "id": "wlr_src_000370",
+      "entity_id": "wlr_ent_000073",
+      "product_id": "wlr_prod_000122",
+      "event_id": "wlr_ev_000143",
+      "source_type": "official_blog",
+      "title": "Cypherock Cover",
+      "url": "https://www.cypherock.com/blogs/cypherock-cover",
+      "publisher": "Cypherock",
+      "published_at": null,
+      "accessed_at": "2026-08-21",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party Cypherock history states that Cypherock X1 launched in private beta in 2022."
+    }
+  ]
+}
