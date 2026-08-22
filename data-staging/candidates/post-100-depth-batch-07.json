@@ -1,0 +1,21 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_post-100-depth-batch-07",
+  "title": "Post-100 depth batch 07",
+  "review_state": "review_ready",
+  "notes": "Bounded zero-history depth batch under Issue #249. Uses only first-party lifecycle claims attached to existing canonical product boundaries. OneKey Classic is explicitly excluded because current canonical contains OneKey Pro, not OneKey Classic.",
+  "records": {
+    "entities": [],
+    "products": [],
+    "events": [
+      {"id":"wlr_ev_000145","entity_id":"wlr_ent_000038","product_id":"wlr_prod_000087","affected_product_ids":["wlr_prod_000087"],"event_type":"other","event_date":"2021-04-08","event_date_basis":"announcement","title":"D'CENT Biometric Wallet added Cardano support","description":"D'CENT announced Cardano (ADA) support for the Biometric Wallet through a firmware and mobile-app update path.","confidence":"high","event_status_effect":"none","is_major_event":false,"notes":"This is a product capability/integration milestone. It is not treated as the D'CENT product launch date."},
+      {"id":"wlr_ev_000146","entity_id":"wlr_ent_000039","product_id":"wlr_prod_000088","affected_product_ids":["wlr_prod_000088"],"event_type":"product_released","event_date":"2021-05-20","event_date_basis":"release","title":"CoolWallet Pro released","description":"CoolBitX announced the release of CoolWallet Pro on 2021-05-20, with the device available to order and order fulfillment stated to begin from 2021-05-24.","confidence":"high","event_status_effect":"active","is_major_event":true,"notes":"The event preserves the first-party release announcement date and separately notes the later stated fulfillment start; it does not backdate shipping."},
+      {"id":"wlr_ev_000147","entity_id":"wlr_ent_000062","product_id":"wlr_prod_000111","affected_product_ids":["wlr_prod_000111"],"event_type":"product_released","event_date":"2021-10-23","event_date_basis":"release","title":"HashPack launched publicly","description":"HashPack's first-party one-year retrospective states that HashPack launched into the public sphere on 2021-10-23; first-party history describes the launch as a browser-based app and dedicated Chrome extension.","confidence":"high","event_status_effect":"active","is_major_event":true,"notes":"The exact date comes from HashPack's own one-year retrospective and is attached to the existing HashPack Extension product boundary."}
+    ],
+    "evidence": [
+      {"id":"wlr_src_000372","entity_id":"wlr_ent_000038","product_id":"wlr_prod_000087","event_id":"wlr_ev_000145","source_type":"official_blog","title":"D'CENT Biometric Wallet Integrates Cardano (ADA)","url":"https://store.dcentwallet.com/blogs/post/d-cent-biometric-wallet-integrates-cardano-ada","publisher":"D'CENT Wallet","published_at":"2021-04-08","accessed_at":"2026-08-23","reliability":"high","claim_scope":"event","is_primary":true,"notes":"First-party D'CENT announcement of Cardano support for the Biometric Wallet and the associated firmware/app update path."},
+      {"id":"wlr_src_000373","entity_id":"wlr_ent_000039","product_id":"wlr_prod_000088","event_id":"wlr_ev_000146","source_type":"official_blog","title":"Introducing the CoolWallet Pro For Enhanced Staking, DeFi, DApp, and NFT Support","url":"https://www.coolwallet.io/blogs/blog/introducing-the-coolwallet-pro-for-enhanced-staking-defi-dapp-and-nft-support","publisher":"CoolWallet / CoolBitX","published_at":null,"accessed_at":"2026-08-23","reliability":"high","claim_scope":"event","is_primary":true,"notes":"First-party release text dated Taipei, 20 May 2021 states CoolBitX announced the release of CoolWallet Pro, available to order with fulfillment from 24 May 2021. Evidence publication metadata is left null rather than conflating page metadata with the release date stated in the article body."},
+      {"id":"wlr_src_000374","entity_id":"wlr_ent_000062","product_id":"wlr_prod_000111","event_id":"wlr_ev_000147","source_type":"official_blog","title":"HashPack – one year anniversary","url":"https://www.hashpack.app/post/hashpack-one-year-anniversary","publisher":"HashPack","published_at":"2022-10-24","accessed_at":"2026-08-23","reliability":"high","claim_scope":"event","is_primary":true,"notes":"First-party retrospective explicitly states HashPack launched on 2021-10-23."}
+    ]
+  }
+}
