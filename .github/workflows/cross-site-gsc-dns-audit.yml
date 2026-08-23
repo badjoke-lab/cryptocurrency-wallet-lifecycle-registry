@@ -65,3 +65,4 @@ jobs:
           curl -fsSL https://www.stableorgone.com/robots.txt | grep -F 'Sitemap:'
           curl -fsSL https://www.viewloom.net/robots.txt | grep -F 'Sitemap:'
           curl -fsSL https://wlr.badjoke-lab.com/robots.txt | grep -F 'Sitemap:'
+
