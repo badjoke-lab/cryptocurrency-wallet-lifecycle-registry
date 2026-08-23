@@ -33,7 +33,7 @@
       "status": "active",
       "sales_status": "not_applicable",
       "support_status": "unknown",
-      "launch_date": null,
+      "launch_date": "2018-02-13",
       "platform": null,
       "official_url": "https://www.tokenpocket.pro/",
       "source_code_url": null,
@@ -41,11 +41,30 @@
       "key_management_model": "user_controlled_software_private_keys",
       "summary": "TokenPocket's current mobile multi-chain decentralized wallet product.",
       "confidence": "high",
-      "last_verified_at": "2026-08-19",
-      "notes": "The official about page establishes the mobile wallet as a current product; initial mobile-product launch date remains unresolved."
+      "last_verified_at": "2026-08-23",
+      "notes": "The official about page establishes the mobile wallet as a current product; initial mobile-product launch date remains unresolved.",
+      "launch_date_precision": "day"
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000148",
+      "entity_id": "wlr_ent_000030",
+      "product_id": "wlr_prod_000079",
+      "affected_product_ids": [
+        "wlr_prod_000079"
+      ],
+      "event_type": "product_released",
+      "event_date": "2018-02-13",
+      "event_date_basis": "release",
+      "title": "TokenPocket Wallet officially released",
+      "description": "TokenPocket's first-party announcement history records the formal release of TokenPocket Wallet on 2018-02-13.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "The source provides an exact first-party formal release date. Canonical product wlr_prod_000079 is corrected from unresolved launch_date to 2018-02-13 with day precision in this promotion."
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000204",
@@ -78,6 +97,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Current first-party about page identifies TokenPocket as a multi-chain decentralized wallet with a mobile wallet among its user-facing products."
+    },
+    {
+      "id": "wlr_src_000375",
+      "entity_id": "wlr_ent_000030",
+      "product_id": "wlr_prod_000079",
+      "event_id": "wlr_ev_000148",
+      "source_type": "official_statement",
+      "title": "TokenPocket announcement center — TokenPocket Wallet officially released",
+      "url": "https://www.tokenpocket.pro/announcement/",
+      "publisher": "TokenPocket",
+      "published_at": "2018-02-13",
+      "accessed_at": "2026-08-23",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party TokenPocket announcement center lists the formal TokenPocket Wallet release on 2018-02-13. Used for the exact product-release event and canonical launch-date correction."
     }
   ]
 }

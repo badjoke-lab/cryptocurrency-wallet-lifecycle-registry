@@ -16,7 +16,7 @@
     "status": "active",
     "sales_status": "not_applicable",
     "support_status": "unknown",
-    "launch_date": null,
+    "launch_date": "2020-03",
     "platform": [
       "iOS",
       "Android"
@@ -27,10 +27,29 @@
     "key_management_model": "device_local_client_side_wallet_keys",
     "summary": "Current MEW mobile wallet application for iOS and Android, providing self-custody wallet access and onchain features.",
     "confidence": "high",
-    "last_verified_at": "2026-08-19",
-    "notes": "Current product identity is first-party supported; initial MEW Mobile launch date is intentionally unresolved in this batch."
+    "last_verified_at": "2026-08-23",
+    "notes": "Current product identity is first-party supported; initial MEW Mobile launch date is intentionally unresolved in this batch.",
+    "launch_date_precision": "month"
   },
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000151",
+      "entity_id": "wlr_ent_000027",
+      "product_id": "wlr_prod_000076",
+      "affected_product_ids": [
+        "wlr_prod_000076"
+      ],
+      "event_type": "product_released",
+      "event_date": "2020-03",
+      "event_date_basis": "release",
+      "title": "Full-fledged MEW wallet mobile app released",
+      "description": "MyEtherWallet's first-party ten-year retrospective states that its full-fledged MEW wallet app was released in March 2020 after the earlier MEWconnect signer-app lineage.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "Month precision only. The reviewed first-party retrospective establishes March 2020 but not one defensible exact release day. Canonical product wlr_prod_000076 is corrected from unresolved launch_date to 2020-03 with month precision. This is the full-fledged MEW wallet app, not the earlier MEWconnect signer app."
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000199",
@@ -47,6 +66,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "First-party current overview identifies MEW Mobile for iOS and Android and states that MEW remains non-custodial, open-source and client-side."
+    },
+    {
+      "id": "wlr_src_000378",
+      "entity_id": "wlr_ent_000027",
+      "product_id": "wlr_prod_000076",
+      "event_id": "wlr_ev_000151",
+      "source_type": "official_blog",
+      "title": "10 Years of MyEtherWallet: Evolving with Ethereum",
+      "url": "https://www.myetherwallet.com/blog/10-years-of-myetherwallet-evolving-with-ethereum/",
+      "publisher": "MyEtherWallet",
+      "published_at": null,
+      "accessed_at": "2026-08-23",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party MEW retrospective states that the full-fledged MEW wallet app was released in March 2020 and distinguishes it from the earlier MEWconnect signer app. Used at month precision only."
     }
   ]
 }

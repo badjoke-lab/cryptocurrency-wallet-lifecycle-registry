@@ -33,7 +33,7 @@
       "status": "active",
       "sales_status": "not_applicable",
       "support_status": "unknown",
-      "launch_date": null,
+      "launch_date": "2020-03",
       "platform": [
         "iOS",
         "Android"
@@ -44,8 +44,9 @@
       "key_management_model": "device_local_client_side_wallet_keys",
       "summary": "Current MEW mobile wallet application for iOS and Android, providing self-custody wallet access and onchain features.",
       "confidence": "high",
-      "last_verified_at": "2026-08-19",
-      "notes": "Current product identity is first-party supported; initial MEW Mobile launch date is intentionally unresolved in this batch."
+      "last_verified_at": "2026-08-23",
+      "notes": "Current product identity is first-party supported; initial MEW Mobile launch date is intentionally unresolved in this batch.",
+      "launch_date_precision": "month"
     }
   ],
   "events": [
@@ -66,6 +67,23 @@
       "event_status_effect": "none",
       "is_major_event": true,
       "notes": "The incident is scoped to the public web/DNS path rather than a compromise of MEW application code or wallet servers. MEW stated that its Chrome extension and locally run/offline copies were not affected. Cloudflare's network analysis attributes the hijacked DNS routes to Amazon Route 53; WLR does not preserve the early Google-DNS attribution from the initial MEW statement. No exact loss amount is canonicalized in this candidate."
+    },
+    {
+      "id": "wlr_ev_000151",
+      "entity_id": "wlr_ent_000027",
+      "product_id": "wlr_prod_000076",
+      "affected_product_ids": [
+        "wlr_prod_000076"
+      ],
+      "event_type": "product_released",
+      "event_date": "2020-03",
+      "event_date_basis": "release",
+      "title": "Full-fledged MEW wallet mobile app released",
+      "description": "MyEtherWallet's first-party ten-year retrospective states that its full-fledged MEW wallet app was released in March 2020 after the earlier MEWconnect signer-app lineage.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "Month precision only. The reviewed first-party retrospective establishes March 2020 but not one defensible exact release day. Canonical product wlr_prod_000076 is corrected from unresolved launch_date to 2020-03 with month precision. This is the full-fledged MEW wallet app, not the earlier MEWconnect signer app."
     }
   ],
   "evidence": [
@@ -132,6 +150,22 @@
       "claim_scope": "event",
       "is_primary": true,
       "notes": "Cloudflare's first-hand BGP and DNS-resolver analysis attributes the hijacked prefixes to Amazon Route 53 DNS, observes malicious responses specifically for myetherwallet.com, and reports that stolen login information was used to transfer Ethereum."
+    },
+    {
+      "id": "wlr_src_000378",
+      "entity_id": "wlr_ent_000027",
+      "product_id": "wlr_prod_000076",
+      "event_id": "wlr_ev_000151",
+      "source_type": "official_blog",
+      "title": "10 Years of MyEtherWallet: Evolving with Ethereum",
+      "url": "https://www.myetherwallet.com/blog/10-years-of-myetherwallet-evolving-with-ethereum/",
+      "publisher": "MyEtherWallet",
+      "published_at": null,
+      "accessed_at": "2026-08-23",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party MEW retrospective states that the full-fledged MEW wallet app was released in March 2020 and distinguishes it from the earlier MEWconnect signer app. Used at month precision only."
     }
   ]
 }
