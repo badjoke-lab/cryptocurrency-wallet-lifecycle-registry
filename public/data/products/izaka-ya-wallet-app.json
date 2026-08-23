@@ -1,0 +1,102 @@
+{
+  "schema": "wlr.product-record.v1",
+  "entity": {
+    "id": "wlr_ent_000101",
+    "slug": "izaka-ya-wallet",
+    "canonical_name": "IZAKA-YA Wallet",
+    "wallet_type": "mpc_threshold",
+    "status": "active"
+  },
+  "product": {
+    "id": "wlr_prod_000150",
+    "entity_id": "wlr_ent_000101",
+    "slug": "izaka-ya-wallet-app",
+    "product_name": "IZAKA-YA Wallet",
+    "aliases": [
+      "IZAKA-YA cloud wallet"
+    ],
+    "product_type": "mpc_wallet",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "supported",
+    "launch_date": "2023-12",
+    "launch_date_precision": "month",
+    "platform": [
+      "web"
+    ],
+    "summary": "Provider-operated cloud wallet using Fireblocks MPC infrastructure with deposits, withdrawals, transfers, swaps and integrated lending.",
+    "custody_model": "custodial",
+    "key_management_model": "Fireblocks MPC-CMP; independent user recovery not established",
+    "confidence": "medium",
+    "last_verified_at": "2026-08-23",
+    "official_url": "https://izakaya.tech/ja/wallet/",
+    "notes": "Do not infer independent self-custody from MPC terminology. The reviewed record does not establish a user-controlled seed or service-independent recovery path."
+  },
+  "events": [
+    {
+      "id": "wlr_ev_000154",
+      "entity_id": "wlr_ent_000101",
+      "product_id": "wlr_prod_000150",
+      "event_type": "launched",
+      "event_date": "2023-12",
+      "event_date_basis": "announcement",
+      "title": "IZAKA-YA service launch period",
+      "description": "Izakaya Limited states that the IZAKA-YA wallet service began in December 2023. Current service materials describe a cloud wallet using Fireblocks MPC infrastructure.",
+      "confidence": "medium",
+      "impact_level": "medium",
+      "security_scope": "cloud_service",
+      "funds_affected": "unknown",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "Month precision follows the operator company profile; no day is inferred."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wlr_src_000381",
+      "entity_id": "wlr_ent_000101",
+      "product_id": "wlr_prod_000150",
+      "event_id": "wlr_ev_000154",
+      "source_type": "official_statement",
+      "title": "会社概要 | IZAKA-YA",
+      "url": "https://izakaya.tech/about/",
+      "publisher": "Izakaya Limited",
+      "published_at": null,
+      "accessed_at": "2026-08-23",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "Operator states Izakaya Limited, Hong Kong address, and service start in December 2023."
+    },
+    {
+      "id": "wlr_src_000382",
+      "entity_id": "wlr_ent_000101",
+      "product_id": "wlr_prod_000150",
+      "source_type": "official_statement",
+      "title": "IZAKA-YA | 仮想通貨レンディングウォレット",
+      "url": "https://izakaya.tech/ja/wallet/",
+      "publisher": "Izakaya Limited",
+      "published_at": null,
+      "accessed_at": "2026-08-23",
+      "reliability": "high",
+      "claim_scope": "architecture",
+      "is_primary": true,
+      "notes": "Operator describes cloud wallet, Fireblocks MPC-CMP, deposits, withdrawals, transfers, swaps and lending."
+    },
+    {
+      "id": "wlr_src_000383",
+      "entity_id": "wlr_ent_000101",
+      "product_id": "wlr_prod_000150",
+      "source_type": "other",
+      "title": "IZAKA-YA customer story",
+      "url": "https://www.fireblocks.com/customers/izakaya/",
+      "publisher": "Fireblocks",
+      "published_at": null,
+      "accessed_at": "2026-08-23",
+      "reliability": "medium",
+      "claim_scope": "architecture",
+      "is_primary": false,
+      "notes": "Vendor customer story corroborates embedded Fireblocks custody/management infrastructure. Vendor marketing is not independent proof of overall wallet safety."
+    }
+  ]
+}

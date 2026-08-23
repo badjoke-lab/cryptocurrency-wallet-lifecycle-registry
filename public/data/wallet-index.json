@@ -498,5 +498,10 @@
     "id": "wlr_ent_000100",
     "slug": "prokey",
     "path": "/data/wallets/prokey.json"
+  },
+  {
+    "id": "wlr_ent_000101",
+    "slug": "izaka-ya-wallet",
+    "path": "/data/wallets/izaka-ya-wallet.json"
   }
 ]

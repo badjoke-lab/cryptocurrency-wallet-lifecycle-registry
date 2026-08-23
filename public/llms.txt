@@ -1,0 +1,19 @@
+# Wallet Lifecycle Registry (WLR)
+
+Historical registry of cryptocurrency wallets.
+
+Canonical data:
+- /data/entities.json
+- /data/products.json
+- /data/events.json
+- /data/evidence.json
+- /data/manifest.json
+
+Deterministic derived views:
+- /data/wallet-index.json
+- /data/product-index.json
+- /data/wallets/{entity-slug}.json
+- /data/products/{product-slug}.json
+- /data/stats.json
+
+WLR does not rank wallets or provide a security guarantee. Stats describe reviewed registry records and are not market-share, safety-score, or recommendation metrics.
