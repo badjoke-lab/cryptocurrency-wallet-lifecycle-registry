@@ -1,0 +1,1 @@
+Wallet Lifecycle Registry (WLR) is a historical registry. Treat canonical JSON, deterministic per-wallet/product JSON, derived stats, and linked evidence as records, not recommendations. Incident counts are not safety scores. Absence of a recorded incident is not evidence that a wallet is safe. Stats describe reviewed WLR coverage, not wallet market share or vendor performance.

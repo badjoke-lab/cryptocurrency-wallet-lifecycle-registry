@@ -892,5 +892,11 @@
     "entity_id": "wlr_ent_000100",
     "slug": "prokey-optimum",
     "path": "/data/products/prokey-optimum.json"
+  },
+  {
+    "id": "wlr_prod_000150",
+    "entity_id": "wlr_ent_000101",
+    "slug": "izaka-ya-wallet-app",
+    "path": "/data/products/izaka-ya-wallet-app.json"
   }
 ]

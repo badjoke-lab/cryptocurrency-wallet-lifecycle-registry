@@ -23,14 +23,14 @@
   "object_type": "registry_descriptor",
   "record_counts": {
     "native": {
-      "entities": 100,
-      "events": 153,
-      "evidence": 380,
-      "product_records": 149,
-      "products": 149,
-      "wallet_records": 100
+      "entities": 101,
+      "events": 154,
+      "evidence": 383,
+      "product_records": 150,
+      "products": 150,
+      "wallet_records": 101
     },
-    "primary_records": 100,
+    "primary_records": 101,
     "relationships": 161
   },
   "record_types": [
@@ -67,6 +67,6 @@
   },
   "series_schema_version": "1.0.0",
   "verification": {
-    "last_verified_at": "2026-08-20"
+    "last_verified_at": "2026-08-23"
   }
 }

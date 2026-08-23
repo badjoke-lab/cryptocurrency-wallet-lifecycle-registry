@@ -1,11 +1,11 @@
 {
   "canonical_only": true,
-  "last_verified_at": "2026-08-20",
+  "last_verified_at": "2026-08-23",
   "object_type": "record_index",
-  "record_count": 249,
+  "record_count": 251,
   "record_counts": {
-    "products": 149,
-    "wallets": 100
+    "products": 150,
+    "wallets": 101
   },
   "records": [
     {
@@ -1797,6 +1797,18 @@
       "status": "active"
     },
     {
+      "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000150",
+      "human_url": "https://wlr.badjoke-lab.com/product/izaka-ya-wallet-app/",
+      "machine_url": "https://wlr.badjoke-lab.com/data/series/records/product--izaka-ya-wallet-app.json",
+      "name": "IZAKA-YA Wallet",
+      "native_machine_url": "https://wlr.badjoke-lab.com/data/products/izaka-ya-wallet-app.json",
+      "native_record_id": "wlr_prod_000150",
+      "native_record_type": "wlr.product-record.v1",
+      "series_slug": "product--izaka-ya-wallet-app",
+      "slug": "izaka-ya-wallet-app",
+      "status": "active"
+    },
+    {
       "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000001",
       "human_url": "https://wlr.badjoke-lab.com/wallet/trezor/",
       "machine_url": "https://wlr.badjoke-lab.com/data/series/records/wallet--trezor.json",
@@ -2994,6 +3006,18 @@
       "native_record_type": "wlr.wallet-record.v1",
       "series_slug": "wallet--prokey",
       "slug": "prokey",
+      "status": "active"
+    },
+    {
+      "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000101",
+      "human_url": "https://wlr.badjoke-lab.com/wallet/izaka-ya-wallet/",
+      "machine_url": "https://wlr.badjoke-lab.com/data/series/records/wallet--izaka-ya-wallet.json",
+      "name": "IZAKA-YA Wallet",
+      "native_machine_url": "https://wlr.badjoke-lab.com/data/wallets/izaka-ya-wallet.json",
+      "native_record_id": "wlr_ent_000101",
+      "native_record_type": "wlr.wallet-record.v1",
+      "series_slug": "wallet--izaka-ya-wallet",
+      "slug": "izaka-ya-wallet",
       "status": "active"
     }
   ],

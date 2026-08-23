@@ -1,0 +1,124 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "medium",
+      "current_vendor": null,
+      "custody_model": "custodial",
+      "open_source_status": null,
+      "product_ids": [
+        "wlr_prod_000150"
+      ],
+      "status": "active",
+      "wallet_type": "mpc_threshold",
+      "website_status": null
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "confidence": "medium",
+        "description": "Izakaya Limited states that the IZAKA-YA wallet service began in December 2023. Current service materials describe a cloud wallet using Fireblocks MPC infrastructure.",
+        "entity_id": "wlr_ent_000101",
+        "event_date": "2023-12",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "launched",
+        "funds_affected": "unknown",
+        "id": "wlr_ev_000154",
+        "impact_level": "medium",
+        "is_major_event": true,
+        "notes": "Month precision follows the operator company profile; no day is inferred.",
+        "product_id": "wlr_prod_000150",
+        "security_scope": "cloud_service",
+        "title": "IZAKA-YA service launch period"
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-08-23",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000101",
+        "event_id": "wlr_ev_000154",
+        "id": "wlr_src_000381",
+        "is_primary": true,
+        "notes": "Operator states Izakaya Limited, Hong Kong address, and service start in December 2023.",
+        "product_id": "wlr_prod_000150",
+        "published_at": null,
+        "publisher": "Izakaya Limited",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "会社概要 | IZAKA-YA",
+        "url": "https://izakaya.tech/about/"
+      },
+      {
+        "accessed_at": "2026-08-23",
+        "claim_scope": "architecture",
+        "entity_id": "wlr_ent_000101",
+        "id": "wlr_src_000382",
+        "is_primary": true,
+        "notes": "Operator describes cloud wallet, Fireblocks MPC-CMP, deposits, withdrawals, transfers, swaps and lending.",
+        "product_id": "wlr_prod_000150",
+        "published_at": null,
+        "publisher": "Izakaya Limited",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "IZAKA-YA | 仮想通貨レンディングウォレット",
+        "url": "https://izakaya.tech/ja/wallet/"
+      },
+      {
+        "accessed_at": "2026-08-23",
+        "claim_scope": "architecture",
+        "entity_id": "wlr_ent_000101",
+        "id": "wlr_src_000383",
+        "is_primary": false,
+        "notes": "Vendor customer story corroborates embedded Fireblocks custody/management infrastructure. Vendor marketing is not independent proof of overall wallet safety.",
+        "product_id": "wlr_prod_000150",
+        "published_at": null,
+        "publisher": "Fireblocks",
+        "reliability": "medium",
+        "source_type": "other",
+        "title": "IZAKA-YA customer story",
+        "url": "https://www.fireblocks.com/customers/izakaya/"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000101",
+  "identity": {
+    "aliases": [
+      "IZAKA-YA"
+    ],
+    "name": "IZAKA-YA Wallet"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/wallets/izaka-ya-wallet.json",
+    "relationship_boundary": "wallet-to-product links are preserved as native product_ids but are not emitted as typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_ent_000101",
+    "native_record_type": "wlr.wallet-record.v1",
+    "slug": "izaka-ya-wallet"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/izaka-ya-wallet/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/wallet--izaka-ya-wallet.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/wallets/izaka-ya-wallet.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-08-23"
+  }
+}
