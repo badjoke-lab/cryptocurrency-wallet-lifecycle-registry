@@ -27,7 +27,7 @@ on:
       - '.github/workflows/phase9-series-adapter.yml'
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   series-contract:
@@ -35,8 +35,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.ref || github.ref }}
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -49,15 +47,5 @@ jobs:
         run: node scripts/generate-series-adapter.mjs && node scripts/generate-stage5-relationships.mjs
       - name: Validate Series adapter and reviewed relationships
         run: node scripts/validate-series-adapter.mjs && node scripts/validate-stage5-relationships.mjs
-      - name: Commit regenerated tracked Series records for batch 08
-        if: github.event_name == 'pull_request' && github.event.pull_request.head.ref == 'promote/post-100-depth-batch-08'
-        run: |
-          git add public/data/series/records public/data/series/index.json
-          if ! git diff --cached --quiet; then
-            git config user.name github-actions[bot]
-            git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-            git commit -m 'Regenerate Series records for batch 08'
-            git push origin HEAD:promote/post-100-depth-batch-08
-          fi
       - name: Fail on tracked Stage 3 envelope/index drift
         run: git diff --exit-code -- public/data/series/records public/data/series/index.json
