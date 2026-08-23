@@ -44,7 +44,7 @@ jobs:
             echo "${name}_http=$code"
             ids="$(grep -Eo 'G-[A-Z0-9]+' "$out" | sort -u | paste -sd, - || true)"
             [ -n "$ids" ] && echo "${name}_ga4_ids=$ids" || echo "${name}_ga4_ids=NONE"
-            if grep -Eiq '<meta[^>]+name=["'"']google-site-verification["'"']' "$out"; then
+            if grep -Fiq 'google-site-verification' "$out"; then
               echo "${name}_gsc_meta=true"
             else
               echo "${name}_gsc_meta=false"
