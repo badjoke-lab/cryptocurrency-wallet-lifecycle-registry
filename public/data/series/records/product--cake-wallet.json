@@ -22,7 +22,25 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000091"
+        ],
+        "confidence": "high",
+        "description": "Cake Wallet's first-party history states that the project started in 2018 as the first Monero wallet for iOS, establishing the selected product's public release lineage during that year.",
+        "entity_id": "wlr_ent_000042",
+        "event_date": "2018",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000150",
+        "is_major_event": true,
+        "notes": "Year precision only. The reviewed first-party history does not establish a defensible exact public-release month or day, so the existing 2018 launch_date and year precision remain unchanged.",
+        "product_id": "wlr_prod_000091",
+        "title": "Cake Wallet launched as a Monero wallet for iOS"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -42,6 +60,22 @@
         "source_type": "official_statement",
         "title": "Cake Wallet: Payments Made Easy",
         "url": "https://cakewallet.com/"
+      },
+      {
+        "accessed_at": "2026-08-23",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000042",
+        "event_id": "wlr_ev_000150",
+        "id": "wlr_src_000377",
+        "is_primary": true,
+        "notes": "First-party Cake Wallet history states the project was founded in 2018 and started as the first Monero wallet for iOS. Used at year precision only.",
+        "product_id": "wlr_prod_000091",
+        "published_at": null,
+        "publisher": "Cake Wallet",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "About Us | Cake Wallet",
+        "url": "https://cakewallet.com/about/"
       }
     ]
   },

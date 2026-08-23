@@ -22,7 +22,25 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000082"
+        ],
+        "confidence": "high",
+        "description": "Guarda released its Mobile Multiwallet on 2018-12-04 as a universal multi-coin mobile wallet, extending the earlier Guarda wallet lineage into a concrete multi-currency mobile product milestone.",
+        "entity_id": "wlr_ent_000033",
+        "event_date": "2018-12-04",
+        "event_date_basis": "release",
+        "event_status_effect": "none",
+        "event_type": "product_released",
+        "id": "wlr_ev_000149",
+        "is_major_event": true,
+        "notes": "This is a later multi-currency mobile milestone, not the initial launch of the Guarda wallet lineage. Guarda's first-party history separately states that its first Ethereum wallet launched in 2017, so wlr_prod_000082 launch_date remains unresolved rather than being backdated or reset to this 2018 release.",
+        "product_id": "wlr_prod_000082",
+        "title": "Guarda Mobile Multiwallet released"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -42,6 +60,22 @@
         "source_type": "official_statement",
         "title": "Why Guarda? | About Us",
         "url": "https://guarda.com/about/"
+      },
+      {
+        "accessed_at": "2026-08-23",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000033",
+        "event_id": "wlr_ev_000149",
+        "id": "wlr_src_000376",
+        "is_primary": true,
+        "notes": "First-party Guarda release post introducing the universal multi-coin Mobile Multiwallet on 2018-12-04. This source is not used to replace the earlier 2017 single-currency Guarda lineage.",
+        "product_id": "wlr_prod_000082",
+        "published_at": "2018-12-04",
+        "publisher": "Guarda",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Mobile Multiwallet release",
+        "url": "https://guarda.com/blog/mobile-multiwallet-release/"
       }
     ]
   },
