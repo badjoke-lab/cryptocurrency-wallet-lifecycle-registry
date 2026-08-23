@@ -1,0 +1,26 @@
+name: WLR GA4 Production Verify
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Verify production GA4 tag
+        shell: bash
+        run: |
+          set -euo pipefail
+          url='https://wlr.badjoke-lab.com/'
+          html="$(mktemp)"
+          code="$(curl -fsSL --retry 4 --retry-all-errors --retry-delay 2 -o "$html" -w '%{http_code}' "$url")"
+          test "$code" = '200'
+          grep -F 'G-GMQVW28NSS' "$html"
+          grep -F 'https://www.googletagmanager.com/gtag/js?id=G-GMQVW28NSS' "$html"
+          grep -F "gtag('config', 'G-GMQVW28NSS')" "$html"
+          echo 'WLR_GA4_PRODUCTION_OK'
