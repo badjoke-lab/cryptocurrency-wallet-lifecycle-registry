@@ -46,7 +46,8 @@ jobs:
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git checkout origin/main -- .github/workflows/validate.yml
+          git fetch origin main --depth=1
+          git checkout FETCH_HEAD -- .github/workflows/validate.yml
           git rm -f .github/workflows/promote-post-100-depth-batch-08.yml scripts/promote_post_100_depth_batch_08.py
           git add data/products.json data/events.json data/evidence.json .github/workflows/validate.yml
           git commit -m 'Promote post-100 depth batch 08 [batch08 promoted]'
