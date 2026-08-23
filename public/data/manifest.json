@@ -6,8 +6,8 @@
   "record_counts": {
     "entities": 100,
     "products": 149,
-    "events": 147,
-    "evidence": 374,
+    "events": 153,
+    "evidence": 380,
     "wallet_records": 100,
     "product_records": 149
   },

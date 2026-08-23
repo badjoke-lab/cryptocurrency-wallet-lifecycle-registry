@@ -34,6 +34,23 @@
         "product_id": null,
         "security_scope": "other",
         "title": "BGP and DNS hijack redirected MyEtherWallet web users to a phishing site"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000076"
+        ],
+        "confidence": "high",
+        "description": "MyEtherWallet's first-party ten-year retrospective states that its full-fledged MEW wallet app was released in March 2020 after the earlier MEWconnect signer-app lineage.",
+        "entity_id": "wlr_ent_000027",
+        "event_date": "2020-03",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000151",
+        "is_major_event": true,
+        "notes": "Month precision only. The reviewed first-party retrospective establishes March 2020 but not one defensible exact release day. Canonical product wlr_prod_000076 is corrected from unresolved launch_date to 2020-03 with month precision. This is the full-fledged MEW wallet app, not the earlier MEWconnect signer app.",
+        "product_id": "wlr_prod_000076",
+        "title": "Full-fledged MEW wallet mobile app released"
       }
     ]
   },
@@ -103,6 +120,22 @@
         "source_type": "official_blog",
         "title": "BGP leaks and cryptocurrencies",
         "url": "https://blog.cloudflare.com/bgp-leaks-and-crypto-currencies/"
+      },
+      {
+        "accessed_at": "2026-08-23",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000027",
+        "event_id": "wlr_ev_000151",
+        "id": "wlr_src_000378",
+        "is_primary": true,
+        "notes": "First-party MEW retrospective states that the full-fledged MEW wallet app was released in March 2020 and distinguishes it from the earlier MEWconnect signer app. Used at month precision only.",
+        "product_id": "wlr_prod_000076",
+        "published_at": null,
+        "publisher": "MyEtherWallet",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "10 Years of MyEtherWallet: Evolving with Ethereum",
+        "url": "https://www.myetherwallet.com/blog/10-years-of-myetherwallet-evolving-with-ethereum/"
       }
     ]
   },

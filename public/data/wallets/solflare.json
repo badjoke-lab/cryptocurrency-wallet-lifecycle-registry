@@ -46,7 +46,25 @@
       "notes": "Solflare documentation states that the Web App and Extension were the first products built in late 2020. WLR records year precision only."
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000153",
+      "entity_id": "wlr_ent_000031",
+      "product_id": "wlr_prod_000080",
+      "affected_product_ids": [
+        "wlr_prod_000080"
+      ],
+      "event_type": "product_released",
+      "event_date": "2020",
+      "event_date_basis": "release",
+      "title": "Solflare Web App and Extension launched in 2020",
+      "description": "Solflare's first-party documentation states that the Web App and Extension were the first products built by the team in late 2020 and establishes the browser-extension product lineage during that year.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "Year precision only. The reviewed first-party documentation does not establish one defensible exact public-release month or day, so the existing 2020 launch_date and year precision remain unchanged."
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000206",
@@ -95,6 +113,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Current first-party site actively distributes the Solflare browser extension and mobile wallet."
+    },
+    {
+      "id": "wlr_src_000380",
+      "entity_id": "wlr_ent_000031",
+      "product_id": "wlr_prod_000080",
+      "event_id": "wlr_ev_000153",
+      "source_type": "official_statement",
+      "title": "Web App & Extension | Solflare Wallet",
+      "url": "https://docs.solflare.com/solflare/onboarding/web-app-and-extension",
+      "publisher": "Solflare",
+      "published_at": null,
+      "accessed_at": "2026-08-23",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party Solflare documentation states the Web App and Extension were the first products built by the team in late 2020. Used at year precision only."
     }
   ]
 }

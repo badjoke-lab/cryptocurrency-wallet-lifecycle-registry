@@ -16,7 +16,25 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000080"
+        ],
+        "confidence": "high",
+        "description": "Solflare's first-party documentation states that the Web App and Extension were the first products built by the team in late 2020 and establishes the browser-extension product lineage during that year.",
+        "entity_id": "wlr_ent_000031",
+        "event_date": "2020",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000153",
+        "is_major_event": true,
+        "notes": "Year precision only. The reviewed first-party documentation does not establish one defensible exact public-release month or day, so the existing 2020 launch_date and year precision remain unchanged.",
+        "product_id": "wlr_prod_000080",
+        "title": "Solflare Web App and Extension launched in 2020"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -68,6 +86,22 @@
         "source_type": "official_statement",
         "title": "Solflare",
         "url": "https://www.solflare.com/"
+      },
+      {
+        "accessed_at": "2026-08-23",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000031",
+        "event_id": "wlr_ev_000153",
+        "id": "wlr_src_000380",
+        "is_primary": true,
+        "notes": "First-party Solflare documentation states the Web App and Extension were the first products built by the team in late 2020. Used at year precision only.",
+        "product_id": "wlr_prod_000080",
+        "published_at": null,
+        "publisher": "Solflare",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Web App & Extension | Solflare Wallet",
+        "url": "https://docs.solflare.com/solflare/onboarding/web-app-and-extension"
       }
     ]
   },

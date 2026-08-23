@@ -2,8 +2,8 @@
   "current_state": {
     "native": {
       "confidence": "high",
-      "launch_date": null,
-      "launch_date_precision": null,
+      "launch_date": "2020-03",
+      "launch_date_precision": "month",
       "parent_entity": {
         "canonical_name": "MyEtherWallet",
         "id": "wlr_ent_000027",
@@ -22,7 +22,25 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000076"
+        ],
+        "confidence": "high",
+        "description": "MyEtherWallet's first-party ten-year retrospective states that its full-fledged MEW wallet app was released in March 2020 after the earlier MEWconnect signer-app lineage.",
+        "entity_id": "wlr_ent_000027",
+        "event_date": "2020-03",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000151",
+        "is_major_event": true,
+        "notes": "Month precision only. The reviewed first-party retrospective establishes March 2020 but not one defensible exact release day. Canonical product wlr_prod_000076 is corrected from unresolved launch_date to 2020-03 with month precision. This is the full-fledged MEW wallet app, not the earlier MEWconnect signer app.",
+        "product_id": "wlr_prod_000076",
+        "title": "Full-fledged MEW wallet mobile app released"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -42,6 +60,22 @@
         "source_type": "official_statement",
         "title": "MyEtherWallet: An Introduction",
         "url": "https://help.myetherwallet.com/en/articles/5377591-myetherwallet-an-introduction"
+      },
+      {
+        "accessed_at": "2026-08-23",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000027",
+        "event_id": "wlr_ev_000151",
+        "id": "wlr_src_000378",
+        "is_primary": true,
+        "notes": "First-party MEW retrospective states that the full-fledged MEW wallet app was released in March 2020 and distinguishes it from the earlier MEWconnect signer app. Used at month precision only.",
+        "product_id": "wlr_prod_000076",
+        "published_at": null,
+        "publisher": "MyEtherWallet",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "10 Years of MyEtherWallet: Evolving with Ethereum",
+        "url": "https://www.myetherwallet.com/blog/10-years-of-myetherwallet-evolving-with-ethereum/"
       }
     ]
   },
@@ -75,6 +109,6 @@
     "native_machine": "https://wlr.badjoke-lab.com/data/products/mew-mobile.json"
   },
   "verification": {
-    "last_verified_at": "2026-08-19"
+    "last_verified_at": "2026-08-23"
   }
 }

@@ -48,6 +48,23 @@
         "user_actions_required": [
           "monitor"
         ]
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000078"
+        ],
+        "confidence": "high",
+        "description": "imToken's first-party milestone history states that after the project was established on 2016-05-02, imToken version 1.0 was released on 2016-11-11.",
+        "entity_id": "wlr_ent_000029",
+        "event_date": "2016-11-11",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000152",
+        "is_major_event": true,
+        "notes": "This is the selected app release milestone and is intentionally distinct from the entity founding date. Canonical product wlr_prod_000078 is corrected from unresolved launch_date to 2016-11-11 with day precision. Existing 2018 imToken 2.0 Beta incident history remains separate.",
+        "product_id": "wlr_prod_000078",
+        "title": "imToken version 1.0 released"
       }
     ]
   },
@@ -101,6 +118,22 @@
         "source_type": "official_security_advisory",
         "title": "Disclosure of Security Incidents on imToken",
         "url": "https://support.token.im/hc/en-us/articles/360005681954-Disclosure-of-Security-Incidents-on-imToken"
+      },
+      {
+        "accessed_at": "2026-08-23",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000029",
+        "event_id": "wlr_ev_000152",
+        "id": "wlr_src_000379",
+        "is_primary": true,
+        "notes": "First-party imToken milestone history states the project was established on 2016-05-02 and version 1.0 was released on 2016-11-11. Used for the app release event and canonical launch-date correction.",
+        "product_id": "wlr_prod_000078",
+        "published_at": null,
+        "publisher": "imToken",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Progress Update | 2023/06/14",
+        "url": "https://support.token.im/hc/en-us/articles/19621187921177-Progress-Update-2023-06-14"
       }
     ]
   },

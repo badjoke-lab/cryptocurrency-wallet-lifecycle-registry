@@ -31,7 +31,7 @@
       "status": "active",
       "sales_status": "not_applicable",
       "support_status": "unknown",
-      "launch_date": null,
+      "launch_date": "2016-11-11",
       "platform": [
         "iOS",
         "Android"
@@ -42,8 +42,9 @@
       "key_management_model": "user_controlled_software_private_keys",
       "summary": "Current imToken mobile wallet application for managing assets across multiple chains and accessing DApps.",
       "confidence": "high",
-      "last_verified_at": "2026-08-19",
-      "notes": "Product is currently distributed by imToken. Initial app launch date is not asserted separately from the entity's 2016 start."
+      "last_verified_at": "2026-08-23",
+      "notes": "Product is currently distributed by imToken. Initial app launch date is not asserted separately from the entity's 2016 start.",
+      "launch_date_precision": "day"
     }
   ],
   "events": [
@@ -78,6 +79,23 @@
         "monitor"
       ],
       "notes": "The first-party disclosure labels the incident Medium severity and limits affected users to the 2.0 Beta international version installed from 2018-03-21 through 2018-06-09 10:30 UTC+8. imToken stated that the decentralized-wallet design meant the breach would not create risk to user tokens; WLR therefore records funds_affected=no without claiming that all user data was harmless. No private-key or mnemonic compromise, affected production release, or broader root cause is inferred."
+    },
+    {
+      "id": "wlr_ev_000152",
+      "entity_id": "wlr_ent_000029",
+      "product_id": "wlr_prod_000078",
+      "affected_product_ids": [
+        "wlr_prod_000078"
+      ],
+      "event_type": "product_released",
+      "event_date": "2016-11-11",
+      "event_date_basis": "release",
+      "title": "imToken version 1.0 released",
+      "description": "imToken's first-party milestone history states that after the project was established on 2016-05-02, imToken version 1.0 was released on 2016-11-11.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "This is the selected app release milestone and is intentionally distinct from the entity founding date. Canonical product wlr_prod_000078 is corrected from unresolved launch_date to 2016-11-11 with day precision. Existing 2018 imToken 2.0 Beta incident history remains separate."
     }
   ],
   "evidence": [
@@ -128,6 +146,22 @@
       "claim_scope": "event",
       "is_primary": true,
       "notes": "First-party incident disclosure states that an attacker obtained the AWS account hosting imToken 2.0 Beta servers on 2018-06-09 after an email password reset. It labels the incident Medium severity, identifies 2.0 Beta/RC as affected, gives the 36,000-device / 73,000-address / 10,000-email scope, and states that token security was not affected."
+    },
+    {
+      "id": "wlr_src_000379",
+      "entity_id": "wlr_ent_000029",
+      "product_id": "wlr_prod_000078",
+      "event_id": "wlr_ev_000152",
+      "source_type": "official_statement",
+      "title": "Progress Update | 2023/06/14",
+      "url": "https://support.token.im/hc/en-us/articles/19621187921177-Progress-Update-2023-06-14",
+      "publisher": "imToken",
+      "published_at": null,
+      "accessed_at": "2026-08-23",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party imToken milestone history states the project was established on 2016-05-02 and version 1.0 was released on 2016-11-11. Used for the app release event and canonical launch-date correction."
     }
   ]
 }
