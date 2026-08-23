@@ -1,0 +1,57 @@
+name: Cross-site GSC DNS Audit
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Audit public DNS and production verification surfaces
+        shell: bash
+        run: |
+          set -euo pipefail
+          expected_sog='google-site-verification=bpA5mjK0TNIO3KmwvNUXLlMXQCwr9xrRbfnOofNuuso'
+          for domain in stableorgone.com viewloom.net badjoke-lab.com; do
+            echo "--- ${domain} TXT ---"
+            txt="$(dig +short TXT "$domain" | tr -d '"' || true)"
+            printf '%s\n' "$txt"
+            if printf '%s\n' "$txt" | grep -Fq 'google-site-verification='; then
+              echo "${domain}_google_verification_txt=true"
+            else
+              echo "${domain}_google_verification_txt=false"
+            fi
+            if [ "$domain" = 'stableorgone.com' ]; then
+              if printf '%s\n' "$txt" | grep -Fqx "$expected_sog"; then
+                echo 'stableorgone_expected_token_present=true'
+              else
+                echo 'stableorgone_expected_token_present=false'
+              fi
+            fi
+          done
+
+          for entry in \
+            'sog|https://www.stableorgone.com/' \
+            'viewloom|https://www.viewloom.net/' \
+            'wlr|https://wlr.badjoke-lab.com/'; do
+            name="${entry%%|*}"; url="${entry#*|}"; out="$(mktemp)"
+            code="$(curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 -o "$out" -w '%{http_code}' "$url")"
+            echo "${name}_http=$code"
+            ids="$(grep -Eo 'G-[A-Z0-9]+' "$out" | sort -u | paste -sd, - || true)"
+            [ -n "$ids" ] && echo "${name}_ga4_ids=$ids" || echo "${name}_ga4_ids=NONE"
+            if grep -Eiq '<meta[^>]+name=["'"']google-site-verification["'"']' "$out"; then
+              echo "${name}_gsc_meta=true"
+            else
+              echo "${name}_gsc_meta=false"
+            fi
+            rm -f "$out"
+          done
+
+          curl -fsSL https://www.stableorgone.com/robots.txt | grep -F 'Sitemap:'
+          curl -fsSL https://www.viewloom.net/robots.txt | grep -F 'Sitemap:'
+          curl -fsSL https://wlr.badjoke-lab.com/robots.txt | grep -F 'Sitemap:'
