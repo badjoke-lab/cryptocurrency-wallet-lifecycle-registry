@@ -17,7 +17,10 @@ jobs:
         run: |
           set -euo pipefail
           expected_sog='google-site-verification=bpA5mjK0TNIO3KmwvNUXLlMXQCwr9xrRbfnOofNuuso'
+          expected_viewloom='google-site-verification=3YUU7AhRR8Z0ogs5mhz4WEG2htGpJDORYq3br5hjefE'
           for domain in stableorgone.com viewloom.net badjoke-lab.com; do
+            echo "--- ${domain} NS ---"
+            dig +short NS "$domain" || true
             echo "--- ${domain} TXT ---"
             txt="$(dig +short TXT "$domain" | tr -d '"' || true)"
             printf '%s\n' "$txt"
@@ -31,6 +34,13 @@ jobs:
                 echo 'stableorgone_expected_token_present=true'
               else
                 echo 'stableorgone_expected_token_present=false'
+              fi
+            fi
+            if [ "$domain" = 'viewloom.net' ]; then
+              if printf '%s\n' "$txt" | grep -Fqx "$expected_viewloom"; then
+                echo 'viewloom_expected_token_present=true'
+              else
+                echo 'viewloom_expected_token_present=false'
               fi
             fi
           done
