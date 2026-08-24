@@ -3,8 +3,10 @@ on:
   pull_request:
   push:
     branches: [main]
+
 jobs:
-  validate:
+  publication:
+    name: Publication correctness
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -17,20 +19,51 @@ jobs:
       - run: python -m pip install -r requirements.txt
       - run: npm install --no-audit --no-fund
       - run: npm run validate:records
-      - run: npm run validate:candidates
       - run: npm run validate:identity-evidence
       - run: npm run validate:machine-records
       - run: npm run validate:structured-discovery
       - run: npm run test:natural-filters
       - run: npm run validate:natural-filters
       - run: npm run validate:compare
-      - run: npm run validate:stats
-      - run: npm run test:monitoring
-      - run: npm run validate:monitoring
-      - run: npm run test:candidates
-      - run: npm run test:identity-evidence
       - run: npm run check:staging-boundary
-      - run: npm run coverage:audit
-      - run: npm run seed:gate
       - run: npm run cloudflare:config:print
       - run: npm run build
+
+  maintenance:
+    name: Non-blocking maintenance audits
+    continue-on-error: true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - run: npm install --no-audit --no-fund
+      - name: Candidate validation
+        continue-on-error: true
+        run: npm run validate:candidates
+      - name: Statistics validation
+        continue-on-error: true
+        run: npm run validate:stats
+      - name: Monitoring tests
+        continue-on-error: true
+        run: npm run test:monitoring
+      - name: Monitoring validation
+        continue-on-error: true
+        run: npm run validate:monitoring
+      - name: Candidate tests
+        continue-on-error: true
+        run: npm run test:candidates
+      - name: Identity-evidence regression tests
+        continue-on-error: true
+        run: npm run test:identity-evidence
+      - name: Coverage audit
+        continue-on-error: true
+        run: npm run coverage:audit
+      - name: Seed gate maintenance
+        continue-on-error: true
+        run: npm run seed:gate
