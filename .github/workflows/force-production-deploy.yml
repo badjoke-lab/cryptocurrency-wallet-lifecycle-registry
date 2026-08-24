@@ -39,3 +39,5 @@ jobs:
               issue_number: 269,
               body: `Force production deploy finished.\n\n- Result: **${{ job.status }}**\n- Source commit: \`${context.sha}\`\n- Run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`
             })
+
+# Merge-triggered production execution 2026-08-24.
