@@ -1,0 +1,62 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_phantom-sui-support-discontinuation",
+  "title": "Phantom Sui support discontinuation",
+  "review_state": "review_ready",
+  "notes": "Phantom is already canonical as wlr_ent_000015 with Browser Extension wlr_prod_000045 and Mobile wlr_prod_000046. This candidate records the announced Sui support sunset now; it does not wait until 2026-09-24 to record the announcement and does not downgrade Phantom or either product. A separate post-transition verification remains required before recording the removal as effective.",
+  "records": {
+    "entities": [],
+    "products": [],
+    "events": [
+      {
+        "id": "wlr_ev_000154",
+        "entity_id": "wlr_ent_000015",
+        "product_id": null,
+        "affected_product_ids": ["wlr_prod_000045", "wlr_prod_000046"],
+        "event_type": "network_support_discontinued",
+        "event_date": "2026-08-24",
+        "event_date_basis": "announcement",
+        "title": "Phantom announced end of Sui support",
+        "description": "Phantom announced that support for the Sui network will end on 2026-09-24 and told users to move to another Sui-compatible wallet or swap Sui assets into assets supported by Phantom before the transition date.",
+        "confidence": "high",
+        "event_status_effect": "none",
+        "is_major_event": true,
+        "notes": "Announcement event only. Phantom and both affected products remain active. Do not treat Sui support as effectively removed until the 2026-09-24 transition is independently verified. User funds remain self-custodied on-chain; this is not a custody-loss or wallet-shutdown event."
+      }
+    ],
+    "evidence": [
+      {
+        "id": "wlr_src_000381",
+        "entity_id": "wlr_ent_000015",
+        "product_id": null,
+        "event_id": "wlr_ev_000154",
+        "source_type": "official_blog",
+        "title": "Introducing Sui on Phantom",
+        "url": "https://phantom.com/learn/blog/introducing-sui-on-phantom",
+        "publisher": "Phantom",
+        "published_at": "2025-01-29",
+        "accessed_at": "2026-08-24",
+        "reliability": "high",
+        "claim_scope": "product",
+        "is_primary": true,
+        "notes": "First-party history for the Sui integration: beta support began on 2025-01-29 and the page notes general availability for all users as of 2025-05-12. This source establishes the beginning of the capability being sunset."
+      },
+      {
+        "id": "wlr_src_000382",
+        "entity_id": "wlr_ent_000015",
+        "product_id": null,
+        "event_id": "wlr_ev_000154",
+        "source_type": "news_article",
+        "title": "Phantom drops Sui support with September 24 deadline for user migration",
+        "url": "https://cryptobriefing.com/phantom-drops-sui-support-september-migration/",
+        "publisher": "Crypto Briefing",
+        "published_at": "2026-08-23",
+        "accessed_at": "2026-08-24",
+        "reliability": "medium",
+        "claim_scope": "event",
+        "is_primary": false,
+        "notes": "Secondary corroboration of Phantom's official announcement, the 2026-09-24 transition date, migration options, fee waiver and continued user custody. The user-supplied capture of Phantom's verified @phantom announcement is also part of the research record; the exact first-party post/help URL must replace or supplement this secondary source before fresh-main canonical promotion if repository policy requires a URL-addressable primary source for the announcement itself."
+      }
+    ]
+  }
+}
