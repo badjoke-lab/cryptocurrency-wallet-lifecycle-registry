@@ -9,11 +9,11 @@
     "products": [],
     "events": [
       {
-        "id": "wlr_ev_000154",
+        "id": "wlr_ev_000155",
         "entity_id": "wlr_ent_000015",
         "product_id": null,
         "affected_product_ids": ["wlr_prod_000045", "wlr_prod_000046"],
-        "event_type": "network_support_discontinued",
+        "event_type": "deprecation_announced",
         "event_date": "2026-08-24",
         "event_date_basis": "announcement",
         "title": "Phantom announced end of Sui support",
@@ -26,10 +26,10 @@
     ],
     "evidence": [
       {
-        "id": "wlr_src_000381",
+        "id": "wlr_src_000384",
         "entity_id": "wlr_ent_000015",
         "product_id": null,
-        "event_id": "wlr_ev_000154",
+        "event_id": "wlr_ev_000155",
         "source_type": "official_blog",
         "title": "Introducing Sui on Phantom",
         "url": "https://phantom.com/learn/blog/introducing-sui-on-phantom",
@@ -42,10 +42,10 @@
         "notes": "First-party history for the Sui integration: beta support began on 2025-01-29 and the page notes general availability for all users as of 2025-05-12. This source establishes the beginning of the capability being sunset."
       },
       {
-        "id": "wlr_src_000382",
+        "id": "wlr_src_000385",
         "entity_id": "wlr_ent_000015",
         "product_id": null,
-        "event_id": "wlr_ev_000154",
+        "event_id": "wlr_ev_000155",
         "source_type": "news_article",
         "title": "Phantom drops Sui support with September 24 deadline for user migration",
         "url": "https://cryptobriefing.com/phantom-drops-sui-support-september-migration/",
@@ -55,7 +55,7 @@
         "reliability": "medium",
         "claim_scope": "event",
         "is_primary": false,
-        "notes": "Secondary corroboration of Phantom's official announcement, the 2026-09-24 transition date, migration options, fee waiver and continued user custody. The user-supplied capture of Phantom's verified @phantom announcement is also part of the research record; the exact first-party post/help URL must replace or supplement this secondary source before fresh-main canonical promotion if repository policy requires a URL-addressable primary source for the announcement itself."
+        "notes": "Secondary URL-addressable corroboration of Phantom's official 2026-08-24 announcement, 2026-09-24 transition date, migration options and continued user custody. The research record also includes the user-supplied capture of Phantom's verified official announcement; replace or supplement this row with the exact first-party announcement/help URL if it becomes addressable before promotion."
       }
     ]
   }
