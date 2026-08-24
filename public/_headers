@@ -4,3 +4,5 @@
 
 /*.json
   Cache-Control: public, max-age=300, must-revalidate
+
+# 2026-08-24 production republish trigger for IZAKA-YA Wallet publication.
