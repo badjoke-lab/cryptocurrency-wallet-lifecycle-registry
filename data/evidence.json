@@ -6770,5 +6770,37 @@
     "claim_scope": "architecture",
     "is_primary": false,
     "notes": "Vendor customer story corroborates embedded Fireblocks custody/management infrastructure. Vendor marketing is not independent proof of overall wallet safety."
+  },
+  {
+    "id": "wlr_src_000384",
+    "entity_id": "wlr_ent_000015",
+    "product_id": null,
+    "event_id": "wlr_ev_000155",
+    "source_type": "official_blog",
+    "title": "Introducing Sui on Phantom",
+    "url": "https://phantom.com/learn/blog/introducing-sui-on-phantom",
+    "publisher": "Phantom",
+    "published_at": "2025-01-29",
+    "accessed_at": "2026-08-24",
+    "reliability": "high",
+    "claim_scope": "product",
+    "is_primary": true,
+    "notes": "First-party history for the Sui integration: beta support began on 2025-01-29 and the page notes general availability for all users as of 2025-05-12. This source establishes the beginning of the capability being sunset."
+  },
+  {
+    "id": "wlr_src_000385",
+    "entity_id": "wlr_ent_000015",
+    "product_id": null,
+    "event_id": "wlr_ev_000155",
+    "source_type": "news_article",
+    "title": "Phantom drops Sui support with September 24 deadline for user migration",
+    "url": "https://cryptobriefing.com/phantom-drops-sui-support-september-migration/",
+    "publisher": "Crypto Briefing",
+    "published_at": "2026-08-23",
+    "accessed_at": "2026-08-24",
+    "reliability": "medium",
+    "claim_scope": "event",
+    "is_primary": false,
+    "notes": "Secondary corroboration of Phantom’s official announcement, the 2026-09-24 transition date, migration options, fee waiver and continued user custody. The official @phantom announcement was independently reviewed from the supplied capture; this record does not substitute the secondary article for Phantom’s statement of policy."
   }
 ]
