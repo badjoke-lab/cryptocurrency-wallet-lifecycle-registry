@@ -23,6 +23,6 @@ jobs:
       - run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add public/data/series/records public/data/series/index.json public/data public/stats
+          git add public/data/series/records public/data/series/index.json public/data
           git commit -m 'Sync Wave 01A generated public data' || exit 0
           git push origin HEAD:${{ github.event.pull_request.head.ref }}
