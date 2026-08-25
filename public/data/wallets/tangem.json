@@ -412,6 +412,22 @@
       "claim_scope": "security_fix",
       "is_primary": true,
       "notes": "First-party security changelog dating the fixed mobile-app release to 2024-12-27 and explicitly identifying iOS 5.19.1 and Android 5.19.2 as the versions fixing the app-log bug."
+    },
+    {
+      "id": "wlr_src_000386",
+      "entity_id": "wlr_ent_000014",
+      "product_id": "wlr_prod_000075",
+      "event_id": null,
+      "source_type": "official_blog",
+      "title": "Tangem Annual Report 2025",
+      "url": "https://tangem.com/en-GB/annual-report/",
+      "publisher": "Tangem",
+      "published_at": null,
+      "accessed_at": "2026-08-25",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "First-party product timeline documents Tangem Wallet v1 in 2022, v2 in 2023, and continued app-feature development through 2025. Useful for companion-app lineage/support review; does not by itself prove an exact Tangem App launch date."
     }
   ]
 }

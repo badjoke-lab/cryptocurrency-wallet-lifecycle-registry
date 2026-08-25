@@ -30,7 +30,7 @@
       "product_type": "hardware_device",
       "status": "active",
       "sales_status": "on_sale",
-      "support_status": "unknown",
+      "support_status": "supported",
       "launch_date": null,
       "platform": null,
       "official_url": "https://onekey.so/products/onekey-pro-hardware-wallet",
@@ -39,7 +39,7 @@
       "key_management_model": "hardware_secure_elements",
       "summary": "Current premium OneKey hardware wallet with touchscreen, secure elements and multiple signing/connectivity modes.",
       "confidence": "high",
-      "last_verified_at": "2026-08-19",
+      "last_verified_at": "2026-08-25",
       "notes": "Current first-party product material establishes an active purchasable OneKey Pro; initial product launch date remains unresolved."
     }
   ],
@@ -76,6 +76,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Current first-party product page establishes OneKey Pro as an active hardware-wallet product."
+    },
+    {
+      "id": "wlr_src_000392",
+      "entity_id": "wlr_ent_000037",
+      "product_id": "wlr_prod_000086",
+      "event_id": null,
+      "source_type": "release_notes",
+      "title": "OneKey Pro Firmware Update Log",
+      "url": "https://help.onekey.so/en/articles/11461394-onekey-pro-firmware-update-log",
+      "publisher": "OneKey",
+      "published_at": null,
+      "accessed_at": "2026-08-25",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "Official continuously maintained OneKey Pro firmware log includes 2026 releases through v4.21.0, directly supporting current maintenance."
     }
   ]
 }

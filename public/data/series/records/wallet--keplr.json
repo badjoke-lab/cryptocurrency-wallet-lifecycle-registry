@@ -52,6 +52,22 @@
         "source_type": "official_statement",
         "title": "Download Keplr Extension for Beginners",
         "url": "https://help.keplr.app/extension/5R3bMyjtr2FwnBvJQuJwJu/download-keplr-extension-for-beginners/5R3bMyjtr4eDwEEUCPFqUE"
+      },
+      {
+        "accessed_at": "2026-08-25",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000043",
+        "event_id": null,
+        "id": "wlr_src_000397",
+        "is_primary": true,
+        "notes": "Current first-party product surface retained for bounded launch/support research; no exact launch or formal support claim is promoted from this source alone.",
+        "product_id": "wlr_prod_000092",
+        "published_at": null,
+        "publisher": "Keplr",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Keplr official wallet site",
+        "url": "https://www.keplr.app/"
       }
     ]
   },

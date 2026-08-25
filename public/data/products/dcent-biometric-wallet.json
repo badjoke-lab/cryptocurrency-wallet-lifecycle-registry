@@ -15,7 +15,7 @@
     "product_type": "hardware_device",
     "status": "active",
     "sales_status": "on_sale",
-    "support_status": "unknown",
+    "support_status": "supported",
     "launch_date": null,
     "platform": null,
     "official_url": "https://store.dcentwallet.com/products/biometric-wallet",
@@ -24,7 +24,7 @@
     "key_management_model": "hardware_secure_element_private_keys",
     "summary": "Biometric cold-wallet device that generates and stores private keys inside secure hardware and unlocks with fingerprint authentication.",
     "confidence": "high",
-    "last_verified_at": "2026-08-19",
+    "last_verified_at": "2026-08-25",
     "notes": "Current first-party storefront establishes an active purchasable biometric hardware wallet; exact initial launch date remains unresolved."
   },
   "events": [
@@ -78,6 +78,22 @@
       "claim_scope": "event",
       "is_primary": true,
       "notes": "First-party Cardano support announcement."
+    },
+    {
+      "id": "wlr_src_000393",
+      "entity_id": "wlr_ent_000038",
+      "product_id": "wlr_prod_000087",
+      "event_id": null,
+      "source_type": "official_blog",
+      "title": "Buy a D'CENT Wallet and Get Up to $10 in Crypto",
+      "url": "https://store.dcentwallet.com/blogs/post/dcent-reward-program",
+      "publisher": "D'CENT",
+      "published_at": "2026-03-18",
+      "accessed_at": "2026-08-25",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "Current first-party 2026 program requires purchase and activation of the D'CENT Biometric Wallet through the current D'CENT App, supporting active product operation."
     }
   ]
 }

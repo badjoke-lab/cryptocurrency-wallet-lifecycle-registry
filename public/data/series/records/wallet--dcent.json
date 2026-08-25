@@ -86,6 +86,22 @@
         "source_type": "official_blog",
         "title": "D'CENT Biometric Wallet Integrates Cardano (ADA)",
         "url": "https://store.dcentwallet.com/blogs/post/d-cent-biometric-wallet-integrates-cardano-ada"
+      },
+      {
+        "accessed_at": "2026-08-25",
+        "claim_scope": "support_status",
+        "entity_id": "wlr_ent_000038",
+        "event_id": null,
+        "id": "wlr_src_000393",
+        "is_primary": true,
+        "notes": "Current first-party 2026 program requires purchase and activation of the D'CENT Biometric Wallet through the current D'CENT App, supporting active product operation.",
+        "product_id": "wlr_prod_000087",
+        "published_at": "2026-03-18",
+        "publisher": "D'CENT",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Buy a D'CENT Wallet and Get Up to $10 in Crypto",
+        "url": "https://store.dcentwallet.com/blogs/post/dcent-reward-program"
       }
     ]
   },

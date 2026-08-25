@@ -15,8 +15,8 @@
     "product_type": "multi_platform_app",
     "status": "active",
     "sales_status": "not_applicable",
-    "support_status": "unknown",
-    "launch_date": null,
+    "support_status": "supported",
+    "launch_date": "2014",
     "platform": [
       "iOS",
       "Android",
@@ -28,10 +28,29 @@
     "key_management_model": "device_local_private_keys",
     "summary": "Coinomi's current non-custodial multi-chain wallet application across mobile and desktop platforms.",
     "confidence": "high",
-    "last_verified_at": "2026-08-19",
-    "notes": "Entity launch is established at 2014; this batch does not force a separate product launch date for the current cross-platform lineage."
+    "last_verified_at": "2026-08-25",
+    "notes": "Entity launch is established at 2014; this batch does not force a separate product launch date for the current cross-platform lineage.",
+    "launch_date_precision": "year"
   },
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000156",
+      "entity_id": "wlr_ent_000034",
+      "product_id": "wlr_prod_000083",
+      "affected_product_ids": [
+        "wlr_prod_000083"
+      ],
+      "event_type": "product_released",
+      "event_date": "2014",
+      "event_date_basis": "release",
+      "title": "Coinomi wallet launched",
+      "description": "Coinomi's first-party company history states that Coinomi was launched in 2014.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "Year precision only. The reviewed first-party history does not establish a defensible exact release day for the current wallet lineage."
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000214",
@@ -48,6 +67,38 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Current first-party site describes Coinomi as a secure non-custodial multi-chain wallet and notes mobile and desktop availability."
+    },
+    {
+      "id": "wlr_src_000388",
+      "entity_id": "wlr_ent_000034",
+      "product_id": "wlr_prod_000083",
+      "event_id": "wlr_ev_000156",
+      "source_type": "official_statement",
+      "title": "About us",
+      "url": "https://www.coinomi.com/en/about/",
+      "publisher": "Coinomi",
+      "published_at": null,
+      "accessed_at": "2026-08-25",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "Coinomi first-party company history states that Coinomi was launched in 2014."
+    },
+    {
+      "id": "wlr_src_000389",
+      "entity_id": "wlr_ent_000034",
+      "product_id": "wlr_prod_000083",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Download Coinomi",
+      "url": "https://www.coinomi.com/en/downloads/",
+      "publisher": "Coinomi",
+      "published_at": null,
+      "accessed_at": "2026-08-25",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "Current first-party page distributes current Android/iOS builds and desktop binaries and describes an ongoing desktop update, supporting current maintenance."
     }
   ]
 }

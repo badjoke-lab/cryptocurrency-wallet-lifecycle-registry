@@ -2,8 +2,8 @@
   "current_state": {
     "native": {
       "confidence": "high",
-      "launch_date": null,
-      "launch_date_precision": null,
+      "launch_date": "2023-11-06",
+      "launch_date_precision": "day",
       "parent_entity": {
         "canonical_name": "ELLIPAL",
         "id": "wlr_ent_000035",
@@ -16,13 +16,31 @@
       "sales_status": "on_sale",
       "status": "active",
       "successor_product_id": null,
-      "support_status": "unknown"
+      "support_status": "supported"
     },
     "status": "active"
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000084"
+        ],
+        "confidence": "high",
+        "description": "ELLIPAL's first-party release article introduced the Titan 2.0 on 2023-11-06.",
+        "entity_id": "wlr_ent_000035",
+        "event_date": "2023-11-06",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000157",
+        "is_major_event": true,
+        "notes": "Day precision follows the dated first-party product-release article.",
+        "product_id": "wlr_prod_000084",
+        "title": "ELLIPAL Titan 2.0 introduced"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -42,6 +60,38 @@
         "source_type": "official_statement",
         "title": "ELLIPAL: Crypto Hardware Wallets | Secure Cold Wallets",
         "url": "https://www.ellipal.com/"
+      },
+      {
+        "accessed_at": "2026-08-25",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000035",
+        "event_id": "wlr_ev_000157",
+        "id": "wlr_src_000390",
+        "is_primary": true,
+        "notes": "First-party dated product introduction for Titan 2.0.",
+        "product_id": "wlr_prod_000084",
+        "published_at": "2023-11-06",
+        "publisher": "ELLIPAL",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "ELLIPAL Titan 2.0: Elevating Cold Wallet Security and Accessibility",
+        "url": "https://www.ellipal.com/blogs/news/ellipal-titan-2-0-redefining-cryptocurrency-cold-wallet-security"
+      },
+      {
+        "accessed_at": "2026-08-25",
+        "claim_scope": "support_status",
+        "entity_id": "wlr_ent_000035",
+        "event_id": null,
+        "id": "wlr_src_000391",
+        "is_primary": true,
+        "notes": "First-party support guide for Titan 2.0 operation and setup, supporting continued product support.",
+        "product_id": "wlr_prod_000084",
+        "published_at": "2024-09-28",
+        "publisher": "ELLIPAL",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "How to Send and Receive Your Coins/Tokens with ELLIPAL Titan 2.0",
+        "url": "https://www.ellipal.com/blogs/support/ellipal-titan-send-receive-crypto-securely"
       }
     ]
   },
@@ -75,6 +125,6 @@
     "native_machine": "https://wlr.badjoke-lab.com/data/products/ellipal-titan-2-0.json"
   },
   "verification": {
-    "last_verified_at": "2026-08-19"
+    "last_verified_at": "2026-08-25"
   }
 }

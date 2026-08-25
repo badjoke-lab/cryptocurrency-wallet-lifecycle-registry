@@ -78,6 +78,22 @@
       "claim_scope": "event",
       "is_primary": true,
       "notes": "First-party release text dated 20 May 2021; fulfillment from 24 May 2021."
+    },
+    {
+      "id": "wlr_src_000395",
+      "entity_id": "wlr_ent_000039",
+      "product_id": "wlr_prod_000088",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "CoolWallet official product site",
+      "url": "https://www.coolwallet.io/",
+      "publisher": "CoolBitX / CoolWallet",
+      "published_at": null,
+      "accessed_at": "2026-08-25",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party product surface retained for bounded support/launch research; formal support classification still requires stronger maintenance evidence before promotion."
     }
   ]
 }

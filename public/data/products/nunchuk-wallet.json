@@ -44,6 +44,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Current first-party site actively distributes the Nunchuk app and describes supported self-managed and collaborative wallet configurations."
+    },
+    {
+      "id": "wlr_src_000396",
+      "entity_id": "wlr_ent_000041",
+      "product_id": "wlr_prod_000090",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Nunchuk official wallet site",
+      "url": "https://nunchuk.io/",
+      "publisher": "Nunchuk",
+      "published_at": null,
+      "accessed_at": "2026-08-25",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party product surface retained for bounded launch/support research; no exact launch or formal support claim is promoted from this source alone."
     }
   ]
 }

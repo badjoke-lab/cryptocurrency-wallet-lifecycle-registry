@@ -32,7 +32,7 @@
       "product_type": "multi_platform_app",
       "status": "active",
       "sales_status": "not_applicable",
-      "support_status": "unknown",
+      "support_status": "supported",
       "launch_date": null,
       "platform": [
         "Web",
@@ -48,7 +48,7 @@
       "key_management_model": "user_controlled_locally_stored_private_keys",
       "summary": "Current Guarda non-custodial wallet application distributed across browser, desktop and mobile environments.",
       "confidence": "high",
-      "last_verified_at": "2026-08-19",
+      "last_verified_at": "2026-08-25",
       "notes": "The current product is modeled as one multi-platform application lineage. Its exact transition from the original 2017 Ethereum wallet to today's multi-currency form is not given a fabricated product launch date."
     }
   ],
@@ -119,6 +119,22 @@
       "claim_scope": "event",
       "is_primary": true,
       "notes": "First-party Guarda release post introducing the universal multi-coin Mobile Multiwallet on 2018-12-04. This source is not used to replace the earlier 2017 single-currency Guarda lineage."
+    },
+    {
+      "id": "wlr_src_000387",
+      "entity_id": "wlr_ent_000033",
+      "product_id": "wlr_prod_000082",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Get Guarda for any device",
+      "url": "https://guarda.com/download/",
+      "publisher": "Guarda",
+      "published_at": null,
+      "accessed_at": "2026-08-25",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "Current first-party download page distributes Guarda for iOS, Android, macOS, Windows and Linux and publishes current desktop release checksums, supporting an active maintained product state."
     }
   ]
 }

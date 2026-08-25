@@ -15,8 +15,8 @@
     "product_type": "hardware_device",
     "status": "active",
     "sales_status": "on_sale",
-    "support_status": "unknown",
-    "launch_date": null,
+    "support_status": "supported",
+    "launch_date": "2023-11-06",
     "platform": null,
     "official_url": "https://www.ellipal.com/",
     "source_code_url": null,
@@ -24,10 +24,29 @@
     "key_management_model": "air_gapped_hardware_isolated_private_keys",
     "summary": "Current ELLIPAL air-gapped hardware wallet with on-device transaction review and QR-based signing.",
     "confidence": "high",
-    "last_verified_at": "2026-08-19",
-    "notes": "Current first-party pages present Titan 2.0 as an active purchasable hardware wallet. This batch leaves its exact initial launch date unresolved."
+    "last_verified_at": "2026-08-25",
+    "notes": "Current first-party pages present Titan 2.0 as an active purchasable hardware wallet. This batch leaves its exact initial launch date unresolved.",
+    "launch_date_precision": "day"
   },
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000157",
+      "entity_id": "wlr_ent_000035",
+      "product_id": "wlr_prod_000084",
+      "affected_product_ids": [
+        "wlr_prod_000084"
+      ],
+      "event_type": "product_released",
+      "event_date": "2023-11-06",
+      "event_date_basis": "release",
+      "title": "ELLIPAL Titan 2.0 introduced",
+      "description": "ELLIPAL's first-party release article introduced the Titan 2.0 on 2023-11-06.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true,
+      "notes": "Day precision follows the dated first-party product-release article."
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000216",
@@ -44,6 +63,38 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Current first-party storefront presents ELLIPAL Titan 2.0 as an active air-gapped self-custody hardware wallet available for purchase."
+    },
+    {
+      "id": "wlr_src_000390",
+      "entity_id": "wlr_ent_000035",
+      "product_id": "wlr_prod_000084",
+      "event_id": "wlr_ev_000157",
+      "source_type": "official_blog",
+      "title": "ELLIPAL Titan 2.0: Elevating Cold Wallet Security and Accessibility",
+      "url": "https://www.ellipal.com/blogs/news/ellipal-titan-2-0-redefining-cryptocurrency-cold-wallet-security",
+      "publisher": "ELLIPAL",
+      "published_at": "2023-11-06",
+      "accessed_at": "2026-08-25",
+      "reliability": "high",
+      "claim_scope": "launch_date",
+      "is_primary": true,
+      "notes": "First-party dated product introduction for Titan 2.0."
+    },
+    {
+      "id": "wlr_src_000391",
+      "entity_id": "wlr_ent_000035",
+      "product_id": "wlr_prod_000084",
+      "event_id": null,
+      "source_type": "official_blog",
+      "title": "How to Send and Receive Your Coins/Tokens with ELLIPAL Titan 2.0",
+      "url": "https://www.ellipal.com/blogs/support/ellipal-titan-send-receive-crypto-securely",
+      "publisher": "ELLIPAL",
+      "published_at": "2024-09-28",
+      "accessed_at": "2026-08-25",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "First-party support guide for Titan 2.0 operation and setup, supporting continued product support."
     }
   ]
 }
