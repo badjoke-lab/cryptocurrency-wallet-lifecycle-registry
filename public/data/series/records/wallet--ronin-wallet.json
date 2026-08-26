@@ -52,6 +52,22 @@
         "source_type": "official_statement",
         "title": "Ronin Wallet Desktop Guide",
         "url": "https://support.roninchain.com/hc/en-us/articles/14046513767195-Ronin-Wallet-Desktop-Guide"
+      },
+      {
+        "accessed_at": "2026-08-26",
+        "claim_scope": "support_status",
+        "entity_id": "wlr_ent_000045",
+        "event_id": null,
+        "id": "wlr_src_000398",
+        "is_primary": true,
+        "notes": "Current first-party wallet surface distributes the Ronin Wallet extension and mobile app; current Ronin support documentation also covers browser-extension setup and updating. Supports active maintenance of the extension product, but does not establish an initial launch date.",
+        "product_id": "wlr_prod_000094",
+        "published_at": null,
+        "publisher": "Ronin",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Ronin Wallet",
+        "url": "https://wallet.roninchain.com/"
       }
     ]
   },

@@ -52,6 +52,22 @@
         "source_type": "official_statement",
         "title": "Phoenix Wallet",
         "url": "https://phoenix.acinq.co/"
+      },
+      {
+        "accessed_at": "2026-08-26",
+        "claim_scope": "support_status",
+        "entity_id": "wlr_ent_000049",
+        "event_id": null,
+        "id": "wlr_src_000400",
+        "is_primary": true,
+        "notes": "Current first-party Phoenix site presents the non-custodial Lightning wallet and active support/source-code links, supporting a currently maintained product state. This source is not used to infer a launch date.",
+        "product_id": "wlr_prod_000098",
+        "published_at": null,
+        "publisher": "ACINQ",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Phoenix Wallet",
+        "url": "https://phoenix.acinq.co/"
       }
     ]
   },

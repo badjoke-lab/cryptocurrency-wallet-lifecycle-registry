@@ -86,6 +86,22 @@
         "source_type": "official_blog",
         "title": "Introducing Crypto.com Onchain: The New and Improved DeFi Wallet",
         "url": "https://crypto.com/uk/product-news/introducing-crypto-com-onchain-the-new-and-improved-defi-wallet"
+      },
+      {
+        "accessed_at": "2026-08-26",
+        "claim_scope": "support_status",
+        "entity_id": "wlr_ent_000052",
+        "event_id": null,
+        "id": "wlr_src_000402",
+        "is_primary": true,
+        "notes": "Current first-party help collection contains active Crypto.com Onchain Extension setup, import, swap and wallet-management documentation; Crypto.com also published a revamped extension in 2025. Supports active maintenance, without inferring the original extension launch date.",
+        "product_id": "wlr_prod_000101",
+        "published_at": null,
+        "publisher": "Crypto.com",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Crypto.com Onchain",
+        "url": "https://help.crypto.com/en/collections/2221157-crypto-com-onchain"
       }
     ]
   },

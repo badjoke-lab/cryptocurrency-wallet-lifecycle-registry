@@ -31,7 +31,7 @@
       "product_type": "browser_extension",
       "status": "active",
       "sales_status": "not_applicable",
-      "support_status": "unknown",
+      "support_status": "supported",
       "launch_date": null,
       "platform": [
         "Chrome",
@@ -44,7 +44,7 @@
       "key_management_model": "browser_wallet_keys_or_supported_keyless_mode",
       "summary": "Ronin Wallet browser extension for managing Ronin and supported assets from desktop browsers.",
       "confidence": "high",
-      "last_verified_at": "2026-08-19",
+      "last_verified_at": "2026-08-26",
       "notes": "The extension is modeled separately from Ronin Mobile because browser and mobile runtimes have distinct distribution and security lifecycles. Current first-party documentation supports Chrome, Edge and Firefox; initial extension launch date remains unresolved."
     }
   ],
@@ -81,6 +81,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Current first-party desktop guide explicitly distributes Ronin Wallet Extension for Chrome, Edge and Firefox, supporting the separate browser-extension product boundary."
+    },
+    {
+      "id": "wlr_src_000398",
+      "entity_id": "wlr_ent_000045",
+      "product_id": "wlr_prod_000094",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Ronin Wallet",
+      "url": "https://wallet.roninchain.com/",
+      "publisher": "Ronin",
+      "published_at": null,
+      "accessed_at": "2026-08-26",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "Current first-party wallet surface distributes the Ronin Wallet extension and mobile app; current Ronin support documentation also covers browser-extension setup and updating. Supports active maintenance of the extension product, but does not establish an initial launch date."
     }
   ]
 }

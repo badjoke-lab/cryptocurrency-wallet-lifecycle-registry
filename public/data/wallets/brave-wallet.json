@@ -29,7 +29,7 @@
       "product_type": "embedded_wallet",
       "status": "active",
       "sales_status": "not_applicable",
-      "support_status": "unknown",
+      "support_status": "supported",
       "launch_date": null,
       "platform": [
         "desktop",
@@ -42,7 +42,7 @@
       "key_management_model": "browser_integrated_user_controlled_wallet_keys",
       "summary": "Brave browser-native self-custody wallet surface available within supported Brave desktop and mobile browsers.",
       "confidence": "high",
-      "last_verified_at": "2026-08-20",
+      "last_verified_at": "2026-08-26",
       "notes": "Modeled as one browser-integrated wallet product rather than a browser extension because Brave explicitly states no extension is required. Initial release date remains unresolved."
     }
   ],
@@ -113,6 +113,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "First-party Brave launch post states that Brave Wallet launched on 2021-11-16 as a browser-native desktop wallet requiring no extension and documents import from Brave's legacy Crypto Wallets extension."
+    },
+    {
+      "id": "wlr_src_000401",
+      "entity_id": "wlr_ent_000051",
+      "product_id": "wlr_prod_000100",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Brave Wallet",
+      "url": "https://brave.com/wallet/",
+      "publisher": "Brave",
+      "published_at": null,
+      "accessed_at": "2026-08-26",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "Current first-party Brave Wallet page documents the built-in browser wallet, desktop/mobile availability and continuing compatibility improvements, supporting active maintenance. Initial release date remains unresolved in this bundle."
     }
   ]
 }

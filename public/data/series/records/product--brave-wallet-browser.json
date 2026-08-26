@@ -16,7 +16,7 @@
       "sales_status": "not_applicable",
       "status": "active",
       "successor_product_id": null,
-      "support_status": "unknown"
+      "support_status": "supported"
     },
     "status": "active"
   },
@@ -76,6 +76,22 @@
         "source_type": "official_blog",
         "title": "Introducing the Brave Wallet, a Browser-Native Crypto Wallet With No Extension Required",
         "url": "https://brave.com/blog/brave-wallet-launch/"
+      },
+      {
+        "accessed_at": "2026-08-26",
+        "claim_scope": "support_status",
+        "entity_id": "wlr_ent_000051",
+        "event_id": null,
+        "id": "wlr_src_000401",
+        "is_primary": true,
+        "notes": "Current first-party Brave Wallet page documents the built-in browser wallet, desktop/mobile availability and continuing compatibility improvements, supporting active maintenance. Initial release date remains unresolved in this bundle.",
+        "product_id": "wlr_prod_000100",
+        "published_at": null,
+        "publisher": "Brave",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Brave Wallet",
+        "url": "https://brave.com/wallet/"
       }
     ]
   },
@@ -109,6 +125,6 @@
     "native_machine": "https://wlr.badjoke-lab.com/data/products/brave-wallet-browser.json"
   },
   "verification": {
-    "last_verified_at": "2026-08-20"
+    "last_verified_at": "2026-08-26"
   }
 }
