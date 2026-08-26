@@ -1,0 +1,51 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_izaka-ya-wallet-20260824-restriction",
+  "title": "IZAKA-YA Wallet 2026-08-24 transfer/withdrawal restriction and KYC policy change",
+  "review_state": "review_ready",
+  "notes": "Wallet-native projection only. The first-party notice establishes temporary transfer/withdrawal restrictions for some investigated accounts and a KYC policy change. It does not establish a platform-wide freeze, insolvency, customer-fund loss, custody-infrastructure compromise, or a change in the canonical custody model.",
+  "records": {
+    "entities": [],
+    "products": [],
+    "events": [
+      {
+        "id": "wlr_ev_000158",
+        "entity_id": "wlr_ent_000101",
+        "product_id": "wlr_prod_000150",
+        "affected_product_ids": ["wlr_prod_000150"],
+        "event_type": "policy_change",
+        "event_date": "2026-08-24",
+        "event_date_basis": "announcement",
+        "title": "IZAKA-YA announced account-level transfer/withdrawal restrictions and mandatory KYC",
+        "description": "IZAKA-YA stated that some accounts were temporarily restricted from transfers and withdrawals while transactions suspected of illicit-fund or money-laundering involvement were investigated. The same notice announced mandatory KYC for all users and warned that ordinary transfer/withdrawal processing could take longer during enhanced monitoring.",
+        "confidence": "high",
+        "impact_level": "high",
+        "security_scope": "cloud_service",
+        "funds_affected": "unknown",
+        "event_status_effect": "limited",
+        "is_major_event": true,
+        "notes": "This records a provider/account-access and operating-policy change. The operator explicitly stated that this was not a uniform platform-wide withdrawal halt. Do not infer insolvency, customer loss, Fireblocks compromise, criminal conduct by a specific user, or a self-custody/custody transition.",
+        "user_actions_required": ["monitor"]
+      }
+    ],
+    "evidence": [
+      {
+        "id": "wlr_src_000398",
+        "entity_id": "wlr_ent_000101",
+        "product_id": "wlr_prod_000150",
+        "event_id": "wlr_ev_000158",
+        "source_type": "official_statement",
+        "title": "送金・出金およびKYC認証に関するお知らせ",
+        "url": "https://izakaya.tech/news/news/",
+        "publisher": "Izakaya Limited",
+        "published_at": "2026-08-24",
+        "archived_url": "https://web.archive.org/web/*/https://izakaya.tech/news/news/",
+        "accessed_at": "2026-08-26",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "First-party notice used only for the existence and stated scope of the account-level transfer/withdrawal restrictions and the mandatory-KYC policy change. It is not independent proof of the operator's stated AML cause for every reported withdrawal problem."
+      }
+    ]
+  }
+}
