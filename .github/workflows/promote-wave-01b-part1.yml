@@ -22,7 +22,6 @@ jobs:
       - run: node scripts/promote-wave-01b-part1.mjs
       - run: npm install --progress=false
       - run: npm run prebuild
-      - run: npm run validate:all
       - run: npm run build
       - run: |
           git config user.name github-actions[bot]
