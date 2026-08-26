@@ -52,6 +52,22 @@
         "source_type": "official_statement",
         "title": "Nunchuk — Secure Your Bitcoin for Generations",
         "url": "https://nunchuk.io/"
+      },
+      {
+        "accessed_at": "2026-08-25",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000041",
+        "event_id": null,
+        "id": "wlr_src_000396",
+        "is_primary": true,
+        "notes": "Current first-party product surface retained for bounded launch/support research; no exact launch or formal support claim is promoted from this source alone.",
+        "product_id": "wlr_prod_000090",
+        "published_at": null,
+        "publisher": "Nunchuk",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Nunchuk official wallet site",
+        "url": "https://nunchuk.io/"
       }
     ]
   },

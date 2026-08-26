@@ -15,7 +15,7 @@
     "product_type": "hardware_device",
     "status": "active",
     "sales_status": "on_sale",
-    "support_status": "unknown",
+    "support_status": "supported",
     "launch_date": null,
     "platform": null,
     "official_url": "https://ngrave.io/en/zero",
@@ -24,7 +24,7 @@
     "key_management_model": "air_gapped_hardware_private_keys",
     "summary": "Air-gapped NGRAVE hardware wallet designed to keep private keys offline and sign without network connectivity.",
     "confidence": "high",
-    "last_verified_at": "2026-08-19",
+    "last_verified_at": "2026-08-25",
     "notes": "Current first-party product page establishes NGRAVE ZERO as an active purchasable product; exact initial release date remains unresolved in this batch."
   },
   "events": [
@@ -78,6 +78,22 @@
       "claim_scope": "event",
       "is_primary": true,
       "notes": "First-party NGRAVE post dated 2021-11-02 states ZERO was ready to ship and would soon be in the hands of backers."
+    },
+    {
+      "id": "wlr_src_000394",
+      "entity_id": "wlr_ent_000040",
+      "product_id": "wlr_prod_000089",
+      "event_id": null,
+      "source_type": "release_notes",
+      "title": "NGRAVE ZERO Firmware Update",
+      "url": "https://ngrave.io/firmware-upgrade",
+      "publisher": "NGRAVE",
+      "published_at": null,
+      "accessed_at": "2026-08-25",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "Official firmware-update surface and release notes for NGRAVE ZERO establish an active maintained firmware/support path."
     }
   ]
 }

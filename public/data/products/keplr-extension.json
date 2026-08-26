@@ -48,6 +48,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "First-party help material documents current Keplr Extension downloads for supported desktop browsers."
+    },
+    {
+      "id": "wlr_src_000397",
+      "entity_id": "wlr_ent_000043",
+      "product_id": "wlr_prod_000092",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Keplr official wallet site",
+      "url": "https://www.keplr.app/",
+      "publisher": "Keplr",
+      "published_at": null,
+      "accessed_at": "2026-08-25",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party product surface retained for bounded launch/support research; no exact launch or formal support claim is promoted from this source alone."
     }
   ]
 }

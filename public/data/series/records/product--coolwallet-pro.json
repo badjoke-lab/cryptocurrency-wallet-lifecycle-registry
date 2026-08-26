@@ -76,6 +76,22 @@
         "source_type": "official_blog",
         "title": "Introducing the CoolWallet Pro For Enhanced Staking, DeFi, DApp, and NFT Support",
         "url": "https://www.coolwallet.io/blogs/blog/introducing-the-coolwallet-pro-for-enhanced-staking-defi-dapp-and-nft-support"
+      },
+      {
+        "accessed_at": "2026-08-25",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000039",
+        "event_id": null,
+        "id": "wlr_src_000395",
+        "is_primary": true,
+        "notes": "Current first-party product surface retained for bounded support/launch research; formal support classification still requires stronger maintenance evidence before promotion.",
+        "product_id": "wlr_prod_000088",
+        "published_at": null,
+        "publisher": "CoolBitX / CoolWallet",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "CoolWallet official product site",
+        "url": "https://www.coolwallet.io/"
       }
     ]
   },

@@ -16,7 +16,7 @@
       "sales_status": "on_sale",
       "status": "active",
       "successor_product_id": null,
-      "support_status": "unknown"
+      "support_status": "supported"
     },
     "status": "active"
   },
@@ -76,6 +76,22 @@
         "source_type": "official_blog",
         "title": "We are ready to Ship!",
         "url": "https://ngrave.io/en/blog/we-are-ready-to-ship"
+      },
+      {
+        "accessed_at": "2026-08-25",
+        "claim_scope": "support_status",
+        "entity_id": "wlr_ent_000040",
+        "event_id": null,
+        "id": "wlr_src_000394",
+        "is_primary": true,
+        "notes": "Official firmware-update surface and release notes for NGRAVE ZERO establish an active maintained firmware/support path.",
+        "product_id": "wlr_prod_000089",
+        "published_at": null,
+        "publisher": "NGRAVE",
+        "reliability": "high",
+        "source_type": "release_notes",
+        "title": "NGRAVE ZERO Firmware Update",
+        "url": "https://ngrave.io/firmware-upgrade"
       }
     ]
   },
@@ -109,6 +125,6 @@
     "native_machine": "https://wlr.badjoke-lab.com/data/products/ngrave-zero.json"
   },
   "verification": {
-    "last_verified_at": "2026-08-19"
+    "last_verified_at": "2026-08-25"
   }
 }

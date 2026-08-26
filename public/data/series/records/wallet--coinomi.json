@@ -16,7 +16,25 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000083"
+        ],
+        "confidence": "high",
+        "description": "Coinomi's first-party company history states that Coinomi was launched in 2014.",
+        "entity_id": "wlr_ent_000034",
+        "event_date": "2014",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000156",
+        "is_major_event": true,
+        "notes": "Year precision only. The reviewed first-party history does not establish a defensible exact release day for the current wallet lineage.",
+        "product_id": "wlr_prod_000083",
+        "title": "Coinomi wallet launched"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -52,6 +70,38 @@
         "source_type": "official_statement",
         "title": "Coinomi: The blockchain wallet trusted by millions",
         "url": "https://www.coinomi.com/en/"
+      },
+      {
+        "accessed_at": "2026-08-25",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000034",
+        "event_id": "wlr_ev_000156",
+        "id": "wlr_src_000388",
+        "is_primary": true,
+        "notes": "Coinomi first-party company history states that Coinomi was launched in 2014.",
+        "product_id": "wlr_prod_000083",
+        "published_at": null,
+        "publisher": "Coinomi",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "About us",
+        "url": "https://www.coinomi.com/en/about/"
+      },
+      {
+        "accessed_at": "2026-08-25",
+        "claim_scope": "support_status",
+        "entity_id": "wlr_ent_000034",
+        "event_id": null,
+        "id": "wlr_src_000389",
+        "is_primary": true,
+        "notes": "Current first-party page distributes current Android/iOS builds and desktop binaries and describes an ongoing desktop update, supporting current maintenance.",
+        "product_id": "wlr_prod_000083",
+        "published_at": null,
+        "publisher": "Coinomi",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Download Coinomi",
+        "url": "https://www.coinomi.com/en/downloads/"
       }
     ]
   },

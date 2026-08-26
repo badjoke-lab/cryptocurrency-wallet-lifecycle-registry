@@ -3283,5 +3283,39 @@
     "event_status_effect": "none",
     "is_major_event": true,
     "notes": "Announcement event only. Phantom and both affected products remain active. Do not treat Sui support as effectively removed until the 2026-09-24 transition is independently verified. User funds remain self-custodied on-chain; this is not a custody-loss or wallet-shutdown event."
+  },
+  {
+    "id": "wlr_ev_000156",
+    "entity_id": "wlr_ent_000034",
+    "product_id": "wlr_prod_000083",
+    "affected_product_ids": [
+      "wlr_prod_000083"
+    ],
+    "event_type": "product_released",
+    "event_date": "2014",
+    "event_date_basis": "release",
+    "title": "Coinomi wallet launched",
+    "description": "Coinomi's first-party company history states that Coinomi was launched in 2014.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true,
+    "notes": "Year precision only. The reviewed first-party history does not establish a defensible exact release day for the current wallet lineage."
+  },
+  {
+    "id": "wlr_ev_000157",
+    "entity_id": "wlr_ent_000035",
+    "product_id": "wlr_prod_000084",
+    "affected_product_ids": [
+      "wlr_prod_000084"
+    ],
+    "event_type": "product_released",
+    "event_date": "2023-11-06",
+    "event_date_basis": "release",
+    "title": "ELLIPAL Titan 2.0 introduced",
+    "description": "ELLIPAL's first-party release article introduced the Titan 2.0 on 2023-11-06.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true,
+    "notes": "Day precision follows the dated first-party product-release article."
   }
 ]

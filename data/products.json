@@ -2206,7 +2206,7 @@
     "product_type": "multi_platform_app",
     "status": "active",
     "sales_status": "not_applicable",
-    "support_status": "unknown",
+    "support_status": "supported",
     "launch_date": null,
     "platform": [
       "Web",
@@ -2222,7 +2222,7 @@
     "key_management_model": "user_controlled_locally_stored_private_keys",
     "summary": "Current Guarda non-custodial wallet application distributed across browser, desktop and mobile environments.",
     "confidence": "high",
-    "last_verified_at": "2026-08-19",
+    "last_verified_at": "2026-08-25",
     "notes": "The current product is modeled as one multi-platform application lineage. Its exact transition from the original 2017 Ethereum wallet to today's multi-currency form is not given a fabricated product launch date."
   },
   {
@@ -2233,8 +2233,8 @@
     "product_type": "multi_platform_app",
     "status": "active",
     "sales_status": "not_applicable",
-    "support_status": "unknown",
-    "launch_date": null,
+    "support_status": "supported",
+    "launch_date": "2014",
     "platform": [
       "iOS",
       "Android",
@@ -2246,8 +2246,9 @@
     "key_management_model": "device_local_private_keys",
     "summary": "Coinomi's current non-custodial multi-chain wallet application across mobile and desktop platforms.",
     "confidence": "high",
-    "last_verified_at": "2026-08-19",
-    "notes": "Entity launch is established at 2014; this batch does not force a separate product launch date for the current cross-platform lineage."
+    "last_verified_at": "2026-08-25",
+    "notes": "Entity launch is established at 2014; this batch does not force a separate product launch date for the current cross-platform lineage.",
+    "launch_date_precision": "year"
   },
   {
     "id": "wlr_prod_000084",
@@ -2257,8 +2258,8 @@
     "product_type": "hardware_device",
     "status": "active",
     "sales_status": "on_sale",
-    "support_status": "unknown",
-    "launch_date": null,
+    "support_status": "supported",
+    "launch_date": "2023-11-06",
     "platform": null,
     "official_url": "https://www.ellipal.com/",
     "source_code_url": null,
@@ -2266,8 +2267,9 @@
     "key_management_model": "air_gapped_hardware_isolated_private_keys",
     "summary": "Current ELLIPAL air-gapped hardware wallet with on-device transaction review and QR-based signing.",
     "confidence": "high",
-    "last_verified_at": "2026-08-19",
-    "notes": "Current first-party pages present Titan 2.0 as an active purchasable hardware wallet. This batch leaves its exact initial launch date unresolved."
+    "last_verified_at": "2026-08-25",
+    "notes": "Current first-party pages present Titan 2.0 as an active purchasable hardware wallet. This batch leaves its exact initial launch date unresolved.",
+    "launch_date_precision": "day"
   },
   {
     "id": "wlr_prod_000085",
@@ -2301,7 +2303,7 @@
     "product_type": "hardware_device",
     "status": "active",
     "sales_status": "on_sale",
-    "support_status": "unknown",
+    "support_status": "supported",
     "launch_date": null,
     "platform": null,
     "official_url": "https://onekey.so/products/onekey-pro-hardware-wallet",
@@ -2310,7 +2312,7 @@
     "key_management_model": "hardware_secure_elements",
     "summary": "Current premium OneKey hardware wallet with touchscreen, secure elements and multiple signing/connectivity modes.",
     "confidence": "high",
-    "last_verified_at": "2026-08-19",
+    "last_verified_at": "2026-08-25",
     "notes": "Current first-party product material establishes an active purchasable OneKey Pro; initial product launch date remains unresolved."
   },
   {
@@ -2321,7 +2323,7 @@
     "product_type": "hardware_device",
     "status": "active",
     "sales_status": "on_sale",
-    "support_status": "unknown",
+    "support_status": "supported",
     "launch_date": null,
     "platform": null,
     "official_url": "https://store.dcentwallet.com/products/biometric-wallet",
@@ -2330,7 +2332,7 @@
     "key_management_model": "hardware_secure_element_private_keys",
     "summary": "Biometric cold-wallet device that generates and stores private keys inside secure hardware and unlocks with fingerprint authentication.",
     "confidence": "high",
-    "last_verified_at": "2026-08-19",
+    "last_verified_at": "2026-08-25",
     "notes": "Current first-party storefront establishes an active purchasable biometric hardware wallet; exact initial launch date remains unresolved."
   },
   {
@@ -2361,7 +2363,7 @@
     "product_type": "hardware_device",
     "status": "active",
     "sales_status": "on_sale",
-    "support_status": "unknown",
+    "support_status": "supported",
     "launch_date": null,
     "platform": null,
     "official_url": "https://ngrave.io/en/zero",
@@ -2370,7 +2372,7 @@
     "key_management_model": "air_gapped_hardware_private_keys",
     "summary": "Air-gapped NGRAVE hardware wallet designed to keep private keys offline and sign without network connectivity.",
     "confidence": "high",
-    "last_verified_at": "2026-08-19",
+    "last_verified_at": "2026-08-25",
     "notes": "Current first-party product page establishes NGRAVE ZERO as an active purchasable product; exact initial release date remains unresolved in this batch."
   },
   {
