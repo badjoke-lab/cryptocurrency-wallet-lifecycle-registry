@@ -1,3 +1,4 @@
+# trigger canonical promotion
 name: Promote IZAKA-YA Wallet Aug 24 lifecycle
 on:
   push:
