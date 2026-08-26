@@ -2477,7 +2477,7 @@
     "product_type": "browser_extension",
     "status": "active",
     "sales_status": "not_applicable",
-    "support_status": "unknown",
+    "support_status": "supported",
     "launch_date": null,
     "platform": [
       "Chrome",
@@ -2490,7 +2490,7 @@
     "key_management_model": "browser_wallet_keys_or_supported_keyless_mode",
     "summary": "Ronin Wallet browser extension for managing Ronin and supported assets from desktop browsers.",
     "confidence": "high",
-    "last_verified_at": "2026-08-19",
+    "last_verified_at": "2026-08-26",
     "notes": "The extension is modeled separately from Ronin Mobile because browser and mobile runtimes have distinct distribution and security lifecycles. Current first-party documentation supports Chrome, Edge and Firefox; initial extension launch date remains unresolved."
   },
   {
@@ -2504,7 +2504,7 @@
     "product_type": "mobile_app",
     "status": "active",
     "sales_status": "not_applicable",
-    "support_status": "unknown",
+    "support_status": "supported",
     "launch_date": null,
     "platform": [
       "iOS",
@@ -2516,7 +2516,7 @@
     "key_management_model": "user_controlled_software_private_keys",
     "summary": "Current Bitget Wallet mobile application for self-custodial multichain Web3 wallet use on iOS and Android.",
     "confidence": "high",
-    "last_verified_at": "2026-08-19",
+    "last_verified_at": "2026-08-26",
     "notes": "The 2023-08-10 BitKeep-to-Bitget Wallet change is a brand rebrand, not a defensible initial product-launch date. The mobile product preserves the earlier BitKeep Wallet lineage, but its exact initial launch date remains unresolved. Browser extension distribution has a distinct runtime and is intentionally deferred as a separate product boundary."
   },
   {
@@ -2575,7 +2575,7 @@
     "product_type": "mobile_app",
     "status": "active",
     "sales_status": "not_applicable",
-    "support_status": "unknown",
+    "support_status": "supported",
     "launch_date": null,
     "platform": null,
     "official_url": "https://phoenix.acinq.co/",
@@ -2584,7 +2584,7 @@
     "key_management_model": "user_controlled_bitcoin_keys_with_lightning_channels",
     "summary": "Phoenix mobile Bitcoin wallet with native Lightning support and self-custodial key control.",
     "confidence": "high",
-    "last_verified_at": "2026-08-19",
+    "last_verified_at": "2026-08-26",
     "notes": "Current first-party product site establishes the active wallet product; initial public launch date remains unresolved."
   },
   {
@@ -2619,7 +2619,7 @@
     "product_type": "embedded_wallet",
     "status": "active",
     "sales_status": "not_applicable",
-    "support_status": "unknown",
+    "support_status": "supported",
     "launch_date": null,
     "platform": [
       "desktop",
@@ -2632,7 +2632,7 @@
     "key_management_model": "browser_integrated_user_controlled_wallet_keys",
     "summary": "Brave browser-native self-custody wallet surface available within supported Brave desktop and mobile browsers.",
     "confidence": "high",
-    "last_verified_at": "2026-08-20",
+    "last_verified_at": "2026-08-26",
     "notes": "Modeled as one browser-integrated wallet product rather than a browser extension because Brave explicitly states no extension is required. Initial release date remains unresolved."
   },
   {
@@ -2643,7 +2643,7 @@
     "product_type": "browser_extension",
     "status": "active",
     "sales_status": "not_applicable",
-    "support_status": "unknown",
+    "support_status": "supported",
     "launch_date": null,
     "platform": [
       "Chrome-compatible browsers"
@@ -2654,7 +2654,7 @@
     "key_management_model": "non_custodial_browser_wallet_keys",
     "summary": "Current Crypto.com Onchain browser extension for non-custodial multichain wallet management.",
     "confidence": "high",
-    "last_verified_at": "2026-08-20",
+    "last_verified_at": "2026-08-26",
     "notes": "Selected as the breadth-pass product boundary. Mobile and other Onchain wallet surfaces are distinct distribution/runtime products and are deferred. The 2025 extension revamp is not treated as the original extension launch."
   },
   {

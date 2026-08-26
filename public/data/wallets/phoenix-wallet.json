@@ -31,7 +31,7 @@
       "product_type": "mobile_app",
       "status": "active",
       "sales_status": "not_applicable",
-      "support_status": "unknown",
+      "support_status": "supported",
       "launch_date": null,
       "platform": null,
       "official_url": "https://phoenix.acinq.co/",
@@ -40,7 +40,7 @@
       "key_management_model": "user_controlled_bitcoin_keys_with_lightning_channels",
       "summary": "Phoenix mobile Bitcoin wallet with native Lightning support and self-custodial key control.",
       "confidence": "high",
-      "last_verified_at": "2026-08-19",
+      "last_verified_at": "2026-08-26",
       "notes": "Current first-party product site establishes the active wallet product; initial public launch date remains unresolved."
     }
   ],
@@ -77,6 +77,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Current first-party Phoenix site establishes the active self-custodial Bitcoin/Lightning wallet product."
+    },
+    {
+      "id": "wlr_src_000400",
+      "entity_id": "wlr_ent_000049",
+      "product_id": "wlr_prod_000098",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Phoenix Wallet",
+      "url": "https://phoenix.acinq.co/",
+      "publisher": "ACINQ",
+      "published_at": null,
+      "accessed_at": "2026-08-26",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "Current first-party Phoenix site presents the non-custodial Lightning wallet and active support/source-code links, supporting a currently maintained product state. This source is not used to infer a launch date."
     }
   ]
 }

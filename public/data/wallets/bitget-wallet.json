@@ -35,7 +35,7 @@
       "product_type": "mobile_app",
       "status": "active",
       "sales_status": "not_applicable",
-      "support_status": "unknown",
+      "support_status": "supported",
       "launch_date": null,
       "platform": [
         "iOS",
@@ -47,7 +47,7 @@
       "key_management_model": "user_controlled_software_private_keys",
       "summary": "Current Bitget Wallet mobile application for self-custodial multichain Web3 wallet use on iOS and Android.",
       "confidence": "high",
-      "last_verified_at": "2026-08-19",
+      "last_verified_at": "2026-08-26",
       "notes": "The 2023-08-10 BitKeep-to-Bitget Wallet change is a brand rebrand, not a defensible initial product-launch date. The mobile product preserves the earlier BitKeep Wallet lineage, but its exact initial launch date remains unresolved. Browser extension distribution has a distinct runtime and is intentionally deferred as a separate product boundary."
     }
   ],
@@ -118,6 +118,22 @@
       "claim_scope": "rebrand",
       "is_primary": true,
       "notes": "First-party history states BitKeep began in 2018 and formally upgraded its brand to Bitget Wallet on 2023-08-10 after Bitget acquired a controlling stake earlier that year."
+    },
+    {
+      "id": "wlr_src_000399",
+      "entity_id": "wlr_ent_000046",
+      "product_id": "wlr_prod_000095",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Download Bitget Wallet",
+      "url": "https://web3.bitget.com/wallet-download",
+      "publisher": "Bitget Wallet",
+      "published_at": null,
+      "accessed_at": "2026-08-26",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "Current first-party download surface distributes Bitget Wallet through Google Play, App Store and Android APK, supporting an actively maintained mobile product. No exact initial mobile launch date is inferred from this source."
     }
   ]
 }

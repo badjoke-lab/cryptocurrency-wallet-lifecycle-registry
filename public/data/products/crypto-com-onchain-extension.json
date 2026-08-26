@@ -15,7 +15,7 @@
     "product_type": "browser_extension",
     "status": "active",
     "sales_status": "not_applicable",
-    "support_status": "unknown",
+    "support_status": "supported",
     "launch_date": null,
     "platform": [
       "Chrome-compatible browsers"
@@ -26,7 +26,7 @@
     "key_management_model": "non_custodial_browser_wallet_keys",
     "summary": "Current Crypto.com Onchain browser extension for non-custodial multichain wallet management.",
     "confidence": "high",
-    "last_verified_at": "2026-08-20",
+    "last_verified_at": "2026-08-26",
     "notes": "Selected as the breadth-pass product boundary. Mobile and other Onchain wallet surfaces are distinct distribution/runtime products and are deferred. The 2025 extension revamp is not treated as the original extension launch."
   },
   "events": [
@@ -80,6 +80,22 @@
       "claim_scope": "rebrand",
       "is_primary": true,
       "notes": "First-party Crypto.com announcement says the existing DeFi Wallet received a new identity as Crypto.com Onchain and continues as the non-custodial wallet product."
+    },
+    {
+      "id": "wlr_src_000402",
+      "entity_id": "wlr_ent_000052",
+      "product_id": "wlr_prod_000101",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Crypto.com Onchain",
+      "url": "https://help.crypto.com/en/collections/2221157-crypto-com-onchain",
+      "publisher": "Crypto.com",
+      "published_at": null,
+      "accessed_at": "2026-08-26",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "Current first-party help collection contains active Crypto.com Onchain Extension setup, import, swap and wallet-management documentation; Crypto.com also published a revamped extension in 2025. Supports active maintenance, without inferring the original extension launch date."
     }
   ]
 }

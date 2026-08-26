@@ -16,7 +16,7 @@
       "sales_status": "not_applicable",
       "status": "active",
       "successor_product_id": null,
-      "support_status": "unknown"
+      "support_status": "supported"
     },
     "status": "active"
   },
@@ -76,6 +76,22 @@
         "source_type": "official_blog",
         "title": "BitKeep Upgrades to Bitget Wallet: A Letter From the Team",
         "url": "https://web3.bitget.com/en/blog/articles/bitkeep-upgrades-to-bitget-wallet-a-letter-from-the-team"
+      },
+      {
+        "accessed_at": "2026-08-26",
+        "claim_scope": "support_status",
+        "entity_id": "wlr_ent_000046",
+        "event_id": null,
+        "id": "wlr_src_000399",
+        "is_primary": true,
+        "notes": "Current first-party download surface distributes Bitget Wallet through Google Play, App Store and Android APK, supporting an actively maintained mobile product. No exact initial mobile launch date is inferred from this source.",
+        "product_id": "wlr_prod_000095",
+        "published_at": null,
+        "publisher": "Bitget Wallet",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Download Bitget Wallet",
+        "url": "https://web3.bitget.com/wallet-download"
       }
     ]
   },
@@ -111,6 +127,6 @@
     "native_machine": "https://wlr.badjoke-lab.com/data/products/bitget-wallet-mobile.json"
   },
   "verification": {
-    "last_verified_at": "2026-08-19"
+    "last_verified_at": "2026-08-26"
   }
 }
