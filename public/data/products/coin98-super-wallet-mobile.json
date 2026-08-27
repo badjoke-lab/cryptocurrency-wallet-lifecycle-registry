@@ -15,7 +15,7 @@
     "product_type": "mobile_app",
     "status": "active",
     "sales_status": "not_applicable",
-    "support_status": "unknown",
+    "support_status": "supported",
     "launch_date": null,
     "platform": [
       "iOS",
@@ -27,7 +27,7 @@
     "key_management_model": "user_controlled_device_wallet_keys",
     "summary": "Current Coin98 non-custodial mobile wallet for multichain assets and Web3 access.",
     "confidence": "high",
-    "last_verified_at": "2026-08-20",
+    "last_verified_at": "2026-08-26",
     "notes": "Selected mobile boundary only. Coin98 Extension is a separate browser runtime and is deferred. Exact mobile launch date remains unresolved."
   },
   "events": [],
@@ -47,6 +47,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "First-party mobile documentation establishes the current non-custodial mobile wallet product."
+    },
+    {
+      "id": "wlr_src_000406",
+      "entity_id": "wlr_ent_000056",
+      "product_id": "wlr_prod_000105",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Coin98 Super Wallet",
+      "url": "https://coin98.com/wallet",
+      "publisher": "Coin98",
+      "published_at": null,
+      "accessed_at": "2026-08-26",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "Current first-party Coin98 wallet page distributes iOS and Android mobile builds and a browser extension, supporting active maintenance of the mobile product."
     }
   ]
 }

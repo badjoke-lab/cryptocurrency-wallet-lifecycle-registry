@@ -2668,7 +2668,7 @@
     "product_type": "mobile_app",
     "status": "active",
     "sales_status": "not_applicable",
-    "support_status": "unknown",
+    "support_status": "supported",
     "launch_date": null,
     "platform": [
       "Binance mobile app"
@@ -2679,7 +2679,7 @@
     "key_management_model": "self_custodial_mobile_wallet_architecture",
     "summary": "Self-custodial Binance Wallet mobile surface integrated into the Binance application.",
     "confidence": "high",
-    "last_verified_at": "2026-08-20",
+    "last_verified_at": "2026-08-26",
     "notes": "Selected mobile boundary only. Binance's current web wallet has a separate desktop/on-chain-trading architecture and is deferred. December 2024 is rebrand chronology rather than original product launch."
   },
   {
@@ -2690,7 +2690,7 @@
     "product_type": "mobile_app",
     "status": "active",
     "sales_status": "not_applicable",
-    "support_status": "unknown",
+    "support_status": "supported",
     "launch_date": null,
     "platform": [
       "iOS",
@@ -2702,7 +2702,7 @@
     "key_management_model": "user_controlled_recovery_phrase_and_private_keys",
     "summary": "Bitcoin.com self-custodial mobile wallet application for supported cryptocurrency assets.",
     "confidence": "high",
-    "last_verified_at": "2026-08-20",
+    "last_verified_at": "2026-08-26",
     "notes": "Current app boundary is established by Bitcoin.com support material. Exact original app launch date remains unresolved."
   },
   {
@@ -2713,7 +2713,7 @@
     "product_type": "multi_platform_app",
     "status": "active",
     "sales_status": "not_applicable",
-    "support_status": "unknown",
+    "support_status": "supported",
     "launch_date": null,
     "platform": [
       "iOS",
@@ -2728,7 +2728,7 @@
     "key_management_model": "locally_held_recovery_phrase_and_wallet_keys",
     "summary": "BitPay self-custody wallet application distributed across mobile and desktop operating systems from the same wallet lineage.",
     "confidence": "high",
-    "last_verified_at": "2026-08-20",
+    "last_verified_at": "2026-08-26",
     "notes": "Treated as one multi-platform application product because current first-party material presents the same BitPay Wallet app and recovery phrase model across mobile and desktop."
   },
   {
@@ -2739,7 +2739,7 @@
     "product_type": "mobile_app",
     "status": "active",
     "sales_status": "not_applicable",
-    "support_status": "unknown",
+    "support_status": "supported",
     "launch_date": null,
     "platform": [
       "iOS",
@@ -2751,7 +2751,7 @@
     "key_management_model": "user_controlled_device_wallet_keys",
     "summary": "Current Coin98 non-custodial mobile wallet for multichain assets and Web3 access.",
     "confidence": "high",
-    "last_verified_at": "2026-08-20",
+    "last_verified_at": "2026-08-26",
     "notes": "Selected mobile boundary only. Coin98 Extension is a separate browser runtime and is deferred. Exact mobile launch date remains unresolved."
   },
   {
@@ -2762,7 +2762,7 @@
     "product_type": "mobile_app",
     "status": "active",
     "sales_status": "not_applicable",
-    "support_status": "unknown",
+    "support_status": "supported",
     "launch_date": null,
     "platform": [
       "iOS",
@@ -2774,7 +2774,7 @@
     "key_management_model": "user_held_mnemonic_and_private_key_workflows_per_official_security_guidance",
     "summary": "Current MathWallet mobile wallet application for multichain Web3 use on iOS and Android.",
     "confidence": "medium",
-    "last_verified_at": "2026-08-20",
+    "last_verified_at": "2026-08-26",
     "notes": "Selected mobile boundary only; browser wallet is deferred. Custody remains unknown pending stronger current first-party terms rather than being inferred from security guidance alone."
   },
   {
@@ -2834,7 +2834,7 @@
     "product_type": "browser_extension",
     "status": "active",
     "sales_status": "not_applicable",
-    "support_status": "unknown",
+    "support_status": "supported",
     "launch_date": null,
     "platform": [
       "Chrome",
@@ -2850,7 +2850,7 @@
     "key_management_model": "browser_local_user_controlled_wallet_keys",
     "summary": "Enkrypt non-custodial open-source multichain browser-extension wallet.",
     "confidence": "high",
-    "last_verified_at": "2026-08-20",
+    "last_verified_at": "2026-08-26",
     "notes": "Current first-party Enkrypt site explicitly distributes the extension across multiple browsers. Exact initial extension release date remains unresolved."
   },
   {
@@ -2861,7 +2861,7 @@
     "product_type": "browser_extension",
     "status": "active",
     "sales_status": "not_applicable",
-    "support_status": "unknown",
+    "support_status": "supported",
     "launch_date": null,
     "platform": [
       "Chrome",
@@ -2874,7 +2874,7 @@
     "key_management_model": "browser_local_user_controlled_private_keys_and_recovery_phrases",
     "summary": "Current self-custodial Backpack browser extension for wallet and dApp use on supported desktop browsers.",
     "confidence": "high",
-    "last_verified_at": "2026-08-20",
+    "last_verified_at": "2026-08-26",
     "notes": "Selected browser-extension boundary only; mobile is deferred. Current first-party wallet support explicitly describes Backpack as self-custodial, while the official download page establishes Chrome, Brave and Edge distribution. Original extension launch remains unresolved."
   },
   {
@@ -2911,7 +2911,7 @@
     "product_type": "mobile_app",
     "status": "active",
     "sales_status": "not_applicable",
-    "support_status": "unknown",
+    "support_status": "supported",
     "launch_date": null,
     "platform": [
       "iOS",
@@ -2923,7 +2923,7 @@
     "key_management_model": "device_local_user_controlled_xrpl_keys",
     "summary": "Current Xaman self-custodial XRP Ledger mobile wallet, continuing the former Xumm application lineage.",
     "confidence": "high",
-    "last_verified_at": "2026-08-20",
+    "last_verified_at": "2026-08-26",
     "notes": "The 2023 Xumm→Xaman transition is a rebrand, not an initial mobile-product launch date. Current first-party help links official App Store and Google Play versions."
   },
   {
@@ -2934,7 +2934,7 @@
     "product_type": "mobile_app",
     "status": "active",
     "sales_status": "not_applicable",
-    "support_status": "unknown",
+    "support_status": "supported",
     "launch_date": null,
     "platform": [
       "iOS",
@@ -2946,7 +2946,7 @@
     "key_management_model": "device_local_user_controlled_algorand_private_keys",
     "summary": "Current self-custodial Pera Wallet mobile application for Algorand accounts and dApp access.",
     "confidence": "high",
-    "last_verified_at": "2026-08-20",
+    "last_verified_at": "2026-08-26",
     "notes": "Selected mobile product only; Pera Web is deferred as a separate runtime. Exact original mobile launch date remains unresolved."
   },
   {
@@ -2981,7 +2981,7 @@
     "product_type": "browser_extension",
     "status": "active",
     "sales_status": "not_applicable",
-    "support_status": "unknown",
+    "support_status": "supported",
     "launch_date": null,
     "platform": [
       "Chrome",
@@ -2995,7 +2995,7 @@
     "key_management_model": "browser_local_user_controlled_private_keys",
     "summary": "Current non-custodial Talisman browser-extension wallet for supported Polkadot, Ethereum and related networks.",
     "confidence": "high",
-    "last_verified_at": "2026-08-20",
+    "last_verified_at": "2026-08-26",
     "notes": "Current first-party installation documentation supports Chrome, Firefox, Brave and Edge. Initial extension launch date remains unresolved."
   },
   {
@@ -3006,7 +3006,7 @@
     "product_type": "browser_extension",
     "status": "active",
     "sales_status": "not_applicable",
-    "support_status": "unknown",
+    "support_status": "supported",
     "launch_date": null,
     "platform": [
       "Chrome",
@@ -3020,7 +3020,7 @@
     "key_management_model": "browser_local_user_controlled_wallet_keys",
     "summary": "Current SubWallet non-custodial browser extension for Polkadot, Substrate and EVM-compatible networks.",
     "confidence": "high",
-    "last_verified_at": "2026-08-20",
+    "last_verified_at": "2026-08-26",
     "notes": "Selected browser-extension boundary only; SubWallet mobile is deferred. Exact initial extension launch date remains unresolved."
   },
   {
@@ -3056,7 +3056,7 @@
     "product_type": "browser_extension",
     "status": "active",
     "sales_status": "not_applicable",
-    "support_status": "unknown",
+    "support_status": "supported",
     "launch_date": null,
     "platform": [
       "browser extension"
@@ -3067,7 +3067,7 @@
     "key_management_model": "browser_local_user_controlled_wallet_keys",
     "summary": "Current Slush browser-extension wallet continuing the former Sui Wallet extension lineage.",
     "confidence": "high",
-    "last_verified_at": "2026-08-20",
+    "last_verified_at": "2026-08-26",
     "notes": "Mysten Labs states existing Sui Wallet extension users received Slush through a standard update without a new download or migration. Slush mobile/web surfaces are deferred. The 2025-04-24 rebrand is not used as the original extension launch date."
   },
   {

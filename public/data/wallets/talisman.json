@@ -31,7 +31,7 @@
       "product_type": "browser_extension",
       "status": "active",
       "sales_status": "not_applicable",
-      "support_status": "unknown",
+      "support_status": "supported",
       "launch_date": null,
       "platform": [
         "Chrome",
@@ -45,7 +45,7 @@
       "key_management_model": "browser_local_user_controlled_private_keys",
       "summary": "Current non-custodial Talisman browser-extension wallet for supported Polkadot, Ethereum and related networks.",
       "confidence": "high",
-      "last_verified_at": "2026-08-20",
+      "last_verified_at": "2026-08-26",
       "notes": "Current first-party installation documentation supports Chrome, Firefox, Brave and Edge. Initial extension launch date remains unresolved."
     }
   ],
@@ -82,6 +82,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Current first-party installation guide establishes Talisman Extension distribution for Chrome, Firefox, Brave and Edge."
+    },
+    {
+      "id": "wlr_src_000413",
+      "entity_id": "wlr_ent_000066",
+      "product_id": "wlr_prod_000115",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Download the Extension",
+      "url": "https://docs.talisman.xyz/talisman/start/installing-talisman/download-the-extension",
+      "publisher": "Talisman",
+      "published_at": null,
+      "accessed_at": "2026-08-26",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "Current first-party Talisman documentation distributes the extension for Chrome, Firefox, Brave and Edge and documents current setup, supporting active maintenance."
     }
   ]
 }

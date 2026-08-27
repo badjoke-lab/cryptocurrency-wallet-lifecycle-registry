@@ -29,7 +29,7 @@
       "product_type": "browser_extension",
       "status": "active",
       "sales_status": "not_applicable",
-      "support_status": "unknown",
+      "support_status": "supported",
       "launch_date": null,
       "platform": [
         "Chrome",
@@ -43,7 +43,7 @@
       "key_management_model": "browser_local_user_controlled_wallet_keys",
       "summary": "Current SubWallet non-custodial browser extension for Polkadot, Substrate and EVM-compatible networks.",
       "confidence": "high",
-      "last_verified_at": "2026-08-20",
+      "last_verified_at": "2026-08-26",
       "notes": "Selected browser-extension boundary only; SubWallet mobile is deferred. Exact initial extension launch date remains unresolved."
     }
   ],
@@ -80,6 +80,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Same first-party installation authority explicitly lists Chrome, Brave, Firefox and Edge extension distribution."
+    },
+    {
+      "id": "wlr_src_000414",
+      "entity_id": "wlr_ent_000067",
+      "product_id": "wlr_prod_000116",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Install SubWallet",
+      "url": "https://docs.subwallet.app/main/extension-user-guide/getting-started/install-subwallet",
+      "publisher": "SubWallet",
+      "published_at": null,
+      "accessed_at": "2026-08-26",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "Current first-party SubWallet documentation provides active installation paths for Chrome, Brave, Edge and Firefox, with explicit Firefox maintenance caveats, supporting a maintained extension product."
     }
   ]
 }

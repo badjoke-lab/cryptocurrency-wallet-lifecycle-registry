@@ -46,6 +46,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Current first-party product page identifies Petra as self-custodial and states only the user can access wallet keys."
+    },
+    {
+      "id": "wlr_src_000415",
+      "entity_id": "wlr_ent_000068",
+      "product_id": "wlr_prod_000117",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Petra Wallet Terms of Use",
+      "url": "https://petra.app/Wallet_Terms.pdf",
+      "publisher": "Aptos Labs / Petra",
+      "published_at": "2023-12-12",
+      "accessed_at": "2026-08-26",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "First-party Petra terms explicitly cover the Petra wallet application and browser extension. This evidence confirms the official product boundary; current support-state promotion should remain conservative unless paired with a current distribution surface."
     }
   ]
 }

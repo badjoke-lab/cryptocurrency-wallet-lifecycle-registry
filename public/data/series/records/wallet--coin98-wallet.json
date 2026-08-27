@@ -52,6 +52,22 @@
         "source_type": "official_statement",
         "title": "Coin98 Super Wallet Mobile",
         "url": "https://docs.coin98.com/products/coin98-super-wallet/mobile"
+      },
+      {
+        "accessed_at": "2026-08-26",
+        "claim_scope": "support_status",
+        "entity_id": "wlr_ent_000056",
+        "event_id": null,
+        "id": "wlr_src_000406",
+        "is_primary": true,
+        "notes": "Current first-party Coin98 wallet page distributes iOS and Android mobile builds and a browser extension, supporting active maintenance of the mobile product.",
+        "product_id": "wlr_prod_000105",
+        "published_at": null,
+        "publisher": "Coin98",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Coin98 Super Wallet",
+        "url": "https://coin98.com/wallet"
       }
     ]
   },

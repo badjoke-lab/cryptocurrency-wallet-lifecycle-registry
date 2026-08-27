@@ -15,7 +15,7 @@
     "product_type": "mobile_app",
     "status": "active",
     "sales_status": "not_applicable",
-    "support_status": "unknown",
+    "support_status": "supported",
     "launch_date": null,
     "platform": [
       "iOS",
@@ -27,7 +27,7 @@
     "key_management_model": "user_controlled_recovery_phrase_and_private_keys",
     "summary": "Bitcoin.com self-custodial mobile wallet application for supported cryptocurrency assets.",
     "confidence": "high",
-    "last_verified_at": "2026-08-20",
+    "last_verified_at": "2026-08-26",
     "notes": "Current app boundary is established by Bitcoin.com support material. Exact original app launch date remains unresolved."
   },
   "events": [],
@@ -47,6 +47,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Current Bitcoin.com support explicitly identifies the Bitcoin.com Wallet app as self-custodial with user-controlled keys."
+    },
+    {
+      "id": "wlr_src_000404",
+      "entity_id": "wlr_ent_000054",
+      "product_id": "wlr_prod_000103",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Bitcoin.com Wallet",
+      "url": "https://www.bitcoin.com/wallet/",
+      "publisher": "Bitcoin.com",
+      "published_at": null,
+      "accessed_at": "2026-08-26",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "Current first-party Bitcoin.com Wallet page distributes the mobile app and documents active wallet functionality, supporting a maintained mobile product state."
     }
   ]
 }

@@ -16,7 +16,7 @@
       "sales_status": "not_applicable",
       "status": "active",
       "successor_product_id": null,
-      "support_status": "unknown"
+      "support_status": "supported"
     },
     "status": "active"
   },
@@ -76,6 +76,22 @@
         "source_type": "official_blog",
         "title": "Sui Wallet and Stashed are Now Slush",
         "url": "https://www.mystenlabs.com/blog/sui-wallet-and-stashed-are-now-slush"
+      },
+      {
+        "accessed_at": "2026-08-26",
+        "claim_scope": "support_status",
+        "entity_id": "wlr_ent_000069",
+        "event_id": null,
+        "id": "wlr_src_000416",
+        "is_primary": true,
+        "notes": "Current first-party Slush site distributes the browser extension, web app and mobile apps. Sui first-party documentation identifies Slush as the official wallet replacing Sui Wallet, supporting active maintenance of the extension product.",
+        "product_id": "wlr_prod_000118",
+        "published_at": null,
+        "publisher": "Mysten Labs / Slush",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Slush",
+        "url": "https://slush.app/"
       }
     ]
   },
@@ -111,6 +127,6 @@
     "native_machine": "https://wlr.badjoke-lab.com/data/products/slush-extension.json"
   },
   "verification": {
-    "last_verified_at": "2026-08-20"
+    "last_verified_at": "2026-08-26"
   }
 }

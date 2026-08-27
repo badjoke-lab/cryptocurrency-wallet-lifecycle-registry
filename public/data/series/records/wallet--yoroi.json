@@ -155,6 +155,22 @@
         "source_type": "official_security_advisory",
         "title": "Security Incident Update",
         "url": "https://kb.secondfi.io/en/article/security-incident-update-dxv72a/"
+      },
+      {
+        "accessed_at": "2026-08-26",
+        "claim_scope": "support_status",
+        "entity_id": "wlr_ent_000065",
+        "event_id": null,
+        "id": "wlr_src_000412",
+        "is_primary": true,
+        "notes": "Current official Yoroi site states that Yoroi and SecondFi are winding down following a security incident and directs users toward migration/recovery guidance. This is adverse lifecycle evidence and must not be converted into a normal supported-state claim. Exact shutdown date is not established by this page.",
+        "product_id": "wlr_prod_000114",
+        "published_at": null,
+        "publisher": "EMURGO / Yoroi",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Yoroi and SecondFi are winding down",
+        "url": "https://www.yoroi-wallet.com/"
       }
     ]
   },

@@ -16,7 +16,7 @@
       "sales_status": "not_applicable",
       "status": "active",
       "successor_product_id": null,
-      "support_status": "unknown"
+      "support_status": "supported"
     },
     "status": "active"
   },
@@ -42,6 +42,22 @@
         "source_type": "official_statement",
         "title": "Backpack Browser Extension",
         "url": "https://backpack.app/downloads"
+      },
+      {
+        "accessed_at": "2026-08-26",
+        "claim_scope": "support_status",
+        "entity_id": "wlr_ent_000061",
+        "event_id": null,
+        "id": "wlr_src_000409",
+        "is_primary": true,
+        "notes": "Current first-party Backpack download page distributes the browser extension for Chrome, Brave and Edge, supporting an actively maintained extension product.",
+        "product_id": "wlr_prod_000110",
+        "published_at": null,
+        "publisher": "Backpack",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Download Backpack",
+        "url": "https://backpack.app/download"
       }
     ]
   },
@@ -75,6 +91,6 @@
     "native_machine": "https://wlr.badjoke-lab.com/data/products/backpack-extension.json"
   },
   "verification": {
-    "last_verified_at": "2026-08-20"
+    "last_verified_at": "2026-08-26"
   }
 }

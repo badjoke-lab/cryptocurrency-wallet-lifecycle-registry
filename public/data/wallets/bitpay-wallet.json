@@ -29,7 +29,7 @@
       "product_type": "multi_platform_app",
       "status": "active",
       "sales_status": "not_applicable",
-      "support_status": "unknown",
+      "support_status": "supported",
       "launch_date": null,
       "platform": [
         "iOS",
@@ -44,7 +44,7 @@
       "key_management_model": "locally_held_recovery_phrase_and_wallet_keys",
       "summary": "BitPay self-custody wallet application distributed across mobile and desktop operating systems from the same wallet lineage.",
       "confidence": "high",
-      "last_verified_at": "2026-08-20",
+      "last_verified_at": "2026-08-26",
       "notes": "Treated as one multi-platform application product because current first-party material presents the same BitPay Wallet app and recovery phrase model across mobile and desktop."
     }
   ],
@@ -81,6 +81,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Current BitPay support confirms self-custody and current iOS, Android, Windows, macOS and Linux distribution."
+    },
+    {
+      "id": "wlr_src_000405",
+      "entity_id": "wlr_ent_000055",
+      "product_id": "wlr_prod_000104",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Download the BitPay Wallet",
+      "url": "https://www.bitpay.com/download",
+      "publisher": "BitPay",
+      "published_at": null,
+      "accessed_at": "2026-08-26",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "Current first-party BitPay download page distributes iOS and Android wallet builds and links active support, supporting current maintenance."
     }
   ]
 }

@@ -16,7 +16,7 @@
       "sales_status": "not_applicable",
       "status": "active",
       "successor_product_id": null,
-      "support_status": "unknown"
+      "support_status": "supported"
     },
     "status": "active"
   },
@@ -41,6 +41,22 @@
         "reliability": "high",
         "source_type": "official_statement",
         "title": "SubWallet Extension installation",
+        "url": "https://docs.subwallet.app/main/extension-user-guide/getting-started/install-subwallet"
+      },
+      {
+        "accessed_at": "2026-08-26",
+        "claim_scope": "support_status",
+        "entity_id": "wlr_ent_000067",
+        "event_id": null,
+        "id": "wlr_src_000414",
+        "is_primary": true,
+        "notes": "Current first-party SubWallet documentation provides active installation paths for Chrome, Brave, Edge and Firefox, with explicit Firefox maintenance caveats, supporting a maintained extension product.",
+        "product_id": "wlr_prod_000116",
+        "published_at": null,
+        "publisher": "SubWallet",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Install SubWallet",
         "url": "https://docs.subwallet.app/main/extension-user-guide/getting-started/install-subwallet"
       }
     ]
@@ -75,6 +91,6 @@
     "native_machine": "https://wlr.badjoke-lab.com/data/products/subwallet-extension.json"
   },
   "verification": {
-    "last_verified_at": "2026-08-20"
+    "last_verified_at": "2026-08-26"
   }
 }

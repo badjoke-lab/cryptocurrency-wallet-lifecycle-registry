@@ -16,7 +16,7 @@
       "sales_status": "not_applicable",
       "status": "active",
       "successor_product_id": null,
-      "support_status": "unknown"
+      "support_status": "supported"
     },
     "status": "active"
   },
@@ -42,6 +42,22 @@
         "source_type": "official_blog",
         "title": "Security Guide of Math Wallet",
         "url": "https://blog.mathwallet.org/?p=399"
+      },
+      {
+        "accessed_at": "2026-08-26",
+        "claim_scope": "support_status",
+        "entity_id": "wlr_ent_000057",
+        "event_id": null,
+        "id": "wlr_src_000407",
+        "is_primary": true,
+        "notes": "Current first-party MathWallet site distributes iPhone and Android builds and documents the multichain wallet product, supporting active maintenance.",
+        "product_id": "wlr_prod_000106",
+        "published_at": null,
+        "publisher": "MathWallet",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "MathWallet",
+        "url": "https://www.mathwallet.org/"
       }
     ]
   },
@@ -75,6 +91,6 @@
     "native_machine": "https://wlr.badjoke-lab.com/data/products/mathwallet-mobile.json"
   },
   "verification": {
-    "last_verified_at": "2026-08-20"
+    "last_verified_at": "2026-08-26"
   }
 }

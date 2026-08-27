@@ -15,7 +15,7 @@
     "product_type": "mobile_app",
     "status": "active",
     "sales_status": "not_applicable",
-    "support_status": "unknown",
+    "support_status": "supported",
     "launch_date": null,
     "platform": [
       "iOS",
@@ -27,7 +27,7 @@
     "key_management_model": "device_local_user_controlled_algorand_private_keys",
     "summary": "Current self-custodial Pera Wallet mobile application for Algorand accounts and dApp access.",
     "confidence": "high",
-    "last_verified_at": "2026-08-20",
+    "last_verified_at": "2026-08-26",
     "notes": "Selected mobile product only; Pera Web is deferred as a separate runtime. Exact original mobile launch date remains unresolved."
   },
   "events": [],
@@ -47,6 +47,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Current first-party site distributes Pera Mobile and states Pera is a self-custodial Algorand wallet."
+    },
+    {
+      "id": "wlr_src_000411",
+      "entity_id": "wlr_ent_000064",
+      "product_id": "wlr_prod_000113",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Pera Wallet",
+      "url": "https://perawallet.app/",
+      "publisher": "Pera Wallet",
+      "published_at": null,
+      "accessed_at": "2026-08-26",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "Current first-party Pera site distributes Pera Mobile for iOS and Android and links current support and technical documentation, supporting active maintenance."
     }
   ]
 }
