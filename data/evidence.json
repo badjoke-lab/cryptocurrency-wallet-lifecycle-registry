@@ -7074,5 +7074,22 @@
     "claim_scope": "support_status",
     "is_primary": true,
     "notes": "Current first-party help collection contains active Crypto.com Onchain Extension setup, import, swap and wallet-management documentation; Crypto.com also published a revamped extension in 2025. Supports active maintenance, without inferring the original extension launch date."
+  },
+  {
+    "id": "wlr_src_000403",
+    "entity_id": "wlr_ent_000101",
+    "product_id": "wlr_prod_000150",
+    "event_id": "wlr_ev_000158",
+    "source_type": "official_statement",
+    "title": "送金・出金およびKYC認証に関するお知らせ",
+    "url": "https://izakaya.tech/news/news/",
+    "publisher": "Izakaya Limited",
+    "published_at": "2026-08-24",
+    "archived_url": "https://web.archive.org/web/*/https://izakaya.tech/news/news/",
+    "accessed_at": "2026-08-26",
+    "reliability": "high",
+    "claim_scope": "event",
+    "is_primary": true,
+    "notes": "First-party notice used only for the existence and stated scope of the account-level transfer/withdrawal restrictions and the mandatory-KYC policy change. It is not independent proof of the operator's stated AML cause for every reported withdrawal problem."
   }
 ]
