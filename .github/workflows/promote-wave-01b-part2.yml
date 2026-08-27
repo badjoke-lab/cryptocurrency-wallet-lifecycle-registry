@@ -1,0 +1,31 @@
+name: Promote Wave 01B Part2
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/promote-wave-01b-part2.mjs'
+      - '.github/workflows/promote-wave-01b-part2.yml'
+permissions:
+  contents: write
+jobs:
+  promote:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/promote-wave-01b-part2.mjs
+      - run: npm install --no-audit --no-fund
+      - run: npm run prebuild
+      - run: npm run build
+      - run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data/products.json data/evidence.json public/data
+          git commit -m 'Promote Wave 01B part2 canonical data' || exit 0
+          git push origin HEAD:${{ github.event.pull_request.head.ref }}
