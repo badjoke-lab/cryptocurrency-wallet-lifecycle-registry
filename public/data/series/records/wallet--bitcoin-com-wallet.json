@@ -52,6 +52,22 @@
         "source_type": "official_statement",
         "title": "Cryptocurrency security",
         "url": "https://support.bitcoin.com/en/articles/5343935-cryptocurrency-security"
+      },
+      {
+        "accessed_at": "2026-08-26",
+        "claim_scope": "support_status",
+        "entity_id": "wlr_ent_000054",
+        "event_id": null,
+        "id": "wlr_src_000405",
+        "is_primary": true,
+        "notes": "Current first-party Bitcoin.com Wallet page distributes the mobile app and documents active wallet functionality, supporting a maintained mobile product state.",
+        "product_id": "wlr_prod_000103",
+        "published_at": null,
+        "publisher": "Bitcoin.com",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Bitcoin.com Wallet",
+        "url": "https://www.bitcoin.com/wallet/"
       }
     ]
   },

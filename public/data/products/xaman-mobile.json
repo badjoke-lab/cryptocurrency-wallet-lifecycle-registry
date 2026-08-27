@@ -18,7 +18,7 @@
     "product_type": "mobile_app",
     "status": "active",
     "sales_status": "not_applicable",
-    "support_status": "unknown",
+    "support_status": "supported",
     "launch_date": null,
     "platform": [
       "iOS",
@@ -30,7 +30,7 @@
     "key_management_model": "device_local_user_controlled_xrpl_keys",
     "summary": "Current Xaman self-custodial XRP Ledger mobile wallet, continuing the former Xumm application lineage.",
     "confidence": "high",
-    "last_verified_at": "2026-08-20",
+    "last_verified_at": "2026-08-26",
     "notes": "The 2023 Xumm→Xaman transition is a rebrand, not an initial mobile-product launch date. Current first-party help links official App Store and Google Play versions."
   },
   "events": [
@@ -84,6 +84,22 @@
       "claim_scope": "rebrand",
       "is_primary": true,
       "notes": "First-party Xaman announcement explicitly introduces the XUMM-to-Xaman rebrand and describes a gradual transition without a new wallet lineage."
+    },
+    {
+      "id": "wlr_src_000411",
+      "entity_id": "wlr_ent_000063",
+      "product_id": "wlr_prod_000112",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Official communication channels",
+      "url": "https://help.xaman.app/app/learning-more-about-xaman/official-communication-channels",
+      "publisher": "Xaman",
+      "published_at": null,
+      "accessed_at": "2026-08-26",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "Current first-party Xaman help documentation links the latest Apple App Store and Google Play versions and the in-app support channel, supporting active maintenance of Xaman Mobile."
     }
   ]
 }

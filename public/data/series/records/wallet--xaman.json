@@ -86,6 +86,22 @@
         "source_type": "official_blog",
         "title": "XUMM evolves into a new era: Welcome Xaman",
         "url": "https://xaman.app/blog/xumm-evolves-into-a-new-era-welcome-xaman"
+      },
+      {
+        "accessed_at": "2026-08-26",
+        "claim_scope": "support_status",
+        "entity_id": "wlr_ent_000063",
+        "event_id": null,
+        "id": "wlr_src_000411",
+        "is_primary": true,
+        "notes": "Current first-party Xaman help documentation links the latest Apple App Store and Google Play versions and the in-app support channel, supporting active maintenance of Xaman Mobile.",
+        "product_id": "wlr_prod_000112",
+        "published_at": null,
+        "publisher": "Xaman",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Official communication channels",
+        "url": "https://help.xaman.app/app/learning-more-about-xaman/official-communication-channels"
       }
     ]
   },

@@ -52,6 +52,22 @@
         "source_type": "official_statement",
         "title": "Download the extension",
         "url": "https://docs.talisman.xyz/talisman/start/installing-talisman/download-the-extension"
+      },
+      {
+        "accessed_at": "2026-08-26",
+        "claim_scope": "support_status",
+        "entity_id": "wlr_ent_000066",
+        "event_id": null,
+        "id": "wlr_src_000414",
+        "is_primary": true,
+        "notes": "Current first-party Talisman documentation distributes the extension for Chrome, Firefox, Brave and Edge and documents current setup, supporting active maintenance.",
+        "product_id": "wlr_prod_000115",
+        "published_at": null,
+        "publisher": "Talisman",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Download the Extension",
+        "url": "https://docs.talisman.xyz/talisman/start/installing-talisman/download-the-extension"
       }
     ]
   },
