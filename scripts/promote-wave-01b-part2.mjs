@@ -24,10 +24,17 @@ for (const p of products) {
   }
 }
 
+const nums = evidence.map(e => Number(String(e.id).replace('wlr_src_', ''))).filter(Number.isFinite);
+let next = (nums.length ? Math.max(...nums) : 0) + 1;
 const existingIds = new Set(evidence.map(e => e.id));
-for (const row of additions) {
-  if (existingIds.has(row.id)) throw new Error(`evidence id collision: ${row.id}`);
+for (const sourceRow of additions) {
+  let id;
+  do {
+    id = `wlr_src_${String(next++).padStart(6, '0')}`;
+  } while (existingIds.has(id));
+  const row = { ...sourceRow, id };
   evidence.push(row);
+  existingIds.add(id);
 }
 
 fs.writeFileSync(productsPath, JSON.stringify(products, null, 2) + '\n');
