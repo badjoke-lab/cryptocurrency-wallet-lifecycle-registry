@@ -1,0 +1,8 @@
+Promotion source: candidate PR #284 / data-staging/candidates/coverage-recovery-wave-01b-part2.json
+Fresh-main base: 1fbbe505d0aee917c4393c57fa2afa723ccf6b54
+Rules:
+- Promote reviewed evidence for all 15 targets only if IDs remain collision-free on fresh main.
+- Set support_status=supported only for products with current first-party distribution/support evidence.
+- Do not mark Yoroi supported; preserve adverse wind-down evidence.
+- Keep Petra and Lattice1 support status conservative unless a current first-party distribution/support surface is independently confirmed.
+- Run canonical/public generation and normal validation before merge.
