@@ -1,0 +1,45 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_coverage-recovery-wave-02-part5",
+  "title": "Coverage recovery Wave 02 part 5 — NuFi lifecycle depth",
+  "review_state": "researching",
+  "notes": "Candidate IDs are provisional and must be reallocated from fresh main during canonical promotion. This event documents extension maintenance, not the original launch date.",
+  "records": {
+    "entities": [],
+    "products": [],
+    "events": [
+      {
+        "id": "wlr_ev_900401",
+        "entity_id": "wlr_ent_000083",
+        "product_id": "wlr_prod_000132",
+        "affected_product_ids": ["wlr_prod_000132"],
+        "event_type": "other",
+        "event_date": "2022-10-11",
+        "event_date_basis": "release",
+        "title": "NuFi 2.4.x added wallet emulation mode",
+        "description": "NuFi documented releases 2.4.0 and 2.4.2 adding Flint and Phantom wallet emulation mode to the browser extension, providing a dated lifecycle record for extension maintenance.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": false
+      }
+    ],
+    "evidence": [
+      {
+        "id": "wlr_src_900401",
+        "entity_id": "wlr_ent_000083",
+        "product_id": "wlr_prod_000132",
+        "event_id": "wlr_ev_900401",
+        "source_type": "official_statement",
+        "title": "NuFi changelog",
+        "url": "https://support.nu.fi/support/solutions/articles/80001016927-changelog",
+        "publisher": "NuFi",
+        "published_at": null,
+        "accessed_at": "2026-08-28",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "First-party NuFi changelog records releases 2.4.0/2.4.2 on 2022-10-11 and describes browser-extension wallet emulation mode."
+      }
+    ]
+  }
+}
