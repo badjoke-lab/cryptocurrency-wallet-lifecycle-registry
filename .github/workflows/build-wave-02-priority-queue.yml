@@ -1,0 +1,93 @@
+name: Build Wave 02 priority queue
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/build-wave-02-priority-queue.yml'
+permissions:
+  contents: write
+jobs:
+  queue:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+      - name: Build deterministic coverage queue
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          python - <<'PY'
+          import json, os, sys
+          from pathlib import Path
+          sys.path.insert(0, 'scripts')
+          from report_coverage import build_report
+
+          report = build_report()
+          products = json.load(open('data/products.json', encoding='utf-8'))
+          products_by_entity = {}
+          for p in products:
+              products_by_entity.setdefault(p['entity_id'], []).append(p)
+
+          weights = {
+              'no_history_events': 100,
+              'thin_history': 60,
+              'thin_evidence': 40,
+              'product_launch_gaps': 25,
+              'product_support_unknown': 25,
+          }
+          ranked = []
+          for row in report['entities']:
+              relevant = [f for f in row['flags'] if f in weights]
+              if not relevant:
+                  continue
+              score = sum(weights[f] for f in relevant)
+              gaps = []
+              for p in sorted(products_by_entity.get(row['entity_id'], []), key=lambda x: x['id']):
+                  launch_missing = not p.get('launch_date')
+                  support_unknown = p.get('support_status') in (None, 'unknown')
+                  if launch_missing or support_unknown:
+                      gaps.append({
+                          'product_id': p['id'],
+                          'slug': p['slug'],
+                          'product_name': p['product_name'],
+                          'launch_date_missing': launch_missing,
+                          'support_status_unknown': support_unknown,
+                      })
+              ranked.append({
+                  'priority_score': score,
+                  'entity_id': row['entity_id'],
+                  'slug': row['slug'],
+                  'name': row['name'],
+                  'events': row['events'],
+                  'evidence': row['evidence'],
+                  'flags': relevant,
+                  'product_gaps': gaps,
+              })
+          ranked.sort(key=lambda x: (-x['priority_score'], x['entity_id']))
+          selected = ranked[:30]
+          payload = {
+              'schema': 'wlr.coverage-priority-queue.v1',
+              'issue': 290,
+              'baseline_commit': os.environ['BASE_SHA'],
+              'selection': {
+                  'limit': 30,
+                  'weights': weights,
+                  'tie_breaker': 'entity_id_ascending',
+              },
+              'coverage_summary': report['summary'],
+              'selected_count': len(selected),
+              'targets': selected,
+          }
+          out = Path('data-staging/coverage/coverage-recovery-wave-02-priority.json')
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          PY
+      - name: Commit queue snapshot
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data-staging/coverage/coverage-recovery-wave-02-priority.json
+          git commit -m 'Snapshot Wave 02 coverage priority queue' || exit 0
+          git push origin HEAD:${{ github.event.pull_request.head.ref }}
