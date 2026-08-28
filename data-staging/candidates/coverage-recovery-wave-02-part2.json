@@ -1,0 +1,123 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_coverage-recovery-wave-02-part2",
+  "title": "Coverage recovery Wave 02 part 2 — Keplr, Petra, GridPlus, Core, UniSat",
+  "review_state": "researching",
+  "notes": "Candidate event/evidence IDs are provisional. Product launch/support fields remain unchanged unless the evidence supports a bounded reviewed promotion from fresh main.",
+  "records": {
+    "entities": [],
+    "products": [],
+    "events": [
+      {
+        "id": "wlr_ev_900101",
+        "entity_id": "wlr_ent_000043",
+        "product_id": "wlr_prod_000092",
+        "affected_product_ids": ["wlr_prod_000092"],
+        "event_type": "maintenance",
+        "event_date": "2020-09-07",
+        "event_date_basis": "release",
+        "title": "Keplr extension update added Ledger signing support",
+        "description": "Chainapsis announced a new Keplr extension version adding Ledger hardware-wallet signing support, directly documenting active extension maintenance in September 2020.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": false
+      },
+      {
+        "id": "wlr_ev_900102",
+        "entity_id": "wlr_ent_000070",
+        "product_id": "wlr_prod_000119",
+        "affected_product_ids": ["wlr_prod_000119"],
+        "event_type": "maintenance",
+        "event_date": "2024-07-23",
+        "event_date_basis": "release",
+        "title": "Lattice1 firmware v0.18.3 released",
+        "description": "GridPlus released Lattice1 firmware v0.18.3 with Solana signing improvements, security improvements, bug fixes, and user-requested changes.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": false
+      }
+    ],
+    "evidence": [
+      {
+        "id": "wlr_src_900101",
+        "entity_id": "wlr_ent_000043",
+        "product_id": "wlr_prod_000092",
+        "event_id": "wlr_ev_900101",
+        "source_type": "official_blog",
+        "title": "How to use Ledger Nano hardware wallet with Keplr",
+        "url": "https://medium.com/chainapsis/how-to-use-ledger-nano-hardware-wallet-with-keplr-9ea7f07826c2",
+        "publisher": "Chainapsis",
+        "published_at": "2020-09-07",
+        "accessed_at": "2026-08-28",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "First-party Chainapsis post stating that a new Keplr extension version was released with Ledger signing support. This proves active maintenance by 2020-09-07 but is not treated as the original launch date."
+      },
+      {
+        "id": "wlr_src_900102",
+        "entity_id": "wlr_ent_000068",
+        "product_id": "wlr_prod_000117",
+        "event_id": null,
+        "source_type": "official_statement",
+        "title": "Aptos Labs Wallet Terms of Use",
+        "url": "https://aptoslabs.com/terms-wallet",
+        "publisher": "Aptos Labs",
+        "published_at": "2026-06-23",
+        "accessed_at": "2026-08-28",
+        "reliability": "high",
+        "claim_scope": "product",
+        "is_primary": true,
+        "notes": "Current first-party terms explicitly identify the downloadable self-custodial Petra wallet application and browser extension as services made available by Aptos Labs. Supports current product existence/support evidence without inferring an original launch date."
+      },
+      {
+        "id": "wlr_src_900103",
+        "entity_id": "wlr_ent_000070",
+        "product_id": "wlr_prod_000119",
+        "event_id": "wlr_ev_900102",
+        "source_type": "official_blog",
+        "title": "Lattice1 Firmware v0.18.3 Released",
+        "url": "https://gridplus.io/blogs/blog/lattice1-firmware-v0-18-3-released",
+        "publisher": "GridPlus",
+        "published_at": "2024-07-23",
+        "accessed_at": "2026-08-28",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "First-party firmware release announcement documenting ongoing Lattice1 maintenance."
+      },
+      {
+        "id": "wlr_src_900104",
+        "entity_id": "wlr_ent_000077",
+        "product_id": "wlr_prod_000126",
+        "event_id": null,
+        "source_type": "official_support",
+        "title": "What is the Core extension?",
+        "url": "https://support.core.app/en/articles/6114992-what-is-the-core-extension",
+        "publisher": "Core",
+        "published_at": null,
+        "accessed_at": "2026-08-28",
+        "reliability": "high",
+        "claim_scope": "product",
+        "is_primary": true,
+        "notes": "Current first-party support documentation states that Core is a non-custodial browser extension and that the extension is officially supported on Chrome. Supports a current support-state review without inferring launch timing."
+      },
+      {
+        "id": "wlr_src_900105",
+        "entity_id": "wlr_ent_000078",
+        "product_id": "wlr_prod_000127",
+        "event_id": null,
+        "source_type": "source_code",
+        "title": "UniSat Wallet official repositories",
+        "url": "https://github.com/unisat-wallet",
+        "publisher": "UniSat Wallet",
+        "published_at": null,
+        "accessed_at": "2026-08-28",
+        "reliability": "high",
+        "claim_scope": "product",
+        "is_primary": true,
+        "notes": "The official UniSat Wallet GitHub organization identifies the active wallet monorepo as the official repository for browser extension, mobile apps, and shared wallet infrastructure. The older extension repository is marked deprecated and migrated, so this evidence supports current development without using the deprecated repository as current canonical support evidence."
+      }
+    ]
+  }
+}
