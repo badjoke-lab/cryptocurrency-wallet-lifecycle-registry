@@ -13,7 +13,7 @@
         "entity_id": "wlr_ent_000075",
         "product_id": "wlr_prod_000124",
         "affected_product_ids": ["wlr_prod_000124"],
-        "event_type": "maintenance",
+        "event_type": "other",
         "event_date": "2026-02-24",
         "event_date_basis": "release",
         "title": "Nova Wallet Android v10.8.0 released",
