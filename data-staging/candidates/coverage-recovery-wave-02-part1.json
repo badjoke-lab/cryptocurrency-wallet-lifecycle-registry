@@ -1,9 +1,9 @@
 {
   "bundle_version": "1.0.0",
   "candidate_id": "wlr_cand_coverage-recovery-wave-02-part1",
-  "title": "Coverage recovery Wave 02 part 1 — Nunchuk, Keplr, and SeedSigner",
+  "title": "Coverage recovery Wave 02 part 1 — Nunchuk and SeedSigner lifecycle depth",
   "review_state": "researching",
-  "notes": "Candidate IDs are provisional and must be reallocated from fresh main during canonical promotion. Keplr's launch date remains unresolved here; its first-party support center does directly support current extension availability/support. Petra and GridPlus/Lattice1 remain unresolved in this part rather than inferring state from weak evidence.",
+  "notes": "Candidate IDs are provisional and must be reallocated from fresh main during canonical promotion. Keplr current-support evidence already exists in canonical and is not duplicated here; its launch date remains unresolved.",
   "records": {
     "entities": [],
     "products": [],
@@ -12,9 +12,7 @@
         "id": "wlr_ev_900001",
         "entity_id": "wlr_ent_000041",
         "product_id": "wlr_prod_000090",
-        "affected_product_ids": [
-          "wlr_prod_000090"
-        ],
+        "affected_product_ids": ["wlr_prod_000090"],
         "event_type": "product_released",
         "event_date": "2020-11-06",
         "event_date_basis": "announcement",
@@ -28,10 +26,8 @@
         "id": "wlr_ev_900002",
         "entity_id": "wlr_ent_000074",
         "product_id": "wlr_prod_000123",
-        "affected_product_ids": [
-          "wlr_prod_000123"
-        ],
-        "event_type": "maintenance",
+        "affected_product_ids": ["wlr_prod_000123"],
+        "event_type": "other",
         "event_date": "2026-07-08",
         "event_date_basis": "release",
         "title": "SeedSigner 0.8.7 released",
@@ -73,22 +69,6 @@
         "claim_scope": "event",
         "is_primary": true,
         "notes": "Official project release notes supporting an ongoing-maintenance lifecycle event."
-      },
-      {
-        "id": "wlr_src_900003",
-        "entity_id": "wlr_ent_000043",
-        "product_id": "wlr_prod_000092",
-        "event_id": null,
-        "source_type": "official_support",
-        "title": "Download Keplr Extension (for Beginners)",
-        "url": "https://help.keplr.app/extension/5R3bMyjtr2FwnBvJQuJwJu/download-keplr-extension-for-beginners/5R3bMyjtr4eDwEEUCPFqUE",
-        "publisher": "Keplr",
-        "published_at": "2025-09-19",
-        "accessed_at": "2026-08-28",
-        "reliability": "high",
-        "claim_scope": "product",
-        "is_primary": true,
-        "notes": "Current first-party support documentation instructs users to install Keplr Extension and states support for Chrome, Firefox, and Edge. Supports a reviewed current support-status update, but does not establish the original launch date."
       }
     ]
   }
