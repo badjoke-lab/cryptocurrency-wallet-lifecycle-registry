@@ -65,7 +65,7 @@
         "published_at": null,
         "publisher": "GridPlus",
         "reliability": "high",
-        "source_type": "official_repository",
+        "source_type": "source_code",
         "title": "GridPlus SDK",
         "url": "https://github.com/GridPlus/gridplus-sdk"
       }

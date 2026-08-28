@@ -50,7 +50,7 @@
       "entity_id": "wlr_ent_000070",
       "product_id": "wlr_prod_000119",
       "event_id": null,
-      "source_type": "official_repository",
+      "source_type": "source_code",
       "title": "GridPlus SDK",
       "url": "https://github.com/GridPlus/gridplus-sdk",
       "publisher": "GridPlus",

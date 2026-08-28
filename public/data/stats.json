@@ -960,12 +960,6 @@
           "percentage": 28.2
         },
         {
-          "value": "official_repository",
-          "count": 1,
-          "denominator": 418,
-          "percentage": 0.2
-        },
-        {
           "value": "official_security_advisory",
           "count": 19,
           "denominator": 418,
@@ -1009,9 +1003,9 @@
         },
         {
           "value": "source_code",
-          "count": 20,
+          "count": 21,
           "denominator": 418,
-          "percentage": 4.8
+          "percentage": 5
         }
       ],
       "linked_to_event": {
