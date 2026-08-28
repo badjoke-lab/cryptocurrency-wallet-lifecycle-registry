@@ -1,0 +1,45 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_coverage-recovery-wave-02-part4",
+  "title": "Coverage recovery Wave 02 part 4 — Tonhub maintenance depth",
+  "review_state": "researching",
+  "notes": "Candidate IDs are provisional and must be reallocated from fresh main during canonical promotion.",
+  "records": {
+    "entities": [],
+    "products": [],
+    "events": [
+      {
+        "id": "wlr_ev_900301",
+        "entity_id": "wlr_ent_000081",
+        "product_id": "wlr_prod_000130",
+        "affected_product_ids": ["wlr_prod_000130"],
+        "event_type": "maintenance",
+        "event_date": "2025-04-02",
+        "event_date_basis": "release",
+        "title": "Tonhub v2.4.26 released",
+        "description": "Ton Whales published Tonhub v2.4.26 with bug fixes and stability improvements, with an official Tonhub APK attached to the release, documenting ongoing maintenance of the mobile wallet.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": false
+      }
+    ],
+    "evidence": [
+      {
+        "id": "wlr_src_900301",
+        "entity_id": "wlr_ent_000081",
+        "product_id": "wlr_prod_000130",
+        "event_id": "wlr_ev_900301",
+        "source_type": "release_notes",
+        "title": "Tonhub v2.4.26",
+        "url": "https://github.com/tonwhales/wallet/releases/tag/v2.4.26",
+        "publisher": "Ton Whales",
+        "published_at": "2025-04-02",
+        "accessed_at": "2026-08-28",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "Official Ton Whales wallet release with a Tonhub APK asset and release notes stating bug fixes and stability improvements."
+      }
+    ]
+  }
+}
