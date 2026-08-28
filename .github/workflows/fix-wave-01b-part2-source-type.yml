@@ -1,0 +1,42 @@
+name: Fix Wave 01B Part2 source type
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/fix-wave-01b-part2-source-type.yml'
+permissions:
+  contents: write
+jobs:
+  fix:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Correct reviewed Lattice1 source type
+        run: |
+          python - <<'PY'
+          import json
+          p='data/evidence.json'
+          rows=json.load(open(p))
+          row=next(x for x in rows if x['id']=='wlr_src_000418')
+          assert row['url']=='https://github.com/GridPlus/gridplus-sdk'
+          assert row['source_type']=='official_repository'
+          row['source_type']='source_code'
+          with open(p,'w') as f: json.dump(rows,f,indent=2); f.write('\n')
+          PY
+      - run: npm install --no-audit --no-fund
+      - run: npm run prebuild
+      - run: npm run validate:records
+      - run: npm run build
+      - name: Commit correction and generated artifacts
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data/evidence.json public/data
+          git commit -m 'Fix Wave 01B part2 Lattice1 evidence source type' || exit 0
+          git push origin HEAD:${{ github.event.pull_request.head.ref }}
