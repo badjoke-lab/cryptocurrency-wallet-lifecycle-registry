@@ -49,6 +49,20 @@
         "confidence": "high",
         "event_status_effect": "active",
         "is_major_event": true
+      },
+      {
+        "id": "wlr_ev_900104",
+        "entity_id": "wlr_ent_000078",
+        "product_id": "wlr_prod_000127",
+        "affected_product_ids": ["wlr_prod_000127"],
+        "event_type": "maintenance",
+        "event_date": "2023-02-24",
+        "event_date_basis": "release",
+        "title": "UniSat Wallet v1.0.3 released",
+        "description": "UniSat published its v1.0.3 wallet update with layout changes, script-safety changes, local-storage cleanup, and bug fixes, documenting active browser-extension maintenance in February 2023.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": false
       }
     ],
     "evidence": [
@@ -147,6 +161,22 @@
         "claim_scope": "event",
         "is_primary": true,
         "notes": "First-party launch announcement explicitly stating that Ava Labs released Core and that the browser extension was available from the Chrome Web Store on 2022-06-22."
+      },
+      {
+        "id": "wlr_src_900107",
+        "entity_id": "wlr_ent_000078",
+        "product_id": "wlr_prod_000127",
+        "event_id": "wlr_ev_900104",
+        "source_type": "official_blog",
+        "title": "UniSat Wallet - v1.0.3 update",
+        "url": "https://unisat-wallet.medium.com/unisat-wallet-v1-0-3-update-3dda76909831",
+        "publisher": "UniSat",
+        "published_at": "2023-02-24",
+        "accessed_at": "2026-08-28",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "First-party UniSat update announcing Wallet v1.0.3 on 2023-02-24."
       }
     ]
   }
