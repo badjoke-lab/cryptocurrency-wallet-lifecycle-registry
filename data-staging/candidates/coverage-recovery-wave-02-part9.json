@@ -1,0 +1,75 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_coverage-recovery-wave-02-part9",
+  "title": "Coverage recovery Wave 02 part 9 — Breez and Satochip lifecycle depth",
+  "review_state": "researching",
+  "notes": "Candidate IDs are provisional and must be reallocated against fresh main during canonical promotion. Breez maintenance-mode evidence is treated as a support/lifecycle change rather than a shutdown; the repository explicitly remains maintained for critical bug fixes and security issues. Satochip v0.12 is a dated hardware-wallet applet update, not an inferred original product launch.",
+  "records": {
+    "entities": [],
+    "products": [],
+    "events": [
+      {
+        "id": "wlr_ev_900701",
+        "entity_id": "wlr_ent_000092",
+        "product_id": "wlr_prod_000141",
+        "affected_product_ids": ["wlr_prod_000141"],
+        "event_type": "support_changed",
+        "event_date": "2026-08-29",
+        "event_date_basis": "observed",
+        "title": "Breez Mobile documented maintenance mode",
+        "description": "The official Breez Mobile repository documents that the project is in maintenance mode: it remains maintained for critical bug fixes and security issues, while new features, enhancements, and non-critical updates are no longer planned.",
+        "confidence": "high",
+        "event_status_effect": "limited",
+        "is_major_event": true
+      },
+      {
+        "id": "wlr_ev_900702",
+        "entity_id": "wlr_ent_000099",
+        "product_id": "wlr_prod_000148",
+        "affected_product_ids": ["wlr_prod_000148"],
+        "event_type": "other",
+        "event_date": "2021-09-30",
+        "event_date_basis": "release",
+        "title": "Satochip applet v0.12 released",
+        "description": "Satochip applet v0.12 was released with SeedKeeper encrypted-seed import support, card labels, offline 2FA reset support, factory reset support, and card-authenticity PKI support.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": false
+      }
+    ],
+    "evidence": [
+      {
+        "id": "wlr_src_900701",
+        "entity_id": "wlr_ent_000092",
+        "product_id": "wlr_prod_000141",
+        "event_id": "wlr_ev_900701",
+        "source_type": "source_code",
+        "title": "Breez Mobile Client official repository",
+        "url": "https://github.com/breez/breezmobile",
+        "publisher": "Breez",
+        "published_at": null,
+        "accessed_at": "2026-08-29",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "Official repository explicitly states Maintenance Mode and defines the reduced support scope. Event date records the observation date because the repository text does not provide the date maintenance mode began."
+      },
+      {
+        "id": "wlr_src_900702",
+        "entity_id": "wlr_ent_000099",
+        "product_id": "wlr_prod_000148",
+        "event_id": "wlr_ev_900702",
+        "source_type": "release_notes",
+        "title": "Satochip v0.12 with SeedKeeper support",
+        "url": "https://github.com/Toporin/SatochipApplet/releases/tag/v0.12",
+        "publisher": "Satochip",
+        "published_at": "2021-09-30",
+        "accessed_at": "2026-08-29",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "Official Satochip applet release published 2021-09-30."
+      }
+    ]
+  }
+}
