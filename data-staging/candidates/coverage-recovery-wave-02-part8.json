@@ -1,0 +1,62 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_coverage-recovery-wave-02-part8",
+  "title": "Coverage recovery Wave 02 part 8 — Begin, Glow, Casa current availability",
+  "review_state": "researching",
+  "notes": "Evidence-only candidate. These first-party sources support current product availability/support review but do not establish original launch dates or lifecycle event dates. No event rows are created from routine documentation-page publication dates.",
+  "records": {
+    "entities": [],
+    "products": [],
+    "events": [],
+    "evidence": [
+      {
+        "id": "wlr_src_900601",
+        "entity_id": "wlr_ent_000085",
+        "product_id": "wlr_prod_000134",
+        "event_id": null,
+        "source_type": "official_statement",
+        "title": "Cardano Wallet - Secure and Open-Source",
+        "url": "https://begin.is/cardano-wallet",
+        "publisher": "Begin Wallet",
+        "published_at": null,
+        "accessed_at": "2026-08-29",
+        "reliability": "high",
+        "claim_scope": "product",
+        "is_primary": true,
+        "notes": "First-party Begin Wallet page states that Begin is self-custodial and currently available on iOS, Android, and as a browser extension. Supports current availability review without inferring launch timing."
+      },
+      {
+        "id": "wlr_src_900602",
+        "entity_id": "wlr_ent_000086",
+        "product_id": "wlr_prod_000135",
+        "event_id": null,
+        "source_type": "official_statement",
+        "title": "Glow — Download",
+        "url": "https://glow.app/download",
+        "publisher": "Glow",
+        "published_at": null,
+        "accessed_at": "2026-08-29",
+        "reliability": "high",
+        "claim_scope": "product",
+        "is_primary": true,
+        "notes": "Current first-party Glow download page offers the desktop/browser wallet for Chrome, Edge, Firefox, and Brave. Supports current extension availability review without inferring a launch date."
+      },
+      {
+        "id": "wlr_src_900603",
+        "entity_id": "wlr_ent_000097",
+        "product_id": "wlr_prod_000146",
+        "event_id": null,
+        "source_type": "official_statement",
+        "title": "Getting started with the 3-key vault",
+        "url": "https://support.casa.io/knowledge/getting-started-with-the-3-key-vault",
+        "publisher": "Casa",
+        "published_at": "2026-05-12",
+        "accessed_at": "2026-08-29",
+        "reliability": "high",
+        "claim_scope": "product",
+        "is_primary": true,
+        "notes": "Current first-party Casa support documentation describes the 3-key vault as a 2-of-3 multisig wallet and provides active setup instructions. Supports current product availability/support review without inferring launch timing."
+      }
+    ]
+  }
+}
