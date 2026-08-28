@@ -1,0 +1,79 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_coverage-recovery-wave-02-part1",
+  "title": "Coverage recovery Wave 02 part 1 — Nunchuk and SeedSigner lifecycle depth",
+  "review_state": "researching",
+  "notes": "Candidate IDs are provisional and must be reallocated from fresh main during canonical promotion. Keplr/Petra/GridPlus research remains unresolved in this part rather than inferring launch/support state.",
+  "records": {
+    "entities": [],
+    "products": [],
+    "events": [
+      {
+        "id": "wlr_ev_900001",
+        "entity_id": "wlr_ent_000041",
+        "product_id": "wlr_prod_000090",
+        "affected_product_ids": [
+          "wlr_prod_000090"
+        ],
+        "event_type": "product_released",
+        "event_date": "2020-11-06",
+        "event_date_basis": "announcement",
+        "title": "Nunchuk introduced its multisig wallet",
+        "description": "Nunchuk published its introductory announcement for the Nunchuk multisig wallet, documenting the product as available in November 2020.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": true
+      },
+      {
+        "id": "wlr_ev_900002",
+        "entity_id": "wlr_ent_000074",
+        "product_id": "wlr_prod_000123",
+        "affected_product_ids": [
+          "wlr_prod_000123"
+        ],
+        "event_type": "maintenance",
+        "event_date": "2026-07-08",
+        "event_date_basis": "release",
+        "title": "SeedSigner 0.8.7 released",
+        "description": "SeedSigner released version 0.8.7 with new features, translations, fixes, and contributions from a broad set of developers, providing direct evidence of ongoing software maintenance.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": false
+      }
+    ],
+    "evidence": [
+      {
+        "id": "wlr_src_900001",
+        "entity_id": "wlr_ent_000041",
+        "product_id": "wlr_prod_000090",
+        "event_id": "wlr_ev_900001",
+        "source_type": "official_blog",
+        "title": "Introducing Nunchuk: Multisig Made Easy",
+        "url": "https://nunchuk.io/blog/introducing-nunchuk-multisig-made-easy-ehvJmuXFtmL8trLXkCRLH3",
+        "publisher": "Nunchuk",
+        "published_at": "2020-11-06",
+        "accessed_at": "2026-08-28",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "First-party introductory announcement supporting the November 6, 2020 product-release event."
+      },
+      {
+        "id": "wlr_src_900002",
+        "entity_id": "wlr_ent_000074",
+        "product_id": "wlr_prod_000123",
+        "event_id": "wlr_ev_900002",
+        "source_type": "release_notes",
+        "title": "The Summer of SeedSigner Release — v0.8.7",
+        "url": "https://github.com/SeedSigner/seedsigner/releases/tag/0.8.7",
+        "publisher": "SeedSigner",
+        "published_at": "2026-07-08",
+        "accessed_at": "2026-08-28",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "Official project release notes supporting an ongoing-maintenance lifecycle event."
+      }
+    ]
+  }
+}
