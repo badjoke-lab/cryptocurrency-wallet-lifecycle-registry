@@ -13,7 +13,7 @@
         "entity_id": "wlr_ent_000081",
         "product_id": "wlr_prod_000130",
         "affected_product_ids": ["wlr_prod_000130"],
-        "event_type": "maintenance",
+        "event_type": "other",
         "event_date": "2025-04-02",
         "event_date_basis": "release",
         "title": "Tonhub v2.4.26 released",
