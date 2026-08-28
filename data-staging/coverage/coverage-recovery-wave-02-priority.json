@@ -1,0 +1,687 @@
+{
+  "schema": "wlr.coverage-priority-queue.v1",
+  "issue": 290,
+  "baseline_commit": "b24735c226bcd1746c71b2ba896a7e4caa1cd2c1",
+  "selection": {
+    "limit": 30,
+    "weights": {
+      "no_history_events": 100,
+      "thin_history": 60,
+      "thin_evidence": 40,
+      "product_launch_gaps": 25,
+      "product_support_unknown": 25
+    },
+    "tie_breaker": "entity_id_ascending"
+  },
+  "coverage_summary": {
+    "entities": 101,
+    "products": 150,
+    "events": 158,
+    "evidence": 418,
+    "entities_with_zero_products": 0,
+    "entities_with_zero_events": 46,
+    "entities_with_one_event": 23,
+    "entities_with_less_than_two_evidence": 0,
+    "products_missing_launch_date": 51,
+    "products_with_unknown_support": 47,
+    "incident_events": 27,
+    "remediation_events": 9,
+    "eol_events": 8,
+    "major_events": 145
+  },
+  "selected_count": 30,
+  "targets": [
+    {
+      "priority_score": 150,
+      "entity_id": "wlr_ent_000041",
+      "slug": "nunchuk",
+      "name": "Nunchuk",
+      "events": 0,
+      "evidence": 3,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000090",
+          "slug": "nunchuk-wallet",
+          "product_name": "Nunchuk Wallet",
+          "launch_date_missing": true,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 150,
+      "entity_id": "wlr_ent_000043",
+      "slug": "keplr",
+      "name": "Keplr",
+      "events": 0,
+      "evidence": 3,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000092",
+          "slug": "keplr-extension",
+          "product_name": "Keplr Extension",
+          "launch_date_missing": true,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 150,
+      "entity_id": "wlr_ent_000068",
+      "slug": "petra",
+      "name": "Petra",
+      "events": 0,
+      "evidence": 3,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000117",
+          "slug": "petra-extension",
+          "product_name": "Petra Browser Extension",
+          "launch_date_missing": true,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 150,
+      "entity_id": "wlr_ent_000070",
+      "slug": "gridplus",
+      "name": "GridPlus",
+      "events": 0,
+      "evidence": 3,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000119",
+          "slug": "lattice1",
+          "product_name": "Lattice1",
+          "launch_date_missing": true,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 150,
+      "entity_id": "wlr_ent_000074",
+      "slug": "seedsigner",
+      "name": "SeedSigner",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000123",
+          "slug": "seedsigner-diy-signing-device",
+          "product_name": "SeedSigner DIY Signing Device",
+          "launch_date_missing": true,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 150,
+      "entity_id": "wlr_ent_000075",
+      "slug": "nova-wallet",
+      "name": "Nova Wallet",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000124",
+          "slug": "nova-wallet-mobile",
+          "product_name": "Nova Wallet Mobile",
+          "launch_date_missing": true,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 150,
+      "entity_id": "wlr_ent_000077",
+      "slug": "core-wallet",
+      "name": "Core",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000126",
+          "slug": "core-extension",
+          "product_name": "Core Extension",
+          "launch_date_missing": true,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 150,
+      "entity_id": "wlr_ent_000078",
+      "slug": "unisat-wallet",
+      "name": "UniSat Wallet",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000127",
+          "slug": "unisat-wallet-extension",
+          "product_name": "UniSat Wallet Extension",
+          "launch_date_missing": true,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 150,
+      "entity_id": "wlr_ent_000080",
+      "slug": "my-wallet",
+      "name": "My Wallet",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000129",
+          "slug": "my-wallet-mobile",
+          "product_name": "My Wallet Mobile",
+          "launch_date_missing": true,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 150,
+      "entity_id": "wlr_ent_000081",
+      "slug": "tonhub",
+      "name": "Tonhub",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000130",
+          "slug": "tonhub-mobile",
+          "product_name": "Tonhub Mobile",
+          "launch_date_missing": true,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 150,
+      "entity_id": "wlr_ent_000082",
+      "slug": "eternl",
+      "name": "Eternl",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000131",
+          "slug": "eternl-extension",
+          "product_name": "Eternl Browser Extension",
+          "launch_date_missing": true,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 150,
+      "entity_id": "wlr_ent_000083",
+      "slug": "nufi",
+      "name": "NUFI",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000132",
+          "slug": "nufi-extension",
+          "product_name": "NUFI Browser Extension",
+          "launch_date_missing": true,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 150,
+      "entity_id": "wlr_ent_000084",
+      "slug": "vespr",
+      "name": "VESPR",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000133",
+          "slug": "vespr-mobile",
+          "product_name": "VESPR Mobile",
+          "launch_date_missing": true,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 150,
+      "entity_id": "wlr_ent_000085",
+      "slug": "begin-wallet",
+      "name": "Begin Wallet",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000134",
+          "slug": "begin-wallet-mobile",
+          "product_name": "Begin Wallet Mobile",
+          "launch_date_missing": true,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 150,
+      "entity_id": "wlr_ent_000086",
+      "slug": "glow-wallet",
+      "name": "Glow",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000135",
+          "slug": "glow-extension",
+          "product_name": "Glow Browser Extension",
+          "launch_date_missing": true,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 150,
+      "entity_id": "wlr_ent_000088",
+      "slug": "sequence",
+      "name": "Sequence",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000137",
+          "slug": "sequence-universal-wallet",
+          "product_name": "Sequence Universal Wallet",
+          "launch_date_missing": true,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 150,
+      "entity_id": "wlr_ent_000090",
+      "slug": "aqua-wallet",
+      "name": "AQUA Wallet",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000139",
+          "slug": "aqua-wallet-mobile",
+          "product_name": "AQUA Wallet Mobile",
+          "launch_date_missing": true,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 150,
+      "entity_id": "wlr_ent_000091",
+      "slug": "bitkit",
+      "name": "Bitkit",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000140",
+          "slug": "bitkit-mobile",
+          "product_name": "Bitkit Mobile",
+          "launch_date_missing": true,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 150,
+      "entity_id": "wlr_ent_000092",
+      "slug": "breez",
+      "name": "Breez",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000141",
+          "slug": "breez-mobile",
+          "product_name": "Breez Mobile",
+          "launch_date_missing": true,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 150,
+      "entity_id": "wlr_ent_000094",
+      "slug": "blixt-wallet",
+      "name": "Blixt Wallet",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000143",
+          "slug": "blixt-wallet-mobile",
+          "product_name": "Blixt Wallet Mobile",
+          "launch_date_missing": true,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 150,
+      "entity_id": "wlr_ent_000097",
+      "slug": "casa",
+      "name": "Casa",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000146",
+          "slug": "casa-3-key-vault",
+          "product_name": "Casa 3-Key Vault",
+          "launch_date_missing": true,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 150,
+      "entity_id": "wlr_ent_000099",
+      "slug": "satochip",
+      "name": "Satochip",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000148",
+          "slug": "satochip-hardware-wallet",
+          "product_name": "Satochip Hardware Wallet",
+          "launch_date_missing": true,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 125,
+      "entity_id": "wlr_ent_000028",
+      "slug": "okx-wallet",
+      "name": "OKX Wallet",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000077",
+          "slug": "okx-wallet-app",
+          "product_name": "OKX Wallet App",
+          "launch_date_missing": false,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 125,
+      "entity_id": "wlr_ent_000037",
+      "slug": "onekey",
+      "name": "OneKey",
+      "events": 0,
+      "evidence": 3,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000086",
+          "slug": "onekey-pro",
+          "product_name": "OneKey Pro",
+          "launch_date_missing": true,
+          "support_status_unknown": false
+        }
+      ]
+    },
+    {
+      "priority_score": 125,
+      "entity_id": "wlr_ent_000044",
+      "slug": "lace",
+      "name": "Lace",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000093",
+          "slug": "lace-wallet",
+          "product_name": "Lace Wallet",
+          "launch_date_missing": false,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 125,
+      "entity_id": "wlr_ent_000045",
+      "slug": "ronin-wallet",
+      "name": "Ronin Wallet",
+      "events": 0,
+      "evidence": 3,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000094",
+          "slug": "ronin-wallet-extension",
+          "product_name": "Ronin Wallet Extension",
+          "launch_date_missing": true,
+          "support_status_unknown": false
+        }
+      ]
+    },
+    {
+      "priority_score": 125,
+      "entity_id": "wlr_ent_000047",
+      "slug": "uniswap-wallet",
+      "name": "Uniswap Wallet",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000096",
+          "slug": "uniswap-wallet",
+          "product_name": "Uniswap Wallet",
+          "launch_date_missing": false,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 125,
+      "entity_id": "wlr_ent_000048",
+      "slug": "zerion-wallet",
+      "name": "Zerion Wallet",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000097",
+          "slug": "zerion-wallet-mobile",
+          "product_name": "Zerion Wallet Mobile",
+          "launch_date_missing": false,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 125,
+      "entity_id": "wlr_ent_000049",
+      "slug": "phoenix-wallet",
+      "name": "Phoenix Wallet",
+      "events": 0,
+      "evidence": 3,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000098",
+          "slug": "phoenix-wallet",
+          "product_name": "Phoenix Wallet",
+          "launch_date_missing": true,
+          "support_status_unknown": false
+        }
+      ]
+    },
+    {
+      "priority_score": 125,
+      "entity_id": "wlr_ent_000050",
+      "slug": "muun",
+      "name": "Muun",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000099",
+          "slug": "muun-wallet",
+          "product_name": "Muun Wallet",
+          "launch_date_missing": false,
+          "support_status_unknown": true
+        }
+      ]
+    }
+  ]
+}
