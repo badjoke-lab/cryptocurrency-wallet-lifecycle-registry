@@ -18,7 +18,7 @@
     "product_type": "browser_extension",
     "status": "active",
     "sales_status": "not_applicable",
-    "support_status": "unknown",
+    "support_status": "supported",
     "launch_date": null,
     "platform": [
       "browser extension"
@@ -29,7 +29,7 @@
     "key_management_model": "browser_local_user_controlled_wallet_keys",
     "summary": "Current Slush browser-extension wallet continuing the former Sui Wallet extension lineage.",
     "confidence": "high",
-    "last_verified_at": "2026-08-20",
+    "last_verified_at": "2026-08-26",
     "notes": "Mysten Labs states existing Sui Wallet extension users received Slush through a standard update without a new download or migration. Slush mobile/web surfaces are deferred. The 2025-04-24 rebrand is not used as the original extension launch date."
   },
   "events": [
@@ -83,6 +83,22 @@
       "claim_scope": "rebrand",
       "is_primary": true,
       "notes": "First-party Mysten Labs announcement states Sui Wallet and Stashed are now Slush and says existing Sui Wallet users receive the change through a standard update without a new download or account migration."
+    },
+    {
+      "id": "wlr_src_000417",
+      "entity_id": "wlr_ent_000069",
+      "product_id": "wlr_prod_000118",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Slush",
+      "url": "https://slush.app/",
+      "publisher": "Mysten Labs / Slush",
+      "published_at": null,
+      "accessed_at": "2026-08-26",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "Current first-party Slush site distributes the browser extension, web app and mobile apps. Sui first-party documentation identifies Slush as the official wallet replacing Sui Wallet, supporting active maintenance of the extension product."
     }
   ]
 }

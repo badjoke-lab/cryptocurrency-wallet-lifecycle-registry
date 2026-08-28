@@ -31,7 +31,7 @@
       "product_type": "mobile_app",
       "status": "active",
       "sales_status": "not_applicable",
-      "support_status": "unknown",
+      "support_status": "supported",
       "launch_date": null,
       "platform": [
         "iOS",
@@ -43,7 +43,7 @@
       "key_management_model": "user_held_mnemonic_and_private_key_workflows_per_official_security_guidance",
       "summary": "Current MathWallet mobile wallet application for multichain Web3 use on iOS and Android.",
       "confidence": "medium",
-      "last_verified_at": "2026-08-20",
+      "last_verified_at": "2026-08-26",
       "notes": "Selected mobile boundary only; browser wallet is deferred. Custody remains unknown pending stronger current first-party terms rather than being inferred from security guidance alone."
     }
   ],
@@ -80,6 +80,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Official security guidance establishes user-held mnemonic/private-key backup workflows but does not by itself justify a stronger current provider-custody claim, so custody remains unknown."
+    },
+    {
+      "id": "wlr_src_000408",
+      "entity_id": "wlr_ent_000057",
+      "product_id": "wlr_prod_000106",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "MathWallet",
+      "url": "https://www.mathwallet.org/",
+      "publisher": "MathWallet",
+      "published_at": null,
+      "accessed_at": "2026-08-26",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "Current first-party MathWallet site distributes iPhone and Android builds and documents the multichain wallet product, supporting active maintenance."
     }
   ]
 }

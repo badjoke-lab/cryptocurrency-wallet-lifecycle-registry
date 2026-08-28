@@ -52,6 +52,22 @@
         "source_type": "official_statement",
         "title": "Pera Algo Wallet",
         "url": "https://perawallet.app/"
+      },
+      {
+        "accessed_at": "2026-08-26",
+        "claim_scope": "support_status",
+        "entity_id": "wlr_ent_000064",
+        "event_id": null,
+        "id": "wlr_src_000412",
+        "is_primary": true,
+        "notes": "Current first-party Pera site distributes Pera Mobile for iOS and Android and links current support and technical documentation, supporting active maintenance.",
+        "product_id": "wlr_prod_000113",
+        "published_at": null,
+        "publisher": "Pera Wallet",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Pera Wallet",
+        "url": "https://perawallet.app/"
       }
     ]
   },

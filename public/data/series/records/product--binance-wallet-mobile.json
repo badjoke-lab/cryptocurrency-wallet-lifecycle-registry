@@ -16,7 +16,7 @@
       "sales_status": "not_applicable",
       "status": "active",
       "successor_product_id": null,
-      "support_status": "unknown"
+      "support_status": "supported"
     },
     "status": "active"
   },
@@ -76,6 +76,22 @@
         "source_type": "official_statement",
         "title": "What Is the Binance Wallet and How to Use It?",
         "url": "https://academy.binance.com/ur-PK/articles/what-is-binance-web3-wallet-and-how-does-it-work"
+      },
+      {
+        "accessed_at": "2026-08-26",
+        "claim_scope": "support_status",
+        "entity_id": "wlr_ent_000053",
+        "event_id": null,
+        "id": "wlr_src_000404",
+        "is_primary": true,
+        "notes": "Current Binance Academy documentation describes Binance Wallet as a self-custodial wallet built into the Binance app, with active mobile and web flows and 2026 feature documentation. Supports active maintenance of the mobile wallet product.",
+        "product_id": "wlr_prod_000102",
+        "published_at": null,
+        "publisher": "Binance",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "What Is the Binance Wallet and How to Use It?",
+        "url": "https://academy.binance.com/en/articles/what-is-binance-web3-wallet-and-how-does-it-work"
       }
     ]
   },
@@ -111,6 +127,6 @@
     "native_machine": "https://wlr.badjoke-lab.com/data/products/binance-wallet-mobile.json"
   },
   "verification": {
-    "last_verified_at": "2026-08-20"
+    "last_verified_at": "2026-08-26"
   }
 }

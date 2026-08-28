@@ -52,6 +52,22 @@
         "source_type": "official_statement",
         "title": "Enkrypt: Ethereum, Polkadot and Bitcoin Wallet",
         "url": "https://www.enkrypt.com/index.html"
+      },
+      {
+        "accessed_at": "2026-08-26",
+        "claim_scope": "support_status",
+        "entity_id": "wlr_ent_000060",
+        "event_id": null,
+        "id": "wlr_src_000409",
+        "is_primary": true,
+        "notes": "Current first-party Enkrypt site distributes the extension for Chrome, Firefox, Brave, Edge, Opera and Safari and describes ongoing multichain support.",
+        "product_id": "wlr_prod_000109",
+        "published_at": null,
+        "publisher": "Enkrypt / MyEtherWallet",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Enkrypt",
+        "url": "https://www.enkrypt.com/"
       }
     ]
   },

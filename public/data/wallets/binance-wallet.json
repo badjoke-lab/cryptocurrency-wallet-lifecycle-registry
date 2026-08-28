@@ -34,7 +34,7 @@
       "product_type": "mobile_app",
       "status": "active",
       "sales_status": "not_applicable",
-      "support_status": "unknown",
+      "support_status": "supported",
       "launch_date": null,
       "platform": [
         "Binance mobile app"
@@ -45,7 +45,7 @@
       "key_management_model": "self_custodial_mobile_wallet_architecture",
       "summary": "Self-custodial Binance Wallet mobile surface integrated into the Binance application.",
       "confidence": "high",
-      "last_verified_at": "2026-08-20",
+      "last_verified_at": "2026-08-26",
       "notes": "Selected mobile boundary only. Binance's current web wallet has a separate desktop/on-chain-trading architecture and is deferred. December 2024 is rebrand chronology rather than original product launch."
     }
   ],
@@ -116,6 +116,22 @@
       "claim_scope": "rebrand",
       "is_primary": true,
       "notes": "Current official Binance Academy material states that Binance Wallet was originally launched as Binance Web3 Wallet and was rebranded in December 2024. The source is retrospective, so WLR does not infer an exact day or treat the article's current update date as the event date."
+    },
+    {
+      "id": "wlr_src_000404",
+      "entity_id": "wlr_ent_000053",
+      "product_id": "wlr_prod_000102",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "What Is the Binance Wallet and How to Use It?",
+      "url": "https://academy.binance.com/en/articles/what-is-binance-web3-wallet-and-how-does-it-work",
+      "publisher": "Binance",
+      "published_at": null,
+      "accessed_at": "2026-08-26",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "Current Binance Academy documentation describes Binance Wallet as a self-custodial wallet built into the Binance app, with active mobile and web flows and 2026 feature documentation. Supports active maintenance of the mobile wallet product."
     }
   ]
 }

@@ -16,7 +16,7 @@
       "sales_status": "not_applicable",
       "status": "active",
       "successor_product_id": null,
-      "support_status": "unknown"
+      "support_status": "supported"
     },
     "status": "active"
   },
@@ -41,6 +41,22 @@
         "reliability": "high",
         "source_type": "official_statement",
         "title": "Pera Algo Wallet",
+        "url": "https://perawallet.app/"
+      },
+      {
+        "accessed_at": "2026-08-26",
+        "claim_scope": "support_status",
+        "entity_id": "wlr_ent_000064",
+        "event_id": null,
+        "id": "wlr_src_000412",
+        "is_primary": true,
+        "notes": "Current first-party Pera site distributes Pera Mobile for iOS and Android and links current support and technical documentation, supporting active maintenance.",
+        "product_id": "wlr_prod_000113",
+        "published_at": null,
+        "publisher": "Pera Wallet",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Pera Wallet",
         "url": "https://perawallet.app/"
       }
     ]
@@ -75,6 +91,6 @@
     "native_machine": "https://wlr.badjoke-lab.com/data/products/pera-mobile.json"
   },
   "verification": {
-    "last_verified_at": "2026-08-20"
+    "last_verified_at": "2026-08-26"
   }
 }

@@ -52,6 +52,22 @@
         "source_type": "official_statement",
         "title": "How to create a wallet using the BitPay app",
         "url": "https://support.bitpay.com/hc/en-us/articles/115005884803-How-to-create-a-wallet-using-the-BitPay-app"
+      },
+      {
+        "accessed_at": "2026-08-26",
+        "claim_scope": "support_status",
+        "entity_id": "wlr_ent_000055",
+        "event_id": null,
+        "id": "wlr_src_000406",
+        "is_primary": true,
+        "notes": "Current first-party BitPay download page distributes iOS and Android wallet builds and links active support, supporting current maintenance.",
+        "product_id": "wlr_prod_000104",
+        "published_at": null,
+        "publisher": "BitPay",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Download the BitPay Wallet",
+        "url": "https://www.bitpay.com/download"
       }
     ]
   },

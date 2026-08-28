@@ -44,6 +44,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "First-party security documentation states Lattice1 private keys are generated, stored and used for signing inside a secure enclave on the device."
+    },
+    {
+      "id": "wlr_src_000418",
+      "entity_id": "wlr_ent_000070",
+      "product_id": "wlr_prod_000119",
+      "event_id": null,
+      "source_type": "source_code",
+      "title": "GridPlus SDK",
+      "url": "https://github.com/GridPlus/gridplus-sdk",
+      "publisher": "GridPlus",
+      "published_at": null,
+      "accessed_at": "2026-08-26",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "Official GridPlus organization repository for the SDK used to integrate with Lattice1; the repository is not archived. This supports continuing integration availability but is not by itself a full hardware support commitment, so promotion should remain conservative."
     }
   ]
 }

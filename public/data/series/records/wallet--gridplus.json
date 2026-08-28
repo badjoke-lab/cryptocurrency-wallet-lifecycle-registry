@@ -52,6 +52,22 @@
         "source_type": "official_statement",
         "title": "Lattice1 Security Features",
         "url": "https://docs.gridplus.io/lattice1/security-features"
+      },
+      {
+        "accessed_at": "2026-08-26",
+        "claim_scope": "support_status",
+        "entity_id": "wlr_ent_000070",
+        "event_id": null,
+        "id": "wlr_src_000418",
+        "is_primary": true,
+        "notes": "Official GridPlus organization repository for the SDK used to integrate with Lattice1; the repository is not archived. This supports continuing integration availability but is not by itself a full hardware support commitment, so promotion should remain conservative.",
+        "product_id": "wlr_prod_000119",
+        "published_at": null,
+        "publisher": "GridPlus",
+        "reliability": "high",
+        "source_type": "source_code",
+        "title": "GridPlus SDK",
+        "url": "https://github.com/GridPlus/gridplus-sdk"
       }
     ]
   },

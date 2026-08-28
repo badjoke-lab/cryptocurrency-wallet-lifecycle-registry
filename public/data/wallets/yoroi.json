@@ -185,6 +185,22 @@
       "claim_scope": "event",
       "is_primary": true,
       "notes": "Continuously updated first-party incident log. The July 22 update records the June 21-23 theft window, approximately 16.1M ADA stolen from 374 wallets, and the per-transaction-signature cryptographic flaw. The July 6 update states that normal operations will not resume and users must migrate away."
+    },
+    {
+      "id": "wlr_src_000413",
+      "entity_id": "wlr_ent_000065",
+      "product_id": "wlr_prod_000114",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Yoroi and SecondFi are winding down",
+      "url": "https://www.yoroi-wallet.com/",
+      "publisher": "EMURGO / Yoroi",
+      "published_at": null,
+      "accessed_at": "2026-08-26",
+      "reliability": "high",
+      "claim_scope": "support_status",
+      "is_primary": true,
+      "notes": "Current official Yoroi site states that Yoroi and SecondFi are winding down following a security incident and directs users toward migration/recovery guidance. This is adverse lifecycle evidence and must not be converted into a normal supported-state claim. Exact shutdown date is not established by this page."
     }
   ]
 }
