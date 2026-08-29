@@ -16,7 +16,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000116"
+        ],
+        "confidence": "high",
+        "description": "The official SubWallet Extension repository published v1.3.84, adding validator recommendations for native and subnet staking, chain-list updates including Polkadot Hub EVM support, and upgrade-related bug fixes.",
+        "entity_id": "wlr_ent_000067",
+        "event_date": "2026-07-23",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000187",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000116",
+        "title": "SubWallet Extension v1.3.84 released"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -68,6 +85,22 @@
         "source_type": "official_statement",
         "title": "Install SubWallet",
         "url": "https://docs.subwallet.app/main/extension-user-guide/getting-started/install-subwallet"
+      },
+      {
+        "accessed_at": "2026-08-29",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000067",
+        "event_id": "wlr_ev_000187",
+        "id": "wlr_src_000456",
+        "is_primary": true,
+        "notes": "Official SubWallet Extension GitHub release, published 2026-07-23; release body records build date 2026-07-22.",
+        "product_id": "wlr_prod_000116",
+        "published_at": "2026-07-23",
+        "publisher": "SubWallet / Koniverse",
+        "reliability": "high",
+        "source_type": "release_notes",
+        "title": "SubWallet Extension v1.3.84",
+        "url": "https://github.com/Koniverse/SubWallet-Extension/releases/tag/v1.3.84"
       }
     ]
   },

@@ -3808,5 +3808,37 @@
     "confidence": "high",
     "event_status_effect": "active",
     "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000186",
+    "entity_id": "wlr_ent_000064",
+    "product_id": "wlr_prod_000113",
+    "affected_product_ids": [
+      "wlr_prod_000113"
+    ],
+    "event_type": "other",
+    "event_date": "2023-02-09",
+    "event_date_basis": "announcement",
+    "title": "Pera Wallet 5.7.0 released for iOS and Android",
+    "description": "Pera Wallet announced version 5.7.0 as available for iOS and Android, adding NFT quality-of-life improvements, an updated asset details experience, and the Discover browser for Algorand dApps and markets.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000187",
+    "entity_id": "wlr_ent_000067",
+    "product_id": "wlr_prod_000116",
+    "affected_product_ids": [
+      "wlr_prod_000116"
+    ],
+    "event_type": "other",
+    "event_date": "2026-07-23",
+    "event_date_basis": "release",
+    "title": "SubWallet Extension v1.3.84 released",
+    "description": "The official SubWallet Extension repository published v1.3.84, adding validator recommendations for native and subnet staking, chain-list updates including Polkadot Hub EVM support, and upgrade-related bug fixes.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
   }
 ]
