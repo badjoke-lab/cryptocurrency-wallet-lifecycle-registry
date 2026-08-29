@@ -1,0 +1,75 @@
+name: Promote Wave 03 C
+on:
+  push:
+    branches: [promotion/coverage-recovery-wave-03-c]
+permissions:
+  contents: write
+jobs:
+  promote:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 22}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Promote fixed reviewed records
+        run: |
+          python - <<'PY'
+          import json,re
+          from pathlib import Path
+          E=[
+          {'id':'wlr_ev_902401','entity_id':'wlr_ent_000066','product_id':'wlr_prod_000115','affected_product_ids':['wlr_prod_000115'],'event_type':'product_released','event_date':'2022-03-03','event_date_basis':'release','title':'Talisman Wallet Extension v1.0.0 publicly released','description':'Talisman official wallet release notes identify v1.0.0 on 2022-03-03 as the first public release of the wallet extension, documenting account creation/import, Polkadot and Kusama transaction signing, asset viewing and sending, dapp account authorization, address copying, and seed/JSON export.','confidence':'high','event_status_effect':'active','is_major_event':True},
+          {'id':'wlr_ev_902402','entity_id':'wlr_ent_000056','product_id':'wlr_prod_000105','affected_product_ids':['wlr_prod_000105'],'event_type':'other','event_date':'2025-07-06','event_date_basis':'announcement','title':'Coin98 Super Wallet V16 launch documented','description':'Coin98 first-party June 2025 product sync states that Super Wallet V16 was officially launched during June, adding proactive wallet-risk and token-screening protections, trading improvements, and BOBA on-chain rewards. The publication does not establish an exact launch day in June, so this event is anchored to the dated first-party sync publication rather than inferring one.','confidence':'high','event_status_effect':'active','is_major_event':False},
+          {'id':'wlr_ev_902403','entity_id':'wlr_ent_000096','product_id':'wlr_prod_000145','affected_product_ids':['wlr_prod_000145'],'event_type':'other','event_date':'2026-08-15','event_date_basis':'release','title':'Specter Desktop v2.2.0-pre5 released','description':'The official Specter Desktop repository published the v2.2.0-pre5 prerelease on 2026-08-15 with packaged desktop artifacts, providing dated first-party evidence of continuing application maintenance. This record does not infer the product original launch date.','confidence':'high','event_status_effect':'active','is_major_event':False},
+          {'id':'wlr_ev_902501','entity_id':'wlr_ent_000079','product_id':'wlr_prod_000128','affected_product_ids':['wlr_prod_000128'],'event_type':'other','event_date':'2026-05-18','event_date_basis':'release','title':'Tonkeeper Android 26.05.1 released','description':'The official Tonkeeper Android repository published release 26.05.1 on 2026-05-18 with packaged Android assets, providing dated first-party evidence of continuing maintenance of the mobile wallet.','confidence':'high','event_status_effect':'active','is_major_event':False},
+          {'id':'wlr_ev_902502','entity_id':'wlr_ent_000093','product_id':'wlr_prod_000142','affected_product_ids':['wlr_prod_000142'],'event_type':'other','event_date':'2026-05-21','event_date_basis':'release','title':'ZEUS v13.0.2 released','description':'The official ZEUS repository published v13.0.2 on 2026-05-21 with signed release artifacts for Android and iOS, providing dated first-party evidence of continuing maintenance of the mobile Bitcoin and Lightning wallet.','confidence':'high','event_status_effect':'active','is_major_event':False}]
+          S=[
+          {'id':'wlr_src_902401','entity_id':'wlr_ent_000066','product_id':'wlr_prod_000115','event_id':'wlr_ev_902401','source_type':'release_notes','title':'Wallet Release Notes','url':'https://docs.talisman.xyz/talisman/about/wallet-release-notes','publisher':'Talisman','published_at':'2022-03-03','accessed_at':'2026-08-29','reliability':'high','claim_scope':'event','is_primary':True,'notes':'First-party Talisman release notes explicitly call v1.0.0 on 2022-03-03 the first public release of the wallet.'},
+          {'id':'wlr_src_902402','entity_id':'wlr_ent_000056','product_id':'wlr_prod_000105','event_id':'wlr_ev_902402','source_type':'official_blog','title':'Coin98 Super Wallet | June Sync 2025','url':'https://coin98.com/blog/coin98-super-wallet-june-sync-2025/','publisher':'Coin98 Super Wallet','published_at':'2025-07-06','accessed_at':'2026-08-29','reliability':'high','claim_scope':'event','is_primary':True,'notes':'First-party monthly sync states V16 was officially launched in June 2025 but does not provide an exact launch day.'},
+          {'id':'wlr_src_902403','entity_id':'wlr_ent_000096','product_id':'wlr_prod_000145','event_id':'wlr_ev_902403','source_type':'release_notes','title':'Specter Desktop v2.2.0-pre5','url':'https://github.com/cryptoadvance/specter-desktop/releases/tag/v2.2.0-pre5','publisher':'Specter Desktop / CryptoAdvance','published_at':'2026-08-15','accessed_at':'2026-08-29','reliability':'high','claim_scope':'event','is_primary':True,'notes':'Official GitHub prerelease published 2026-08-15 with packaged desktop artifacts.'},
+          {'id':'wlr_src_902501','entity_id':'wlr_ent_000079','product_id':'wlr_prod_000128','event_id':'wlr_ev_902501','source_type':'release_notes','title':'Tonkeeper Android 26.05.1','url':'https://github.com/tonkeeper/android/releases/tag/v26.05.1_1283','publisher':'Tonkeeper','published_at':'2026-05-18','accessed_at':'2026-08-29','reliability':'high','claim_scope':'event','is_primary':True,'notes':'Official Tonkeeper Android GitHub release published 2026-05-18.'},
+          {'id':'wlr_src_902502','entity_id':'wlr_ent_000093','product_id':'wlr_prod_000142','event_id':'wlr_ev_902502','source_type':'release_notes','title':'ZEUS v13.0.2','url':'https://github.com/ZeusLN/zeus/releases/tag/v13.0.2','publisher':'ZEUS','published_at':'2026-05-21','accessed_at':'2026-08-29','reliability':'high','claim_scope':'event','is_primary':True,'notes':'Official ZEUS GitHub release published 2026-05-21 with Android and iOS release artifacts.'}]
+          ep=Path('data/events.json'); sp=Path('data/evidence.json'); pp=Path('data/products.json')
+          events=json.loads(ep.read_text()); sources=json.loads(sp.read_text()); products=json.loads(pp.read_text())
+          def nxt(rows,p):
+            return max([int(x['id'][len(p):]) for x in rows if re.fullmatch(re.escape(p)+r'\d+',x['id'])],default=0)+1
+          ne=nxt(events,'wlr_ev_'); ns=nxt(sources,'wlr_src_'); urls={x['url'] for x in sources}; keys={(x.get('entity_id'),x.get('product_id'),x.get('event_type'),x.get('event_date'),x.get('title')) for x in events}
+          smap={x['event_id']:x for x in S}; emap={}; pe=[]; ps=[]
+          for e in E:
+            k=(e['entity_id'],e['product_id'],e['event_type'],e['event_date'],e['title']); s=smap[e['id']]
+            if k in keys or s['url'] in urls: continue
+            n=dict(e); nid=f'wlr_ev_{ne:06d}'; ne+=1; n['id']=nid; emap[e['id']]=nid; pe.append(n); keys.add(k)
+          for s in S:
+            if s['event_id'] not in emap or s['url'] in urls: continue
+            n=dict(s); n['id']=f'wlr_src_{ns:06d}'; ns+=1; n['event_id']=emap[s['event_id']]; ps.append(n); urls.add(s['url'])
+          events+=pe; sources+=ps
+          if 'wlr_ev_902401' in emap:
+            p=next(x for x in products if x['id']=='wlr_prod_000115')
+            if p.get('launch_date') not in (None,'2022-03-03'): raise SystemExit('unexpected Talisman launch date')
+            p['launch_date']='2022-03-03'; p['launch_date_precision']='day'; p['last_verified_at']='2026-08-29'
+            note='First-party Talisman release notes identify v1.0.0 on 2022-03-03 as the first public wallet release.'
+            if note not in (p.get('notes') or ''): p['notes']=((p.get('notes') or '').strip()+' '+note).strip()
+          ep.write_text(json.dumps(events,ensure_ascii=False,indent=2)+'\n'); sp.write_text(json.dumps(sources,ensure_ascii=False,indent=2)+'\n'); pp.write_text(json.dumps(products,ensure_ascii=False,indent=2)+'\n')
+          print('PROMOTED',len(pe),len(ps),emap)
+          PY
+      - name: Install dependencies
+        run: |
+          python -m pip install -r requirements.txt
+          npm ci
+      - name: Regenerate and validate
+        run: |
+          npm run prebuild
+          npm run validate:records
+          npm run validate:identity-evidence
+          npm run validate:machine-records
+          npm run validate:series
+          npm run check:staging-boundary
+      - name: Commit promotion
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -A
+          git commit -m 'Promote Wave 03 parts 5-6 records'
+          git push origin HEAD:promotion/coverage-recovery-wave-03-c
