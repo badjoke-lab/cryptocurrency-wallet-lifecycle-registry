@@ -2835,7 +2835,7 @@
     "status": "active",
     "sales_status": "not_applicable",
     "support_status": "supported",
-    "launch_date": null,
+    "launch_date": "2022-08-03",
     "platform": [
       "Chrome",
       "Firefox",
@@ -2850,8 +2850,9 @@
     "key_management_model": "browser_local_user_controlled_wallet_keys",
     "summary": "Enkrypt non-custodial open-source multichain browser-extension wallet.",
     "confidence": "high",
-    "last_verified_at": "2026-08-26",
-    "notes": "Current first-party Enkrypt site explicitly distributes the extension across multiple browsers. Exact initial extension release date remains unresolved."
+    "last_verified_at": "2026-08-29",
+    "notes": "Current first-party Enkrypt site explicitly distributes the extension across multiple browsers. Exact initial extension release date remains unresolved. First-party MyEtherWallet publication dated 2022-08-03 introduces Enkrypt, describes support at release, and directs users to download the browser extension; WLR uses that day as the reviewed public launch date.",
+    "launch_date_precision": "day"
   },
   {
     "id": "wlr_prod_000110",

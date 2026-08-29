@@ -30,7 +30,7 @@
       "status": "active",
       "sales_status": "not_applicable",
       "support_status": "supported",
-      "launch_date": null,
+      "launch_date": "2022-08-03",
       "platform": [
         "Chrome",
         "Firefox",
@@ -45,11 +45,29 @@
       "key_management_model": "browser_local_user_controlled_wallet_keys",
       "summary": "Enkrypt non-custodial open-source multichain browser-extension wallet.",
       "confidence": "high",
-      "last_verified_at": "2026-08-26",
-      "notes": "Current first-party Enkrypt site explicitly distributes the extension across multiple browsers. Exact initial extension release date remains unresolved."
+      "last_verified_at": "2026-08-29",
+      "notes": "Current first-party Enkrypt site explicitly distributes the extension across multiple browsers. Exact initial extension release date remains unresolved. First-party MyEtherWallet publication dated 2022-08-03 introduces Enkrypt, describes support at release, and directs users to download the browser extension; WLR uses that day as the reviewed public launch date.",
+      "launch_date_precision": "day"
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000183",
+      "entity_id": "wlr_ent_000060",
+      "product_id": "wlr_prod_000109",
+      "affected_product_ids": [
+        "wlr_prod_000109"
+      ],
+      "event_type": "product_released",
+      "event_date": "2022-08-03",
+      "event_date_basis": "announcement",
+      "title": "Enkrypt browser extension introduced",
+      "description": "MyEtherWallet introduced Enkrypt as its multichain browser-extension wallet and directed users to download the released extension, with support for EVM and Polkadot ecosystem networks at release.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000265",
@@ -98,6 +116,22 @@
       "claim_scope": "support_status",
       "is_primary": true,
       "notes": "Current first-party Enkrypt site distributes the extension for Chrome, Firefox, Brave, Edge, Opera and Safari and describes ongoing multichain support."
+    },
+    {
+      "id": "wlr_src_000452",
+      "entity_id": "wlr_ent_000060",
+      "product_id": "wlr_prod_000109",
+      "event_id": "wlr_ev_000183",
+      "source_type": "official_blog",
+      "title": "Introducing Enkrypt, the Browser Extension Wallet by MEW",
+      "url": "https://medium.com/myetherwallet/introducing-enkrypt-the-browser-extension-wallet-by-mew-738e4aca7b65",
+      "publisher": "MyEtherWallet",
+      "published_at": "2022-08-03",
+      "accessed_at": "2026-08-29",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party MyEtherWallet publication introducing Enkrypt and directing users to download it on 2022-08-03."
     }
   ]
 }

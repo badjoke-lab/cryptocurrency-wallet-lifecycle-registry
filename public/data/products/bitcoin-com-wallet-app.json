@@ -30,7 +30,24 @@
     "last_verified_at": "2026-08-26",
     "notes": "Current app boundary is established by Bitcoin.com support material. Exact original app launch date remains unresolved."
   },
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000181",
+      "entity_id": "wlr_ent_000054",
+      "product_id": "wlr_prod_000103",
+      "affected_product_ids": [
+        "wlr_prod_000103"
+      ],
+      "event_type": "other",
+      "event_date": "2026-08-21",
+      "event_date_basis": "announcement",
+      "title": "Bitcoin.com Wallet added native TRON support",
+      "description": "Bitcoin.com announced native TRON support in the Bitcoin.com Wallet app, adding in-app support for holding, sending, swapping, and buying TRX and USDT on TRON.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000254",
@@ -63,6 +80,22 @@
       "claim_scope": "support_status",
       "is_primary": true,
       "notes": "Current first-party Bitcoin.com Wallet page distributes the mobile app and documents active wallet functionality, supporting a maintained mobile product state."
+    },
+    {
+      "id": "wlr_src_000450",
+      "entity_id": "wlr_ent_000054",
+      "product_id": "wlr_prod_000103",
+      "event_id": "wlr_ev_000181",
+      "source_type": "official_statement",
+      "title": "Bitcoin.com Wallet Adds Native TRON Support, Bringing TRX and USDT-TRC20 to Millions of Users",
+      "url": "https://news.bitcoin.com/press-releases/bitcoin-com-wallet-adds-native-tron-support-bringing-trx-and-usdt-trc20-to-millions-of-users/",
+      "publisher": "Bitcoin.com",
+      "published_at": "2026-08-21",
+      "accessed_at": "2026-08-29",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party Bitcoin.com announcement dated 2026-08-21; used only for the TRON integration event, not the wallet's original launch date."
     }
   ]
 }

@@ -3728,5 +3728,85 @@
     "confidence": "high",
     "event_status_effect": "active",
     "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000181",
+    "entity_id": "wlr_ent_000054",
+    "product_id": "wlr_prod_000103",
+    "affected_product_ids": [
+      "wlr_prod_000103"
+    ],
+    "event_type": "other",
+    "event_date": "2026-08-21",
+    "event_date_basis": "announcement",
+    "title": "Bitcoin.com Wallet added native TRON support",
+    "description": "Bitcoin.com announced native TRON support in the Bitcoin.com Wallet app, adding in-app support for holding, sending, swapping, and buying TRX and USDT on TRON.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000182",
+    "entity_id": "wlr_ent_000055",
+    "product_id": "wlr_prod_000104",
+    "affected_product_ids": [
+      "wlr_prod_000104"
+    ],
+    "event_type": "other",
+    "event_date": "2026-08-20",
+    "event_date_basis": "announcement",
+    "title": "BitPay Wallet added XRP buy, sell, and swap support",
+    "description": "BitPay announced that XRP buying, selling, and swapping became available directly in the self-custody BitPay Wallet for eligible users, expanding existing XRP storage and spending support.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000183",
+    "entity_id": "wlr_ent_000060",
+    "product_id": "wlr_prod_000109",
+    "affected_product_ids": [
+      "wlr_prod_000109"
+    ],
+    "event_type": "product_released",
+    "event_date": "2022-08-03",
+    "event_date_basis": "announcement",
+    "title": "Enkrypt browser extension introduced",
+    "description": "MyEtherWallet introduced Enkrypt as its multichain browser-extension wallet and directed users to download the released extension, with support for EVM and Polkadot ecosystem networks at release.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000184",
+    "entity_id": "wlr_ent_000057",
+    "product_id": "wlr_prod_000106",
+    "affected_product_ids": [
+      "wlr_prod_000106"
+    ],
+    "event_type": "other",
+    "event_date": "2019-07-12",
+    "event_date_basis": "announcement",
+    "title": "MathWallet v3.0.0 major update documented",
+    "description": "MathWallet published its v3.0.0 project update, documenting major mobile-wallet changes including ChainX support, a redesigned cloud wallet, hardware-wallet integration, Binance DEX support, and strengthened cross-chain exchange functionality.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000185",
+    "entity_id": "wlr_ent_000061",
+    "product_id": "wlr_prod_000110",
+    "affected_product_ids": [
+      "wlr_prod_000110"
+    ],
+    "event_type": "other",
+    "event_date": "2023-12-25",
+    "event_date_basis": "release",
+    "title": "Backpack 0.10.1-latest-4 released",
+    "description": "The official Backpack repository published the 0.10.1-latest-4 release with a packaged extension build, providing a dated product-release checkpoint for the browser-wallet lineage.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
   }
 ]

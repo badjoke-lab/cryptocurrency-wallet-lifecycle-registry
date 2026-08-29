@@ -16,7 +16,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000110"
+        ],
+        "confidence": "high",
+        "description": "The official Backpack repository published the 0.10.1-latest-4 release with a packaged extension build, providing a dated product-release checkpoint for the browser-wallet lineage.",
+        "entity_id": "wlr_ent_000061",
+        "event_date": "2023-12-25",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000185",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000110",
+        "title": "Backpack 0.10.1-latest-4 released"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -68,6 +85,22 @@
         "source_type": "official_statement",
         "title": "Download Backpack",
         "url": "https://backpack.app/download"
+      },
+      {
+        "accessed_at": "2026-08-29",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000061",
+        "event_id": "wlr_ev_000185",
+        "id": "wlr_src_000454",
+        "is_primary": true,
+        "notes": "Official Backpack GitHub release published 2023-12-25 with extension build asset.",
+        "product_id": "wlr_prod_000110",
+        "published_at": "2023-12-25",
+        "publisher": "Backpack / Coral",
+        "reliability": "high",
+        "source_type": "release_notes",
+        "title": "Backpack 0.10.1-latest-4",
+        "url": "https://github.com/coral-xyz/backpack/releases/tag/0.10.1-latest-4"
       }
     ]
   },

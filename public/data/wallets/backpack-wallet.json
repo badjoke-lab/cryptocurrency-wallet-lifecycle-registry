@@ -48,7 +48,24 @@
       "notes": "Selected browser-extension boundary only; mobile is deferred. Current first-party wallet support explicitly describes Backpack as self-custodial, while the official download page establishes Chrome, Brave and Edge distribution. Original extension launch remains unresolved."
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000185",
+      "entity_id": "wlr_ent_000061",
+      "product_id": "wlr_prod_000110",
+      "affected_product_ids": [
+        "wlr_prod_000110"
+      ],
+      "event_type": "other",
+      "event_date": "2023-12-25",
+      "event_date_basis": "release",
+      "title": "Backpack 0.10.1-latest-4 released",
+      "description": "The official Backpack repository published the 0.10.1-latest-4 release with a packaged extension build, providing a dated product-release checkpoint for the browser-wallet lineage.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000267",
@@ -97,6 +114,22 @@
       "claim_scope": "support_status",
       "is_primary": true,
       "notes": "Current first-party Backpack download page distributes the browser extension for Chrome, Brave and Edge, supporting an actively maintained extension product."
+    },
+    {
+      "id": "wlr_src_000454",
+      "entity_id": "wlr_ent_000061",
+      "product_id": "wlr_prod_000110",
+      "event_id": "wlr_ev_000185",
+      "source_type": "release_notes",
+      "title": "Backpack 0.10.1-latest-4",
+      "url": "https://github.com/coral-xyz/backpack/releases/tag/0.10.1-latest-4",
+      "publisher": "Backpack / Coral",
+      "published_at": "2023-12-25",
+      "accessed_at": "2026-08-29",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Official Backpack GitHub release published 2023-12-25 with extension build asset."
     }
   ]
 }
