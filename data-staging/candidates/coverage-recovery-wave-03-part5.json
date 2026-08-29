@@ -1,0 +1,105 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_coverage-recovery-wave-03-part5",
+  "title": "Coverage recovery Wave 03 part 5 — Talisman, Coin98, and Specter lifecycle depth",
+  "review_state": "researching",
+  "notes": "Candidate IDs are provisional. Talisman has an exact first public release date. Coin98 V16 is recorded on the first-party monthly sync publication date because the source only establishes that launch occurred during June 2025, not an exact June day. Specter records a dated official prerelease as maintenance/lifecycle depth, not original launch.",
+  "records": {
+    "entities": [],
+    "products": [],
+    "events": [
+      {
+        "id": "wlr_ev_902401",
+        "entity_id": "wlr_ent_000066",
+        "product_id": "wlr_prod_000115",
+        "affected_product_ids": ["wlr_prod_000115"],
+        "event_type": "product_released",
+        "event_date": "2022-03-03",
+        "event_date_basis": "release",
+        "title": "Talisman Wallet Extension v1.0.0 publicly released",
+        "description": "Talisman's official wallet release notes identify v1.0.0 on 2022-03-03 as the first public release of the wallet extension, documenting account creation/import, Polkadot and Kusama transaction signing, asset viewing and sending, dapp account authorization, address copying, and seed/JSON export.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": true
+      },
+      {
+        "id": "wlr_ev_902402",
+        "entity_id": "wlr_ent_000056",
+        "product_id": "wlr_prod_000105",
+        "affected_product_ids": ["wlr_prod_000105"],
+        "event_type": "other",
+        "event_date": "2025-07-06",
+        "event_date_basis": "announcement",
+        "title": "Coin98 Super Wallet V16 launch documented",
+        "description": "Coin98's June 2025 product sync states that Super Wallet V16 was officially launched during June, adding proactive wallet-risk and token-screening protections, trading improvements, and BOBA on-chain rewards. The publication does not establish an exact launch day in June, so this event is anchored to the dated first-party sync publication rather than inferring one.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": false
+      },
+      {
+        "id": "wlr_ev_902403",
+        "entity_id": "wlr_ent_000096",
+        "product_id": "wlr_prod_000145",
+        "affected_product_ids": ["wlr_prod_000145"],
+        "event_type": "other",
+        "event_date": "2026-08-15",
+        "event_date_basis": "release",
+        "title": "Specter Desktop v2.2.0-pre5 released",
+        "description": "The official Specter Desktop repository published the v2.2.0-pre5 prerelease on 2026-08-15 with packaged desktop artifacts, providing dated first-party evidence of continuing application maintenance. This record does not infer the product's original launch date.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": false
+      }
+    ],
+    "evidence": [
+      {
+        "id": "wlr_src_902401",
+        "entity_id": "wlr_ent_000066",
+        "product_id": "wlr_prod_000115",
+        "event_id": "wlr_ev_902401",
+        "source_type": "release_notes",
+        "title": "Wallet Release Notes",
+        "url": "https://docs.talisman.xyz/talisman/about/wallet-release-notes",
+        "publisher": "Talisman",
+        "published_at": "2022-03-03",
+        "accessed_at": "2026-08-29",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "First-party Talisman release notes explicitly call v1.0.0 on 2022-03-03 the first public release of the wallet."
+      },
+      {
+        "id": "wlr_src_902402",
+        "entity_id": "wlr_ent_000056",
+        "product_id": "wlr_prod_000105",
+        "event_id": "wlr_ev_902402",
+        "source_type": "official_blog",
+        "title": "Coin98 Super Wallet | June Sync 2025",
+        "url": "https://coin98.com/blog/coin98-super-wallet-june-sync-2025/",
+        "publisher": "Coin98 Super Wallet",
+        "published_at": "2025-07-06",
+        "accessed_at": "2026-08-29",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "First-party monthly sync states V16 was officially launched in June 2025 but does not provide an exact launch day."
+      },
+      {
+        "id": "wlr_src_902403",
+        "entity_id": "wlr_ent_000096",
+        "product_id": "wlr_prod_000145",
+        "event_id": "wlr_ev_902403",
+        "source_type": "release_notes",
+        "title": "Specter Desktop v2.2.0-pre5",
+        "url": "https://github.com/cryptoadvance/specter-desktop/releases/tag/v2.2.0-pre5",
+        "publisher": "Specter Desktop / CryptoAdvance",
+        "published_at": "2026-08-15",
+        "accessed_at": "2026-08-29",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "Official GitHub prerelease published 2026-08-15 with packaged desktop artifacts."
+      }
+    ]
+  }
+}
