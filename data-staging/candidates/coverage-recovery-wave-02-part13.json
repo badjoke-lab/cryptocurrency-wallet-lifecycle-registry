@@ -1,0 +1,46 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_coverage-recovery-wave-02-part13",
+  "title": "Coverage recovery Wave 02 part 13 — Ronin and Uniswap current availability",
+  "review_state": "researching",
+  "notes": "Evidence-only candidate. These first-party sources support current availability/support review and are not used to infer original launch dates or create lifecycle events.",
+  "records": {
+    "entities": [],
+    "products": [],
+    "events": [],
+    "evidence": [
+      {
+        "id": "wlr_src_901101",
+        "entity_id": "wlr_ent_000045",
+        "product_id": "wlr_prod_000094",
+        "event_id": null,
+        "source_type": "official_statement",
+        "title": "Ronin Wallet",
+        "url": "https://wallet.roninchain.com/",
+        "publisher": "Ronin",
+        "published_at": null,
+        "accessed_at": "2026-08-29",
+        "reliability": "high",
+        "claim_scope": "product",
+        "is_primary": true,
+        "notes": "The first-party Ronin Wallet site currently offers the wallet as a browser extension alongside mobile downloads. This supports current extension availability review without inferring launch timing."
+      },
+      {
+        "id": "wlr_src_901102",
+        "entity_id": "wlr_ent_000047",
+        "product_id": "wlr_prod_000096",
+        "event_id": null,
+        "source_type": "official_statement",
+        "title": "Uniswap Wallet",
+        "url": "https://wallet.uniswap.org/",
+        "publisher": "Uniswap Labs",
+        "published_at": null,
+        "accessed_at": "2026-08-29",
+        "reliability": "high",
+        "claim_scope": "product",
+        "is_primary": true,
+        "notes": "The first-party Uniswap Wallet site currently presents the self-custody wallet and download paths across iOS, Android, and Chrome. This supports current availability review without inferring launch timing."
+      }
+    ]
+  }
+}
