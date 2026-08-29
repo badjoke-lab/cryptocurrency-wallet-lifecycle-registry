@@ -3340,5 +3340,88 @@
     "user_actions_required": [
       "monitor"
     ]
+  },
+  {
+    "id": "wlr_ev_000159",
+    "entity_id": "wlr_ent_000002",
+    "product_id": null,
+    "affected_product_ids": [],
+    "event_type": "vulnerability_disclosed",
+    "event_date": "2026-08-27",
+    "event_date_basis": "disclosure",
+    "title": "Ledger disclosed command-interleaving signing vulnerability class",
+    "description": "Ledger disclosed that applications built with affected Ledger Secure SDK releases could accept a new APDU command while an earlier command was awaiting on-screen user review, allowing signing parameters held in application state to be changed after display but before signature generation when an application did not independently validate its state machine.",
+    "confidence": "high",
+    "security_scope": "transaction_signing",
+    "funds_affected": "unknown",
+    "event_status_effect": "none",
+    "affected_versions": [
+      "Ledger Secure SDK releases from the August 2025 regression through v26.6.0; exposure depends on application-level state validation"
+    ],
+    "is_major_event": true,
+    "user_actions_required": [
+      "update"
+    ],
+    "affected_components": [
+      "ledger_secure_sdk_io_handling",
+      "device_application_apdu_state_machine",
+      "on_screen_transaction_review"
+    ],
+    "notes": "LSB 023 states that the defect was in Ledger Secure SDK input/output event handling rather than device OS/firmware. Ethereum app 1.22.2, published 2026-08-13, was the first application release carrying application-level state guards. Ledger Secure SDK v26.6.1, released 2026-08-21, removed the interleaving opportunity generically and applications were rebuilt against it. Ledger reports no evidence of exploitation. Users must update device applications through Ledger Live; firmware update alone does not establish remediation."
+  },
+  {
+    "id": "wlr_ev_000160",
+    "entity_id": "wlr_ent_000002",
+    "product_id": null,
+    "affected_product_ids": [],
+    "event_type": "vulnerability_disclosed",
+    "event_date": "2026-08-27",
+    "event_date_basis": "disclosure",
+    "title": "Ledger disclosed Ethereum clear-signing array-count truncation vulnerability",
+    "description": "Ledger disclosed an Ethereum app Generic Transaction Parser flaw in which an attacker-controlled 16-bit array element count was stored in an 8-bit countdown field. For a 257-element array, the device could review only one operation while its signature still authorized the complete transaction.",
+    "confidence": "high",
+    "impact_level": "high",
+    "security_scope": "transaction_signing",
+    "funds_affected": "unknown",
+    "event_status_effect": "none",
+    "affected_versions": [
+      "Ethereum app 1.19.0 through 1.22.2"
+    ],
+    "is_major_event": true,
+    "user_actions_required": [
+      "update"
+    ],
+    "affected_components": [
+      "ethereum_app_generic_transaction_parser",
+      "clear_signing_array_review"
+    ],
+    "notes": "LSB 024 records Ledger's High classification of the reported flaw. Exploitation requires a compromised host plus a clear-signing descriptor iterating an attacker-controlled array of more than 255 elements. Ledger reports no production frontend compromise, public-network proof of concept, real-fund movement, or known exploitation. Ethereum app 1.22.3, published 2026-08-25, contains the correction; users should install 1.22.3 or later."
+  },
+  {
+    "id": "wlr_ev_000161",
+    "entity_id": "wlr_ent_000002",
+    "product_id": null,
+    "affected_product_ids": [],
+    "event_type": "vulnerability_disclosed",
+    "event_date": "2026-08-27",
+    "event_date_basis": "disclosure",
+    "title": "Ledger disclosed Ethereum swap token-approval substitution vulnerability",
+    "description": "Ledger disclosed an Ethereum app flaw in the token-payment path used by the Exchange application during swaps: the path checked the expected address and quantity but not the requested operation type, so a token approval carrying the expected values could pass validation and be signed without being displayed as an approval.",
+    "confidence": "high",
+    "security_scope": "transaction_signing",
+    "funds_affected": "unknown",
+    "event_status_effect": "none",
+    "affected_versions": [
+      "Ethereum app 1.20.0 through 1.22.2"
+    ],
+    "is_major_event": true,
+    "user_actions_required": [
+      "update"
+    ],
+    "affected_components": [
+      "ethereum_app_exchange_swap_payment_path",
+      "erc20_token_approval_validation"
+    ],
+    "notes": "LSB 025 states that the approval itself does not transfer funds but grants spending permission that can be used by a later transaction. Ledger reports no evidence of exploitation. Ethereum app 1.22.3, published 2026-08-25, corrects the operation-type validation; users should install 1.22.3 or later and verify the application version on the signer. Firmware update alone does not establish that the affected application has been replaced."
   }
 ]

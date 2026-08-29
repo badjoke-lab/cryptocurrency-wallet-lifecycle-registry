@@ -7331,5 +7331,53 @@
     "claim_scope": "support_status",
     "is_primary": true,
     "notes": "Official GridPlus organization repository for the SDK used to integrate with Lattice1; the repository is not archived. This supports continuing integration availability but is not by itself a full hardware support commitment, so promotion should remain conservative."
+  },
+  {
+    "id": "wlr_src_000419",
+    "entity_id": "wlr_ent_000002",
+    "product_id": null,
+    "event_id": "wlr_ev_000159",
+    "source_type": "official_security_advisory",
+    "title": "Ledger Security Bulletin 023 — Command interleaving during an on-screen review could desynchronise the display from the signature",
+    "url": "https://donjon.ledger.com/lsb/023/",
+    "publisher": "Ledger Donjon",
+    "published_at": "2026-08-27",
+    "accessed_at": "2026-08-29",
+    "reliability": "high",
+    "claim_scope": "vulnerability",
+    "is_primary": true,
+    "notes": "Primary Ledger security bulletin supporting the vulnerability class, affected SDK boundary, Ethereum app 1.22.2 application-level hardening, Secure SDK v26.6.1 generic correction, lack of known exploitation, and application-update remediation boundary."
+  },
+  {
+    "id": "wlr_src_000420",
+    "entity_id": "wlr_ent_000002",
+    "product_id": null,
+    "event_id": "wlr_ev_000160",
+    "source_type": "official_security_advisory",
+    "title": "Ledger Security Bulletin 024 — Clear-signing bypass via array-count truncation in the Ethereum app",
+    "url": "https://donjon.ledger.com/lsb/024/",
+    "publisher": "Ledger Donjon",
+    "published_at": "2026-08-27",
+    "accessed_at": "2026-08-29",
+    "reliability": "high",
+    "claim_scope": "vulnerability",
+    "is_primary": true,
+    "notes": "Primary Ledger security bulletin supporting the 1.19.0-1.22.2 affected range, High classification, exploit preconditions, no-real-funds/no-known-exploitation boundary, and Ethereum app 1.22.3 correction."
+  },
+  {
+    "id": "wlr_src_000421",
+    "entity_id": "wlr_ent_000002",
+    "product_id": null,
+    "event_id": "wlr_ev_000161",
+    "source_type": "official_security_advisory",
+    "title": "Ledger Security Bulletin 025 — Swap flow accepted a token approval in place of a payment",
+    "url": "https://donjon.ledger.com/lsb/025/",
+    "publisher": "Ledger Donjon",
+    "published_at": "2026-08-27",
+    "accessed_at": "2026-08-29",
+    "reliability": "high",
+    "claim_scope": "vulnerability",
+    "is_primary": true,
+    "notes": "Primary Ledger security bulletin supporting the 1.20.0-1.22.2 affected range, token-approval substitution mechanism, lack of known exploitation, and Ethereum app 1.22.3 correction."
   }
 ]
