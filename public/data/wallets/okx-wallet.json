@@ -81,6 +81,22 @@
       "claim_scope": "launch_date",
       "is_primary": true,
       "notes": "First-party announcement states that the standalone OKX Wallet App was available on the App Store and Google Play on 2025-04-16."
+    },
+    {
+      "id": "wlr_src_000445",
+      "entity_id": "wlr_ent_000028",
+      "product_id": "wlr_prod_000077",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "How do I download / update the OKX Wallet app?",
+      "url": "https://www.okx.com/en-gb/help/okx-wallet-download",
+      "publisher": "OKX",
+      "published_at": "2026-04-22",
+      "accessed_at": "2026-08-29",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Official OKX help documentation, updated 2026-08-05, identifies the official OKX Wallet download path and current Android distribution/update routes. This is used only as current availability/support evidence, not as a launch or lifecycle-event timestamp."
     }
   ]
 }

@@ -50,7 +50,24 @@
       "notes": "Selected mobile runtime only. Browser extension, desktop and Telegram mini-app surfaces are deferred. Rebrand does not reset launch chronology."
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000178",
+      "entity_id": "wlr_ent_000080",
+      "product_id": "wlr_prod_000129",
+      "affected_product_ids": [
+        "wlr_prod_000129"
+      ],
+      "event_type": "other",
+      "event_date": "2026-08-12",
+      "event_date_basis": "release",
+      "title": "My Wallet v26.8.3 released",
+      "description": "The official My Wallet/MyTonWallet repository released v26.8.3. The release fixed an activity-feed loading failure affecting freshly created Solana wallets and included desktop and Android application artifacts under the continuing My Wallet/MyTonWallet lineage.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000305",
@@ -83,6 +100,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Current first-party distribution surface for the renamed My Wallet product family; mobile is selected for this breadth pass while other runtimes are deferred."
+    },
+    {
+      "id": "wlr_src_000443",
+      "entity_id": "wlr_ent_000080",
+      "product_id": "wlr_prod_000129",
+      "event_id": "wlr_ev_000178",
+      "source_type": "release_notes",
+      "title": "My Wallet 26.8.3",
+      "url": "https://github.com/mytonwallet-org/mytonwallet/releases/tag/v26.8.3",
+      "publisher": "My Wallet",
+      "published_at": "2026-08-12",
+      "accessed_at": "2026-08-29",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Official repository release. Release assets include both MyWallet and MyTonWallet-branded artifacts, consistent with WLR's existing continuous entity lineage across the rebrand."
     }
   ]
 }

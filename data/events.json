@@ -3680,5 +3680,37 @@
       "erc20_token_approval_validation"
     ],
     "notes": "LSB 025 states that the approval itself does not transfer funds but grants spending permission that can be used by a later transaction. Ledger reports no evidence of exploitation. Ethereum app 1.22.3, published 2026-08-25, corrects the operation-type validation; users should install 1.22.3 or later and verify the application version on the signer. Firmware update alone does not establish that the affected application has been replaced."
+  },
+  {
+    "id": "wlr_ev_000178",
+    "entity_id": "wlr_ent_000080",
+    "product_id": "wlr_prod_000129",
+    "affected_product_ids": [
+      "wlr_prod_000129"
+    ],
+    "event_type": "other",
+    "event_date": "2026-08-12",
+    "event_date_basis": "release",
+    "title": "My Wallet v26.8.3 released",
+    "description": "The official My Wallet/MyTonWallet repository released v26.8.3. The release fixed an activity-feed loading failure affecting freshly created Solana wallets and included desktop and Android application artifacts under the continuing My Wallet/MyTonWallet lineage.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000179",
+    "entity_id": "wlr_ent_000049",
+    "product_id": "wlr_prod_000098",
+    "affected_product_ids": [
+      "wlr_prod_000098"
+    ],
+    "event_type": "other",
+    "event_date": "2026-06-18",
+    "event_date_basis": "release",
+    "title": "Phoenix 2.8.1 released",
+    "description": "ACINQ released Phoenix 2.8.1, adding an iOS debug screen for signing swap-in transactions and fixing an Android amount-display issue.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
   }
 ]

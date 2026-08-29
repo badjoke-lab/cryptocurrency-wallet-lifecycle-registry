@@ -7715,5 +7715,53 @@
     "claim_scope": "vulnerability",
     "is_primary": true,
     "notes": "Primary Ledger security bulletin supporting the 1.20.0-1.22.2 affected range, token-approval substitution mechanism, lack of known exploitation, and Ethereum app 1.22.3 correction."
+  },
+  {
+    "id": "wlr_src_000443",
+    "entity_id": "wlr_ent_000080",
+    "product_id": "wlr_prod_000129",
+    "event_id": "wlr_ev_000178",
+    "source_type": "release_notes",
+    "title": "My Wallet 26.8.3",
+    "url": "https://github.com/mytonwallet-org/mytonwallet/releases/tag/v26.8.3",
+    "publisher": "My Wallet",
+    "published_at": "2026-08-12",
+    "accessed_at": "2026-08-29",
+    "reliability": "high",
+    "claim_scope": "event",
+    "is_primary": true,
+    "notes": "Official repository release. Release assets include both MyWallet and MyTonWallet-branded artifacts, consistent with WLR's existing continuous entity lineage across the rebrand."
+  },
+  {
+    "id": "wlr_src_000444",
+    "entity_id": "wlr_ent_000049",
+    "product_id": "wlr_prod_000098",
+    "event_id": "wlr_ev_000179",
+    "source_type": "release_notes",
+    "title": "Phoenix 2.8.1",
+    "url": "https://github.com/ACINQ/phoenix/releases/tag/android-v2.8.1",
+    "publisher": "ACINQ",
+    "published_at": "2026-06-18",
+    "accessed_at": "2026-08-29",
+    "reliability": "high",
+    "claim_scope": "event",
+    "is_primary": true,
+    "notes": "Official ACINQ Phoenix release published 2026-06-18."
+  },
+  {
+    "id": "wlr_src_000445",
+    "entity_id": "wlr_ent_000028",
+    "product_id": "wlr_prod_000077",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "How do I download / update the OKX Wallet app?",
+    "url": "https://www.okx.com/en-gb/help/okx-wallet-download",
+    "publisher": "OKX",
+    "published_at": "2026-04-22",
+    "accessed_at": "2026-08-29",
+    "reliability": "high",
+    "claim_scope": "product",
+    "is_primary": true,
+    "notes": "Official OKX help documentation, updated 2026-08-05, identifies the official OKX Wallet download path and current Android distribution/update routes. This is used only as current availability/support evidence, not as a launch or lifecycle-event timestamp."
   }
 ]

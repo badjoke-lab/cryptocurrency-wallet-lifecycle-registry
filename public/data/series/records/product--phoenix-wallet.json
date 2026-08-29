@@ -22,7 +22,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000098"
+        ],
+        "confidence": "high",
+        "description": "ACINQ released Phoenix 2.8.1, adding an iOS debug screen for signing swap-in transactions and fixing an Android amount-display issue.",
+        "entity_id": "wlr_ent_000049",
+        "event_date": "2026-06-18",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000179",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000098",
+        "title": "Phoenix 2.8.1 released"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -58,6 +75,22 @@
         "source_type": "official_statement",
         "title": "Phoenix Wallet",
         "url": "https://phoenix.acinq.co/"
+      },
+      {
+        "accessed_at": "2026-08-29",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000049",
+        "event_id": "wlr_ev_000179",
+        "id": "wlr_src_000444",
+        "is_primary": true,
+        "notes": "Official ACINQ Phoenix release published 2026-06-18.",
+        "product_id": "wlr_prod_000098",
+        "published_at": "2026-06-18",
+        "publisher": "ACINQ",
+        "reliability": "high",
+        "source_type": "release_notes",
+        "title": "Phoenix 2.8.1",
+        "url": "https://github.com/ACINQ/phoenix/releases/tag/android-v2.8.1"
       }
     ]
   },
