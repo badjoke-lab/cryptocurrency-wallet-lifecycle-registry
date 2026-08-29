@@ -1,0 +1,75 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_coverage-recovery-wave-03-part3",
+  "title": "Coverage recovery Wave 03 part 3 — MathWallet and Backpack lifecycle depth",
+  "review_state": "researching",
+  "notes": "Candidate IDs are provisional. These records add dated lifecycle depth without inferring missing original launch dates.",
+  "records": {
+    "entities": [],
+    "products": [],
+    "events": [
+      {
+        "id": "wlr_ev_902201",
+        "entity_id": "wlr_ent_000057",
+        "product_id": "wlr_prod_000106",
+        "affected_product_ids": ["wlr_prod_000106"],
+        "event_type": "other",
+        "event_date": "2019-07-12",
+        "event_date_basis": "publication",
+        "title": "MathWallet v3.0.0 major update documented",
+        "description": "MathWallet published its v3.0.0 project update, documenting major mobile-wallet changes including ChainX support, a redesigned cloud wallet, hardware-wallet integration, Binance DEX support, and strengthened cross-chain exchange functionality.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": false
+      },
+      {
+        "id": "wlr_ev_902202",
+        "entity_id": "wlr_ent_000061",
+        "product_id": "wlr_prod_000110",
+        "affected_product_ids": ["wlr_prod_000110"],
+        "event_type": "other",
+        "event_date": "2023-12-25",
+        "event_date_basis": "release",
+        "title": "Backpack 0.10.1-latest-4 released",
+        "description": "The official Backpack repository published the 0.10.1-latest-4 release with a packaged extension build, providing a dated product-release checkpoint for the browser-wallet lineage.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": false
+      }
+    ],
+    "evidence": [
+      {
+        "id": "wlr_src_902201",
+        "entity_id": "wlr_ent_000057",
+        "product_id": "wlr_prod_000106",
+        "event_id": "wlr_ev_902201",
+        "source_type": "official_blog",
+        "title": "Project Update | 2019.7.12",
+        "url": "https://blog.mathwallet.org/?p=788",
+        "publisher": "MathWallet",
+        "published_at": "2019-07-12",
+        "accessed_at": "2026-08-29",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "First-party MathWallet project update documenting the v3.0.0 changes."
+      },
+      {
+        "id": "wlr_src_902202",
+        "entity_id": "wlr_ent_000061",
+        "product_id": "wlr_prod_000110",
+        "event_id": "wlr_ev_902202",
+        "source_type": "release_notes",
+        "title": "Backpack 0.10.1-latest-4",
+        "url": "https://github.com/coral-xyz/backpack/releases/tag/0.10.1-latest-4",
+        "publisher": "Backpack / Coral",
+        "published_at": "2023-12-25",
+        "accessed_at": "2026-08-29",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "Official Backpack GitHub release published 2023-12-25 with extension build asset."
+      }
+    ]
+  }
+}
