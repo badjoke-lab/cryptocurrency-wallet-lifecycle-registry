@@ -1,0 +1,75 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_coverage-recovery-wave-03-part4",
+  "title": "Coverage recovery Wave 03 part 4 — Pera and SubWallet lifecycle depth",
+  "review_state": "researching",
+  "notes": "Candidate IDs are provisional. These records add dated first-party lifecycle depth and do not infer unresolved original launch dates.",
+  "records": {
+    "entities": [],
+    "products": [],
+    "events": [
+      {
+        "id": "wlr_ev_902301",
+        "entity_id": "wlr_ent_000064",
+        "product_id": "wlr_prod_000113",
+        "affected_product_ids": ["wlr_prod_000113"],
+        "event_type": "other",
+        "event_date": "2023-02-09",
+        "event_date_basis": "announcement",
+        "title": "Pera Wallet 5.7.0 released for iOS and Android",
+        "description": "Pera Wallet announced version 5.7.0 as available for iOS and Android, adding NFT quality-of-life improvements, an updated asset details experience, and the Discover browser for Algorand dApps and markets.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": false
+      },
+      {
+        "id": "wlr_ev_902302",
+        "entity_id": "wlr_ent_000067",
+        "product_id": "wlr_prod_000116",
+        "affected_product_ids": ["wlr_prod_000116"],
+        "event_type": "other",
+        "event_date": "2026-07-23",
+        "event_date_basis": "release",
+        "title": "SubWallet Extension v1.3.84 released",
+        "description": "The official SubWallet Extension repository published v1.3.84, adding validator recommendations for native and subnet staking, chain-list updates including Polkadot Hub EVM support, and upgrade-related bug fixes.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": false
+      }
+    ],
+    "evidence": [
+      {
+        "id": "wlr_src_902301",
+        "entity_id": "wlr_ent_000064",
+        "product_id": "wlr_prod_000113",
+        "event_id": "wlr_ev_902301",
+        "source_type": "official_blog",
+        "title": "Pera Wallet 5.7.0: NFT QoL changes and Discover-Browser all rolled into one!",
+        "url": "https://blog.perawallet.app/pera-wallet-5-7-0-nft-qol-changes-and-discover-browser-all-rolled-into-one-22dfab29d91f",
+        "publisher": "Pera Wallet",
+        "published_at": "2023-02-09",
+        "accessed_at": "2026-08-29",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "First-party Pera Wallet release article dated 2023-02-09; the indexed first-party profile states 5.7.0 was available for iOS and Android."
+      },
+      {
+        "id": "wlr_src_902302",
+        "entity_id": "wlr_ent_000067",
+        "product_id": "wlr_prod_000116",
+        "event_id": "wlr_ev_902302",
+        "source_type": "release_notes",
+        "title": "SubWallet Extension v1.3.84",
+        "url": "https://github.com/Koniverse/SubWallet-Extension/releases/tag/v1.3.84",
+        "publisher": "SubWallet / Koniverse",
+        "published_at": "2026-07-23",
+        "accessed_at": "2026-08-29",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "Official SubWallet Extension GitHub release, published 2026-07-23; release body records build date 2026-07-22."
+      }
+    ]
+  }
+}
