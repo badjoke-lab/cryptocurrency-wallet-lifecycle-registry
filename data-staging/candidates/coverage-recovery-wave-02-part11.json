@@ -1,0 +1,30 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_coverage-recovery-wave-02-part11",
+  "title": "Coverage recovery Wave 02 part 11 — OKX Wallet current availability",
+  "review_state": "researching",
+  "notes": "Evidence-only candidate. The official help article demonstrates current supported distribution/update paths, but its publication/update timestamps are not treated as a wallet lifecycle event or original product launch date.",
+  "records": {
+    "entities": [],
+    "products": [],
+    "events": [],
+    "evidence": [
+      {
+        "id": "wlr_src_900901",
+        "entity_id": "wlr_ent_000028",
+        "product_id": "wlr_prod_000077",
+        "event_id": null,
+        "source_type": "official_documentation",
+        "title": "How do I download / update the OKX Wallet app?",
+        "url": "https://www.okx.com/en-gb/help/okx-wallet-download",
+        "publisher": "OKX",
+        "published_at": "2026-04-22",
+        "accessed_at": "2026-08-29",
+        "reliability": "high",
+        "claim_scope": "product",
+        "is_primary": true,
+        "notes": "Official OKX help documentation, updated 2026-08-05, identifies the official OKX Wallet download path and current Android distribution/update routes. This is used only as current availability/support evidence, not as a launch or lifecycle-event timestamp."
+      }
+    ]
+  }
+}
