@@ -22,7 +22,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000106"
+        ],
+        "confidence": "high",
+        "description": "MathWallet published its v3.0.0 project update, documenting major mobile-wallet changes including ChainX support, a redesigned cloud wallet, hardware-wallet integration, Binance DEX support, and strengthened cross-chain exchange functionality.",
+        "entity_id": "wlr_ent_000057",
+        "event_date": "2019-07-12",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000184",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000106",
+        "title": "MathWallet v3.0.0 major update documented"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -58,6 +75,22 @@
         "source_type": "official_statement",
         "title": "MathWallet",
         "url": "https://www.mathwallet.org/"
+      },
+      {
+        "accessed_at": "2026-08-29",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000057",
+        "event_id": "wlr_ev_000184",
+        "id": "wlr_src_000453",
+        "is_primary": true,
+        "notes": "First-party MathWallet project update documenting the v3.0.0 changes.",
+        "product_id": "wlr_prod_000106",
+        "published_at": "2019-07-12",
+        "publisher": "MathWallet",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Project Update | 2019.7.12",
+        "url": "https://blog.mathwallet.org/?p=788"
       }
     ]
   },

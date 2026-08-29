@@ -2,8 +2,8 @@
   "current_state": {
     "native": {
       "confidence": "high",
-      "launch_date": null,
-      "launch_date_precision": null,
+      "launch_date": "2022-08-03",
+      "launch_date_precision": "day",
       "parent_entity": {
         "canonical_name": "Enkrypt",
         "id": "wlr_ent_000060",
@@ -22,7 +22,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000109"
+        ],
+        "confidence": "high",
+        "description": "MyEtherWallet introduced Enkrypt as its multichain browser-extension wallet and directed users to download the released extension, with support for EVM and Polkadot ecosystem networks at release.",
+        "entity_id": "wlr_ent_000060",
+        "event_date": "2022-08-03",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000183",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000109",
+        "title": "Enkrypt browser extension introduced"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -58,6 +75,22 @@
         "source_type": "official_statement",
         "title": "Enkrypt",
         "url": "https://www.enkrypt.com/"
+      },
+      {
+        "accessed_at": "2026-08-29",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000060",
+        "event_id": "wlr_ev_000183",
+        "id": "wlr_src_000452",
+        "is_primary": true,
+        "notes": "First-party MyEtherWallet publication introducing Enkrypt and directing users to download it on 2022-08-03.",
+        "product_id": "wlr_prod_000109",
+        "published_at": "2022-08-03",
+        "publisher": "MyEtherWallet",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Introducing Enkrypt, the Browser Extension Wallet by MEW",
+        "url": "https://medium.com/myetherwallet/introducing-enkrypt-the-browser-extension-wallet-by-mew-738e4aca7b65"
       }
     ]
   },
@@ -91,6 +124,6 @@
     "native_machine": "https://wlr.badjoke-lab.com/data/products/enkrypt-extension.json"
   },
   "verification": {
-    "last_verified_at": "2026-08-26"
+    "last_verified_at": "2026-08-29"
   }
 }

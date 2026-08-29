@@ -47,7 +47,24 @@
       "notes": "Selected mobile boundary only; browser wallet is deferred. Custody remains unknown pending stronger current first-party terms rather than being inferred from security guidance alone."
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000184",
+      "entity_id": "wlr_ent_000057",
+      "product_id": "wlr_prod_000106",
+      "affected_product_ids": [
+        "wlr_prod_000106"
+      ],
+      "event_type": "other",
+      "event_date": "2019-07-12",
+      "event_date_basis": "announcement",
+      "title": "MathWallet v3.0.0 major update documented",
+      "description": "MathWallet published its v3.0.0 project update, documenting major mobile-wallet changes including ChainX support, a redesigned cloud wallet, hardware-wallet integration, Binance DEX support, and strengthened cross-chain exchange functionality.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000259",
@@ -96,6 +113,22 @@
       "claim_scope": "support_status",
       "is_primary": true,
       "notes": "Current first-party MathWallet site distributes iPhone and Android builds and documents the multichain wallet product, supporting active maintenance."
+    },
+    {
+      "id": "wlr_src_000453",
+      "entity_id": "wlr_ent_000057",
+      "product_id": "wlr_prod_000106",
+      "event_id": "wlr_ev_000184",
+      "source_type": "official_blog",
+      "title": "Project Update | 2019.7.12",
+      "url": "https://blog.mathwallet.org/?p=788",
+      "publisher": "MathWallet",
+      "published_at": "2019-07-12",
+      "accessed_at": "2026-08-29",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party MathWallet project update documenting the v3.0.0 changes."
     }
   ]
 }

@@ -16,7 +16,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000104"
+        ],
+        "confidence": "high",
+        "description": "BitPay announced that XRP buying, selling, and swapping became available directly in the self-custody BitPay Wallet for eligible users, expanding existing XRP storage and spending support.",
+        "entity_id": "wlr_ent_000055",
+        "event_date": "2026-08-20",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000182",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000104",
+        "title": "BitPay Wallet added XRP buy, sell, and swap support"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -68,6 +85,22 @@
         "source_type": "official_statement",
         "title": "Download the BitPay Wallet",
         "url": "https://www.bitpay.com/download"
+      },
+      {
+        "accessed_at": "2026-08-29",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000055",
+        "event_id": "wlr_ev_000182",
+        "id": "wlr_src_000451",
+        "is_primary": true,
+        "notes": "First-party BitPay product update dated 2026-08-20.",
+        "product_id": "wlr_prod_000104",
+        "published_at": "2026-08-20",
+        "publisher": "BitPay",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Buy, Sell, and Swap XRP: Now Available in the BitPay Wallet",
+        "url": "https://www.bitpay.com/blog/bitpay-now-supports-xrp"
       }
     ]
   },
