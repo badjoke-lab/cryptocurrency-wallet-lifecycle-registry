@@ -1,0 +1,36 @@
+{
+  "batch_id": "coverage-recovery-wave-03-part9",
+  "issue": 299,
+  "authority_pr": 300,
+  "reviewed_at": "2026-08-30",
+  "records": [
+    {
+      "entity_id": "wlr_ent_000087",
+      "product_id": "wlr_prod_000136",
+      "event": {
+        "id": "wlr_ev_902801",
+        "event_type": "other",
+        "event_date": "2026-01-26",
+        "event_date_basis": "announcement",
+        "title": "Xverse launched Lightning payments through Sati",
+        "description": "Xverse announced on 2026-01-26 that Lightning Network payments had launched in partnership with Sati and were available from the Xverse web wallet, while the user's main Bitcoin wallet remained self-custodial.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": false
+      },
+      "evidence": {
+        "id": "wlr_src_902801",
+        "source_type": "official_blog",
+        "title": "Xverse Gets a Lightning Fast Upgrade in Partnership With Sati",
+        "url": "https://www.xverse.app/blog/lightning-network-on-xverse",
+        "publisher": "Xverse",
+        "published_at": "2026-01-26",
+        "accessed_at": "2026-08-30",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "First-party Xverse announcement explicitly states that Lightning Network payments launched through the Sati partnership."
+      }
+    }
+  ]
+}
