@@ -82,6 +82,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Current first-party installation guide separately documents the Zerion mobile app for iOS/Android and Zerion browser extension, supporting WLR's decision to keep the mobile product boundary separate."
+    },
+    {
+      "id": "wlr_src_000448",
+      "entity_id": "wlr_ent_000048",
+      "product_id": "wlr_prod_000097",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Download Zerion",
+      "url": "https://www.zerion.io/download",
+      "publisher": "Zerion",
+      "published_at": null,
+      "accessed_at": "2026-08-29",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "The first-party Zerion download page currently offers the mobile wallet on iOS and Android. This supports current mobile availability review without inferring launch timing."
     }
   ]
 }

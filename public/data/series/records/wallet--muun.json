@@ -52,6 +52,22 @@
         "source_type": "official_blog",
         "title": "Muun releases non-custodial Bitcoin and Lightning wallet for iOS",
         "url": "https://blog.muun.com/muun-releases-non-custodial-bitcoin-and-lightning-wallet-for-ios/amp/"
+      },
+      {
+        "accessed_at": "2026-08-29",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000050",
+        "event_id": null,
+        "id": "wlr_src_000449",
+        "is_primary": true,
+        "notes": "Muun's first-party terms state that the only official Muun wallet is the version distributed by Muun through official app stores. This supports continued official product distribution without inferring launch timing.",
+        "product_id": "wlr_prod_000099",
+        "published_at": null,
+        "publisher": "Muun",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Muun Terms of use",
+        "url": "https://muun.com/terms_and_conditions.html"
       }
     ]
   },
