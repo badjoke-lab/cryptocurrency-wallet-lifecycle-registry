@@ -1,0 +1,75 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_coverage-recovery-wave-03-part6",
+  "title": "Coverage recovery Wave 03 part 6 — Tonkeeper and ZEUS lifecycle depth",
+  "review_state": "researching",
+  "notes": "Candidate IDs are provisional. Records use dated first-party GitHub releases for current lifecycle depth and do not infer original launch dates.",
+  "records": {
+    "entities": [],
+    "products": [],
+    "events": [
+      {
+        "id": "wlr_ev_902501",
+        "entity_id": "wlr_ent_000079",
+        "product_id": "wlr_prod_000128",
+        "affected_product_ids": ["wlr_prod_000128"],
+        "event_type": "other",
+        "event_date": "2026-05-18",
+        "event_date_basis": "release",
+        "title": "Tonkeeper Android 26.05.1 released",
+        "description": "The official Tonkeeper Android repository published release 26.05.1 on 2026-05-18 with packaged Android assets, providing dated first-party evidence of continuing maintenance of the mobile wallet.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": false
+      },
+      {
+        "id": "wlr_ev_902502",
+        "entity_id": "wlr_ent_000093",
+        "product_id": "wlr_prod_000142",
+        "affected_product_ids": ["wlr_prod_000142"],
+        "event_type": "other",
+        "event_date": "2026-05-21",
+        "event_date_basis": "release",
+        "title": "ZEUS v13.0.2 released",
+        "description": "The official ZEUS repository published v13.0.2 on 2026-05-21 with signed release artifacts for Android and iOS, providing dated first-party evidence of continuing maintenance of the mobile Bitcoin and Lightning wallet.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": false
+      }
+    ],
+    "evidence": [
+      {
+        "id": "wlr_src_902501",
+        "entity_id": "wlr_ent_000079",
+        "product_id": "wlr_prod_000128",
+        "event_id": "wlr_ev_902501",
+        "source_type": "release_notes",
+        "title": "Tonkeeper Android 26.05.1",
+        "url": "https://github.com/tonkeeper/android/releases/tag/v26.05.1_1283",
+        "publisher": "Tonkeeper",
+        "published_at": "2026-05-18",
+        "accessed_at": "2026-08-29",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "Official Tonkeeper Android GitHub release published 2026-05-18."
+      },
+      {
+        "id": "wlr_src_902502",
+        "entity_id": "wlr_ent_000093",
+        "product_id": "wlr_prod_000142",
+        "event_id": "wlr_ev_902502",
+        "source_type": "release_notes",
+        "title": "ZEUS v13.0.2",
+        "url": "https://github.com/ZeusLN/zeus/releases/tag/v13.0.2",
+        "publisher": "ZEUS",
+        "published_at": "2026-05-21",
+        "accessed_at": "2026-08-29",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "Official ZEUS GitHub release published 2026-05-21 with Android and iOS release artifacts."
+      }
+    ]
+  }
+}
