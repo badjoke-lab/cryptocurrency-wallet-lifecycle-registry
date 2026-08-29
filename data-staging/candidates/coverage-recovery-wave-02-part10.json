@@ -1,0 +1,105 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_coverage-recovery-wave-02-part10",
+  "title": "Coverage recovery Wave 02 part 10 — My Wallet, OneKey Pro, and Phoenix lifecycle depth",
+  "review_state": "researching",
+  "notes": "Candidate IDs are provisional and must be reallocated against fresh main during canonical promotion. These records use dated first-party release/update material only; none is treated as the original product launch.",
+  "records": {
+    "entities": [],
+    "products": [],
+    "events": [
+      {
+        "id": "wlr_ev_900801",
+        "entity_id": "wlr_ent_000080",
+        "product_id": "wlr_prod_000129",
+        "affected_product_ids": ["wlr_prod_000129"],
+        "event_type": "other",
+        "event_date": "2026-08-12",
+        "event_date_basis": "release",
+        "title": "My Wallet v26.8.3 released",
+        "description": "The official My Wallet/MyTonWallet repository released v26.8.3. The release fixed an activity-feed loading failure affecting freshly created Solana wallets and included desktop and Android application artifacts under the continuing My Wallet/MyTonWallet lineage.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": false
+      },
+      {
+        "id": "wlr_ev_900802",
+        "entity_id": "wlr_ent_000037",
+        "product_id": "wlr_prod_000086",
+        "affected_product_ids": ["wlr_prod_000086"],
+        "event_type": "other",
+        "event_date": "2026-07-03",
+        "event_date_basis": "release",
+        "title": "OneKey Pro firmware 4.21.0 released",
+        "description": "OneKey's official Pro firmware update log records system firmware 4.21.0 on 2026-07-03, adding TON sign-data support, updating FIDO authentication, and fixing a QR Wallet signing issue involving legacy-path transactions and security checks.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": false
+      },
+      {
+        "id": "wlr_ev_900803",
+        "entity_id": "wlr_ent_000049",
+        "product_id": "wlr_prod_000098",
+        "affected_product_ids": ["wlr_prod_000098"],
+        "event_type": "other",
+        "event_date": "2026-06-18",
+        "event_date_basis": "release",
+        "title": "Phoenix 2.8.1 released",
+        "description": "ACINQ released Phoenix 2.8.1, adding an iOS debug screen for signing swap-in transactions and fixing an Android amount-display issue.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": false
+      }
+    ],
+    "evidence": [
+      {
+        "id": "wlr_src_900801",
+        "entity_id": "wlr_ent_000080",
+        "product_id": "wlr_prod_000129",
+        "event_id": "wlr_ev_900801",
+        "source_type": "release_notes",
+        "title": "My Wallet 26.8.3",
+        "url": "https://github.com/mytonwallet-org/mytonwallet/releases/tag/v26.8.3",
+        "publisher": "My Wallet",
+        "published_at": "2026-08-12",
+        "accessed_at": "2026-08-29",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "Official repository release. Release assets include both MyWallet and MyTonWallet-branded artifacts, consistent with WLR's existing continuous entity lineage across the rebrand."
+      },
+      {
+        "id": "wlr_src_900802",
+        "entity_id": "wlr_ent_000037",
+        "product_id": "wlr_prod_000086",
+        "event_id": "wlr_ev_900802",
+        "source_type": "release_notes",
+        "title": "OneKey Pro Firmware Update Log",
+        "url": "https://help.onekey.so/en/articles/11461394-onekey-pro-firmware-update-log",
+        "publisher": "OneKey",
+        "published_at": "2026-07-03",
+        "accessed_at": "2026-08-29",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "Official OneKey help-center firmware log gives the 4.21.0 release date and change list for OneKey Pro."
+      },
+      {
+        "id": "wlr_src_900803",
+        "entity_id": "wlr_ent_000049",
+        "product_id": "wlr_prod_000098",
+        "event_id": "wlr_ev_900803",
+        "source_type": "release_notes",
+        "title": "Phoenix 2.8.1",
+        "url": "https://github.com/ACINQ/phoenix/releases/tag/android-v2.8.1",
+        "publisher": "ACINQ",
+        "published_at": "2026-06-18",
+        "accessed_at": "2026-08-29",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "Official ACINQ Phoenix release published 2026-06-18."
+      }
+    ]
+  }
+}
