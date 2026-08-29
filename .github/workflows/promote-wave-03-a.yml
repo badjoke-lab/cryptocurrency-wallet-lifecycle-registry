@@ -73,6 +73,8 @@ jobs:
           skipped_events = []
           for ev in cand_events:
               normalized = dict(ev)
+              if ev['id'] == 'wlr_ev_902201' and normalized.get('event_date_basis') == 'publication':
+                  normalized['event_date_basis'] = 'announcement'
               key = (normalized.get('entity_id'), normalized.get('product_id'), normalized.get('event_type'), normalized.get('event_date'), normalized.get('title'))
               if key in existing_event_keys:
                   skipped_events.append((ev['id'], 'semantic_duplicate'))
@@ -103,9 +105,6 @@ jobs:
               promoted_evidence.append(new)
               existing_urls.add(src['url'])
 
-          # The first-party 2022-08-03 Enkrypt introduction explicitly presents
-          # the extension as released and available for download. Fill only this
-          # reviewed launch-date gap; do not infer launch dates for other targets.
           product_updates = []
           for product in products:
               if product['id'] == 'wlr_prod_000109' and not product.get('launch_date'):
