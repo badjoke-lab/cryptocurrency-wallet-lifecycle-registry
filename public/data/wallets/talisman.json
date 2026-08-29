@@ -32,7 +32,7 @@
       "status": "active",
       "sales_status": "not_applicable",
       "support_status": "supported",
-      "launch_date": null,
+      "launch_date": "2022-03-03",
       "platform": [
         "Chrome",
         "Firefox",
@@ -45,11 +45,29 @@
       "key_management_model": "browser_local_user_controlled_private_keys",
       "summary": "Current non-custodial Talisman browser-extension wallet for supported Polkadot, Ethereum and related networks.",
       "confidence": "high",
-      "last_verified_at": "2026-08-26",
-      "notes": "Current first-party installation documentation supports Chrome, Firefox, Brave and Edge. Initial extension launch date remains unresolved."
+      "last_verified_at": "2026-08-29",
+      "notes": "Current first-party installation documentation supports Chrome, Firefox, Brave and Edge. Initial extension launch date remains unresolved. First-party Talisman release notes identify v1.0.0 on 2022-03-03 as the first public wallet release.",
+      "launch_date_precision": "day"
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000188",
+      "entity_id": "wlr_ent_000066",
+      "product_id": "wlr_prod_000115",
+      "affected_product_ids": [
+        "wlr_prod_000115"
+      ],
+      "event_type": "product_released",
+      "event_date": "2022-03-03",
+      "event_date_basis": "release",
+      "title": "Talisman Wallet Extension v1.0.0 publicly released",
+      "description": "Talisman official wallet release notes identify v1.0.0 on 2022-03-03 as the first public release of the wallet extension, documenting account creation/import, Polkadot and Kusama transaction signing, asset viewing and sending, dapp account authorization, address copying, and seed/JSON export.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000277",
@@ -98,6 +116,22 @@
       "claim_scope": "support_status",
       "is_primary": true,
       "notes": "Current first-party Talisman documentation distributes the extension for Chrome, Firefox, Brave and Edge and documents current setup, supporting active maintenance."
+    },
+    {
+      "id": "wlr_src_000457",
+      "entity_id": "wlr_ent_000066",
+      "product_id": "wlr_prod_000115",
+      "event_id": "wlr_ev_000188",
+      "source_type": "release_notes",
+      "title": "Wallet Release Notes",
+      "url": "https://docs.talisman.xyz/talisman/about/wallet-release-notes",
+      "publisher": "Talisman",
+      "published_at": "2022-03-03",
+      "accessed_at": "2026-08-29",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party Talisman release notes explicitly call v1.0.0 on 2022-03-03 the first public release of the wallet."
     }
   ]
 }

@@ -3840,5 +3840,85 @@
     "confidence": "high",
     "event_status_effect": "active",
     "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000188",
+    "entity_id": "wlr_ent_000066",
+    "product_id": "wlr_prod_000115",
+    "affected_product_ids": [
+      "wlr_prod_000115"
+    ],
+    "event_type": "product_released",
+    "event_date": "2022-03-03",
+    "event_date_basis": "release",
+    "title": "Talisman Wallet Extension v1.0.0 publicly released",
+    "description": "Talisman official wallet release notes identify v1.0.0 on 2022-03-03 as the first public release of the wallet extension, documenting account creation/import, Polkadot and Kusama transaction signing, asset viewing and sending, dapp account authorization, address copying, and seed/JSON export.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000189",
+    "entity_id": "wlr_ent_000056",
+    "product_id": "wlr_prod_000105",
+    "affected_product_ids": [
+      "wlr_prod_000105"
+    ],
+    "event_type": "other",
+    "event_date": "2025-07-06",
+    "event_date_basis": "announcement",
+    "title": "Coin98 Super Wallet V16 launch documented",
+    "description": "Coin98 first-party June 2025 product sync states that Super Wallet V16 was officially launched during June, adding proactive wallet-risk and token-screening protections, trading improvements, and BOBA on-chain rewards. The publication does not establish an exact launch day in June, so this event is anchored to the dated first-party sync publication rather than inferring one.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000190",
+    "entity_id": "wlr_ent_000096",
+    "product_id": "wlr_prod_000145",
+    "affected_product_ids": [
+      "wlr_prod_000145"
+    ],
+    "event_type": "other",
+    "event_date": "2026-08-15",
+    "event_date_basis": "release",
+    "title": "Specter Desktop v2.2.0-pre5 released",
+    "description": "The official Specter Desktop repository published the v2.2.0-pre5 prerelease on 2026-08-15 with packaged desktop artifacts, providing dated first-party evidence of continuing application maintenance. This record does not infer the product original launch date.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000191",
+    "entity_id": "wlr_ent_000079",
+    "product_id": "wlr_prod_000128",
+    "affected_product_ids": [
+      "wlr_prod_000128"
+    ],
+    "event_type": "other",
+    "event_date": "2026-05-18",
+    "event_date_basis": "release",
+    "title": "Tonkeeper Android 26.05.1 released",
+    "description": "The official Tonkeeper Android repository published release 26.05.1 on 2026-05-18 with packaged Android assets, providing dated first-party evidence of continuing maintenance of the mobile wallet.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000192",
+    "entity_id": "wlr_ent_000093",
+    "product_id": "wlr_prod_000142",
+    "affected_product_ids": [
+      "wlr_prod_000142"
+    ],
+    "event_type": "other",
+    "event_date": "2026-05-21",
+    "event_date_basis": "release",
+    "title": "ZEUS v13.0.2 released",
+    "description": "The official ZEUS repository published v13.0.2 on 2026-05-21 with signed release artifacts for Android and iOS, providing dated first-party evidence of continuing maintenance of the mobile Bitcoin and Lightning wallet.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
   }
 ]
