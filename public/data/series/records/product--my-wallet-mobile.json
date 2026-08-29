@@ -22,7 +22,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000129"
+        ],
+        "confidence": "high",
+        "description": "The official My Wallet/MyTonWallet repository released v26.8.3. The release fixed an activity-feed loading failure affecting freshly created Solana wallets and included desktop and Android application artifacts under the continuing My Wallet/MyTonWallet lineage.",
+        "entity_id": "wlr_ent_000080",
+        "event_date": "2026-08-12",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000178",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000129",
+        "title": "My Wallet v26.8.3 released"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -42,6 +59,22 @@
         "source_type": "official_statement",
         "title": "Install My Wallet",
         "url": "https://get.mytonwallet.io/"
+      },
+      {
+        "accessed_at": "2026-08-29",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000080",
+        "event_id": "wlr_ev_000178",
+        "id": "wlr_src_000443",
+        "is_primary": true,
+        "notes": "Official repository release. Release assets include both MyWallet and MyTonWallet-branded artifacts, consistent with WLR's existing continuous entity lineage across the rebrand.",
+        "product_id": "wlr_prod_000129",
+        "published_at": "2026-08-12",
+        "publisher": "My Wallet",
+        "reliability": "high",
+        "source_type": "release_notes",
+        "title": "My Wallet 26.8.3",
+        "url": "https://github.com/mytonwallet-org/mytonwallet/releases/tag/v26.8.3"
       }
     ]
   },
