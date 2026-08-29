@@ -94,6 +94,8 @@ jobs:
               if src['url'] in existing_urls:
                   continue
               new = dict(src)
+              if src['id'] == 'wlr_src_900901':
+                  new['source_type'] = 'official_statement'
               new['id'] = f'wlr_src_{next_src:06d}'
               next_src += 1
               if old_event is not None:
