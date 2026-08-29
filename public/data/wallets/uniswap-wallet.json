@@ -80,6 +80,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "First-party Android release confirms the continuing Uniswap Wallet mobile-product lineage and notes its original iOS launch in April 2023."
+    },
+    {
+      "id": "wlr_src_000447",
+      "entity_id": "wlr_ent_000047",
+      "product_id": "wlr_prod_000096",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Uniswap Wallet",
+      "url": "https://wallet.uniswap.org/",
+      "publisher": "Uniswap Labs",
+      "published_at": null,
+      "accessed_at": "2026-08-29",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "The first-party Uniswap Wallet site currently presents the self-custody wallet and download paths across iOS, Android, and Chrome. This supports current availability review without inferring launch timing."
     }
   ]
 }

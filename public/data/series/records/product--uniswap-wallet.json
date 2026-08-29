@@ -42,6 +42,22 @@
         "source_type": "official_blog",
         "title": "Uniswap Wallet is now available on Android",
         "url": "https://blog.uniswap.org/uniswap-wallet-android"
+      },
+      {
+        "accessed_at": "2026-08-29",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000047",
+        "event_id": null,
+        "id": "wlr_src_000447",
+        "is_primary": true,
+        "notes": "The first-party Uniswap Wallet site currently presents the self-custody wallet and download paths across iOS, Android, and Chrome. This supports current availability review without inferring launch timing.",
+        "product_id": "wlr_prod_000096",
+        "published_at": null,
+        "publisher": "Uniswap Labs",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Uniswap Wallet",
+        "url": "https://wallet.uniswap.org/"
       }
     ]
   },

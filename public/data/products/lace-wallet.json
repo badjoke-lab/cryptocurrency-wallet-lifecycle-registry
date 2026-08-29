@@ -30,7 +30,24 @@
     "last_verified_at": "2026-08-19",
     "notes": "First-party launch material establishes Lace 1.0 as a browser extension in April 2023."
   },
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000180",
+      "entity_id": "wlr_ent_000044",
+      "product_id": "wlr_prod_000093",
+      "affected_product_ids": [
+        "wlr_prod_000093"
+      ],
+      "event_type": "other",
+      "event_date": "2026-08-26",
+      "event_date_basis": "release",
+      "title": "Lace 2.2.2 released",
+      "description": "Input Output's official Lace repository released Lace 2.2.2 as a maintenance update focused on Midnight network connectivity, keeping connections alive through quiet periods and fixing use of intended Midnight network endpoints after upgrade.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000234",
@@ -47,6 +64,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Current first-party legal material establishes the Lace wallet/browser-extension product operated by Input Output Global."
+    },
+    {
+      "id": "wlr_src_000446",
+      "entity_id": "wlr_ent_000044",
+      "product_id": "wlr_prod_000093",
+      "event_id": "wlr_ev_000180",
+      "source_type": "release_notes",
+      "title": "lace-extension@2.2.2",
+      "url": "https://github.com/input-output-hk/lace/releases/tag/lace-extension%402.2.2",
+      "publisher": "Input Output",
+      "published_at": "2026-08-26",
+      "accessed_at": "2026-08-29",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Official Lace repository release, published 2026-08-26."
     }
   ]
 }

@@ -3712,5 +3712,21 @@
     "confidence": "high",
     "event_status_effect": "active",
     "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000180",
+    "entity_id": "wlr_ent_000044",
+    "product_id": "wlr_prod_000093",
+    "affected_product_ids": [
+      "wlr_prod_000093"
+    ],
+    "event_type": "other",
+    "event_date": "2026-08-26",
+    "event_date_basis": "release",
+    "title": "Lace 2.2.2 released",
+    "description": "Input Output's official Lace repository released Lace 2.2.2 as a maintenance update focused on Midnight network connectivity, keeping connections alive through quiet periods and fixing use of intended Midnight network endpoints after upgrade.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
   }
 ]

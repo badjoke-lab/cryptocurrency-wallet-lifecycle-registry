@@ -16,7 +16,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000093"
+        ],
+        "confidence": "high",
+        "description": "Input Output's official Lace repository released Lace 2.2.2 as a maintenance update focused on Midnight network connectivity, keeping connections alive through quiet periods and fixing use of intended Midnight network endpoints after upgrade.",
+        "entity_id": "wlr_ent_000044",
+        "event_date": "2026-08-26",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000180",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000093",
+        "title": "Lace 2.2.2 released"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -52,6 +69,22 @@
         "source_type": "official_statement",
         "title": "Lace Terms of Use",
         "url": "https://www.lace.io/legal/lace-terms-of-use"
+      },
+      {
+        "accessed_at": "2026-08-29",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000044",
+        "event_id": "wlr_ev_000180",
+        "id": "wlr_src_000446",
+        "is_primary": true,
+        "notes": "Official Lace repository release, published 2026-08-26.",
+        "product_id": "wlr_prod_000093",
+        "published_at": "2026-08-26",
+        "publisher": "Input Output",
+        "reliability": "high",
+        "source_type": "release_notes",
+        "title": "lace-extension@2.2.2",
+        "url": "https://github.com/input-output-hk/lace/releases/tag/lace-extension%402.2.2"
       }
     ]
   },
