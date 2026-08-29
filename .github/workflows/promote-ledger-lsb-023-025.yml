@@ -1,0 +1,44 @@
+name: Promote Ledger LSB 023-025
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    if: github.head_ref == 'promote/ledger-lsb-023-025'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - run: npm install --no-audit --no-fund
+      - name: Promote reviewed candidate
+        run: python3 scripts/promote_ledger_lsb_023_025.py
+      - name: Regenerate public and machine layers
+        run: npm run prebuild
+      - name: Validate promoted records
+        run: |
+          npm run validate:records
+          npm run validate:identity-evidence
+          npm run validate:machine-records
+          npm run validate:stats
+          npm run validate:series
+          npm run check:staging-boundary
+      - name: Commit promotion output
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -A
+          git commit -m 'Promote Ledger LSB 023-025 canonical'
+          git push origin HEAD:${{ github.head_ref }}
