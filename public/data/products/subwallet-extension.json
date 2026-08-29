@@ -32,7 +32,24 @@
     "last_verified_at": "2026-08-26",
     "notes": "Selected browser-extension boundary only; SubWallet mobile is deferred. Exact initial extension launch date remains unresolved."
   },
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000187",
+      "entity_id": "wlr_ent_000067",
+      "product_id": "wlr_prod_000116",
+      "affected_product_ids": [
+        "wlr_prod_000116"
+      ],
+      "event_type": "other",
+      "event_date": "2026-07-23",
+      "event_date_basis": "release",
+      "title": "SubWallet Extension v1.3.84 released",
+      "description": "The official SubWallet Extension repository published v1.3.84, adding validator recommendations for native and subnet staking, chain-list updates including Polkadot Hub EVM support, and upgrade-related bug fixes.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000280",
@@ -65,6 +82,22 @@
       "claim_scope": "support_status",
       "is_primary": true,
       "notes": "Current first-party SubWallet documentation provides active installation paths for Chrome, Brave, Edge and Firefox, with explicit Firefox maintenance caveats, supporting a maintained extension product."
+    },
+    {
+      "id": "wlr_src_000456",
+      "entity_id": "wlr_ent_000067",
+      "product_id": "wlr_prod_000116",
+      "event_id": "wlr_ev_000187",
+      "source_type": "release_notes",
+      "title": "SubWallet Extension v1.3.84",
+      "url": "https://github.com/Koniverse/SubWallet-Extension/releases/tag/v1.3.84",
+      "publisher": "SubWallet / Koniverse",
+      "published_at": "2026-07-23",
+      "accessed_at": "2026-08-29",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Official SubWallet Extension GitHub release, published 2026-07-23; release body records build date 2026-07-22."
     }
   ]
 }

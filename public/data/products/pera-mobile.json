@@ -30,7 +30,24 @@
     "last_verified_at": "2026-08-26",
     "notes": "Selected mobile product only; Pera Web is deferred as a separate runtime. Exact original mobile launch date remains unresolved."
   },
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000186",
+      "entity_id": "wlr_ent_000064",
+      "product_id": "wlr_prod_000113",
+      "affected_product_ids": [
+        "wlr_prod_000113"
+      ],
+      "event_type": "other",
+      "event_date": "2023-02-09",
+      "event_date_basis": "announcement",
+      "title": "Pera Wallet 5.7.0 released for iOS and Android",
+      "description": "Pera Wallet announced version 5.7.0 as available for iOS and Android, adding NFT quality-of-life improvements, an updated asset details experience, and the Discover browser for Algorand dApps and markets.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000274",
@@ -63,6 +80,22 @@
       "claim_scope": "support_status",
       "is_primary": true,
       "notes": "Current first-party Pera site distributes Pera Mobile for iOS and Android and links current support and technical documentation, supporting active maintenance."
+    },
+    {
+      "id": "wlr_src_000455",
+      "entity_id": "wlr_ent_000064",
+      "product_id": "wlr_prod_000113",
+      "event_id": "wlr_ev_000186",
+      "source_type": "official_blog",
+      "title": "Pera Wallet 5.7.0: NFT QoL changes and Discover-Browser all rolled into one!",
+      "url": "https://blog.perawallet.app/pera-wallet-5-7-0-nft-qol-changes-and-discover-browser-all-rolled-into-one-22dfab29d91f",
+      "publisher": "Pera Wallet",
+      "published_at": "2023-02-09",
+      "accessed_at": "2026-08-29",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party Pera Wallet release article dated 2023-02-09; the indexed first-party profile states 5.7.0 was available for iOS and Android."
     }
   ]
 }

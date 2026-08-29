@@ -22,7 +22,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000113"
+        ],
+        "confidence": "high",
+        "description": "Pera Wallet announced version 5.7.0 as available for iOS and Android, adding NFT quality-of-life improvements, an updated asset details experience, and the Discover browser for Algorand dApps and markets.",
+        "entity_id": "wlr_ent_000064",
+        "event_date": "2023-02-09",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000186",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000113",
+        "title": "Pera Wallet 5.7.0 released for iOS and Android"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -58,6 +75,22 @@
         "source_type": "official_statement",
         "title": "Pera Wallet",
         "url": "https://perawallet.app/"
+      },
+      {
+        "accessed_at": "2026-08-29",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000064",
+        "event_id": "wlr_ev_000186",
+        "id": "wlr_src_000455",
+        "is_primary": true,
+        "notes": "First-party Pera Wallet release article dated 2023-02-09; the indexed first-party profile states 5.7.0 was available for iOS and Android.",
+        "product_id": "wlr_prod_000113",
+        "published_at": "2023-02-09",
+        "publisher": "Pera Wallet",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Pera Wallet 5.7.0: NFT QoL changes and Discover-Browser all rolled into one!",
+        "url": "https://blog.perawallet.app/pera-wallet-5-7-0-nft-qol-changes-and-discover-browser-all-rolled-into-one-22dfab29d91f"
       }
     ]
   },
