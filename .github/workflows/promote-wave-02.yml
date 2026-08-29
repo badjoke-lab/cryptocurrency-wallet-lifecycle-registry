@@ -70,7 +70,12 @@ jobs:
           promoted_events = []
           skipped_events = []
           for ev in cand_events:
-              key = (ev.get('entity_id'), ev.get('product_id'), ev.get('event_type'), ev.get('event_date'), ev.get('title'))
+              normalized = dict(ev)
+              if ev['id'] == 'wlr_ev_900701':
+                  normalized['event_type'] = 'other'
+                  normalized['event_date_basis'] = 'discovery'
+                  normalized['notes'] = 'The official repository did not state when maintenance mode began. The event date records the date the reduced support state was documented during WLR review, not an inferred original effective date.'
+              key = (normalized.get('entity_id'), normalized.get('product_id'), normalized.get('event_type'), normalized.get('event_date'), normalized.get('title'))
               if key in existing_event_keys:
                   skipped_events.append((ev['id'], 'semantic_duplicate'))
                   continue
@@ -78,7 +83,7 @@ jobs:
               if not usable:
                   skipped_events.append((ev['id'], 'no_new_evidence'))
                   continue
-              new = dict(ev)
+              new = normalized
               new_id = f'wlr_ev_{next_ev:06d}'
               next_ev += 1
               new['id'] = new_id
