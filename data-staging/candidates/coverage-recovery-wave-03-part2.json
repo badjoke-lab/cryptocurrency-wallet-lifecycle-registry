@@ -1,0 +1,75 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_coverage-recovery-wave-03-part2",
+  "title": "Coverage recovery Wave 03 part 2 — Ambire and Enkrypt launch history",
+  "review_state": "researching",
+  "notes": "Candidate IDs are provisional. Both launch records use first-party dated launch/introducing material; canonical launch fields must only be changed during fresh-main promotion if the existing product record and validator policy support the same precision.",
+  "records": {
+    "entities": [],
+    "products": [],
+    "events": [
+      {
+        "id": "wlr_ev_902101",
+        "entity_id": "wlr_ent_000058",
+        "product_id": "wlr_prod_000107",
+        "affected_product_ids": ["wlr_prod_000107"],
+        "event_type": "product_released",
+        "event_date": "2025-05-08",
+        "event_date_basis": "announcement",
+        "title": "Ambire Extension launched publicly",
+        "description": "Ambire announced the official public launch of its browser extension after nearly a year of private testing, removing the invite-code requirement and making the extension generally available.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": true
+      },
+      {
+        "id": "wlr_ev_902102",
+        "entity_id": "wlr_ent_000060",
+        "product_id": "wlr_prod_000109",
+        "affected_product_ids": ["wlr_prod_000109"],
+        "event_type": "product_released",
+        "event_date": "2022-08-03",
+        "event_date_basis": "announcement",
+        "title": "Enkrypt browser extension introduced",
+        "description": "MyEtherWallet introduced Enkrypt as its multichain browser-extension wallet and directed users to download the released extension, with support for EVM and Polkadot ecosystem networks at release.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": true
+      }
+    ],
+    "evidence": [
+      {
+        "id": "wlr_src_902101",
+        "entity_id": "wlr_ent_000058",
+        "product_id": "wlr_prod_000107",
+        "event_id": "wlr_ev_902101",
+        "source_type": "official_blog",
+        "title": "The Ambire Extension Launches Officially",
+        "url": "https://blog.ambire.com/ambire-extension-launch/",
+        "publisher": "Ambire",
+        "published_at": "2025-05-08",
+        "accessed_at": "2026-08-29",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "First-party Ambire launch article dated 2025-05-08; explicitly states the extension is out of private beta and available to all."
+      },
+      {
+        "id": "wlr_src_902102",
+        "entity_id": "wlr_ent_000060",
+        "product_id": "wlr_prod_000109",
+        "event_id": "wlr_ev_902102",
+        "source_type": "official_blog",
+        "title": "Introducing Enkrypt, the Browser Extension Wallet by MEW",
+        "url": "https://medium.com/myetherwallet/introducing-enkrypt-the-browser-extension-wallet-by-mew-738e4aca7b65",
+        "publisher": "MyEtherWallet",
+        "published_at": "2022-08-03",
+        "accessed_at": "2026-08-29",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "First-party MyEtherWallet publication introducing Enkrypt and directing users to download it on 2022-08-03."
+      }
+    ]
+  }
+}
