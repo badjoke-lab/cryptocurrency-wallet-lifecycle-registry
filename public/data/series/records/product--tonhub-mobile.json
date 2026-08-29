@@ -22,7 +22,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000130"
+        ],
+        "confidence": "high",
+        "description": "Ton Whales published Tonhub v2.4.26 with bug fixes and stability improvements, with an official Tonhub APK attached to the release, documenting ongoing maintenance of the mobile wallet.",
+        "entity_id": "wlr_ent_000081",
+        "event_date": "2025-04-02",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000166",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000130",
+        "title": "Tonhub v2.4.26 released"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -42,6 +59,22 @@
         "source_type": "official_statement",
         "title": "Tonhub",
         "url": "https://tonhub.com/"
+      },
+      {
+        "accessed_at": "2026-08-28",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000081",
+        "event_id": "wlr_ev_000166",
+        "id": "wlr_src_000427",
+        "is_primary": true,
+        "notes": "Official Ton Whales wallet release with a Tonhub APK asset and release notes stating bug fixes and stability improvements.",
+        "product_id": "wlr_prod_000130",
+        "published_at": "2025-04-02",
+        "publisher": "Ton Whales",
+        "reliability": "high",
+        "source_type": "release_notes",
+        "title": "Tonhub v2.4.26",
+        "url": "https://github.com/tonwhales/wallet/releases/tag/v2.4.26"
       }
     ]
   },

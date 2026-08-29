@@ -22,7 +22,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000123"
+        ],
+        "confidence": "high",
+        "description": "SeedSigner released version 0.8.7 with new features, translations, fixes, and contributions from a broad set of developers, providing direct evidence of ongoing software maintenance.",
+        "entity_id": "wlr_ent_000074",
+        "event_date": "2026-07-08",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000160",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000123",
+        "title": "SeedSigner 0.8.7 released"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -42,6 +59,22 @@
         "source_type": "official_statement",
         "title": "SeedSigner Hardware",
         "url": "https://seedsigner.com/hardware/"
+      },
+      {
+        "accessed_at": "2026-08-28",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000074",
+        "event_id": "wlr_ev_000160",
+        "id": "wlr_src_000420",
+        "is_primary": true,
+        "notes": "Official project release notes supporting an ongoing-maintenance lifecycle event.",
+        "product_id": "wlr_prod_000123",
+        "published_at": "2026-07-08",
+        "publisher": "SeedSigner",
+        "reliability": "high",
+        "source_type": "release_notes",
+        "title": "The Summer of SeedSigner Release — v0.8.7",
+        "url": "https://github.com/SeedSigner/seedsigner/releases/tag/0.8.7"
       }
     ]
   },

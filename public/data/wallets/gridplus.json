@@ -42,7 +42,24 @@
       "notes": "Current first-party documentation establishes the product and on-device secure-enclave key boundary. Sales status remains unknown in this batch because the reviewed documentation does not itself establish current purchase availability."
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000162",
+      "entity_id": "wlr_ent_000070",
+      "product_id": "wlr_prod_000119",
+      "affected_product_ids": [
+        "wlr_prod_000119"
+      ],
+      "event_type": "other",
+      "event_date": "2024-07-23",
+      "event_date_basis": "release",
+      "title": "Lattice1 firmware v0.18.3 released",
+      "description": "GridPlus released Lattice1 firmware v0.18.3 with Solana signing improvements, security improvements, bug fixes, and user-requested changes.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000285",
@@ -91,6 +108,22 @@
       "claim_scope": "support_status",
       "is_primary": true,
       "notes": "Official GridPlus organization repository for the SDK used to integrate with Lattice1; the repository is not archived. This supports continuing integration availability but is not by itself a full hardware support commitment, so promotion should remain conservative."
+    },
+    {
+      "id": "wlr_src_000422",
+      "entity_id": "wlr_ent_000070",
+      "product_id": "wlr_prod_000119",
+      "event_id": "wlr_ev_000162",
+      "source_type": "official_blog",
+      "title": "Lattice1 Firmware v0.18.3 Released",
+      "url": "https://gridplus.io/blogs/blog/lattice1-firmware-v0-18-3-released",
+      "publisher": "GridPlus",
+      "published_at": "2024-07-23",
+      "accessed_at": "2026-08-28",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party firmware release announcement documenting ongoing Lattice1 maintenance."
     }
   ]
 }

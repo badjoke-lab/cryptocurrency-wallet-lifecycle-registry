@@ -31,7 +31,24 @@
     "last_verified_at": "2026-08-19",
     "notes": "Current first-party help material establishes active browser-extension distribution; initial extension launch date remains unresolved."
   },
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000161",
+      "entity_id": "wlr_ent_000043",
+      "product_id": "wlr_prod_000092",
+      "affected_product_ids": [
+        "wlr_prod_000092"
+      ],
+      "event_type": "other",
+      "event_date": "2020-09-07",
+      "event_date_basis": "release",
+      "title": "Keplr extension update added Ledger signing support",
+      "description": "Chainapsis announced a new Keplr extension version adding Ledger hardware-wallet signing support, directly documenting active extension maintenance in September 2020.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000232",
@@ -64,6 +81,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Current first-party product surface retained for bounded launch/support research; no exact launch or formal support claim is promoted from this source alone."
+    },
+    {
+      "id": "wlr_src_000421",
+      "entity_id": "wlr_ent_000043",
+      "product_id": "wlr_prod_000092",
+      "event_id": "wlr_ev_000161",
+      "source_type": "official_blog",
+      "title": "How to use Ledger Nano hardware wallet with Keplr",
+      "url": "https://medium.com/chainapsis/how-to-use-ledger-nano-hardware-wallet-with-keplr-9ea7f07826c2",
+      "publisher": "Chainapsis",
+      "published_at": "2020-09-07",
+      "accessed_at": "2026-08-28",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party Chainapsis post stating that a new Keplr extension version was released with Ledger signing support. This proves active maintenance by 2020-09-07 but is not treated as the original launch date."
     }
   ]
 }

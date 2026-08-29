@@ -52,6 +52,22 @@
         "source_type": "official_statement",
         "title": "What is the Casa app?",
         "url": "https://support.casa.io/knowledge/what-is-the-casa-app"
+      },
+      {
+        "accessed_at": "2026-08-29",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000097",
+        "event_id": null,
+        "id": "wlr_src_000437",
+        "is_primary": true,
+        "notes": "Current first-party Casa support documentation describes the 3-key vault as a 2-of-3 multisig wallet and provides active setup instructions. Supports current product availability/support review without inferring launch timing.",
+        "product_id": "wlr_prod_000146",
+        "published_at": "2026-05-12",
+        "publisher": "Casa",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Getting started with the 3-key vault",
+        "url": "https://support.casa.io/knowledge/getting-started-with-the-3-key-vault"
       }
     ]
   },

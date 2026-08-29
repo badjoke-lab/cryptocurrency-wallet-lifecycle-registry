@@ -29,7 +29,24 @@
     "last_verified_at": "2026-08-20",
     "notes": "Selected Universal Wallet boundary only. Sequence Embedded Wallet remains a separate product architecture and is deferred."
   },
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000169",
+      "entity_id": "wlr_ent_000088",
+      "product_id": "wlr_prod_000137",
+      "affected_product_ids": [
+        "wlr_prod_000137"
+      ],
+      "event_type": "other",
+      "event_date": "2023-06-21",
+      "event_date_basis": "release",
+      "title": "Sequence Wallet infrastructure update released",
+      "description": "Sequence announced and deployed a major wallet infrastructure update with faster login, cross-network session improvements, recovery improvements, and EIP-1271 integration changes.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000322",
@@ -46,6 +63,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "First-party security article states Sequence is non-custodial and cannot access wallet contents. The selected product is the standalone Universal Wallet rather than Embedded Wallet."
+    },
+    {
+      "id": "wlr_src_000430",
+      "entity_id": "wlr_ent_000088",
+      "product_id": "wlr_prod_000137",
+      "event_id": "wlr_ev_000169",
+      "source_type": "official_blog",
+      "title": "Sequence Wallet update - A better, faster, and smoother experience for builders and users",
+      "url": "https://sequence.xyz/blog/sequence-wallet-update",
+      "publisher": "Sequence",
+      "published_at": "2023-06-21",
+      "accessed_at": "2026-08-29",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party Sequence post announcing that a major wallet infrastructure update was pushed on 2023-06-21."
     }
   ]
 }

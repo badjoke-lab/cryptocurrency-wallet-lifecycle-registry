@@ -22,7 +22,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000090"
+        ],
+        "confidence": "high",
+        "description": "Nunchuk published its introductory announcement for the Nunchuk multisig wallet, documenting the product as available in November 2020.",
+        "entity_id": "wlr_ent_000041",
+        "event_date": "2020-11-06",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000159",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000090",
+        "title": "Nunchuk introduced its multisig wallet"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -58,6 +75,22 @@
         "source_type": "official_statement",
         "title": "Nunchuk official wallet site",
         "url": "https://nunchuk.io/"
+      },
+      {
+        "accessed_at": "2026-08-28",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000041",
+        "event_id": "wlr_ev_000159",
+        "id": "wlr_src_000419",
+        "is_primary": true,
+        "notes": "First-party introductory announcement supporting the November 6, 2020 product-release event.",
+        "product_id": "wlr_prod_000090",
+        "published_at": "2020-11-06",
+        "publisher": "Nunchuk",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Introducing Nunchuk: Multisig Made Easy",
+        "url": "https://nunchuk.io/blog/introducing-nunchuk-multisig-made-easy-ehvJmuXFtmL8trLXkCRLH3"
       }
     ]
   },

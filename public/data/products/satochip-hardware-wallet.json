@@ -32,7 +32,24 @@
     "last_verified_at": "2026-08-20",
     "notes": "Current first-party product page offers Satochip for purchase and states private keys cannot be extracted from the secure chip. Support status remains conservative `unknown` rather than inferring a formal maintenance commitment from current documentation alone."
   },
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000174",
+      "entity_id": "wlr_ent_000099",
+      "product_id": "wlr_prod_000148",
+      "affected_product_ids": [
+        "wlr_prod_000148"
+      ],
+      "event_type": "other",
+      "event_date": "2021-09-30",
+      "event_date_basis": "release",
+      "title": "Satochip applet v0.12 released",
+      "description": "Satochip applet v0.12 was released with SeedKeeper encrypted-seed import support, card labels, offline 2FA reset support, factory reset support, and card-authenticity PKI support.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000344",
@@ -49,6 +66,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Current first-party product page offers Satochip for sale and states private keys are handled inside an EAL6+ secure element and cannot be extracted from the chip."
+    },
+    {
+      "id": "wlr_src_000439",
+      "entity_id": "wlr_ent_000099",
+      "product_id": "wlr_prod_000148",
+      "event_id": "wlr_ev_000174",
+      "source_type": "release_notes",
+      "title": "Satochip v0.12 with SeedKeeper support",
+      "url": "https://github.com/Toporin/SatochipApplet/releases/tag/v0.12",
+      "publisher": "Satochip",
+      "published_at": "2021-09-30",
+      "accessed_at": "2026-08-29",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Official Satochip applet release published 2021-09-30."
     }
   ]
 }

@@ -47,6 +47,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "First-party download documentation lists official iOS, Android and browser versions; mobile is selected for this breadth pass."
+    },
+    {
+      "id": "wlr_src_000433",
+      "entity_id": "wlr_ent_000084",
+      "product_id": "wlr_prod_000133",
+      "event_id": null,
+      "source_type": "source_code",
+      "title": "VESPR Wallet official GitHub organization",
+      "url": "https://github.com/vespr-wallet",
+      "publisher": "VESPR",
+      "published_at": null,
+      "accessed_at": "2026-08-29",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Official VESPR GitHub organization identifies VESPR as a non-custodial Cardano wallet available on iOS, Android, and browser extension platforms. This supports current product existence but not an original launch date."
     }
   ]
 }

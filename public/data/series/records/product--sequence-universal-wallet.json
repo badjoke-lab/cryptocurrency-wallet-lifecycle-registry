@@ -22,7 +22,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000137"
+        ],
+        "confidence": "high",
+        "description": "Sequence announced and deployed a major wallet infrastructure update with faster login, cross-network session improvements, recovery improvements, and EIP-1271 integration changes.",
+        "entity_id": "wlr_ent_000088",
+        "event_date": "2023-06-21",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000169",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000137",
+        "title": "Sequence Wallet infrastructure update released"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -42,6 +59,22 @@
         "source_type": "official_statement",
         "title": "Sequence Wallet security",
         "url": "https://support.sequence.xyz/en/article/your-sequence-wallet-security-mpfh5m/"
+      },
+      {
+        "accessed_at": "2026-08-29",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000088",
+        "event_id": "wlr_ev_000169",
+        "id": "wlr_src_000430",
+        "is_primary": true,
+        "notes": "First-party Sequence post announcing that a major wallet infrastructure update was pushed on 2023-06-21.",
+        "product_id": "wlr_prod_000137",
+        "published_at": "2023-06-21",
+        "publisher": "Sequence",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Sequence Wallet update - A better, faster, and smoother experience for builders and users",
+        "url": "https://sequence.xyz/blog/sequence-wallet-update"
       }
     ]
   },

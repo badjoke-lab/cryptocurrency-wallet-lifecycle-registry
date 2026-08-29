@@ -42,6 +42,22 @@
         "source_type": "official_statement",
         "title": "Glow — Your New Favorite Solana Wallet",
         "url": "https://glow.app/"
+      },
+      {
+        "accessed_at": "2026-08-29",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000086",
+        "event_id": null,
+        "id": "wlr_src_000436",
+        "is_primary": true,
+        "notes": "Current first-party Glow download page offers the desktop/browser wallet for Chrome, Edge, Firefox, and Brave. Supports current extension availability review without inferring a launch date.",
+        "product_id": "wlr_prod_000135",
+        "published_at": null,
+        "publisher": "Glow",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Glow — Download",
+        "url": "https://glow.app/download"
       }
     ]
   },

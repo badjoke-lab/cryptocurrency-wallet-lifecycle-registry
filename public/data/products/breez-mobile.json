@@ -29,7 +29,25 @@
     "last_verified_at": "2026-08-20",
     "notes": "Selected wallet product only; Breez SDK infrastructure is not modeled as the user-facing wallet in this breadth pass."
   },
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000173",
+      "entity_id": "wlr_ent_000092",
+      "product_id": "wlr_prod_000141",
+      "affected_product_ids": [
+        "wlr_prod_000141"
+      ],
+      "event_type": "other",
+      "event_date": "2026-08-29",
+      "event_date_basis": "discovery",
+      "title": "Breez Mobile documented maintenance mode",
+      "description": "The official Breez Mobile repository documents that the project is in maintenance mode: it remains maintained for critical bug fixes and security issues, while new features, enhancements, and non-critical updates are no longer planned.",
+      "confidence": "high",
+      "event_status_effect": "limited",
+      "is_major_event": true,
+      "notes": "The official repository did not state when maintenance mode began. The event date records the date the reduced support state was documented during WLR review, not an inferred original effective date."
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000330",
@@ -46,6 +64,22 @@
       "claim_scope": "product_lineage",
       "is_primary": true,
       "notes": "Current company page establishes the broader Breez non-custodial Bitcoin infrastructure context; the distinct Breez Mobile wallet remains documented separately and is the selected product."
+    },
+    {
+      "id": "wlr_src_000438",
+      "entity_id": "wlr_ent_000092",
+      "product_id": "wlr_prod_000141",
+      "event_id": "wlr_ev_000173",
+      "source_type": "source_code",
+      "title": "Breez Mobile Client official repository",
+      "url": "https://github.com/breez/breezmobile",
+      "publisher": "Breez",
+      "published_at": null,
+      "accessed_at": "2026-08-29",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Official repository explicitly states Maintenance Mode and defines the reduced support scope. Event date records the observation date because the repository text does not provide the date maintenance mode began."
     }
   ]
 }

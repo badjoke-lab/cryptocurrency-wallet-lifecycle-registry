@@ -30,7 +30,24 @@
     "last_verified_at": "2026-08-20",
     "notes": "First-party material explicitly distinguishes its embedded Lightning node from custodial wallet architecture."
   },
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000170",
+      "entity_id": "wlr_ent_000091",
+      "product_id": "wlr_prod_000140",
+      "affected_product_ids": [
+        "wlr_prod_000140"
+      ],
+      "event_type": "other",
+      "event_date": "2026-07-20",
+      "event_date_basis": "release",
+      "title": "Bitkit Android v2.4.0 released",
+      "description": "Synonym released Bitkit Android v2.4.0 with Trezor hardware-wallet support, background-payment reliability improvements, and numerous transfer, notification, widget, and Lightning fixes.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000328",
@@ -47,6 +64,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Current official product page describes Bitkit as a self-custodial Bitcoin wallet and links current mobile distribution."
+    },
+    {
+      "id": "wlr_src_000431",
+      "entity_id": "wlr_ent_000091",
+      "product_id": "wlr_prod_000140",
+      "event_id": "wlr_ev_000170",
+      "source_type": "release_notes",
+      "title": "Bitkit Android v2.4.0",
+      "url": "https://github.com/synonymdev/bitkit-android/releases/tag/v2.4.0",
+      "publisher": "Synonym",
+      "published_at": "2026-07-20",
+      "accessed_at": "2026-08-29",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Official Synonym Bitkit Android release with APK assets and detailed changelog."
     }
   ]
 }

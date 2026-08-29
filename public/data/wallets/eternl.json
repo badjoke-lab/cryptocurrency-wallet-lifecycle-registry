@@ -46,7 +46,24 @@
       "notes": "Selected browser-extension runtime only; web/PWA and mobile surfaces are deferred."
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000168",
+      "entity_id": "wlr_ent_000082",
+      "product_id": "wlr_prod_000131",
+      "affected_product_ids": [
+        "wlr_prod_000131"
+      ],
+      "event_type": "other",
+      "event_date": "2026-07-10",
+      "event_date_basis": "release",
+      "title": "Eternl v2.1.5.0 released",
+      "description": "Eternl published v2.1.5.0 with a Ledger signing hotfix and marked the Eternl browser extension as available, documenting active extension maintenance in July 2026.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000309",
@@ -79,6 +96,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "First-party Eternl platform page separates web/PWA, browser extension and mobile and states all versions are fully non-custodial."
+    },
+    {
+      "id": "wlr_src_000429",
+      "entity_id": "wlr_ent_000082",
+      "product_id": "wlr_prod_000131",
+      "event_id": "wlr_ev_000168",
+      "source_type": "release_notes",
+      "title": "Eternl updates / release notes — v2.1.5.0",
+      "url": "https://wiki.eternl.io/eternl-updates-release-notes",
+      "publisher": "Eternl",
+      "published_at": "2026-07-10",
+      "accessed_at": "2026-08-29",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party release notes list v2.1.5.0 as released 2026-07-10 and mark Eternl Extension available."
     }
   ]
 }

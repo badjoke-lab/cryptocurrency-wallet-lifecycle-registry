@@ -22,7 +22,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000132"
+        ],
+        "confidence": "high",
+        "description": "NuFi documented releases 2.4.0 and 2.4.2 adding Flint and Phantom wallet emulation mode to the browser extension, providing a dated lifecycle record for extension maintenance.",
+        "entity_id": "wlr_ent_000083",
+        "event_date": "2022-10-11",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000167",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000132",
+        "title": "NuFi 2.4.x added wallet emulation mode"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -42,6 +59,22 @@
         "source_type": "official_statement",
         "title": "Create or restore a wallet",
         "url": "https://support.nu.fi/support/solutions/folders/80000645572"
+      },
+      {
+        "accessed_at": "2026-08-28",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000083",
+        "event_id": "wlr_ev_000167",
+        "id": "wlr_src_000428",
+        "is_primary": true,
+        "notes": "First-party NuFi changelog records releases 2.4.0/2.4.2 on 2022-10-11 and describes browser-extension wallet emulation mode.",
+        "product_id": "wlr_prod_000132",
+        "published_at": null,
+        "publisher": "NuFi",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "NuFi changelog",
+        "url": "https://support.nu.fi/support/solutions/articles/80001016927-changelog"
       }
     ]
   },

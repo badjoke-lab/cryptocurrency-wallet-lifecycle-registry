@@ -100,6 +100,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "First-party Casa support defines the 3-key vault as a 2-of-3 multisig arrangement and says Casa holds only one emergency recovery key, insufficient to send funds by itself."
+    },
+    {
+      "id": "wlr_src_000437",
+      "entity_id": "wlr_ent_000097",
+      "product_id": "wlr_prod_000146",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Getting started with the 3-key vault",
+      "url": "https://support.casa.io/knowledge/getting-started-with-the-3-key-vault",
+      "publisher": "Casa",
+      "published_at": "2026-05-12",
+      "accessed_at": "2026-08-29",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party Casa support documentation describes the 3-key vault as a 2-of-3 multisig wallet and provides active setup instructions. Supports current product availability/support review without inferring launch timing."
     }
   ]
 }

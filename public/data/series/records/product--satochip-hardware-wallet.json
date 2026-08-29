@@ -22,7 +22,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000148"
+        ],
+        "confidence": "high",
+        "description": "Satochip applet v0.12 was released with SeedKeeper encrypted-seed import support, card labels, offline 2FA reset support, factory reset support, and card-authenticity PKI support.",
+        "entity_id": "wlr_ent_000099",
+        "event_date": "2021-09-30",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000174",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000148",
+        "title": "Satochip applet v0.12 released"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -42,6 +59,22 @@
         "source_type": "official_statement",
         "title": "Satochip Hardware Wallet",
         "url": "https://satochip.io/product/satochip/"
+      },
+      {
+        "accessed_at": "2026-08-29",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000099",
+        "event_id": "wlr_ev_000174",
+        "id": "wlr_src_000439",
+        "is_primary": true,
+        "notes": "Official Satochip applet release published 2021-09-30.",
+        "product_id": "wlr_prod_000148",
+        "published_at": "2021-09-30",
+        "publisher": "Satochip",
+        "reliability": "high",
+        "source_type": "release_notes",
+        "title": "Satochip v0.12 with SeedKeeper support",
+        "url": "https://github.com/Toporin/SatochipApplet/releases/tag/v0.12"
       }
     ]
   },

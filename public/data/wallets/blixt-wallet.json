@@ -45,7 +45,24 @@
       "notes": "Current project page states lnd and Neutrino run directly on the phone."
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000171",
+      "entity_id": "wlr_ent_000094",
+      "product_id": "wlr_prod_000143",
+      "affected_product_ids": [
+        "wlr_prod_000143"
+      ],
+      "event_type": "other",
+      "event_date": "2026-02-18",
+      "event_date_basis": "release",
+      "title": "Blixt Wallet v0.9.0 released",
+      "description": "Blixt Wallet v0.9.0 was released with lnd v0.20.0, automatic channel opening, BIP177 support, reliability fixes, and other wallet improvements.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000333",
@@ -78,6 +95,22 @@
       "claim_scope": "architecture",
       "is_primary": true,
       "notes": "First-party guide explains the LSP is not a custodial server/node and the user's funds remain in the device's channel under user control."
+    },
+    {
+      "id": "wlr_src_000432",
+      "entity_id": "wlr_ent_000094",
+      "product_id": "wlr_prod_000143",
+      "event_id": "wlr_ev_000171",
+      "source_type": "release_notes",
+      "title": "Blixt Wallet v0.9.0",
+      "url": "https://github.com/smolcars/blixt-wallet/releases/tag/v0.9.0",
+      "publisher": "Blixt Wallet",
+      "published_at": "2026-02-18",
+      "accessed_at": "2026-08-29",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Official Blixt Wallet release with mainnet/testnet APK assets and release notes."
     }
   ]
 }

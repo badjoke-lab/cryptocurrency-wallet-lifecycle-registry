@@ -30,7 +30,24 @@
     "last_verified_at": "2026-08-20",
     "notes": "Current first-party distribution lists App Store, Google Play and direct Android APK."
   },
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000172",
+      "entity_id": "wlr_ent_000090",
+      "product_id": "wlr_prod_000139",
+      "affected_product_ids": [
+        "wlr_prod_000139"
+      ],
+      "event_type": "other",
+      "event_date": "2026-08-16",
+      "event_date_basis": "release",
+      "title": "AQUA Wallet v0.5.2 released",
+      "description": "AQUA Wallet v0.5.2 was released with Lightning-swap diagnostics, TLS verification for custom Electrum servers, SeedQR recovery hardening, logging cleanup, and security updates.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000326",
@@ -47,6 +64,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Current first-party distribution page lists iOS, Google Play and direct Android APK for AQUA Wallet."
+    },
+    {
+      "id": "wlr_src_000434",
+      "entity_id": "wlr_ent_000090",
+      "product_id": "wlr_prod_000139",
+      "event_id": "wlr_ev_000172",
+      "source_type": "release_notes",
+      "title": "AQUA Wallet v0.5.2",
+      "url": "https://github.com/AquaWallet/aqua-wallet/releases/tag/v0.5.2",
+      "publisher": "AQUA Wallet",
+      "published_at": "2026-08-16",
+      "accessed_at": "2026-08-29",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Official AQUA Wallet release with Android APK asset and security/reliability changelog."
     }
   ]
 }

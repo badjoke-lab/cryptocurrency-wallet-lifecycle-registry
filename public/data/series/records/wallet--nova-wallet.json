@@ -16,7 +16,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000124"
+        ],
+        "confidence": "high",
+        "description": "Novasama published Nova Wallet Android v10.8.0 with scam-warning protections, watch-only EVM account support, additional swap routes, and bug fixes, documenting ongoing wallet maintenance in 2026.",
+        "entity_id": "wlr_ent_000075",
+        "event_date": "2026-02-24",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000165",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000124",
+        "title": "Nova Wallet Android v10.8.0 released"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -52,6 +69,22 @@
         "source_type": "official_statement",
         "title": "Nova Wallet",
         "url": "https://novawallet.io/"
+      },
+      {
+        "accessed_at": "2026-08-28",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000075",
+        "event_id": "wlr_ev_000165",
+        "id": "wlr_src_000426",
+        "is_primary": true,
+        "notes": "Official Nova Wallet Android release published 2026-02-24.",
+        "product_id": "wlr_prod_000124",
+        "published_at": "2026-02-24",
+        "publisher": "Novasama Technologies",
+        "reliability": "high",
+        "source_type": "release_notes",
+        "title": "10.8.0 — Nova Wallet — In-app warnings to protect users from scams",
+        "url": "https://github.com/novasamatech/nova-wallet-android/releases/tag/v10.8.0"
       }
     ]
   },

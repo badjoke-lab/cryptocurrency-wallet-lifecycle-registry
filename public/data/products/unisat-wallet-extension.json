@@ -29,7 +29,24 @@
     "last_verified_at": "2026-08-20",
     "notes": "Selected browser-extension runtime only; iOS and Android wallet applications are deferred."
   },
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000164",
+      "entity_id": "wlr_ent_000078",
+      "product_id": "wlr_prod_000127",
+      "affected_product_ids": [
+        "wlr_prod_000127"
+      ],
+      "event_type": "other",
+      "event_date": "2023-02-24",
+      "event_date_basis": "release",
+      "title": "UniSat Wallet v1.0.3 released",
+      "description": "UniSat published its v1.0.3 wallet update with layout changes, script-safety changes, local-storage cleanup, and bug fixes, documenting active browser-extension maintenance in February 2023.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000302",
@@ -46,6 +63,38 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Current first-party distribution page confirms the open-source non-custodial Chrome extension and separately lists iOS/Android downloads."
+    },
+    {
+      "id": "wlr_src_000423",
+      "entity_id": "wlr_ent_000078",
+      "product_id": "wlr_prod_000127",
+      "event_id": null,
+      "source_type": "source_code",
+      "title": "UniSat Wallet official repositories",
+      "url": "https://github.com/unisat-wallet",
+      "publisher": "UniSat Wallet",
+      "published_at": null,
+      "accessed_at": "2026-08-28",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "The official UniSat Wallet GitHub organization identifies the active wallet monorepo as the official repository for browser extension, mobile apps, and shared wallet infrastructure. The older extension repository is marked deprecated and migrated."
+    },
+    {
+      "id": "wlr_src_000425",
+      "entity_id": "wlr_ent_000078",
+      "product_id": "wlr_prod_000127",
+      "event_id": "wlr_ev_000164",
+      "source_type": "official_blog",
+      "title": "UniSat Wallet - v1.0.3 update",
+      "url": "https://unisat-wallet.medium.com/unisat-wallet-v1-0-3-update-3dda76909831",
+      "publisher": "UniSat",
+      "published_at": "2023-02-24",
+      "accessed_at": "2026-08-28",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party UniSat update announcing Wallet v1.0.3 on 2023-02-24."
     }
   ]
 }

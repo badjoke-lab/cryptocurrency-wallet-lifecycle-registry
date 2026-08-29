@@ -49,6 +49,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Current official distribution page lists Glow desktop browser extensions separately from mobile applications."
+    },
+    {
+      "id": "wlr_src_000436",
+      "entity_id": "wlr_ent_000086",
+      "product_id": "wlr_prod_000135",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Glow — Download",
+      "url": "https://glow.app/download",
+      "publisher": "Glow",
+      "published_at": null,
+      "accessed_at": "2026-08-29",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "Current first-party Glow download page offers the desktop/browser wallet for Chrome, Edge, Firefox, and Brave. Supports current extension availability review without inferring a launch date."
     }
   ]
 }

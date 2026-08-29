@@ -16,7 +16,25 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000141"
+        ],
+        "confidence": "high",
+        "description": "The official Breez Mobile repository documents that the project is in maintenance mode: it remains maintained for critical bug fixes and security issues, while new features, enhancements, and non-critical updates are no longer planned.",
+        "entity_id": "wlr_ent_000092",
+        "event_date": "2026-08-29",
+        "event_date_basis": "discovery",
+        "event_status_effect": "limited",
+        "event_type": "other",
+        "id": "wlr_ev_000173",
+        "is_major_event": true,
+        "notes": "The official repository did not state when maintenance mode began. The event date records the date the reduced support state was documented during WLR review, not an inferred original effective date.",
+        "product_id": "wlr_prod_000141",
+        "title": "Breez Mobile documented maintenance mode"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -52,6 +70,22 @@
         "source_type": "official_statement",
         "title": "Breez — Bitcoin in Every App",
         "url": "https://breez.technology/"
+      },
+      {
+        "accessed_at": "2026-08-29",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000092",
+        "event_id": "wlr_ev_000173",
+        "id": "wlr_src_000438",
+        "is_primary": true,
+        "notes": "Official repository explicitly states Maintenance Mode and defines the reduced support scope. Event date records the observation date because the repository text does not provide the date maintenance mode began.",
+        "product_id": "wlr_prod_000141",
+        "published_at": null,
+        "publisher": "Breez",
+        "reliability": "high",
+        "source_type": "source_code",
+        "title": "Breez Mobile Client official repository",
+        "url": "https://github.com/breez/breezmobile"
       }
     ]
   },
