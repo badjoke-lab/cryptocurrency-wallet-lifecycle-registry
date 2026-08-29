@@ -50,7 +50,24 @@
       "notes": "Support status is `supported` because the official repository contains current August 2026 wallet, dependency and security-related maintenance commits. This does not imply Specter normally holds the user's signing keys."
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000190",
+      "entity_id": "wlr_ent_000096",
+      "product_id": "wlr_prod_000145",
+      "affected_product_ids": [
+        "wlr_prod_000145"
+      ],
+      "event_type": "other",
+      "event_date": "2026-08-15",
+      "event_date_basis": "release",
+      "title": "Specter Desktop v2.2.0-pre5 released",
+      "description": "The official Specter Desktop repository published the v2.2.0-pre5 prerelease on 2026-08-15 with packaged desktop artifacts, providing dated first-party evidence of continuing application maintenance. This record does not infer the product original launch date.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000337",
@@ -83,6 +100,22 @@
       "claim_scope": "support_status",
       "is_primary": true,
       "notes": "Official August 2026 commit fixes wallet import behavior; additional August 2026 repository commits include auth/security and compatibility maintenance. Used to establish current supported maintenance state."
+    },
+    {
+      "id": "wlr_src_000459",
+      "entity_id": "wlr_ent_000096",
+      "product_id": "wlr_prod_000145",
+      "event_id": "wlr_ev_000190",
+      "source_type": "release_notes",
+      "title": "Specter Desktop v2.2.0-pre5",
+      "url": "https://github.com/cryptoadvance/specter-desktop/releases/tag/v2.2.0-pre5",
+      "publisher": "Specter Desktop / CryptoAdvance",
+      "published_at": "2026-08-15",
+      "accessed_at": "2026-08-29",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Official GitHub prerelease published 2026-08-15 with packaged desktop artifacts."
     }
   ]
 }

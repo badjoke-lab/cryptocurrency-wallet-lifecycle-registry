@@ -16,7 +16,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000145"
+        ],
+        "confidence": "high",
+        "description": "The official Specter Desktop repository published the v2.2.0-pre5 prerelease on 2026-08-15 with packaged desktop artifacts, providing dated first-party evidence of continuing application maintenance. This record does not infer the product original launch date.",
+        "entity_id": "wlr_ent_000096",
+        "event_date": "2026-08-15",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000190",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000145",
+        "title": "Specter Desktop v2.2.0-pre5 released"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -52,6 +69,22 @@
         "source_type": "source_code",
         "title": "Specter Desktop current maintenance history",
         "url": "https://github.com/cryptoadvance/specter-desktop/commit/8843e2f0640a9adc129f9ab6afe5ecb9632e7c5b"
+      },
+      {
+        "accessed_at": "2026-08-29",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000096",
+        "event_id": "wlr_ev_000190",
+        "id": "wlr_src_000459",
+        "is_primary": true,
+        "notes": "Official GitHub prerelease published 2026-08-15 with packaged desktop artifacts.",
+        "product_id": "wlr_prod_000145",
+        "published_at": "2026-08-15",
+        "publisher": "Specter Desktop / CryptoAdvance",
+        "reliability": "high",
+        "source_type": "release_notes",
+        "title": "Specter Desktop v2.2.0-pre5",
+        "url": "https://github.com/cryptoadvance/specter-desktop/releases/tag/v2.2.0-pre5"
       }
     ]
   },

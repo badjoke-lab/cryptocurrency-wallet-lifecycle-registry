@@ -16,7 +16,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000105"
+        ],
+        "confidence": "high",
+        "description": "Coin98 first-party June 2025 product sync states that Super Wallet V16 was officially launched during June, adding proactive wallet-risk and token-screening protections, trading improvements, and BOBA on-chain rewards. The publication does not establish an exact launch day in June, so this event is anchored to the dated first-party sync publication rather than inferring one.",
+        "entity_id": "wlr_ent_000056",
+        "event_date": "2025-07-06",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000189",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000105",
+        "title": "Coin98 Super Wallet V16 launch documented"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -68,6 +85,22 @@
         "source_type": "official_statement",
         "title": "Coin98 Super Wallet",
         "url": "https://coin98.com/wallet"
+      },
+      {
+        "accessed_at": "2026-08-29",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000056",
+        "event_id": "wlr_ev_000189",
+        "id": "wlr_src_000458",
+        "is_primary": true,
+        "notes": "First-party monthly sync states V16 was officially launched in June 2025 but does not provide an exact launch day.",
+        "product_id": "wlr_prod_000105",
+        "published_at": "2025-07-06",
+        "publisher": "Coin98 Super Wallet",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Coin98 Super Wallet | June Sync 2025",
+        "url": "https://coin98.com/blog/coin98-super-wallet-june-sync-2025/"
       }
     ]
   },

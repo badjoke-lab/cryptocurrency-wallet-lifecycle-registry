@@ -16,7 +16,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000115"
+        ],
+        "confidence": "high",
+        "description": "Talisman official wallet release notes identify v1.0.0 on 2022-03-03 as the first public release of the wallet extension, documenting account creation/import, Polkadot and Kusama transaction signing, asset viewing and sending, dapp account authorization, address copying, and seed/JSON export.",
+        "entity_id": "wlr_ent_000066",
+        "event_date": "2022-03-03",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "id": "wlr_ev_000188",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000115",
+        "title": "Talisman Wallet Extension v1.0.0 publicly released"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -68,6 +85,22 @@
         "source_type": "official_statement",
         "title": "Download the Extension",
         "url": "https://docs.talisman.xyz/talisman/start/installing-talisman/download-the-extension"
+      },
+      {
+        "accessed_at": "2026-08-29",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000066",
+        "event_id": "wlr_ev_000188",
+        "id": "wlr_src_000457",
+        "is_primary": true,
+        "notes": "First-party Talisman release notes explicitly call v1.0.0 on 2022-03-03 the first public release of the wallet.",
+        "product_id": "wlr_prod_000115",
+        "published_at": "2022-03-03",
+        "publisher": "Talisman",
+        "reliability": "high",
+        "source_type": "release_notes",
+        "title": "Wallet Release Notes",
+        "url": "https://docs.talisman.xyz/talisman/about/wallet-release-notes"
       }
     ]
   },

@@ -16,7 +16,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000142"
+        ],
+        "confidence": "high",
+        "description": "The official ZEUS repository published v13.0.2 on 2026-05-21 with signed release artifacts for Android and iOS, providing dated first-party evidence of continuing maintenance of the mobile Bitcoin and Lightning wallet.",
+        "entity_id": "wlr_ent_000093",
+        "event_date": "2026-05-21",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000192",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000142",
+        "title": "ZEUS v13.0.2 released"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -52,6 +69,22 @@
         "source_type": "official_statement",
         "title": "ZEUS Wallet — Your keys, your way",
         "url": "https://zeusln.com/wallet"
+      },
+      {
+        "accessed_at": "2026-08-29",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000093",
+        "event_id": "wlr_ev_000192",
+        "id": "wlr_src_000461",
+        "is_primary": true,
+        "notes": "Official ZEUS GitHub release published 2026-05-21 with Android and iOS release artifacts.",
+        "product_id": "wlr_prod_000142",
+        "published_at": "2026-05-21",
+        "publisher": "ZEUS",
+        "reliability": "high",
+        "source_type": "release_notes",
+        "title": "ZEUS v13.0.2",
+        "url": "https://github.com/ZeusLN/zeus/releases/tag/v13.0.2"
       }
     ]
   },

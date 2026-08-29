@@ -16,7 +16,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000128"
+        ],
+        "confidence": "high",
+        "description": "The official Tonkeeper Android repository published release 26.05.1 on 2026-05-18 with packaged Android assets, providing dated first-party evidence of continuing maintenance of the mobile wallet.",
+        "entity_id": "wlr_ent_000079",
+        "event_date": "2026-05-18",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000191",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000128",
+        "title": "Tonkeeper Android 26.05.1 released"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -52,6 +69,22 @@
         "source_type": "official_statement",
         "title": "Tonkeeper Signer",
         "url": "https://tonkeeper.com/signer"
+      },
+      {
+        "accessed_at": "2026-08-29",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000079",
+        "event_id": "wlr_ev_000191",
+        "id": "wlr_src_000460",
+        "is_primary": true,
+        "notes": "Official Tonkeeper Android GitHub release published 2026-05-18.",
+        "product_id": "wlr_prod_000128",
+        "published_at": "2026-05-18",
+        "publisher": "Tonkeeper",
+        "reliability": "high",
+        "source_type": "release_notes",
+        "title": "Tonkeeper Android 26.05.1",
+        "url": "https://github.com/tonkeeper/android/releases/tag/v26.05.1_1283"
       }
     ]
   },

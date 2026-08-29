@@ -2983,7 +2983,7 @@
     "status": "active",
     "sales_status": "not_applicable",
     "support_status": "supported",
-    "launch_date": null,
+    "launch_date": "2022-03-03",
     "platform": [
       "Chrome",
       "Firefox",
@@ -2996,8 +2996,9 @@
     "key_management_model": "browser_local_user_controlled_private_keys",
     "summary": "Current non-custodial Talisman browser-extension wallet for supported Polkadot, Ethereum and related networks.",
     "confidence": "high",
-    "last_verified_at": "2026-08-26",
-    "notes": "Current first-party installation documentation supports Chrome, Firefox, Brave and Edge. Initial extension launch date remains unresolved."
+    "last_verified_at": "2026-08-29",
+    "notes": "Current first-party installation documentation supports Chrome, Firefox, Brave and Edge. Initial extension launch date remains unresolved. First-party Talisman release notes identify v1.0.0 on 2022-03-03 as the first public wallet release.",
+    "launch_date_precision": "day"
   },
   {
     "id": "wlr_prod_000116",

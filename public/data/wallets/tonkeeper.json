@@ -47,7 +47,24 @@
       "notes": "Current first-party privacy material identifies Tonkeeper's App Store/Google Play application and dates the privacy policy to 2021; Tonkeeper also states it was founded in 2021. Year precision only."
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000191",
+      "entity_id": "wlr_ent_000079",
+      "product_id": "wlr_prod_000128",
+      "affected_product_ids": [
+        "wlr_prod_000128"
+      ],
+      "event_type": "other",
+      "event_date": "2026-05-18",
+      "event_date_basis": "release",
+      "title": "Tonkeeper Android 26.05.1 released",
+      "description": "The official Tonkeeper Android repository published release 26.05.1 on 2026-05-18 with packaged Android assets, providing dated first-party evidence of continuing maintenance of the mobile wallet.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000303",
@@ -80,6 +97,22 @@
       "claim_scope": "product_lineage",
       "is_primary": true,
       "notes": "Current first-party Tonkeeper page describes Tonkeeper as the non-custodial TON wallet and states it was founded in 2021; used only for year-level lineage."
+    },
+    {
+      "id": "wlr_src_000460",
+      "entity_id": "wlr_ent_000079",
+      "product_id": "wlr_prod_000128",
+      "event_id": "wlr_ev_000191",
+      "source_type": "release_notes",
+      "title": "Tonkeeper Android 26.05.1",
+      "url": "https://github.com/tonkeeper/android/releases/tag/v26.05.1_1283",
+      "publisher": "Tonkeeper",
+      "published_at": "2026-05-18",
+      "accessed_at": "2026-08-29",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Official Tonkeeper Android GitHub release published 2026-05-18."
     }
   ]
 }

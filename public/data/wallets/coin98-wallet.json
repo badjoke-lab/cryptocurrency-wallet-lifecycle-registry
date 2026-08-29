@@ -47,7 +47,24 @@
       "notes": "Selected mobile boundary only. Coin98 Extension is a separate browser runtime and is deferred. Exact mobile launch date remains unresolved."
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000189",
+      "entity_id": "wlr_ent_000056",
+      "product_id": "wlr_prod_000105",
+      "affected_product_ids": [
+        "wlr_prod_000105"
+      ],
+      "event_type": "other",
+      "event_date": "2025-07-06",
+      "event_date_basis": "announcement",
+      "title": "Coin98 Super Wallet V16 launch documented",
+      "description": "Coin98 first-party June 2025 product sync states that Super Wallet V16 was officially launched during June, adding proactive wallet-risk and token-screening protections, trading improvements, and BOBA on-chain rewards. The publication does not establish an exact launch day in June, so this event is anchored to the dated first-party sync publication rather than inferring one.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000257",
@@ -96,6 +113,22 @@
       "claim_scope": "support_status",
       "is_primary": true,
       "notes": "Current first-party Coin98 wallet page distributes iOS and Android mobile builds and a browser extension, supporting active maintenance of the mobile product."
+    },
+    {
+      "id": "wlr_src_000458",
+      "entity_id": "wlr_ent_000056",
+      "product_id": "wlr_prod_000105",
+      "event_id": "wlr_ev_000189",
+      "source_type": "official_blog",
+      "title": "Coin98 Super Wallet | June Sync 2025",
+      "url": "https://coin98.com/blog/coin98-super-wallet-june-sync-2025/",
+      "publisher": "Coin98 Super Wallet",
+      "published_at": "2025-07-06",
+      "accessed_at": "2026-08-29",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party monthly sync states V16 was officially launched in June 2025 but does not provide an exact launch day."
     }
   ]
 }
