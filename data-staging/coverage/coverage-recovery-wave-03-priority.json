@@ -1,0 +1,700 @@
+{
+  "schema": "wlr.coverage-priority-queue.v1",
+  "issue": 299,
+  "baseline_commit": "f182831d8ff1cc91c6179989ea82b46e5fa0d04f",
+  "selection": {
+    "limit": 30,
+    "weights": {
+      "no_history_events": 100,
+      "thin_history": 60,
+      "thin_evidence": 40,
+      "product_launch_gaps": 25,
+      "product_support_unknown": 25
+    },
+    "tie_breaker": "entity_id_ascending",
+    "excluded_wave_02_entity_ids": [
+      "wlr_ent_000028",
+      "wlr_ent_000037",
+      "wlr_ent_000041",
+      "wlr_ent_000043",
+      "wlr_ent_000044",
+      "wlr_ent_000045",
+      "wlr_ent_000047",
+      "wlr_ent_000048",
+      "wlr_ent_000049",
+      "wlr_ent_000050",
+      "wlr_ent_000068",
+      "wlr_ent_000070",
+      "wlr_ent_000074",
+      "wlr_ent_000075",
+      "wlr_ent_000077",
+      "wlr_ent_000078",
+      "wlr_ent_000080",
+      "wlr_ent_000081",
+      "wlr_ent_000082",
+      "wlr_ent_000083",
+      "wlr_ent_000084",
+      "wlr_ent_000085",
+      "wlr_ent_000086",
+      "wlr_ent_000088",
+      "wlr_ent_000090",
+      "wlr_ent_000091",
+      "wlr_ent_000092",
+      "wlr_ent_000094",
+      "wlr_ent_000097",
+      "wlr_ent_000099"
+    ]
+  },
+  "coverage_summary": {
+    "entities": 101,
+    "products": 150,
+    "events": 180,
+    "evidence": 449,
+    "entities_with_zero_products": 0,
+    "entities_with_zero_events": 27,
+    "entities_with_one_event": 42,
+    "entities_with_less_than_two_evidence": 0,
+    "products_missing_launch_date": 51,
+    "products_with_unknown_support": 47,
+    "incident_events": 30,
+    "remediation_events": 9,
+    "eol_events": 8,
+    "major_events": 151
+  },
+  "selected_count": 30,
+  "targets": [
+    {
+      "priority_score": 125,
+      "entity_id": "wlr_ent_000054",
+      "slug": "bitcoin-com-wallet",
+      "name": "Bitcoin.com Wallet",
+      "events": 0,
+      "evidence": 3,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000103",
+          "slug": "bitcoin-com-wallet-app",
+          "product_name": "Bitcoin.com Wallet App",
+          "launch_date_missing": true,
+          "support_status_unknown": false
+        }
+      ]
+    },
+    {
+      "priority_score": 125,
+      "entity_id": "wlr_ent_000055",
+      "slug": "bitpay-wallet",
+      "name": "BitPay Wallet",
+      "events": 0,
+      "evidence": 3,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000104",
+          "slug": "bitpay-wallet-app",
+          "product_name": "BitPay Wallet App",
+          "launch_date_missing": true,
+          "support_status_unknown": false
+        }
+      ]
+    },
+    {
+      "priority_score": 125,
+      "entity_id": "wlr_ent_000056",
+      "slug": "coin98-wallet",
+      "name": "Coin98 Wallet",
+      "events": 0,
+      "evidence": 3,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000105",
+          "slug": "coin98-super-wallet-mobile",
+          "product_name": "Coin98 Super Wallet Mobile",
+          "launch_date_missing": true,
+          "support_status_unknown": false
+        }
+      ]
+    },
+    {
+      "priority_score": 125,
+      "entity_id": "wlr_ent_000057",
+      "slug": "mathwallet",
+      "name": "MathWallet",
+      "events": 0,
+      "evidence": 3,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000106",
+          "slug": "mathwallet-mobile",
+          "product_name": "MathWallet Mobile",
+          "launch_date_missing": true,
+          "support_status_unknown": false
+        }
+      ]
+    },
+    {
+      "priority_score": 125,
+      "entity_id": "wlr_ent_000058",
+      "slug": "ambire-wallet",
+      "name": "Ambire Wallet",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000107",
+          "slug": "ambire-extension",
+          "product_name": "Ambire Extension",
+          "launch_date_missing": false,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 125,
+      "entity_id": "wlr_ent_000060",
+      "slug": "enkrypt",
+      "name": "Enkrypt",
+      "events": 0,
+      "evidence": 3,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000109",
+          "slug": "enkrypt-extension",
+          "product_name": "Enkrypt Extension",
+          "launch_date_missing": true,
+          "support_status_unknown": false
+        }
+      ]
+    },
+    {
+      "priority_score": 125,
+      "entity_id": "wlr_ent_000061",
+      "slug": "backpack-wallet",
+      "name": "Backpack",
+      "events": 0,
+      "evidence": 3,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000110",
+          "slug": "backpack-extension",
+          "product_name": "Backpack Browser Extension",
+          "launch_date_missing": true,
+          "support_status_unknown": false
+        }
+      ]
+    },
+    {
+      "priority_score": 125,
+      "entity_id": "wlr_ent_000064",
+      "slug": "pera-wallet",
+      "name": "Pera Wallet",
+      "events": 0,
+      "evidence": 3,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000113",
+          "slug": "pera-mobile",
+          "product_name": "Pera Mobile",
+          "launch_date_missing": true,
+          "support_status_unknown": false
+        }
+      ]
+    },
+    {
+      "priority_score": 125,
+      "entity_id": "wlr_ent_000066",
+      "slug": "talisman",
+      "name": "Talisman",
+      "events": 0,
+      "evidence": 3,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000115",
+          "slug": "talisman-extension",
+          "product_name": "Talisman Wallet Extension",
+          "launch_date_missing": true,
+          "support_status_unknown": false
+        }
+      ]
+    },
+    {
+      "priority_score": 125,
+      "entity_id": "wlr_ent_000067",
+      "slug": "subwallet",
+      "name": "SubWallet",
+      "events": 0,
+      "evidence": 3,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000116",
+          "slug": "subwallet-extension",
+          "product_name": "SubWallet Extension",
+          "launch_date_missing": true,
+          "support_status_unknown": false
+        }
+      ]
+    },
+    {
+      "priority_score": 125,
+      "entity_id": "wlr_ent_000072",
+      "slug": "arculus",
+      "name": "Arculus",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000121",
+          "slug": "arculus-cold-storage-wallet",
+          "product_name": "Arculus Cold Storage Wallet",
+          "launch_date_missing": false,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 125,
+      "entity_id": "wlr_ent_000079",
+      "slug": "tonkeeper",
+      "name": "Tonkeeper",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000128",
+          "slug": "tonkeeper-mobile",
+          "product_name": "Tonkeeper Mobile",
+          "launch_date_missing": false,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 125,
+      "entity_id": "wlr_ent_000089",
+      "slug": "nightly-wallet",
+      "name": "Nightly Wallet",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000138",
+          "slug": "nightly-browser-extension",
+          "product_name": "Nightly Wallet Extension",
+          "launch_date_missing": false,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 125,
+      "entity_id": "wlr_ent_000093",
+      "slug": "zeus-wallet",
+      "name": "ZEUS Wallet",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000142",
+          "slug": "zeus-wallet-mobile",
+          "product_name": "ZEUS Wallet Mobile",
+          "launch_date_missing": false,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 125,
+      "entity_id": "wlr_ent_000096",
+      "slug": "specter-desktop",
+      "name": "Specter Desktop",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_launch_gaps"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000145",
+          "slug": "specter-desktop-app",
+          "product_name": "Specter Desktop App",
+          "launch_date_missing": true,
+          "support_status_unknown": false
+        }
+      ]
+    },
+    {
+      "priority_score": 125,
+      "entity_id": "wlr_ent_000100",
+      "slug": "prokey",
+      "name": "Prokey",
+      "events": 0,
+      "evidence": 2,
+      "flags": [
+        "no_history_events",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000149",
+          "slug": "prokey-optimum",
+          "product_name": "Prokey Optimum",
+          "launch_date_missing": false,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 110,
+      "entity_id": "wlr_ent_000039",
+      "slug": "coolwallet",
+      "name": "CoolWallet",
+      "events": 1,
+      "evidence": 4,
+      "flags": [
+        "thin_history",
+        "product_launch_gaps",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000088",
+          "slug": "coolwallet-pro",
+          "product_name": "CoolWallet Pro",
+          "launch_date_missing": true,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 110,
+      "entity_id": "wlr_ent_000071",
+      "slug": "secux",
+      "name": "SecuX",
+      "events": 1,
+      "evidence": 3,
+      "flags": [
+        "thin_history",
+        "product_launch_gaps",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000120",
+          "slug": "secux-v20",
+          "product_name": "SecuX V20",
+          "launch_date_missing": true,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 110,
+      "entity_id": "wlr_ent_000073",
+      "slug": "cypherock",
+      "name": "Cypherock",
+      "events": 1,
+      "evidence": 3,
+      "flags": [
+        "thin_history",
+        "product_launch_gaps",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000122",
+          "slug": "cypherock-x1",
+          "product_name": "Cypherock X1",
+          "launch_date_missing": true,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 85,
+      "entity_id": "wlr_ent_000030",
+      "slug": "tokenpocket",
+      "name": "TokenPocket",
+      "events": 1,
+      "evidence": 3,
+      "flags": [
+        "thin_history",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000079",
+          "slug": "tokenpocket-mobile-wallet",
+          "product_name": "TokenPocket Mobile Wallet",
+          "launch_date_missing": false,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 85,
+      "entity_id": "wlr_ent_000031",
+      "slug": "solflare",
+      "name": "Solflare",
+      "events": 1,
+      "evidence": 4,
+      "flags": [
+        "thin_history",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000080",
+          "slug": "solflare-browser-extension",
+          "product_name": "Solflare Browser Extension",
+          "launch_date_missing": false,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 85,
+      "entity_id": "wlr_ent_000032",
+      "slug": "atomic-wallet",
+      "name": "Atomic Wallet",
+      "events": 1,
+      "evidence": 3,
+      "flags": [
+        "thin_history",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000081",
+          "slug": "atomic-wallet-desktop",
+          "product_name": "Atomic Wallet Desktop",
+          "launch_date_missing": false,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 85,
+      "entity_id": "wlr_ent_000033",
+      "slug": "guarda-wallet",
+      "name": "Guarda Wallet",
+      "events": 1,
+      "evidence": 4,
+      "flags": [
+        "thin_history",
+        "product_launch_gaps"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000082",
+          "slug": "guarda-wallet",
+          "product_name": "Guarda Wallet",
+          "launch_date_missing": true,
+          "support_status_unknown": false
+        }
+      ]
+    },
+    {
+      "priority_score": 85,
+      "entity_id": "wlr_ent_000036",
+      "slug": "edge",
+      "name": "Edge",
+      "events": 1,
+      "evidence": 3,
+      "flags": [
+        "thin_history",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000085",
+          "slug": "edge-wallet",
+          "product_name": "Edge Wallet",
+          "launch_date_missing": false,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 85,
+      "entity_id": "wlr_ent_000038",
+      "slug": "dcent",
+      "name": "D'CENT",
+      "events": 1,
+      "evidence": 4,
+      "flags": [
+        "thin_history",
+        "product_launch_gaps"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000087",
+          "slug": "dcent-biometric-wallet",
+          "product_name": "D'CENT Biometric Wallet",
+          "launch_date_missing": true,
+          "support_status_unknown": false
+        }
+      ]
+    },
+    {
+      "priority_score": 85,
+      "entity_id": "wlr_ent_000040",
+      "slug": "ngrave",
+      "name": "NGRAVE",
+      "events": 1,
+      "evidence": 4,
+      "flags": [
+        "thin_history",
+        "product_launch_gaps"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000089",
+          "slug": "ngrave-zero",
+          "product_name": "NGRAVE ZERO",
+          "launch_date_missing": true,
+          "support_status_unknown": false
+        }
+      ]
+    },
+    {
+      "priority_score": 85,
+      "entity_id": "wlr_ent_000042",
+      "slug": "cake-wallet",
+      "name": "Cake Wallet",
+      "events": 1,
+      "evidence": 3,
+      "flags": [
+        "thin_history",
+        "product_support_unknown"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000091",
+          "slug": "cake-wallet",
+          "product_name": "Cake Wallet",
+          "launch_date_missing": false,
+          "support_status_unknown": true
+        }
+      ]
+    },
+    {
+      "priority_score": 85,
+      "entity_id": "wlr_ent_000046",
+      "slug": "bitget-wallet",
+      "name": "Bitget Wallet",
+      "events": 1,
+      "evidence": 4,
+      "flags": [
+        "thin_history",
+        "product_launch_gaps"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000095",
+          "slug": "bitget-wallet-mobile",
+          "product_name": "Bitget Wallet Mobile",
+          "launch_date_missing": true,
+          "support_status_unknown": false
+        }
+      ]
+    },
+    {
+      "priority_score": 85,
+      "entity_id": "wlr_ent_000051",
+      "slug": "brave-wallet",
+      "name": "Brave Wallet",
+      "events": 1,
+      "evidence": 4,
+      "flags": [
+        "thin_history",
+        "product_launch_gaps"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000100",
+          "slug": "brave-wallet-browser",
+          "product_name": "Brave Wallet Browser",
+          "launch_date_missing": true,
+          "support_status_unknown": false
+        }
+      ]
+    },
+    {
+      "priority_score": 85,
+      "entity_id": "wlr_ent_000052",
+      "slug": "crypto-com-onchain",
+      "name": "Crypto.com Onchain",
+      "events": 1,
+      "evidence": 4,
+      "flags": [
+        "thin_history",
+        "product_launch_gaps"
+      ],
+      "product_gaps": [
+        {
+          "product_id": "wlr_prod_000101",
+          "slug": "crypto-com-onchain-extension",
+          "product_name": "Crypto.com Onchain Extension",
+          "launch_date_missing": true,
+          "support_status_unknown": false
+        }
+      ]
+    }
+  ]
+}
