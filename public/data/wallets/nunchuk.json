@@ -42,7 +42,24 @@
       "notes": "Current product identity is first-party supported; initial Nunchuk Wallet launch date remains unresolved."
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000159",
+      "entity_id": "wlr_ent_000041",
+      "product_id": "wlr_prod_000090",
+      "affected_product_ids": [
+        "wlr_prod_000090"
+      ],
+      "event_type": "product_released",
+      "event_date": "2020-11-06",
+      "event_date_basis": "announcement",
+      "title": "Nunchuk introduced its multisig wallet",
+      "description": "Nunchuk published its introductory announcement for the Nunchuk multisig wallet, documenting the product as available in November 2020.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000227",
@@ -91,6 +108,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Current first-party product surface retained for bounded launch/support research; no exact launch or formal support claim is promoted from this source alone."
+    },
+    {
+      "id": "wlr_src_000419",
+      "entity_id": "wlr_ent_000041",
+      "product_id": "wlr_prod_000090",
+      "event_id": "wlr_ev_000159",
+      "source_type": "official_blog",
+      "title": "Introducing Nunchuk: Multisig Made Easy",
+      "url": "https://nunchuk.io/blog/introducing-nunchuk-multisig-made-easy-ehvJmuXFtmL8trLXkCRLH3",
+      "publisher": "Nunchuk",
+      "published_at": "2020-11-06",
+      "accessed_at": "2026-08-28",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party introductory announcement supporting the November 6, 2020 product-release event."
     }
   ]
 }

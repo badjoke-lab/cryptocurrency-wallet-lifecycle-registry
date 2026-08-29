@@ -22,7 +22,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000143"
+        ],
+        "confidence": "high",
+        "description": "Blixt Wallet v0.9.0 was released with lnd v0.20.0, automatic channel opening, BIP177 support, reliability fixes, and other wallet improvements.",
+        "entity_id": "wlr_ent_000094",
+        "event_date": "2026-02-18",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000171",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000143",
+        "title": "Blixt Wallet v0.9.0 released"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -42,6 +59,22 @@
         "source_type": "official_statement",
         "title": "Blixt Wallet Guides",
         "url": "https://blixtwallet.github.io/guides.html"
+      },
+      {
+        "accessed_at": "2026-08-29",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000094",
+        "event_id": "wlr_ev_000171",
+        "id": "wlr_src_000432",
+        "is_primary": true,
+        "notes": "Official Blixt Wallet release with mainnet/testnet APK assets and release notes.",
+        "product_id": "wlr_prod_000143",
+        "published_at": "2026-02-18",
+        "publisher": "Blixt Wallet",
+        "reliability": "high",
+        "source_type": "release_notes",
+        "title": "Blixt Wallet v0.9.0",
+        "url": "https://github.com/smolcars/blixt-wallet/releases/tag/v0.9.0"
       }
     ]
   },

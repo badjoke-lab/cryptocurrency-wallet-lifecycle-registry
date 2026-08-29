@@ -78,6 +78,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Current first-party product page describes Begin as self-custodial/open-source and lists iOS, Android and Chrome extension distribution."
+    },
+    {
+      "id": "wlr_src_000435",
+      "entity_id": "wlr_ent_000085",
+      "product_id": "wlr_prod_000134",
+      "event_id": null,
+      "source_type": "official_statement",
+      "title": "Cardano Wallet - Secure and Open-Source",
+      "url": "https://begin.is/cardano-wallet",
+      "publisher": "Begin Wallet",
+      "published_at": null,
+      "accessed_at": "2026-08-29",
+      "reliability": "high",
+      "claim_scope": "product",
+      "is_primary": true,
+      "notes": "First-party Begin Wallet page states that Begin is self-custodial and currently available on iOS, Android, and as a browser extension. Supports current availability review without inferring launch timing."
     }
   ]
 }

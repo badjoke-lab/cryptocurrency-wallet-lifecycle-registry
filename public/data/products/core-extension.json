@@ -29,7 +29,24 @@
     "last_verified_at": "2026-08-20",
     "notes": "Selected extension runtime only; Core mobile and web are distinct surfaces and deferred. Current first-party support says the extension is officially supported on Chrome."
   },
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000163",
+      "entity_id": "wlr_ent_000077",
+      "product_id": "wlr_prod_000126",
+      "affected_product_ids": [
+        "wlr_prod_000126"
+      ],
+      "event_type": "product_released",
+      "event_date": "2022-06-22",
+      "event_date_basis": "release",
+      "title": "Core browser extension released",
+      "description": "Ava Labs announced the release of Core as a non-custodial browser extension for Avalanche and made the extension available through the Chrome Web Store.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000300",
@@ -46,6 +63,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Current first-party support identifies Core extension as a free non-custodial browser extension and states current official Chrome support."
+    },
+    {
+      "id": "wlr_src_000424",
+      "entity_id": "wlr_ent_000077",
+      "product_id": "wlr_prod_000126",
+      "event_id": "wlr_ev_000163",
+      "source_type": "official_blog",
+      "title": "Ava Labs Releases Core, an All-In-One Web3 Command Center for Avalanche",
+      "url": "https://medium.com/avalancheavax/ava-labs-releases-core-an-all-in-one-web3-operating-system-for-avalanche-a844eb822887",
+      "publisher": "Avalanche / Ava Labs",
+      "published_at": "2022-06-22",
+      "accessed_at": "2026-08-28",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party launch announcement explicitly stating that Ava Labs released Core and that the browser extension was available from the Chrome Web Store on 2022-06-22."
     }
   ]
 }

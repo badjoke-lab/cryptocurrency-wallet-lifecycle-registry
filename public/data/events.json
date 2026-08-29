@@ -3340,5 +3340,262 @@
     "user_actions_required": [
       "monitor"
     ]
+  },
+  {
+    "id": "wlr_ev_000159",
+    "entity_id": "wlr_ent_000041",
+    "product_id": "wlr_prod_000090",
+    "affected_product_ids": [
+      "wlr_prod_000090"
+    ],
+    "event_type": "product_released",
+    "event_date": "2020-11-06",
+    "event_date_basis": "announcement",
+    "title": "Nunchuk introduced its multisig wallet",
+    "description": "Nunchuk published its introductory announcement for the Nunchuk multisig wallet, documenting the product as available in November 2020.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000160",
+    "entity_id": "wlr_ent_000074",
+    "product_id": "wlr_prod_000123",
+    "affected_product_ids": [
+      "wlr_prod_000123"
+    ],
+    "event_type": "other",
+    "event_date": "2026-07-08",
+    "event_date_basis": "release",
+    "title": "SeedSigner 0.8.7 released",
+    "description": "SeedSigner released version 0.8.7 with new features, translations, fixes, and contributions from a broad set of developers, providing direct evidence of ongoing software maintenance.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000161",
+    "entity_id": "wlr_ent_000043",
+    "product_id": "wlr_prod_000092",
+    "affected_product_ids": [
+      "wlr_prod_000092"
+    ],
+    "event_type": "other",
+    "event_date": "2020-09-07",
+    "event_date_basis": "release",
+    "title": "Keplr extension update added Ledger signing support",
+    "description": "Chainapsis announced a new Keplr extension version adding Ledger hardware-wallet signing support, directly documenting active extension maintenance in September 2020.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000162",
+    "entity_id": "wlr_ent_000070",
+    "product_id": "wlr_prod_000119",
+    "affected_product_ids": [
+      "wlr_prod_000119"
+    ],
+    "event_type": "other",
+    "event_date": "2024-07-23",
+    "event_date_basis": "release",
+    "title": "Lattice1 firmware v0.18.3 released",
+    "description": "GridPlus released Lattice1 firmware v0.18.3 with Solana signing improvements, security improvements, bug fixes, and user-requested changes.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000163",
+    "entity_id": "wlr_ent_000077",
+    "product_id": "wlr_prod_000126",
+    "affected_product_ids": [
+      "wlr_prod_000126"
+    ],
+    "event_type": "product_released",
+    "event_date": "2022-06-22",
+    "event_date_basis": "release",
+    "title": "Core browser extension released",
+    "description": "Ava Labs announced the release of Core as a non-custodial browser extension for Avalanche and made the extension available through the Chrome Web Store.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000164",
+    "entity_id": "wlr_ent_000078",
+    "product_id": "wlr_prod_000127",
+    "affected_product_ids": [
+      "wlr_prod_000127"
+    ],
+    "event_type": "other",
+    "event_date": "2023-02-24",
+    "event_date_basis": "release",
+    "title": "UniSat Wallet v1.0.3 released",
+    "description": "UniSat published its v1.0.3 wallet update with layout changes, script-safety changes, local-storage cleanup, and bug fixes, documenting active browser-extension maintenance in February 2023.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000165",
+    "entity_id": "wlr_ent_000075",
+    "product_id": "wlr_prod_000124",
+    "affected_product_ids": [
+      "wlr_prod_000124"
+    ],
+    "event_type": "other",
+    "event_date": "2026-02-24",
+    "event_date_basis": "release",
+    "title": "Nova Wallet Android v10.8.0 released",
+    "description": "Novasama published Nova Wallet Android v10.8.0 with scam-warning protections, watch-only EVM account support, additional swap routes, and bug fixes, documenting ongoing wallet maintenance in 2026.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000166",
+    "entity_id": "wlr_ent_000081",
+    "product_id": "wlr_prod_000130",
+    "affected_product_ids": [
+      "wlr_prod_000130"
+    ],
+    "event_type": "other",
+    "event_date": "2025-04-02",
+    "event_date_basis": "release",
+    "title": "Tonhub v2.4.26 released",
+    "description": "Ton Whales published Tonhub v2.4.26 with bug fixes and stability improvements, with an official Tonhub APK attached to the release, documenting ongoing maintenance of the mobile wallet.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000167",
+    "entity_id": "wlr_ent_000083",
+    "product_id": "wlr_prod_000132",
+    "affected_product_ids": [
+      "wlr_prod_000132"
+    ],
+    "event_type": "other",
+    "event_date": "2022-10-11",
+    "event_date_basis": "release",
+    "title": "NuFi 2.4.x added wallet emulation mode",
+    "description": "NuFi documented releases 2.4.0 and 2.4.2 adding Flint and Phantom wallet emulation mode to the browser extension, providing a dated lifecycle record for extension maintenance.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000168",
+    "entity_id": "wlr_ent_000082",
+    "product_id": "wlr_prod_000131",
+    "affected_product_ids": [
+      "wlr_prod_000131"
+    ],
+    "event_type": "other",
+    "event_date": "2026-07-10",
+    "event_date_basis": "release",
+    "title": "Eternl v2.1.5.0 released",
+    "description": "Eternl published v2.1.5.0 with a Ledger signing hotfix and marked the Eternl browser extension as available, documenting active extension maintenance in July 2026.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000169",
+    "entity_id": "wlr_ent_000088",
+    "product_id": "wlr_prod_000137",
+    "affected_product_ids": [
+      "wlr_prod_000137"
+    ],
+    "event_type": "other",
+    "event_date": "2023-06-21",
+    "event_date_basis": "release",
+    "title": "Sequence Wallet infrastructure update released",
+    "description": "Sequence announced and deployed a major wallet infrastructure update with faster login, cross-network session improvements, recovery improvements, and EIP-1271 integration changes.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000170",
+    "entity_id": "wlr_ent_000091",
+    "product_id": "wlr_prod_000140",
+    "affected_product_ids": [
+      "wlr_prod_000140"
+    ],
+    "event_type": "other",
+    "event_date": "2026-07-20",
+    "event_date_basis": "release",
+    "title": "Bitkit Android v2.4.0 released",
+    "description": "Synonym released Bitkit Android v2.4.0 with Trezor hardware-wallet support, background-payment reliability improvements, and numerous transfer, notification, widget, and Lightning fixes.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000171",
+    "entity_id": "wlr_ent_000094",
+    "product_id": "wlr_prod_000143",
+    "affected_product_ids": [
+      "wlr_prod_000143"
+    ],
+    "event_type": "other",
+    "event_date": "2026-02-18",
+    "event_date_basis": "release",
+    "title": "Blixt Wallet v0.9.0 released",
+    "description": "Blixt Wallet v0.9.0 was released with lnd v0.20.0, automatic channel opening, BIP177 support, reliability fixes, and other wallet improvements.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000172",
+    "entity_id": "wlr_ent_000090",
+    "product_id": "wlr_prod_000139",
+    "affected_product_ids": [
+      "wlr_prod_000139"
+    ],
+    "event_type": "other",
+    "event_date": "2026-08-16",
+    "event_date_basis": "release",
+    "title": "AQUA Wallet v0.5.2 released",
+    "description": "AQUA Wallet v0.5.2 was released with Lightning-swap diagnostics, TLS verification for custom Electrum servers, SeedQR recovery hardening, logging cleanup, and security updates.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000173",
+    "entity_id": "wlr_ent_000092",
+    "product_id": "wlr_prod_000141",
+    "affected_product_ids": [
+      "wlr_prod_000141"
+    ],
+    "event_type": "other",
+    "event_date": "2026-08-29",
+    "event_date_basis": "discovery",
+    "title": "Breez Mobile documented maintenance mode",
+    "description": "The official Breez Mobile repository documents that the project is in maintenance mode: it remains maintained for critical bug fixes and security issues, while new features, enhancements, and non-critical updates are no longer planned.",
+    "confidence": "high",
+    "event_status_effect": "limited",
+    "is_major_event": true,
+    "notes": "The official repository did not state when maintenance mode began. The event date records the date the reduced support state was documented during WLR review, not an inferred original effective date."
+  },
+  {
+    "id": "wlr_ev_000174",
+    "entity_id": "wlr_ent_000099",
+    "product_id": "wlr_prod_000148",
+    "affected_product_ids": [
+      "wlr_prod_000148"
+    ],
+    "event_type": "other",
+    "event_date": "2021-09-30",
+    "event_date_basis": "release",
+    "title": "Satochip applet v0.12 released",
+    "description": "Satochip applet v0.12 was released with SeedKeeper encrypted-seed import support, card labels, offline 2FA reset support, factory reset support, and card-authenticity PKI support.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
   }
 ]
