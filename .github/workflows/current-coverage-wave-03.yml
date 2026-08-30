@@ -9,28 +9,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Audit promoted identity mappings
+      - name: Resolve exact target identities
         run: |
           python3 - <<'PY'
           import json
-          E=json.load(open('data/entities.json'))
-          P=json.load(open('data/products.json'))
-          V=json.load(open('data/events.json'))
-          S=json.load(open('data/evidence.json'))
-          target_names=['Taho','Blockstream Green','AirGap','Unstoppable','Nightly','Xverse','Wasabi']
-          print('TARGET ENTITIES')
-          for e in E:
-            if any(x.lower() in (e.get('canonical_name','')+' '+e.get('slug','')).lower() for x in target_names):
-              print(e['id'],e.get('slug'),e.get('canonical_name'))
-              for p in P:
-                if p.get('entity_id')==e['id']:
-                  print(' PRODUCT',p['id'],p.get('slug'),p.get('product_name'))
-          print('PROMOTED EVENTS')
-          for v in V:
-            if v['id'] in {f'wlr_ev_{n:06d}' for n in range(193,199)}:
-              print(v['id'],v.get('entity_id'),v.get('product_id'),v.get('title'))
-          print('PROMOTED EVIDENCE')
-          for s in S:
-            if s.get('event_id') in {f'wlr_ev_{n:06d}' for n in range(193,199)}:
-              print(s['id'],s.get('entity_id'),s.get('product_id'),s.get('event_id'),s.get('url'))
+          E=json.load(open('data/entities.json')); P=json.load(open('data/products.json'))
+          em={e['id']:e for e in E}
+          needles=['blockstream','green','airgap','unstoppable','taho','nightly','xverse']
+          print('NAME MATCHES')
+          for p in P:
+            text=' '.join(str(p.get(k,'')) for k in ('slug','product_name','official_url','source_code_url')).lower()
+            if any(n in text for n in needles):
+              e=em[p['entity_id']]
+              print(p['id'],p['entity_id'],e.get('slug'),e.get('canonical_name'),'|',p.get('slug'),p.get('product_name'))
+          print('OLD IDS 118-122,125,136')
+          for p in P:
+            if p['id'] in {'wlr_prod_000118','wlr_prod_000119','wlr_prod_000120','wlr_prod_000121','wlr_prod_000122','wlr_prod_000125','wlr_prod_000136'}:
+              e=em[p['entity_id']]
+              print(p['id'],p['entity_id'],e.get('slug'),e.get('canonical_name'),'|',p.get('slug'),p.get('product_name'))
           PY
