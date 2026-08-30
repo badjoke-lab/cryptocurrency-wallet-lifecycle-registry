@@ -59,22 +59,6 @@
       "event_status_effect": "active",
       "is_major_event": true,
       "notes": "The source establishes private beta in 2022 only. WLR does not convert this to general availability or infer a more precise date."
-    },
-    {
-      "id": "wlr_ev_000196",
-      "entity_id": "wlr_ent_000073",
-      "product_id": "wlr_prod_000122",
-      "affected_product_ids": [
-        "wlr_prod_000122"
-      ],
-      "event_type": "other",
-      "event_date": "2026-08-27",
-      "event_date_basis": "release",
-      "title": "Unstoppable Wallet Android 0.50.1 released",
-      "description": "The official Horizontal Systems Unstoppable Wallet Android repository published version 0.50.1 on 2026-08-27 with GitHub and Google Play APK artifacts, providing dated first-party evidence of continuing wallet maintenance.",
-      "confidence": "high",
-      "event_status_effect": "active",
-      "is_major_event": false
     }
   ],
   "evidence": [
@@ -125,22 +109,6 @@
       "claim_scope": "event",
       "is_primary": true,
       "notes": "First-party Cypherock history states that Cypherock X1 launched in private beta in 2022."
-    },
-    {
-      "id": "wlr_src_000465",
-      "entity_id": "wlr_ent_000073",
-      "product_id": "wlr_prod_000122",
-      "event_id": "wlr_ev_000196",
-      "source_type": "release_notes",
-      "title": "Unstoppable Wallet Version 0.50.1",
-      "url": "https://github.com/horizontalsystems/unstoppable-wallet-android/releases/tag/0.50.1",
-      "publisher": "Horizontal Systems",
-      "published_at": "2026-08-27",
-      "accessed_at": "2026-08-30",
-      "reliability": "high",
-      "claim_scope": "event",
-      "is_primary": true,
-      "notes": "Official Unstoppable Wallet Android GitHub release with packaged APK artifacts."
     }
   ]
 }

@@ -16,24 +16,7 @@
   },
   "events": {
     "mode": "inline",
-    "records": [
-      {
-        "affected_product_ids": [
-          "wlr_prod_000121"
-        ],
-        "confidence": "high",
-        "description": "The official AirGap Wallet repository published v3.34.4 on 2026-03-26 with an Android APK and changes including a Coreum-to-TX Chain rebrand, transaction-history search, balance-loading improvements, camera-permission handling, an RSR contract update, and Kusama/Polkadot explorer fixes.",
-        "entity_id": "wlr_ent_000072",
-        "event_date": "2026-03-26",
-        "event_date_basis": "release",
-        "event_status_effect": "active",
-        "event_type": "other",
-        "id": "wlr_ev_000195",
-        "is_major_event": false,
-        "product_id": "wlr_prod_000121",
-        "title": "AirGap Wallet v3.34.4 released"
-      }
-    ]
+    "records": []
   },
   "evidence": {
     "mode": "inline",
@@ -69,22 +52,6 @@
         "source_type": "official_statement",
         "title": "Arculus Cold Storage Wallet",
         "url": "https://www.getarculus.com/products/cold-storage-wallet/"
-      },
-      {
-        "accessed_at": "2026-08-30",
-        "claim_scope": "event",
-        "entity_id": "wlr_ent_000072",
-        "event_id": "wlr_ev_000195",
-        "id": "wlr_src_000464",
-        "is_primary": true,
-        "notes": "Official AirGap Wallet GitHub release with Android APK artifact.",
-        "product_id": "wlr_prod_000121",
-        "published_at": "2026-03-26",
-        "publisher": "AirGap",
-        "reliability": "high",
-        "source_type": "release_notes",
-        "title": "AirGap Wallet v3.34.4",
-        "url": "https://github.com/airgap-it/airgap-wallet/releases/tag/v3.34.4"
       }
     ]
   },

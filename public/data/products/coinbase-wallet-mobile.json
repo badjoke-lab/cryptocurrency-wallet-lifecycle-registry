@@ -67,22 +67,6 @@
       "event_status_effect": "active",
       "is_major_event": true,
       "notes": "This is a shutdown of the legacy/classic experience, not a shutdown of the continuing wallet product. Coinbase says there is nothing to transfer or sign merely to continue in the updated wallet. Some legacy networks are not supported in Base App and may require importing the same recovery phrase into another compatible wallet."
-    },
-    {
-      "id": "wlr_ev_000197",
-      "entity_id": "wlr_ent_000076",
-      "product_id": "wlr_prod_000125",
-      "affected_product_ids": [
-        "wlr_prod_000125"
-      ],
-      "event_type": "product_announced",
-      "event_date": "2022-07-04",
-      "event_date_basis": "announcement",
-      "title": "Nightly Wallet introduced publicly",
-      "description": "Nightly first-party 2022-07-04 introduction presented Nightly Wallet as the first part of the Nightly ecosystem and described its multichain wallet functionality. The source says the extension was live in the Chrome Web Store but not yet public, so this record is an announcement/introduction event and does not infer the later public launch date.",
-      "confidence": "high",
-      "event_status_effect": "active",
-      "is_major_event": true
     }
   ],
   "evidence": [
@@ -165,22 +149,6 @@
       "claim_scope": "rebrand",
       "is_primary": true,
       "notes": "Current Coinbase distribution page says Coinbase Wallet is now Base App, existing users do not need a new app, and Base App is distributed on iOS and Android. It separately exposes the Coinbase Wallet browser extension, which is outside wlr_prod_000125's mobile boundary."
-    },
-    {
-      "id": "wlr_src_000466",
-      "entity_id": "wlr_ent_000076",
-      "product_id": "wlr_prod_000125",
-      "event_id": "wlr_ev_000197",
-      "source_type": "official_blog",
-      "title": "Hello World! Nightly Wallet",
-      "url": "https://nightly.app/blog/hello-world-nightly-wallet",
-      "publisher": "Nightly",
-      "published_at": "2022-07-04",
-      "accessed_at": "2026-08-30",
-      "reliability": "high",
-      "claim_scope": "event",
-      "is_primary": true,
-      "notes": "First-party Nightly introduction. It documents the wallet and explicitly says the extension was not yet public, so no launch date is inferred from this source."
     }
   ]
 }
