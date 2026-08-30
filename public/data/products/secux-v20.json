@@ -44,22 +44,6 @@
       "event_status_effect": "active",
       "is_major_event": true,
       "notes": "The retrospective provides January 2019 month precision but no exact day, so WLR preserves month precision."
-    },
-    {
-      "id": "wlr_ev_000194",
-      "entity_id": "wlr_ent_000071",
-      "product_id": "wlr_prod_000120",
-      "affected_product_ids": [
-        "wlr_prod_000120"
-      ],
-      "event_type": "other",
-      "event_date": "2026-08-27",
-      "event_date_basis": "release",
-      "title": "Blockstream Green 3.5.3 released",
-      "description": "The official Blockstream Green desktop repository published release 3.5.3 on 2026-08-27 with macOS, Linux, and Windows artifacts plus fixes for login hangs, account-loading crashes, payment-sync crashes, macOS HID handling, and concurrent Jade requests.",
-      "confidence": "high",
-      "event_status_effect": "active",
-      "is_major_event": false
     }
   ],
   "evidence": [
@@ -94,22 +78,6 @@
       "claim_scope": "event",
       "is_primary": true,
       "notes": "First-party retrospective states SecuX's first official sale took place at CES Las Vegas in January 2019, with the V20 sold to its first customer."
-    },
-    {
-      "id": "wlr_src_000463",
-      "entity_id": "wlr_ent_000071",
-      "product_id": "wlr_prod_000120",
-      "event_id": "wlr_ev_000194",
-      "source_type": "release_notes",
-      "title": "Blockstream Green Release 3.5.3",
-      "url": "https://github.com/Blockstream/green_qt/releases/tag/release_3.5.3",
-      "publisher": "Blockstream",
-      "published_at": "2026-08-27",
-      "accessed_at": "2026-08-30",
-      "reliability": "high",
-      "claim_scope": "event",
-      "is_primary": true,
-      "notes": "Official Blockstream Green GitHub release with packaged desktop artifacts."
     }
   ]
 }

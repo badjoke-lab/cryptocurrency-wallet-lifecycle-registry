@@ -24,8 +24,8 @@
   "record_counts": {
     "native": {
       "entities": 101,
-      "events": 198,
-      "evidence": 467,
+      "events": 195,
+      "evidence": 464,
       "product_records": 150,
       "products": 150,
       "wallet_records": 101

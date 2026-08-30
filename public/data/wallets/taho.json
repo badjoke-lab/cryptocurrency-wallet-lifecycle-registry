@@ -68,17 +68,17 @@
       "notes": "This is a continuity/rebrand event, not a new wallet or browser-extension launch. The first-party announcement states that Tally Ho is now Taho and that the wallet lineage began in 2021."
     },
     {
-      "id": "wlr_ev_000198",
+      "id": "wlr_ev_000193",
       "entity_id": "wlr_ent_000087",
       "product_id": "wlr_prod_000136",
       "affected_product_ids": [
         "wlr_prod_000136"
       ],
       "event_type": "other",
-      "event_date": "2026-01-26",
-      "event_date_basis": "announcement",
-      "title": "Xverse launched Lightning payments through Sati",
-      "description": "Xverse announced on 2026-01-26 that Lightning Network payments had launched in partnership with Sati and were available from the Xverse web wallet, while the user main Bitcoin wallet remained self-custodial.",
+      "event_date": "2026-01-19",
+      "event_date_basis": "release",
+      "title": "Taho Wallet extension v0.66.0 released",
+      "description": "The official Taho Wallet extension repository published v0.66.0 on 2026-01-19 with a Chrome extension artifact and release notes covering swap updates, balance lookup fixes, and maintenance changes.",
       "confidence": "high",
       "event_status_effect": "active",
       "is_major_event": false
@@ -134,20 +134,20 @@
       "notes": "First-party announcement states that Tally Ho is now Taho and describes the existing wallet lineage as beginning in 2021."
     },
     {
-      "id": "wlr_src_000467",
+      "id": "wlr_src_000462",
       "entity_id": "wlr_ent_000087",
       "product_id": "wlr_prod_000136",
-      "event_id": "wlr_ev_000198",
-      "source_type": "official_blog",
-      "title": "Xverse Gets a Lightning Fast Upgrade in Partnership With Sati",
-      "url": "https://www.xverse.app/blog/lightning-network-on-xverse",
-      "publisher": "Xverse",
-      "published_at": "2026-01-26",
+      "event_id": "wlr_ev_000193",
+      "source_type": "release_notes",
+      "title": "Taho Wallet extension v0.66.0",
+      "url": "https://github.com/tahowallet/extension/releases/tag/v0.66.0",
+      "publisher": "Taho Wallet",
+      "published_at": "2026-01-19",
       "accessed_at": "2026-08-30",
       "reliability": "high",
       "claim_scope": "event",
       "is_primary": true,
-      "notes": "First-party Xverse announcement explicitly states that Lightning Network payments launched through the Sati partnership."
+      "notes": "Official Taho Wallet GitHub release with packaged Chrome extension artifact."
     }
   ]
 }

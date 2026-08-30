@@ -3923,10 +3923,10 @@
   },
   {
     "id": "wlr_ev_000193",
-    "entity_id": "wlr_ent_000069",
-    "product_id": "wlr_prod_000118",
+    "entity_id": "wlr_ent_000087",
+    "product_id": "wlr_prod_000136",
     "affected_product_ids": [
-      "wlr_prod_000118"
+      "wlr_prod_000136"
     ],
     "event_type": "other",
     "event_date": "2026-01-19",
@@ -3938,59 +3938,11 @@
     "is_major_event": false
   },
   {
-    "id": "wlr_ev_000194",
-    "entity_id": "wlr_ent_000071",
-    "product_id": "wlr_prod_000120",
-    "affected_product_ids": [
-      "wlr_prod_000120"
-    ],
-    "event_type": "other",
-    "event_date": "2026-08-27",
-    "event_date_basis": "release",
-    "title": "Blockstream Green 3.5.3 released",
-    "description": "The official Blockstream Green desktop repository published release 3.5.3 on 2026-08-27 with macOS, Linux, and Windows artifacts plus fixes for login hangs, account-loading crashes, payment-sync crashes, macOS HID handling, and concurrent Jade requests.",
-    "confidence": "high",
-    "event_status_effect": "active",
-    "is_major_event": false
-  },
-  {
-    "id": "wlr_ev_000195",
-    "entity_id": "wlr_ent_000072",
-    "product_id": "wlr_prod_000121",
-    "affected_product_ids": [
-      "wlr_prod_000121"
-    ],
-    "event_type": "other",
-    "event_date": "2026-03-26",
-    "event_date_basis": "release",
-    "title": "AirGap Wallet v3.34.4 released",
-    "description": "The official AirGap Wallet repository published v3.34.4 on 2026-03-26 with an Android APK and changes including a Coreum-to-TX Chain rebrand, transaction-history search, balance-loading improvements, camera-permission handling, an RSR contract update, and Kusama/Polkadot explorer fixes.",
-    "confidence": "high",
-    "event_status_effect": "active",
-    "is_major_event": false
-  },
-  {
-    "id": "wlr_ev_000196",
-    "entity_id": "wlr_ent_000073",
-    "product_id": "wlr_prod_000122",
-    "affected_product_ids": [
-      "wlr_prod_000122"
-    ],
-    "event_type": "other",
-    "event_date": "2026-08-27",
-    "event_date_basis": "release",
-    "title": "Unstoppable Wallet Android 0.50.1 released",
-    "description": "The official Horizontal Systems Unstoppable Wallet Android repository published version 0.50.1 on 2026-08-27 with GitHub and Google Play APK artifacts, providing dated first-party evidence of continuing wallet maintenance.",
-    "confidence": "high",
-    "event_status_effect": "active",
-    "is_major_event": false
-  },
-  {
     "id": "wlr_ev_000197",
-    "entity_id": "wlr_ent_000076",
-    "product_id": "wlr_prod_000125",
+    "entity_id": "wlr_ent_000089",
+    "product_id": "wlr_prod_000138",
     "affected_product_ids": [
-      "wlr_prod_000125"
+      "wlr_prod_000138"
     ],
     "event_type": "product_announced",
     "event_date": "2022-07-04",
@@ -4003,11 +3955,9 @@
   },
   {
     "id": "wlr_ev_000198",
-    "entity_id": "wlr_ent_000087",
-    "product_id": "wlr_prod_000136",
-    "affected_product_ids": [
-      "wlr_prod_000136"
-    ],
+    "entity_id": "wlr_ent_000020",
+    "product_id": null,
+    "affected_product_ids": [],
     "event_type": "other",
     "event_date": "2026-01-26",
     "event_date_basis": "announcement",
