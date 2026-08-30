@@ -22,7 +22,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000121"
+        ],
+        "confidence": "high",
+        "description": "Arculus official update documentation identified Wallet 3.12.x as the current release by 2026-08-23 and listed 3.12.0 features. The source publication date is used as a conservative discovery date and does not assert that 3.12.0 itself was released on that day.",
+        "entity_id": "wlr_ent_000072",
+        "event_date": "2026-08-23",
+        "event_date_basis": "discovery",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000202",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000121",
+        "title": "Arculus documented Wallet 3.12.x as the current release"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -42,6 +59,22 @@
         "source_type": "official_statement",
         "title": "Arculus Cold Storage Wallet",
         "url": "https://www.getarculus.com/products/cold-storage-wallet/"
+      },
+      {
+        "accessed_at": "2026-08-30",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000072",
+        "event_id": "wlr_ev_000202",
+        "id": "wlr_src_000471",
+        "is_primary": true,
+        "notes": "First-party support documentation identifies 3.12.x as the current release; publication date is used only as discovery chronology.",
+        "product_id": "wlr_prod_000121",
+        "published_at": "2026-08-23",
+        "publisher": "Arculus",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Arculus Wallet New Features",
+        "url": "https://support.arculus.co/hc/en-us/articles/38668276529687-Arculus-Wallet-New-Features"
       }
     ]
   },

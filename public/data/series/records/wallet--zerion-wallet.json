@@ -16,7 +16,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000097"
+        ],
+        "confidence": "high",
+        "description": "Zerion announced on 2026-01-08 that TRON was live in Zerion Wallet, enabling users to buy TRX and TRC-20 USDT and send or store TRON assets alongside the wallet other supported chains.",
+        "entity_id": "wlr_ent_000048",
+        "event_date": "2026-01-08",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000201",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000097",
+        "title": "Zerion Wallet added TRON support"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -68,6 +85,22 @@
         "source_type": "official_statement",
         "title": "Download Zerion",
         "url": "https://www.zerion.io/download"
+      },
+      {
+        "accessed_at": "2026-08-30",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000048",
+        "event_id": "wlr_ev_000201",
+        "id": "wlr_src_000470",
+        "is_primary": true,
+        "notes": "First-party Zerion announcement states TRON is live in Zerion Wallet.",
+        "product_id": "wlr_prod_000097",
+        "published_at": "2026-01-08",
+        "publisher": "Zerion",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Zerion Wallet Integrates TRON to Support the Mass Adoption of Stablecoin Payments",
+        "url": "https://zerion.io/blog/zerion-wallet-integrates-tron/"
       }
     ]
   },

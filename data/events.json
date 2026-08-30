@@ -3982,5 +3982,82 @@
     "event_status_effect": "active",
     "is_major_event": false,
     "id": "wlr_ev_000199"
+  },
+  {
+    "id": "wlr_ev_000200",
+    "entity_id": "wlr_ent_000100",
+    "product_id": "wlr_prod_000149",
+    "affected_product_ids": [
+      "wlr_prod_000149"
+    ],
+    "event_type": "other",
+    "event_date": "2023-10-09",
+    "event_date_basis": "release",
+    "title": "Prokey Optimum firmware v1.10.5 released",
+    "description": "The official Prokey Optimum firmware repository published firmware v1.10.5 on 2023-10-09 with support for OKChain Token, providing dated first-party lifecycle evidence for the Prokey Optimum hardware wallet.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000201",
+    "entity_id": "wlr_ent_000048",
+    "product_id": "wlr_prod_000097",
+    "affected_product_ids": [
+      "wlr_prod_000097"
+    ],
+    "event_type": "other",
+    "event_date": "2026-01-08",
+    "event_date_basis": "announcement",
+    "title": "Zerion Wallet added TRON support",
+    "description": "Zerion announced on 2026-01-08 that TRON was live in Zerion Wallet, enabling users to buy TRX and TRC-20 USDT and send or store TRON assets alongside the wallet other supported chains.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000202",
+    "entity_id": "wlr_ent_000072",
+    "product_id": "wlr_prod_000121",
+    "affected_product_ids": [
+      "wlr_prod_000121"
+    ],
+    "event_type": "other",
+    "event_date": "2026-08-23",
+    "event_date_basis": "discovery",
+    "title": "Arculus documented Wallet 3.12.x as the current release",
+    "description": "Arculus official update documentation identified Wallet 3.12.x as the current release by 2026-08-23 and listed 3.12.0 features. The source publication date is used as a conservative discovery date and does not assert that 3.12.0 itself was released on that day.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000203",
+    "entity_id": "wlr_ent_000097",
+    "product_id": "wlr_prod_000146",
+    "affected_product_ids": [
+      "wlr_prod_000146"
+    ],
+    "event_type": "other",
+    "event_date": "2026-06-29",
+    "event_date_basis": "announcement",
+    "title": "Casa documented address whitelisting for vaults",
+    "description": "Casa published first-party documentation on 2026-06-29 describing address whitelisting as an available security feature that restricts outgoing vault transactions to pre-approved addresses and applies across enabled vaults.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000204",
+    "entity_id": "wlr_ent_000037",
+    "affected_product_ids": [],
+    "event_type": "other",
+    "event_date": "2026-08-21",
+    "event_date_basis": "release",
+    "title": "OneKey Wallet 6.5.2 released",
+    "description": "The official OneKey app monorepo published OneKey Wallet 6.5.2 on 2026-08-21 with signed packaged wallet builds across Android and desktop platforms. Current canonical products model OneKey Pro hardware but not the software app, so this lifecycle event is intentionally entity-level and is not attached to OneKey Pro.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
   }
 ]
