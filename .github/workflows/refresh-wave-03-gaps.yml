@@ -1,0 +1,45 @@
+name: Refresh Wave 03 Gaps
+on:
+  push:
+    branches: [research/coverage-recovery-wave-03-refresh]
+permissions:
+  contents: write
+jobs:
+  refresh:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build current gap report
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          ents=json.loads(Path('data/entities.json').read_text())
+          prods=json.loads(Path('data/products.json').read_text())
+          evs=json.loads(Path('data/events.json').read_text())
+          counts={e['id']:0 for e in ents}
+          for ev in evs:
+            eid=ev.get('entity_id')
+            if eid in counts: counts[eid]+=1
+          by_ent={e['id']:e for e in ents}
+          prods_by={e['id']:[] for e in ents}
+          for p in prods:
+            prods_by.setdefault(p['entity_id'],[]).append(p)
+          rows=[]
+          for eid,n in counts.items():
+            if n<=1:
+              e=by_ent[eid]
+              rows.append({'entity_id':eid,'canonical_name':e['canonical_name'],'slug':e['slug'],'status':e['status'],'event_count':n,'products':[{'product_id':p['id'],'product_name':p['product_name'],'status':p['status'],'launch_date':p.get('launch_date'),'support_status':p.get('support_status')} for p in prods_by.get(eid,[])]})
+          rows.sort(key=lambda r:(r['event_count'],r['canonical_name'].lower()))
+          out={'generated_from':'e2f9d62e88b415146d3ac94760337edf12ae8616','zero_event_count':sum(1 for r in rows if r['event_count']==0),'one_event_count':sum(1 for r in rows if r['event_count']==1),'targets':rows}
+          Path('data-staging/coverage/current-wave-03-gaps.json').write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n')
+          print(json.dumps(out,ensure_ascii=False))
+          PY
+      - name: Commit report
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data-staging/coverage/current-wave-03-gaps.json
+          git commit -m 'Refresh current Wave 03 coverage gaps'
+          git push origin HEAD:research/coverage-recovery-wave-03-refresh
