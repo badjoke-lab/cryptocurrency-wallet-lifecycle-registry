@@ -12,6 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build current gap report
         run: |
+          mkdir -p data-staging/coverage
           python - <<'PY'
           import json
           from pathlib import Path
