@@ -76,6 +76,22 @@
         "user_actions_required": [
           "reconfigure"
         ]
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000062"
+        ],
+        "confidence": "high",
+        "description": "The official WalletWasabi repository published Wasabi Wallet v2.8.2 on 2026-08-29 with signed release artifacts for supported desktop platforms, providing dated first-party evidence of continuing wallet maintenance.",
+        "entity_id": "wlr_ent_000022",
+        "event_date": "2026-08-29",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000199",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000062",
+        "title": "Wasabi Wallet v2.8.2 released"
       }
     ]
   },
@@ -147,6 +163,22 @@
         "source_type": "official_statement",
         "title": "Wasabi CoinJoin coordinator configuration",
         "url": "https://docs.wasabiwallet.io/using-wasabi/CoinJoin.html"
+      },
+      {
+        "accessed_at": "2026-08-30",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000022",
+        "event_id": "wlr_ev_000199",
+        "id": "wlr_src_000468",
+        "is_primary": true,
+        "notes": "Official WalletWasabi GitHub release published 2026-08-29 with signed packaged artifacts.",
+        "product_id": "wlr_prod_000062",
+        "published_at": "2026-08-29",
+        "publisher": "WalletWasabi",
+        "reliability": "high",
+        "source_type": "release_notes",
+        "title": "Wasabi Wallet v2.8.2",
+        "url": "https://github.com/WalletWasabi/WalletWasabi/releases/tag/v2.8.2"
       }
     ]
   },

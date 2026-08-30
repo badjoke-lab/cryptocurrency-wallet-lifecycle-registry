@@ -8067,5 +8067,21 @@
     "claim_scope": "event",
     "is_primary": true,
     "notes": "First-party Xverse announcement explicitly states that Lightning Network payments launched through the Sati partnership."
+  },
+  {
+    "entity_id": "wlr_ent_000022",
+    "product_id": "wlr_prod_000062",
+    "source_type": "release_notes",
+    "title": "Wasabi Wallet v2.8.2",
+    "url": "https://github.com/WalletWasabi/WalletWasabi/releases/tag/v2.8.2",
+    "publisher": "WalletWasabi",
+    "published_at": "2026-08-29",
+    "accessed_at": "2026-08-30",
+    "reliability": "high",
+    "claim_scope": "event",
+    "is_primary": true,
+    "notes": "Official WalletWasabi GitHub release published 2026-08-29 with signed packaged artifacts.",
+    "id": "wlr_src_000468",
+    "event_id": "wlr_ev_000199"
   }
 ]

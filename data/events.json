@@ -3966,5 +3966,21 @@
     "confidence": "high",
     "event_status_effect": "active",
     "is_major_event": false
+  },
+  {
+    "entity_id": "wlr_ent_000022",
+    "product_id": "wlr_prod_000062",
+    "affected_product_ids": [
+      "wlr_prod_000062"
+    ],
+    "event_type": "other",
+    "event_date": "2026-08-29",
+    "event_date_basis": "release",
+    "title": "Wasabi Wallet v2.8.2 released",
+    "description": "The official WalletWasabi repository published Wasabi Wallet v2.8.2 on 2026-08-29 with signed release artifacts for supported desktop platforms, providing dated first-party evidence of continuing wallet maintenance.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false,
+    "id": "wlr_ev_000199"
   }
 ]
