@@ -16,7 +16,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000146"
+        ],
+        "confidence": "high",
+        "description": "Casa published first-party documentation on 2026-06-29 describing address whitelisting as an available security feature that restricts outgoing vault transactions to pre-approved addresses and applies across enabled vaults.",
+        "entity_id": "wlr_ent_000097",
+        "event_date": "2026-06-29",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000203",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000146",
+        "title": "Casa documented address whitelisting for vaults"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -68,6 +85,22 @@
         "source_type": "official_statement",
         "title": "Getting started with the 3-key vault",
         "url": "https://support.casa.io/knowledge/getting-started-with-the-3-key-vault"
+      },
+      {
+        "accessed_at": "2026-08-30",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000097",
+        "event_id": "wlr_ev_000203",
+        "id": "wlr_src_000472",
+        "is_primary": true,
+        "notes": "First-party Casa documentation describes whitelisting as available for vault transactions.",
+        "product_id": "wlr_prod_000146",
+        "published_at": "2026-06-29",
+        "publisher": "Casa",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Address Whitelisting in Casa",
+        "url": "https://support.casa.io/knowledge/address-whitelisting-in-casa-vaults"
       }
     ]
   },

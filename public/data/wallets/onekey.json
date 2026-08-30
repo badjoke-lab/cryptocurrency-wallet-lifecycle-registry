@@ -43,7 +43,21 @@
       "notes": "Current first-party product material establishes an active purchasable OneKey Pro; initial product launch date remains unresolved."
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000204",
+      "entity_id": "wlr_ent_000037",
+      "affected_product_ids": [],
+      "event_type": "other",
+      "event_date": "2026-08-21",
+      "event_date_basis": "release",
+      "title": "OneKey Wallet 6.5.2 released",
+      "description": "The official OneKey app monorepo published OneKey Wallet 6.5.2 on 2026-08-21 with signed packaged wallet builds across Android and desktop platforms. Current canonical products model OneKey Pro hardware but not the software app, so this lifecycle event is intentionally entity-level and is not attached to OneKey Pro.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000219",
@@ -92,6 +106,21 @@
       "claim_scope": "support_status",
       "is_primary": true,
       "notes": "Official continuously maintained OneKey Pro firmware log includes 2026 releases through v4.21.0, directly supporting current maintenance."
+    },
+    {
+      "id": "wlr_src_000473",
+      "entity_id": "wlr_ent_000037",
+      "event_id": "wlr_ev_000204",
+      "source_type": "release_notes",
+      "title": "OneKey Wallet 6.5.2",
+      "url": "https://github.com/OneKeyHQ/app-monorepo/releases/tag/v6.5.2",
+      "publisher": "OneKey",
+      "published_at": "2026-08-21",
+      "accessed_at": "2026-08-30",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Official OneKey app monorepo release with packaged Android and desktop wallet builds; intentionally entity-level in WLR."
     }
   ]
 }

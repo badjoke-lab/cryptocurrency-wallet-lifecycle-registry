@@ -49,7 +49,24 @@
       "notes": "The 2022-05-26 launch establishes the mobile wallet lineage. Zerion's later browser extension has its own 2023 release lifecycle and is intentionally not collapsed into this mobile product."
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000201",
+      "entity_id": "wlr_ent_000048",
+      "product_id": "wlr_prod_000097",
+      "affected_product_ids": [
+        "wlr_prod_000097"
+      ],
+      "event_type": "other",
+      "event_date": "2026-01-08",
+      "event_date_basis": "announcement",
+      "title": "Zerion Wallet added TRON support",
+      "description": "Zerion announced on 2026-01-08 that TRON was live in Zerion Wallet, enabling users to buy TRX and TRC-20 USDT and send or store TRON assets alongside the wallet other supported chains.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000241",
@@ -98,6 +115,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "The first-party Zerion download page currently offers the mobile wallet on iOS and Android. This supports current mobile availability review without inferring launch timing."
+    },
+    {
+      "id": "wlr_src_000470",
+      "entity_id": "wlr_ent_000048",
+      "product_id": "wlr_prod_000097",
+      "event_id": "wlr_ev_000201",
+      "source_type": "official_blog",
+      "title": "Zerion Wallet Integrates TRON to Support the Mass Adoption of Stablecoin Payments",
+      "url": "https://zerion.io/blog/zerion-wallet-integrates-tron/",
+      "publisher": "Zerion",
+      "published_at": "2026-01-08",
+      "accessed_at": "2026-08-30",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party Zerion announcement states TRON is live in Zerion Wallet."
     }
   ]
 }

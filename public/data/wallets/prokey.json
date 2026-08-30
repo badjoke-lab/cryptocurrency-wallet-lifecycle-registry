@@ -51,7 +51,24 @@
       "notes": "First-party launch article explicitly launches Prokey Optimum on 2020-07-02; the current product page offers it for purchase. Support status remains conservative `unknown`."
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000200",
+      "entity_id": "wlr_ent_000100",
+      "product_id": "wlr_prod_000149",
+      "affected_product_ids": [
+        "wlr_prod_000149"
+      ],
+      "event_type": "other",
+      "event_date": "2023-10-09",
+      "event_date_basis": "release",
+      "title": "Prokey Optimum firmware v1.10.5 released",
+      "description": "The official Prokey Optimum firmware repository published firmware v1.10.5 on 2023-10-09 with support for OKChain Token, providing dated first-party lifecycle evidence for the Prokey Optimum hardware wallet.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000345",
@@ -84,6 +101,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Current first-party product page offers Prokey Optimum for sale and states private keys remain offline on the hardware device."
+    },
+    {
+      "id": "wlr_src_000469",
+      "entity_id": "wlr_ent_000100",
+      "product_id": "wlr_prod_000149",
+      "event_id": "wlr_ev_000200",
+      "source_type": "release_notes",
+      "title": "Prokey Firmware v1.10.5",
+      "url": "https://github.com/prokey-io/prokey-optimum-firmware/releases/tag/v1.10.5",
+      "publisher": "Prokey",
+      "published_at": "2023-10-09",
+      "accessed_at": "2026-08-30",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Official Prokey Optimum firmware GitHub release."
     }
   ]
 }
