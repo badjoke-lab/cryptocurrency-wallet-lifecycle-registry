@@ -9,22 +9,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Resolve exact target identities
+      - name: Audit all Wave 03 identities
         run: |
           python3 - <<'PY'
           import json
-          E=json.load(open('data/entities.json')); P=json.load(open('data/products.json'))
-          em={e['id']:e for e in E}
-          needles=['blockstream','green','airgap','unstoppable','taho','nightly','xverse']
-          print('NAME MATCHES')
-          for p in P:
-            text=' '.join(str(p.get(k,'')) for k in ('slug','product_name','official_url','source_code_url')).lower()
-            if any(n in text for n in needles):
-              e=em[p['entity_id']]
-              print(p['id'],p['entity_id'],e.get('slug'),e.get('canonical_name'),'|',p.get('slug'),p.get('product_name'))
-          print('OLD IDS 118-122,125,136')
-          for p in P:
-            if p['id'] in {'wlr_prod_000118','wlr_prod_000119','wlr_prod_000120','wlr_prod_000121','wlr_prod_000122','wlr_prod_000125','wlr_prod_000136'}:
-              e=em[p['entity_id']]
-              print(p['id'],p['entity_id'],e.get('slug'),e.get('canonical_name'),'|',p.get('slug'),p.get('product_name'))
+          E=json.load(open('data/entities.json')); P=json.load(open('data/products.json')); V=json.load(open('data/events.json')); S=json.load(open('data/evidence.json'))
+          em={e['id']:e for e in E}; pm={p['id']:p for p in P}
+          print('WAVE03 181-198')
+          for v in V:
+            try:n=int(v['id'].split('_')[-1])
+            except:continue
+            if 181 <= n <= 198:
+              e=em.get(v.get('entity_id'),{}); p=pm.get(v.get('product_id'),{}) if v.get('product_id') else {}
+              print(v['id'],'ENTITY',v.get('entity_id'),e.get('canonical_name'),'PRODUCT',v.get('product_id'),p.get('product_name'),'TITLE',v.get('title'))
+          print('ENTITY LEVEL EVENT EXAMPLES')
+          count=0
+          for v in V:
+            if not v.get('product_id'):
+              print(v['id'],v.get('entity_id'),v.get('affected_product_ids'),v.get('title')); count+=1
+              if count>=10:break
           PY
