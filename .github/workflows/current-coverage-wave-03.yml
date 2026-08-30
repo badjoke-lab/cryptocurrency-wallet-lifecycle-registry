@@ -9,6 +9,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Current canonical coverage
+      - name: Audit promoted identity mappings
         run: |
-          python3 scripts/report_coverage.py --json
+          python3 - <<'PY'
+          import json
+          E=json.load(open('data/entities.json'))
+          P=json.load(open('data/products.json'))
+          V=json.load(open('data/events.json'))
+          S=json.load(open('data/evidence.json'))
+          target_names=['Taho','Blockstream Green','AirGap','Unstoppable','Nightly','Xverse','Wasabi']
+          print('TARGET ENTITIES')
+          for e in E:
+            if any(x.lower() in (e.get('canonical_name','')+' '+e.get('slug','')).lower() for x in target_names):
+              print(e['id'],e.get('slug'),e.get('canonical_name'))
+              for p in P:
+                if p.get('entity_id')==e['id']:
+                  print(' PRODUCT',p['id'],p.get('slug'),p.get('product_name'))
+          print('PROMOTED EVENTS')
+          for v in V:
+            if v['id'] in {f'wlr_ev_{n:06d}' for n in range(193,199)}:
+              print(v['id'],v.get('entity_id'),v.get('product_id'),v.get('title'))
+          print('PROMOTED EVIDENCE')
+          for s in S:
+            if s.get('event_id') in {f'wlr_ev_{n:06d}' for n in range(193,199)}:
+              print(s['id'],s.get('entity_id'),s.get('product_id'),s.get('event_id'),s.get('url'))
+          PY
