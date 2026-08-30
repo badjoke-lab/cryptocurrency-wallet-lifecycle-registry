@@ -1,0 +1,14 @@
+name: Audit current Wave 03 coverage
+on:
+  push:
+    branches: [audit/current-coverage-wave-03]
+permissions:
+  contents: read
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Current canonical coverage
+        run: |
+          python3 scripts/report_coverage.py --json
