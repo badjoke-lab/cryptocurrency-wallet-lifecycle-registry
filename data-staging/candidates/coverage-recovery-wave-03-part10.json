@@ -1,0 +1,45 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_coverage-recovery-wave-03-part10",
+  "title": "Coverage recovery Wave 03 part 10 — Wasabi lifecycle depth",
+  "review_state": "researching",
+  "notes": "Candidate IDs are provisional. Uses the official WalletWasabi repository release and does not infer the product's original launch date.",
+  "records": {
+    "entities": [],
+    "products": [],
+    "events": [
+      {
+        "id": "wlr_ev_902901",
+        "entity_id": "wlr_ent_000089",
+        "product_id": "wlr_prod_000138",
+        "affected_product_ids": ["wlr_prod_000138"],
+        "event_type": "other",
+        "event_date": "2026-08-29",
+        "event_date_basis": "release",
+        "title": "Wasabi Wallet v2.8.2 released",
+        "description": "The official WalletWasabi repository published Wasabi Wallet v2.8.2 on 2026-08-29 with signed release artifacts for supported desktop platforms, providing dated first-party evidence of continuing wallet maintenance.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": false
+      }
+    ],
+    "evidence": [
+      {
+        "id": "wlr_src_902901",
+        "entity_id": "wlr_ent_000089",
+        "product_id": "wlr_prod_000138",
+        "event_id": "wlr_ev_902901",
+        "source_type": "release_notes",
+        "title": "Wasabi Wallet v2.8.2",
+        "url": "https://github.com/WalletWasabi/WalletWasabi/releases/tag/v2.8.2",
+        "publisher": "WalletWasabi",
+        "published_at": "2026-08-29",
+        "accessed_at": "2026-08-30",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "Official WalletWasabi GitHub release published 2026-08-29 with signed packaged artifacts."
+      }
+    ]
+  }
+}
