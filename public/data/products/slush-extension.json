@@ -49,6 +49,22 @@
       "event_status_effect": "none",
       "is_major_event": true,
       "notes": "WLR uses `rebranded` rather than `merged` because the selected existing wallet product continues through the standard update path under the Slush identity; Stashed functionality is acknowledged in the description without creating an unsupported second canonical product relationship."
+    },
+    {
+      "id": "wlr_ev_000193",
+      "entity_id": "wlr_ent_000069",
+      "product_id": "wlr_prod_000118",
+      "affected_product_ids": [
+        "wlr_prod_000118"
+      ],
+      "event_type": "other",
+      "event_date": "2026-01-19",
+      "event_date_basis": "release",
+      "title": "Taho Wallet extension v0.66.0 released",
+      "description": "The official Taho Wallet extension repository published v0.66.0 on 2026-01-19 with a Chrome extension artifact and release notes covering swap updates, balance lookup fixes, and maintenance changes.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
     }
   ],
   "evidence": [
@@ -99,6 +115,22 @@
       "claim_scope": "support_status",
       "is_primary": true,
       "notes": "Current first-party Slush site distributes the browser extension, web app and mobile apps. Sui first-party documentation identifies Slush as the official wallet replacing Sui Wallet, supporting active maintenance of the extension product."
+    },
+    {
+      "id": "wlr_src_000462",
+      "entity_id": "wlr_ent_000069",
+      "product_id": "wlr_prod_000118",
+      "event_id": "wlr_ev_000193",
+      "source_type": "release_notes",
+      "title": "Taho Wallet extension v0.66.0",
+      "url": "https://github.com/tahowallet/extension/releases/tag/v0.66.0",
+      "publisher": "Taho Wallet",
+      "published_at": "2026-01-19",
+      "accessed_at": "2026-08-30",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Official Taho Wallet GitHub release with packaged Chrome extension artifact."
     }
   ]
 }
