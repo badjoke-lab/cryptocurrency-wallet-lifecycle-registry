@@ -33,6 +33,22 @@
         "notes": "WLR uses `rebranded` rather than `merged` because the selected existing wallet product continues through the standard update path under the Slush identity; Stashed functionality is acknowledged in the description without creating an unsupported second canonical product relationship.",
         "product_id": "wlr_prod_000118",
         "title": "Sui Wallet and Stashed unified under the Slush brand"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000118"
+        ],
+        "confidence": "high",
+        "description": "The official Taho Wallet extension repository published v0.66.0 on 2026-01-19 with a Chrome extension artifact and release notes covering swap updates, balance lookup fixes, and maintenance changes.",
+        "entity_id": "wlr_ent_000069",
+        "event_date": "2026-01-19",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000193",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000118",
+        "title": "Taho Wallet extension v0.66.0 released"
       }
     ]
   },
@@ -102,6 +118,22 @@
         "source_type": "official_statement",
         "title": "Slush",
         "url": "https://slush.app/"
+      },
+      {
+        "accessed_at": "2026-08-30",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000069",
+        "event_id": "wlr_ev_000193",
+        "id": "wlr_src_000462",
+        "is_primary": true,
+        "notes": "Official Taho Wallet GitHub release with packaged Chrome extension artifact.",
+        "product_id": "wlr_prod_000118",
+        "published_at": "2026-01-19",
+        "publisher": "Taho Wallet",
+        "reliability": "high",
+        "source_type": "release_notes",
+        "title": "Taho Wallet extension v0.66.0",
+        "url": "https://github.com/tahowallet/extension/releases/tag/v0.66.0"
       }
     ]
   },

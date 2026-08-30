@@ -50,6 +50,22 @@
         "notes": "This is a shutdown of the legacy/classic experience, not a shutdown of the continuing wallet product. Coinbase says there is nothing to transfer or sign merely to continue in the updated wallet. Some legacy networks are not supported in Base App and may require importing the same recovery phrase into another compatible wallet.",
         "product_id": "wlr_prod_000125",
         "title": "Classic Coinbase Wallet experience closed"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000125"
+        ],
+        "confidence": "high",
+        "description": "Nightly first-party 2022-07-04 introduction presented Nightly Wallet as the first part of the Nightly ecosystem and described its multichain wallet functionality. The source says the extension was live in the Chrome Web Store but not yet public, so this record is an announcement/introduction event and does not infer the later public launch date.",
+        "entity_id": "wlr_ent_000076",
+        "event_date": "2022-07-04",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "product_announced",
+        "id": "wlr_ev_000197",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000125",
+        "title": "Nightly Wallet introduced publicly"
       }
     ]
   },
@@ -151,6 +167,22 @@
         "source_type": "official_statement",
         "title": "Download Base App",
         "url": "https://www.coinbase.com/wallet/downloads"
+      },
+      {
+        "accessed_at": "2026-08-30",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000076",
+        "event_id": "wlr_ev_000197",
+        "id": "wlr_src_000466",
+        "is_primary": true,
+        "notes": "First-party Nightly introduction. It documents the wallet and explicitly says the extension was not yet public, so no launch date is inferred from this source.",
+        "product_id": "wlr_prod_000125",
+        "published_at": "2022-07-04",
+        "publisher": "Nightly",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Hello World! Nightly Wallet",
+        "url": "https://nightly.app/blog/hello-world-nightly-wallet"
       }
     ]
   },
