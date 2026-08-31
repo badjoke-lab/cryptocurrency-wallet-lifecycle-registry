@@ -20,7 +20,7 @@ jobs:
           import json,re
           from pathlib import Path
           expected_entities={
-            'wlr_ent_000058':'Ambire',
+            'wlr_ent_000058':'Ambire Wallet',
             'wlr_ent_000050':'Muun',
             'wlr_ent_000028':'OKX Wallet',
             'wlr_ent_000045':'Ronin Wallet',
