@@ -30,7 +30,7 @@ jobs:
             'wlr_prod_000107':'Ambire Extension',
             'wlr_prod_000099':'Muun Wallet',
             'wlr_prod_000077':'OKX Wallet App',
-            'wlr_prod_000094':'Ronin Wallet',
+            'wlr_prod_000094':'Ronin Wallet Extension',
             'wlr_prod_000096':'Uniswap Wallet',
           }
           entities={x['id']:x for x in json.loads(Path('data/entities.json').read_text())}
