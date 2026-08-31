@@ -1,0 +1,28 @@
+name: Audit Wave 03 Zero Closeout
+on:
+  push:
+    branches: [audit/coverage-recovery-wave-03-zero-closeout]
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify zero-event closeout
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from pathlib import Path
+          entities=json.loads(Path('data/entities.json').read_text())
+          events=json.loads(Path('data/events.json').read_text())
+          counts=Counter(e['entity_id'] for e in events)
+          zero=[(e['id'],e.get('canonical_name')) for e in entities if counts[e['id']]==0]
+          one=[(e['id'],e.get('canonical_name')) for e in entities if counts[e['id']]==1]
+          print('COUNTS',len(entities),len(events))
+          print('ZERO_EVENT_COUNT',len(zero))
+          print('ZERO_EVENT_ENTITIES',zero)
+          print('ONE_EVENT_COUNT',len(one))
+          assert not zero, f'zero-event entities remain: {zero}'
+          PY
