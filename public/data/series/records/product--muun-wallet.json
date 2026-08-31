@@ -22,7 +22,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000099"
+        ],
+        "confidence": "high",
+        "description": "Muun announced the launch of Muun 2.0 on 2021-01-11, describing it as a major iteration of the mobile Bitcoin and Lightning wallet following the earlier Muun 1.0 release.",
+        "entity_id": "wlr_ent_000050",
+        "event_date": "2021-01-11",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000206",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000099",
+        "title": "Muun 2.0 launched"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -58,6 +75,22 @@
         "source_type": "official_statement",
         "title": "Muun Terms of use",
         "url": "https://muun.com/terms_and_conditions.html"
+      },
+      {
+        "accessed_at": "2026-08-30",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000050",
+        "event_id": "wlr_ev_000206",
+        "id": "wlr_src_000475",
+        "is_primary": true,
+        "notes": "First-party Muun announcement explicitly describes the Muun 2.0 launch.",
+        "product_id": "wlr_prod_000099",
+        "published_at": "2021-01-11",
+        "publisher": "Muun",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Announcing Muun 2.0",
+        "url": "https://blog.muun.com/announcing-muun-2-0/"
       }
     ]
   },

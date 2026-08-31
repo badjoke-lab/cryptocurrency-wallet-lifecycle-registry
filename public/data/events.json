@@ -4059,5 +4059,85 @@
     "confidence": "high",
     "event_status_effect": "active",
     "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000205",
+    "entity_id": "wlr_ent_000058",
+    "product_id": "wlr_prod_000107",
+    "affected_product_ids": [
+      "wlr_prod_000107"
+    ],
+    "event_type": "other",
+    "event_date": "2026-03-17",
+    "event_date_basis": "announcement",
+    "title": "Ambire Extension received a major UI update",
+    "description": "Ambire announced on 2026-03-17 that its browser extension received a major UI refresh with a slimmer layout, clearer action buttons, and a redesigned token details page.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000206",
+    "entity_id": "wlr_ent_000050",
+    "product_id": "wlr_prod_000099",
+    "affected_product_ids": [
+      "wlr_prod_000099"
+    ],
+    "event_type": "other",
+    "event_date": "2021-01-11",
+    "event_date_basis": "announcement",
+    "title": "Muun 2.0 launched",
+    "description": "Muun announced the launch of Muun 2.0 on 2021-01-11, describing it as a major iteration of the mobile Bitcoin and Lightning wallet following the earlier Muun 1.0 release.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000207",
+    "entity_id": "wlr_ent_000028",
+    "product_id": "wlr_prod_000077",
+    "affected_product_ids": [
+      "wlr_prod_000077"
+    ],
+    "event_type": "other",
+    "event_date": "2026-04-29",
+    "event_date_basis": "announcement",
+    "title": "OKX Wallet added Pharos mainnet support",
+    "description": "OKX announced on 2026-04-29 that OKX Wallet had completed Pharos mainnet integration from day one, enabling users to manage Pharos assets and interact with ecosystem dApps directly in the wallet.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000208",
+    "entity_id": "wlr_ent_000045",
+    "product_id": "wlr_prod_000094",
+    "affected_product_ids": [
+      "wlr_prod_000094"
+    ],
+    "event_type": "other",
+    "event_date": "2025-12-15",
+    "event_date_basis": "announcement",
+    "title": "Ronin Wallet upgrades added Solana support and new onramps",
+    "description": "Ronin announced on 2025-12-15 that upgrades to the Ronin Wallet browser extension and mobile apps were live, including a refreshed interface, additional fiat-to-RON onramps, and Solana deposit support.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000209",
+    "entity_id": "wlr_ent_000047",
+    "product_id": "wlr_prod_000096",
+    "affected_product_ids": [
+      "wlr_prod_000096"
+    ],
+    "event_type": "other",
+    "event_date": "2026-01-15",
+    "event_date_basis": "announcement",
+    "title": "Uniswap Wallet added X Layer support",
+    "description": "Uniswap announced on 2026-01-15 that X Layer support was live across the Uniswap Protocol, Web App, Wallet, and Trading API, allowing Uniswap Wallet users to access the network directly.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
   }
 ]

@@ -22,7 +22,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000077"
+        ],
+        "confidence": "high",
+        "description": "OKX announced on 2026-04-29 that OKX Wallet had completed Pharos mainnet integration from day one, enabling users to manage Pharos assets and interact with ecosystem dApps directly in the wallet.",
+        "entity_id": "wlr_ent_000028",
+        "event_date": "2026-04-29",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000207",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000077",
+        "title": "OKX Wallet added Pharos mainnet support"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -58,6 +75,22 @@
         "source_type": "official_statement",
         "title": "How do I download / update the OKX Wallet app?",
         "url": "https://www.okx.com/en-gb/help/okx-wallet-download"
+      },
+      {
+        "accessed_at": "2026-08-30",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000028",
+        "event_id": "wlr_ev_000207",
+        "id": "wlr_src_000476",
+        "is_primary": true,
+        "notes": "First-party OKX announcement states wallet integration was completed from Pharos mainnet day one.",
+        "product_id": "wlr_prod_000077",
+        "published_at": "2026-04-29",
+        "publisher": "OKX",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Announcement on OKX Wallet's Support for Pharos Mainnet Launch",
+        "url": "https://www.okx.com/en-us/help/okx-wallet-pharos"
       }
     ]
   },

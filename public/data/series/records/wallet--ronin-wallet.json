@@ -16,7 +16,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000094"
+        ],
+        "confidence": "high",
+        "description": "Ronin announced on 2025-12-15 that upgrades to the Ronin Wallet browser extension and mobile apps were live, including a refreshed interface, additional fiat-to-RON onramps, and Solana deposit support.",
+        "entity_id": "wlr_ent_000045",
+        "event_date": "2025-12-15",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000208",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000094",
+        "title": "Ronin Wallet upgrades added Solana support and new onramps"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -68,6 +85,22 @@
         "source_type": "official_statement",
         "title": "Ronin Wallet",
         "url": "https://wallet.roninchain.com/"
+      },
+      {
+        "accessed_at": "2026-08-30",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000045",
+        "event_id": "wlr_ev_000208",
+        "id": "wlr_src_000477",
+        "is_primary": true,
+        "notes": "First-party Ronin announcement covering live wallet upgrades.",
+        "product_id": "wlr_prod_000094",
+        "published_at": "2025-12-15",
+        "publisher": "Ronin",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Ronin Wallet Upgrades are LIVE!",
+        "url": "https://blog.roninchain.com/p/ronin-wallet-upgrades-are-live"
       }
     ]
   },

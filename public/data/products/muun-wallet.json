@@ -31,7 +31,24 @@
     "last_verified_at": "2026-08-19",
     "notes": "First-party launch material establishes the Android product lineage on 2018-10-10; first-party iOS release material establishes iOS addition on 2019-10-21."
   },
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000206",
+      "entity_id": "wlr_ent_000050",
+      "product_id": "wlr_prod_000099",
+      "affected_product_ids": [
+        "wlr_prod_000099"
+      ],
+      "event_type": "other",
+      "event_date": "2021-01-11",
+      "event_date_basis": "announcement",
+      "title": "Muun 2.0 launched",
+      "description": "Muun announced the launch of Muun 2.0 on 2021-01-11, describing it as a major iteration of the mobile Bitcoin and Lightning wallet following the earlier Muun 1.0 release.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000246",
@@ -64,6 +81,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Muun's first-party terms state that the only official Muun wallet is the version distributed by Muun through official app stores. This supports continued official product distribution without inferring launch timing."
+    },
+    {
+      "id": "wlr_src_000475",
+      "entity_id": "wlr_ent_000050",
+      "product_id": "wlr_prod_000099",
+      "event_id": "wlr_ev_000206",
+      "source_type": "official_blog",
+      "title": "Announcing Muun 2.0",
+      "url": "https://blog.muun.com/announcing-muun-2-0/",
+      "publisher": "Muun",
+      "published_at": "2021-01-11",
+      "accessed_at": "2026-08-30",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party Muun announcement explicitly describes the Muun 2.0 launch."
     }
   ]
 }
