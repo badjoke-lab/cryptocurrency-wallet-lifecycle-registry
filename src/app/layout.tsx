@@ -27,6 +27,7 @@ const PROJECT_NETWORK=[
   {id:'bir',name:'Bridge Incident Registry',href:'https://bir.badjoke-lab.com/',description:'Registry of bridge incidents and their aftermath.'},
   {id:'mag',name:'Minted & Gone',href:'https://mag.badjoke-lab.com/',description:'Historical archive of NFT marketplaces.'},
   {id:'wlr',name:'Wallet Lifecycle Registry',href:'https://wlr.badjoke-lab.com/',description:'Evidence-backed historical registry of cryptocurrency wallets and products.'},
+  {id:'cclr',name:'Crypto Card Lifecycle Registry',href:'https://badjoke-lab.github.io/crypto-card-lifecycle-registry/',description:'Historical registry of crypto card programs and their underlying payment infrastructure.'},
 ] as const
 
 const websiteJsonLd={
