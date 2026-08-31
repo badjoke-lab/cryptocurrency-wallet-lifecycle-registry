@@ -22,7 +22,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000107"
+        ],
+        "confidence": "high",
+        "description": "Ambire announced on 2026-03-17 that its browser extension received a major UI refresh with a slimmer layout, clearer action buttons, and a redesigned token details page.",
+        "entity_id": "wlr_ent_000058",
+        "event_date": "2026-03-17",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000205",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000107",
+        "title": "Ambire Extension received a major UI update"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -42,6 +59,22 @@
         "source_type": "official_blog",
         "title": "The Ambire Extension Launches Officially",
         "url": "https://blog.ambire.com/ambire-extension-launch/"
+      },
+      {
+        "accessed_at": "2026-08-30",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000058",
+        "event_id": "wlr_ev_000205",
+        "id": "wlr_src_000474",
+        "is_primary": true,
+        "notes": "First-party Ambire product update.",
+        "product_id": "wlr_prod_000107",
+        "published_at": "2026-03-17",
+        "publisher": "Ambire",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "The Ambire Extension Gets a Major UI Update",
+        "url": "https://blog.ambire.com/extension-gets-ui-update/"
       }
     ]
   },

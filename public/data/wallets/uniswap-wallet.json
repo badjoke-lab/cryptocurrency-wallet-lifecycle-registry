@@ -47,7 +47,24 @@
       "notes": "The iOS public launch is exactly dated 2023-04-13; Android was added later and is included in the current platform set."
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000209",
+      "entity_id": "wlr_ent_000047",
+      "product_id": "wlr_prod_000096",
+      "affected_product_ids": [
+        "wlr_prod_000096"
+      ],
+      "event_type": "other",
+      "event_date": "2026-01-15",
+      "event_date_basis": "announcement",
+      "title": "Uniswap Wallet added X Layer support",
+      "description": "Uniswap announced on 2026-01-15 that X Layer support was live across the Uniswap Protocol, Web App, Wallet, and Trading API, allowing Uniswap Wallet users to access the network directly.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000239",
@@ -96,6 +113,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "The first-party Uniswap Wallet site currently presents the self-custody wallet and download paths across iOS, Android, and Chrome. This supports current availability review without inferring launch timing."
+    },
+    {
+      "id": "wlr_src_000478",
+      "entity_id": "wlr_ent_000047",
+      "product_id": "wlr_prod_000096",
+      "event_id": "wlr_ev_000209",
+      "source_type": "official_blog",
+      "title": "Uniswap is Now Live on X Layer",
+      "url": "https://blog.uniswap.org/uniswap-is-now-live-on-x-layer",
+      "publisher": "Uniswap Labs",
+      "published_at": "2026-01-15",
+      "accessed_at": "2026-08-30",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party Uniswap announcement explicitly includes Uniswap Wallet support on X Layer."
     }
   ]
 }

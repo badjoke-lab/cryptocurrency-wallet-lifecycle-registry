@@ -16,7 +16,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000096"
+        ],
+        "confidence": "high",
+        "description": "Uniswap announced on 2026-01-15 that X Layer support was live across the Uniswap Protocol, Web App, Wallet, and Trading API, allowing Uniswap Wallet users to access the network directly.",
+        "entity_id": "wlr_ent_000047",
+        "event_date": "2026-01-15",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000209",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000096",
+        "title": "Uniswap Wallet added X Layer support"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -68,6 +85,22 @@
         "source_type": "official_statement",
         "title": "Uniswap Wallet",
         "url": "https://wallet.uniswap.org/"
+      },
+      {
+        "accessed_at": "2026-08-30",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000047",
+        "event_id": "wlr_ev_000209",
+        "id": "wlr_src_000478",
+        "is_primary": true,
+        "notes": "First-party Uniswap announcement explicitly includes Uniswap Wallet support on X Layer.",
+        "product_id": "wlr_prod_000096",
+        "published_at": "2026-01-15",
+        "publisher": "Uniswap Labs",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Uniswap is Now Live on X Layer",
+        "url": "https://blog.uniswap.org/uniswap-is-now-live-on-x-layer"
       }
     ]
   },
