@@ -29,7 +29,7 @@ jobs:
           expected_products={
             'wlr_prod_000107':'Ambire Extension',
             'wlr_prod_000099':'Muun Wallet',
-            'wlr_prod_000077':'OKX Wallet',
+            'wlr_prod_000077':'OKX Wallet App',
             'wlr_prod_000094':'Ronin Wallet',
             'wlr_prod_000096':'Uniswap Wallet',
           }
