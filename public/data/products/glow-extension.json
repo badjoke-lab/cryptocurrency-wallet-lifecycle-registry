@@ -32,7 +32,24 @@
     "last_verified_at": "2026-08-20",
     "notes": "Selected browser-extension runtime only; iOS and Android products are deferred."
   },
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000211",
+      "entity_id": "wlr_ent_000086",
+      "product_id": "wlr_prod_000135",
+      "affected_product_ids": [
+        "wlr_prod_000135"
+      ],
+      "event_type": "other",
+      "event_date": "2024-08-10",
+      "event_date_basis": "release",
+      "title": "Glow Wallet 1.6.3 added iOS 18 support",
+      "description": "Glow Wallet version 1.6.3 was released on 2024-08-10 with iOS 18 support, providing a dated maintenance lifecycle event for Glow wallet.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000318",
@@ -65,6 +82,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Current first-party Glow download page offers the desktop/browser wallet for Chrome, Edge, Firefox, and Brave. Supports current extension availability review without inferring a launch date."
+    },
+    {
+      "id": "wlr_src_000480",
+      "entity_id": "wlr_ent_000086",
+      "product_id": "wlr_prod_000135",
+      "event_id": "wlr_ev_000211",
+      "source_type": "database_reference",
+      "title": "Glow — Solana Wallet - Version History",
+      "url": "https://apps.apple.com/us/app/glow-solana-wallet/id1599584512?platform=ipad",
+      "publisher": "Apple App Store / Luma Labs, Inc.",
+      "published_at": "2024-08-10",
+      "accessed_at": "2026-08-31",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "App Store version history identifies Glow 1.6.3 on 2024-08-10 with iOS 18 support; candidate app_store_listing normalized to canonical database_reference."
     }
   ]
 }

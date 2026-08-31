@@ -22,7 +22,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000135"
+        ],
+        "confidence": "high",
+        "description": "Glow Wallet version 1.6.3 was released on 2024-08-10 with iOS 18 support, providing a dated maintenance lifecycle event for Glow wallet.",
+        "entity_id": "wlr_ent_000086",
+        "event_date": "2024-08-10",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000211",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000135",
+        "title": "Glow Wallet 1.6.3 added iOS 18 support"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -58,6 +75,22 @@
         "source_type": "official_statement",
         "title": "Glow — Download",
         "url": "https://glow.app/download"
+      },
+      {
+        "accessed_at": "2026-08-31",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000086",
+        "event_id": "wlr_ev_000211",
+        "id": "wlr_src_000480",
+        "is_primary": true,
+        "notes": "App Store version history identifies Glow 1.6.3 on 2024-08-10 with iOS 18 support; candidate app_store_listing normalized to canonical database_reference.",
+        "product_id": "wlr_prod_000135",
+        "published_at": "2024-08-10",
+        "publisher": "Apple App Store / Luma Labs, Inc.",
+        "reliability": "high",
+        "source_type": "database_reference",
+        "title": "Glow — Solana Wallet - Version History",
+        "url": "https://apps.apple.com/us/app/glow-solana-wallet/id1599584512?platform=ipad"
       }
     ]
   },
