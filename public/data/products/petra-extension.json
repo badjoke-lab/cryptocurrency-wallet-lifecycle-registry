@@ -29,7 +29,24 @@
     "last_verified_at": "2026-08-20",
     "notes": "Selected extension boundary only; Petra mobile and Petra Web are deferred as separate runtimes. Initial extension launch date remains unresolved."
   },
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000212",
+      "entity_id": "wlr_ent_000068",
+      "product_id": "wlr_prod_000117",
+      "affected_product_ids": [
+        "wlr_prod_000117"
+      ],
+      "event_type": "other",
+      "event_date": "2026-04-06",
+      "event_date_basis": "release",
+      "title": "Petra Wallet 2.4.0 added perpetual trading",
+      "description": "Petra Wallet version 2.4.0 was released on 2026-04-06 with perpetual trading for eligible users powered by Decibel, providing a dated lifecycle event for Petra.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000282",
@@ -62,6 +79,22 @@
       "claim_scope": "support_status",
       "is_primary": true,
       "notes": "First-party Petra terms explicitly cover the Petra wallet application and browser extension. This evidence confirms the official product boundary; current support-state promotion should remain conservative unless paired with a current distribution surface."
+    },
+    {
+      "id": "wlr_src_000481",
+      "entity_id": "wlr_ent_000068",
+      "product_id": "wlr_prod_000117",
+      "event_id": "wlr_ev_000212",
+      "source_type": "database_reference",
+      "title": "Petra: Aptos Crypto Wallet - Version History",
+      "url": "https://apps.apple.com/au/app/petra-wallet/id6446259840",
+      "publisher": "Apple App Store / Aptos Labs",
+      "published_at": "2026-04-06",
+      "accessed_at": "2026-08-31",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "App Store version history identifies Petra 2.4.0 on 2026-04-06 and its perpetual-trading feature release; candidate app_store_listing normalized to canonical database_reference."
     }
   ]
 }

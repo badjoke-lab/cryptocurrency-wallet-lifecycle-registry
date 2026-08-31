@@ -16,7 +16,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000134"
+        ],
+        "confidence": "high",
+        "description": "Begin Wallet version 2.5.0 was released on 2026-02-23 with new Solana support and Solana swaps through Jupiter, providing a dated lifecycle event for the Begin Wallet mobile product.",
+        "entity_id": "wlr_ent_000085",
+        "event_date": "2026-02-23",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000210",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000134",
+        "title": "Begin Wallet 2.5.0 added Solana support"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -68,6 +85,22 @@
         "source_type": "official_statement",
         "title": "Cardano Wallet - Secure and Open-Source",
         "url": "https://begin.is/cardano-wallet"
+      },
+      {
+        "accessed_at": "2026-08-31",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000085",
+        "event_id": "wlr_ev_000210",
+        "id": "wlr_src_000479",
+        "is_primary": true,
+        "notes": "App Store listing identifies version 2.5.0 and its dated Solana-support release notes; candidate app_store_listing normalized to canonical database_reference.",
+        "product_id": "wlr_prod_000134",
+        "published_at": "2026-02-23",
+        "publisher": "Apple App Store / Begin W UG",
+        "reliability": "high",
+        "source_type": "database_reference",
+        "title": "Begin: Bitcoin Cardano Solana - Version History",
+        "url": "https://apps.apple.com/jp/app/begin-bitcoin-cardano-solana/id1642488837"
       }
     ]
   },

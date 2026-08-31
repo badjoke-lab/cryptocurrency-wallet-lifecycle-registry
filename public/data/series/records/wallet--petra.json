@@ -16,7 +16,24 @@
   },
   "events": {
     "mode": "inline",
-    "records": []
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000117"
+        ],
+        "confidence": "high",
+        "description": "Petra Wallet version 2.4.0 was released on 2026-04-06 with perpetual trading for eligible users powered by Decibel, providing a dated lifecycle event for Petra.",
+        "entity_id": "wlr_ent_000068",
+        "event_date": "2026-04-06",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000212",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000117",
+        "title": "Petra Wallet 2.4.0 added perpetual trading"
+      }
+    ]
   },
   "evidence": {
     "mode": "inline",
@@ -68,6 +85,22 @@
         "source_type": "official_statement",
         "title": "Petra Wallet Terms of Use",
         "url": "https://petra.app/Wallet_Terms.pdf"
+      },
+      {
+        "accessed_at": "2026-08-31",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000068",
+        "event_id": "wlr_ev_000212",
+        "id": "wlr_src_000481",
+        "is_primary": true,
+        "notes": "App Store version history identifies Petra 2.4.0 on 2026-04-06 and its perpetual-trading feature release; candidate app_store_listing normalized to canonical database_reference.",
+        "product_id": "wlr_prod_000117",
+        "published_at": "2026-04-06",
+        "publisher": "Apple App Store / Aptos Labs",
+        "reliability": "high",
+        "source_type": "database_reference",
+        "title": "Petra: Aptos Crypto Wallet - Version History",
+        "url": "https://apps.apple.com/au/app/petra-wallet/id6446259840"
       }
     ]
   },

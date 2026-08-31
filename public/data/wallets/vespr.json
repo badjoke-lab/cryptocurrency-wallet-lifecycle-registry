@@ -47,7 +47,24 @@
       "notes": "Selected mobile runtime only; browser wallet support listed by VESPR is deferred."
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000213",
+      "entity_id": "wlr_ent_000084",
+      "product_id": "wlr_prod_000133",
+      "affected_product_ids": [
+        "wlr_prod_000133"
+      ],
+      "event_type": "other",
+      "event_date": "2026-07-27",
+      "event_date_basis": "release",
+      "title": "VESPR Wallet 4.1.0 released",
+      "description": "VESPR Wallet version 4.1.0 was released on 2026-07-27 with a refreshed interface plus bug fixes and performance improvements, providing a dated lifecycle event for VESPR Mobile.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000313",
@@ -96,6 +113,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Official VESPR GitHub organization identifies VESPR as a non-custodial Cardano wallet available on iOS, Android, and browser extension platforms. This supports current product existence but not an original launch date."
+    },
+    {
+      "id": "wlr_src_000482",
+      "entity_id": "wlr_ent_000084",
+      "product_id": "wlr_prod_000133",
+      "event_id": "wlr_ev_000213",
+      "source_type": "database_reference",
+      "title": "VESPR: Cardano Wallet - Version History",
+      "url": "https://apps.apple.com/us/app/vespr-cardano-wallet/id1565749376",
+      "publisher": "Apple App Store / VESPR",
+      "published_at": "2026-07-27",
+      "accessed_at": "2026-08-31",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "App Store version history identifies VESPR 4.1.0 on 2026-07-27; candidate app_store_listing normalized to canonical database_reference."
     }
   ]
 }
