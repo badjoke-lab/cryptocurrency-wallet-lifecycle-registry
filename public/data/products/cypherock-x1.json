@@ -44,6 +44,22 @@
       "event_status_effect": "active",
       "is_major_event": true,
       "notes": "The source establishes private beta in 2022 only. WLR does not convert this to general availability or infer a more precise date."
+    },
+    {
+      "id": "wlr_ev_000220",
+      "entity_id": "wlr_ent_000073",
+      "product_id": "wlr_prod_000122",
+      "affected_product_ids": [
+        "wlr_prod_000122"
+      ],
+      "event_type": "other",
+      "event_date": "2025-01-20",
+      "event_date_basis": "announcement",
+      "title": "Cypherock X1 documented Solana integration",
+      "description": "Cypherock published a first-party product update on 2025-01-20 documenting Solana integration with the Cypherock X1, expanding the hardware wallet's supported network capabilities beyond its earlier private-beta launch state.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
     }
   ],
   "evidence": [
@@ -78,6 +94,22 @@
       "claim_scope": "event",
       "is_primary": true,
       "notes": "First-party Cypherock history states that Cypherock X1 launched in private beta in 2022."
+    },
+    {
+      "id": "wlr_src_000489",
+      "entity_id": "wlr_ent_000073",
+      "product_id": "wlr_prod_000122",
+      "event_id": "wlr_ev_000220",
+      "source_type": "official_blog",
+      "title": "Cypherock X1: The Best Solana Wallet for Secure $SOL Storage",
+      "url": "https://www.cypherock.com/blogs/post-solana-integrated-with-cypherock-x1",
+      "publisher": "Cypherock",
+      "published_at": "2025-01-20",
+      "accessed_at": "2026-09-01",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party Cypherock article documents Solana integration with Cypherock X1."
     }
   ]
 }

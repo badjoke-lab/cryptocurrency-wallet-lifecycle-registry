@@ -62,6 +62,22 @@
       "confidence": "high",
       "event_status_effect": "active",
       "is_major_event": false
+    },
+    {
+      "id": "wlr_ev_000221",
+      "entity_id": "wlr_ent_000074",
+      "product_id": "wlr_prod_000123",
+      "affected_product_ids": [
+        "wlr_prod_000123"
+      ],
+      "event_type": "other",
+      "event_date": "2026-02-04",
+      "event_date_basis": "release",
+      "title": "SeedSigner 0.8.5 added initial multilingual support",
+      "description": "SeedSigner released version 0.8.5 on 2026-02-04 with its initial localization and multilingual support, Spanish UI support, refreshed UX elements, and basic P2TR address verification, providing a distinct lifecycle milestone before the currently canonical 0.8.7 release.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
     }
   ],
   "evidence": [
@@ -112,6 +128,22 @@
       "claim_scope": "event",
       "is_primary": true,
       "notes": "Official project release notes supporting an ongoing-maintenance lifecycle event."
+    },
+    {
+      "id": "wlr_src_000490",
+      "entity_id": "wlr_ent_000074",
+      "product_id": "wlr_prod_000123",
+      "event_id": "wlr_ev_000221",
+      "source_type": "release_notes",
+      "title": "SeedSigner 0.8.5 — ¡¡SeedSigner EN ESPAÑOL!!",
+      "url": "https://github.com/SeedSigner/seedsigner/releases/tag/0.8.5",
+      "publisher": "SeedSigner",
+      "published_at": "2026-02-04",
+      "accessed_at": "2026-09-01",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Official SeedSigner release documents initial localization/multilanguage support and basic P2TR address verification."
     }
   ]
 }

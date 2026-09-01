@@ -38,6 +38,22 @@
         "is_major_event": true,
         "product_id": "wlr_prod_000126",
         "title": "Core browser extension released"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000126"
+        ],
+        "confidence": "high",
+        "description": "Core's first-party support documentation published on 2025-12-16 documented an available gasless transaction flow in which eligible Avalanche C-Chain transactions can receive AVAX for gas and then be submitted automatically. The publication date is used as discovery chronology rather than inferring an earlier launch date.",
+        "entity_id": "wlr_ent_000077",
+        "event_date": "2025-12-16",
+        "event_date_basis": "discovery",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000223",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000126",
+        "title": "Core documented gasless transactions for the extension"
       }
     ]
   },
@@ -75,6 +91,22 @@
         "source_type": "official_blog",
         "title": "Ava Labs Releases Core, an All-In-One Web3 Command Center for Avalanche",
         "url": "https://medium.com/avalancheavax/ava-labs-releases-core-an-all-in-one-web3-operating-system-for-avalanche-a844eb822887"
+      },
+      {
+        "accessed_at": "2026-09-01",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000077",
+        "event_id": "wlr_ev_000223",
+        "id": "wlr_src_000492",
+        "is_primary": true,
+        "notes": "First-party Core support page documents an available gasless transaction flow; publication date is used conservatively as discovery chronology.",
+        "product_id": "wlr_prod_000126",
+        "published_at": "2025-12-16",
+        "publisher": "Core",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Core extension: How can I enable a Gasless transaction?",
+        "url": "https://support.core.app/en/articles/10840320-core-extension-how-can-i-enable-a-gasless-transaction"
       }
     ]
   },

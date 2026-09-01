@@ -12,8 +12,8 @@
   "registry": {
     "entities": 101,
     "products": 150,
-    "events": 215,
-    "evidence": 484,
+    "events": 220,
+    "evidence": 489,
     "incident_events": 30,
     "remediation_events": 9,
     "eol_events": 8
@@ -777,9 +777,9 @@
         "percentage": 100
       },
       "with_two_history_events": {
-        "count": 38,
+        "count": 43,
         "denominator": 101,
-        "percentage": 37.6
+        "percentage": 42.6
       },
       "with_evidence": {
         "count": 101,
@@ -859,21 +859,21 @@
     },
     "events": {
       "event_date_basis": {
-        "count": 215,
-        "denominator": 215,
+        "count": 220,
+        "denominator": 220,
         "percentage": 100
       },
       "confidence": [
         {
           "value": "high",
-          "count": 212,
-          "denominator": 215,
+          "count": 217,
+          "denominator": 220,
           "percentage": 98.6
         },
         {
           "value": "medium",
           "count": 3,
-          "denominator": 215,
+          "denominator": 220,
           "percentage": 1.4
         }
       ],
@@ -910,21 +910,21 @@
     },
     "evidence": {
       "primary": {
-        "count": 479,
-        "denominator": 484,
+        "count": 484,
+        "denominator": 489,
         "percentage": 99
       },
       "reliability": [
         {
           "value": "high",
-          "count": 481,
-          "denominator": 484,
+          "count": 486,
+          "denominator": 489,
           "percentage": 99.4
         },
         {
           "value": "medium",
           "count": 3,
-          "denominator": 484,
+          "denominator": 489,
           "percentage": 0.6
         }
       ],
@@ -932,102 +932,102 @@
         {
           "value": "audit_report",
           "count": 1,
-          "denominator": 484,
+          "denominator": 489,
           "percentage": 0.2
         },
         {
           "value": "community_reference",
           "count": 1,
-          "denominator": 484,
+          "denominator": 489,
           "percentage": 0.2
         },
         {
           "value": "cve",
           "count": 1,
-          "denominator": 484,
+          "denominator": 489,
           "percentage": 0.2
         },
         {
           "value": "database_reference",
           "count": 5,
-          "denominator": 484,
+          "denominator": 489,
           "percentage": 1
         },
         {
           "value": "news_article",
           "count": 3,
-          "denominator": 484,
+          "denominator": 489,
           "percentage": 0.6
         },
         {
           "value": "official_blog",
-          "count": 140,
-          "denominator": 484,
-          "percentage": 28.9
+          "count": 143,
+          "denominator": 489,
+          "percentage": 29.2
         },
         {
           "value": "official_security_advisory",
           "count": 22,
-          "denominator": 484,
+          "denominator": 489,
           "percentage": 4.5
         },
         {
           "value": "official_social",
           "count": 3,
-          "denominator": 484,
+          "denominator": 489,
           "percentage": 0.6
         },
         {
           "value": "official_statement",
-          "count": 242,
-          "denominator": 484,
-          "percentage": 50
+          "count": 243,
+          "denominator": 489,
+          "percentage": 49.7
         },
         {
           "value": "other",
           "count": 1,
-          "denominator": 484,
+          "denominator": 489,
           "percentage": 0.2
         },
         {
           "value": "regulatory_notice",
           "count": 2,
-          "denominator": 484,
+          "denominator": 489,
           "percentage": 0.4
         },
         {
           "value": "release_notes",
-          "count": 34,
-          "denominator": 484,
-          "percentage": 7
+          "count": 35,
+          "denominator": 489,
+          "percentage": 7.2
         },
         {
           "value": "security_research",
           "count": 5,
-          "denominator": 484,
+          "denominator": 489,
           "percentage": 1
         },
         {
           "value": "source_code",
           "count": 24,
-          "denominator": 484,
-          "percentage": 5
+          "denominator": 489,
+          "percentage": 4.9
         }
       ],
       "linked_to_event": {
-        "count": 237,
-        "denominator": 484,
-        "percentage": 49
+        "count": 242,
+        "denominator": 489,
+        "percentage": 49.5
       },
       "linked_to_product": {
-        "count": 369,
-        "denominator": 484,
-        "percentage": 76.2
+        "count": 374,
+        "denominator": 489,
+        "percentage": 76.5
       },
       "entity_only": {
         "count": 87,
-        "denominator": 484,
-        "percentage": 18
+        "denominator": 489,
+        "percentage": 17.8
       }
     }
   }

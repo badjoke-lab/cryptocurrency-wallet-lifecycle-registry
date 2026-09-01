@@ -45,6 +45,22 @@
       "confidence": "high",
       "event_status_effect": "active",
       "is_major_event": true
+    },
+    {
+      "id": "wlr_ev_000223",
+      "entity_id": "wlr_ent_000077",
+      "product_id": "wlr_prod_000126",
+      "affected_product_ids": [
+        "wlr_prod_000126"
+      ],
+      "event_type": "other",
+      "event_date": "2025-12-16",
+      "event_date_basis": "discovery",
+      "title": "Core documented gasless transactions for the extension",
+      "description": "Core's first-party support documentation published on 2025-12-16 documented an available gasless transaction flow in which eligible Avalanche C-Chain transactions can receive AVAX for gas and then be submitted automatically. The publication date is used as discovery chronology rather than inferring an earlier launch date.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
     }
   ],
   "evidence": [
@@ -79,6 +95,22 @@
       "claim_scope": "event",
       "is_primary": true,
       "notes": "First-party launch announcement explicitly stating that Ava Labs released Core and that the browser extension was available from the Chrome Web Store on 2022-06-22."
+    },
+    {
+      "id": "wlr_src_000492",
+      "entity_id": "wlr_ent_000077",
+      "product_id": "wlr_prod_000126",
+      "event_id": "wlr_ev_000223",
+      "source_type": "official_statement",
+      "title": "Core extension: How can I enable a Gasless transaction?",
+      "url": "https://support.core.app/en/articles/10840320-core-extension-how-can-i-enable-a-gasless-transaction",
+      "publisher": "Core",
+      "published_at": "2025-12-16",
+      "accessed_at": "2026-09-01",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party Core support page documents an available gasless transaction flow; publication date is used conservatively as discovery chronology."
     }
   ]
 }
