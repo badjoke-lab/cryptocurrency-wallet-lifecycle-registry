@@ -33,6 +33,22 @@
         "notes": "This is a product capability/integration milestone. It is not treated as the D'CENT product launch date.",
         "product_id": "wlr_prod_000087",
         "title": "D'CENT Biometric Wallet added Cardano support"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000087"
+        ],
+        "confidence": "high",
+        "description": "D'CENT announced on 2026-08-10 that its wallet added checks for known spam and phishing addresses, visible risk labels for suspicious transactions, in-app blocking/reporting, XRP tag reminders, and related send-flow safeguards.",
+        "entity_id": "wlr_ent_000038",
+        "event_date": "2026-08-10",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000216",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000087",
+        "title": "D'CENT added scam-address detection safeguards"
       }
     ]
   },
@@ -102,6 +118,22 @@
         "source_type": "official_blog",
         "title": "Buy a D'CENT Wallet and Get Up to $10 in Crypto",
         "url": "https://store.dcentwallet.com/blogs/post/dcent-reward-program"
+      },
+      {
+        "accessed_at": "2026-09-01",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000038",
+        "event_id": "wlr_ev_000216",
+        "id": "wlr_src_000485",
+        "is_primary": true,
+        "notes": "First-party D'CENT Wallet update announcement.",
+        "product_id": "wlr_prod_000087",
+        "published_at": "2026-08-10",
+        "publisher": "D'CENT Wallet",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Your Wallet Now Says No to Scam Addresses",
+        "url": "https://store.dcentwallet.com/blogs/post/dcent-spam-phishing-address-detection"
       }
     ]
   },
