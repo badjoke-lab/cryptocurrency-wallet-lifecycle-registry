@@ -1,0 +1,105 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_coverage-recovery-wave-03-thin-history-2",
+  "title": "Coverage recovery Wave 03 thin-history batch 2",
+  "review_state": "researching",
+  "notes": "Fresh-main one-event depth research from ce54eaf8aff8e9e8c6efcdb709720100834c9af9. These provisional records use current canonical entity/product identities and dated first-party lifecycle evidence. Historical Wave 03 queue IDs are not identity authority. No launch dates are inferred.",
+  "records": {
+    "entities": [],
+    "products": [],
+    "events": [
+      {
+        "id": "wlr_ev_903401",
+        "entity_id": "wlr_ent_000081",
+        "product_id": "wlr_prod_000130",
+        "affected_product_ids": ["wlr_prod_000130"],
+        "event_type": "other",
+        "event_date": "2024-09-24",
+        "event_date_basis": "release",
+        "title": "Tonhub added W5 wallet standard and gasless transfer support",
+        "description": "Ton Whales released Tonhub v2.3.16 on 2024-09-24 with the new W5 wallet standard, gasless transfers for popular tokens, and mintless-token support, documenting a material Tonhub wallet capability expansion before the currently canonical 2025 maintenance release.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": true
+      },
+      {
+        "id": "wlr_ev_903402",
+        "entity_id": "wlr_ent_000083",
+        "product_id": "wlr_prod_000132",
+        "affected_product_ids": ["wlr_prod_000132"],
+        "event_type": "other",
+        "event_date": "2025-04-14",
+        "event_date_basis": "release",
+        "title": "NUFI added Bitcoin support",
+        "description": "NUFI release 23.0.0 on 2025-04-14 added Bitcoin support, materially expanding the browser-extension wallet's supported blockchain scope beyond its earlier multichain capabilities.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": true
+      },
+      {
+        "id": "wlr_ev_903403",
+        "entity_id": "wlr_ent_000082",
+        "product_id": "wlr_prod_000131",
+        "affected_product_ids": ["wlr_prod_000131"],
+        "event_type": "other",
+        "event_date": "2025-04-08",
+        "event_date_basis": "release",
+        "title": "Eternl v2 released",
+        "description": "Eternl released v2 on 2025-04-08 with a new interface, multi-signature wallet support, MonsterSwap aggregation, portfolio changes, more than 30 languages, hardware-wallet integration changes, and other major wallet functionality updates.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": true
+      }
+    ],
+    "evidence": [
+      {
+        "id": "wlr_src_903401",
+        "entity_id": "wlr_ent_000081",
+        "product_id": "wlr_prod_000130",
+        "event_id": "wlr_ev_903401",
+        "source_type": "release_notes",
+        "title": "Tonhub v2.3.16",
+        "url": "https://github.com/tonwhales/wallet/releases/tag/v2.3.16",
+        "publisher": "Ton Whales",
+        "published_at": "2024-09-24",
+        "accessed_at": "2026-09-01",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "Official Ton Whales wallet release; attached Tonhub APK and release notes identify W5, gasless transfers, and mintless-token support."
+      },
+      {
+        "id": "wlr_src_903402",
+        "entity_id": "wlr_ent_000083",
+        "product_id": "wlr_prod_000132",
+        "event_id": "wlr_ev_903402",
+        "source_type": "official_statement",
+        "title": "NUFI Changelog — Release 23.0.0",
+        "url": "https://support.nu.fi/support/solutions/articles/80001016927-changelog",
+        "publisher": "NUFI",
+        "published_at": "2025-04-14",
+        "accessed_at": "2026-09-01",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "First-party NUFI changelog explicitly records Bitcoin support in release 23.0.0."
+      },
+      {
+        "id": "wlr_src_903403",
+        "entity_id": "wlr_ent_000082",
+        "product_id": "wlr_prod_000131",
+        "event_id": "wlr_ev_903403",
+        "source_type": "release_notes",
+        "title": "Eternl Update v2.0.5",
+        "url": "https://wiki.eternl.io/eternl-updates-release-notes",
+        "publisher": "Eternl",
+        "published_at": "2025-04-08",
+        "accessed_at": "2026-09-01",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "First-party Eternl release notes state 'Eternl v2 is here' and enumerate the v2 feature set."
+      }
+    ]
+  }
+}
