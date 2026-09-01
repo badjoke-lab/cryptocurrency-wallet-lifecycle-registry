@@ -39,6 +39,22 @@
         "notes": "Release announcement date retained; later fulfillment start not backdated.",
         "product_id": "wlr_prod_000088",
         "title": "CoolWallet Pro released"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000088"
+        ],
+        "confidence": "high",
+        "description": "CoolWallet announced on 2025-07-15 that its new Multi-Wallet Management feature was live, allowing users to manage multiple CoolWallet cold wallets and one hot wallet in the CoolWallet App and introducing a refreshed CoolWallet Pro and S setup experience.",
+        "entity_id": "wlr_ent_000039",
+        "event_date": "2025-07-15",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000215",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000088",
+        "title": "CoolWallet added multi-wallet management"
       }
     ]
   },
@@ -92,6 +108,22 @@
         "source_type": "official_statement",
         "title": "CoolWallet official product site",
         "url": "https://www.coolwallet.io/"
+      },
+      {
+        "accessed_at": "2026-09-01",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000039",
+        "event_id": "wlr_ev_000215",
+        "id": "wlr_src_000484",
+        "is_primary": true,
+        "notes": "First-party CoolWallet product announcement states the feature is live.",
+        "product_id": "wlr_prod_000088",
+        "published_at": "2025-07-15",
+        "publisher": "CoolWallet",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "CoolWallet’s New Feature: Multi-Wallet Management",
+        "url": "https://www.coolwallet.io/blogs/blog/multiple-wallet-management"
       }
     ]
   },

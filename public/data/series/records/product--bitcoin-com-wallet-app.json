@@ -38,6 +38,22 @@
         "is_major_event": false,
         "product_id": "wlr_prod_000103",
         "title": "Bitcoin.com Wallet added native TRON support"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000103"
+        ],
+        "confidence": "high",
+        "description": "Bitcoin.com reported that on 2026-03-06 a test push notification was inadvertently sent to iOS and Android Wallet users because of a third-party misconfiguration. Bitcoin.com stated the issue was resolved and did not involve user funds, wallet access, private keys, or wallet-infrastructure compromise.",
+        "entity_id": "wlr_ent_000054",
+        "event_date": "2026-03-06",
+        "event_date_basis": "discovery",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000218",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000103",
+        "title": "Bitcoin.com Wallet push notification incident occurred"
       }
     ]
   },
@@ -91,6 +107,22 @@
         "source_type": "official_statement",
         "title": "Bitcoin.com Wallet Adds Native TRON Support, Bringing TRX and USDT-TRC20 to Millions of Users",
         "url": "https://news.bitcoin.com/press-releases/bitcoin-com-wallet-adds-native-tron-support-bringing-trx-and-usdt-trc20-to-millions-of-users/"
+      },
+      {
+        "accessed_at": "2026-09-01",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000054",
+        "event_id": "wlr_ev_000218",
+        "id": "wlr_src_000487",
+        "is_primary": true,
+        "notes": "First-party Bitcoin.com incident statement; explicitly states no funds, keys, wallet access, or infrastructure compromise.",
+        "product_id": "wlr_prod_000103",
+        "published_at": "2026-03-07",
+        "publisher": "Bitcoin.com",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Push Notification Incident",
+        "url": "https://support.bitcoin.com/en/articles/13982373-push-notification-incident"
       }
     ]
   },

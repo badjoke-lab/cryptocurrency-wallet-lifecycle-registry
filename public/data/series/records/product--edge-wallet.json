@@ -39,6 +39,22 @@
         "notes": "This is an entity/product-lineage rebrand event, not the public launch date of the later Edge Wallet release.",
         "product_id": "wlr_prod_000085",
         "title": "Airbitz announced its rebrand to Edge"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000085"
+        ],
+        "confidence": "high",
+        "description": "Edge announced on 2025-09-02 that the wallet added a direct Revolut integration for buying crypto into the self-custody wallet and selling crypto back to a user's Revolut account without an additional intermediary account.",
+        "entity_id": "wlr_ent_000036",
+        "event_date": "2025-09-02",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000217",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000085",
+        "title": "Edge Wallet launched direct Revolut integration"
       }
     ]
   },
@@ -76,6 +92,22 @@
         "source_type": "official_blog",
         "title": "Airbitz is now Edge!",
         "url": "https://edge.app/blog/company-news/airbitz-is-now-edge/"
+      },
+      {
+        "accessed_at": "2026-09-01",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000036",
+        "event_id": "wlr_ev_000217",
+        "id": "wlr_src_000486",
+        "is_primary": true,
+        "notes": "First-party Edge announcement for a live wallet integration.",
+        "product_id": "wlr_prod_000085",
+        "published_at": "2025-09-02",
+        "publisher": "Edge",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Edge Launches Direct Revolut Integration",
+        "url": "https://edge.app/blog/company-news/edge-revolut-crypto-on-off-ramps/"
       }
     ]
   },

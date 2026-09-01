@@ -32,7 +32,24 @@
     "last_verified_at": "2026-08-19",
     "notes": "Atomic's official history records a desktop release in Q1 2018; WLR retains year precision."
   },
-  "events": [],
+  "events": [
+    {
+      "id": "wlr_ev_000214",
+      "entity_id": "wlr_ent_000032",
+      "product_id": "wlr_prod_000081",
+      "affected_product_ids": [
+        "wlr_prod_000081"
+      ],
+      "event_type": "other",
+      "event_date": "2026-01-20",
+      "event_date_basis": "discovery",
+      "title": "Atomic Wallet documented its 2025 perpetual futures launch",
+      "description": "Atomic Wallet's 2025 year-in-review, published 2026-01-20, states that perpetual futures trading launched in November 2025 across its self-custodial wallet experience. The publication date is used as discovery chronology because the source does not provide an exact November launch day.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
+    }
+  ],
   "evidence": [
     {
       "id": "wlr_src_000210",
@@ -49,6 +66,22 @@
       "claim_scope": "product",
       "is_primary": true,
       "notes": "Current first-party site identifies Atomic Wallet as a non-custodial decentralized wallet and currently distributes desktop builds."
+    },
+    {
+      "id": "wlr_src_000483",
+      "entity_id": "wlr_ent_000032",
+      "product_id": "wlr_prod_000081",
+      "event_id": "wlr_ev_000214",
+      "source_type": "official_blog",
+      "title": "Atomic Wallet 2025: Year in Review",
+      "url": "https://atomicwallet.io/blog/articles/atomic-wallet-2025-year-in-review",
+      "publisher": "Atomic Wallet",
+      "published_at": "2026-01-20",
+      "accessed_at": "2026-09-01",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party Atomic Wallet year-in-review; exact November launch day is not inferred."
     }
   ]
 }

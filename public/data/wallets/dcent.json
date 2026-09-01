@@ -61,6 +61,22 @@
       "event_status_effect": "none",
       "is_major_event": false,
       "notes": "This is a product capability/integration milestone. It is not treated as the D'CENT product launch date."
+    },
+    {
+      "id": "wlr_ev_000216",
+      "entity_id": "wlr_ent_000038",
+      "product_id": "wlr_prod_000087",
+      "affected_product_ids": [
+        "wlr_prod_000087"
+      ],
+      "event_type": "other",
+      "event_date": "2026-08-10",
+      "event_date_basis": "announcement",
+      "title": "D'CENT added scam-address detection safeguards",
+      "description": "D'CENT announced on 2026-08-10 that its wallet added checks for known spam and phishing addresses, visible risk labels for suspicious transactions, in-app blocking/reporting, XRP tag reminders, and related send-flow safeguards.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
     }
   ],
   "evidence": [
@@ -127,6 +143,22 @@
       "claim_scope": "support_status",
       "is_primary": true,
       "notes": "Current first-party 2026 program requires purchase and activation of the D'CENT Biometric Wallet through the current D'CENT App, supporting active product operation."
+    },
+    {
+      "id": "wlr_src_000485",
+      "entity_id": "wlr_ent_000038",
+      "product_id": "wlr_prod_000087",
+      "event_id": "wlr_ev_000216",
+      "source_type": "official_blog",
+      "title": "Your Wallet Now Says No to Scam Addresses",
+      "url": "https://store.dcentwallet.com/blogs/post/dcent-spam-phishing-address-detection",
+      "publisher": "D'CENT Wallet",
+      "published_at": "2026-08-10",
+      "accessed_at": "2026-09-01",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party D'CENT Wallet update announcement."
     }
   ]
 }
