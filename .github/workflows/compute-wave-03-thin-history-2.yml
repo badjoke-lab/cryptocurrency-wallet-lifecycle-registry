@@ -1,0 +1,83 @@
+name: Compute Wave 03 Thin History 2
+
+on:
+  push:
+    branches:
+      - research/coverage-recovery-wave-03-thin-history-2
+
+permissions:
+  contents: write
+
+jobs:
+  compute:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Compute fresh-main one-event queue
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const entities = JSON.parse(fs.readFileSync('data/entities.json','utf8'));
+          const products = JSON.parse(fs.readFileSync('data/products.json','utf8'));
+          const events = JSON.parse(fs.readFileSync('data/events.json','utf8'));
+          const evidence = JSON.parse(fs.readFileSync('data/evidence.json','utf8'));
+          const evByEnt = new Map();
+          for (const e of events) {
+            if (!evByEnt.has(e.entity_id)) evByEnt.set(e.entity_id, []);
+            evByEnt.get(e.entity_id).push(e);
+          }
+          const prodByEnt = new Map();
+          for (const p of products) {
+            if (!prodByEnt.has(p.entity_id)) prodByEnt.set(p.entity_id, []);
+            prodByEnt.get(p.entity_id).push(p);
+          }
+          const evdCount = new Map();
+          for (const s of evidence) evdCount.set(s.entity_id, (evdCount.get(s.entity_id)||0)+1);
+          const rows = entities.filter(ent => (evByEnt.get(ent.id)||[]).length === 1).map(ent => {
+            const sole = evByEnt.get(ent.id)[0];
+            const ps = prodByEnt.get(ent.id)||[];
+            const missingLaunch = ps.filter(p => !p.launch_date).length;
+            const unknownSupport = ps.filter(p => !p.support_status || p.support_status === 'unknown').length;
+            return {
+              entity_id: ent.id,
+              canonical_name: ent.canonical_name,
+              slug: ent.slug,
+              wallet_type: ent.wallet_type,
+              entity_status: ent.status,
+              official_url: ent.official_url || null,
+              product_count: ps.length,
+              products: ps.map(p => ({id:p.id, product_name:p.product_name, status:p.status, launch_date:p.launch_date||null, support_status:p.support_status||null, official_url:p.official_url||null})),
+              sole_event: {id:sole.id, product_id:sole.product_id||null, event_type:sole.event_type, event_date:sole.event_date, title:sole.title},
+              evidence_count: evdCount.get(ent.id)||0,
+              missing_launch_count: missingLaunch,
+              unknown_support_count: unknownSupport,
+              priority_score: missingLaunch*4 + unknownSupport*3 + Math.max(0, 4-(evdCount.get(ent.id)||0))
+            };
+          }).sort((a,b) => b.priority_score-a.priority_score || a.evidence_count-b.evidence_count || a.entity_id.localeCompare(b.entity_id));
+          const out = {
+            generated_from_main_sha: process.env.GITHUB_SHA,
+            authority: 'current canonical branch state; historical Wave 03 queue IDs are not identity authority',
+            one_event_count: rows.length,
+            selection_rule: 'exactly one canonical event; priority_score = missing_launch*4 + unknown_support*3 + max(0,4-evidence_count), then evidence_count asc, entity_id asc',
+            selected_first_10: rows.slice(0,10),
+            all_one_event_entities: rows
+          };
+          fs.mkdirSync('data-staging/coverage',{recursive:true});
+          fs.writeFileSync('data-staging/coverage/coverage-recovery-wave-03-thin-history-2.json', JSON.stringify(out,null,2)+'\n');
+          console.log('ONE_EVENT_COUNT', rows.length);
+          for (const r of rows.slice(0,10)) console.log(r.entity_id, r.canonical_name, r.priority_score, r.evidence_count);
+          NODE
+      - name: Remove temporary workflow and commit queue
+        run: |
+          rm .github/workflows/compute-wave-03-thin-history-2.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data-staging/coverage/coverage-recovery-wave-03-thin-history-2.json .github/workflows/compute-wave-03-thin-history-2.yml
+          git commit -m 'Stage fresh-main Wave 03 thin-history batch 2 queue'
+          git push
