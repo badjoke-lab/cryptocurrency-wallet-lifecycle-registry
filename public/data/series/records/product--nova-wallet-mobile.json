@@ -38,6 +38,22 @@
         "is_major_event": false,
         "product_id": "wlr_prod_000124",
         "title": "Nova Wallet Android v10.8.0 released"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000124"
+        ],
+        "confidence": "high",
+        "description": "Nova Wallet announced on 2025-06-04 that its partnership with Mercuryo and Mastercard had released a Polkadot-powered debit card that could be topped up with DOT directly from Nova Wallet, adding a new spending capability to the mobile wallet lifecycle.",
+        "entity_id": "wlr_ent_000075",
+        "event_date": "2025-06-04",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000222",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000124",
+        "title": "Nova Wallet launched Polkadot debit card integration"
       }
     ]
   },
@@ -75,6 +91,22 @@
         "source_type": "release_notes",
         "title": "10.8.0 — Nova Wallet — In-app warnings to protect users from scams",
         "url": "https://github.com/novasamatech/nova-wallet-android/releases/tag/v10.8.0"
+      },
+      {
+        "accessed_at": "2026-09-01",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000075",
+        "event_id": "wlr_ev_000222",
+        "id": "wlr_src_000491",
+        "is_primary": true,
+        "notes": "First-party Nova Wallet announcement states the card had been released and could be topped up with DOT directly from Nova Wallet.",
+        "product_id": "wlr_prod_000124",
+        "published_at": "2025-06-04",
+        "publisher": "Nova Wallet",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Nova Wallet x Mercuryo: The First Polkadot Debit Card is Here!",
+        "url": "https://novawallet.io/blog/nova-wallet-x-mercuryo-the-first-polkadot-debit-card-is-here"
       }
     ]
   },

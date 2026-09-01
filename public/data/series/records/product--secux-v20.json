@@ -39,6 +39,22 @@
         "notes": "The retrospective provides January 2019 month precision but no exact day, so WLR preserves month precision.",
         "product_id": "wlr_prod_000120",
         "title": "SecuX V20 recorded its first official sale at CES Las Vegas"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000120"
+        ],
+        "confidence": "high",
+        "description": "SecuX documented the full rollout of SecuX Wallet App 3.0 on 2025-03-31 with compatibility for the V20 hardware wallet, device-to-device migration support, refreshed design, broader blockchain support, and a migration path away from the older SecuX Mobile App.",
+        "entity_id": "wlr_ent_000071",
+        "event_date": "2025-03-31",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000219",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000120",
+        "title": "SecuX Wallet App 3.0 rolled out for V20"
       }
     ]
   },
@@ -76,6 +92,22 @@
         "source_type": "official_blog",
         "title": "SecuX 7th Anniversary: 7 Years of Innovation in Crypto and Digital Security",
         "url": "https://secuxtech.com/blogs/blog/secux-7th-anniversary-7-years-of-innovation-in-crypto-and-digital-security"
+      },
+      {
+        "accessed_at": "2026-09-01",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000071",
+        "event_id": "wlr_ev_000219",
+        "id": "wlr_src_000488",
+        "is_primary": true,
+        "notes": "First-party SecuX announcement gives the 2025-03-31 full-rollout date and explicitly lists V20 compatibility and migration from the old mobile app.",
+        "product_id": "wlr_prod_000120",
+        "published_at": "2025-03-31",
+        "publisher": "SecuX",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Introducing SecuX Wallet App 3.0 – A New Era of Crypto Management",
+        "url": "https://secuxtech.com/blogs/blog/introducing-secux-wallet-app-3-0-a-new-era-of-crypto-management"
       }
     ]
   },
