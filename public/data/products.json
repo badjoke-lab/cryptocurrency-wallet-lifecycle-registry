@@ -3822,5 +3822,29 @@
     "last_verified_at": "2026-08-23",
     "official_url": "https://izakaya.tech/ja/wallet/",
     "notes": "Do not infer independent self-custody from MPC terminology. The reviewed record does not establish a user-controlled seed or service-independent recovery path."
-  }
+  },
+{
+  "id": "wlr_prod_000151",
+  "entity_id": "wlr_ent_000102",
+  "slug": "thorwallet-mobile",
+  "product_name": "THORWallet Mobile",
+  "product_type": "mobile_app",
+  "status": "active",
+  "sales_status": "not_applicable",
+  "support_status": "supported",
+  "launch_date": "2021",
+  "launch_date_precision": "year",
+  "platform": [
+    "iOS",
+    "Android"
+  ],
+  "official_url": "https://www.thorwallet.org/",
+  "source_code_url": null,
+  "custody_model": "self_custody",
+  "key_management_model": "user_controlled_self_custody_wallet_keys",
+  "summary": "THORWallet self-custody multichain mobile wallet for swaps, DeFi, multisig and integrated spending features.",
+  "confidence": "high",
+  "last_verified_at": "2026-09-02",
+  "notes": "The first-party homepage currently distributes THORWallet through the App Store and Google Play."
+}
 ]

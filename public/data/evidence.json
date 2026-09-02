@@ -8466,5 +8466,53 @@
     "claim_scope": "event",
     "is_primary": true,
     "notes": "First-party Core support page documents an available gasless transaction flow; publication date is used conservatively as discovery chronology."
-  }
+  },
+{
+  "id": "wlr_src_000493",
+  "entity_id": "wlr_ent_000102",
+  "product_id": "wlr_prod_000151",
+  "event_id": null,
+  "source_type": "official_statement",
+  "title": "THORWallet — Self-Custody Multi-Chain Crypto Wallet, Swaps & DeFi",
+  "url": "https://www.thorwallet.org/",
+  "publisher": "THORWallet / EMM Ventures AG",
+  "published_at": null,
+  "accessed_at": "2026-09-02",
+  "reliability": "high",
+  "claim_scope": "product",
+  "is_primary": true,
+  "notes": "First-party homepage describes THORWallet as self-custody/non-custodial, says 'Since 2021', and links iOS and Android distribution."
+},
+{
+  "id": "wlr_src_000494",
+  "entity_id": "wlr_ent_000102",
+  "product_id": "wlr_prod_000151",
+  "event_id": "wlr_ev_000224",
+  "source_type": "official_blog",
+  "title": "Swap Anything, Spend Anywhere: The THORWallet Card Is Live",
+  "url": "https://www.thorwallet.org/",
+  "publisher": "THORWallet",
+  "published_at": "2026-08-31",
+  "accessed_at": "2026-09-02",
+  "reliability": "high",
+  "claim_scope": "event",
+  "is_primary": true,
+  "notes": "The current first-party homepage lists the dated 2026-08-31 card-live announcement and presents the live card tiers."
+},
+{
+  "id": "wlr_src_000495",
+  "entity_id": "wlr_ent_000102",
+  "product_id": "wlr_prod_000151",
+  "event_id": "wlr_ev_000224",
+  "source_type": "official_statement",
+  "title": "THORWallet Card Waitlist - Join Early Access",
+  "url": "https://whitelist.thorwallet.org/",
+  "publisher": "THORWallet",
+  "published_at": null,
+  "accessed_at": "2026-09-02",
+  "reliability": "high",
+  "claim_scope": "event",
+  "is_primary": true,
+  "notes": "First-party card page describes Basic/Premium as an offering additional to the existing Swiss IBAN card program and advertises broad international availability."
+}
 ]
