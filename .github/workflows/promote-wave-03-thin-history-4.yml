@@ -1,0 +1,96 @@
+name: Promote Wave 03 Thin History 4
+
+on:
+  push:
+    branches:
+      - promotion/coverage-recovery-wave-03-thin-history-4
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - run: npm install --no-audit --no-fund
+      - name: Promote reviewed batch with fail-closed identity and duplicate checks
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const candidate = JSON.parse(fs.readFileSync('data-staging/candidates/coverage-recovery-wave-03-thin-history-4.json','utf8'));
+          const entities = JSON.parse(fs.readFileSync('data/entities.json','utf8'));
+          const products = JSON.parse(fs.readFileSync('data/products.json','utf8'));
+          const events = JSON.parse(fs.readFileSync('data/events.json','utf8'));
+          const evidence = JSON.parse(fs.readFileSync('data/evidence.json','utf8'));
+
+          const expected = [
+            ['wlr_ent_000090','AQUA Wallet','wlr_prod_000139','AQUA Wallet Mobile'],
+            ['wlr_ent_000091','Bitkit','wlr_prod_000140','Bitkit Mobile'],
+            ['wlr_ent_000092','Breez','wlr_prod_000141','Breez Mobile'],
+            ['wlr_ent_000094','Blixt Wallet','wlr_prod_000143','Blixt Wallet Mobile'],
+            ['wlr_ent_000099','Satochip','wlr_prod_000148','Satochip Hardware Wallet']
+          ];
+          for (const [eid, ename, pid, pname] of expected) {
+            const e = entities.find(x => x.id === eid);
+            const p = products.find(x => x.id === pid);
+            if (!e || e.canonical_name !== ename) throw new Error(`entity identity mismatch ${eid}`);
+            if (!p || p.product_name !== pname || p.entity_id !== eid) throw new Error(`product identity mismatch ${pid}`);
+            const current = events.filter(x => x.entity_id === eid);
+            if (current.length !== 1) throw new Error(`fresh-main one-event invariant failed ${eid}: ${current.length}`);
+          }
+          if (candidate.records.events.length !== 5 || candidate.records.evidence.length !== 5) throw new Error('candidate must contain exactly 5 events and 5 evidence');
+
+          const existingEventKeys = new Set(events.map(x => `${x.entity_id}|${x.product_id}|${x.event_date}|${x.title}`));
+          for (const x of candidate.records.events) {
+            const k = `${x.entity_id}|${x.product_id}|${x.event_date}|${x.title}`;
+            if (existingEventKeys.has(k)) throw new Error(`duplicate event ${k}`);
+          }
+          const existingUrls = new Set(evidence.map(x => x.url));
+          for (const x of candidate.records.evidence) {
+            if (existingUrls.has(x.url)) throw new Error(`duplicate evidence URL ${x.url}`);
+          }
+
+          const nextNum = (arr, prefix) => Math.max(...arr.map(x => Number(x.id.replace(prefix,''))).filter(Number.isFinite)) + 1;
+          let evNum = nextNum(events, 'wlr_ev_');
+          let srcNum = nextNum(evidence, 'wlr_src_');
+          const eventIdMap = new Map();
+          for (const x of candidate.records.events) {
+            const old = x.id;
+            const id = `wlr_ev_${String(evNum++).padStart(6,'0')}`;
+            eventIdMap.set(old,id);
+            events.push({...x,id});
+          }
+          for (const x of candidate.records.evidence) {
+            const id = `wlr_src_${String(srcNum++).padStart(6,'0')}`;
+            const event_id = eventIdMap.get(x.event_id);
+            if (!event_id) throw new Error(`missing promoted event map for ${x.event_id}`);
+            evidence.push({...x,id,event_id});
+          }
+          fs.writeFileSync('data/events.json', JSON.stringify(events,null,2)+'\n');
+          fs.writeFileSync('data/evidence.json', JSON.stringify(evidence,null,2)+'\n');
+          console.log('Promoted event IDs:', [...eventIdMap.values()].join(', '));
+          console.log('Promoted evidence IDs:', evidence.slice(-5).map(x=>x.id).join(', '));
+          NODE
+      - run: npm run prebuild
+      - run: npm run validate:records
+      - run: npm run validate:identity-evidence
+      - run: npm run validate:machine-records
+      - run: npm run validate:series
+      - run: npm run check:staging-boundary
+      - name: Commit promoted canonical records and generated layers
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data public/data public/version.json public/llms.txt public/ai.txt 2>/dev/null || true
+          git add -u
+          git commit -m "Promote Wave 03 thin-history batch 4 records"
+          git push
