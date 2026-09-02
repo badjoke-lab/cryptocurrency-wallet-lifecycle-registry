@@ -38,6 +38,22 @@
         "is_major_event": false,
         "product_id": "wlr_prod_000130",
         "title": "Tonhub v2.4.26 released"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000130"
+        ],
+        "confidence": "high",
+        "description": "Tonhub released v2.3.16 on 2024-09-24 with the W5 wallet standard, gasless transfers for popular tokens, mintless-token support, and additional fixes and performance improvements.",
+        "entity_id": "wlr_ent_000081",
+        "event_date": "2024-09-24",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000226",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000130",
+        "title": "Tonhub v2.3.16 added W5 and gasless transfer support"
       }
     ]
   },
@@ -75,6 +91,22 @@
         "source_type": "release_notes",
         "title": "Tonhub v2.4.26",
         "url": "https://github.com/tonwhales/wallet/releases/tag/v2.4.26"
+      },
+      {
+        "accessed_at": "2026-09-02",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000081",
+        "event_id": "wlr_ev_000226",
+        "id": "wlr_src_000497",
+        "is_primary": true,
+        "notes": "Official Tonhub repository release documents W5, gasless transfers, and mintless-token support.",
+        "product_id": "wlr_prod_000130",
+        "published_at": "2024-09-24",
+        "publisher": "Tonwhales",
+        "reliability": "high",
+        "source_type": "release_notes",
+        "title": "Tonhub v2.3.16",
+        "url": "https://github.com/tonwhales/wallet/releases/tag/v2.3.16"
       }
     ]
   },

@@ -32,6 +32,22 @@
         "is_major_event": false,
         "product_id": "wlr_prod_000137",
         "title": "Sequence Wallet infrastructure update released"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000137"
+        ],
+        "confidence": "high",
+        "description": "Sequence announced on 2024-12-06 the launch of the open-source Sequence Wallet Recovery app, allowing Sequence Universal Wallet users to regain access independently of Sequence infrastructure in supported failure scenarios.",
+        "entity_id": "wlr_ent_000088",
+        "event_date": "2024-12-06",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000229",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000137",
+        "title": "Sequence launched a self-custodial wallet recovery app"
       }
     ]
   },
@@ -85,6 +101,22 @@
         "source_type": "official_blog",
         "title": "Sequence Wallet update - A better, faster, and smoother experience for builders and users",
         "url": "https://sequence.xyz/blog/sequence-wallet-update"
+      },
+      {
+        "accessed_at": "2026-09-02",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000088",
+        "event_id": "wlr_ev_000229",
+        "id": "wlr_src_000500",
+        "is_primary": true,
+        "notes": "First-party Sequence announcement states the recovery app launched as an open-source, self-custodial tool independent of Sequence infrastructure.",
+        "product_id": "wlr_prod_000137",
+        "published_at": "2024-12-06",
+        "publisher": "Sequence",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Sequence Wallet Recovery: Complete self-custodial access to Sequence Wallets",
+        "url": "https://sequence.xyz/blog/sequence-wallet-recovery-complete-self-custodial-access-wallets"
       }
     ]
   },

@@ -49,6 +49,22 @@
       "confidence": "high",
       "event_status_effect": "active",
       "is_major_event": false
+    },
+    {
+      "id": "wlr_ev_000225",
+      "entity_id": "wlr_ent_000080",
+      "product_id": "wlr_prod_000129",
+      "affected_product_ids": [
+        "wlr_prod_000129"
+      ],
+      "event_type": "other",
+      "event_date": "2026-06-17",
+      "event_date_basis": "announcement",
+      "title": "MyTonWallet officially rebranded to My Wallet",
+      "description": "My Wallet announced on 2026-06-17 that MyTonWallet was officially becoming My Wallet, retaining the same product and team while adopting a broader multichain identity after expanding beyond TON.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
     }
   ],
   "evidence": [
@@ -83,6 +99,22 @@
       "claim_scope": "event",
       "is_primary": true,
       "notes": "Official repository release. Release assets include both MyWallet and MyTonWallet-branded artifacts, consistent with WLR's existing continuous entity lineage across the rebrand."
+    },
+    {
+      "id": "wlr_src_000496",
+      "entity_id": "wlr_ent_000080",
+      "product_id": "wlr_prod_000129",
+      "event_id": "wlr_ev_000225",
+      "source_type": "official_blog",
+      "title": "MyTonWallet is becoming My Wallet",
+      "url": "https://mywallet.io/en/blog/june-2026-mytonwallet-is-becoming-my-wallet/",
+      "publisher": "My Wallet",
+      "published_at": "2026-06-17",
+      "accessed_at": "2026-09-02",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party rebrand announcement explicitly states MyTonWallet -> My Wallet."
     }
   ]
 }
