@@ -1,0 +1,71 @@
+name: Promote Wave 03 Thin History 3
+on:
+  push:
+    branches: [promotion/coverage-recovery-wave-03-thin-history-3]
+permissions:
+  contents: write
+jobs:
+  promote:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 22}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Promote reviewed thin-history records
+        run: |
+          python - <<'PY'
+          import json,re
+          from pathlib import Path
+          cp=Path('data-staging/candidates/coverage-recovery-wave-03-thin-history-3.json')
+          cand=json.loads(cp.read_text())
+          E=cand['records']['events']; S=cand['records']['evidence']
+          assert cand.get('review_state')=='reviewed'
+          assert len(E)==5 and len(S)==5
+          expected_entities={'wlr_ent_000080':'My Wallet','wlr_ent_000081':'Tonhub','wlr_ent_000082':'Eternl','wlr_ent_000083':'NUFI','wlr_ent_000088':'Sequence'}
+          expected_products={'wlr_prod_000129':'My Wallet Mobile','wlr_prod_000130':'Tonhub Mobile','wlr_prod_000131':'Eternl Browser Extension','wlr_prod_000132':'NUFI Browser Extension','wlr_prod_000137':'Sequence Universal Wallet'}
+          entities={x['id']:x for x in json.loads(Path('data/entities.json').read_text())}
+          products={x['id']:x for x in json.loads(Path('data/products.json').read_text())}
+          for i,n in expected_entities.items(): assert entities.get(i,{}).get('canonical_name')==n,(i,entities.get(i,{}).get('canonical_name'),n)
+          for i,n in expected_products.items(): assert products.get(i,{}).get('product_name')==n,(i,products.get(i,{}).get('product_name'),n)
+          ep=Path('data/events.json'); sp=Path('data/evidence.json')
+          events=json.loads(ep.read_text()); sources=json.loads(sp.read_text())
+          def nxt(rows,p): return max([int(x['id'][len(p):]) for x in rows if re.fullmatch(re.escape(p)+r'\d+',x['id'])],default=0)+1
+          ne=nxt(events,'wlr_ev_'); ns=nxt(sources,'wlr_src_')
+          urls={x['url'] for x in sources}; keys={(x.get('entity_id'),x.get('product_id'),x.get('event_type'),x.get('event_date'),x.get('title')) for x in events}
+          smap={x['event_id']:x for x in S}; emap={}; pe=[]; ps=[]
+          assert set(smap)=={x['id'] for x in E}
+          for e in E:
+            s=smap[e['id']]; k=(e['entity_id'],e['product_id'],e['event_type'],e['event_date'],e['title'])
+            assert k not in keys,('duplicate event',k)
+            assert s['url'] not in urls,('duplicate source URL',s['url'])
+            n=dict(e); nid=f'wlr_ev_{ne:06d}'; ne+=1; n['id']=nid; emap[e['id']]=nid; pe.append(n); keys.add(k)
+          for s in S:
+            n=dict(s); n['id']=f'wlr_src_{ns:06d}'; ns+=1; n['event_id']=emap[s['event_id']]; ps.append(n); urls.add(s['url'])
+          assert len(pe)==5 and len(ps)==5
+          ep.write_text(json.dumps(events+pe,ensure_ascii=False,indent=2)+'\n')
+          sp.write_text(json.dumps(sources+ps,ensure_ascii=False,indent=2)+'\n')
+          cp.unlink()
+          print('PROMOTED',len(pe),len(ps),emap)
+          PY
+      - name: Install dependencies
+        run: |
+          python -m pip install -r requirements.txt
+          npm ci
+      - name: Regenerate and validate
+        run: |
+          npm run prebuild
+          npm run validate:records
+          npm run validate:identity-evidence
+          npm run validate:machine-records
+          npm run validate:series
+          npm run check:staging-boundary
+      - name: Commit promotion
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -A
+          git commit -m 'Promote Wave 03 thin-history batch 3 records'
+          git push origin HEAD:promotion/coverage-recovery-wave-03-thin-history-3
