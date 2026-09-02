@@ -503,5 +503,10 @@
     "id": "wlr_ent_000101",
     "slug": "izaka-ya-wallet",
     "path": "/data/wallets/izaka-ya-wallet.json"
+  },
+  {
+    "id": "wlr_ent_000102",
+    "slug": "thorwallet",
+    "path": "/data/wallets/thorwallet.json"
   }
 ]

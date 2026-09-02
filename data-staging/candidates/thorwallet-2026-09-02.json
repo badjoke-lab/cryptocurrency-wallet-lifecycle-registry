@@ -2,7 +2,7 @@
   "bundle_version": "1.0.0",
   "candidate_id": "wlr_cand_thorwallet",
   "title": "THORWallet wallet and card lifecycle candidate",
-  "review_state": "ready_for_review",
+  "review_state": "review_ready",
   "notes": "Adds the THORWallet wallet boundary first, then records the 2026-08-31 THORWallet Card launch as a wallet lifecycle capability event. The card itself is not modeled as a WLR wallet product.",
   "records": {
     "entities": [

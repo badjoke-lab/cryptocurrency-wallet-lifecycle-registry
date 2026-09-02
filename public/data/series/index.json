@@ -1,11 +1,11 @@
 {
   "canonical_only": true,
-  "last_verified_at": "2026-08-23",
+  "last_verified_at": "2026-09-02",
   "object_type": "record_index",
-  "record_count": 251,
+  "record_count": 253,
   "record_counts": {
-    "products": 150,
-    "wallets": 101
+    "products": 151,
+    "wallets": 102
   },
   "records": [
     {
@@ -1809,6 +1809,18 @@
       "status": "active"
     },
     {
+      "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000151",
+      "human_url": "https://wlr.badjoke-lab.com/product/thorwallet-mobile/",
+      "machine_url": "https://wlr.badjoke-lab.com/data/series/records/product--thorwallet-mobile.json",
+      "name": "THORWallet Mobile",
+      "native_machine_url": "https://wlr.badjoke-lab.com/data/products/thorwallet-mobile.json",
+      "native_record_id": "wlr_prod_000151",
+      "native_record_type": "wlr.product-record.v1",
+      "series_slug": "product--thorwallet-mobile",
+      "slug": "thorwallet-mobile",
+      "status": "active"
+    },
+    {
       "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000001",
       "human_url": "https://wlr.badjoke-lab.com/wallet/trezor/",
       "machine_url": "https://wlr.badjoke-lab.com/data/series/records/wallet--trezor.json",
@@ -3018,6 +3030,18 @@
       "native_record_type": "wlr.wallet-record.v1",
       "series_slug": "wallet--izaka-ya-wallet",
       "slug": "izaka-ya-wallet",
+      "status": "active"
+    },
+    {
+      "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000102",
+      "human_url": "https://wlr.badjoke-lab.com/wallet/thorwallet/",
+      "machine_url": "https://wlr.badjoke-lab.com/data/series/records/wallet--thorwallet.json",
+      "name": "THORWallet",
+      "native_machine_url": "https://wlr.badjoke-lab.com/data/wallets/thorwallet.json",
+      "native_record_id": "wlr_ent_000102",
+      "native_record_type": "wlr.wallet-record.v1",
+      "series_slug": "wallet--thorwallet",
+      "slug": "thorwallet",
       "status": "active"
     }
   ],

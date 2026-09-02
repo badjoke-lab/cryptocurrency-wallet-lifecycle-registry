@@ -1,0 +1,124 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "current_vendor": null,
+      "custody_model": "self_custody",
+      "open_source_status": null,
+      "product_ids": [
+        "wlr_prod_000151"
+      ],
+      "status": "active",
+      "wallet_type": "software",
+      "website_status": null
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000151"
+        ],
+        "confidence": "high",
+        "description": "THORWallet announced that its card was live, adding Mastercard spending to the self-custody wallet experience. Current first-party material advertises Basic and Premium card tiers and describes the card offering as distinct from the existing Swiss IBAN card program.",
+        "entity_id": "wlr_ent_000102",
+        "event_date": "2026-08-31",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000224",
+        "is_major_event": true,
+        "notes": "WLR records this as a wallet capability/lifecycle event. The payment-card program itself belongs in Crypto Card Lifecycle Registry. Country-count claims vary across current first-party surfaces, so this event does not canonicalize one exact global country count.",
+        "product_id": "wlr_prod_000151",
+        "title": "THORWallet Card launched"
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-09-02",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000102",
+        "event_id": null,
+        "id": "wlr_src_000493",
+        "is_primary": true,
+        "notes": "First-party homepage describes THORWallet as self-custody/non-custodial, says 'Since 2021', and links iOS and Android distribution.",
+        "product_id": "wlr_prod_000151",
+        "published_at": null,
+        "publisher": "THORWallet / EMM Ventures AG",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "THORWallet — Self-Custody Multi-Chain Crypto Wallet, Swaps & DeFi",
+        "url": "https://www.thorwallet.org/"
+      },
+      {
+        "accessed_at": "2026-09-02",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000102",
+        "event_id": "wlr_ev_000224",
+        "id": "wlr_src_000494",
+        "is_primary": true,
+        "notes": "The current first-party homepage lists the dated 2026-08-31 card-live announcement and presents the live card tiers.",
+        "product_id": "wlr_prod_000151",
+        "published_at": "2026-08-31",
+        "publisher": "THORWallet",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Swap Anything, Spend Anywhere: The THORWallet Card Is Live",
+        "url": "https://www.thorwallet.org/"
+      },
+      {
+        "accessed_at": "2026-09-02",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000102",
+        "event_id": "wlr_ev_000224",
+        "id": "wlr_src_000495",
+        "is_primary": true,
+        "notes": "First-party card page describes Basic/Premium as an offering additional to the existing Swiss IBAN card program and advertises broad international availability.",
+        "product_id": "wlr_prod_000151",
+        "published_at": null,
+        "publisher": "THORWallet",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "THORWallet Card Waitlist - Join Early Access",
+        "url": "https://whitelist.thorwallet.org/"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000102",
+  "identity": {
+    "aliases": [],
+    "name": "THORWallet"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/wallets/thorwallet.json",
+    "relationship_boundary": "wallet-to-product links are preserved as native product_ids but are not emitted as typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_ent_000102",
+    "native_record_type": "wlr.wallet-record.v1",
+    "slug": "thorwallet"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/thorwallet/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/wallet--thorwallet.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/wallets/thorwallet.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-09-02"
+  }
+}

@@ -898,5 +898,11 @@
     "entity_id": "wlr_ent_000101",
     "slug": "izaka-ya-wallet-app",
     "path": "/data/products/izaka-ya-wallet-app.json"
+  },
+  {
+    "id": "wlr_prod_000151",
+    "entity_id": "wlr_ent_000102",
+    "slug": "thorwallet-mobile",
+    "path": "/data/products/thorwallet-mobile.json"
   }
 ]
