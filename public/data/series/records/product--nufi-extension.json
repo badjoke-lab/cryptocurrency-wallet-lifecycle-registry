@@ -38,6 +38,22 @@
         "is_major_event": false,
         "product_id": "wlr_prod_000132",
         "title": "NuFi 2.4.x added wallet emulation mode"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000132"
+        ],
+        "confidence": "high",
+        "description": "NuFi documented support for Bitcoin accounts using multiple derivation-path categories and Native SegWit, Taproot, and legacy-compatible address formats in its first-party Bitcoin address-types guide.",
+        "entity_id": "wlr_ent_000083",
+        "event_date": "2025-06-11",
+        "event_date_basis": "discovery",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000228",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000132",
+        "title": "NuFi documented Bitcoin address-type support"
       }
     ]
   },
@@ -75,6 +91,22 @@
         "source_type": "official_statement",
         "title": "NuFi changelog",
         "url": "https://support.nu.fi/support/solutions/articles/80001016927-changelog"
+      },
+      {
+        "accessed_at": "2026-09-02",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000083",
+        "event_id": "wlr_ev_000228",
+        "id": "wlr_src_000499",
+        "is_primary": true,
+        "notes": "First-party NuFi guide documents supported Bitcoin derivation-path categories and address formats; event date uses the documented article modification date as discovery basis.",
+        "product_id": "wlr_prod_000132",
+        "published_at": "2025-06-11",
+        "publisher": "NuFi",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Bitcoin address types",
+        "url": "https://support.nu.fi/support/solutions/articles/80001177317-bitcoin-address-types"
       }
     ]
   },

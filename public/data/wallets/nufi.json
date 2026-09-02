@@ -62,6 +62,22 @@
       "confidence": "high",
       "event_status_effect": "active",
       "is_major_event": false
+    },
+    {
+      "id": "wlr_ev_000228",
+      "entity_id": "wlr_ent_000083",
+      "product_id": "wlr_prod_000132",
+      "affected_product_ids": [
+        "wlr_prod_000132"
+      ],
+      "event_type": "other",
+      "event_date": "2025-06-11",
+      "event_date_basis": "discovery",
+      "title": "NuFi documented Bitcoin address-type support",
+      "description": "NuFi documented support for Bitcoin accounts using multiple derivation-path categories and Native SegWit, Taproot, and legacy-compatible address formats in its first-party Bitcoin address-types guide.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
     }
   ],
   "evidence": [
@@ -112,6 +128,22 @@
       "claim_scope": "event",
       "is_primary": true,
       "notes": "First-party NuFi changelog records releases 2.4.0/2.4.2 on 2022-10-11 and describes browser-extension wallet emulation mode."
+    },
+    {
+      "id": "wlr_src_000499",
+      "entity_id": "wlr_ent_000083",
+      "product_id": "wlr_prod_000132",
+      "event_id": "wlr_ev_000228",
+      "source_type": "official_statement",
+      "title": "Bitcoin address types",
+      "url": "https://support.nu.fi/support/solutions/articles/80001177317-bitcoin-address-types",
+      "publisher": "NuFi",
+      "published_at": "2025-06-11",
+      "accessed_at": "2026-09-02",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party NuFi guide documents supported Bitcoin derivation-path categories and address formats; event date uses the documented article modification date as discovery basis."
     }
   ]
 }

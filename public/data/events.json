@@ -4364,21 +4364,101 @@
     "event_status_effect": "active",
     "is_major_event": false
   },
-{
-  "id": "wlr_ev_000224",
-  "entity_id": "wlr_ent_000102",
-  "product_id": "wlr_prod_000151",
-  "affected_product_ids": [
-    "wlr_prod_000151"
-  ],
-  "event_type": "other",
-  "event_date": "2026-08-31",
-  "event_date_basis": "announcement",
-  "title": "THORWallet Card launched",
-  "description": "THORWallet announced that its card was live, adding Mastercard spending to the self-custody wallet experience. Current first-party material advertises Basic and Premium card tiers and describes the card offering as distinct from the existing Swiss IBAN card program.",
-  "confidence": "high",
-  "event_status_effect": "active",
-  "is_major_event": true,
-  "notes": "WLR records this as a wallet capability/lifecycle event. The payment-card program itself belongs in Crypto Card Lifecycle Registry. Country-count claims vary across current first-party surfaces, so this event does not canonicalize one exact global country count."
-}
+  {
+    "id": "wlr_ev_000224",
+    "entity_id": "wlr_ent_000102",
+    "product_id": "wlr_prod_000151",
+    "affected_product_ids": [
+      "wlr_prod_000151"
+    ],
+    "event_type": "other",
+    "event_date": "2026-08-31",
+    "event_date_basis": "announcement",
+    "title": "THORWallet Card launched",
+    "description": "THORWallet announced that its card was live, adding Mastercard spending to the self-custody wallet experience. Current first-party material advertises Basic and Premium card tiers and describes the card offering as distinct from the existing Swiss IBAN card program.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true,
+    "notes": "WLR records this as a wallet capability/lifecycle event. The payment-card program itself belongs in Crypto Card Lifecycle Registry. Country-count claims vary across current first-party surfaces, so this event does not canonicalize one exact global country count."
+  },
+  {
+    "id": "wlr_ev_000225",
+    "entity_id": "wlr_ent_000080",
+    "product_id": "wlr_prod_000129",
+    "affected_product_ids": [
+      "wlr_prod_000129"
+    ],
+    "event_type": "other",
+    "event_date": "2026-06-17",
+    "event_date_basis": "announcement",
+    "title": "MyTonWallet officially rebranded to My Wallet",
+    "description": "My Wallet announced on 2026-06-17 that MyTonWallet was officially becoming My Wallet, retaining the same product and team while adopting a broader multichain identity after expanding beyond TON.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000226",
+    "entity_id": "wlr_ent_000081",
+    "product_id": "wlr_prod_000130",
+    "affected_product_ids": [
+      "wlr_prod_000130"
+    ],
+    "event_type": "other",
+    "event_date": "2024-09-24",
+    "event_date_basis": "release",
+    "title": "Tonhub v2.3.16 added W5 and gasless transfer support",
+    "description": "Tonhub released v2.3.16 on 2024-09-24 with the W5 wallet standard, gasless transfers for popular tokens, mintless-token support, and additional fixes and performance improvements.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000227",
+    "entity_id": "wlr_ent_000082",
+    "product_id": "wlr_prod_000131",
+    "affected_product_ids": [
+      "wlr_prod_000131"
+    ],
+    "event_type": "other",
+    "event_date": "2025-04-08",
+    "event_date_basis": "release",
+    "title": "Eternl v2.0.5 introduced the Eternl v2 interface",
+    "description": "Eternl released v2.0.5 on 2025-04-08 as the Eternl v2 milestone with an all-new UI, 30+ languages, MonsterSwap, portfolio overview, multi-signature wallet support, enhanced Ada Handle functionality, and OneKey hardware-wallet support.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000228",
+    "entity_id": "wlr_ent_000083",
+    "product_id": "wlr_prod_000132",
+    "affected_product_ids": [
+      "wlr_prod_000132"
+    ],
+    "event_type": "other",
+    "event_date": "2025-06-11",
+    "event_date_basis": "discovery",
+    "title": "NuFi documented Bitcoin address-type support",
+    "description": "NuFi documented support for Bitcoin accounts using multiple derivation-path categories and Native SegWit, Taproot, and legacy-compatible address formats in its first-party Bitcoin address-types guide.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000229",
+    "entity_id": "wlr_ent_000088",
+    "product_id": "wlr_prod_000137",
+    "affected_product_ids": [
+      "wlr_prod_000137"
+    ],
+    "event_type": "other",
+    "event_date": "2024-12-06",
+    "event_date_basis": "announcement",
+    "title": "Sequence launched a self-custodial wallet recovery app",
+    "description": "Sequence announced on 2024-12-06 the launch of the open-source Sequence Wallet Recovery app, allowing Sequence Universal Wallet users to regain access independently of Sequence infrastructure in supported failure scenarios.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  }
 ]

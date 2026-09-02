@@ -47,6 +47,22 @@
       "confidence": "high",
       "event_status_effect": "active",
       "is_major_event": false
+    },
+    {
+      "id": "wlr_ev_000227",
+      "entity_id": "wlr_ent_000082",
+      "product_id": "wlr_prod_000131",
+      "affected_product_ids": [
+        "wlr_prod_000131"
+      ],
+      "event_type": "other",
+      "event_date": "2025-04-08",
+      "event_date_basis": "release",
+      "title": "Eternl v2.0.5 introduced the Eternl v2 interface",
+      "description": "Eternl released v2.0.5 on 2025-04-08 as the Eternl v2 milestone with an all-new UI, 30+ languages, MonsterSwap, portfolio overview, multi-signature wallet support, enhanced Ada Handle functionality, and OneKey hardware-wallet support.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
     }
   ],
   "evidence": [
@@ -81,6 +97,22 @@
       "claim_scope": "event",
       "is_primary": true,
       "notes": "First-party release notes list v2.1.5.0 as released 2026-07-10 and mark Eternl Extension available."
+    },
+    {
+      "id": "wlr_src_000498",
+      "entity_id": "wlr_ent_000082",
+      "product_id": "wlr_prod_000131",
+      "event_id": "wlr_ev_000227",
+      "source_type": "official_statement",
+      "title": "What's New in v2?",
+      "url": "https://wiki.eternl.io/welcome-to-eternl-v2/whats-new-in-v2.0",
+      "publisher": "Eternl",
+      "published_at": "2025-04-08",
+      "accessed_at": "2026-09-02",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party Eternl v2 documentation describes the v2 UI, 30+ languages, MonsterSwap, portfolio, multi-sig support, governance, and new dApp browser."
     }
   ]
 }
