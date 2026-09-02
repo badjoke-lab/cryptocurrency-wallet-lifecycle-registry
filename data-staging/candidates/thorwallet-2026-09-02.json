@@ -1,0 +1,122 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_thorwallet",
+  "title": "THORWallet wallet and card lifecycle candidate",
+  "review_state": "ready_for_review",
+  "notes": "Adds the THORWallet wallet boundary first, then records the 2026-08-31 THORWallet Card launch as a wallet lifecycle capability event. The card itself is not modeled as a WLR wallet product.",
+  "records": {
+    "entities": [
+      {
+        "id": "wlr_ent_000102",
+        "slug": "thorwallet",
+        "canonical_name": "THORWallet",
+        "aliases": [],
+        "wallet_type": "software",
+        "status": "active",
+        "summary": "Self-custody multichain cryptocurrency wallet from EMM Ventures AG with native cross-chain swaps, DeFi features, multisig support and integrated card spending capabilities.",
+        "developer_or_company": "EMM Ventures AG",
+        "country_or_origin": "Switzerland",
+        "launch_date": "2021",
+        "launch_date_precision": "year",
+        "official_url": "https://www.thorwallet.org/",
+        "official_domain": "thorwallet.org",
+        "source_code_urls": [],
+        "custody_model": "self_custody",
+        "key_management_model": "user_controlled_self_custody_wallet_keys",
+        "confidence": "high",
+        "last_verified_at": "2026-09-02",
+        "notes": "THORWallet's current first-party site states 'Since 2021' and repeatedly describes the wallet as self-custody/non-custodial."
+      }
+    ],
+    "products": [
+      {
+        "id": "wlr_prod_000151",
+        "entity_id": "wlr_ent_000102",
+        "slug": "thorwallet-mobile",
+        "product_name": "THORWallet Mobile",
+        "product_type": "mobile_app",
+        "status": "active",
+        "sales_status": "not_applicable",
+        "support_status": "supported",
+        "launch_date": "2021",
+        "launch_date_precision": "year",
+        "platform": ["iOS", "Android"],
+        "official_url": "https://www.thorwallet.org/",
+        "source_code_url": null,
+        "custody_model": "self_custody",
+        "key_management_model": "user_controlled_self_custody_wallet_keys",
+        "summary": "THORWallet self-custody multichain mobile wallet for swaps, DeFi, multisig and integrated spending features.",
+        "confidence": "high",
+        "last_verified_at": "2026-09-02",
+        "notes": "The first-party homepage currently distributes THORWallet through the App Store and Google Play."
+      }
+    ],
+    "events": [
+      {
+        "id": "wlr_ev_000224",
+        "entity_id": "wlr_ent_000102",
+        "product_id": "wlr_prod_000151",
+        "affected_product_ids": ["wlr_prod_000151"],
+        "event_type": "other",
+        "event_date": "2026-08-31",
+        "event_date_basis": "announcement",
+        "title": "THORWallet Card launched",
+        "description": "THORWallet announced that its card was live, adding Mastercard spending to the self-custody wallet experience. Current first-party material advertises Basic and Premium card tiers and describes the card offering as distinct from the existing Swiss IBAN card program.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": true,
+        "notes": "WLR records this as a wallet capability/lifecycle event. The payment-card program itself belongs in Crypto Card Lifecycle Registry. Country-count claims vary across current first-party surfaces, so this event does not canonicalize one exact global country count."
+      }
+    ],
+    "evidence": [
+      {
+        "id": "wlr_src_000493",
+        "entity_id": "wlr_ent_000102",
+        "product_id": "wlr_prod_000151",
+        "event_id": null,
+        "source_type": "official_statement",
+        "title": "THORWallet — Self-Custody Multi-Chain Crypto Wallet, Swaps & DeFi",
+        "url": "https://www.thorwallet.org/",
+        "publisher": "THORWallet / EMM Ventures AG",
+        "published_at": null,
+        "accessed_at": "2026-09-02",
+        "reliability": "high",
+        "claim_scope": "product",
+        "is_primary": true,
+        "notes": "First-party homepage describes THORWallet as self-custody/non-custodial, says 'Since 2021', and links iOS and Android distribution."
+      },
+      {
+        "id": "wlr_src_000494",
+        "entity_id": "wlr_ent_000102",
+        "product_id": "wlr_prod_000151",
+        "event_id": "wlr_ev_000224",
+        "source_type": "official_blog",
+        "title": "Swap Anything, Spend Anywhere: The THORWallet Card Is Live",
+        "url": "https://www.thorwallet.org/",
+        "publisher": "THORWallet",
+        "published_at": "2026-08-31",
+        "accessed_at": "2026-09-02",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "The current first-party homepage lists the dated 2026-08-31 card-live announcement and presents the live card tiers."
+      },
+      {
+        "id": "wlr_src_000495",
+        "entity_id": "wlr_ent_000102",
+        "product_id": "wlr_prod_000151",
+        "event_id": "wlr_ev_000224",
+        "source_type": "official_statement",
+        "title": "THORWallet Card Waitlist - Join Early Access",
+        "url": "https://whitelist.thorwallet.org/",
+        "publisher": "THORWallet",
+        "published_at": null,
+        "accessed_at": "2026-09-02",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "First-party card page describes Basic/Premium as an offering additional to the existing Swiss IBAN card program and advertises broad international availability."
+      }
+    ]
+  }
+}
