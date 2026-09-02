@@ -1,0 +1,1930 @@
+{
+  "generated_from_main_sha": "04953b4ab585947fe106085d7265c3fbeec3d92d",
+  "authority": "current canonical branch state; historical Wave 03 queue IDs are not identity authority",
+  "one_event_count": 54,
+  "selection_rule": "exactly one canonical event; priority_score = missing_launch*4 + unknown_support*3 + max(0,4-evidence_count), then evidence_count asc, entity_id asc",
+  "selected_first_10": [
+    {
+      "entity_id": "wlr_ent_000090",
+      "canonical_name": "AQUA Wallet",
+      "slug": "aqua-wallet",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://aqua.net/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000139",
+          "product_name": "AQUA Wallet Mobile",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "unknown",
+          "official_url": "https://aqua.net/download"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000172",
+        "product_id": "wlr_prod_000139",
+        "event_type": "other",
+        "event_date": "2026-08-16",
+        "title": "AQUA Wallet v0.5.2 released"
+      },
+      "evidence_count": 3,
+      "missing_launch_count": 1,
+      "unknown_support_count": 1,
+      "priority_score": 8
+    },
+    {
+      "entity_id": "wlr_ent_000091",
+      "canonical_name": "Bitkit",
+      "slug": "bitkit",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://bitkit.to/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000140",
+          "product_name": "Bitkit Mobile",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "unknown",
+          "official_url": "https://bitkit.to/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000170",
+        "product_id": "wlr_prod_000140",
+        "event_type": "other",
+        "event_date": "2026-07-20",
+        "title": "Bitkit Android v2.4.0 released"
+      },
+      "evidence_count": 3,
+      "missing_launch_count": 1,
+      "unknown_support_count": 1,
+      "priority_score": 8
+    },
+    {
+      "entity_id": "wlr_ent_000092",
+      "canonical_name": "Breez",
+      "slug": "breez",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://breez.technology/mobile/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000141",
+          "product_name": "Breez Mobile",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "unknown",
+          "official_url": "https://breez.technology/mobile/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000173",
+        "product_id": "wlr_prod_000141",
+        "event_type": "other",
+        "event_date": "2026-08-29",
+        "title": "Breez Mobile documented maintenance mode"
+      },
+      "evidence_count": 3,
+      "missing_launch_count": 1,
+      "unknown_support_count": 1,
+      "priority_score": 8
+    },
+    {
+      "entity_id": "wlr_ent_000094",
+      "canonical_name": "Blixt Wallet",
+      "slug": "blixt-wallet",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://blixtwallet.github.io/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000143",
+          "product_name": "Blixt Wallet Mobile",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "unknown",
+          "official_url": "https://blixtwallet.github.io/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000171",
+        "product_id": "wlr_prod_000143",
+        "event_type": "other",
+        "event_date": "2026-02-18",
+        "title": "Blixt Wallet v0.9.0 released"
+      },
+      "evidence_count": 3,
+      "missing_launch_count": 1,
+      "unknown_support_count": 1,
+      "priority_score": 8
+    },
+    {
+      "entity_id": "wlr_ent_000099",
+      "canonical_name": "Satochip",
+      "slug": "satochip",
+      "wallet_type": "hardware",
+      "entity_status": "active",
+      "official_url": "https://satochip.io/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000148",
+          "product_name": "Satochip Hardware Wallet",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "unknown",
+          "official_url": "https://satochip.io/product/satochip/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000174",
+        "product_id": "wlr_prod_000148",
+        "event_type": "other",
+        "event_date": "2021-09-30",
+        "title": "Satochip applet v0.12 released"
+      },
+      "evidence_count": 3,
+      "missing_launch_count": 1,
+      "unknown_support_count": 1,
+      "priority_score": 8
+    },
+    {
+      "entity_id": "wlr_ent_000041",
+      "canonical_name": "Nunchuk",
+      "slug": "nunchuk",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://nunchuk.io/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000090",
+          "product_name": "Nunchuk Wallet",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "unknown",
+          "official_url": "https://nunchuk.io/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000159",
+        "product_id": "wlr_prod_000090",
+        "event_type": "product_released",
+        "event_date": "2020-11-06",
+        "title": "Nunchuk introduced its multisig wallet"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 1,
+      "priority_score": 7
+    },
+    {
+      "entity_id": "wlr_ent_000043",
+      "canonical_name": "Keplr",
+      "slug": "keplr",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://www.keplr.app/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000092",
+          "product_name": "Keplr Extension",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "unknown",
+          "official_url": "https://www.keplr.app/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000161",
+        "product_id": "wlr_prod_000092",
+        "event_type": "other",
+        "event_date": "2020-09-07",
+        "title": "Keplr extension update added Ledger signing support"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 1,
+      "priority_score": 7
+    },
+    {
+      "entity_id": "wlr_ent_000068",
+      "canonical_name": "Petra",
+      "slug": "petra",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://petra.app/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000117",
+          "product_name": "Petra Browser Extension",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "unknown",
+          "official_url": "https://petra.app/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000212",
+        "product_id": "wlr_prod_000117",
+        "event_type": "other",
+        "event_date": "2026-04-06",
+        "title": "Petra Wallet 2.4.0 added perpetual trading"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 1,
+      "priority_score": 7
+    },
+    {
+      "entity_id": "wlr_ent_000070",
+      "canonical_name": "GridPlus",
+      "slug": "gridplus",
+      "wallet_type": "hardware",
+      "entity_status": "active",
+      "official_url": "https://gridplus.io/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000119",
+          "product_name": "Lattice1",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "unknown",
+          "official_url": "https://gridplus.io/products/gridplus-lattice1"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000162",
+        "product_id": "wlr_prod_000119",
+        "event_type": "other",
+        "event_date": "2024-07-23",
+        "title": "Lattice1 firmware v0.18.3 released"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 1,
+      "priority_score": 7
+    },
+    {
+      "entity_id": "wlr_ent_000078",
+      "canonical_name": "UniSat Wallet",
+      "slug": "unisat-wallet",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://unisat.io/download",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000127",
+          "product_name": "UniSat Wallet Extension",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "unknown",
+          "official_url": "https://unisat.io/download"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000164",
+        "product_id": "wlr_prod_000127",
+        "event_type": "other",
+        "event_date": "2023-02-24",
+        "title": "UniSat Wallet v1.0.3 released"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 1,
+      "priority_score": 7
+    }
+  ],
+  "all_one_event_entities": [
+    {
+      "entity_id": "wlr_ent_000090",
+      "canonical_name": "AQUA Wallet",
+      "slug": "aqua-wallet",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://aqua.net/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000139",
+          "product_name": "AQUA Wallet Mobile",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "unknown",
+          "official_url": "https://aqua.net/download"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000172",
+        "product_id": "wlr_prod_000139",
+        "event_type": "other",
+        "event_date": "2026-08-16",
+        "title": "AQUA Wallet v0.5.2 released"
+      },
+      "evidence_count": 3,
+      "missing_launch_count": 1,
+      "unknown_support_count": 1,
+      "priority_score": 8
+    },
+    {
+      "entity_id": "wlr_ent_000091",
+      "canonical_name": "Bitkit",
+      "slug": "bitkit",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://bitkit.to/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000140",
+          "product_name": "Bitkit Mobile",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "unknown",
+          "official_url": "https://bitkit.to/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000170",
+        "product_id": "wlr_prod_000140",
+        "event_type": "other",
+        "event_date": "2026-07-20",
+        "title": "Bitkit Android v2.4.0 released"
+      },
+      "evidence_count": 3,
+      "missing_launch_count": 1,
+      "unknown_support_count": 1,
+      "priority_score": 8
+    },
+    {
+      "entity_id": "wlr_ent_000092",
+      "canonical_name": "Breez",
+      "slug": "breez",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://breez.technology/mobile/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000141",
+          "product_name": "Breez Mobile",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "unknown",
+          "official_url": "https://breez.technology/mobile/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000173",
+        "product_id": "wlr_prod_000141",
+        "event_type": "other",
+        "event_date": "2026-08-29",
+        "title": "Breez Mobile documented maintenance mode"
+      },
+      "evidence_count": 3,
+      "missing_launch_count": 1,
+      "unknown_support_count": 1,
+      "priority_score": 8
+    },
+    {
+      "entity_id": "wlr_ent_000094",
+      "canonical_name": "Blixt Wallet",
+      "slug": "blixt-wallet",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://blixtwallet.github.io/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000143",
+          "product_name": "Blixt Wallet Mobile",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "unknown",
+          "official_url": "https://blixtwallet.github.io/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000171",
+        "product_id": "wlr_prod_000143",
+        "event_type": "other",
+        "event_date": "2026-02-18",
+        "title": "Blixt Wallet v0.9.0 released"
+      },
+      "evidence_count": 3,
+      "missing_launch_count": 1,
+      "unknown_support_count": 1,
+      "priority_score": 8
+    },
+    {
+      "entity_id": "wlr_ent_000099",
+      "canonical_name": "Satochip",
+      "slug": "satochip",
+      "wallet_type": "hardware",
+      "entity_status": "active",
+      "official_url": "https://satochip.io/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000148",
+          "product_name": "Satochip Hardware Wallet",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "unknown",
+          "official_url": "https://satochip.io/product/satochip/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000174",
+        "product_id": "wlr_prod_000148",
+        "event_type": "other",
+        "event_date": "2021-09-30",
+        "title": "Satochip applet v0.12 released"
+      },
+      "evidence_count": 3,
+      "missing_launch_count": 1,
+      "unknown_support_count": 1,
+      "priority_score": 8
+    },
+    {
+      "entity_id": "wlr_ent_000041",
+      "canonical_name": "Nunchuk",
+      "slug": "nunchuk",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://nunchuk.io/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000090",
+          "product_name": "Nunchuk Wallet",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "unknown",
+          "official_url": "https://nunchuk.io/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000159",
+        "product_id": "wlr_prod_000090",
+        "event_type": "product_released",
+        "event_date": "2020-11-06",
+        "title": "Nunchuk introduced its multisig wallet"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 1,
+      "priority_score": 7
+    },
+    {
+      "entity_id": "wlr_ent_000043",
+      "canonical_name": "Keplr",
+      "slug": "keplr",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://www.keplr.app/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000092",
+          "product_name": "Keplr Extension",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "unknown",
+          "official_url": "https://www.keplr.app/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000161",
+        "product_id": "wlr_prod_000092",
+        "event_type": "other",
+        "event_date": "2020-09-07",
+        "title": "Keplr extension update added Ledger signing support"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 1,
+      "priority_score": 7
+    },
+    {
+      "entity_id": "wlr_ent_000068",
+      "canonical_name": "Petra",
+      "slug": "petra",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://petra.app/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000117",
+          "product_name": "Petra Browser Extension",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "unknown",
+          "official_url": "https://petra.app/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000212",
+        "product_id": "wlr_prod_000117",
+        "event_type": "other",
+        "event_date": "2026-04-06",
+        "title": "Petra Wallet 2.4.0 added perpetual trading"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 1,
+      "priority_score": 7
+    },
+    {
+      "entity_id": "wlr_ent_000070",
+      "canonical_name": "GridPlus",
+      "slug": "gridplus",
+      "wallet_type": "hardware",
+      "entity_status": "active",
+      "official_url": "https://gridplus.io/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000119",
+          "product_name": "Lattice1",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "unknown",
+          "official_url": "https://gridplus.io/products/gridplus-lattice1"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000162",
+        "product_id": "wlr_prod_000119",
+        "event_type": "other",
+        "event_date": "2024-07-23",
+        "title": "Lattice1 firmware v0.18.3 released"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 1,
+      "priority_score": 7
+    },
+    {
+      "entity_id": "wlr_ent_000078",
+      "canonical_name": "UniSat Wallet",
+      "slug": "unisat-wallet",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://unisat.io/download",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000127",
+          "product_name": "UniSat Wallet Extension",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "unknown",
+          "official_url": "https://unisat.io/download"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000164",
+        "product_id": "wlr_prod_000127",
+        "event_type": "other",
+        "event_date": "2023-02-24",
+        "title": "UniSat Wallet v1.0.3 released"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 1,
+      "priority_score": 7
+    },
+    {
+      "entity_id": "wlr_ent_000084",
+      "canonical_name": "VESPR",
+      "slug": "vespr",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://vespr.xyz/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000133",
+          "product_name": "VESPR Mobile",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "unknown",
+          "official_url": "https://docs.vespr.xyz/vespr/user-guide/getting-started/download-vespr"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000213",
+        "product_id": "wlr_prod_000133",
+        "event_type": "other",
+        "event_date": "2026-07-27",
+        "title": "VESPR Wallet 4.1.0 released"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 1,
+      "priority_score": 7
+    },
+    {
+      "entity_id": "wlr_ent_000085",
+      "canonical_name": "Begin Wallet",
+      "slug": "begin-wallet",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://begin.is/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000134",
+          "product_name": "Begin Wallet Mobile",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "unknown",
+          "official_url": "https://begin.is/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000210",
+        "product_id": "wlr_prod_000134",
+        "event_type": "other",
+        "event_date": "2026-02-23",
+        "title": "Begin Wallet 2.5.0 added Solana support"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 1,
+      "priority_score": 7
+    },
+    {
+      "entity_id": "wlr_ent_000086",
+      "canonical_name": "Glow",
+      "slug": "glow-wallet",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://glow.app/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000135",
+          "product_name": "Glow Browser Extension",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "unknown",
+          "official_url": "https://glow.app/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000211",
+        "product_id": "wlr_prod_000135",
+        "event_type": "other",
+        "event_date": "2024-08-10",
+        "title": "Glow Wallet 1.6.3 added iOS 18 support"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 1,
+      "priority_score": 7
+    },
+    {
+      "entity_id": "wlr_ent_000097",
+      "canonical_name": "Casa",
+      "slug": "casa",
+      "wallet_type": "hybrid",
+      "entity_status": "active",
+      "official_url": "https://casa.io/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000146",
+          "product_name": "Casa 3-Key Vault",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "unknown",
+          "official_url": "https://support.casa.io/knowledge/what-is-the-casa-app"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000203",
+        "product_id": "wlr_prod_000146",
+        "event_type": "other",
+        "event_date": "2026-06-29",
+        "title": "Casa documented address whitelisting for vaults"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 1,
+      "priority_score": 7
+    },
+    {
+      "entity_id": "wlr_ent_000059",
+      "canonical_name": "Ctrl Wallet",
+      "slug": "ctrl-wallet",
+      "wallet_type": "software",
+      "entity_status": "dead",
+      "official_url": "https://ctrl.xyz/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000108",
+          "product_name": "Ctrl Wallet Extension",
+          "status": "discontinued",
+          "launch_date": null,
+          "support_status": "ended",
+          "official_url": "https://ctrl.xyz/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000131",
+        "product_id": "wlr_prod_000108",
+        "event_type": "service_shutdown",
+        "event_date": "2026-08-03",
+        "title": "Ctrl Wallet shut down normal wallet functionality"
+      },
+      "evidence_count": 3,
+      "missing_launch_count": 1,
+      "unknown_support_count": 0,
+      "priority_score": 5
+    },
+    {
+      "entity_id": "wlr_ent_000096",
+      "canonical_name": "Specter Desktop",
+      "slug": "specter-desktop",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://github.com/cryptoadvance/specter-desktop",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000145",
+          "product_name": "Specter Desktop App",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "supported",
+          "official_url": "https://github.com/cryptoadvance/specter-desktop"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000190",
+        "product_id": "wlr_prod_000145",
+        "event_type": "other",
+        "event_date": "2026-08-15",
+        "title": "Specter Desktop v2.2.0-pre5 released"
+      },
+      "evidence_count": 3,
+      "missing_launch_count": 1,
+      "unknown_support_count": 0,
+      "priority_score": 5
+    },
+    {
+      "entity_id": "wlr_ent_000030",
+      "canonical_name": "TokenPocket",
+      "slug": "tokenpocket",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://www.tokenpocket.pro/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000079",
+          "product_name": "TokenPocket Mobile Wallet",
+          "status": "active",
+          "launch_date": "2018-02-13",
+          "support_status": "unknown",
+          "official_url": "https://www.tokenpocket.pro/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000148",
+        "product_id": "wlr_prod_000079",
+        "event_type": "product_released",
+        "event_date": "2018-02-13",
+        "title": "TokenPocket Wallet officially released"
+      },
+      "evidence_count": 3,
+      "missing_launch_count": 0,
+      "unknown_support_count": 1,
+      "priority_score": 4
+    },
+    {
+      "entity_id": "wlr_ent_000042",
+      "canonical_name": "Cake Wallet",
+      "slug": "cake-wallet",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://cakewallet.com/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000091",
+          "product_name": "Cake Wallet",
+          "status": "active",
+          "launch_date": "2018",
+          "support_status": "unknown",
+          "official_url": "https://cakewallet.com/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000150",
+        "product_id": "wlr_prod_000091",
+        "event_type": "product_released",
+        "event_date": "2018",
+        "title": "Cake Wallet launched as a Monero wallet for iOS"
+      },
+      "evidence_count": 3,
+      "missing_launch_count": 0,
+      "unknown_support_count": 1,
+      "priority_score": 4
+    },
+    {
+      "entity_id": "wlr_ent_000044",
+      "canonical_name": "Lace",
+      "slug": "lace",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://www.lace.io/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000093",
+          "product_name": "Lace Wallet",
+          "status": "active",
+          "launch_date": "2023-04",
+          "support_status": "unknown",
+          "official_url": "https://www.lace.io/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000180",
+        "product_id": "wlr_prod_000093",
+        "event_type": "other",
+        "event_date": "2026-08-26",
+        "title": "Lace 2.2.2 released"
+      },
+      "evidence_count": 3,
+      "missing_launch_count": 0,
+      "unknown_support_count": 1,
+      "priority_score": 4
+    },
+    {
+      "entity_id": "wlr_ent_000058",
+      "canonical_name": "Ambire Wallet",
+      "slug": "ambire-wallet",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://www.ambire.com/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000107",
+          "product_name": "Ambire Extension",
+          "status": "active",
+          "launch_date": "2025-05-08",
+          "support_status": "unknown",
+          "official_url": "https://www.ambire.com/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000205",
+        "product_id": "wlr_prod_000107",
+        "event_type": "other",
+        "event_date": "2026-03-17",
+        "title": "Ambire Extension received a major UI update"
+      },
+      "evidence_count": 3,
+      "missing_launch_count": 0,
+      "unknown_support_count": 1,
+      "priority_score": 4
+    },
+    {
+      "entity_id": "wlr_ent_000062",
+      "canonical_name": "HashPack",
+      "slug": "hashpack",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://www.hashpack.app/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000111",
+          "product_name": "HashPack Extension",
+          "status": "active",
+          "launch_date": "2021-10",
+          "support_status": "unknown",
+          "official_url": "https://www.hashpack.app/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000147",
+        "product_id": "wlr_prod_000111",
+        "event_type": "product_released",
+        "event_date": "2021-10-23",
+        "title": "HashPack launched publicly"
+      },
+      "evidence_count": 3,
+      "missing_launch_count": 0,
+      "unknown_support_count": 1,
+      "priority_score": 4
+    },
+    {
+      "entity_id": "wlr_ent_000072",
+      "canonical_name": "Arculus",
+      "slug": "arculus",
+      "wallet_type": "hardware",
+      "entity_status": "active",
+      "official_url": "https://www.getarculus.com/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000121",
+          "product_name": "Arculus Cold Storage Wallet",
+          "status": "active",
+          "launch_date": "2021",
+          "support_status": "unknown",
+          "official_url": "https://www.getarculus.com/products/cold-storage-wallet/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000202",
+        "product_id": "wlr_prod_000121",
+        "event_type": "other",
+        "event_date": "2026-08-23",
+        "title": "Arculus documented Wallet 3.12.x as the current release"
+      },
+      "evidence_count": 3,
+      "missing_launch_count": 0,
+      "unknown_support_count": 1,
+      "priority_score": 4
+    },
+    {
+      "entity_id": "wlr_ent_000079",
+      "canonical_name": "Tonkeeper",
+      "slug": "tonkeeper",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://tonkeeper.com/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000128",
+          "product_name": "Tonkeeper Mobile",
+          "status": "active",
+          "launch_date": "2021",
+          "support_status": "unknown",
+          "official_url": "https://tonkeeper.com/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000191",
+        "product_id": "wlr_prod_000128",
+        "event_type": "other",
+        "event_date": "2026-05-18",
+        "title": "Tonkeeper Android 26.05.1 released"
+      },
+      "evidence_count": 3,
+      "missing_launch_count": 0,
+      "unknown_support_count": 1,
+      "priority_score": 4
+    },
+    {
+      "entity_id": "wlr_ent_000089",
+      "canonical_name": "Nightly Wallet",
+      "slug": "nightly-wallet",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://nightly.app/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000138",
+          "product_name": "Nightly Wallet Extension",
+          "status": "active",
+          "launch_date": "2022-07-04",
+          "support_status": "unknown",
+          "official_url": "https://nightly.app/download"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000197",
+        "product_id": "wlr_prod_000138",
+        "event_type": "product_announced",
+        "event_date": "2022-07-04",
+        "title": "Nightly Wallet introduced publicly"
+      },
+      "evidence_count": 3,
+      "missing_launch_count": 0,
+      "unknown_support_count": 1,
+      "priority_score": 4
+    },
+    {
+      "entity_id": "wlr_ent_000093",
+      "canonical_name": "ZEUS Wallet",
+      "slug": "zeus-wallet",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://zeusln.com/wallet",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000142",
+          "product_name": "ZEUS Wallet Mobile",
+          "status": "active",
+          "launch_date": "2019",
+          "support_status": "unknown",
+          "official_url": "https://zeusln.com/wallet"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000192",
+        "product_id": "wlr_prod_000142",
+        "event_type": "other",
+        "event_date": "2026-05-21",
+        "title": "ZEUS v13.0.2 released"
+      },
+      "evidence_count": 3,
+      "missing_launch_count": 0,
+      "unknown_support_count": 1,
+      "priority_score": 4
+    },
+    {
+      "entity_id": "wlr_ent_000100",
+      "canonical_name": "Prokey",
+      "slug": "prokey",
+      "wallet_type": "hardware",
+      "entity_status": "active",
+      "official_url": "https://prokey.io/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000149",
+          "product_name": "Prokey Optimum",
+          "status": "active",
+          "launch_date": "2020-07-02",
+          "support_status": "unknown",
+          "official_url": "https://prokey.io/prokey-optimum"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000200",
+        "product_id": "wlr_prod_000149",
+        "event_type": "other",
+        "event_date": "2023-10-09",
+        "title": "Prokey Optimum firmware v1.10.5 released"
+      },
+      "evidence_count": 3,
+      "missing_launch_count": 0,
+      "unknown_support_count": 1,
+      "priority_score": 4
+    },
+    {
+      "entity_id": "wlr_ent_000033",
+      "canonical_name": "Guarda Wallet",
+      "slug": "guarda-wallet",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://guarda.com/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000082",
+          "product_name": "Guarda Wallet",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "supported",
+          "official_url": "https://guarda.com/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000149",
+        "product_id": "wlr_prod_000082",
+        "event_type": "product_released",
+        "event_date": "2018-12-04",
+        "title": "Guarda Mobile Multiwallet released"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 0,
+      "priority_score": 4
+    },
+    {
+      "entity_id": "wlr_ent_000037",
+      "canonical_name": "OneKey",
+      "slug": "onekey",
+      "wallet_type": "hardware",
+      "entity_status": "active",
+      "official_url": "https://onekey.so/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000086",
+          "product_name": "OneKey Pro",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "supported",
+          "official_url": "https://onekey.so/products/onekey-pro-hardware-wallet"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000204",
+        "product_id": null,
+        "event_type": "other",
+        "event_date": "2026-08-21",
+        "title": "OneKey Wallet 6.5.2 released"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 0,
+      "priority_score": 4
+    },
+    {
+      "entity_id": "wlr_ent_000040",
+      "canonical_name": "NGRAVE",
+      "slug": "ngrave",
+      "wallet_type": "hardware",
+      "entity_status": "active",
+      "official_url": "https://ngrave.io/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000089",
+          "product_name": "NGRAVE ZERO",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "supported",
+          "official_url": "https://ngrave.io/en/zero"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000142",
+        "product_id": "wlr_prod_000089",
+        "event_type": "product_announced",
+        "event_date": "2021-11-02",
+        "title": "NGRAVE announced ZERO was ready to ship"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 0,
+      "priority_score": 4
+    },
+    {
+      "entity_id": "wlr_ent_000045",
+      "canonical_name": "Ronin Wallet",
+      "slug": "ronin-wallet",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://wallet.roninchain.com/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000094",
+          "product_name": "Ronin Wallet Extension",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "supported",
+          "official_url": "https://wallet.roninchain.com/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000208",
+        "product_id": "wlr_prod_000094",
+        "event_type": "other",
+        "event_date": "2025-12-15",
+        "title": "Ronin Wallet upgrades added Solana support and new onramps"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 0,
+      "priority_score": 4
+    },
+    {
+      "entity_id": "wlr_ent_000046",
+      "canonical_name": "Bitget Wallet",
+      "slug": "bitget-wallet",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://web3.bitget.com/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000095",
+          "product_name": "Bitget Wallet Mobile",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "supported",
+          "official_url": "https://web3.bitget.com/wallet"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000123",
+        "product_id": "wlr_prod_000095",
+        "event_type": "rebranded",
+        "event_date": "2023-08-10",
+        "title": "BitKeep upgraded its brand to Bitget Wallet"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 0,
+      "priority_score": 4
+    },
+    {
+      "entity_id": "wlr_ent_000049",
+      "canonical_name": "Phoenix Wallet",
+      "slug": "phoenix-wallet",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://phoenix.acinq.co/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000098",
+          "product_name": "Phoenix Wallet",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "supported",
+          "official_url": "https://phoenix.acinq.co/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000179",
+        "product_id": "wlr_prod_000098",
+        "event_type": "other",
+        "event_date": "2026-06-18",
+        "title": "Phoenix 2.8.1 released"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 0,
+      "priority_score": 4
+    },
+    {
+      "entity_id": "wlr_ent_000051",
+      "canonical_name": "Brave Wallet",
+      "slug": "brave-wallet",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://brave.com/wallet/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000100",
+          "product_name": "Brave Wallet Browser",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "supported",
+          "official_url": "https://brave.com/wallet/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000133",
+        "product_id": "wlr_prod_000100",
+        "event_type": "product_released",
+        "event_date": "2021-11-16",
+        "title": "Browser-native Brave Wallet launched"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 0,
+      "priority_score": 4
+    },
+    {
+      "entity_id": "wlr_ent_000052",
+      "canonical_name": "Crypto.com Onchain",
+      "slug": "crypto-com-onchain",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://crypto.com/onchain",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000101",
+          "product_name": "Crypto.com Onchain Extension",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "supported",
+          "official_url": "https://crypto.com/en/product-news/onchain-extension-revamp/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000129",
+        "product_id": "wlr_prod_000101",
+        "event_type": "rebranded",
+        "event_date": "2024-11-20",
+        "title": "Crypto.com DeFi Wallet became Crypto.com Onchain"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 0,
+      "priority_score": 4
+    },
+    {
+      "entity_id": "wlr_ent_000053",
+      "canonical_name": "Binance Wallet",
+      "slug": "binance-wallet",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://www.binance.com/en/web3wallet",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000102",
+          "product_name": "Binance Wallet Mobile",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "supported",
+          "official_url": "https://www.binance.com/en/web3wallet"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000132",
+        "product_id": "wlr_prod_000102",
+        "event_type": "rebranded",
+        "event_date": "2024-12",
+        "title": "Binance Web3 Wallet rebranded as Binance Wallet"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 0,
+      "priority_score": 4
+    },
+    {
+      "entity_id": "wlr_ent_000055",
+      "canonical_name": "BitPay Wallet",
+      "slug": "bitpay-wallet",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://www.bitpay.com/wallet",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000104",
+          "product_name": "BitPay Wallet App",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "supported",
+          "official_url": "https://www.bitpay.com/wallet"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000182",
+        "product_id": "wlr_prod_000104",
+        "event_type": "other",
+        "event_date": "2026-08-20",
+        "title": "BitPay Wallet added XRP buy, sell, and swap support"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 0,
+      "priority_score": 4
+    },
+    {
+      "entity_id": "wlr_ent_000056",
+      "canonical_name": "Coin98 Wallet",
+      "slug": "coin98-wallet",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://coin98.com/wallet",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000105",
+          "product_name": "Coin98 Super Wallet Mobile",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "supported",
+          "official_url": "https://coin98.com/wallet"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000189",
+        "product_id": "wlr_prod_000105",
+        "event_type": "other",
+        "event_date": "2025-07-06",
+        "title": "Coin98 Super Wallet V16 launch documented"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 0,
+      "priority_score": 4
+    },
+    {
+      "entity_id": "wlr_ent_000057",
+      "canonical_name": "MathWallet",
+      "slug": "mathwallet",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://www.mathwallet.org/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000106",
+          "product_name": "MathWallet Mobile",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "supported",
+          "official_url": "https://www.mathwallet.org/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000184",
+        "product_id": "wlr_prod_000106",
+        "event_type": "other",
+        "event_date": "2019-07-12",
+        "title": "MathWallet v3.0.0 major update documented"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 0,
+      "priority_score": 4
+    },
+    {
+      "entity_id": "wlr_ent_000061",
+      "canonical_name": "Backpack",
+      "slug": "backpack-wallet",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://backpack.app/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000110",
+          "product_name": "Backpack Browser Extension",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "supported",
+          "official_url": "https://backpack.app/downloads"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000185",
+        "product_id": "wlr_prod_000110",
+        "event_type": "other",
+        "event_date": "2023-12-25",
+        "title": "Backpack 0.10.1-latest-4 released"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 0,
+      "priority_score": 4
+    },
+    {
+      "entity_id": "wlr_ent_000063",
+      "canonical_name": "Xaman",
+      "slug": "xaman",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://xaman.app/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000112",
+          "product_name": "Xaman Mobile",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "supported",
+          "official_url": "https://xaman.app/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000128",
+        "product_id": "wlr_prod_000112",
+        "event_type": "rebranded",
+        "event_date": "2023-05-26",
+        "title": "XUMM announced its rebrand to Xaman"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 0,
+      "priority_score": 4
+    },
+    {
+      "entity_id": "wlr_ent_000064",
+      "canonical_name": "Pera Wallet",
+      "slug": "pera-wallet",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://perawallet.app/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000113",
+          "product_name": "Pera Mobile",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "supported",
+          "official_url": "https://perawallet.app/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000186",
+        "product_id": "wlr_prod_000113",
+        "event_type": "other",
+        "event_date": "2023-02-09",
+        "title": "Pera Wallet 5.7.0 released for iOS and Android"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 0,
+      "priority_score": 4
+    },
+    {
+      "entity_id": "wlr_ent_000067",
+      "canonical_name": "SubWallet",
+      "slug": "subwallet",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://www.subwallet.app/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000116",
+          "product_name": "SubWallet Extension",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "supported",
+          "official_url": "https://www.subwallet.app/download.html"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000187",
+        "product_id": "wlr_prod_000116",
+        "event_type": "other",
+        "event_date": "2026-07-23",
+        "title": "SubWallet Extension v1.3.84 released"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 0,
+      "priority_score": 4
+    },
+    {
+      "entity_id": "wlr_ent_000069",
+      "canonical_name": "Slush",
+      "slug": "slush-wallet",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://slush.app/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000118",
+          "product_name": "Slush Browser Extension",
+          "status": "active",
+          "launch_date": null,
+          "support_status": "supported",
+          "official_url": "https://slush.app/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000130",
+        "product_id": "wlr_prod_000118",
+        "event_type": "rebranded",
+        "event_date": "2025-04-24",
+        "title": "Sui Wallet and Stashed unified under the Slush brand"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 1,
+      "unknown_support_count": 0,
+      "priority_score": 4
+    },
+    {
+      "entity_id": "wlr_ent_000028",
+      "canonical_name": "OKX Wallet",
+      "slug": "okx-wallet",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://web3.okx.com/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000077",
+          "product_name": "OKX Wallet App",
+          "status": "active",
+          "launch_date": "2025-04-16",
+          "support_status": "unknown",
+          "official_url": "https://web3.okx.com/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000207",
+        "product_id": "wlr_prod_000077",
+        "event_type": "other",
+        "event_date": "2026-04-29",
+        "title": "OKX Wallet added Pharos mainnet support"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 0,
+      "unknown_support_count": 1,
+      "priority_score": 3
+    },
+    {
+      "entity_id": "wlr_ent_000031",
+      "canonical_name": "Solflare",
+      "slug": "solflare",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://www.solflare.com/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000080",
+          "product_name": "Solflare Browser Extension",
+          "status": "active",
+          "launch_date": "2020",
+          "support_status": "unknown",
+          "official_url": "https://www.solflare.com/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000153",
+        "product_id": "wlr_prod_000080",
+        "event_type": "product_released",
+        "event_date": "2020",
+        "title": "Solflare Web App and Extension launched in 2020"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 0,
+      "unknown_support_count": 1,
+      "priority_score": 3
+    },
+    {
+      "entity_id": "wlr_ent_000047",
+      "canonical_name": "Uniswap Wallet",
+      "slug": "uniswap-wallet",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://wallet.uniswap.org/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000096",
+          "product_name": "Uniswap Wallet",
+          "status": "active",
+          "launch_date": "2023-04-13",
+          "support_status": "unknown",
+          "official_url": "https://wallet.uniswap.org/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000209",
+        "product_id": "wlr_prod_000096",
+        "event_type": "other",
+        "event_date": "2026-01-15",
+        "title": "Uniswap Wallet added X Layer support"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 0,
+      "unknown_support_count": 1,
+      "priority_score": 3
+    },
+    {
+      "entity_id": "wlr_ent_000048",
+      "canonical_name": "Zerion Wallet",
+      "slug": "zerion-wallet",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://zerion.io/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000097",
+          "product_name": "Zerion Wallet Mobile",
+          "status": "active",
+          "launch_date": "2022-05-26",
+          "support_status": "unknown",
+          "official_url": "https://www.zerion.io/download"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000201",
+        "product_id": "wlr_prod_000097",
+        "event_type": "other",
+        "event_date": "2026-01-08",
+        "title": "Zerion Wallet added TRON support"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 0,
+      "unknown_support_count": 1,
+      "priority_score": 3
+    },
+    {
+      "entity_id": "wlr_ent_000050",
+      "canonical_name": "Muun",
+      "slug": "muun",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://muun.com/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000099",
+          "product_name": "Muun Wallet",
+          "status": "active",
+          "launch_date": "2018-10-10",
+          "support_status": "unknown",
+          "official_url": "https://muun.com/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000206",
+        "product_id": "wlr_prod_000099",
+        "event_type": "other",
+        "event_date": "2021-01-11",
+        "title": "Muun 2.0 launched"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 0,
+      "unknown_support_count": 1,
+      "priority_score": 3
+    },
+    {
+      "entity_id": "wlr_ent_000095",
+      "canonical_name": "Samourai Wallet",
+      "slug": "samourai-wallet",
+      "wallet_type": "software",
+      "entity_status": "dead",
+      "official_url": "https://samouraiwallet.com/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000144",
+          "product_name": "Samourai Wallet Android",
+          "status": "dead",
+          "launch_date": "2015",
+          "support_status": "ended",
+          "official_url": "https://github.com/Samourai-Wallet/samourai-wallet-android"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000125",
+        "product_id": "wlr_prod_000144",
+        "event_type": "service_shutdown",
+        "event_date": "2024-04-24",
+        "title": "Samourai Wallet infrastructure seized and service closed"
+      },
+      "evidence_count": 3,
+      "missing_launch_count": 0,
+      "unknown_support_count": 0,
+      "priority_score": 1
+    },
+    {
+      "entity_id": "wlr_ent_000102",
+      "canonical_name": "THORWallet",
+      "slug": "thorwallet",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://www.thorwallet.org/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000151",
+          "product_name": "THORWallet Mobile",
+          "status": "active",
+          "launch_date": "2021",
+          "support_status": "supported",
+          "official_url": "https://www.thorwallet.org/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000224",
+        "product_id": "wlr_prod_000151",
+        "event_type": "other",
+        "event_date": "2026-08-31",
+        "title": "THORWallet Card launched"
+      },
+      "evidence_count": 3,
+      "missing_launch_count": 0,
+      "unknown_support_count": 0,
+      "priority_score": 1
+    },
+    {
+      "entity_id": "wlr_ent_000034",
+      "canonical_name": "Coinomi",
+      "slug": "coinomi",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://www.coinomi.com/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000083",
+          "product_name": "Coinomi Wallet",
+          "status": "active",
+          "launch_date": "2014",
+          "support_status": "supported",
+          "official_url": "https://www.coinomi.com/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000156",
+        "product_id": "wlr_prod_000083",
+        "event_type": "product_released",
+        "event_date": "2014",
+        "title": "Coinomi wallet launched"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 0,
+      "unknown_support_count": 0,
+      "priority_score": 0
+    },
+    {
+      "entity_id": "wlr_ent_000035",
+      "canonical_name": "ELLIPAL",
+      "slug": "ellipal",
+      "wallet_type": "hardware",
+      "entity_status": "active",
+      "official_url": "https://www.ellipal.com/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000084",
+          "product_name": "ELLIPAL Titan 2.0",
+          "status": "active",
+          "launch_date": "2023-11-06",
+          "support_status": "supported",
+          "official_url": "https://www.ellipal.com/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000157",
+        "product_id": "wlr_prod_000084",
+        "event_type": "product_released",
+        "event_date": "2023-11-06",
+        "title": "ELLIPAL Titan 2.0 introduced"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 0,
+      "unknown_support_count": 0,
+      "priority_score": 0
+    },
+    {
+      "entity_id": "wlr_ent_000060",
+      "canonical_name": "Enkrypt",
+      "slug": "enkrypt",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://www.enkrypt.com/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000109",
+          "product_name": "Enkrypt Extension",
+          "status": "active",
+          "launch_date": "2022-08-03",
+          "support_status": "supported",
+          "official_url": "https://www.enkrypt.com/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000183",
+        "product_id": "wlr_prod_000109",
+        "event_type": "product_released",
+        "event_date": "2022-08-03",
+        "title": "Enkrypt browser extension introduced"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 0,
+      "unknown_support_count": 0,
+      "priority_score": 0
+    },
+    {
+      "entity_id": "wlr_ent_000066",
+      "canonical_name": "Talisman",
+      "slug": "talisman",
+      "wallet_type": "software",
+      "entity_status": "active",
+      "official_url": "https://www.talisman.xyz/",
+      "product_count": 1,
+      "products": [
+        {
+          "id": "wlr_prod_000115",
+          "product_name": "Talisman Wallet Extension",
+          "status": "active",
+          "launch_date": "2022-03-03",
+          "support_status": "supported",
+          "official_url": "https://www.talisman.xyz/"
+        }
+      ],
+      "sole_event": {
+        "id": "wlr_ev_000188",
+        "product_id": "wlr_prod_000115",
+        "event_type": "product_released",
+        "event_date": "2022-03-03",
+        "title": "Talisman Wallet Extension v1.0.0 publicly released"
+      },
+      "evidence_count": 4,
+      "missing_launch_count": 0,
+      "unknown_support_count": 0,
+      "priority_score": 0
+    }
+  ]
+}
