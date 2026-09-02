@@ -4363,5 +4363,22 @@
     "confidence": "high",
     "event_status_effect": "active",
     "is_major_event": false
-  }
+  },
+{
+  "id": "wlr_ev_000224",
+  "entity_id": "wlr_ent_000102",
+  "product_id": "wlr_prod_000151",
+  "affected_product_ids": [
+    "wlr_prod_000151"
+  ],
+  "event_type": "other",
+  "event_date": "2026-08-31",
+  "event_date_basis": "announcement",
+  "title": "THORWallet Card launched",
+  "description": "THORWallet announced that its card was live, adding Mastercard spending to the self-custody wallet experience. Current first-party material advertises Basic and Premium card tiers and describes the card offering as distinct from the existing Swiss IBAN card program.",
+  "confidence": "high",
+  "event_status_effect": "active",
+  "is_major_event": true,
+  "notes": "WLR records this as a wallet capability/lifecycle event. The payment-card program itself belongs in Crypto Card Lifecycle Registry. Country-count claims vary across current first-party surfaces, so this event does not canonicalize one exact global country count."
+}
 ]
