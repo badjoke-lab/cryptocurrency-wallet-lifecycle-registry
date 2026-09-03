@@ -1,0 +1,157 @@
+{
+  "generated_from_main_sha": "3729d992a89087221fe681fd349065f837fec403",
+  "one_event_count": 49,
+  "selection_rule": "priority_score = missing_launch*4 + unknown_support*3 + max(0,4-evidence_count); then evidence_count asc, entity_id asc",
+  "selected": [
+    {
+      "entity_id": "wlr_ent_000041",
+      "entity_name": "Nunchuk",
+      "product_id": "wlr_prod_000090",
+      "product_name": "Nunchuk Wallet",
+      "priority_score": 7,
+      "evidence_count": 4,
+      "missing_launch": 1,
+      "unknown_support": 1,
+      "sole_event": {
+        "id": "wlr_ev_000159",
+        "event_date": "2020-11-06",
+        "title": "Nunchuk introduced its multisig wallet"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000043",
+      "entity_name": "Keplr",
+      "product_id": "wlr_prod_000092",
+      "product_name": "Keplr Extension",
+      "priority_score": 7,
+      "evidence_count": 4,
+      "missing_launch": 1,
+      "unknown_support": 1,
+      "sole_event": {
+        "id": "wlr_ev_000161",
+        "event_date": "2020-09-07",
+        "title": "Keplr extension update added Ledger signing support"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000068",
+      "entity_name": "Petra",
+      "product_id": "wlr_prod_000117",
+      "product_name": "Petra Browser Extension",
+      "priority_score": 7,
+      "evidence_count": 4,
+      "missing_launch": 1,
+      "unknown_support": 1,
+      "sole_event": {
+        "id": "wlr_ev_000212",
+        "event_date": "2026-04-06",
+        "title": "Petra Wallet 2.4.0 added perpetual trading"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000070",
+      "entity_name": "GridPlus",
+      "product_id": "wlr_prod_000119",
+      "product_name": "Lattice1",
+      "priority_score": 7,
+      "evidence_count": 4,
+      "missing_launch": 1,
+      "unknown_support": 1,
+      "sole_event": {
+        "id": "wlr_ev_000162",
+        "event_date": "2024-07-23",
+        "title": "Lattice1 firmware v0.18.3 released"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000078",
+      "entity_name": "UniSat Wallet",
+      "product_id": "wlr_prod_000127",
+      "product_name": "UniSat Wallet Extension",
+      "priority_score": 7,
+      "evidence_count": 4,
+      "missing_launch": 1,
+      "unknown_support": 1,
+      "sole_event": {
+        "id": "wlr_ev_000164",
+        "event_date": "2023-02-24",
+        "title": "UniSat Wallet v1.0.3 released"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000084",
+      "entity_name": "VESPR",
+      "product_id": "wlr_prod_000133",
+      "product_name": "VESPR Mobile",
+      "priority_score": 7,
+      "evidence_count": 4,
+      "missing_launch": 1,
+      "unknown_support": 1,
+      "sole_event": {
+        "id": "wlr_ev_000213",
+        "event_date": "2026-07-27",
+        "title": "VESPR Wallet 4.1.0 released"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000085",
+      "entity_name": "Begin Wallet",
+      "product_id": "wlr_prod_000134",
+      "product_name": "Begin Wallet Mobile",
+      "priority_score": 7,
+      "evidence_count": 4,
+      "missing_launch": 1,
+      "unknown_support": 1,
+      "sole_event": {
+        "id": "wlr_ev_000210",
+        "event_date": "2026-02-23",
+        "title": "Begin Wallet 2.5.0 added Solana support"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000086",
+      "entity_name": "Glow",
+      "product_id": "wlr_prod_000135",
+      "product_name": "Glow Browser Extension",
+      "priority_score": 7,
+      "evidence_count": 4,
+      "missing_launch": 1,
+      "unknown_support": 1,
+      "sole_event": {
+        "id": "wlr_ev_000211",
+        "event_date": "2024-08-10",
+        "title": "Glow Wallet 1.6.3 added iOS 18 support"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000097",
+      "entity_name": "Casa",
+      "product_id": "wlr_prod_000146",
+      "product_name": "Casa 3-Key Vault",
+      "priority_score": 7,
+      "evidence_count": 4,
+      "missing_launch": 1,
+      "unknown_support": 1,
+      "sole_event": {
+        "id": "wlr_ev_000203",
+        "event_date": "2026-06-29",
+        "title": "Casa documented address whitelisting for vaults"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000059",
+      "entity_name": "Ctrl Wallet",
+      "product_id": "wlr_prod_000108",
+      "product_name": "Ctrl Wallet Extension",
+      "priority_score": 5,
+      "evidence_count": 3,
+      "missing_launch": 1,
+      "unknown_support": 0,
+      "sole_event": {
+        "id": "wlr_ev_000131",
+        "event_date": "2026-08-03",
+        "title": "Ctrl Wallet shut down normal wallet functionality"
+      }
+    }
+  ]
+}
