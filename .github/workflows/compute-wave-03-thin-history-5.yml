@@ -1,0 +1,74 @@
+name: Compute Wave 03 Thin History 5
+
+on:
+  push:
+    branches:
+      - research/coverage-recovery-wave-03-thin-history-5
+
+permissions:
+  contents: write
+
+jobs:
+  compute:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compute fresh-main one-event queue
+        run: |
+          python <<'PY'
+          import json
+          from collections import defaultdict
+          from pathlib import Path
+
+          entities=json.loads(Path('data/entities.json').read_text())
+          products=json.loads(Path('data/products.json').read_text())
+          events=json.loads(Path('data/events.json').read_text())
+          evidence=json.loads(Path('data/evidence.json').read_text())
+
+          pbe=defaultdict(list); ebe=defaultdict(list); evibe=defaultdict(list)
+          for p in products: pbe[p['entity_id']].append(p)
+          for e in events: ebe[e['entity_id']].append(e)
+          for s in evidence:
+            if s.get('entity_id'): evibe[s['entity_id']].append(s)
+
+          rows=[]
+          for ent in entities:
+            eid=ent['id']; es=ebe[eid]
+            if len(es)!=1: continue
+            ps=pbe[eid]; evs=evibe[eid]
+            missing_launch = 1 if any(not p.get('launch_date') for p in ps) else 0
+            unknown_support = 1 if any(p.get('support_status') in (None,'unknown') for p in ps) else 0
+            evidence_count=len(evs)
+            priority_score=missing_launch*4 + unknown_support*3 + max(0,4-evidence_count)
+            rows.append({
+              'entity_id':eid,
+              'entity_name':ent['canonical_name'],
+              'product_id':ps[0]['id'] if len(ps)==1 else None,
+              'product_name':ps[0].get('product_name') if len(ps)==1 else None,
+              'priority_score':priority_score,
+              'evidence_count':evidence_count,
+              'missing_launch':missing_launch,
+              'unknown_support':unknown_support,
+              'sole_event':{'id':es[0]['id'],'event_date':es[0]['event_date'],'title':es[0]['title']},
+            })
+          rows.sort(key=lambda r:(-r['priority_score'], r['evidence_count'], r['entity_id']))
+          out={
+            'generated_from_main_sha':'3729d992a89087221fe681fd349065f837fec403',
+            'one_event_count':len(rows),
+            'selection_rule':'priority_score = missing_launch*4 + unknown_support*3 + max(0,4-evidence_count); then evidence_count asc, entity_id asc',
+            'selected':rows[:10]
+          }
+          path=Path('data-staging/coverage/coverage-recovery-wave-03-thin-history-5.json')
+          path.parent.mkdir(parents=True,exist_ok=True)
+          path.write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n')
+          print(json.dumps(out,ensure_ascii=False,indent=2))
+          PY
+      - name: Commit queue and remove temporary workflow
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data-staging/coverage/coverage-recovery-wave-03-thin-history-5.json
+          git rm .github/workflows/compute-wave-03-thin-history-5.yml
+          git commit -m "Compute Wave 03 thin-history batch 5 queue"
+          git push
