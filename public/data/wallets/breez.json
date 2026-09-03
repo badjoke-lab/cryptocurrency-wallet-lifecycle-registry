@@ -63,6 +63,22 @@
       "event_status_effect": "limited",
       "is_major_event": true,
       "notes": "The official repository did not state when maintenance mode began. The event date records the date the reduced support state was documented during WLR review, not an inferred original effective date."
+    },
+    {
+      "id": "wlr_ev_000232",
+      "entity_id": "wlr_ent_000092",
+      "product_id": "wlr_prod_000141",
+      "affected_product_ids": [
+        "wlr_prod_000141"
+      ],
+      "event_type": "other",
+      "event_date": "2025-01-14",
+      "event_date_basis": "release",
+      "title": "Breez Mobile 0.17.bugfixes.5 released",
+      "description": "Breez published the 0.17.bugfixes.5 mobile-wallet release on 2025-01-14, continuing the 0.17 line with bug fixes and signed release artifacts.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": false
     }
   ],
   "evidence": [
@@ -113,6 +129,22 @@
       "claim_scope": "event",
       "is_primary": true,
       "notes": "Official repository explicitly states Maintenance Mode and defines the reduced support scope. Event date records the observation date because the repository text does not provide the date maintenance mode began."
+    },
+    {
+      "id": "wlr_src_000503",
+      "entity_id": "wlr_ent_000092",
+      "product_id": "wlr_prod_000141",
+      "event_id": "wlr_ev_000232",
+      "source_type": "release_notes",
+      "title": "Breez Mobile 0.17.bugfixes.5",
+      "url": "https://github.com/breez/breezmobile/releases/tag/0.17.bugfixes.5",
+      "publisher": "Breez",
+      "published_at": "2025-01-14",
+      "accessed_at": "2026-09-02",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Official Breez repository release documents the 0.17.bugfixes.5 build and signed release artifacts."
     }
   ]
 }

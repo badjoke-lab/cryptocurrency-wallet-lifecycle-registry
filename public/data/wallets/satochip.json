@@ -63,6 +63,22 @@
       "confidence": "high",
       "event_status_effect": "active",
       "is_major_event": false
+    },
+    {
+      "id": "wlr_ev_000234",
+      "entity_id": "wlr_ent_000099",
+      "product_id": "wlr_prod_000148",
+      "affected_product_ids": [
+        "wlr_prod_000148"
+      ],
+      "event_type": "other",
+      "event_date": "2025-06-16",
+      "event_date_basis": "release",
+      "title": "Satochip applet v0.15-0.1 added beta MuSig2 support",
+      "description": "Satochip published applet v0.15-0.1 on 2025-06-16 with experimental MuSig2 support and a secnonce-reuse protection mechanism validated against BIP327 test vectors.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
     }
   ],
   "evidence": [
@@ -113,6 +129,22 @@
       "claim_scope": "event",
       "is_primary": true,
       "notes": "Official Satochip applet release published 2021-09-30."
+    },
+    {
+      "id": "wlr_src_000505",
+      "entity_id": "wlr_ent_000099",
+      "product_id": "wlr_prod_000148",
+      "event_id": "wlr_ev_000234",
+      "source_type": "release_notes",
+      "title": "Satochip applet v0.15-0.1: MuSig2 support (beta)",
+      "url": "https://github.com/Toporin/SatochipApplet/releases/tag/v0.15-0.1",
+      "publisher": "Satochip",
+      "published_at": "2025-06-16",
+      "accessed_at": "2026-09-02",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Official Satochip applet release documents experimental MuSig2 support, BIP327 test-vector validation, and secnonce-reuse protection."
     }
   ]
 }

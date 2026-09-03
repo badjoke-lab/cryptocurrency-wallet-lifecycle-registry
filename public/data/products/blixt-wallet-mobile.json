@@ -46,6 +46,22 @@
       "confidence": "high",
       "event_status_effect": "active",
       "is_major_event": false
+    },
+    {
+      "id": "wlr_ev_000233",
+      "entity_id": "wlr_ent_000094",
+      "product_id": "wlr_prod_000143",
+      "affected_product_ids": [
+        "wlr_prod_000143"
+      ],
+      "event_type": "other",
+      "event_date": "2025-07-01",
+      "event_date_basis": "release",
+      "title": "Blixt Wallet v0.8.0 moved to React Native New Architecture",
+      "description": "Blixt Wallet released v0.8.0 on 2025-07-01, migrating the app to React Native New Architecture, replacing its lnd, Tor, and SQLite backends with new open-source libraries, updating lnd to 0.18.4, and rewriting Android periodic chain syncing.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
     }
   ],
   "evidence": [
@@ -80,6 +96,22 @@
       "claim_scope": "event",
       "is_primary": true,
       "notes": "Official Blixt Wallet release with mainnet/testnet APK assets and release notes."
+    },
+    {
+      "id": "wlr_src_000504",
+      "entity_id": "wlr_ent_000094",
+      "product_id": "wlr_prod_000143",
+      "event_id": "wlr_ev_000233",
+      "source_type": "release_notes",
+      "title": "Blixt Wallet v0.8.0",
+      "url": "https://github.com/smolcars/blixt-wallet/releases/tag/v0.8.0",
+      "publisher": "Blixt Wallet",
+      "published_at": "2025-07-01",
+      "accessed_at": "2026-09-02",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Official Blixt repository release documents the React Native New Architecture migration, backend-library changes, lnd update, and Android chain-sync rewrite."
     }
   ]
 }

@@ -4460,5 +4460,85 @@
     "confidence": "high",
     "event_status_effect": "active",
     "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000230",
+    "entity_id": "wlr_ent_000090",
+    "product_id": "wlr_prod_000139",
+    "affected_product_ids": [
+      "wlr_prod_000139"
+    ],
+    "event_type": "other",
+    "event_date": "2026-06-04",
+    "event_date_basis": "release",
+    "title": "AQUA Wallet v0.5.0 added Lightning Addresses and payment deep links",
+    "description": "AQUA Wallet released v0.5.0 on 2026-06-04, adding Lightning Addresses, deep-link support for Bitcoin, Lightning, and Liquid payments, and reducing the minimum Boltz Lightning send amount from 1,000 to 100 sats.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000231",
+    "entity_id": "wlr_ent_000091",
+    "product_id": "wlr_prod_000140",
+    "affected_product_ids": [
+      "wlr_prod_000140"
+    ],
+    "event_type": "other",
+    "event_date": "2025-05-21",
+    "event_date_basis": "announcement",
+    "title": "Bitkit documented native-app rebuild, Wake to Pay, and Bitcoin Maps",
+    "description": "Bitkit announced a major mobile update built on a native-app rewrite, adding Android Wake to Pay for background Lightning receiving and an integrated Bitcoin Maps feature while retaining its LDK-based Lightning node.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000232",
+    "entity_id": "wlr_ent_000092",
+    "product_id": "wlr_prod_000141",
+    "affected_product_ids": [
+      "wlr_prod_000141"
+    ],
+    "event_type": "other",
+    "event_date": "2025-01-14",
+    "event_date_basis": "release",
+    "title": "Breez Mobile 0.17.bugfixes.5 released",
+    "description": "Breez published the 0.17.bugfixes.5 mobile-wallet release on 2025-01-14, continuing the 0.17 line with bug fixes and signed release artifacts.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000233",
+    "entity_id": "wlr_ent_000094",
+    "product_id": "wlr_prod_000143",
+    "affected_product_ids": [
+      "wlr_prod_000143"
+    ],
+    "event_type": "other",
+    "event_date": "2025-07-01",
+    "event_date_basis": "release",
+    "title": "Blixt Wallet v0.8.0 moved to React Native New Architecture",
+    "description": "Blixt Wallet released v0.8.0 on 2025-07-01, migrating the app to React Native New Architecture, replacing its lnd, Tor, and SQLite backends with new open-source libraries, updating lnd to 0.18.4, and rewriting Android periodic chain syncing.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000234",
+    "entity_id": "wlr_ent_000099",
+    "product_id": "wlr_prod_000148",
+    "affected_product_ids": [
+      "wlr_prod_000148"
+    ],
+    "event_type": "other",
+    "event_date": "2025-06-16",
+    "event_date_basis": "release",
+    "title": "Satochip applet v0.15-0.1 added beta MuSig2 support",
+    "description": "Satochip published applet v0.15-0.1 on 2025-06-16 with experimental MuSig2 support and a secnonce-reuse protection mechanism validated against BIP327 test vectors.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
   }
 ]

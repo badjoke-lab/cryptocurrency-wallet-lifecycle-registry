@@ -46,6 +46,22 @@
       "confidence": "high",
       "event_status_effect": "active",
       "is_major_event": false
+    },
+    {
+      "id": "wlr_ev_000231",
+      "entity_id": "wlr_ent_000091",
+      "product_id": "wlr_prod_000140",
+      "affected_product_ids": [
+        "wlr_prod_000140"
+      ],
+      "event_type": "other",
+      "event_date": "2025-05-21",
+      "event_date_basis": "announcement",
+      "title": "Bitkit documented native-app rebuild, Wake to Pay, and Bitcoin Maps",
+      "description": "Bitkit announced a major mobile update built on a native-app rewrite, adding Android Wake to Pay for background Lightning receiving and an integrated Bitcoin Maps feature while retaining its LDK-based Lightning node.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
     }
   ],
   "evidence": [
@@ -80,6 +96,22 @@
       "claim_scope": "event",
       "is_primary": true,
       "notes": "Official Synonym Bitkit Android release with APK assets and detailed changelog."
+    },
+    {
+      "id": "wlr_src_000502",
+      "entity_id": "wlr_ent_000091",
+      "product_id": "wlr_prod_000140",
+      "event_id": "wlr_ev_000231",
+      "source_type": "official_blog",
+      "title": "What Is New in Bitkit: Native Performance, Wake to Pay, and Bitcoin Maps",
+      "url": "https://bitkit.to/learn/what-is-new-in-bitkit-native-performance-wake-to-pay",
+      "publisher": "Bitkit",
+      "published_at": "2025-05-21",
+      "accessed_at": "2026-09-02",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party Bitkit article documents the native rewrite, Android Wake to Pay, and integrated Bitcoin Maps."
     }
   ]
 }

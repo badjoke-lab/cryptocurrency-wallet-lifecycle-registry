@@ -32,6 +32,22 @@
         "is_major_event": false,
         "product_id": "wlr_prod_000140",
         "title": "Bitkit Android v2.4.0 released"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000140"
+        ],
+        "confidence": "high",
+        "description": "Bitkit announced a major mobile update built on a native-app rewrite, adding Android Wake to Pay for background Lightning receiving and an integrated Bitcoin Maps feature while retaining its LDK-based Lightning node.",
+        "entity_id": "wlr_ent_000091",
+        "event_date": "2025-05-21",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000231",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000140",
+        "title": "Bitkit documented native-app rebuild, Wake to Pay, and Bitcoin Maps"
       }
     ]
   },
@@ -85,6 +101,22 @@
         "source_type": "release_notes",
         "title": "Bitkit Android v2.4.0",
         "url": "https://github.com/synonymdev/bitkit-android/releases/tag/v2.4.0"
+      },
+      {
+        "accessed_at": "2026-09-02",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000091",
+        "event_id": "wlr_ev_000231",
+        "id": "wlr_src_000502",
+        "is_primary": true,
+        "notes": "First-party Bitkit article documents the native rewrite, Android Wake to Pay, and integrated Bitcoin Maps.",
+        "product_id": "wlr_prod_000140",
+        "published_at": "2025-05-21",
+        "publisher": "Bitkit",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "What Is New in Bitkit: Native Performance, Wake to Pay, and Bitcoin Maps",
+        "url": "https://bitkit.to/learn/what-is-new-in-bitkit-native-performance-wake-to-pay"
       }
     ]
   },
