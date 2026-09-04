@@ -7,11 +7,11 @@
     "entities": 102,
     "products": 151,
     "events": 241,
-    "evidence": 512,
+    "evidence": 514,
     "wallet_records": 102,
     "product_records": 151
   },
-  "last_verified_at": "2026-09-02",
+  "last_verified_at": "2026-09-04",
   "files": [
     "/data/entities.json",
     "/data/products.json",

@@ -167,7 +167,7 @@
     "url": "https://trezor.io/blog/news/recent-customer-data-exposed-in-shipping-provider-incident",
     "publisher": "Trezor",
     "published_at": "2026-08-13",
-    "accessed_at": "2026-08-14",
+    "accessed_at": "2026-09-04",
     "reliability": "high",
     "claim_scope": "customer_data",
     "is_primary": true,
@@ -8834,5 +8834,37 @@
     "claim_scope": "event",
     "is_primary": true,
     "notes": "First-party Ctrl article documents Manifest V3 compliance and automatic migration from the XDEFI Wallet extension to Ctrl."
+  },
+  {
+    "id": "wlr_src_000516",
+    "entity_id": "wlr_ent_000001",
+    "product_id": null,
+    "event_id": "wlr_ev_000010",
+    "source_type": "official_social",
+    "title": "ShipMonk breach follow-up: additional 67,000 U.S. customers affected",
+    "url": "https://x.com/Trezor/status/2095807665603584085",
+    "publisher": "Trezor",
+    "published_at": "2026-09-04",
+    "accessed_at": "2026-09-04",
+    "reliability": "high",
+    "claim_scope": "customer_data",
+    "is_primary": true,
+    "notes": "Official follow-up expanding the known scope to approximately 67,000 additional U.S. customers with orders from November 2019 through August 2021, and stating that ShipMonk had retained data despite written deletion assurances."
+  },
+  {
+    "id": "wlr_src_000517",
+    "entity_id": "wlr_ent_000001",
+    "product_id": null,
+    "event_id": "wlr_ev_000010",
+    "source_type": "news_article",
+    "title": "67,000 More Trezor Customers Exposed as Data Breach Widens",
+    "url": "https://decrypt.co/377389/67000-more-trezor-customers-exposed-as-data-breach-widens",
+    "publisher": "Decrypt",
+    "published_at": "2026-09-04",
+    "accessed_at": "2026-09-04",
+    "reliability": "high",
+    "claim_scope": "customer_data",
+    "is_primary": false,
+    "notes": "Secondary reporting corroborating Trezor’s September 4 scope expansion and the older U.S. order-data retention issue."
   }
 ]
