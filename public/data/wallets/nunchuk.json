@@ -58,6 +58,22 @@
       "confidence": "high",
       "event_status_effect": "active",
       "is_major_event": true
+    },
+    {
+      "id": "wlr_ev_000235",
+      "entity_id": "wlr_ent_000041",
+      "product_id": "wlr_prod_000090",
+      "affected_product_ids": [
+        "wlr_prod_000090"
+      ],
+      "event_type": "other",
+      "event_date": "2025-02-26",
+      "event_date_basis": "announcement",
+      "title": "Nunchuk unveiled a redesigned Group Wallet",
+      "description": "Nunchuk announced a redesigned Group Wallet that removed the prior Matrix dependency, derived a shared encryption key from wallet output descriptors, simplified cross-device recovery, and made the collaborative multisig wallet available to all Nunchuk users.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
     }
   ],
   "evidence": [
@@ -124,6 +140,22 @@
       "claim_scope": "event",
       "is_primary": true,
       "notes": "First-party introductory announcement supporting the November 6, 2020 product-release event."
+    },
+    {
+      "id": "wlr_src_000506",
+      "entity_id": "wlr_ent_000041",
+      "product_id": "wlr_prod_000090",
+      "event_id": "wlr_ev_000235",
+      "source_type": "official_blog",
+      "title": "Group Wallet: Simpler, Stronger, Better",
+      "url": "https://nunchuk.io/blog/group-wallet",
+      "publisher": "Nunchuk",
+      "published_at": "2025-02-26",
+      "accessed_at": "2026-09-03",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party Nunchuk article announcing the redesigned Group Wallet architecture and availability."
     }
   ]
 }
