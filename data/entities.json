@@ -21,7 +21,7 @@
     ],
     "custody_model": "self_custody",
     "confidence": "high",
-    "last_verified_at": "2026-08-14",
+    "last_verified_at": "2026-09-04",
     "notes": "Trezor states it was founded in 2013. Product launch dates are tracked separately at product level."
   },
   {
@@ -2309,25 +2309,25 @@
     "last_verified_at": "2026-08-23",
     "notes": "Canonical inclusion is not a safety endorsement. Custody classification reflects provider-operated cloud/custody language; independent recovery remains a material known unknown."
   },
-{
-  "id": "wlr_ent_000102",
-  "slug": "thorwallet",
-  "canonical_name": "THORWallet",
-  "aliases": [],
-  "wallet_type": "software",
-  "status": "active",
-  "summary": "Self-custody multichain cryptocurrency wallet from EMM Ventures AG with native cross-chain swaps, DeFi features, multisig support and integrated card spending capabilities.",
-  "developer_or_company": "EMM Ventures AG",
-  "country_or_origin": "Switzerland",
-  "launch_date": "2021",
-  "launch_date_precision": "year",
-  "official_url": "https://www.thorwallet.org/",
-  "official_domain": "thorwallet.org",
-  "source_code_urls": [],
-  "custody_model": "self_custody",
-  "key_management_model": "user_controlled_self_custody_wallet_keys",
-  "confidence": "high",
-  "last_verified_at": "2026-09-02",
-  "notes": "THORWallet's current first-party site states 'Since 2021' and repeatedly describes the wallet as self-custody/non-custodial."
-}
+  {
+    "id": "wlr_ent_000102",
+    "slug": "thorwallet",
+    "canonical_name": "THORWallet",
+    "aliases": [],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Self-custody multichain cryptocurrency wallet from EMM Ventures AG with native cross-chain swaps, DeFi features, multisig support and integrated card spending capabilities.",
+    "developer_or_company": "EMM Ventures AG",
+    "country_or_origin": "Switzerland",
+    "launch_date": "2021",
+    "launch_date_precision": "year",
+    "official_url": "https://www.thorwallet.org/",
+    "official_domain": "thorwallet.org",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "user_controlled_self_custody_wallet_keys",
+    "confidence": "high",
+    "last_verified_at": "2026-09-02",
+    "notes": "THORWallet's current first-party site states 'Since 2021' and repeatedly describes the wallet as self-custody/non-custodial."
+  }
 ]

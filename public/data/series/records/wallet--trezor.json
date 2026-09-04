@@ -194,7 +194,8 @@
           "shipping_address",
           "phone_number",
           "email_address",
-          "city"
+          "city",
+          "order_number"
         ],
         "affected_product_ids": [],
         "affected_regions": [
@@ -206,9 +207,9 @@
           "Italy",
           "Portugal"
         ],
-        "affected_users_text": "Approximately 13,689 customers total; 11,742 with full exposure and 1,947 with partial exposure",
+        "affected_users_text": "More than 80,000 customers known affected in total: 13,689 disclosed on 2026-08-13, plus approximately 67,000 additional U.S. customers disclosed on 2026-09-04.",
         "confidence": "high",
-        "description": "Trezor disclosed that ShipMonk, a third-party fulfillment partner, experienced unauthorized access exposing customer order information.",
+        "description": "Trezor disclosed that ShipMonk, a third-party fulfillment partner, experienced unauthorized access exposing customer order information; on 2026-09-04 Trezor reported that the breach also affected approximately 67,000 additional U.S. customers whose orders dated from November 2019 to August 2021.",
         "entity_id": "wlr_ent_000001",
         "event_date": "2026-08-13",
         "event_date_basis": "disclosure",
@@ -218,11 +219,11 @@
         "id": "wlr_ev_000010",
         "impact_level": "high",
         "is_major_event": true,
-        "notes": "Trezor stated that its systems, products and services were not compromised. ShipMonk notified Trezor on 2026-08-10; investigation remained ongoing at disclosure.",
+        "notes": "Trezor stated that its systems, products and services were not compromised. ShipMonk notified Trezor on 2026-08-10. On 2026-09-04, Trezor said ShipMonk had retained older U.S. order records despite repeated written assurances that data had been deleted in line with contract and policy. Trezor warned of phishing, fraudulent calls or letters, and potential physical-security risks.",
         "product_id": null,
         "security_scope": "third_party_vendor",
         "third_party_name": "ShipMonk",
-        "title": "Shipping provider customer data breach disclosed",
+        "title": "ShipMonk customer data breach disclosed and later expanded",
         "user_actions_required": [
           "monitor"
         ]
@@ -391,7 +392,7 @@
         "url": "https://trezor.io/other/product-updates/how-long-will-trezor-model-one-and-model-t-be-supported"
       },
       {
-        "accessed_at": "2026-08-14",
+        "accessed_at": "2026-09-04",
         "claim_scope": "customer_data",
         "entity_id": "wlr_ent_000001",
         "event_id": "wlr_ev_000010",
@@ -453,6 +454,38 @@
         "source_type": "source_code",
         "title": "Trezor Firmware Monorepo",
         "url": "https://github.com/trezor/trezor-firmware"
+      },
+      {
+        "accessed_at": "2026-09-04",
+        "claim_scope": "customer_data",
+        "entity_id": "wlr_ent_000001",
+        "event_id": "wlr_ev_000010",
+        "id": "wlr_src_000516",
+        "is_primary": true,
+        "notes": "Official follow-up expanding the known scope to approximately 67,000 additional U.S. customers with orders from November 2019 through August 2021, and stating that ShipMonk had retained data despite written deletion assurances.",
+        "product_id": null,
+        "published_at": "2026-09-04",
+        "publisher": "Trezor",
+        "reliability": "high",
+        "source_type": "official_social",
+        "title": "ShipMonk breach follow-up: additional 67,000 U.S. customers affected",
+        "url": "https://x.com/Trezor/status/2095807665603584085"
+      },
+      {
+        "accessed_at": "2026-09-04",
+        "claim_scope": "customer_data",
+        "entity_id": "wlr_ent_000001",
+        "event_id": "wlr_ev_000010",
+        "id": "wlr_src_000517",
+        "is_primary": false,
+        "notes": "Secondary reporting corroborating Trezor’s September 4 scope expansion and the older U.S. order-data retention issue.",
+        "product_id": null,
+        "published_at": "2026-09-04",
+        "publisher": "Decrypt",
+        "reliability": "high",
+        "source_type": "news_article",
+        "title": "67,000 More Trezor Customers Exposed as Data Breach Widens",
+        "url": "https://decrypt.co/377389/67000-more-trezor-customers-exposed-as-data-breach-widens"
       }
     ]
   },
@@ -488,6 +521,6 @@
     "native_machine": "https://wlr.badjoke-lab.com/data/wallets/trezor.json"
   },
   "verification": {
-    "last_verified_at": "2026-08-14"
+    "last_verified_at": "2026-09-04"
   }
 }

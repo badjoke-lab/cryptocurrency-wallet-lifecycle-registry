@@ -173,8 +173,8 @@
     "event_type": "third_party_data_breach",
     "event_date": "2026-08-13",
     "event_date_basis": "disclosure",
-    "title": "Shipping provider customer data breach disclosed",
-    "description": "Trezor disclosed that ShipMonk, a third-party fulfillment partner, experienced unauthorized access exposing customer order information.",
+    "title": "ShipMonk customer data breach disclosed and later expanded",
+    "description": "Trezor disclosed that ShipMonk, a third-party fulfillment partner, experienced unauthorized access exposing customer order information; on 2026-09-04 Trezor reported that the breach also affected approximately 67,000 additional U.S. customers whose orders dated from November 2019 to August 2021.",
     "confidence": "high",
     "impact_level": "high",
     "security_scope": "third_party_vendor",
@@ -190,15 +190,16 @@
       "Italy",
       "Portugal"
     ],
-    "affected_users_text": "Approximately 13,689 customers total; 11,742 with full exposure and 1,947 with partial exposure",
+    "affected_users_text": "More than 80,000 customers known affected in total: 13,689 disclosed on 2026-08-13, plus approximately 67,000 additional U.S. customers disclosed on 2026-09-04.",
     "affected_data": [
       "full_name",
       "shipping_address",
       "phone_number",
       "email_address",
-      "city"
+      "city",
+      "order_number"
     ],
-    "notes": "Trezor stated that its systems, products and services were not compromised. ShipMonk notified Trezor on 2026-08-10; investigation remained ongoing at disclosure.",
+    "notes": "Trezor stated that its systems, products and services were not compromised. ShipMonk notified Trezor on 2026-08-10. On 2026-09-04, Trezor said ShipMonk had retained older U.S. order records despite repeated written assurances that data had been deleted in line with contract and policy. Trezor warned of phishing, fraudulent calls or letters, and potential physical-security risks.",
     "third_party_name": "ShipMonk",
     "user_actions_required": [
       "monitor"
