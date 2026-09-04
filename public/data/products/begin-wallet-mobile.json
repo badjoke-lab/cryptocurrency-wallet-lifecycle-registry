@@ -46,6 +46,22 @@
       "confidence": "high",
       "event_status_effect": "active",
       "is_major_event": false
+    },
+    {
+      "id": "wlr_ev_000241",
+      "entity_id": "wlr_ent_000085",
+      "product_id": "wlr_prod_000134",
+      "affected_product_ids": [
+        "wlr_prod_000134"
+      ],
+      "event_type": "other",
+      "event_date": "2025-04-29",
+      "event_date_basis": "announcement",
+      "title": "Begin Wallet documented integrated Bitcoin and Cardano support under one seed phrase",
+      "description": "Begin Wallet published a first-party product update documenting that its latest release allowed users to manage Bitcoin and Cardano under the same seed phrase, including sending, receiving, and storing BTC and ADA within one wallet experience.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
     }
   ],
   "evidence": [
@@ -96,6 +112,22 @@
       "claim_scope": "event",
       "is_primary": true,
       "notes": "App Store listing identifies version 2.5.0 and its dated Solana-support release notes; candidate app_store_listing normalized to canonical database_reference."
+    },
+    {
+      "id": "wlr_src_000512",
+      "entity_id": "wlr_ent_000085",
+      "product_id": "wlr_prod_000134",
+      "event_id": "wlr_ev_000241",
+      "source_type": "official_blog",
+      "title": "Bitcoin + Cardano: Managing Both with One Wallet",
+      "url": "https://begin.is/blog/manage-bitcoin-cardano-wallet",
+      "publisher": "Begin Wallet",
+      "published_at": "2025-04-29",
+      "accessed_at": "2026-09-04",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party Begin Wallet article states that the latest release allowed Bitcoin and Cardano to be managed under one seed phrase."
     }
   ]
 }

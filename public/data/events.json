@@ -4620,5 +4620,85 @@
     "confidence": "high",
     "event_status_effect": "active",
     "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000240",
+    "entity_id": "wlr_ent_000084",
+    "product_id": "wlr_prod_000133",
+    "affected_product_ids": [
+      "wlr_prod_000133"
+    ],
+    "event_type": "other",
+    "event_date": "2026-09-01",
+    "event_date_basis": "announcement",
+    "title": "Keystone published VESPR hardware-wallet integration guidance",
+    "description": "Keystone published an official VESPR integration guide documenting connection and transaction-signing support between Keystone 3 Pro and VESPR Mobile, with VESPR app version 3.8.0 identified as the required wallet version in the guide.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000241",
+    "entity_id": "wlr_ent_000085",
+    "product_id": "wlr_prod_000134",
+    "affected_product_ids": [
+      "wlr_prod_000134"
+    ],
+    "event_type": "other",
+    "event_date": "2025-04-29",
+    "event_date_basis": "announcement",
+    "title": "Begin Wallet documented integrated Bitcoin and Cardano support under one seed phrase",
+    "description": "Begin Wallet published a first-party product update documenting that its latest release allowed users to manage Bitcoin and Cardano under the same seed phrase, including sending, receiving, and storing BTC and ADA within one wallet experience.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000242",
+    "entity_id": "wlr_ent_000086",
+    "product_id": "wlr_prod_000135",
+    "affected_product_ids": [
+      "wlr_prod_000135"
+    ],
+    "event_type": "other",
+    "event_date": "2022-09-12",
+    "event_date_basis": "release",
+    "title": "Glow 1.4 added Ledger hardware-wallet and iPad support",
+    "description": "Glow version 1.4 was released on 2022-09-12 with Ledger hardware-wallet support, iPad support, enhanced collectible viewing, improved collectible transaction details, and performance fixes.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000243",
+    "entity_id": "wlr_ent_000097",
+    "product_id": "wlr_prod_000146",
+    "affected_product_ids": [
+      "wlr_prod_000146"
+    ],
+    "event_type": "other",
+    "event_date": "2023-06-21",
+    "event_date_basis": "release",
+    "title": "Casa made Ethereum multi-key vaults available",
+    "description": "Casa's official product-update history records 2023-06-21 as the availability milestone for securing ETH with a multi-key vault, extending the Casa vault product beyond its earlier bitcoin-only availability.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000244",
+    "entity_id": "wlr_ent_000059",
+    "product_id": "wlr_prod_000108",
+    "affected_product_ids": [
+      "wlr_prod_000108"
+    ],
+    "event_type": "other",
+    "event_date": "2024-08-30",
+    "event_date_basis": "announcement",
+    "title": "Ctrl documented Manifest V3 migration for the browser extension",
+    "description": "Ctrl published a first-party migration update stating that the wallet extension would fully comply with Chrome Manifest V3 and that existing XDEFI Wallet users would receive the Ctrl update automatically without moving funds or re-importing wallet keys.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
   }
 ]

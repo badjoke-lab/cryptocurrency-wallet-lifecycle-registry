@@ -46,6 +46,22 @@
       "confidence": "high",
       "event_status_effect": "active",
       "is_major_event": false
+    },
+    {
+      "id": "wlr_ev_000243",
+      "entity_id": "wlr_ent_000097",
+      "product_id": "wlr_prod_000146",
+      "affected_product_ids": [
+        "wlr_prod_000146"
+      ],
+      "event_type": "other",
+      "event_date": "2023-06-21",
+      "event_date_basis": "release",
+      "title": "Casa made Ethereum multi-key vaults available",
+      "description": "Casa's official product-update history records 2023-06-21 as the availability milestone for securing ETH with a multi-key vault, extending the Casa vault product beyond its earlier bitcoin-only availability.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
     }
   ],
   "evidence": [
@@ -96,6 +112,22 @@
       "claim_scope": "event",
       "is_primary": true,
       "notes": "First-party Casa documentation describes whitelisting as available for vault transactions."
+    },
+    {
+      "id": "wlr_src_000514",
+      "entity_id": "wlr_ent_000097",
+      "product_id": "wlr_prod_000146",
+      "event_id": "wlr_ev_000243",
+      "source_type": "official_statement",
+      "title": "Casa Product Updates",
+      "url": "https://docs.casa.io/updates",
+      "publisher": "Casa",
+      "published_at": "2023-06-21",
+      "accessed_at": "2026-09-04",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Casa's official dated product-update history records ETH multi-key vault availability on 2023-06-21."
     }
   ]
 }
