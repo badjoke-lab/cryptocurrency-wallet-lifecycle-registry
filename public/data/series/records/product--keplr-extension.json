@@ -38,6 +38,22 @@
         "is_major_event": false,
         "product_id": "wlr_prod_000092",
         "title": "Keplr extension update added Ledger signing support"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000092"
+        ],
+        "confidence": "high",
+        "description": "Keplr's official support documentation, updated on 2025-09-23, documented multilingual and multi-fiat settings, Smart Grouping for assets spread across chains, and Chrome Side Panel mode for Keplr Wallet.",
+        "entity_id": "wlr_ent_000043",
+        "event_date": "2025-09-23",
+        "event_date_basis": "discovery",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000236",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000092",
+        "title": "Keplr documented multilingual, smart-grouping, and Side Panel features"
       }
     ]
   },
@@ -91,6 +107,22 @@
         "source_type": "official_blog",
         "title": "How to use Ledger Nano hardware wallet with Keplr",
         "url": "https://medium.com/chainapsis/how-to-use-ledger-nano-hardware-wallet-with-keplr-9ea7f07826c2"
+      },
+      {
+        "accessed_at": "2026-09-03",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000043",
+        "event_id": "wlr_ev_000236",
+        "id": "wlr_src_000507",
+        "is_primary": true,
+        "notes": "Official Keplr support page documenting multilingual, multi-fiat, Smart Grouping, and Chrome Side Panel capabilities; update date used conservatively as discovery chronology.",
+        "product_id": "wlr_prod_000092",
+        "published_at": "2025-09-23",
+        "publisher": "Keplr",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Additional Features",
+        "url": "https://help.keplr.app/general-faq/5R3bMyjtr3tXNeJo8ojSDV/additional-features/5So5gM41LikdLxc838qGBQ"
       }
     ]
   },

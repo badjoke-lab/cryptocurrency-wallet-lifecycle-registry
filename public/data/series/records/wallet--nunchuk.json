@@ -32,6 +32,22 @@
         "is_major_event": true,
         "product_id": "wlr_prod_000090",
         "title": "Nunchuk introduced its multisig wallet"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000090"
+        ],
+        "confidence": "high",
+        "description": "Nunchuk announced a redesigned Group Wallet that removed the prior Matrix dependency, derived a shared encryption key from wallet output descriptors, simplified cross-device recovery, and made the collaborative multisig wallet available to all Nunchuk users.",
+        "entity_id": "wlr_ent_000041",
+        "event_date": "2025-02-26",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000235",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000090",
+        "title": "Nunchuk unveiled a redesigned Group Wallet"
       }
     ]
   },
@@ -101,6 +117,22 @@
         "source_type": "official_blog",
         "title": "Introducing Nunchuk: Multisig Made Easy",
         "url": "https://nunchuk.io/blog/introducing-nunchuk-multisig-made-easy-ehvJmuXFtmL8trLXkCRLH3"
+      },
+      {
+        "accessed_at": "2026-09-03",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000041",
+        "event_id": "wlr_ev_000235",
+        "id": "wlr_src_000506",
+        "is_primary": true,
+        "notes": "First-party Nunchuk article announcing the redesigned Group Wallet architecture and availability.",
+        "product_id": "wlr_prod_000090",
+        "published_at": "2025-02-26",
+        "publisher": "Nunchuk",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Group Wallet: Simpler, Stronger, Better",
+        "url": "https://nunchuk.io/blog/group-wallet"
       }
     ]
   },

@@ -32,6 +32,22 @@
         "is_major_event": false,
         "product_id": "wlr_prod_000127",
         "title": "UniSat Wallet v1.0.3 released"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000127"
+        ],
+        "confidence": "high",
+        "description": "UniSat Wallet extension v1.6.0 was published on 2025-04-03, removing Atomicals token support, fixing Keystone hardware-wallet signing bugs and potential vulnerabilities, and improving wallet loading speed.",
+        "entity_id": "wlr_ent_000078",
+        "event_date": "2025-04-03",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000239",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000127",
+        "title": "UniSat Wallet extension v1.6.0 removed Atomicals support and fixed Keystone signing"
       }
     ]
   },
@@ -101,6 +117,22 @@
         "source_type": "official_blog",
         "title": "UniSat Wallet - v1.0.3 update",
         "url": "https://unisat-wallet.medium.com/unisat-wallet-v1-0-3-update-3dda76909831"
+      },
+      {
+        "accessed_at": "2026-09-03",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000078",
+        "event_id": "wlr_ev_000239",
+        "id": "wlr_src_000510",
+        "is_primary": true,
+        "notes": "Official UniSat Wallet extension release documents Atomicals removal, Keystone signing fixes, vulnerability fixes, and wallet loading improvements.",
+        "product_id": "wlr_prod_000127",
+        "published_at": "2025-04-03",
+        "publisher": "UniSat Wallet",
+        "reliability": "high",
+        "source_type": "release_notes",
+        "title": "UniSat Wallet Extension v1.6.0",
+        "url": "https://github.com/unisat-wallet/extension/releases/tag/v1.6.0"
       }
     ]
   },

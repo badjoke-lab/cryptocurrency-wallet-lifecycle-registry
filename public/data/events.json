@@ -4540,5 +4540,85 @@
     "confidence": "high",
     "event_status_effect": "active",
     "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000235",
+    "entity_id": "wlr_ent_000041",
+    "product_id": "wlr_prod_000090",
+    "affected_product_ids": [
+      "wlr_prod_000090"
+    ],
+    "event_type": "other",
+    "event_date": "2025-02-26",
+    "event_date_basis": "announcement",
+    "title": "Nunchuk unveiled a redesigned Group Wallet",
+    "description": "Nunchuk announced a redesigned Group Wallet that removed the prior Matrix dependency, derived a shared encryption key from wallet output descriptors, simplified cross-device recovery, and made the collaborative multisig wallet available to all Nunchuk users.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000236",
+    "entity_id": "wlr_ent_000043",
+    "product_id": "wlr_prod_000092",
+    "affected_product_ids": [
+      "wlr_prod_000092"
+    ],
+    "event_type": "other",
+    "event_date": "2025-09-23",
+    "event_date_basis": "discovery",
+    "title": "Keplr documented multilingual, smart-grouping, and Side Panel features",
+    "description": "Keplr's official support documentation, updated on 2025-09-23, documented multilingual and multi-fiat settings, Smart Grouping for assets spread across chains, and Chrome Side Panel mode for Keplr Wallet.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000237",
+    "entity_id": "wlr_ent_000068",
+    "product_id": "wlr_prod_000117",
+    "affected_product_ids": [
+      "wlr_prod_000117"
+    ],
+    "event_type": "other",
+    "event_date": "2025-07-29",
+    "event_date_basis": "release",
+    "title": "Petra 2.0.0 delivered a redesigned wallet experience",
+    "description": "Aptos Labs' Petra App Store version history records Petra 2.0.0 on 2025-07-29 with a refreshed design across mobile, extension, and web, smoother send/swap/staking flows, performance and navigation improvements, and improved support for multi-tabs, Earn, and liquid staking.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000238",
+    "entity_id": "wlr_ent_000070",
+    "product_id": "wlr_prod_000119",
+    "affected_product_ids": [
+      "wlr_prod_000119"
+    ],
+    "event_type": "other",
+    "event_date": "2025-03-04",
+    "event_date_basis": "announcement",
+    "title": "GridPlus highlighted Lattice1 hardware clear-signing defenses after the Bybit hack",
+    "description": "GridPlus published a first-party post explaining how the Lattice1's hardware ABI parsing and clear-signing design exposes smart-contract transaction details on the secure device for user verification, using the February 2025 Bybit incident as the motivating example.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false
+  },
+  {
+    "id": "wlr_ev_000239",
+    "entity_id": "wlr_ent_000078",
+    "product_id": "wlr_prod_000127",
+    "affected_product_ids": [
+      "wlr_prod_000127"
+    ],
+    "event_type": "other",
+    "event_date": "2025-04-03",
+    "event_date_basis": "release",
+    "title": "UniSat Wallet extension v1.6.0 removed Atomicals support and fixed Keystone signing",
+    "description": "UniSat Wallet extension v1.6.0 was published on 2025-04-03, removing Atomicals token support, fixing Keystone hardware-wallet signing bugs and potential vulnerabilities, and improving wallet loading speed.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
   }
 ]

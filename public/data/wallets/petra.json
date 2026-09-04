@@ -62,6 +62,22 @@
       "confidence": "high",
       "event_status_effect": "active",
       "is_major_event": false
+    },
+    {
+      "id": "wlr_ev_000237",
+      "entity_id": "wlr_ent_000068",
+      "product_id": "wlr_prod_000117",
+      "affected_product_ids": [
+        "wlr_prod_000117"
+      ],
+      "event_type": "other",
+      "event_date": "2025-07-29",
+      "event_date_basis": "release",
+      "title": "Petra 2.0.0 delivered a redesigned wallet experience",
+      "description": "Aptos Labs' Petra App Store version history records Petra 2.0.0 on 2025-07-29 with a refreshed design across mobile, extension, and web, smoother send/swap/staking flows, performance and navigation improvements, and improved support for multi-tabs, Earn, and liquid staking.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
     }
   ],
   "evidence": [
@@ -128,6 +144,22 @@
       "claim_scope": "event",
       "is_primary": true,
       "notes": "App Store version history identifies Petra 2.4.0 on 2026-04-06 and its perpetual-trading feature release; candidate app_store_listing normalized to canonical database_reference."
+    },
+    {
+      "id": "wlr_src_000508",
+      "entity_id": "wlr_ent_000068",
+      "product_id": "wlr_prod_000117",
+      "event_id": "wlr_ev_000237",
+      "source_type": "database_reference",
+      "title": "Petra: Aptos Crypto Wallet — Version History",
+      "url": "https://apps.apple.com/be/app/petra-wallet/id6446259840",
+      "publisher": "Aptos Labs / Apple App Store",
+      "published_at": "2025-07-29",
+      "accessed_at": "2026-09-03",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Developer-maintained App Store version history records Petra 2.0.0 and its redesign across mobile, extension, and web."
     }
   ]
 }

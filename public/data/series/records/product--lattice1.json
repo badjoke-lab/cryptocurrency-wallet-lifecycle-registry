@@ -38,6 +38,22 @@
         "is_major_event": false,
         "product_id": "wlr_prod_000119",
         "title": "Lattice1 firmware v0.18.3 released"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000119"
+        ],
+        "confidence": "high",
+        "description": "GridPlus published a first-party post explaining how the Lattice1's hardware ABI parsing and clear-signing design exposes smart-contract transaction details on the secure device for user verification, using the February 2025 Bybit incident as the motivating example.",
+        "entity_id": "wlr_ent_000070",
+        "event_date": "2025-03-04",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000238",
+        "is_major_event": false,
+        "product_id": "wlr_prod_000119",
+        "title": "GridPlus highlighted Lattice1 hardware clear-signing defenses after the Bybit hack"
       }
     ]
   },
@@ -91,6 +107,22 @@
         "source_type": "official_blog",
         "title": "Lattice1 Firmware v0.18.3 Released",
         "url": "https://gridplus.io/blogs/blog/lattice1-firmware-v0-18-3-released"
+      },
+      {
+        "accessed_at": "2026-09-03",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000070",
+        "event_id": "wlr_ev_000238",
+        "id": "wlr_src_000509",
+        "is_primary": true,
+        "notes": "First-party GridPlus article documents Lattice1 clear-signing and hardware ABI parsing as transaction-verification features.",
+        "product_id": "wlr_prod_000119",
+        "published_at": "2025-03-04",
+        "publisher": "GridPlus",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "GridPlus Hardware Wallets Could Have Helped Prevent the $1.5B Bybit Crypto Hack. Here's How.",
+        "url": "https://gridplus.io/blogs/blog/how-the-gridplus-lattice1-could-have-helped-prevent-the-1-5b-bybit-crypto-hack"
       }
     ]
   },
