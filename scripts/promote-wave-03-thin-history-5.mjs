@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 
+// Reviewed one-shot promotion for Wave 03 thin-history batch 5.
 const candidate = JSON.parse(fs.readFileSync('data-staging/candidates/coverage-recovery-wave-03-thin-history-5.json', 'utf8'));
 const entities = JSON.parse(fs.readFileSync('data/entities.json', 'utf8'));
 const products = JSON.parse(fs.readFileSync('data/products.json', 'utf8'));
