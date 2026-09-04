@@ -1,0 +1,157 @@
+{
+  "generated_from_main_sha": "688fd756d3752d992992aa46dee3a525414516b8",
+  "one_event_count": 44,
+  "selection_rule": "priority_score = missing_launch*4 + unknown_support*3 + max(0,4-evidence_count); then evidence_count asc, entity_id asc",
+  "selected": [
+    {
+      "entity_id": "wlr_ent_000084",
+      "entity_name": "VESPR",
+      "product_id": "wlr_prod_000133",
+      "product_name": "VESPR Mobile",
+      "priority_score": 7,
+      "evidence_count": 4,
+      "missing_launch": 1,
+      "unknown_support": 1,
+      "sole_event": {
+        "id": "wlr_ev_000213",
+        "event_date": "2026-07-27",
+        "title": "VESPR Wallet 4.1.0 released"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000085",
+      "entity_name": "Begin Wallet",
+      "product_id": "wlr_prod_000134",
+      "product_name": "Begin Wallet Mobile",
+      "priority_score": 7,
+      "evidence_count": 4,
+      "missing_launch": 1,
+      "unknown_support": 1,
+      "sole_event": {
+        "id": "wlr_ev_000210",
+        "event_date": "2026-02-23",
+        "title": "Begin Wallet 2.5.0 added Solana support"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000086",
+      "entity_name": "Glow",
+      "product_id": "wlr_prod_000135",
+      "product_name": "Glow Browser Extension",
+      "priority_score": 7,
+      "evidence_count": 4,
+      "missing_launch": 1,
+      "unknown_support": 1,
+      "sole_event": {
+        "id": "wlr_ev_000211",
+        "event_date": "2024-08-10",
+        "title": "Glow Wallet 1.6.3 added iOS 18 support"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000097",
+      "entity_name": "Casa",
+      "product_id": "wlr_prod_000146",
+      "product_name": "Casa 3-Key Vault",
+      "priority_score": 7,
+      "evidence_count": 4,
+      "missing_launch": 1,
+      "unknown_support": 1,
+      "sole_event": {
+        "id": "wlr_ev_000203",
+        "event_date": "2026-06-29",
+        "title": "Casa documented address whitelisting for vaults"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000059",
+      "entity_name": "Ctrl Wallet",
+      "product_id": "wlr_prod_000108",
+      "product_name": "Ctrl Wallet Extension",
+      "priority_score": 5,
+      "evidence_count": 3,
+      "missing_launch": 1,
+      "unknown_support": 0,
+      "sole_event": {
+        "id": "wlr_ev_000131",
+        "event_date": "2026-08-03",
+        "title": "Ctrl Wallet shut down normal wallet functionality"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000096",
+      "entity_name": "Specter Desktop",
+      "product_id": "wlr_prod_000145",
+      "product_name": "Specter Desktop App",
+      "priority_score": 5,
+      "evidence_count": 3,
+      "missing_launch": 1,
+      "unknown_support": 0,
+      "sole_event": {
+        "id": "wlr_ev_000190",
+        "event_date": "2026-08-15",
+        "title": "Specter Desktop v2.2.0-pre5 released"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000030",
+      "entity_name": "TokenPocket",
+      "product_id": "wlr_prod_000079",
+      "product_name": "TokenPocket Mobile Wallet",
+      "priority_score": 4,
+      "evidence_count": 3,
+      "missing_launch": 0,
+      "unknown_support": 1,
+      "sole_event": {
+        "id": "wlr_ev_000148",
+        "event_date": "2018-02-13",
+        "title": "TokenPocket Wallet officially released"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000042",
+      "entity_name": "Cake Wallet",
+      "product_id": "wlr_prod_000091",
+      "product_name": "Cake Wallet",
+      "priority_score": 4,
+      "evidence_count": 3,
+      "missing_launch": 0,
+      "unknown_support": 1,
+      "sole_event": {
+        "id": "wlr_ev_000150",
+        "event_date": "2018",
+        "title": "Cake Wallet launched as a Monero wallet for iOS"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000044",
+      "entity_name": "Lace",
+      "product_id": "wlr_prod_000093",
+      "product_name": "Lace Wallet",
+      "priority_score": 4,
+      "evidence_count": 3,
+      "missing_launch": 0,
+      "unknown_support": 1,
+      "sole_event": {
+        "id": "wlr_ev_000180",
+        "event_date": "2026-08-26",
+        "title": "Lace 2.2.2 released"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000058",
+      "entity_name": "Ambire Wallet",
+      "product_id": "wlr_prod_000107",
+      "product_name": "Ambire Extension",
+      "priority_score": 4,
+      "evidence_count": 3,
+      "missing_launch": 0,
+      "unknown_support": 1,
+      "sole_event": {
+        "id": "wlr_ev_000205",
+        "event_date": "2026-03-17",
+        "title": "Ambire Extension received a major UI update"
+      }
+    }
+  ]
+}
