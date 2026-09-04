@@ -65,6 +65,22 @@
       "confidence": "high",
       "event_status_effect": "active",
       "is_major_event": false
+    },
+    {
+      "id": "wlr_ev_000242",
+      "entity_id": "wlr_ent_000086",
+      "product_id": "wlr_prod_000135",
+      "affected_product_ids": [
+        "wlr_prod_000135"
+      ],
+      "event_type": "other",
+      "event_date": "2022-09-12",
+      "event_date_basis": "release",
+      "title": "Glow 1.4 added Ledger hardware-wallet and iPad support",
+      "description": "Glow version 1.4 was released on 2022-09-12 with Ledger hardware-wallet support, iPad support, enhanced collectible viewing, improved collectible transaction details, and performance fixes.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
     }
   ],
   "evidence": [
@@ -131,6 +147,22 @@
       "claim_scope": "event",
       "is_primary": true,
       "notes": "App Store version history identifies Glow 1.6.3 on 2024-08-10 with iOS 18 support; candidate app_store_listing normalized to canonical database_reference."
+    },
+    {
+      "id": "wlr_src_000513",
+      "entity_id": "wlr_ent_000086",
+      "product_id": "wlr_prod_000135",
+      "event_id": "wlr_ev_000242",
+      "source_type": "database_reference",
+      "title": "Glow — Solana Wallet — Version History",
+      "url": "https://apps.apple.com/us/app/glow-solana-wallet/id1599584512",
+      "publisher": "Glow / Apple App Store",
+      "published_at": "2022-09-12",
+      "accessed_at": "2026-09-04",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Developer-maintained App Store version history records Glow 1.4 on 2022-09-12 with Ledger hardware-wallet and iPad support."
     }
   ]
 }

@@ -50,6 +50,22 @@
       "event_status_effect": "dead",
       "is_major_event": true,
       "notes": "The surviving recovery-phrase export path is a recovery mechanism, not normal wallet operation. The canonical Ctrl entity is therefore corrected to dead and the extension product to discontinued/support ended as of 2026-08-03."
+    },
+    {
+      "id": "wlr_ev_000244",
+      "entity_id": "wlr_ent_000059",
+      "product_id": "wlr_prod_000108",
+      "affected_product_ids": [
+        "wlr_prod_000108"
+      ],
+      "event_type": "other",
+      "event_date": "2024-08-30",
+      "event_date_basis": "announcement",
+      "title": "Ctrl documented Manifest V3 migration for the browser extension",
+      "description": "Ctrl published a first-party migration update stating that the wallet extension would fully comply with Chrome Manifest V3 and that existing XDEFI Wallet users would receive the Ctrl update automatically without moving funds or re-importing wallet keys.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
     }
   ],
   "evidence": [
@@ -84,6 +100,22 @@
       "claim_scope": "discontinuation",
       "is_primary": true,
       "notes": "First-party Ctrl notice states the wallet is permanently shutting down, was removed from stores on July 7, remains normally functional only through August 2, and from August 3 allows only recovery-phrase export while wallet features are disabled."
+    },
+    {
+      "id": "wlr_src_000515",
+      "entity_id": "wlr_ent_000059",
+      "product_id": "wlr_prod_000108",
+      "event_id": "wlr_ev_000244",
+      "source_type": "official_blog",
+      "title": "Understanding Manifest V3 and how Ctrl is prepared",
+      "url": "https://ctrl.xyz/news/manifest-v3/",
+      "publisher": "Ctrl Wallet",
+      "published_at": "2024-08-30",
+      "accessed_at": "2026-09-04",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party Ctrl article documents Manifest V3 compliance and automatic migration from the XDEFI Wallet extension to Ctrl."
     }
   ]
 }

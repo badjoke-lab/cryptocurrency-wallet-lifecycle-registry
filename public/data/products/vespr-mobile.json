@@ -46,6 +46,22 @@
       "confidence": "high",
       "event_status_effect": "active",
       "is_major_event": false
+    },
+    {
+      "id": "wlr_ev_000240",
+      "entity_id": "wlr_ent_000084",
+      "product_id": "wlr_prod_000133",
+      "affected_product_ids": [
+        "wlr_prod_000133"
+      ],
+      "event_type": "other",
+      "event_date": "2026-09-01",
+      "event_date_basis": "announcement",
+      "title": "Keystone published VESPR hardware-wallet integration guidance",
+      "description": "Keystone published an official VESPR integration guide documenting connection and transaction-signing support between Keystone 3 Pro and VESPR Mobile, with VESPR app version 3.8.0 identified as the required wallet version in the guide.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
     }
   ],
   "evidence": [
@@ -96,6 +112,22 @@
       "claim_scope": "event",
       "is_primary": true,
       "notes": "App Store version history identifies VESPR 4.1.0 on 2026-07-27; candidate app_store_listing normalized to canonical database_reference."
+    },
+    {
+      "id": "wlr_src_000511",
+      "entity_id": "wlr_ent_000084",
+      "product_id": "wlr_prod_000133",
+      "event_id": "wlr_ev_000240",
+      "source_type": "official_statement",
+      "title": "VESPR (Mobile)",
+      "url": "https://keystone3.com/en/docs/vespr/",
+      "publisher": "Keystone",
+      "published_at": "2026-09-01",
+      "accessed_at": "2026-09-04",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Official Keystone integration guide published 2026-09-01 documents VESPR Mobile connection and signing with Keystone 3 Pro and identifies VESPR app version 3.8.0 for the integration."
     }
   ]
 }

@@ -39,6 +39,22 @@
         "notes": "The surviving recovery-phrase export path is a recovery mechanism, not normal wallet operation. The canonical Ctrl entity is therefore corrected to dead and the extension product to discontinued/support ended as of 2026-08-03.",
         "product_id": "wlr_prod_000108",
         "title": "Ctrl Wallet shut down normal wallet functionality"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000108"
+        ],
+        "confidence": "high",
+        "description": "Ctrl published a first-party migration update stating that the wallet extension would fully comply with Chrome Manifest V3 and that existing XDEFI Wallet users would receive the Ctrl update automatically without moving funds or re-importing wallet keys.",
+        "entity_id": "wlr_ent_000059",
+        "event_date": "2024-08-30",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000244",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000108",
+        "title": "Ctrl documented Manifest V3 migration for the browser extension"
       }
     ]
   },
@@ -76,6 +92,22 @@
         "source_type": "official_blog",
         "title": "Ctrl Wallet Deprecation: What You Need to Know",
         "url": "https://ctrl.xyz/news/ctrl-wallet-deprecation-what-you-need-to-know/"
+      },
+      {
+        "accessed_at": "2026-09-04",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000059",
+        "event_id": "wlr_ev_000244",
+        "id": "wlr_src_000515",
+        "is_primary": true,
+        "notes": "First-party Ctrl article documents Manifest V3 compliance and automatic migration from the XDEFI Wallet extension to Ctrl.",
+        "product_id": "wlr_prod_000108",
+        "published_at": "2024-08-30",
+        "publisher": "Ctrl Wallet",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Understanding Manifest V3 and how Ctrl is prepared",
+        "url": "https://ctrl.xyz/news/manifest-v3/"
       }
     ]
   },
