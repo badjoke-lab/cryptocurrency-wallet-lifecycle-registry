@@ -8,14 +8,13 @@ WLR is **not** a wallet ranking or recommendation service. Incident counts are h
 
 ## Current registry state
 
-- 26 wallet entities
-- 74 products
-- 115 lifecycle/security events
-- 188 evidence records
-- entity launch-date coverage: 26 / 26 (100%)
-- product launch-date coverage: 74 / 74 (100%)
-- known product support-status coverage: 74 / 74 (100%)
-- known product sales-status coverage: 72 / 74 (97.3%)
+- 103 wallet entities
+- 152 products
+- 243 lifecycle/security events
+- 520 evidence records
+- 32 incident events, 9 remediation events, and 8 EOL/deprecation events in the current deterministic stats output
+- current coverage audit: 0 entities with zero products and 0 entities with fewer than two evidence records
+- current known gaps: 49 products without a verified launch date and 48 products with unknown support status
 - CYA-derived editorial registry UI adapted to a black palette
 - semantic status and incident-severity colors
 - searchable wallet and incident views
@@ -25,7 +24,7 @@ WLR is **not** a wallet ranking or recommendation service. Incident counts are h
 
 The original 25-entity v0 seed is complete and has expanded through reviewed product-lineage, lifecycle, incident, remediation, and evidence-depth work. Further growth is reviewed against record depth, lifecycle coverage, evidence quality, and product-boundary clarity rather than adding wallets only to increase the entity count.
 
-Two product sales states remain intentionally unresolved pending direct first-party sales-end evidence: COLDCARD Mk3 (`wlr_prod_000015`) and first-generation Bitkey Hardware (`wlr_prod_000025`). Unknown values are preserved rather than inferred from successor products, firmware finality, store absence, or upgrade paths.
+Coverage values are generated from canonical data and change as the registry grows. Unknown launch, support, sales, custody, or lifecycle values are preserved rather than inferred from successor products, store absence, firmware finality, marketing language, or upgrade paths. For the current machine-readable corpus totals, use `public/data/stats.json`; for completeness gaps, run the coverage audit described below.
 
 ## Canonical data
 
@@ -93,9 +92,9 @@ WLR follows the static-export pattern used by Historical Exchange Index:
 - Next.js / React / TypeScript
 - `output: 'export'`
 - Cloudflare Pages output: `out`
-- planned hostname: `wlr.badjoke-lab.com`
+- production hostname: `https://wlr.badjoke-lab.com`
 
-Cloudflare publication is an independent operational gate; candidate research and canonical review do not depend on deployment availability.
+Cloudflare publication is an independent operational gate; candidate research and canonical review do not depend on deployment availability. The repository's production verification workflow checks the deployed custom-domain relationship transport and canonical XRPH Wallet human/machine routes.
 
 ## Support
 
