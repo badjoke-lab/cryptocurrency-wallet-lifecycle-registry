@@ -26,3 +26,18 @@ jobs:
           WLR_PRODUCTION_ATTEMPTS: '20'
           WLR_PRODUCTION_DELAY_MS: '15000'
         run: node scripts/verify-stage5-production.mjs
+      - name: Verify XRPH Wallet human and machine routes
+        shell: bash
+        run: |
+          set -euo pipefail
+          origin='https://wlr.badjoke-lab.com'
+          html="$(curl -fsS --max-time 30 -H 'Cache-Control: no-cache' "${origin}/wallet/xrph-wallet/?production_audit=${GITHUB_RUN_ID}")"
+          wallet="$(curl -fsS --max-time 30 -H 'Cache-Control: no-cache' "${origin}/data/wallets/xrph-wallet.json?production_audit=${GITHUB_RUN_ID}")"
+          product="$(curl -fsS --max-time 30 -H 'Cache-Control: no-cache' "${origin}/data/products/xrph-wallet-mobile.json?production_audit=${GITHUB_RUN_ID}")"
+
+          grep -Fq 'XRPH Wallet' <<<"${html}"
+          grep -Fq 'Mass unauthorized drain affected XRPH Wallet users' <<<"${html}"
+          jq -e '.schema == "wlr.wallet-record.v1" and .entity.id == "wlr_ent_000103" and .entity.slug == "xrph-wallet" and .entity.status == "limited" and ([.events[].id] | index("wlr_ev_000245") != null) and ([.events[].id] | index("wlr_ev_000246") != null)' <<<"${wallet}" >/dev/null
+          jq -e '.schema == "wlr.product-record.v1" and .entity.id == "wlr_ent_000103" and .product.id == "wlr_prod_000152" and .product.slug == "xrph-wallet-mobile" and .product.status == "limited"' <<<"${product}" >/dev/null
+
+          echo 'XRPH Wallet production human and machine routes verified.'
