@@ -904,5 +904,11 @@
     "entity_id": "wlr_ent_000102",
     "slug": "thorwallet-mobile",
     "path": "/data/products/thorwallet-mobile.json"
+  },
+  {
+    "id": "wlr_prod_000152",
+    "entity_id": "wlr_ent_000103",
+    "slug": "xrph-wallet-mobile",
+    "path": "/data/products/xrph-wallet-mobile.json"
   }
 ]

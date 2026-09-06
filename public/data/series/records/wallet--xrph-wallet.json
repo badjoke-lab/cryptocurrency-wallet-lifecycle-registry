@@ -1,0 +1,234 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "current_vendor": null,
+      "custody_model": "unknown",
+      "open_source_status": null,
+      "product_ids": [
+        "wlr_prod_000152"
+      ],
+      "status": "limited",
+      "wallet_type": "software",
+      "website_status": null
+    },
+    "status": "limited"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_assets": [
+          "XRP",
+          "XRPH",
+          "XRPHAI"
+        ],
+        "affected_product_ids": [
+          "wlr_prod_000152"
+        ],
+        "affected_users_text": "XRP Healthcare reported 4,011 affected wallets; XRPL.to identified 4,010 victim senders after excluding the attacker's own collector-funding transaction.",
+        "amounts_reported": [
+          "267,664 XRP swept directly from victim wallets",
+          "23.2M XRPH taken",
+          "2.43M XRPHAI taken",
+          "approximately 445,198 DAI traced on Ethereum after downstream swaps"
+        ],
+        "confidence": "high",
+        "description": "Beginning at 22:07 UTC on 2026-09-03, XRPH Wallet accounts were swept into a newly created collector address. XRP Healthcare reported 4,011 affected wallets and later warned users not to use XRPH Wallet until further notice. Independent ledger reconstruction identified 4,010 victim senders after excluding the attacker's collector-funding transaction and traced the stolen value through XRPL and NEAR Intents into approximately 445,198 DAI on Ethereum.",
+        "disclosed_at": "2026-09-04",
+        "entity_id": "wlr_ent_000103",
+        "event_date": "2026-09-03",
+        "event_date_basis": "occurrence",
+        "event_status_effect": "limited",
+        "event_type": "unauthorized_access",
+        "funds_affected": "yes",
+        "id": "wlr_ev_000245",
+        "impact_level": "critical",
+        "is_major_event": true,
+        "notes": "The compromise path for the full victim population is not established. This event records the observed unauthorized drain and vendor warning, not a final root-cause attribution.",
+        "product_id": "wlr_prod_000152",
+        "title": "Mass unauthorized drain affected XRPH Wallet users",
+        "user_actions_required": [
+          "move_funds",
+          "rotate_seed",
+          "monitor"
+        ]
+      },
+      {
+        "affected_components": [
+          "mobile local key storage",
+          "staking flow",
+          "unstaking flow",
+          "backend seed transmission"
+        ],
+        "affected_product_ids": [
+          "wlr_prod_000152"
+        ],
+        "confidence": "high",
+        "description": "Forensic analysis of XRPH Wallet Android build 8.0.15 found that seed material was stored unencrypted in the app's local database and that staking/unstaking code transmitted the user's seed to an XRP Healthcare server. The same investigation found 1,225 wallets that had staked through the app and 1,198 of them among the drained wallets.",
+        "entity_id": "wlr_ent_000103",
+        "event_date": "2026-09-05",
+        "event_date_basis": "disclosure",
+        "event_status_effect": "limited",
+        "event_type": "seed_key_exposure",
+        "funds_affected": "unknown",
+        "id": "wlr_ev_000246",
+        "impact_level": "critical",
+        "is_major_event": true,
+        "notes": "This event is deliberately separate from the mass-drain event. Roughly seven in ten drain victims had never staked, so the observed staking seed-transmission path does not by itself explain the full compromise. WLR does not infer an unobserved server-side seed path or final root cause.",
+        "product_id": "wlr_prod_000152",
+        "security_scope": "key_storage",
+        "title": "Forensic analysis found seed transmission in XRPH Wallet staking flows",
+        "user_actions_required": [
+          "move_funds",
+          "rotate_seed",
+          "monitor"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-09-06",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000103",
+        "event_id": null,
+        "id": "wlr_src_000518",
+        "is_primary": true,
+        "notes": "Current first-party product page identifies XRPH Wallet as an XRPL-native mobile wallet, provides iOS/Android distribution links, and describes it as non-custodial. WLR preserves that as the vendor claim rather than treating it as dispositive of the observed key-management architecture.",
+        "product_id": "wlr_prod_000152",
+        "published_at": null,
+        "publisher": "XRP Healthcare",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "XRPH Wallet | Payments, Open Infrastructure & Licensing",
+        "url": "https://xrphtoken.com/xrph-wallet"
+      },
+      {
+        "accessed_at": "2026-09-06",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000103",
+        "event_id": null,
+        "id": "wlr_src_000519",
+        "is_primary": true,
+        "notes": "Current FAQ states that XRPH Wallet launched in March 2023. Other current first-party timeline material places launch in September 2023, while a contemporaneous September 2023 launch announcement says the mobile wallet was then available. Because first-party records conflict, the candidate uses 2023 approximate precision.",
+        "product_id": "wlr_prod_000152",
+        "published_at": null,
+        "publisher": "XRP Healthcare",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "XRP Healthcare FAQs: XRPH Wallet, Token, Infrastructure & Timeline",
+        "url": "https://xrphtoken.com/faq"
+      },
+      {
+        "accessed_at": "2026-09-06",
+        "claim_scope": "product_lineage",
+        "entity_id": "wlr_ent_000103",
+        "event_id": null,
+        "id": "wlr_src_000520",
+        "is_primary": true,
+        "notes": "Contemporaneous first-party launch announcement says XRPH Mobile Wallet was available on the App Store and Google Play and describes it as non-custodial.",
+        "product_id": "wlr_prod_000152",
+        "published_at": "2023-09-15",
+        "publisher": "XRP Healthcare",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Introducing the XRP Healthcare Decentralized Mobile Wallet: Empowering Users with Unparalleled Control, Savings, and Rewards",
+        "url": "https://xrphealthcare.ai/blog/introducing-the-xrp-healthcare-decentralized-mobile-wallet-empowering-users-with-unparalleled-control-savings-and-rewards/"
+      },
+      {
+        "accessed_at": "2026-09-06",
+        "claim_scope": "funds_affected",
+        "entity_id": "wlr_ent_000103",
+        "event_id": "wlr_ev_000245",
+        "event_ids": [
+          "wlr_ev_000245",
+          "wlr_ev_000246"
+        ],
+        "id": "wlr_src_000521",
+        "is_primary": true,
+        "notes": "Original forensic investigation reconstructing the XRPL drain, downstream NEAR/Ethereum movement, victim-wallet population, staking history, and Android build 8.0.15 behavior. The report distinguishes the vendor-reported 4,011 count from 4,010 victim senders after removing the attacker's collector-funding transaction.",
+        "product_id": "wlr_prod_000152",
+        "published_at": "2026-09-05",
+        "publisher": "XRPL.to",
+        "reliability": "high",
+        "source_type": "security_research",
+        "title": "The XRPH Wallet Hack: 4,011 Wallets Emptied in Three Hours",
+        "url": "https://xrpl.to/insights/xrph-wallet-hack-4011-wallets"
+      },
+      {
+        "accessed_at": "2026-09-06",
+        "claim_scope": "architecture",
+        "entity_id": "wlr_ent_000103",
+        "event_id": "wlr_ev_000246",
+        "event_ids": [
+          "wlr_ev_000245",
+          "wlr_ev_000246"
+        ],
+        "id": "wlr_src_000522",
+        "is_primary": true,
+        "notes": "Architecture evidence for local plaintext key material and seed transmission by staking/unstaking paths. The same report explicitly states that this observed path does not explain the majority of victims who never staked.",
+        "product_id": "wlr_prod_000152",
+        "published_at": "2026-09-05",
+        "publisher": "XRPL.to",
+        "reliability": "high",
+        "source_type": "security_research",
+        "title": "The XRPH Wallet Hack: 4,011 Wallets Emptied in Three Hours",
+        "url": "https://xrpl.to/insights/xrph-wallet-hack-4011-wallets"
+      },
+      {
+        "accessed_at": "2026-09-06",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000103",
+        "event_id": "wlr_ev_000245",
+        "id": "wlr_src_000523",
+        "is_primary": false,
+        "notes": "Contemporaneous reporting reproducing XRP Healthcare's security update acknowledging unauthorized transactions and telling users not to use XRPH Wallet until further notice. Used because the exact first-party X status URL was not independently resolved during this review.",
+        "product_id": "wlr_prod_000152",
+        "published_at": "2026-09-04",
+        "publisher": "U.Today",
+        "reliability": "medium",
+        "source_type": "news_article",
+        "title": "XRPL Wallet Breach: Users Urged to Halt Use Amid Security Update",
+        "url": "https://u.today/xrpl-wallet-breach-users-urged-to-halt-use-amid-security-update"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000103",
+  "identity": {
+    "aliases": [
+      "XRPH Mobile Wallet",
+      "XRP Healthcare Wallet"
+    ],
+    "name": "XRPH Wallet"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/wallets/xrph-wallet.json",
+    "relationship_boundary": "wallet-to-product links are preserved as native product_ids but are not emitted as typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_ent_000103",
+    "native_record_type": "wlr.wallet-record.v1",
+    "slug": "xrph-wallet"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/xrph-wallet/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/wallet--xrph-wallet.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/wallets/xrph-wallet.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-09-06"
+  }
+}

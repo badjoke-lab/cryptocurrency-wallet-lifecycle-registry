@@ -508,5 +508,10 @@
     "id": "wlr_ent_000102",
     "slug": "thorwallet",
     "path": "/data/wallets/thorwallet.json"
+  },
+  {
+    "id": "wlr_ent_000103",
+    "slug": "xrph-wallet",
+    "path": "/data/wallets/xrph-wallet.json"
   }
 ]
