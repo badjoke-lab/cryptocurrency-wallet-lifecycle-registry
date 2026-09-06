@@ -1,11 +1,11 @@
 {
   "canonical_only": true,
-  "last_verified_at": "2026-09-04",
+  "last_verified_at": "2026-09-06",
   "object_type": "record_index",
-  "record_count": 253,
+  "record_count": 255,
   "record_counts": {
-    "products": 151,
-    "wallets": 102
+    "products": 152,
+    "wallets": 103
   },
   "records": [
     {
@@ -1821,6 +1821,18 @@
       "status": "active"
     },
     {
+      "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000152",
+      "human_url": "https://wlr.badjoke-lab.com/product/xrph-wallet-mobile/",
+      "machine_url": "https://wlr.badjoke-lab.com/data/series/records/product--xrph-wallet-mobile.json",
+      "name": "XRPH Wallet Mobile",
+      "native_machine_url": "https://wlr.badjoke-lab.com/data/products/xrph-wallet-mobile.json",
+      "native_record_id": "wlr_prod_000152",
+      "native_record_type": "wlr.product-record.v1",
+      "series_slug": "product--xrph-wallet-mobile",
+      "slug": "xrph-wallet-mobile",
+      "status": "limited"
+    },
+    {
       "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000001",
       "human_url": "https://wlr.badjoke-lab.com/wallet/trezor/",
       "machine_url": "https://wlr.badjoke-lab.com/data/series/records/wallet--trezor.json",
@@ -3043,6 +3055,18 @@
       "series_slug": "wallet--thorwallet",
       "slug": "thorwallet",
       "status": "active"
+    },
+    {
+      "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000103",
+      "human_url": "https://wlr.badjoke-lab.com/wallet/xrph-wallet/",
+      "machine_url": "https://wlr.badjoke-lab.com/data/series/records/wallet--xrph-wallet.json",
+      "name": "XRPH Wallet",
+      "native_machine_url": "https://wlr.badjoke-lab.com/data/wallets/xrph-wallet.json",
+      "native_record_id": "wlr_ent_000103",
+      "native_record_type": "wlr.wallet-record.v1",
+      "series_slug": "wallet--xrph-wallet",
+      "slug": "xrph-wallet",
+      "status": "limited"
     }
   ],
   "registry_id": "cryptocurrency-wallet-lifecycle-registry",

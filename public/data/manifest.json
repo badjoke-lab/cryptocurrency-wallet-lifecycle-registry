@@ -4,14 +4,14 @@
   "data_safety": "canonical_only",
   "generated_from": "reviewed canonical JSON",
   "record_counts": {
-    "entities": 102,
-    "products": 151,
-    "events": 241,
-    "evidence": 514,
-    "wallet_records": 102,
-    "product_records": 151
+    "entities": 103,
+    "products": 152,
+    "events": 243,
+    "evidence": 520,
+    "wallet_records": 103,
+    "product_records": 152
   },
-  "last_verified_at": "2026-09-04",
+  "last_verified_at": "2026-09-06",
   "files": [
     "/data/entities.json",
     "/data/products.json",
