@@ -4702,6 +4702,152 @@
     "event_status_effect": "active",
     "is_major_event": true
   },
-  {"id":"wlr_ev_000245","entity_id":"wlr_ent_000103","product_id":"wlr_prod_000152","affected_product_ids":["wlr_prod_000152"],"event_type":"unauthorized_access","event_date":"2026-09-03","event_date_basis":"occurrence","disclosed_at":"2026-09-04","title":"Mass unauthorized drain affected XRPH Wallet users","description":"Beginning at 22:07 UTC on 2026-09-03, XRPH Wallet accounts were swept into a newly created collector address. XRP Healthcare reported 4,011 affected wallets and later warned users not to use XRPH Wallet until further notice. Independent ledger reconstruction identified 4,010 victim senders after excluding the attacker's collector-funding transaction and traced the stolen value through XRPL and NEAR Intents into approximately 445,198 DAI on Ethereum.","confidence":"high","impact_level":"critical","funds_affected":"yes","event_status_effect":"limited","is_major_event":true,"affected_users_text":"XRP Healthcare reported 4,011 affected wallets; XRPL.to identified 4,010 victim senders after excluding the attacker's own collector-funding transaction.","affected_assets":["XRP","XRPH","XRPHAI"],"amounts_reported":["267,664 XRP swept directly from victim wallets","23.2M XRPH taken","2.43M XRPHAI taken","approximately 445,198 DAI traced on Ethereum after downstream swaps"],"user_actions_required":["move_funds","rotate_seed","monitor"],"notes":"The compromise path for the full victim population is not established. This event records the observed unauthorized drain and vendor warning, not a final root-cause attribution."},
-  {"id":"wlr_ev_000246","entity_id":"wlr_ent_000103","product_id":"wlr_prod_000152","affected_product_ids":["wlr_prod_000152"],"event_type":"seed_key_exposure","event_date":"2026-09-05","event_date_basis":"disclosure","title":"Forensic analysis found seed transmission in XRPH Wallet staking flows","description":"Forensic analysis of XRPH Wallet Android build 8.0.15 found that seed material was stored unencrypted in the app's local database and that staking/unstaking code transmitted the user's seed to an XRP Healthcare server. The same investigation found 1,225 wallets that had staked through the app and 1,198 of them among the drained wallets.","confidence":"high","impact_level":"critical","security_scope":"key_storage","funds_affected":"unknown","event_status_effect":"limited","is_major_event":true,"affected_components":["mobile local key storage","staking flow","unstaking flow","backend seed transmission"],"user_actions_required":["move_funds","rotate_seed","monitor"],"notes":"This event is deliberately separate from the mass-drain event. Roughly seven in ten drain victims had never staked, so the observed staking seed-transmission path does not by itself explain the full compromise. WLR does not infer an unobserved server-side seed path or final root cause."}
+  {
+    "id": "wlr_ev_000245",
+    "entity_id": "wlr_ent_000103",
+    "product_id": "wlr_prod_000152",
+    "affected_product_ids": [
+      "wlr_prod_000152"
+    ],
+    "event_type": "unauthorized_access",
+    "event_date": "2026-09-03",
+    "event_date_basis": "occurrence",
+    "disclosed_at": "2026-09-04",
+    "title": "Mass unauthorized drain affected XRPH Wallet users",
+    "description": "Beginning at 22:07 UTC on 2026-09-03, XRPH Wallet accounts were swept into a newly created collector address. XRP Healthcare reported 4,011 affected wallets and later warned users not to use XRPH Wallet until further notice. Independent ledger reconstruction identified 4,010 victim senders after excluding the attacker's collector-funding transaction and traced the stolen value through XRPL and NEAR Intents into approximately 445,198 DAI on Ethereum.",
+    "confidence": "high",
+    "impact_level": "critical",
+    "funds_affected": "yes",
+    "event_status_effect": "limited",
+    "is_major_event": true,
+    "affected_users_text": "XRP Healthcare reported 4,011 affected wallets; XRPL.to identified 4,010 victim senders after excluding the attacker's own collector-funding transaction.",
+    "affected_assets": [
+      "XRP",
+      "XRPH",
+      "XRPHAI"
+    ],
+    "amounts_reported": [
+      "267,664 XRP swept directly from victim wallets",
+      "23.2M XRPH taken",
+      "2.43M XRPHAI taken",
+      "approximately 445,198 DAI traced on Ethereum after downstream swaps"
+    ],
+    "user_actions_required": [
+      "move_funds",
+      "rotate_seed",
+      "monitor"
+    ],
+    "notes": "The compromise path for the full victim population is not established. This event records the observed unauthorized drain and vendor warning, not a final root-cause attribution."
+  },
+  {
+    "id": "wlr_ev_000246",
+    "entity_id": "wlr_ent_000103",
+    "product_id": "wlr_prod_000152",
+    "affected_product_ids": [
+      "wlr_prod_000152"
+    ],
+    "event_type": "seed_key_exposure",
+    "event_date": "2026-09-05",
+    "event_date_basis": "disclosure",
+    "title": "Forensic analysis found seed transmission in XRPH Wallet staking flows",
+    "description": "Forensic analysis of XRPH Wallet Android build 8.0.15 found that seed material was stored unencrypted in the app's local database and that staking/unstaking code transmitted the user's seed to an XRP Healthcare server. The same investigation found 1,225 wallets that had staked through the app and 1,198 of them among the drained wallets.",
+    "confidence": "high",
+    "impact_level": "critical",
+    "security_scope": "key_storage",
+    "funds_affected": "unknown",
+    "event_status_effect": "limited",
+    "is_major_event": true,
+    "affected_components": [
+      "mobile local key storage",
+      "staking flow",
+      "unstaking flow",
+      "backend seed transmission"
+    ],
+    "user_actions_required": [
+      "move_funds",
+      "rotate_seed",
+      "monitor"
+    ],
+    "notes": "This event is deliberately separate from the mass-drain event. Roughly seven in ten drain victims had never staked, so the observed staking seed-transmission path does not by itself explain the full compromise. WLR does not infer an unobserved server-side seed path or final root cause."
+  },
+  {
+    "id": "wlr_ev_000247",
+    "entity_id": "wlr_ent_000096",
+    "product_id": "wlr_prod_000145",
+    "affected_product_ids": [
+      "wlr_prod_000145"
+    ],
+    "event_type": "other",
+    "event_date": "2026-04-09",
+    "event_date_basis": "release",
+    "title": "Specter Desktop v2.1.7 fixed an open-redirect bypass",
+    "description": "Specter Desktop v2.1.7 was released on 2026-04-09 with a fix for an open-redirect bypass using percent-encoded characters, alongside an Electron offline-crash fix.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000248",
+    "entity_id": "wlr_ent_000030",
+    "product_id": "wlr_prod_000079",
+    "affected_product_ids": [
+      "wlr_prod_000079"
+    ],
+    "event_type": "other",
+    "event_date": "2023-04-14",
+    "event_date_basis": "release",
+    "title": "TokenPocket iOS 2.0.6 added Bitcoin and Dogecoin support",
+    "description": "TokenPocket's 2023-04-14 mobile update documented iOS version 2.0.6 with Bitcoin and Dogecoin support, Bitcoin Taproot support, custom nodes, Nostr support, and additional wallet-management improvements.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000249",
+    "entity_id": "wlr_ent_000042",
+    "product_id": "wlr_prod_000091",
+    "affected_product_ids": [
+      "wlr_prod_000091"
+    ],
+    "event_type": "other",
+    "event_date": "2025-04-15",
+    "event_date_basis": "release",
+    "title": "Cake Wallet v4.26.0 added Monero support to wallet groups",
+    "description": "Cake Wallet v4.26.0 added deterministic Monero wallets using a 12-word BIP39 seed inside multi-crypto wallet groups, allowing one seed phrase to restore supported assets including Monero, Bitcoin, Litecoin, Solana, Ethereum, Bitcoin Cash, Nano, and Tron.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000250",
+    "entity_id": "wlr_ent_000044",
+    "product_id": "wlr_prod_000093",
+    "affected_product_ids": [
+      "wlr_prod_000093"
+    ],
+    "event_type": "other",
+    "event_date": "2025-06-27",
+    "event_date_basis": "announcement",
+    "title": "Lace 1.24 added Bitcoin mainnet support",
+    "description": "Input Output Global's weekly development report recorded Lace v1.24 as released with Bitcoin mainnet support, full Handle support, and Tempo.vote delegation and on-chain voting integration.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000251",
+    "entity_id": "wlr_ent_000058",
+    "product_id": "wlr_prod_000107",
+    "affected_product_ids": [
+      "wlr_prod_000107"
+    ],
+    "event_type": "other",
+    "event_date": "2025-05-16",
+    "event_date_basis": "announcement",
+    "title": "Ambire Extension expanded EIP-7702 support across five EVM networks",
+    "description": "Ambire documented EIP-7702 smarter-account support across Ethereum, Base, Optimism, Gnosis, and BNB Chain on 2025-05-16, extending smart EOA capabilities across multiple supported networks.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  }
 ]

@@ -51,6 +51,22 @@
       "event_status_effect": "active",
       "is_major_event": true,
       "notes": "Year precision only. The reviewed first-party history does not establish a defensible exact public-release month or day, so the existing 2018 launch_date and year precision remain unchanged."
+    },
+    {
+      "id": "wlr_ev_000249",
+      "entity_id": "wlr_ent_000042",
+      "product_id": "wlr_prod_000091",
+      "affected_product_ids": [
+        "wlr_prod_000091"
+      ],
+      "event_type": "other",
+      "event_date": "2025-04-15",
+      "event_date_basis": "release",
+      "title": "Cake Wallet v4.26.0 added Monero support to wallet groups",
+      "description": "Cake Wallet v4.26.0 added deterministic Monero wallets using a 12-word BIP39 seed inside multi-crypto wallet groups, allowing one seed phrase to restore supported assets including Monero, Bitcoin, Litecoin, Solana, Ethereum, Bitcoin Cash, Nano, and Tron.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
     }
   ],
   "evidence": [
@@ -85,6 +101,22 @@
       "claim_scope": "launch_date",
       "is_primary": true,
       "notes": "First-party Cake Wallet history states the project was founded in 2018 and started as the first Monero wallet for iOS. Used at year precision only."
+    },
+    {
+      "id": "wlr_src_000526",
+      "entity_id": "wlr_ent_000042",
+      "product_id": "wlr_prod_000091",
+      "event_id": "wlr_ev_000249",
+      "source_type": "official_blog",
+      "title": "Cake Wallet Introduces Monero Wallet Groups, New Seed Formats, and more!",
+      "url": "https://blog.cakewallet.com/cake-wallet-introduces-monero-wallet-groups-new-seed-formats-and-more/",
+      "publisher": "Cake Wallet",
+      "published_at": "2025-04-15",
+      "accessed_at": "2026-09-08",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party Cake Wallet release article documents v4.26.0 and Monero support in multi-crypto wallet groups using a BIP39 seed."
     }
   ]
 }

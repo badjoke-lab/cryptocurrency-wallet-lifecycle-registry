@@ -63,6 +63,22 @@
       "event_status_effect": "active",
       "is_major_event": true,
       "notes": "The source provides an exact first-party formal release date. Canonical product wlr_prod_000079 is corrected from unresolved launch_date to 2018-02-13 with day precision in this promotion."
+    },
+    {
+      "id": "wlr_ev_000248",
+      "entity_id": "wlr_ent_000030",
+      "product_id": "wlr_prod_000079",
+      "affected_product_ids": [
+        "wlr_prod_000079"
+      ],
+      "event_type": "other",
+      "event_date": "2023-04-14",
+      "event_date_basis": "release",
+      "title": "TokenPocket iOS 2.0.6 added Bitcoin and Dogecoin support",
+      "description": "TokenPocket's 2023-04-14 mobile update documented iOS version 2.0.6 with Bitcoin and Dogecoin support, Bitcoin Taproot support, custom nodes, Nostr support, and additional wallet-management improvements.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
     }
   ],
   "evidence": [
@@ -113,6 +129,22 @@
       "claim_scope": "launch_date",
       "is_primary": true,
       "notes": "First-party TokenPocket announcement center lists the formal TokenPocket Wallet release on 2018-02-13. Used for the exact product-release event and canonical launch-date correction."
+    },
+    {
+      "id": "wlr_src_000525",
+      "entity_id": "wlr_ent_000030",
+      "product_id": "wlr_prod_000079",
+      "event_id": "wlr_ev_000248",
+      "source_type": "release_notes",
+      "title": "Version Update (Apr 14th, 2023)",
+      "url": "https://help.tokenpocket.pro/en/announcement/update/version-update-20230414",
+      "publisher": "TokenPocket",
+      "published_at": "2023-04-14",
+      "accessed_at": "2026-09-08",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Official TokenPocket mobile update log documents iOS 2.0.6 with Bitcoin, Dogecoin, Taproot, custom-node and Nostr support."
     }
   ]
 }
