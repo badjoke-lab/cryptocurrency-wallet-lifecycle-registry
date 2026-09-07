@@ -1,0 +1,157 @@
+{
+  "generated_from_main_sha": "1d9a0fed1391fdea29f080f5770788477f819c1f",
+  "one_event_count": 34,
+  "selection_rule": "priority_score = missing_launch*4 + unknown_support*3 + max(0,4-evidence_count); then evidence_count asc, entity_id asc",
+  "selected": [
+    {
+      "entity_id": "wlr_ent_000062",
+      "entity_name": "HashPack",
+      "product_id": "wlr_prod_000111",
+      "product_name": "HashPack Extension",
+      "priority_score": 4,
+      "evidence_count": 3,
+      "missing_launch": 0,
+      "unknown_support": 1,
+      "sole_event": {
+        "id": "wlr_ev_000147",
+        "event_date": "2021-10-23",
+        "title": "HashPack launched publicly"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000072",
+      "entity_name": "Arculus",
+      "product_id": "wlr_prod_000121",
+      "product_name": "Arculus Cold Storage Wallet",
+      "priority_score": 4,
+      "evidence_count": 3,
+      "missing_launch": 0,
+      "unknown_support": 1,
+      "sole_event": {
+        "id": "wlr_ev_000202",
+        "event_date": "2026-08-23",
+        "title": "Arculus documented Wallet 3.12.x as the current release"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000079",
+      "entity_name": "Tonkeeper",
+      "product_id": "wlr_prod_000128",
+      "product_name": "Tonkeeper Mobile",
+      "priority_score": 4,
+      "evidence_count": 3,
+      "missing_launch": 0,
+      "unknown_support": 1,
+      "sole_event": {
+        "id": "wlr_ev_000191",
+        "event_date": "2026-05-18",
+        "title": "Tonkeeper Android 26.05.1 released"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000089",
+      "entity_name": "Nightly Wallet",
+      "product_id": "wlr_prod_000138",
+      "product_name": "Nightly Wallet Extension",
+      "priority_score": 4,
+      "evidence_count": 3,
+      "missing_launch": 0,
+      "unknown_support": 1,
+      "sole_event": {
+        "id": "wlr_ev_000197",
+        "event_date": "2022-07-04",
+        "title": "Nightly Wallet introduced publicly"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000093",
+      "entity_name": "ZEUS Wallet",
+      "product_id": "wlr_prod_000142",
+      "product_name": "ZEUS Wallet Mobile",
+      "priority_score": 4,
+      "evidence_count": 3,
+      "missing_launch": 0,
+      "unknown_support": 1,
+      "sole_event": {
+        "id": "wlr_ev_000192",
+        "event_date": "2026-05-21",
+        "title": "ZEUS v13.0.2 released"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000100",
+      "entity_name": "Prokey",
+      "product_id": "wlr_prod_000149",
+      "product_name": "Prokey Optimum",
+      "priority_score": 4,
+      "evidence_count": 3,
+      "missing_launch": 0,
+      "unknown_support": 1,
+      "sole_event": {
+        "id": "wlr_ev_000200",
+        "event_date": "2023-10-09",
+        "title": "Prokey Optimum firmware v1.10.5 released"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000033",
+      "entity_name": "Guarda Wallet",
+      "product_id": "wlr_prod_000082",
+      "product_name": "Guarda Wallet",
+      "priority_score": 4,
+      "evidence_count": 4,
+      "missing_launch": 1,
+      "unknown_support": 0,
+      "sole_event": {
+        "id": "wlr_ev_000149",
+        "event_date": "2018-12-04",
+        "title": "Guarda Mobile Multiwallet released"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000037",
+      "entity_name": "OneKey",
+      "product_id": "wlr_prod_000086",
+      "product_name": "OneKey Pro",
+      "priority_score": 4,
+      "evidence_count": 4,
+      "missing_launch": 1,
+      "unknown_support": 0,
+      "sole_event": {
+        "id": "wlr_ev_000204",
+        "event_date": "2026-08-21",
+        "title": "OneKey Wallet 6.5.2 released"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000040",
+      "entity_name": "NGRAVE",
+      "product_id": "wlr_prod_000089",
+      "product_name": "NGRAVE ZERO",
+      "priority_score": 4,
+      "evidence_count": 4,
+      "missing_launch": 1,
+      "unknown_support": 0,
+      "sole_event": {
+        "id": "wlr_ev_000142",
+        "event_date": "2021-11-02",
+        "title": "NGRAVE announced ZERO was ready to ship"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000045",
+      "entity_name": "Ronin Wallet",
+      "product_id": "wlr_prod_000094",
+      "product_name": "Ronin Wallet Extension",
+      "priority_score": 4,
+      "evidence_count": 4,
+      "missing_launch": 1,
+      "unknown_support": 0,
+      "sole_event": {
+        "id": "wlr_ev_000208",
+        "event_date": "2025-12-15",
+        "title": "Ronin Wallet upgrades added Solana support and new onramps"
+      }
+    }
+  ]
+}
