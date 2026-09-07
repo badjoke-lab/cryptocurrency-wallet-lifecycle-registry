@@ -46,6 +46,22 @@
       "confidence": "high",
       "event_status_effect": "active",
       "is_major_event": false
+    },
+    {
+      "id": "wlr_ev_000250",
+      "entity_id": "wlr_ent_000044",
+      "product_id": "wlr_prod_000093",
+      "affected_product_ids": [
+        "wlr_prod_000093"
+      ],
+      "event_type": "other",
+      "event_date": "2025-06-27",
+      "event_date_basis": "announcement",
+      "title": "Lace 1.24 added Bitcoin mainnet support",
+      "description": "Input Output Global's weekly development report recorded Lace v1.24 as released with Bitcoin mainnet support, full Handle support, and Tempo.vote delegation and on-chain voting integration.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
     }
   ],
   "evidence": [
@@ -80,6 +96,22 @@
       "claim_scope": "event",
       "is_primary": true,
       "notes": "Official Lace repository release, published 2026-08-26."
+    },
+    {
+      "id": "wlr_src_000527",
+      "entity_id": "wlr_ent_000044",
+      "product_id": "wlr_prod_000093",
+      "event_id": "wlr_ev_000250",
+      "source_type": "official_statement",
+      "title": "Weekly development report as of 2025-06-27",
+      "url": "https://www.essentialcardano.io/development-update/weekly-development-report-as-of-2025-06-27",
+      "publisher": "Input Output Global / Essential Cardano",
+      "published_at": "2025-06-27",
+      "accessed_at": "2026-09-08",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "IOG development report states the Lace team released v1.24 with Bitcoin mainnet, Handle and Tempo.vote support."
     }
   ]
 }

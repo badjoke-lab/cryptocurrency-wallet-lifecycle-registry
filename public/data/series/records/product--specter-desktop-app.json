@@ -38,6 +38,22 @@
         "is_major_event": false,
         "product_id": "wlr_prod_000145",
         "title": "Specter Desktop v2.2.0-pre5 released"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000145"
+        ],
+        "confidence": "high",
+        "description": "Specter Desktop v2.1.7 was released on 2026-04-09 with a fix for an open-redirect bypass using percent-encoded characters, alongside an Electron offline-crash fix.",
+        "entity_id": "wlr_ent_000096",
+        "event_date": "2026-04-09",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000247",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000145",
+        "title": "Specter Desktop v2.1.7 fixed an open-redirect bypass"
       }
     ]
   },
@@ -75,6 +91,22 @@
         "source_type": "release_notes",
         "title": "Specter Desktop v2.2.0-pre5",
         "url": "https://github.com/cryptoadvance/specter-desktop/releases/tag/v2.2.0-pre5"
+      },
+      {
+        "accessed_at": "2026-09-08",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000096",
+        "event_id": "wlr_ev_000247",
+        "id": "wlr_src_000524",
+        "is_primary": true,
+        "notes": "Official GitHub release published 2026-04-09; release notes include the open-redirect bypass fix and Electron offline-crash fix.",
+        "product_id": "wlr_prod_000145",
+        "published_at": "2026-04-09",
+        "publisher": "Specter Desktop",
+        "reliability": "high",
+        "source_type": "release_notes",
+        "title": "Specter Desktop v2.1.7",
+        "url": "https://github.com/cryptoadvance/specter-desktop/releases/tag/v2.1.7"
       }
     ]
   },

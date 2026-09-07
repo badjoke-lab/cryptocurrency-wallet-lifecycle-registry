@@ -32,6 +32,22 @@
         "is_major_event": false,
         "product_id": "wlr_prod_000107",
         "title": "Ambire Extension received a major UI update"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000107"
+        ],
+        "confidence": "high",
+        "description": "Ambire documented EIP-7702 smarter-account support across Ethereum, Base, Optimism, Gnosis, and BNB Chain on 2025-05-16, extending smart EOA capabilities across multiple supported networks.",
+        "entity_id": "wlr_ent_000058",
+        "event_date": "2025-05-16",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000251",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000107",
+        "title": "Ambire Extension expanded EIP-7702 support across five EVM networks"
       }
     ]
   },
@@ -85,6 +101,22 @@
         "source_type": "official_blog",
         "title": "The Ambire Extension Gets a Major UI Update",
         "url": "https://blog.ambire.com/extension-gets-ui-update/"
+      },
+      {
+        "accessed_at": "2026-09-08",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000058",
+        "event_id": "wlr_ev_000251",
+        "id": "wlr_src_000528",
+        "is_primary": true,
+        "notes": "First-party Ambire article states EIP-7702 smarter-account support was live across Ethereum, Base, Optimism, Gnosis, and BNB Chain.",
+        "product_id": "wlr_prod_000107",
+        "published_at": "2025-05-16",
+        "publisher": "Ambire Wallet",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Ambire Wallet Celebrates Smarter Accounts with $4,500 Reward Campaign",
+        "url": "https://blog.ambire.com/eip7702-reward-campaign/"
       }
     ]
   },

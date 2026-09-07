@@ -39,6 +39,22 @@
         "notes": "Year precision only. The reviewed first-party history does not establish a defensible exact public-release month or day, so the existing 2018 launch_date and year precision remain unchanged.",
         "product_id": "wlr_prod_000091",
         "title": "Cake Wallet launched as a Monero wallet for iOS"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000091"
+        ],
+        "confidence": "high",
+        "description": "Cake Wallet v4.26.0 added deterministic Monero wallets using a 12-word BIP39 seed inside multi-crypto wallet groups, allowing one seed phrase to restore supported assets including Monero, Bitcoin, Litecoin, Solana, Ethereum, Bitcoin Cash, Nano, and Tron.",
+        "entity_id": "wlr_ent_000042",
+        "event_date": "2025-04-15",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000249",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000091",
+        "title": "Cake Wallet v4.26.0 added Monero support to wallet groups"
       }
     ]
   },
@@ -76,6 +92,22 @@
         "source_type": "official_statement",
         "title": "About Us | Cake Wallet",
         "url": "https://cakewallet.com/about/"
+      },
+      {
+        "accessed_at": "2026-09-08",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000042",
+        "event_id": "wlr_ev_000249",
+        "id": "wlr_src_000526",
+        "is_primary": true,
+        "notes": "First-party Cake Wallet release article documents v4.26.0 and Monero support in multi-crypto wallet groups using a BIP39 seed.",
+        "product_id": "wlr_prod_000091",
+        "published_at": "2025-04-15",
+        "publisher": "Cake Wallet",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Cake Wallet Introduces Monero Wallet Groups, New Seed Formats, and more!",
+        "url": "https://blog.cakewallet.com/cake-wallet-introduces-monero-wallet-groups-new-seed-formats-and-more/"
       }
     ]
   },
