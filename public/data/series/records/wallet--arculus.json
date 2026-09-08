@@ -32,6 +32,22 @@
         "is_major_event": false,
         "product_id": "wlr_prod_000121",
         "title": "Arculus documented Wallet 3.12.x as the current release"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000121"
+        ],
+        "confidence": "high",
+        "description": "Arculus states that from 2024-01-31 the Arculus Cold Storage Wallet began shipping outside the United States to most countries, materially expanding product availability.",
+        "entity_id": "wlr_ent_000072",
+        "event_date": "2024-01-31",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000253",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000121",
+        "title": "Arculus expanded Cold Storage Wallet shipping internationally"
       }
     ]
   },
@@ -85,6 +101,22 @@
         "source_type": "official_statement",
         "title": "Arculus Wallet New Features",
         "url": "https://support.arculus.co/hc/en-us/articles/38668276529687-Arculus-Wallet-New-Features"
+      },
+      {
+        "accessed_at": "2026-09-08",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000072",
+        "event_id": "wlr_ev_000253",
+        "id": "wlr_src_000530",
+        "is_primary": true,
+        "notes": "First-party support article states international shipping began on 2024-01-31.",
+        "product_id": "wlr_prod_000121",
+        "published_at": "2026-06-06",
+        "publisher": "Arculus",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Can the Arculus Cold Storage Wallet be shipped outside the US?",
+        "url": "https://support.arculus.co/hc/en-us/articles/4408171741079-Can-the-Arculus-Cold-Storage-Wallet-be-shipped-outside-the-US"
       }
     ]
   },

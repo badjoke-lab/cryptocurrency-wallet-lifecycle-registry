@@ -4849,5 +4849,85 @@
     "confidence": "high",
     "event_status_effect": "active",
     "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000252",
+    "entity_id": "wlr_ent_000062",
+    "product_id": "wlr_prod_000111",
+    "affected_product_ids": [
+      "wlr_prod_000111"
+    ],
+    "event_type": "other",
+    "event_date": "2024-01-11",
+    "event_date_basis": "announcement",
+    "title": "HashPack launched the official WalletConnect implementation on Hedera",
+    "description": "HashPack announced on 2024-01-11 that it had launched the official WalletConnect implementation on Hedera, enabling dApps to connect through an industry-standard wallet connection flow.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000253",
+    "entity_id": "wlr_ent_000072",
+    "product_id": "wlr_prod_000121",
+    "affected_product_ids": [
+      "wlr_prod_000121"
+    ],
+    "event_type": "other",
+    "event_date": "2024-01-31",
+    "event_date_basis": "announcement",
+    "title": "Arculus expanded Cold Storage Wallet shipping internationally",
+    "description": "Arculus states that from 2024-01-31 the Arculus Cold Storage Wallet began shipping outside the United States to most countries, materially expanding product availability.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000254",
+    "entity_id": "wlr_ent_000079",
+    "product_id": "wlr_prod_000128",
+    "affected_product_ids": [
+      "wlr_prod_000128"
+    ],
+    "event_type": "other",
+    "event_date": "2024-07",
+    "event_date_basis": "announcement",
+    "title": "Tonkeeper W5 wallet standard was finalized with TON Core",
+    "description": "Tonkeeper documents that the W5 wallet standard, designed for gasless transactions and extensibility, was finalized together with the TON Core team in July 2024. Tonkeeper subsequently used W5 for Battery and gasless transaction flows.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000255",
+    "entity_id": "wlr_ent_000089",
+    "product_id": "wlr_prod_000138",
+    "affected_product_ids": [
+      "wlr_prod_000138"
+    ],
+    "event_type": "other",
+    "event_date": "2025-04-09",
+    "event_date_basis": "announcement",
+    "title": "Nightly introduced its Safari extension flow for Solana on iOS",
+    "description": "Nightly documented its Safari extension flow for Solana on iOS, allowing users to interact with Solana dApps and approve transactions directly in Safari without switching back to the wallet app.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000256",
+    "entity_id": "wlr_ent_000093",
+    "product_id": "wlr_prod_000142",
+    "affected_product_ids": [
+      "wlr_prod_000142"
+    ],
+    "event_type": "other",
+    "event_date": "2026-08-22",
+    "event_date_basis": "release",
+    "title": "ZEUS v13.2.0 added 24-word LDK Node seeds and major security hardening",
+    "description": "ZEUS released v13.2.0 on 2026-08-22 with optional 24-word seed phrases for LDK Node wallets, broader ecash and privacy improvements, and a substantial security-hardening set.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
   }
 ]
