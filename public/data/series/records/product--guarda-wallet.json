@@ -39,6 +39,22 @@
         "notes": "This is a later multi-currency mobile milestone, not the initial launch of the Guarda wallet lineage. Guarda's first-party history separately states that its first Ethereum wallet launched in 2017, so wlr_prod_000082 launch_date remains unresolved rather than being backdated or reset to this 2018 release.",
         "product_id": "wlr_prod_000082",
         "title": "Guarda Mobile Multiwallet released"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000082"
+        ],
+        "confidence": "high",
+        "description": "Guarda announced mobile wallet version 3.0.65 on 2024-04-01, describing a significant update focused on improving the exchange experience inside the wallet.",
+        "entity_id": "wlr_ent_000033",
+        "event_date": "2024-04-01",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000258",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000082",
+        "title": "Guarda Mobile Wallet v3.0.65 upgraded in-app exchange flows"
       }
     ]
   },
@@ -92,6 +108,22 @@
         "source_type": "official_statement",
         "title": "Get Guarda for any device",
         "url": "https://guarda.com/download/"
+      },
+      {
+        "accessed_at": "2026-09-08",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000033",
+        "event_id": "wlr_ev_000258",
+        "id": "wlr_src_000535",
+        "is_primary": true,
+        "notes": "First-party Guarda article for mobile version 3.0.65.",
+        "product_id": "wlr_prod_000082",
+        "published_at": "2024-04-01",
+        "publisher": "Guarda Wallet",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Guarda’s Latest Mobile Wallet Update: A Leap Forward in Crypto Exchanges",
+        "url": "https://guarda.com/blog/guarda-wallet-latest-mobile-wallet-update-alert/"
       }
     ]
   },

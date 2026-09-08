@@ -29,6 +29,22 @@
         "id": "wlr_ev_000204",
         "is_major_event": false,
         "title": "OneKey Wallet 6.5.2 released"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000086"
+        ],
+        "confidence": "high",
+        "description": "OneKey Pro firmware 4.15.0 added SLIP-39 recovery phrase support, Attach to PIN passphrase binding, broader transaction parsing, and several security and usability improvements.",
+        "entity_id": "wlr_ent_000037",
+        "event_date": "2025-08-20",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000259",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000086",
+        "title": "OneKey Pro firmware 4.15.0 added SLIP-39 and Attach to PIN"
       }
     ]
   },
@@ -97,6 +113,22 @@
         "source_type": "release_notes",
         "title": "OneKey Wallet 6.5.2",
         "url": "https://github.com/OneKeyHQ/app-monorepo/releases/tag/v6.5.2"
+      },
+      {
+        "accessed_at": "2026-09-08",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000037",
+        "event_id": "wlr_ev_000259",
+        "id": "wlr_src_000536",
+        "is_primary": true,
+        "notes": "Official OneKey Pro firmware GitHub release documents Attach to PIN, SLIP-39, expanded transaction parsing, improvements and fixes.",
+        "product_id": "wlr_prod_000086",
+        "published_at": "2025-08-20",
+        "publisher": "OneKeyHQ",
+        "reliability": "high",
+        "source_type": "release_notes",
+        "title": "Firmware v4.15.0",
+        "url": "https://github.com/OneKeyHQ/firmware-pro/releases/tag/v4.15.0"
       }
     ]
   },

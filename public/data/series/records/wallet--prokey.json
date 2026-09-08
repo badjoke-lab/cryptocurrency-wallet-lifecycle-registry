@@ -32,6 +32,22 @@
         "is_major_event": false,
         "product_id": "wlr_prod_000149",
         "title": "Prokey Optimum firmware v1.10.5 released"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000149"
+        ],
+        "confidence": "high",
+        "description": "Prokey announced a firmware update for Prokey Optimum that removed browser-interface PIN entry and required PIN entry directly on the hardware device, alongside token-support updates.",
+        "entity_id": "wlr_ent_000100",
+        "event_date": "2021-03-02",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000257",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000149",
+        "title": "Prokey firmware moved PIN entry fully onto the device"
       }
     ]
   },
@@ -85,6 +101,22 @@
         "source_type": "release_notes",
         "title": "Prokey Firmware v1.10.5",
         "url": "https://github.com/prokey-io/prokey-optimum-firmware/releases/tag/v1.10.5"
+      },
+      {
+        "accessed_at": "2026-09-08",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000100",
+        "event_id": "wlr_ev_000257",
+        "id": "wlr_src_000534",
+        "is_primary": true,
+        "notes": "First-party Prokey firmware announcement documenting on-device PIN entry.",
+        "product_id": "wlr_prod_000149",
+        "published_at": "2021-03-02",
+        "publisher": "Prokey",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "PIN it on the Device: A Prokey Firmware Update",
+        "url": "https://prokey.io/blog/new-firmware-update-prokey"
       }
     ]
   },

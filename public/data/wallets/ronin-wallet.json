@@ -64,6 +64,22 @@
       "confidence": "high",
       "event_status_effect": "active",
       "is_major_event": false
+    },
+    {
+      "id": "wlr_ev_000261",
+      "entity_id": "wlr_ent_000045",
+      "product_id": "wlr_prod_000094",
+      "affected_product_ids": [
+        "wlr_prod_000094"
+      ],
+      "event_type": "other",
+      "event_date": "2024-01-19",
+      "event_date_basis": "announcement",
+      "title": "Ronin Wallet began a major security and multi-chain redesign rollout",
+      "description": "Ronin announced a phased wallet update adding stronger security, Ethereum multi-chain support, an in-app browser, token activity history, and expanded NFT details.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
     }
   ],
   "evidence": [
@@ -130,6 +146,22 @@
       "claim_scope": "event",
       "is_primary": true,
       "notes": "First-party Ronin announcement covering live wallet upgrades."
+    },
+    {
+      "id": "wlr_src_000538",
+      "entity_id": "wlr_ent_000045",
+      "product_id": "wlr_prod_000094",
+      "event_id": "wlr_ev_000261",
+      "source_type": "official_blog",
+      "title": "The 2024 Ronin Wallet Glow Up",
+      "url": "https://blog.roninchain.com/p/the-2024-ronin-wallet-glow-up",
+      "publisher": "Ronin",
+      "published_at": "2024-01-19",
+      "accessed_at": "2026-09-08",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party Ronin wallet update announcement covering the phased security, multi-chain and UX rollout."
     }
   ]
 }

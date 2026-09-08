@@ -60,6 +60,22 @@
       "event_status_effect": "none",
       "is_major_event": true,
       "notes": "This records the first-party ready-to-ship milestone only. It does not infer general retail availability or an exact first-customer delivery date."
+    },
+    {
+      "id": "wlr_ev_000260",
+      "entity_id": "wlr_ent_000040",
+      "product_id": "wlr_prod_000089",
+      "affected_product_ids": [
+        "wlr_prod_000089"
+      ],
+      "event_type": "other",
+      "event_date": "2024-10",
+      "event_date_basis": "release",
+      "title": "NGRAVE ZERO firmware 1.7 added MetaMask support",
+      "description": "NGRAVE release documentation lists ZERO firmware version 1.7 in October 2024, and its official MetaMask synchronization guide states that MetaMask support was added in firmware 1.7.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
     }
   ],
   "evidence": [
@@ -126,6 +142,22 @@
       "claim_scope": "support_status",
       "is_primary": true,
       "notes": "Official firmware-update surface and release notes for NGRAVE ZERO establish an active maintained firmware/support path."
+    },
+    {
+      "id": "wlr_src_000537",
+      "entity_id": "wlr_ent_000040",
+      "product_id": "wlr_prod_000089",
+      "event_id": "wlr_ev_000260",
+      "source_type": "release_notes",
+      "title": "NGRAVE ZERO Release Notes",
+      "url": "https://ngrave.io/en/zero-release-notes",
+      "publisher": "NGRAVE",
+      "published_at": null,
+      "accessed_at": "2026-09-08",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party NGRAVE release index lists firmware 1.7 in October 2024; official NGRAVE help documentation identifies 1.7 as adding MetaMask support."
     }
   ]
 }

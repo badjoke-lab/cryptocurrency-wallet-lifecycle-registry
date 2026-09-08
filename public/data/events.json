@@ -4929,5 +4929,85 @@
     "confidence": "high",
     "event_status_effect": "active",
     "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000257",
+    "entity_id": "wlr_ent_000100",
+    "product_id": "wlr_prod_000149",
+    "affected_product_ids": [
+      "wlr_prod_000149"
+    ],
+    "event_type": "other",
+    "event_date": "2021-03-02",
+    "event_date_basis": "release",
+    "title": "Prokey firmware moved PIN entry fully onto the device",
+    "description": "Prokey announced a firmware update for Prokey Optimum that removed browser-interface PIN entry and required PIN entry directly on the hardware device, alongside token-support updates.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000258",
+    "entity_id": "wlr_ent_000033",
+    "product_id": "wlr_prod_000082",
+    "affected_product_ids": [
+      "wlr_prod_000082"
+    ],
+    "event_type": "other",
+    "event_date": "2024-04-01",
+    "event_date_basis": "release",
+    "title": "Guarda Mobile Wallet v3.0.65 upgraded in-app exchange flows",
+    "description": "Guarda announced mobile wallet version 3.0.65 on 2024-04-01, describing a significant update focused on improving the exchange experience inside the wallet.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000259",
+    "entity_id": "wlr_ent_000037",
+    "product_id": "wlr_prod_000086",
+    "affected_product_ids": [
+      "wlr_prod_000086"
+    ],
+    "event_type": "other",
+    "event_date": "2025-08-20",
+    "event_date_basis": "release",
+    "title": "OneKey Pro firmware 4.15.0 added SLIP-39 and Attach to PIN",
+    "description": "OneKey Pro firmware 4.15.0 added SLIP-39 recovery phrase support, Attach to PIN passphrase binding, broader transaction parsing, and several security and usability improvements.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000260",
+    "entity_id": "wlr_ent_000040",
+    "product_id": "wlr_prod_000089",
+    "affected_product_ids": [
+      "wlr_prod_000089"
+    ],
+    "event_type": "other",
+    "event_date": "2024-10",
+    "event_date_basis": "release",
+    "title": "NGRAVE ZERO firmware 1.7 added MetaMask support",
+    "description": "NGRAVE release documentation lists ZERO firmware version 1.7 in October 2024, and its official MetaMask synchronization guide states that MetaMask support was added in firmware 1.7.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000261",
+    "entity_id": "wlr_ent_000045",
+    "product_id": "wlr_prod_000094",
+    "affected_product_ids": [
+      "wlr_prod_000094"
+    ],
+    "event_type": "other",
+    "event_date": "2024-01-19",
+    "event_date_basis": "announcement",
+    "title": "Ronin Wallet began a major security and multi-chain redesign rollout",
+    "description": "Ronin announced a phased wallet update adding stronger security, Ethereum multi-chain support, an in-app browser, token activity history, and expanded NFT details.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
   }
 ]
