@@ -69,6 +69,22 @@
       "event_status_effect": "none",
       "is_major_event": true,
       "notes": "This is a later multi-currency mobile milestone, not the initial launch of the Guarda wallet lineage. Guarda's first-party history separately states that its first Ethereum wallet launched in 2017, so wlr_prod_000082 launch_date remains unresolved rather than being backdated or reset to this 2018 release."
+    },
+    {
+      "id": "wlr_ev_000258",
+      "entity_id": "wlr_ent_000033",
+      "product_id": "wlr_prod_000082",
+      "affected_product_ids": [
+        "wlr_prod_000082"
+      ],
+      "event_type": "other",
+      "event_date": "2024-04-01",
+      "event_date_basis": "release",
+      "title": "Guarda Mobile Wallet v3.0.65 upgraded in-app exchange flows",
+      "description": "Guarda announced mobile wallet version 3.0.65 on 2024-04-01, describing a significant update focused on improving the exchange experience inside the wallet.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
     }
   ],
   "evidence": [
@@ -135,6 +151,22 @@
       "claim_scope": "support_status",
       "is_primary": true,
       "notes": "Current first-party download page distributes Guarda for iOS, Android, macOS, Windows and Linux and publishes current desktop release checksums, supporting an active maintained product state."
+    },
+    {
+      "id": "wlr_src_000535",
+      "entity_id": "wlr_ent_000033",
+      "product_id": "wlr_prod_000082",
+      "event_id": "wlr_ev_000258",
+      "source_type": "official_blog",
+      "title": "Guarda’s Latest Mobile Wallet Update: A Leap Forward in Crypto Exchanges",
+      "url": "https://guarda.com/blog/guarda-wallet-latest-mobile-wallet-update-alert/",
+      "publisher": "Guarda Wallet",
+      "published_at": "2024-04-01",
+      "accessed_at": "2026-09-08",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party Guarda article for mobile version 3.0.65."
     }
   ]
 }
