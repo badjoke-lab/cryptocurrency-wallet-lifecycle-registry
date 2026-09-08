@@ -39,6 +39,22 @@
         "notes": "Exact date from HashPack first-party retrospective.",
         "product_id": "wlr_prod_000111",
         "title": "HashPack launched publicly"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000111"
+        ],
+        "confidence": "high",
+        "description": "HashPack announced on 2024-01-11 that it had launched the official WalletConnect implementation on Hedera, enabling dApps to connect through an industry-standard wallet connection flow.",
+        "entity_id": "wlr_ent_000062",
+        "event_date": "2024-01-11",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000252",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000111",
+        "title": "HashPack launched the official WalletConnect implementation on Hedera"
       }
     ]
   },
@@ -76,6 +92,22 @@
         "source_type": "official_blog",
         "title": "HashPack – one year anniversary",
         "url": "https://www.hashpack.app/post/hashpack-one-year-anniversary"
+      },
+      {
+        "accessed_at": "2026-09-08",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000062",
+        "event_id": "wlr_ev_000252",
+        "id": "wlr_src_000529",
+        "is_primary": true,
+        "notes": "First-party HashPack announcement of the official Hedera WalletConnect implementation.",
+        "product_id": "wlr_prod_000111",
+        "published_at": "2024-01-11",
+        "publisher": "HashPack",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "HashPack is now integrated with WalletConnect",
+        "url": "https://www.hashpack.app/post/hashpack-is-now-integrated-with-walletconnect"
       }
     ]
   },

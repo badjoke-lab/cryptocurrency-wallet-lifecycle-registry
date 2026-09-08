@@ -65,6 +65,22 @@
       "confidence": "high",
       "event_status_effect": "active",
       "is_major_event": false
+    },
+    {
+      "id": "wlr_ev_000256",
+      "entity_id": "wlr_ent_000093",
+      "product_id": "wlr_prod_000142",
+      "affected_product_ids": [
+        "wlr_prod_000142"
+      ],
+      "event_type": "other",
+      "event_date": "2026-08-22",
+      "event_date_basis": "release",
+      "title": "ZEUS v13.2.0 added 24-word LDK Node seeds and major security hardening",
+      "description": "ZEUS released v13.2.0 on 2026-08-22 with optional 24-word seed phrases for LDK Node wallets, broader ecash and privacy improvements, and a substantial security-hardening set.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
     }
   ],
   "evidence": [
@@ -115,6 +131,22 @@
       "claim_scope": "event",
       "is_primary": true,
       "notes": "Official ZEUS GitHub release published 2026-05-21 with Android and iOS release artifacts."
+    },
+    {
+      "id": "wlr_src_000533",
+      "entity_id": "wlr_ent_000093",
+      "product_id": "wlr_prod_000142",
+      "event_id": "wlr_ev_000256",
+      "source_type": "official_blog",
+      "title": "New Release: ZEUS v13.2.0",
+      "url": "https://zeusln.com/blog/new-release-zeus-v13-2-0/",
+      "publisher": "ZEUS",
+      "published_at": "2026-08-22",
+      "accessed_at": "2026-09-08",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party ZEUS release article for v13.2.0."
     }
   ]
 }

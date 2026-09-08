@@ -38,6 +38,22 @@
         "is_major_event": true,
         "product_id": "wlr_prod_000138",
         "title": "Nightly Wallet introduced publicly"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000138"
+        ],
+        "confidence": "high",
+        "description": "Nightly documented its Safari extension flow for Solana on iOS, allowing users to interact with Solana dApps and approve transactions directly in Safari without switching back to the wallet app.",
+        "entity_id": "wlr_ent_000089",
+        "event_date": "2025-04-09",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000255",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000138",
+        "title": "Nightly introduced its Safari extension flow for Solana on iOS"
       }
     ]
   },
@@ -75,6 +91,22 @@
         "source_type": "official_blog",
         "title": "Hello World! Nightly Wallet",
         "url": "https://nightly.app/blog/hello-world-nightly-wallet"
+      },
+      {
+        "accessed_at": "2026-09-08",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000089",
+        "event_id": "wlr_ev_000255",
+        "id": "wlr_src_000532",
+        "is_primary": true,
+        "notes": "First-party Nightly article documenting the Safari extension workflow for Solana on iOS.",
+        "product_id": "wlr_prod_000138",
+        "published_at": "2025-04-09",
+        "publisher": "Nightly Wallet",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Explore Solana Seamlessly on iOS with Nightly's Safari Extension",
+        "url": "https://nightly.app/blog/explore-solana-seamlessly-on-ios-with-nightly-s-safari-extension"
       }
     ]
   },

@@ -38,6 +38,22 @@
         "is_major_event": false,
         "product_id": "wlr_prod_000128",
         "title": "Tonkeeper Android 26.05.1 released"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000128"
+        ],
+        "confidence": "high",
+        "description": "Tonkeeper documents that the W5 wallet standard, designed for gasless transactions and extensibility, was finalized together with the TON Core team in July 2024. Tonkeeper subsequently used W5 for Battery and gasless transaction flows.",
+        "entity_id": "wlr_ent_000079",
+        "event_date": "2024-07",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000254",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000128",
+        "title": "Tonkeeper W5 wallet standard was finalized with TON Core"
       }
     ]
   },
@@ -75,6 +91,22 @@
         "source_type": "release_notes",
         "title": "Tonkeeper Android 26.05.1",
         "url": "https://github.com/tonkeeper/android/releases/tag/v26.05.1_1283"
+      },
+      {
+        "accessed_at": "2026-09-08",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000079",
+        "event_id": "wlr_ev_000254",
+        "id": "wlr_src_000531",
+        "is_primary": true,
+        "notes": "First-party Tonkeeper technical article states that Tonkeeper and TON Core finalized the W5 standard in July 2024 and explains Battery and gasless transaction support.",
+        "product_id": "wlr_prod_000128",
+        "published_at": null,
+        "publisher": "Tonkeeper",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "How Tonkeeper Brings Gasless Transactions to TON",
+        "url": "https://tonkeeper.com/en/article/how-tonkeeper-brings-gasless"
       }
     ]
   },
