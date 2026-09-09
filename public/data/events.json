@@ -5089,5 +5089,26 @@
     "confidence": "high",
     "event_status_effect": "active",
     "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000267",
+    "entity_id": "wlr_ent_000004",
+    "product_id": null,
+    "affected_product_ids": [
+      "wlr_prod_000019",
+      "wlr_prod_000020"
+    ],
+    "event_type": "rebranded",
+    "event_date": "2026-09-09",
+    "event_date_basis": "announcement",
+    "title": "Consensys Software Inc. announced its rebrand as MetaMask and business separation",
+    "description": "Consensys Software Inc. announced that it would continue as the same company under the MetaMask name, focused on the consumer platform, while its protocols and institutional infrastructure business would become a newly formed company carrying the Consensys name. Completion of the separation was expected by the end of 2026, and MetaMask said users' app, assets, keys, and access were unchanged at announcement.",
+    "confidence": "high",
+    "event_status_effect": "none",
+    "is_major_event": true,
+    "user_actions_required": [
+      "none"
+    ],
+    "notes": "This records the 2026-09-09 corporate rebrand and separation announcement, not completion of the legal and operational separation."
   }
 ]

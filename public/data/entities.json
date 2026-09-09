@@ -82,7 +82,7 @@
     "wallet_type": "software",
     "status": "active",
     "summary": "Self-custodial software wallet ecosystem launched as a browser wallet and later expanded to a mobile application.",
-    "developer_or_company": "Consensys",
+    "developer_or_company": "MetaMask",
     "country_or_origin": null,
     "launch_date": "2016-07-14",
     "launch_date_precision": "day",
@@ -95,8 +95,8 @@
     "custody_model": "self_custody",
     "key_management_model": "device_software_key_vault",
     "confidence": "high",
-    "last_verified_at": "2026-08-14",
-    "notes": "Browser extension and mobile app are separate products because their distribution and security boundaries differ."
+    "last_verified_at": "2026-09-10",
+    "notes": "Browser extension and mobile app are separate products because their distribution and security boundaries differ. On 2026-09-09 Consensys Software Inc. announced that it would continue as the same company under the MetaMask name, while the protocols and institutional infrastructure business would become a newly formed company carrying the Consensys name; completion of the separation is expected by the end of 2026."
   },
   {
     "id": "wlr_ent_000005",
@@ -2330,5 +2330,28 @@
     "last_verified_at": "2026-09-02",
     "notes": "THORWallet's current first-party site states 'Since 2021' and repeatedly describes the wallet as self-custody/non-custodial."
   },
-  {"id":"wlr_ent_000103","slug":"xrph-wallet","canonical_name":"XRPH Wallet","aliases":["XRPH Mobile Wallet","XRP Healthcare Wallet"],"wallet_type":"software","status":"limited","summary":"XRPL mobile wallet from XRP Healthcare, launched in 2023 and marketed as non-custodial. After a mass unauthorized drain on 2026-09-03, XRP Healthcare told users not to use the wallet until further notice while the compromise was investigated.","developer_or_company":"XRP Healthcare","country_or_origin":null,"launch_date":"2023","launch_date_precision":"approximate","official_url":"https://xrphtoken.com/xrph-wallet","official_domain":"xrphtoken.com","source_code_urls":[],"custody_model":"unknown","key_management_model":"device_local_seed_with_observed_backend_seed_transmission_in_staking_flows","confidence":"high","last_verified_at":"2026-09-06","notes":"Current first-party pages describe XRPH Wallet as non-custodial, but forensic analysis of Android build 8.0.15 found staking/unstaking code that transmits the user's seed to an XRP Healthcare server and local plaintext storage of seed/private-key material. This record therefore does not canonicalize self_custody while the architecture and compromise cause remain under investigation. Current first-party timeline/FAQ pages conflict on whether launch occurred in March or September 2023, so WLR uses year-level approximate launch precision."}
+  {
+    "id": "wlr_ent_000103",
+    "slug": "xrph-wallet",
+    "canonical_name": "XRPH Wallet",
+    "aliases": [
+      "XRPH Mobile Wallet",
+      "XRP Healthcare Wallet"
+    ],
+    "wallet_type": "software",
+    "status": "limited",
+    "summary": "XRPL mobile wallet from XRP Healthcare, launched in 2023 and marketed as non-custodial. After a mass unauthorized drain on 2026-09-03, XRP Healthcare told users not to use the wallet until further notice while the compromise was investigated.",
+    "developer_or_company": "XRP Healthcare",
+    "country_or_origin": null,
+    "launch_date": "2023",
+    "launch_date_precision": "approximate",
+    "official_url": "https://xrphtoken.com/xrph-wallet",
+    "official_domain": "xrphtoken.com",
+    "source_code_urls": [],
+    "custody_model": "unknown",
+    "key_management_model": "device_local_seed_with_observed_backend_seed_transmission_in_staking_flows",
+    "confidence": "high",
+    "last_verified_at": "2026-09-06",
+    "notes": "Current first-party pages describe XRPH Wallet as non-custodial, but forensic analysis of Android build 8.0.15 found staking/unstaking code that transmits the user's seed to an XRP Healthcare server and local plaintext storage of seed/private-key material. This record therefore does not canonicalize self_custody while the architecture and compromise cause remain under investigation. Current first-party timeline/FAQ pages conflict on whether launch occurred in March or September 2023, so WLR uses year-level approximate launch precision."
+  }
 ]

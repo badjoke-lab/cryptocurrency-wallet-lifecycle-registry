@@ -141,6 +141,27 @@
         "user_actions_required": [
           "update"
         ]
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000019",
+          "wlr_prod_000020"
+        ],
+        "confidence": "high",
+        "description": "Consensys Software Inc. announced that it would continue as the same company under the MetaMask name, focused on the consumer platform, while its protocols and institutional infrastructure business would become a newly formed company carrying the Consensys name. Completion of the separation was expected by the end of 2026, and MetaMask said users' app, assets, keys, and access were unchanged at announcement.",
+        "entity_id": "wlr_ent_000004",
+        "event_date": "2026-09-09",
+        "event_date_basis": "announcement",
+        "event_status_effect": "none",
+        "event_type": "rebranded",
+        "id": "wlr_ev_000267",
+        "is_major_event": true,
+        "notes": "This records the 2026-09-09 corporate rebrand and separation announcement, not completion of the legal and operational separation.",
+        "product_id": null,
+        "title": "Consensys Software Inc. announced its rebrand as MetaMask and business separation",
+        "user_actions_required": [
+          "none"
+        ]
       }
     ]
   },
@@ -230,6 +251,38 @@
         "source_type": "cve",
         "title": "CVE-2022-32969 Detail",
         "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-32969"
+      },
+      {
+        "accessed_at": "2026-09-10",
+        "claim_scope": "rebrand",
+        "entity_id": "wlr_ent_000004",
+        "event_id": "wlr_ev_000267",
+        "id": "wlr_src_000544",
+        "is_primary": true,
+        "notes": "First-party corporate announcement establishing the CSI-to-MetaMask rebrand, creation of the new Consensys company, independent operation, and expected separation completion by the end of 2026.",
+        "product_id": null,
+        "published_at": "2026-09-09",
+        "publisher": "Consensys Software Inc. / MetaMask",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Consensys Software Inc. to become two independent companies: MetaMask, the consumer platform, and Consensys, the protocols and institutional infrastructure company",
+        "url": "https://metamask.io/news/consensys-software-inc-to-become-two-independent-companies-metamask-and-consensys"
+      },
+      {
+        "accessed_at": "2026-09-10",
+        "claim_scope": "rebrand",
+        "entity_id": "wlr_ent_000004",
+        "event_id": "wlr_ev_000267",
+        "id": "wlr_src_000545",
+        "is_primary": true,
+        "notes": "First-party leadership article confirming the two-company structure and explicitly stating that MetaMask users had no immediate app, asset, key, or access changes.",
+        "product_id": null,
+        "published_at": "2026-09-09",
+        "publisher": "MetaMask / Joseph Lubin",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "MetaMask's next chapter",
+        "url": "https://metamask.io/news/metamask-next-chapter"
       }
     ]
   },
@@ -263,6 +316,6 @@
     "native_machine": "https://wlr.badjoke-lab.com/data/wallets/metamask.json"
   },
   "verification": {
-    "last_verified_at": "2026-08-14"
+    "last_verified_at": "2026-09-10"
   }
 }
