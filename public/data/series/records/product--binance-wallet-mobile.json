@@ -39,6 +39,22 @@
         "notes": "Current first-party Binance Academy material supports December 2024 but not a defensible day-level rebrand date in this review. WLR therefore preserves month precision and uses an approximate date basis. This is continuity, not a new wallet or product launch.",
         "product_id": "wlr_prod_000102",
         "title": "Binance Web3 Wallet rebranded as Binance Wallet"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000102"
+        ],
+        "confidence": "high",
+        "description": "Binance launched Binance Web3 Wallet inside the Binance app as a self-custody wallet using multi-party computation, integrated swaps, yield access, curated dApps, and direct transitions between exchange and Web3 functions.",
+        "entity_id": "wlr_ent_000053",
+        "event_date": "2023-11-08",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "launched",
+        "id": "wlr_ev_000266",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000102",
+        "title": "Binance launched its self-custody Web3 Wallet"
       }
     ]
   },
@@ -92,6 +108,22 @@
         "source_type": "official_statement",
         "title": "What Is the Binance Wallet and How to Use It?",
         "url": "https://academy.binance.com/en/articles/what-is-binance-web3-wallet-and-how-does-it-work"
+      },
+      {
+        "accessed_at": "2026-09-10",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000053",
+        "event_id": "wlr_ev_000266",
+        "id": "wlr_src_000543",
+        "is_primary": true,
+        "notes": "First-party Binance launch announcement for the self-custody Web3 Wallet.",
+        "product_id": "wlr_prod_000102",
+        "published_at": "2023-11-08",
+        "publisher": "Binance",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Introducing Binance Web3 Wallet",
+        "url": "https://www.binance.com/en/blog/markets/5931309459106555347"
       }
     ]
   },

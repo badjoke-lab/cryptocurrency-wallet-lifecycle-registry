@@ -39,6 +39,22 @@
         "notes": "This records brand continuity only. It is not treated as a new wallet or selected-product launch.",
         "product_id": "wlr_prod_000101",
         "title": "Crypto.com DeFi Wallet became Crypto.com Onchain"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000101"
+        ],
+        "confidence": "high",
+        "description": "Crypto.com announced a revamped Onchain Extension with a redesigned homepage, seamless network switching, wallet add/remove controls, and multiple account profiles under a single wallet.",
+        "entity_id": "wlr_ent_000052",
+        "event_date": "2025-06-26",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000265",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000101",
+        "title": "Crypto.com launched a revamped Onchain Extension"
       }
     ]
   },
@@ -92,6 +108,22 @@
         "source_type": "official_statement",
         "title": "Crypto.com Onchain",
         "url": "https://help.crypto.com/en/collections/2221157-crypto-com-onchain"
+      },
+      {
+        "accessed_at": "2026-09-10",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000052",
+        "event_id": "wlr_ev_000265",
+        "id": "wlr_src_000542",
+        "is_primary": true,
+        "notes": "First-party Crypto.com product-news announcement for the revamped Onchain Extension.",
+        "product_id": "wlr_prod_000101",
+        "published_at": "2025-06-26",
+        "publisher": "Crypto.com",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Introducing the New Crypto.com Onchain Extension",
+        "url": "https://crypto.com/en/product-news/onchain-extension-revamp"
       }
     ]
   },

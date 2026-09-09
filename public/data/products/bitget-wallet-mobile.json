@@ -50,6 +50,22 @@
       "event_status_effect": "none",
       "is_major_event": true,
       "notes": "The 2023-08-10 date is rebrand chronology, not an initial product-launch date. The selected mobile product retains BitKeep Wallet as an alias and its initial launch date remains unresolved."
+    },
+    {
+      "id": "wlr_ev_000262",
+      "entity_id": "wlr_ent_000046",
+      "product_id": "wlr_prod_000095",
+      "affected_product_ids": [
+        "wlr_prod_000095"
+      ],
+      "event_type": "other",
+      "event_date": "2025-03-17",
+      "event_date_basis": "announcement",
+      "title": "Bitget Wallet expanded multi-chain MEV protection by default",
+      "description": "Bitget Wallet announced that its MEV Protection was enabled by default across Solana, BNB Chain, Ethereum, Base, Polygon, Arbitrum, and other mainstream networks to reduce front-running, sandwich attacks, and excessive gas-fee exposure in swaps.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
     }
   ],
   "evidence": [
@@ -100,6 +116,22 @@
       "claim_scope": "support_status",
       "is_primary": true,
       "notes": "Current first-party download surface distributes Bitget Wallet through Google Play, App Store and Android APK, supporting an actively maintained mobile product. No exact initial mobile launch date is inferred from this source."
+    },
+    {
+      "id": "wlr_src_000539",
+      "entity_id": "wlr_ent_000046",
+      "product_id": "wlr_prod_000095",
+      "event_id": "wlr_ev_000262",
+      "source_type": "official_blog",
+      "title": "Bitget Wallet Expands Multi-Chain MEV Protection for Safer Transactions",
+      "url": "https://web3.bitget.com/en/blog/articles/multi-chain-mev-protection",
+      "publisher": "Bitget Wallet",
+      "published_at": "2025-03-17",
+      "accessed_at": "2026-09-10",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party Bitget Wallet announcement documenting default multi-chain MEV protection."
     }
   ]
 }

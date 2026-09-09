@@ -66,6 +66,22 @@
       "event_status_effect": "none",
       "is_major_event": true,
       "notes": "Current first-party Binance Academy material supports December 2024 but not a defensible day-level rebrand date in this review. WLR therefore preserves month precision and uses an approximate date basis. This is continuity, not a new wallet or product launch."
+    },
+    {
+      "id": "wlr_ev_000266",
+      "entity_id": "wlr_ent_000053",
+      "product_id": "wlr_prod_000102",
+      "affected_product_ids": [
+        "wlr_prod_000102"
+      ],
+      "event_type": "launched",
+      "event_date": "2023-11-08",
+      "event_date_basis": "announcement",
+      "title": "Binance launched its self-custody Web3 Wallet",
+      "description": "Binance launched Binance Web3 Wallet inside the Binance app as a self-custody wallet using multi-party computation, integrated swaps, yield access, curated dApps, and direct transitions between exchange and Web3 functions.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
     }
   ],
   "evidence": [
@@ -132,6 +148,22 @@
       "claim_scope": "support_status",
       "is_primary": true,
       "notes": "Current Binance Academy documentation describes Binance Wallet as a self-custodial wallet built into the Binance app, with active mobile and web flows and 2026 feature documentation. Supports active maintenance of the mobile wallet product."
+    },
+    {
+      "id": "wlr_src_000543",
+      "entity_id": "wlr_ent_000053",
+      "product_id": "wlr_prod_000102",
+      "event_id": "wlr_ev_000266",
+      "source_type": "official_blog",
+      "title": "Introducing Binance Web3 Wallet",
+      "url": "https://www.binance.com/en/blog/markets/5931309459106555347",
+      "publisher": "Binance",
+      "published_at": "2023-11-08",
+      "accessed_at": "2026-09-10",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party Binance launch announcement for the self-custody Web3 Wallet."
     }
   ]
 }
