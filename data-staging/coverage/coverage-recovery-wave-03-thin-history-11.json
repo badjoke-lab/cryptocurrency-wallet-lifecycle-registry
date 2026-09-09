@@ -1,0 +1,157 @@
+{
+  "generated_from_main_sha": "1495e1956f547b04f8b6d931c6f27bb8e2be9ba8",
+  "one_event_count": 19,
+  "selection_rule": "priority_score = missing_launch*4 + unknown_support*3 + max(0,4-evidence_count); then evidence_count asc, entity_id asc",
+  "selected": [
+    {
+      "entity_id": "wlr_ent_000055",
+      "entity_name": "BitPay Wallet",
+      "product_id": "wlr_prod_000104",
+      "product_name": "BitPay Wallet App",
+      "priority_score": 4,
+      "evidence_count": 4,
+      "missing_launch": 1,
+      "unknown_support": 0,
+      "sole_event": {
+        "id": "wlr_ev_000182",
+        "event_date": "2026-08-20",
+        "title": "BitPay Wallet added XRP buy, sell, and swap support"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000056",
+      "entity_name": "Coin98 Wallet",
+      "product_id": "wlr_prod_000105",
+      "product_name": "Coin98 Super Wallet Mobile",
+      "priority_score": 4,
+      "evidence_count": 4,
+      "missing_launch": 1,
+      "unknown_support": 0,
+      "sole_event": {
+        "id": "wlr_ev_000189",
+        "event_date": "2025-07-06",
+        "title": "Coin98 Super Wallet V16 launch documented"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000057",
+      "entity_name": "MathWallet",
+      "product_id": "wlr_prod_000106",
+      "product_name": "MathWallet Mobile",
+      "priority_score": 4,
+      "evidence_count": 4,
+      "missing_launch": 1,
+      "unknown_support": 0,
+      "sole_event": {
+        "id": "wlr_ev_000184",
+        "event_date": "2019-07-12",
+        "title": "MathWallet v3.0.0 major update documented"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000061",
+      "entity_name": "Backpack",
+      "product_id": "wlr_prod_000110",
+      "product_name": "Backpack Browser Extension",
+      "priority_score": 4,
+      "evidence_count": 4,
+      "missing_launch": 1,
+      "unknown_support": 0,
+      "sole_event": {
+        "id": "wlr_ev_000185",
+        "event_date": "2023-12-25",
+        "title": "Backpack 0.10.1-latest-4 released"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000063",
+      "entity_name": "Xaman",
+      "product_id": "wlr_prod_000112",
+      "product_name": "Xaman Mobile",
+      "priority_score": 4,
+      "evidence_count": 4,
+      "missing_launch": 1,
+      "unknown_support": 0,
+      "sole_event": {
+        "id": "wlr_ev_000128",
+        "event_date": "2023-05-26",
+        "title": "XUMM announced its rebrand to Xaman"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000064",
+      "entity_name": "Pera Wallet",
+      "product_id": "wlr_prod_000113",
+      "product_name": "Pera Mobile",
+      "priority_score": 4,
+      "evidence_count": 4,
+      "missing_launch": 1,
+      "unknown_support": 0,
+      "sole_event": {
+        "id": "wlr_ev_000186",
+        "event_date": "2023-02-09",
+        "title": "Pera Wallet 5.7.0 released for iOS and Android"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000067",
+      "entity_name": "SubWallet",
+      "product_id": "wlr_prod_000116",
+      "product_name": "SubWallet Extension",
+      "priority_score": 4,
+      "evidence_count": 4,
+      "missing_launch": 1,
+      "unknown_support": 0,
+      "sole_event": {
+        "id": "wlr_ev_000187",
+        "event_date": "2026-07-23",
+        "title": "SubWallet Extension v1.3.84 released"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000069",
+      "entity_name": "Slush",
+      "product_id": "wlr_prod_000118",
+      "product_name": "Slush Browser Extension",
+      "priority_score": 4,
+      "evidence_count": 4,
+      "missing_launch": 1,
+      "unknown_support": 0,
+      "sole_event": {
+        "id": "wlr_ev_000130",
+        "event_date": "2025-04-24",
+        "title": "Sui Wallet and Stashed unified under the Slush brand"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000028",
+      "entity_name": "OKX Wallet",
+      "product_id": "wlr_prod_000077",
+      "product_name": "OKX Wallet App",
+      "priority_score": 3,
+      "evidence_count": 4,
+      "missing_launch": 0,
+      "unknown_support": 1,
+      "sole_event": {
+        "id": "wlr_ev_000207",
+        "event_date": "2026-04-29",
+        "title": "OKX Wallet added Pharos mainnet support"
+      }
+    },
+    {
+      "entity_id": "wlr_ent_000031",
+      "entity_name": "Solflare",
+      "product_id": "wlr_prod_000080",
+      "product_name": "Solflare Browser Extension",
+      "priority_score": 3,
+      "evidence_count": 4,
+      "missing_launch": 0,
+      "unknown_support": 1,
+      "sole_event": {
+        "id": "wlr_ev_000153",
+        "event_date": "2020",
+        "title": "Solflare Web App and Extension launched in 2020"
+      }
+    }
+  ]
+}
