@@ -46,6 +46,22 @@
       "event_status_effect": "none",
       "is_major_event": true,
       "notes": "This records brand continuity only. It is not treated as a new wallet or selected-product launch."
+    },
+    {
+      "id": "wlr_ev_000265",
+      "entity_id": "wlr_ent_000052",
+      "product_id": "wlr_prod_000101",
+      "affected_product_ids": [
+        "wlr_prod_000101"
+      ],
+      "event_type": "other",
+      "event_date": "2025-06-26",
+      "event_date_basis": "release",
+      "title": "Crypto.com launched a revamped Onchain Extension",
+      "description": "Crypto.com announced a revamped Onchain Extension with a redesigned homepage, seamless network switching, wallet add/remove controls, and multiple account profiles under a single wallet.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
     }
   ],
   "evidence": [
@@ -96,6 +112,22 @@
       "claim_scope": "support_status",
       "is_primary": true,
       "notes": "Current first-party help collection contains active Crypto.com Onchain Extension setup, import, swap and wallet-management documentation; Crypto.com also published a revamped extension in 2025. Supports active maintenance, without inferring the original extension launch date."
+    },
+    {
+      "id": "wlr_src_000542",
+      "entity_id": "wlr_ent_000052",
+      "product_id": "wlr_prod_000101",
+      "event_id": "wlr_ev_000265",
+      "source_type": "official_blog",
+      "title": "Introducing the New Crypto.com Onchain Extension",
+      "url": "https://crypto.com/en/product-news/onchain-extension-revamp",
+      "publisher": "Crypto.com",
+      "published_at": "2025-06-26",
+      "accessed_at": "2026-09-10",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party Crypto.com product-news announcement for the revamped Onchain Extension."
     }
   ]
 }

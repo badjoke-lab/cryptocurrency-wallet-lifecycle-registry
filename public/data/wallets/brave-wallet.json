@@ -63,6 +63,22 @@
       "event_status_effect": "active",
       "is_major_event": true,
       "notes": "This is retained as material product-history depth because Brave explicitly introduced a new browser-native wallet boundary with no extension required and documented migration/import from its legacy Crypto Wallets extension. It is not a generic launch added solely to reduce the zero-event count. Mobile availability was still future-facing in this launch announcement and is not included in the affected product scope."
+    },
+    {
+      "id": "wlr_ev_000264",
+      "entity_id": "wlr_ent_000051",
+      "product_id": "wlr_prod_000100",
+      "affected_product_ids": [
+        "wlr_prod_000100"
+      ],
+      "event_type": "other",
+      "event_date": "2024-02-27",
+      "event_date_basis": "release",
+      "title": "Brave Wallet added native Bitcoin support",
+      "description": "Brave announced native Bitcoin support in Brave desktop 1.63, allowing Brave Wallet users to create Native SegWit Bitcoin accounts and send to or receive from Legacy, Nested SegWit, Native SegWit, and Taproot addresses.",
+      "confidence": "high",
+      "event_status_effect": "active",
+      "is_major_event": true
     }
   ],
   "evidence": [
@@ -129,6 +145,22 @@
       "claim_scope": "support_status",
       "is_primary": true,
       "notes": "Current first-party Brave Wallet page documents the built-in browser wallet, desktop/mobile availability and continuing compatibility improvements, supporting active maintenance. Initial release date remains unresolved in this bundle."
+    },
+    {
+      "id": "wlr_src_000541",
+      "entity_id": "wlr_ent_000051",
+      "product_id": "wlr_prod_000100",
+      "event_id": "wlr_ev_000264",
+      "source_type": "official_blog",
+      "title": "Brave Wallet now supports Bitcoin",
+      "url": "https://brave.com/blog/bitcoin-wallet/",
+      "publisher": "Brave",
+      "published_at": "2024-02-27",
+      "accessed_at": "2026-09-10",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "First-party Brave product announcement documenting native Bitcoin support in Brave Wallet."
     }
   ]
 }

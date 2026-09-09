@@ -39,6 +39,22 @@
         "notes": "This is retained as material product-history depth because Brave explicitly introduced a new browser-native wallet boundary with no extension required and documented migration/import from its legacy Crypto Wallets extension. It is not a generic launch added solely to reduce the zero-event count. Mobile availability was still future-facing in this launch announcement and is not included in the affected product scope.",
         "product_id": "wlr_prod_000100",
         "title": "Browser-native Brave Wallet launched"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000100"
+        ],
+        "confidence": "high",
+        "description": "Brave announced native Bitcoin support in Brave desktop 1.63, allowing Brave Wallet users to create Native SegWit Bitcoin accounts and send to or receive from Legacy, Nested SegWit, Native SegWit, and Taproot addresses.",
+        "entity_id": "wlr_ent_000051",
+        "event_date": "2024-02-27",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000264",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000100",
+        "title": "Brave Wallet added native Bitcoin support"
       }
     ]
   },
@@ -92,6 +108,22 @@
         "source_type": "official_statement",
         "title": "Brave Wallet",
         "url": "https://brave.com/wallet/"
+      },
+      {
+        "accessed_at": "2026-09-10",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000051",
+        "event_id": "wlr_ev_000264",
+        "id": "wlr_src_000541",
+        "is_primary": true,
+        "notes": "First-party Brave product announcement documenting native Bitcoin support in Brave Wallet.",
+        "product_id": "wlr_prod_000100",
+        "published_at": "2024-02-27",
+        "publisher": "Brave",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Brave Wallet now supports Bitcoin",
+        "url": "https://brave.com/blog/bitcoin-wallet/"
       }
     ]
   },

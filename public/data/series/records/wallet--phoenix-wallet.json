@@ -32,6 +32,22 @@
         "is_major_event": false,
         "product_id": "wlr_prod_000098",
         "title": "Phoenix 2.8.1 released"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000098"
+        ],
+        "confidence": "high",
+        "description": "ACINQ announced a redesigned Phoenix swap-in protocol using Taproot, MuSig2, and descriptors, rotating swap-in addresses and reducing the on-chain cost and traceability of deposits that are spliced into Phoenix Lightning channels.",
+        "entity_id": "wlr_ent_000049",
+        "event_date": "2024-02-23",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000263",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000098",
+        "title": "Phoenix introduced Swaproot for cheaper and more private on-chain deposits"
       }
     ]
   },
@@ -101,6 +117,22 @@
         "source_type": "release_notes",
         "title": "Phoenix 2.8.1",
         "url": "https://github.com/ACINQ/phoenix/releases/tag/android-v2.8.1"
+      },
+      {
+        "accessed_at": "2026-09-10",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000049",
+        "event_id": "wlr_ev_000263",
+        "id": "wlr_src_000540",
+        "is_primary": true,
+        "notes": "First-party ACINQ technical announcement for the Phoenix Swaproot deployment.",
+        "product_id": "wlr_prod_000098",
+        "published_at": "2024-02-23",
+        "publisher": "ACINQ",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Swaproot: cheaper and more private on-chain deposits on Phoenix",
+        "url": "https://acinq.co/blog/phoenix-swaproot"
       }
     ]
   },

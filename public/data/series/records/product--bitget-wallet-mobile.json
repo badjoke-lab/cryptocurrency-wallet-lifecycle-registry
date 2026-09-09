@@ -39,6 +39,22 @@
         "notes": "The 2023-08-10 date is rebrand chronology, not an initial product-launch date. The selected mobile product retains BitKeep Wallet as an alias and its initial launch date remains unresolved.",
         "product_id": "wlr_prod_000095",
         "title": "BitKeep upgraded its brand to Bitget Wallet"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000095"
+        ],
+        "confidence": "high",
+        "description": "Bitget Wallet announced that its MEV Protection was enabled by default across Solana, BNB Chain, Ethereum, Base, Polygon, Arbitrum, and other mainstream networks to reduce front-running, sandwich attacks, and excessive gas-fee exposure in swaps.",
+        "entity_id": "wlr_ent_000046",
+        "event_date": "2025-03-17",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000262",
+        "is_major_event": true,
+        "product_id": "wlr_prod_000095",
+        "title": "Bitget Wallet expanded multi-chain MEV protection by default"
       }
     ]
   },
@@ -92,6 +108,22 @@
         "source_type": "official_statement",
         "title": "Download Bitget Wallet",
         "url": "https://web3.bitget.com/wallet-download"
+      },
+      {
+        "accessed_at": "2026-09-10",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000046",
+        "event_id": "wlr_ev_000262",
+        "id": "wlr_src_000539",
+        "is_primary": true,
+        "notes": "First-party Bitget Wallet announcement documenting default multi-chain MEV protection.",
+        "product_id": "wlr_prod_000095",
+        "published_at": "2025-03-17",
+        "publisher": "Bitget Wallet",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Bitget Wallet Expands Multi-Chain MEV Protection for Safer Transactions",
+        "url": "https://web3.bitget.com/en/blog/articles/multi-chain-mev-protection"
       }
     ]
   },

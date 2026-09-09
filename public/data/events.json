@@ -5009,5 +5009,85 @@
     "confidence": "high",
     "event_status_effect": "active",
     "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000262",
+    "entity_id": "wlr_ent_000046",
+    "product_id": "wlr_prod_000095",
+    "affected_product_ids": [
+      "wlr_prod_000095"
+    ],
+    "event_type": "other",
+    "event_date": "2025-03-17",
+    "event_date_basis": "announcement",
+    "title": "Bitget Wallet expanded multi-chain MEV protection by default",
+    "description": "Bitget Wallet announced that its MEV Protection was enabled by default across Solana, BNB Chain, Ethereum, Base, Polygon, Arbitrum, and other mainstream networks to reduce front-running, sandwich attacks, and excessive gas-fee exposure in swaps.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000263",
+    "entity_id": "wlr_ent_000049",
+    "product_id": "wlr_prod_000098",
+    "affected_product_ids": [
+      "wlr_prod_000098"
+    ],
+    "event_type": "other",
+    "event_date": "2024-02-23",
+    "event_date_basis": "announcement",
+    "title": "Phoenix introduced Swaproot for cheaper and more private on-chain deposits",
+    "description": "ACINQ announced a redesigned Phoenix swap-in protocol using Taproot, MuSig2, and descriptors, rotating swap-in addresses and reducing the on-chain cost and traceability of deposits that are spliced into Phoenix Lightning channels.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000264",
+    "entity_id": "wlr_ent_000051",
+    "product_id": "wlr_prod_000100",
+    "affected_product_ids": [
+      "wlr_prod_000100"
+    ],
+    "event_type": "other",
+    "event_date": "2024-02-27",
+    "event_date_basis": "release",
+    "title": "Brave Wallet added native Bitcoin support",
+    "description": "Brave announced native Bitcoin support in Brave desktop 1.63, allowing Brave Wallet users to create Native SegWit Bitcoin accounts and send to or receive from Legacy, Nested SegWit, Native SegWit, and Taproot addresses.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000265",
+    "entity_id": "wlr_ent_000052",
+    "product_id": "wlr_prod_000101",
+    "affected_product_ids": [
+      "wlr_prod_000101"
+    ],
+    "event_type": "other",
+    "event_date": "2025-06-26",
+    "event_date_basis": "release",
+    "title": "Crypto.com launched a revamped Onchain Extension",
+    "description": "Crypto.com announced a revamped Onchain Extension with a redesigned homepage, seamless network switching, wallet add/remove controls, and multiple account profiles under a single wallet.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
+  },
+  {
+    "id": "wlr_ev_000266",
+    "entity_id": "wlr_ent_000053",
+    "product_id": "wlr_prod_000102",
+    "affected_product_ids": [
+      "wlr_prod_000102"
+    ],
+    "event_type": "launched",
+    "event_date": "2023-11-08",
+    "event_date_basis": "announcement",
+    "title": "Binance launched its self-custody Web3 Wallet",
+    "description": "Binance launched Binance Web3 Wallet inside the Binance app as a self-custody wallet using multi-party computation, integrated swaps, yield access, curated dApps, and direct transitions between exchange and Web3 functions.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": true
   }
 ]
