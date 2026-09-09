@@ -24,8 +24,8 @@
   "record_counts": {
     "native": {
       "entities": 103,
-      "events": 263,
-      "evidence": 540,
+      "events": 264,
+      "evidence": 542,
       "product_records": 152,
       "products": 152,
       "wallet_records": 103
@@ -67,6 +67,6 @@
   },
   "series_schema_version": "1.0.0",
   "verification": {
-    "last_verified_at": "2026-09-06"
+    "last_verified_at": "2026-09-10"
   }
 }

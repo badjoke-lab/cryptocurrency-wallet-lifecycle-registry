@@ -9290,5 +9290,37 @@
     "claim_scope": "event",
     "is_primary": true,
     "notes": "First-party Binance launch announcement for the self-custody Web3 Wallet."
+  },
+  {
+    "id": "wlr_src_000544",
+    "entity_id": "wlr_ent_000004",
+    "product_id": null,
+    "event_id": "wlr_ev_000267",
+    "source_type": "official_statement",
+    "title": "Consensys Software Inc. to become two independent companies: MetaMask, the consumer platform, and Consensys, the protocols and institutional infrastructure company",
+    "url": "https://metamask.io/news/consensys-software-inc-to-become-two-independent-companies-metamask-and-consensys",
+    "publisher": "Consensys Software Inc. / MetaMask",
+    "published_at": "2026-09-09",
+    "accessed_at": "2026-09-10",
+    "reliability": "high",
+    "claim_scope": "rebrand",
+    "is_primary": true,
+    "notes": "First-party corporate announcement establishing the CSI-to-MetaMask rebrand, creation of the new Consensys company, independent operation, and expected separation completion by the end of 2026."
+  },
+  {
+    "id": "wlr_src_000545",
+    "entity_id": "wlr_ent_000004",
+    "product_id": null,
+    "event_id": "wlr_ev_000267",
+    "source_type": "official_blog",
+    "title": "MetaMask's next chapter",
+    "url": "https://metamask.io/news/metamask-next-chapter",
+    "publisher": "MetaMask / Joseph Lubin",
+    "published_at": "2026-09-09",
+    "accessed_at": "2026-09-10",
+    "reliability": "high",
+    "claim_scope": "rebrand",
+    "is_primary": true,
+    "notes": "First-party leadership article confirming the two-company structure and explicitly stating that MetaMask users had no immediate app, asset, key, or access changes."
   }
 ]

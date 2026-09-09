@@ -82,7 +82,7 @@
     "wallet_type": "software",
     "status": "active",
     "summary": "Self-custodial software wallet ecosystem launched as a browser wallet and later expanded to a mobile application.",
-    "developer_or_company": "Consensys",
+    "developer_or_company": "MetaMask",
     "country_or_origin": null,
     "launch_date": "2016-07-14",
     "launch_date_precision": "day",
@@ -95,8 +95,8 @@
     "custody_model": "self_custody",
     "key_management_model": "device_software_key_vault",
     "confidence": "high",
-    "last_verified_at": "2026-08-14",
-    "notes": "Browser extension and mobile app are separate products because their distribution and security boundaries differ."
+    "last_verified_at": "2026-09-10",
+    "notes": "Browser extension and mobile app are separate products because their distribution and security boundaries differ. On 2026-09-09 Consensys Software Inc. announced that it would continue as the same company under the MetaMask name, while the protocols and institutional infrastructure business would become a newly formed company carrying the Consensys name; completion of the separation is expected by the end of 2026."
   },
   {
     "id": "wlr_ent_000005",
