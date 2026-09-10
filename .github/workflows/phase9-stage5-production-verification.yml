@@ -37,7 +37,8 @@ jobs:
 
           grep -Fq 'XRPH Wallet' <<<"${html}"
           grep -Fq 'Mass unauthorized drain affected XRPH Wallet users' <<<"${html}"
-          jq -e '.schema == "wlr.wallet-record.v1" and .entity.id == "wlr_ent_000103" and .entity.slug == "xrph-wallet" and .entity.status == "limited" and ([.events[].id] | index("wlr_ev_000245") != null) and ([.events[].id] | index("wlr_ev_000246") != null)' <<<"${wallet}" >/dev/null
+          grep -Fq 'XRP Healthcare began winding down normal operations while XRPH Wallet remained offline' <<<"${html}"
+          jq -e '.schema == "wlr.wallet-record.v1" and .entity.id == "wlr_ent_000103" and .entity.slug == "xrph-wallet" and .entity.status == "limited" and ([.events[].id] | index("wlr_ev_000245") != null) and ([.events[].id] | index("wlr_ev_000246") != null) and ([.events[].id] | index("wlr_ev_000268") != null) and (([.evidence[] | select(.id == "wlr_src_000546" and .url == "https://x.com/XRPHealthcare/status/2098029709875368067" and .reliability == "high" and .is_primary == true)] | length) == 1)' <<<"${wallet}" >/dev/null
           jq -e '.schema == "wlr.product-record.v1" and .entity.id == "wlr_ent_000103" and .product.id == "wlr_prod_000152" and .product.slug == "xrph-wallet-mobile" and .product.status == "limited"' <<<"${product}" >/dev/null
 
           echo 'XRPH Wallet production human and machine routes verified.'
