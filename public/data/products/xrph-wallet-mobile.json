@@ -255,6 +255,22 @@
       "claim_scope": "event",
       "is_primary": false,
       "notes": "Official exchange notice corroborating the delisting path described by XRP Healthcare. MEXC lists XRPHAI under ST on 2026-09-09 with estimated delisting 2026-09-12 and XRPH under ST on 2026-09-09 with estimated delisting 2026-09-16. Used only to corroborate the exchange-delisting component, not to establish permanent wallet discontinuation."
+    },
+    {
+      "id": "wlr_src_000548",
+      "entity_id": "wlr_ent_000103",
+      "product_id": "wlr_prod_000152",
+      "event_id": "wlr_ev_000268",
+      "source_type": "official_statement",
+      "title": "XRP Healthcare digital services temporary unavailability notice",
+      "url": "https://www.xrphealthcare.ai/",
+      "publisher": "XRP Healthcare",
+      "published_at": null,
+      "accessed_at": "2026-09-11",
+      "reliability": "high",
+      "claim_scope": "event",
+      "is_primary": true,
+      "notes": "Current first-party site states that XRP Healthcare digital services are temporarily unavailable while security and recovery work continues following the recent XRPH Wallet incident. This corroborates the continued wallet/service-offline and recovery-work portion of wlr_ev_000268 only; it does not establish permanent XRPH Wallet discontinuation or, by itself, the broader operational wind-down decision."
     }
   ]
 }
