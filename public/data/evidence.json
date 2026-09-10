@@ -9322,5 +9322,37 @@
     "claim_scope": "rebrand",
     "is_primary": true,
     "notes": "First-party leadership article confirming the two-company structure and explicitly stating that MetaMask users had no immediate app, asset, key, or access changes."
+  },
+  {
+    "id": "wlr_src_000546",
+    "entity_id": "wlr_ent_000103",
+    "product_id": "wlr_prod_000152",
+    "event_id": "wlr_ev_000268",
+    "source_type": "official_social",
+    "title": "XRP Healthcare operational wind-down statement",
+    "url": "https://x.com/XRPHealthcare",
+    "publisher": "XRP Healthcare",
+    "published_at": "2026-09-10",
+    "accessed_at": "2026-09-10",
+    "reliability": "medium",
+    "claim_scope": "event",
+    "is_primary": true,
+    "notes": "Primary XRP Healthcare statement reviewed for the 2026-09-10 operational wind-down, continued XRPH Wallet offline state, incident-recovery commitments, and coordinated XRPH/XRPHAI delistings. The exact post permalink was not independently resolvable during review, so the official account URL is retained temporarily and should be replaced with the exact status URL when resolved."
+  },
+  {
+    "id": "wlr_src_000547",
+    "entity_id": "wlr_ent_000103",
+    "product_id": "wlr_prod_000152",
+    "event_id": "wlr_ev_000268",
+    "source_type": "official_statement",
+    "title": "MEXC Announcement on ST Warning (September 2026)",
+    "url": "https://www.mexc.com/announcements/article/mexc-announcement-on-st-warning-september-2026-17827791538064",
+    "publisher": "MEXC",
+    "published_at": "2026-09-01",
+    "accessed_at": "2026-09-10",
+    "reliability": "high",
+    "claim_scope": "event",
+    "is_primary": false,
+    "notes": "Official exchange notice corroborating the delisting path described by XRP Healthcare. MEXC lists XRPHAI under ST on 2026-09-09 with estimated delisting 2026-09-12 and XRPH under ST on 2026-09-09 with estimated delisting 2026-09-16. Used only to corroborate the exchange-delisting component, not to establish permanent wallet discontinuation."
   }
 ]

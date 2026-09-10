@@ -5110,5 +5110,23 @@
       "none"
     ],
     "notes": "This records the 2026-09-09 corporate rebrand and separation announcement, not completion of the legal and operational separation."
+  },
+  {
+    "id": "wlr_ev_000268",
+    "entity_id": "wlr_ent_000103",
+    "product_id": "wlr_prod_000152",
+    "affected_product_ids": [
+      "wlr_prod_000152"
+    ],
+    "event_type": "service_shutdown",
+    "event_date": "2026-09-10",
+    "event_date_basis": "announcement",
+    "title": "XRP Healthcare began winding down normal operations while XRPH Wallet remained offline",
+    "description": "XRP Healthcare announced that it had begun winding down normal operations after nearly three years, citing accumulated operating and public-listing costs and additional pressure from the September 3 XRPH Wallet incident. The company said XRPH Wallet remained offline while incident-recovery work would continue and XRPH and XRPHAI delistings were being coordinated with exchange partners.",
+    "confidence": "high",
+    "impact_level": "critical",
+    "event_status_effect": "limited",
+    "is_major_event": true,
+    "notes": "This records the operator wind-down and continued wallet-offline boundary, not a confirmed permanent discontinuation of XRPH Wallet. XRP Healthcare said incident recovery, cooperation, record preservation, and material updates would continue. Canonical entity and product statuses therefore remain limited pending an explicit permanent wallet shutdown, app withdrawal, or support-end boundary."
   }
 ]
