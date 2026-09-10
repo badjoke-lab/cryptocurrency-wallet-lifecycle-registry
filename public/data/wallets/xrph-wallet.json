@@ -250,14 +250,14 @@
       "event_id": "wlr_ev_000268",
       "source_type": "official_social",
       "title": "XRP Healthcare operational wind-down statement",
-      "url": "https://x.com/XRPHealthcare",
+      "url": "https://x.com/XRPHealthcare/status/2098029709875368067",
       "publisher": "XRP Healthcare",
       "published_at": "2026-09-10",
-      "accessed_at": "2026-09-10",
-      "reliability": "medium",
+      "accessed_at": "2026-09-11",
+      "reliability": "high",
       "claim_scope": "event",
       "is_primary": true,
-      "notes": "Primary XRP Healthcare statement reviewed for the 2026-09-10 operational wind-down, continued XRPH Wallet offline state, incident-recovery commitments, and coordinated XRPH/XRPHAI delistings. The exact post permalink was not independently resolvable during review, so the official account URL is retained temporarily and should be replaced with the exact status URL when resolved."
+      "notes": "Exact first-party XRP Healthcare status permalink for the 2026-09-10 operational wind-down statement. The statement records the start of normal-operations wind-down, continued XRPH Wallet offline state, incident-recovery commitments, and coordinated XRPH/XRPHAI delistings. It does not state that XRPH Wallet is permanently discontinued, so the canonical entity and product remain limited."
     },
     {
       "id": "wlr_src_000547",

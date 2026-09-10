@@ -935,15 +935,15 @@
       "reliability": [
         {
           "value": "high",
-          "count": 540,
+          "count": 541,
           "denominator": 545,
-          "percentage": 99.1
+          "percentage": 99.3
         },
         {
           "value": "medium",
-          "count": 5,
+          "count": 4,
           "denominator": 545,
-          "percentage": 0.9
+          "percentage": 0.7
         }
       ],
       "source_type": [
