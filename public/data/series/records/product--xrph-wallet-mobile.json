@@ -249,6 +249,22 @@
         "source_type": "official_statement",
         "title": "MEXC Announcement on ST Warning (September 2026)",
         "url": "https://www.mexc.com/announcements/article/mexc-announcement-on-st-warning-september-2026-17827791538064"
+      },
+      {
+        "accessed_at": "2026-09-11",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000103",
+        "event_id": "wlr_ev_000268",
+        "id": "wlr_src_000548",
+        "is_primary": true,
+        "notes": "Current first-party site states that XRP Healthcare digital services are temporarily unavailable while security and recovery work continues following the recent XRPH Wallet incident. This corroborates the continued wallet/service-offline and recovery-work portion of wlr_ev_000268 only; it does not establish permanent XRPH Wallet discontinuation or, by itself, the broader operational wind-down decision.",
+        "product_id": "wlr_prod_000152",
+        "published_at": null,
+        "publisher": "XRP Healthcare",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "XRP Healthcare digital services temporary unavailability notice",
+        "url": "https://www.xrphealthcare.ai/"
       }
     ]
   },
