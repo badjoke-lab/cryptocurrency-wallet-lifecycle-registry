@@ -1,0 +1,75 @@
+name: Add XRPH official-site evidence once
+
+on:
+  push:
+    branches:
+      - feat/xrph-official-site-evidence-20260911
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/xrph-official-site-evidence-20260911
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: npm ci --no-audit --no-fund
+      - name: Append reviewed official-site evidence
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path('data/evidence.json')
+          data = json.loads(path.read_text())
+          evidence_id = 'wlr_src_000548'
+          if not any(item.get('id') == evidence_id for item in data):
+              data.append({
+                  'id': evidence_id,
+                  'entity_id': 'wlr_ent_000103',
+                  'product_id': 'wlr_prod_000152',
+                  'event_id': 'wlr_ev_000268',
+                  'source_type': 'official_statement',
+                  'title': 'XRP Healthcare digital services temporary unavailability notice',
+                  'url': 'https://www.xrphealthcare.ai/',
+                  'publisher': 'XRP Healthcare',
+                  'published_at': None,
+                  'accessed_at': '2026-09-11',
+                  'reliability': 'high',
+                  'claim_scope': 'event',
+                  'is_primary': True,
+                  'notes': 'Current first-party site states that XRP Healthcare digital services are temporarily unavailable while security and recovery work continues following the recent XRPH Wallet incident. This corroborates the continued wallet/service-offline and recovery-work portion of wlr_ev_000268 only; it does not establish permanent XRPH Wallet discontinuation or, by itself, the broader operational wind-down decision.'
+              })
+          path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + '\n')
+          PY
+      - run: npm run validate:records
+      - run: npm run validate:identity-evidence
+      - run: npm run coverage:audit
+      - name: Regenerate public outputs
+        run: npm run prebuild
+      - run: npm run validate:machine-records
+      - run: npm run validate:structured-discovery
+      - run: npm run validate:stats
+      - run: npm run validate:series
+      - name: Commit deterministic data updates
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/evidence.json public
+          if git diff --cached --quiet; then
+            echo 'No changes to commit'
+          else
+            git commit -m 'Add XRP Healthcare official-site recovery evidence'
+            git push origin HEAD:feat/xrph-official-site-evidence-20260911
+          fi
