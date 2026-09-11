@@ -1,0 +1,67 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_xrph-wallet-root-cause-2026-09",
+  "title": "XRPH Wallet wallet-generation root-cause disclosure",
+  "review_state": "researching",
+  "notes": "Adds the subsequently disclosed and independently reproduced wallet-generation entropy defect as a distinct lifecycle/security event. This does not replace wlr_ev_000246: the previously recorded staking/backend seed-transmission finding remains a separate architecture issue and is not treated as the root cause for the full victim population. Canonical IDs are provisional until promotion from fresh main.",
+  "records": {
+    "entities": [],
+    "products": [],
+    "events": [
+      {
+        "id": "wlr_ev_920001",
+        "entity_id": "wlr_ent_000103",
+        "product_id": "wlr_prod_000152",
+        "affected_product_ids": ["wlr_prod_000152"],
+        "event_type": "vulnerability_disclosed",
+        "event_date": "2026-09-09",
+        "event_date_basis": "disclosure",
+        "title": "Wallet-generation entropy defect identified as XRPH Wallet drain root cause",
+        "description": "XRP Healthcare published developer findings identifying a reproducible defect in XRPH Wallet's app-specific wallet-generation flow: improperly formatted app-generated entropy was passed into the XRPL key-generation path, sharply reducing the effective private-key search space and making offline reconstruction computationally feasible. Independent public forensic review reproduced the weak app-created wallet-generation mechanics and measured the effective search space at roughly 2^46.",
+        "confidence": "high",
+        "impact_level": "critical",
+        "security_scope": "seed_generation",
+        "funds_affected": "yes",
+        "event_status_effect": "limited",
+        "is_major_event": true,
+        "affected_components": ["wallet generation", "padlock-to-entropy conversion", "XRPL key generation"],
+        "user_actions_required": ["move_funds", "rotate_seed", "monitor"],
+        "notes": "The vendor's published root-cause finding and independent reproduction support the weak-entropy mechanism. This event is deliberately separate from wlr_ev_000246: observed seed transmission in staking/unstaking and other backend-connected flows remains a material architecture finding, but is not required to explain the full 4,010-victim population. The record does not infer who exploited the weakness, the attacker's hardware, or an exact key-discovery timeline."
+      }
+    ],
+    "evidence": [
+      {
+        "id": "wlr_src_920001",
+        "entity_id": "wlr_ent_000103",
+        "product_id": "wlr_prod_000152",
+        "event_id": "wlr_ev_920001",
+        "source_type": "official_security_advisory",
+        "title": "XRPH Wallet Root-Cause Technical Report - Developer Findings",
+        "url": "https://xrphtoken.com/XRPH%20Wallet%20Root-Cause%20Technical%20Report%20-%20Developer%20Findings.pdf",
+        "publisher": "XRP Healthcare",
+        "published_at": "2026-09-09",
+        "accessed_at": "2026-09-11",
+        "reliability": "high",
+        "claim_scope": "vulnerability",
+        "is_primary": true,
+        "notes": "First-party developer root-cause report. XRP Healthcare's accompanying public statement says the team identified and reproduced improperly formatted entropy entering the XRPL key-generation function, reducing the effective keyspace and making offline private-key reconstruction feasible."
+      },
+      {
+        "id": "wlr_src_920002",
+        "entity_id": "wlr_ent_000103",
+        "product_id": "wlr_prod_000152",
+        "event_id": "wlr_ev_920001",
+        "source_type": "security_research",
+        "title": "XRPH Wallet Incident: Public Forensics Report",
+        "url": "https://xrpl.social/xrph/",
+        "publisher": "xrpl.social / Daniel Keller",
+        "published_at": null,
+        "accessed_at": "2026-09-11",
+        "reliability": "high",
+        "claim_scope": "vulnerability",
+        "is_primary": true,
+        "notes": "Independent public forensic review reproduces the app-specific createNewPadlock -> Wallet.fromEntropy(string) weakness, explains the string-coercion failure, estimates an effective search space of about 2^46.05, and separately preserves the backend seed-exposure finding without treating it as necessary to explain all victims."
+      }
+    ]
+  }
+}
