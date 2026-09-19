@@ -3,7 +3,7 @@
   "candidate_id": "wlr_cand_holdstation-wallet-2026-09",
   "title": "Holdstation Wallet lifecycle and World Mini App boundary",
   "review_state": "review_ready",
-  "notes": "Stages the missing Holdstation Wallet entity and separates the original mobile wallet from the current World ecosystem Mini App because their runtime/distribution boundaries differ. First-party Holdstation material establishes a self-custodial mobile wallet by 2022, while the current World ecosystem independently confirms a Holdstation Wallet Mini App. The September 2026 WLD bank-cashout/cashback social post is treated as discovery/feature context only and is not promoted as a WLR lifecycle event because it does not establish a material wallet lifecycle or security transition.",
+  "notes": "Stages the missing Holdstation Wallet entity and separates the original mobile wallet from the current World ecosystem Mini App because their runtime/distribution boundaries differ. First-party Holdstation material establishes a self-custodial mobile wallet by 2022, while the current World ecosystem independently confirms a Holdstation Wallet Mini App. The September 2026 WLD bank-cashout/cashback social post is treated as discovery/feature context only and is not promoted as a WLR lifecycle event because it does not establish a material wallet lifecycle or security transition. Follow-up first-party research also found a mandatory March 2026 wallet security upgrade requiring users to back up recovery material, remove the old app and reinstall the latest version; this is staged as a software-fix event without inferring an undisclosed vulnerability or confirmed fund loss.",
   "records": {
     "entities": [
       {
@@ -106,6 +106,29 @@
         "event_status_effect": "active",
         "is_major_event": true,
         "notes": "Only year precision is used. The November tutorial proves the product existed by 2022-11-02, while Holdstation's roadmap places introduction in Q3/Q4 2022; neither source justifies inventing a specific first-launch day."
+      },
+      {
+        "id": "wlr_ev_940004",
+        "entity_id": "wlr_ent_940002",
+        "product_id": "wlr_prod_940002",
+        "affected_product_ids": [
+          "wlr_prod_940002"
+        ],
+        "event_type": "software_fix",
+        "event_date": "2026-03-13",
+        "event_date_basis": "announcement",
+        "title": "Holdstation requires mandatory wallet security upgrade",
+        "description": "Holdstation instructed all wallet users to back up their recovery material, uninstall the old Holdstation app and install the latest March 2026 wallet version as a mandatory security upgrade.",
+        "confidence": "high",
+        "impact_level": "high",
+        "security_scope": "mobile_app",
+        "funds_affected": "unknown",
+        "event_status_effect": "active",
+        "is_major_event": true,
+        "user_actions_required": [
+          "update"
+        ],
+        "notes": "The first-party notice calls this a mandatory security patch/upgrade but does not identify a specific vulnerability root cause or establish a canonical amount of affected funds. WLR therefore records the remediation action without inventing an exploit or loss event."
       }
     ],
     "evidence": [
@@ -188,6 +211,22 @@
         "claim_scope": "status",
         "is_primary": false,
         "notes": "Current World product page lists Holdstation Wallet among available Mini Apps, corroborating current distribution."
+      },
+      {
+        "id": "wlr_src_940011",
+        "entity_id": "wlr_ent_940002",
+        "product_id": "wlr_prod_940002",
+        "event_id": "wlr_ev_940004",
+        "source_type": "official_blog",
+        "title": "Mandatory Security Upgrade: Update Your Holdstation Wallet (March 2026)",
+        "url": "https://blog.holdstation.com/en/holdstation-wallet-security-upgrade/",
+        "publisher": "Holdstation",
+        "published_at": "2026-03-13",
+        "accessed_at": "2026-09-20",
+        "reliability": "high",
+        "claim_scope": "security_fix",
+        "is_primary": true,
+        "notes": "First-party mandatory upgrade notice directing users to back up the seed/private key, uninstall the old app and reinstall the latest wallet from the App Store or Google Play."
       }
     ]
   }
