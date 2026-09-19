@@ -1,0 +1,273 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_wallet-of-satoshi-lifecycle-2026-09",
+  "title": "Wallet of Satoshi lifecycle and Spark self-custody migration",
+  "review_state": "researching",
+  "notes": "Triggered by a 2026-09-12 user-report signal concerning Wallet of Satoshi balance/receive behavior. That report is discovery material only and is not modeled as a canonical incident event because no high-reliability first-party Wallet of Satoshi or Spark incident statement has been located as of 2026-09-20. This bundle instead stages the missing Wallet of Satoshi entity, its distinct custodial and Spark self-custody product boundaries, the 2019 wallet release record, the 2025 self-custody beta launch, and the 2026 custodial-service deprecation announcement. Candidate IDs are provisional until promotion from fresh main.",
+  "records": {
+    "entities": [
+      {
+        "id": "wlr_ent_930001",
+        "slug": "wallet-of-satoshi",
+        "canonical_name": "Wallet of Satoshi",
+        "aliases": [
+          "WoS"
+        ],
+        "wallet_type": "hybrid",
+        "status": "active",
+        "summary": "Bitcoin Lightning wallet ecosystem that began as a custodial mobile wallet and later added a Spark-powered self-custody wallet while the legacy custodial product entered a phased retirement.",
+        "developer_or_company": "Wallet of Satoshi Pty Ltd",
+        "country_or_origin": "Australia",
+        "launch_date": "2019",
+        "launch_date_precision": "year",
+        "official_url": "https://www.walletofsatoshi.com/",
+        "official_domain": "walletofsatoshi.com",
+        "source_code_urls": [],
+        "custody_model": "hybrid",
+        "confidence": "high",
+        "last_verified_at": "2026-09-20",
+        "notes": "Entity continuity is preserved across the custodial and Spark self-custody products. The two products are separated because their custody and key-management models differ materially."
+      }
+    ],
+    "products": [
+      {
+        "id": "wlr_prod_930001",
+        "entity_id": "wlr_ent_930001",
+        "slug": "wallet-of-satoshi-classic",
+        "product_name": "Wallet of Satoshi Classic",
+        "aliases": [
+          "WoS Custody Wallet",
+          "Wallet of Satoshi custodial wallet"
+        ],
+        "product_type": "mobile_app",
+        "status": "deprecated",
+        "sales_status": "not_applicable",
+        "support_status": "unknown",
+        "launch_date": "2019-04-01",
+        "launch_date_precision": "day",
+        "platform": [
+          "iOS",
+          "Android"
+        ],
+        "official_url": "https://www.walletofsatoshi.com/",
+        "source_code_url": null,
+        "custody_model": "custodial",
+        "key_management_model": "provider_custodied_keys_and_account_recovery",
+        "summary": "Original custodial Wallet of Satoshi mobile wallet in which Wallet of Satoshi held user funds and account recovery could be assisted by the provider; the product entered a phased retirement in 2026.",
+        "confidence": "high",
+        "last_verified_at": "2026-09-20",
+        "notes": "The current app can expose both legacy custody and self-custody wallet modes. WLR separates them because their custody, recovery, and lifecycle boundaries are materially different."
+      },
+      {
+        "id": "wlr_prod_930002",
+        "entity_id": "wlr_ent_930001",
+        "slug": "wallet-of-satoshi-self-custody",
+        "product_name": "Wallet of Satoshi Self-Custody",
+        "aliases": [
+          "WoS Self-Custody Wallet"
+        ],
+        "product_type": "mobile_app",
+        "status": "active",
+        "sales_status": "not_applicable",
+        "support_status": "unknown",
+        "launch_date": "2025-07-01",
+        "launch_date_precision": "day",
+        "platform": [
+          "iOS",
+          "Android"
+        ],
+        "official_url": "https://www.walletofsatoshi.com/",
+        "source_code_url": null,
+        "custody_model": "self_custody",
+        "key_management_model": "spark_protocol_wallet_keys_derived_from_user_recovery_phrase",
+        "summary": "Spark-powered Wallet of Satoshi mobile wallet mode that gives users a 12-word recovery phrase and uses Spark-specific key derivation for self-custodial Bitcoin and Lightning functionality.",
+        "confidence": "high",
+        "last_verified_at": "2026-09-20",
+        "notes": "The product boundary is separate from Wallet of Satoshi Classic because the custody and recovery model changed materially. WLR records the vendor's self-custody description without independently expanding it into claims not stated by the primary sources."
+      }
+    ],
+    "events": [
+      {
+        "id": "wlr_ev_930001",
+        "entity_id": "wlr_ent_930001",
+        "product_id": "wlr_prod_930001",
+        "affected_product_ids": [
+          "wlr_prod_930001"
+        ],
+        "event_type": "launched",
+        "event_date": "2019-04-01",
+        "event_date_basis": "release",
+        "title": "Wallet of Satoshi beta released for Android and iOS",
+        "description": "Living Room of Satoshi published a Wallet of Satoshi beta release for Android and iOS, documenting the early custodial account-based product and its mobile distribution.",
+        "confidence": "high",
+        "impact_level": "medium",
+        "security_scope": "none",
+        "funds_affected": "unknown",
+        "event_status_effect": "active",
+        "is_major_event": true,
+        "notes": "The source establishes a dated beta release. The entity launch date remains at year precision rather than assuming this article was necessarily the first public availability."
+      },
+      {
+        "id": "wlr_ev_930002",
+        "entity_id": "wlr_ent_930001",
+        "product_id": "wlr_prod_930002",
+        "affected_product_ids": [
+          "wlr_prod_930002"
+        ],
+        "event_type": "product_released",
+        "event_date": "2025-07-01",
+        "event_date_basis": "release",
+        "title": "Spark-powered self-custody Wallet of Satoshi enters beta",
+        "description": "Wallet of Satoshi and Spark announced a Spark-powered self-custodial Lightning wallet beta, adding a materially different custody and recovery model under the Wallet of Satoshi brand.",
+        "confidence": "high",
+        "impact_level": "high",
+        "security_scope": "none",
+        "funds_affected": "unknown",
+        "event_status_effect": "active",
+        "is_major_event": true,
+        "notes": "Spark's dated July 1 announcement establishes the release date; Wallet of Satoshi's own support forum independently describes the private beta and Spark integration."
+      },
+      {
+        "id": "wlr_ev_930003",
+        "entity_id": "wlr_ent_930001",
+        "product_id": "wlr_prod_930001",
+        "affected_product_ids": [
+          "wlr_prod_930001"
+        ],
+        "event_type": "deprecation_announced",
+        "event_date": "2026-08-13",
+        "event_date_basis": "announcement",
+        "title": "Wallet of Satoshi announces phased retirement of custodial wallet",
+        "description": "Wallet of Satoshi announced a phased retirement of the legacy custodial wallet in favor of its self-custody product, with regional restrictions on new custodial invoice creation and a migration period for existing balances.",
+        "confidence": "high",
+        "impact_level": "high",
+        "security_scope": "none",
+        "funds_affected": "unknown",
+        "event_status_effect": "deprecated",
+        "is_major_event": true,
+        "user_actions_required": [
+          "migrate"
+        ],
+        "notes": "The exact Wallet of Satoshi X post is preserved as primary evidence. Secondary reporting is included only to corroborate the phased-retirement timeline and must not override the primary wording."
+      }
+    ],
+    "evidence": [
+      {
+        "id": "wlr_src_930001",
+        "entity_id": "wlr_ent_930001",
+        "product_id": "wlr_prod_930001",
+        "event_id": "wlr_ev_930001",
+        "source_type": "official_blog",
+        "title": "Wallet of Satoshi Beta Version Released!",
+        "url": "https://www.livingroomofsatoshi.com/wallet-of-satoshi-bitcoin-lightning-mobile-phone-wallet",
+        "publisher": "Living Room of Satoshi",
+        "published_at": "2019-04-01",
+        "accessed_at": "2026-09-20",
+        "reliability": "high",
+        "claim_scope": "launch_date",
+        "is_primary": true,
+        "notes": "First-party Living Room of Satoshi release post for Wallet of Satoshi on Android and iOS."
+      },
+      {
+        "id": "wlr_src_930002",
+        "entity_id": "wlr_ent_930001",
+        "product_id": "wlr_prod_930002",
+        "event_id": "wlr_ev_930002",
+        "source_type": "official_blog",
+        "title": "Wallet of Satoshi x Spark: Self-Custody Lightning Is So Back",
+        "url": "https://www.spark.money/news/wallet-of-satoshi-spark-partnership",
+        "publisher": "Spark",
+        "published_at": "2025-07-01",
+        "accessed_at": "2026-09-20",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "Direct platform-partner announcement stating Wallet of Satoshi was live on Spark and had begun rolling out a self-custodial Lightning wallet beta."
+      },
+      {
+        "id": "wlr_src_930003",
+        "entity_id": "wlr_ent_930001",
+        "product_id": "wlr_prod_930002",
+        "event_id": "wlr_ev_930002",
+        "source_type": "official_statement",
+        "title": "Wallet of Satoshi x Spark — Self-Custody, Simplified",
+        "url": "https://support.walletofsatoshi.com/en/support/discussions/topics/36000036486",
+        "publisher": "Wallet of Satoshi",
+        "published_at": null,
+        "accessed_at": "2026-09-20",
+        "reliability": "high",
+        "claim_scope": "architecture",
+        "is_primary": true,
+        "notes": "First-party Wallet of Satoshi forum announcement describing the Spark-powered private beta and the new self-custody model."
+      },
+      {
+        "id": "wlr_src_930004",
+        "entity_id": "wlr_ent_930001",
+        "product_id": "wlr_prod_930002",
+        "event_id": null,
+        "source_type": "official_statement",
+        "title": "About Your Recovery Phrase",
+        "url": "https://support.walletofsatoshi.com/en/support/solutions/articles/36000614726-about-your-recovery-phrase",
+        "publisher": "Wallet of Satoshi",
+        "published_at": null,
+        "accessed_at": "2026-09-20",
+        "reliability": "high",
+        "claim_scope": "architecture",
+        "is_primary": true,
+        "notes": "First-party support documentation stating that Wallet of Satoshi Self-Custody uses Spark and that its 12-word recovery phrase is used with Spark-specific key derivation."
+      },
+      {
+        "id": "wlr_src_930005",
+        "entity_id": "wlr_ent_930001",
+        "product_id": "wlr_prod_930001",
+        "event_id": "wlr_ev_930003",
+        "source_type": "official_social",
+        "title": "Wallet of Satoshi custodial-service phase-out announcement",
+        "url": "https://x.com/walletofsatoshi/status/2087729423969903068",
+        "publisher": "Wallet of Satoshi",
+        "published_at": "2026-08-13",
+        "accessed_at": "2026-09-20",
+        "reliability": "high",
+        "claim_scope": "discontinuation",
+        "is_primary": true,
+        "notes": "Exact first-party Wallet of Satoshi status URL for the phased custodial-service retirement announcement."
+      },
+      {
+        "id": "wlr_src_930006",
+        "entity_id": "wlr_ent_930001",
+        "product_id": "wlr_prod_930001",
+        "event_id": "wlr_ev_930003",
+        "source_type": "news_article",
+        "title": "Weekly Brief 2026/33",
+        "url": "https://www.blink.sv/blog/weekly-brief-2026-33",
+        "publisher": "Blink",
+        "published_at": "2026-08-16",
+        "accessed_at": "2026-09-20",
+        "reliability": "medium",
+        "claim_scope": "discontinuation",
+        "is_primary": false,
+        "notes": "Secondary corroboration of the regional retirement schedule and June 30, 2027 migration deadline."
+      },
+      {
+        "id": "wlr_src_930007",
+        "entity_id": "wlr_ent_930001",
+        "product_id": "wlr_prod_930001",
+        "product_ids": [
+          "wlr_prod_930001",
+          "wlr_prod_930002"
+        ],
+        "event_id": null,
+        "source_type": "official_statement",
+        "title": "Move your funds to a new Self-Custody Wallet",
+        "url": "https://support.walletofsatoshi.com/en/support/solutions/articles/36000612407-move-your-funds-to-a-new-self-custody-wallet",
+        "publisher": "Wallet of Satoshi",
+        "published_at": null,
+        "accessed_at": "2026-09-20",
+        "reliability": "high",
+        "claim_scope": "product_lineage",
+        "is_primary": true,
+        "notes": "First-party migration instructions explicitly distinguish the self-custody wallet from the WoS Custody Wallet and describe moving balances between them."
+      }
+    ]
+  }
+}
