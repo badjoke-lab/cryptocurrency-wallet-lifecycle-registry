@@ -3,13 +3,13 @@
   "candidate_id": "wlr_cand_bitget-wallet-arc-support-2026-09",
   "title": "Bitget Wallet Arc mainnet support at public launch",
   "review_state": "review_ready",
-  "notes": "First-party Bitget Wallet material published on 2026-09-16 documents Arc public-mainnet support in the existing Bitget Wallet mobile product, including Arc network access, USDC gas, CCTP cross-chain transfers, onchain trading, and dApp access. This bundle records only the material network/product capability change. Referral promotions, launchpad-token performance, and price claims are excluded.",
+  "notes": "First-party Bitget Wallet material published on 2026-09-16 documents Arc public-mainnet support in the existing Bitget Wallet mobile product, including Arc network access, USDC gas, CCTP cross-chain transfers, onchain trading, and dApp access. This bundle records only the material network/product capability change. Referral promotions, launchpad-token performance, and price claims are excluded. Candidate IDs use a provisional high range and must be remapped from fresh main at canonical promotion.",
   "records": {
     "entities": [],
     "products": [],
     "events": [
       {
-        "id": "wlr_ev_000269",
+        "id": "wlr_ev_940001",
         "entity_id": "wlr_ent_000046",
         "product_id": "wlr_prod_000095",
         "affected_product_ids": [
@@ -28,10 +28,10 @@
     ],
     "evidence": [
       {
-        "id": "wlr_src_000546",
+        "id": "wlr_src_940001",
         "entity_id": "wlr_ent_000046",
         "product_id": "wlr_prod_000095",
-        "event_id": "wlr_ev_000269",
+        "event_id": "wlr_ev_940001",
         "source_type": "official_blog",
         "title": "Arcウォレットガイド：Bitget WalletでArcを始める方法",
         "url": "https://web3.bitget.com/ja/academy/arc-wallet-guide",
