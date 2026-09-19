@@ -3807,7 +3807,7 @@
       "IZAKA-YA cloud wallet"
     ],
     "product_type": "mpc_wallet",
-    "status": "active",
+    "status": "limited",
     "sales_status": "not_applicable",
     "support_status": "supported",
     "launch_date": "2023-12",
@@ -3815,13 +3815,13 @@
     "platform": [
       "web"
     ],
-    "summary": "Provider-operated cloud wallet using Fireblocks MPC infrastructure with deposits, withdrawals, transfers, swaps and integrated lending.",
+    "summary": "Provider-operated cloud wallet using Fireblocks MPC infrastructure with deposits, withdrawals, transfers, swaps and integrated lending. Service is limited after the operator announced a 2026-09-17 exit for Japan residents and Japanese nationals abroad while retaining a withdrawal procedure for affected customers.",
     "custody_model": "custodial",
     "key_management_model": "Fireblocks MPC-CMP; independent user recovery not established",
     "confidence": "medium",
-    "last_verified_at": "2026-08-23",
+    "last_verified_at": "2026-09-20",
     "official_url": "https://izakaya.tech/ja/wallet/",
-    "notes": "Do not infer independent self-custody from MPC terminology. The reviewed record does not establish a user-controlled seed or service-independent recovery path."
+    "notes": "Do not infer independent self-custody from MPC terminology. The reviewed record does not establish a user-controlled seed or service-independent recovery path. The September 2026 service-exit announcement is region/nationality scoped; the product is therefore limited rather than globally discontinued."
   },
   {
     "id": "wlr_prod_000151",
