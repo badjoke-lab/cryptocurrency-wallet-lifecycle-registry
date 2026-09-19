@@ -2,10 +2,10 @@
   "canonical_only": true,
   "last_verified_at": "2026-09-20",
   "object_type": "record_index",
-  "record_count": 258,
+  "record_count": 263,
   "record_counts": {
-    "products": 154,
-    "wallets": 104
+    "wallets": 106,
+    "products": 157
   },
   "records": [
     {
@@ -1857,6 +1857,42 @@
       "status": "active"
     },
     {
+      "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000155",
+      "human_url": "https://wlr.badjoke-lab.com/product/world-money-mobile/",
+      "machine_url": "https://wlr.badjoke-lab.com/data/series/records/product--world-money-mobile.json",
+      "name": "World Money",
+      "native_machine_url": "https://wlr.badjoke-lab.com/data/products/world-money-mobile.json",
+      "native_record_id": "wlr_prod_000155",
+      "native_record_type": "wlr.product-record.v1",
+      "series_slug": "product--world-money-mobile",
+      "slug": "world-money-mobile",
+      "status": "active"
+    },
+    {
+      "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000156",
+      "human_url": "https://wlr.badjoke-lab.com/product/holdstation-wallet-mobile/",
+      "machine_url": "https://wlr.badjoke-lab.com/data/series/records/product--holdstation-wallet-mobile.json",
+      "name": "Holdstation Wallet Mobile",
+      "native_machine_url": "https://wlr.badjoke-lab.com/data/products/holdstation-wallet-mobile.json",
+      "native_record_id": "wlr_prod_000156",
+      "native_record_type": "wlr.product-record.v1",
+      "series_slug": "product--holdstation-wallet-mobile",
+      "slug": "holdstation-wallet-mobile",
+      "status": "active"
+    },
+    {
+      "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000157",
+      "human_url": "https://wlr.badjoke-lab.com/product/holdstation-wallet-world-mini-app/",
+      "machine_url": "https://wlr.badjoke-lab.com/data/series/records/product--holdstation-wallet-world-mini-app.json",
+      "name": "Holdstation Wallet Mini App",
+      "native_machine_url": "https://wlr.badjoke-lab.com/data/products/holdstation-wallet-world-mini-app.json",
+      "native_record_id": "wlr_prod_000157",
+      "native_record_type": "wlr.product-record.v1",
+      "series_slug": "product--holdstation-wallet-world-mini-app",
+      "slug": "holdstation-wallet-world-mini-app",
+      "status": "active"
+    },
+    {
       "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000001",
       "human_url": "https://wlr.badjoke-lab.com/wallet/trezor/",
       "machine_url": "https://wlr.badjoke-lab.com/data/series/records/wallet--trezor.json",
@@ -3102,6 +3138,30 @@
       "native_record_type": "wlr.wallet-record.v1",
       "series_slug": "wallet--wallet-of-satoshi",
       "slug": "wallet-of-satoshi",
+      "status": "active"
+    },
+    {
+      "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000105",
+      "human_url": "https://wlr.badjoke-lab.com/wallet/world-money/",
+      "machine_url": "https://wlr.badjoke-lab.com/data/series/records/wallet--world-money.json",
+      "name": "World Money",
+      "native_machine_url": "https://wlr.badjoke-lab.com/data/wallets/world-money.json",
+      "native_record_id": "wlr_ent_000105",
+      "native_record_type": "wlr.wallet-record.v1",
+      "series_slug": "wallet--world-money",
+      "slug": "world-money",
+      "status": "active"
+    },
+    {
+      "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000106",
+      "human_url": "https://wlr.badjoke-lab.com/wallet/holdstation-wallet/",
+      "machine_url": "https://wlr.badjoke-lab.com/data/series/records/wallet--holdstation-wallet.json",
+      "name": "Holdstation Wallet",
+      "native_machine_url": "https://wlr.badjoke-lab.com/data/wallets/holdstation-wallet.json",
+      "native_record_id": "wlr_ent_000106",
+      "native_record_type": "wlr.wallet-record.v1",
+      "series_slug": "wallet--holdstation-wallet",
+      "slug": "holdstation-wallet",
       "status": "active"
     }
   ],
