@@ -2,8 +2,8 @@
   "bundle_version": "1.0.0",
   "candidate_id": "wlr_cand_wallet-of-satoshi-lifecycle-2026-09",
   "title": "Wallet of Satoshi lifecycle and Spark self-custody migration",
-  "review_state": "researching",
-  "notes": "Triggered by a 2026-09-12 user-report signal concerning Wallet of Satoshi balance/receive behavior. That report is discovery material only and is not modeled as a canonical incident event because no high-reliability first-party Wallet of Satoshi or Spark incident statement has been located as of 2026-09-20. This bundle instead stages the missing Wallet of Satoshi entity, its distinct custodial and Spark self-custody product boundaries, the 2019 wallet release record, the 2025 self-custody beta launch, and the 2026 custodial-service deprecation announcement. Candidate IDs are provisional until promotion from fresh main.",
+  "review_state": "review_ready",
+  "notes": "Reviewed for canonical promotion on 2026-09-20. The 2026-09-12 receive/balance reports remain discovery/monitoring material only because no qualifying first-party incident statement has been located. The accepted identity boundary is one software wallet entity with separate custodial and Spark self-custody mobile products.",
   "records": {
     "entities": [
       {
@@ -13,7 +13,7 @@
         "aliases": [
           "WoS"
         ],
-        "wallet_type": "hybrid",
+        "wallet_type": "software",
         "status": "active",
         "summary": "Bitcoin Lightning wallet ecosystem that began as a custodial mobile wallet and later added a Spark-powered self-custody wallet while the legacy custodial product entered a phased retirement.",
         "developer_or_company": "Wallet of Satoshi Pty Ltd",
@@ -26,25 +26,25 @@
         "custody_model": "hybrid",
         "confidence": "high",
         "last_verified_at": "2026-09-20",
-        "notes": "Entity continuity is preserved across the custodial and Spark self-custody products. The two products are separated because their custody and key-management models differ materially."
+        "notes": "Entity continuity is preserved across the custodial and Spark self-custody products. WLR separates those products because their custody and key-management models differ materially."
       }
     ],
     "products": [
       {
         "id": "wlr_prod_930001",
         "entity_id": "wlr_ent_930001",
-        "slug": "wallet-of-satoshi-classic",
-        "product_name": "Wallet of Satoshi Classic",
+        "slug": "wallet-of-satoshi-custody-wallet",
+        "product_name": "Wallet of Satoshi Custody Wallet",
         "aliases": [
           "WoS Custody Wallet",
-          "Wallet of Satoshi custodial wallet"
+          "Wallet of Satoshi Classic"
         ],
         "product_type": "mobile_app",
         "status": "deprecated",
         "sales_status": "not_applicable",
         "support_status": "unknown",
-        "launch_date": "2019-04-01",
-        "launch_date_precision": "day",
+        "launch_date": "2019",
+        "launch_date_precision": "year",
         "platform": [
           "iOS",
           "Android"
@@ -56,7 +56,7 @@
         "summary": "Original custodial Wallet of Satoshi mobile wallet in which Wallet of Satoshi held user funds and account recovery could be assisted by the provider; the product entered a phased retirement in 2026.",
         "confidence": "high",
         "last_verified_at": "2026-09-20",
-        "notes": "The current app can expose both legacy custody and self-custody wallet modes. WLR separates them because their custody, recovery, and lifecycle boundaries are materially different."
+        "notes": "Current migration documentation distinguishes the WoS Custody Wallet from the Self-Custody Wallet. Launch remains year precision; the 2019-04-01 event is a dated beta release."
       },
       {
         "id": "wlr_prod_930002",
@@ -105,7 +105,7 @@
         "funds_affected": "unknown",
         "event_status_effect": "active",
         "is_major_event": true,
-        "notes": "The source establishes a dated beta release. The entity launch date remains at year precision rather than assuming this article was necessarily the first public availability."
+        "notes": "This event records the dated beta release. Product launch remains at year precision because the source does not establish that April 1 was the first-ever availability day."
       },
       {
         "id": "wlr_ev_930002",
@@ -164,7 +164,7 @@
         "published_at": "2019-04-01",
         "accessed_at": "2026-09-20",
         "reliability": "high",
-        "claim_scope": "launch_date",
+        "claim_scope": "event",
         "is_primary": true,
         "notes": "First-party Living Room of Satoshi release post for Wallet of Satoshi on Android and iOS."
       },
@@ -267,6 +267,38 @@
         "claim_scope": "product_lineage",
         "is_primary": true,
         "notes": "First-party migration instructions explicitly distinguish the self-custody wallet from the WoS Custody Wallet and describe moving balances between them."
+      },
+      {
+        "id": "wlr_src_930008",
+        "entity_id": "wlr_ent_930001",
+        "product_id": null,
+        "event_id": null,
+        "source_type": "official_statement",
+        "title": "Contact information",
+        "url": "https://shop.walletofsatoshi.com/policies/contact-information",
+        "publisher": "Wallet of Satoshi",
+        "published_at": null,
+        "accessed_at": "2026-09-20",
+        "reliability": "high",
+        "claim_scope": "entity",
+        "is_primary": true,
+        "notes": "First-party contact page identifies the trade name as Wallet of Satoshi PTY LTD."
+      },
+      {
+        "id": "wlr_src_930009",
+        "entity_id": "wlr_ent_930001",
+        "product_id": null,
+        "event_id": null,
+        "source_type": "database_reference",
+        "title": "Current details for ABN 13 630 329 690",
+        "url": "https://abr.business.gov.au/ABN/View?abn=13630329690",
+        "publisher": "Australian Business Register",
+        "published_at": null,
+        "accessed_at": "2026-09-20",
+        "reliability": "high",
+        "claim_scope": "entity",
+        "is_primary": true,
+        "notes": "Australian government business-register record identifies WALLET OF SATOSHI PTY LTD as an active Australian private company."
       }
     ]
   }
