@@ -5191,5 +5191,32 @@
       "migrate"
     ],
     "notes": "The first-party announcement URL is preserved as primary evidence. Current migration documentation independently distinguishes the custody and self-custody products; secondary reporting corroborates the regional retirement schedule."
+  },
+  {
+    "id": "wlr_ev_000272",
+    "entity_id": "wlr_ent_000101",
+    "product_id": "wlr_prod_000150",
+    "affected_product_ids": [
+      "wlr_prod_000150"
+    ],
+    "event_type": "service_shutdown",
+    "event_date": "2026-09-17",
+    "event_date_basis": "announcement",
+    "title": "IZAKA-YA announced wallet-service exit for Japan-facing customers",
+    "description": "IZAKA-YA announced that service would end for all customers residing in Japan and for Japanese nationals living abroad. New registration and new lending were stopped for the affected population, the Japanese-language site was scheduled to close at the end of September, and the operator directed customers with held assets to a dedicated withdrawal procedure.",
+    "confidence": "high",
+    "impact_level": "critical",
+    "security_scope": "cloud_service",
+    "funds_affected": "unknown",
+    "event_status_effect": "limited",
+    "affected_regions": [
+      "Japan",
+      "Japanese nationals abroad"
+    ],
+    "is_major_event": true,
+    "user_actions_required": [
+      "move_funds"
+    ],
+    "notes": "This is a scoped service-shutdown event, not evidence that IZAKA-YA Wallet has been discontinued globally. The operator said the withdrawal procedure would remain available for affected customers; WLR does not infer that all withdrawals have completed."
   }
 ]

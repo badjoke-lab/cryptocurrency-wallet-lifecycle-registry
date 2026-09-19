@@ -1806,7 +1806,7 @@
       "native_record_type": "wlr.product-record.v1",
       "series_slug": "product--izaka-ya-wallet-app",
       "slug": "izaka-ya-wallet-app",
-      "status": "active"
+      "status": "limited"
     },
     {
       "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000151",
@@ -3066,7 +3066,7 @@
       "native_record_type": "wlr.wallet-record.v1",
       "series_slug": "wallet--izaka-ya-wallet",
       "slug": "izaka-ya-wallet",
-      "status": "active"
+      "status": "limited"
     },
     {
       "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000102",

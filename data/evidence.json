@@ -9518,5 +9518,39 @@
     "claim_scope": "entity",
     "is_primary": true,
     "notes": "Australian government business-register record identifies WALLET OF SATOSHI PTY LTD as an active Australian private company."
+  },
+  {
+    "id": "wlr_src_000558",
+    "entity_id": "wlr_ent_000101",
+    "product_id": "wlr_prod_000150",
+    "event_id": "wlr_ev_000272",
+    "source_type": "regulatory_notice",
+    "title": "Izakaya Limitedに対する警告書の発出について",
+    "url": "https://www.fsa.go.jp/recent/recent2026.html",
+    "publisher": "Financial Services Agency, Japan",
+    "published_at": "2026-09-01",
+    "archived_url": "https://web.archive.org/web/*/https://www.fsa.go.jp/recent/recent2026.html",
+    "accessed_at": "2026-09-20",
+    "reliability": "high",
+    "claim_scope": "event",
+    "is_primary": true,
+    "notes": "Official FSA publication index records the warning concerning Izakaya Limited for unregistered crypto-asset exchange business. Used as regulatory background explicitly cited by the later first-party service-exit announcement, not as proof of a global wallet shutdown or customer loss."
+  },
+  {
+    "id": "wlr_src_000559",
+    "entity_id": "wlr_ent_000101",
+    "product_id": "wlr_prod_000150",
+    "event_id": "wlr_ev_000272",
+    "source_type": "official_statement",
+    "title": "〖重要〗日本居住者の皆様へのサービス提供終了および預かり資産の出金手続きについて",
+    "url": "https://izakaya.tech/news/end-of-service-japan-residents/",
+    "publisher": "Izakaya Limited",
+    "published_at": "2026-09-17",
+    "archived_url": "https://web.archive.org/web/*/https://izakaya.tech/news/end-of-service-japan-residents/",
+    "accessed_at": "2026-09-20",
+    "reliability": "high",
+    "claim_scope": "discontinuation",
+    "is_primary": true,
+    "notes": "First-party notice establishes the affected population, service termination, end of new registration and lending, planned Japanese-site closure, and continued withdrawal procedure. It does not establish a global IZAKA-YA Wallet discontinuation."
   }
 ]

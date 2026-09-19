@@ -2281,8 +2281,8 @@
       "IZAKA-YA"
     ],
     "wallet_type": "mpc_threshold",
-    "status": "active",
-    "summary": "Cloud wallet operated by Izakaya Limited and integrated with Fireblocks MPC infrastructure. Reviewed sources establish provider-operated custody infrastructure but do not establish that a user can independently recover or control the final signing key without the service.",
+    "status": "limited",
+    "summary": "Provider-operated cloud wallet from Izakaya Limited using Fireblocks MPC infrastructure. Following account-level transfer and withdrawal restrictions in August 2026, IZAKA-YA announced on 2026-09-17 that service would end for Japan residents and Japanese nationals abroad while a dedicated withdrawal process remained available. WLR therefore classifies the wallet as limited rather than globally discontinued.",
     "developer_or_company": "Izakaya Limited",
     "country_or_origin": "Hong Kong",
     "launch_date": "2023-12",
@@ -2306,8 +2306,8 @@
       }
     ],
     "confidence": "medium",
-    "last_verified_at": "2026-08-23",
-    "notes": "Canonical inclusion is not a safety endorsement. Custody classification reflects provider-operated cloud/custody language; independent recovery remains a material known unknown."
+    "last_verified_at": "2026-09-20",
+    "notes": "Canonical inclusion is not a safety endorsement. Custody classification reflects provider-operated cloud/custody language; independent recovery remains a material known unknown. The September 2026 service-exit announcement is scoped to Japan residents and Japanese nationals abroad, so WLR does not infer a global wallet shutdown. Affected customers were directed to withdraw held assets through the operator's dedicated procedure."
   },
   {
     "id": "wlr_ent_000102",
