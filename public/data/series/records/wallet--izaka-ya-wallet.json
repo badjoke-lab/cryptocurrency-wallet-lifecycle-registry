@@ -8,11 +8,11 @@
       "product_ids": [
         "wlr_prod_000150"
       ],
-      "status": "active",
+      "status": "limited",
       "wallet_type": "mpc_threshold",
       "website_status": null
     },
-    "status": "active"
+    "status": "limited"
   },
   "events": {
     "mode": "inline",
@@ -55,6 +55,33 @@
         "title": "IZAKA-YA announced account-level transfer/withdrawal restrictions and mandatory KYC",
         "user_actions_required": [
           "monitor"
+        ]
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000150"
+        ],
+        "affected_regions": [
+          "Japan",
+          "Japanese nationals abroad"
+        ],
+        "confidence": "high",
+        "description": "IZAKA-YA announced that service would end for all customers residing in Japan and for Japanese nationals living abroad. New registration and new lending were stopped for the affected population, the Japanese-language site was scheduled to close at the end of September, and the operator directed customers with held assets to a dedicated withdrawal procedure.",
+        "entity_id": "wlr_ent_000101",
+        "event_date": "2026-09-17",
+        "event_date_basis": "announcement",
+        "event_status_effect": "limited",
+        "event_type": "service_shutdown",
+        "funds_affected": "unknown",
+        "id": "wlr_ev_000272",
+        "impact_level": "critical",
+        "is_major_event": true,
+        "notes": "This is a scoped service-shutdown event, not evidence that IZAKA-YA Wallet has been discontinued globally. The operator said the withdrawal procedure would remain available for affected customers; WLR does not infer that all withdrawals have completed.",
+        "product_id": "wlr_prod_000150",
+        "security_scope": "cloud_service",
+        "title": "IZAKA-YA announced wallet-service exit for Japan-facing customers",
+        "user_actions_required": [
+          "move_funds"
         ]
       }
     ]
@@ -124,6 +151,40 @@
         "source_type": "official_statement",
         "title": "送金・出金およびKYC認証に関するお知らせ",
         "url": "https://izakaya.tech/news/news/"
+      },
+      {
+        "accessed_at": "2026-09-20",
+        "archived_url": "https://web.archive.org/web/*/https://www.fsa.go.jp/recent/recent2026.html",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000101",
+        "event_id": "wlr_ev_000272",
+        "id": "wlr_src_000558",
+        "is_primary": true,
+        "notes": "Official FSA publication index records the warning concerning Izakaya Limited for unregistered crypto-asset exchange business. Used as regulatory background explicitly cited by the later first-party service-exit announcement, not as proof of a global wallet shutdown or customer loss.",
+        "product_id": "wlr_prod_000150",
+        "published_at": "2026-09-01",
+        "publisher": "Financial Services Agency, Japan",
+        "reliability": "high",
+        "source_type": "regulatory_notice",
+        "title": "Izakaya Limitedに対する警告書の発出について",
+        "url": "https://www.fsa.go.jp/recent/recent2026.html"
+      },
+      {
+        "accessed_at": "2026-09-20",
+        "archived_url": "https://web.archive.org/web/*/https://izakaya.tech/news/end-of-service-japan-residents/",
+        "claim_scope": "discontinuation",
+        "entity_id": "wlr_ent_000101",
+        "event_id": "wlr_ev_000272",
+        "id": "wlr_src_000559",
+        "is_primary": true,
+        "notes": "First-party notice establishes the affected population, service termination, end of new registration and lending, planned Japanese-site closure, and continued withdrawal procedure. It does not establish a global IZAKA-YA Wallet discontinuation.",
+        "product_id": "wlr_prod_000150",
+        "published_at": "2026-09-17",
+        "publisher": "Izakaya Limited",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "〖重要〗日本居住者の皆様へのサービス提供終了および預かり資産の出金手続きについて",
+        "url": "https://izakaya.tech/news/end-of-service-japan-residents/"
       }
     ]
   },
@@ -159,6 +220,6 @@
     "native_machine": "https://wlr.badjoke-lab.com/data/wallets/izaka-ya-wallet.json"
   },
   "verification": {
-    "last_verified_at": "2026-08-23"
+    "last_verified_at": "2026-09-20"
   }
 }
