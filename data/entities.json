@@ -2375,5 +2375,52 @@
     "confidence": "high",
     "last_verified_at": "2026-09-20",
     "notes": "Entity continuity is preserved across the custodial and Spark self-custody products. WLR separates those products because their custody and key-management models differ materially."
+  },
+  {
+    "id": "wlr_ent_000105",
+    "slug": "world-money",
+    "canonical_name": "World Money",
+    "aliases": [
+      "World App"
+    ],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Self-custodial mobile cryptocurrency wallet lineage launched publicly as World App in 2023 and continued on the money-and-wallet side as World Money in 2026 when World separated identity and money functions into dedicated apps.",
+    "developer_or_company": "Tools for Humanity",
+    "country_or_origin": null,
+    "launch_date": "2023-05-08",
+    "launch_date_precision": "day",
+    "official_url": "https://world.org/world-app",
+    "official_domain": "world.org",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "user-controlled wallet keys with Safe-based account abstraction documented for the World App wallet lineage",
+    "confidence": "high",
+    "last_verified_at": "2026-09-20",
+    "notes": "WLR preserves continuity between World App and the wallet/money-side World Money app. The 2026 split also created a dedicated World ID App for identity functions, so the World App alias does not imply that every historical World App feature remains inside World Money."
+  },
+  {
+    "id": "wlr_ent_000106",
+    "slug": "holdstation-wallet",
+    "canonical_name": "Holdstation Wallet",
+    "aliases": [
+      "Holdstation",
+      "Holdstation Smart Wallet"
+    ],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Holdstation software-wallet ecosystem introduced in 2022 and later expanded into account-abstraction smart-wallet functionality and a World ecosystem Mini App.",
+    "developer_or_company": "Holdstation",
+    "country_or_origin": null,
+    "launch_date": "2022",
+    "launch_date_precision": "year",
+    "official_url": "https://holdstation.com/",
+    "official_domain": "holdstation.com",
+    "source_code_urls": [],
+    "custody_model": "unknown",
+    "key_management_model": "product-specific; the documented 2022 mobile wallet used a user-controlled on-device Secret Recovery Phrase/private key, while the current World Mini App key/control boundary remains separately unresolved",
+    "confidence": "high",
+    "last_verified_at": "2026-09-20",
+    "notes": "Entity-level custody remains conservative because the original mobile-wallet self-custody model is directly documented while the current World Mini App's exact custody/key-control architecture is not established by the reviewed distributor listing."
   }
 ]
