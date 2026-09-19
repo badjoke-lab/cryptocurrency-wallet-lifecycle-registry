@@ -5128,5 +5128,68 @@
     "event_status_effect": "limited",
     "is_major_event": true,
     "notes": "This records the operator wind-down and continued wallet-offline boundary, not a confirmed permanent discontinuation of XRPH Wallet. XRP Healthcare said incident recovery, cooperation, record preservation, and material updates would continue. Canonical entity and product statuses therefore remain limited pending an explicit permanent wallet shutdown, app withdrawal, or support-end boundary."
+  },
+  {
+    "id": "wlr_ev_000269",
+    "entity_id": "wlr_ent_000104",
+    "product_id": "wlr_prod_000153",
+    "affected_product_ids": [
+      "wlr_prod_000153"
+    ],
+    "event_type": "launched",
+    "event_date": "2019-04-01",
+    "event_date_basis": "release",
+    "title": "Wallet of Satoshi beta released for Android and iOS",
+    "description": "Living Room of Satoshi published a Wallet of Satoshi beta release for Android and iOS, documenting the early custodial account-based product and its mobile distribution.",
+    "confidence": "high",
+    "impact_level": "medium",
+    "security_scope": "none",
+    "funds_affected": "unknown",
+    "event_status_effect": "active",
+    "is_major_event": true,
+    "notes": "This event records the dated beta release. The product launch field remains at year precision because the source does not establish that April 1 was the first-ever availability day."
+  },
+  {
+    "id": "wlr_ev_000270",
+    "entity_id": "wlr_ent_000104",
+    "product_id": "wlr_prod_000154",
+    "affected_product_ids": [
+      "wlr_prod_000154"
+    ],
+    "event_type": "product_released",
+    "event_date": "2025-07-01",
+    "event_date_basis": "release",
+    "title": "Spark-powered self-custody Wallet of Satoshi enters beta",
+    "description": "Wallet of Satoshi and Spark announced a Spark-powered self-custodial Lightning wallet beta, adding a materially different custody and recovery model under the Wallet of Satoshi brand.",
+    "confidence": "high",
+    "impact_level": "high",
+    "security_scope": "none",
+    "funds_affected": "unknown",
+    "event_status_effect": "active",
+    "is_major_event": true,
+    "notes": "Spark's dated announcement establishes the release date; Wallet of Satoshi's own support forum independently describes the Spark integration and self-custody beta."
+  },
+  {
+    "id": "wlr_ev_000271",
+    "entity_id": "wlr_ent_000104",
+    "product_id": "wlr_prod_000153",
+    "affected_product_ids": [
+      "wlr_prod_000153"
+    ],
+    "event_type": "deprecation_announced",
+    "event_date": "2026-08-13",
+    "event_date_basis": "announcement",
+    "title": "Wallet of Satoshi announces phased retirement of custodial wallet",
+    "description": "Wallet of Satoshi announced a phased retirement of its legacy custodial wallet in favor of the self-custody product, with regional restrictions on new custodial invoice creation and a migration period for existing balances.",
+    "confidence": "high",
+    "impact_level": "high",
+    "security_scope": "none",
+    "funds_affected": "unknown",
+    "event_status_effect": "deprecated",
+    "is_major_event": true,
+    "user_actions_required": [
+      "migrate"
+    ],
+    "notes": "The first-party announcement URL is preserved as primary evidence. Current migration documentation independently distinguishes the custody and self-custody products; secondary reporting corroborates the regional retirement schedule."
   }
 ]

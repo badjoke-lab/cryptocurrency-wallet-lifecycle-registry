@@ -1,11 +1,11 @@
 {
   "canonical_only": true,
-  "last_verified_at": "2026-09-10",
+  "last_verified_at": "2026-09-20",
   "object_type": "record_index",
-  "record_count": 255,
+  "record_count": 258,
   "record_counts": {
-    "products": 152,
-    "wallets": 103
+    "products": 154,
+    "wallets": 104
   },
   "records": [
     {
@@ -1833,6 +1833,30 @@
       "status": "limited"
     },
     {
+      "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000153",
+      "human_url": "https://wlr.badjoke-lab.com/product/wallet-of-satoshi-custody-wallet/",
+      "machine_url": "https://wlr.badjoke-lab.com/data/series/records/product--wallet-of-satoshi-custody-wallet.json",
+      "name": "Wallet of Satoshi Custody Wallet",
+      "native_machine_url": "https://wlr.badjoke-lab.com/data/products/wallet-of-satoshi-custody-wallet.json",
+      "native_record_id": "wlr_prod_000153",
+      "native_record_type": "wlr.product-record.v1",
+      "series_slug": "product--wallet-of-satoshi-custody-wallet",
+      "slug": "wallet-of-satoshi-custody-wallet",
+      "status": "deprecated"
+    },
+    {
+      "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000154",
+      "human_url": "https://wlr.badjoke-lab.com/product/wallet-of-satoshi-self-custody/",
+      "machine_url": "https://wlr.badjoke-lab.com/data/series/records/product--wallet-of-satoshi-self-custody.json",
+      "name": "Wallet of Satoshi Self-Custody",
+      "native_machine_url": "https://wlr.badjoke-lab.com/data/products/wallet-of-satoshi-self-custody.json",
+      "native_record_id": "wlr_prod_000154",
+      "native_record_type": "wlr.product-record.v1",
+      "series_slug": "product--wallet-of-satoshi-self-custody",
+      "slug": "wallet-of-satoshi-self-custody",
+      "status": "active"
+    },
+    {
       "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000001",
       "human_url": "https://wlr.badjoke-lab.com/wallet/trezor/",
       "machine_url": "https://wlr.badjoke-lab.com/data/series/records/wallet--trezor.json",
@@ -3067,6 +3091,18 @@
       "series_slug": "wallet--xrph-wallet",
       "slug": "xrph-wallet",
       "status": "limited"
+    },
+    {
+      "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000104",
+      "human_url": "https://wlr.badjoke-lab.com/wallet/wallet-of-satoshi/",
+      "machine_url": "https://wlr.badjoke-lab.com/data/series/records/wallet--wallet-of-satoshi.json",
+      "name": "Wallet of Satoshi",
+      "native_machine_url": "https://wlr.badjoke-lab.com/data/wallets/wallet-of-satoshi.json",
+      "native_record_id": "wlr_ent_000104",
+      "native_record_type": "wlr.wallet-record.v1",
+      "series_slug": "wallet--wallet-of-satoshi",
+      "slug": "wallet-of-satoshi",
+      "status": "active"
     }
   ],
   "registry_id": "cryptocurrency-wallet-lifecycle-registry",
