@@ -1,0 +1,48 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_bitget-wallet-arc-support-2026-09",
+  "title": "Bitget Wallet Arc mainnet support at public launch",
+  "review_state": "review_ready",
+  "notes": "First-party Bitget Wallet material published on 2026-09-16 documents Arc public-mainnet support in the existing Bitget Wallet mobile product, including Arc network access, USDC gas, CCTP cross-chain transfers, onchain trading, and dApp access. This bundle records only the material network/product capability change. Referral promotions, launchpad-token performance, and price claims are excluded.",
+  "records": {
+    "entities": [],
+    "products": [],
+    "events": [
+      {
+        "id": "wlr_ev_000269",
+        "entity_id": "wlr_ent_000046",
+        "product_id": "wlr_prod_000095",
+        "affected_product_ids": [
+          "wlr_prod_000095"
+        ],
+        "event_type": "other",
+        "event_date": "2026-09-16",
+        "event_date_basis": "release",
+        "title": "Bitget Wallet documented Arc mainnet support at public launch",
+        "description": "Bitget Wallet published launch-day guidance for Arc mainnet on 2026-09-16, documenting Arc network support in the self-custodial mobile wallet together with USDC gas, CCTP cross-chain transfers, onchain trading, and access to compatible Arc dApps.",
+        "confidence": "high",
+        "event_status_effect": "active",
+        "is_major_event": false,
+        "notes": "The event is scoped to wallet network/product capability. It does not treat Arc token price activity, referral promotions, or third-party launchpad claims as lifecycle evidence."
+      }
+    ],
+    "evidence": [
+      {
+        "id": "wlr_src_000546",
+        "entity_id": "wlr_ent_000046",
+        "product_id": "wlr_prod_000095",
+        "event_id": "wlr_ev_000269",
+        "source_type": "official_blog",
+        "title": "Arcウォレットガイド：Bitget WalletでArcを始める方法",
+        "url": "https://web3.bitget.com/ja/academy/arc-wallet-guide",
+        "publisher": "Bitget Wallet",
+        "published_at": "2026-09-16",
+        "accessed_at": "2026-09-20",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "First-party Bitget Wallet guide dated 2026-09-16 confirming Arc mainnet support and describing Arc access, USDC gas, CCTP cross-chain transfers, onchain trading, and dApp access."
+      }
+    ]
+  }
+}
