@@ -1,0 +1,191 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_world-money-2026-09",
+  "title": "World App to World Money wallet lifecycle",
+  "review_state": "review_ready",
+  "notes": "Stages the missing World wallet lineage from the 2023 World App public launch through the September 2026 World Money transition. The wallet/money-side identity is modeled as one continuing entity/product because first-party World material describes World Money as the dedicated money/wallet app after World identity and money functions were split. The 2026 event records the wallet-side rebrand/split boundary and does not claim that every former World App identity feature moved into World Money. Country-specific financial feature availability, stablecoin access, Earn/Morpho behavior, and payment rails are out of scope for this WLR bundle except as context.",
+  "records": {
+    "entities": [
+      {
+        "id": "wlr_ent_940001",
+        "slug": "world-money",
+        "canonical_name": "World Money",
+        "aliases": [
+          "World App",
+          "World Wallet"
+        ],
+        "wallet_type": "software",
+        "status": "active",
+        "summary": "Self-custodial mobile cryptocurrency wallet lineage launched publicly as World App in 2023 and continued as World Money in 2026 when World separated identity and money functions into dedicated apps.",
+        "developer_or_company": "Tools for Humanity",
+        "country_or_origin": null,
+        "launch_date": "2023-05-08",
+        "launch_date_precision": "day",
+        "official_url": "https://world.org/",
+        "official_domain": "world.org",
+        "source_code_urls": [],
+        "custody_model": "self_custody",
+        "key_management_model": "self-custodial wallet keys with Safe-based account-abstraction smart-contract accounts; optional encrypted cloud backup described by World",
+        "confidence": "high",
+        "last_verified_at": "2026-09-20",
+        "notes": "WLR preserves continuity between World App and the wallet/money-side World Money app. The 2026 split also created a dedicated World ID App for identity functions, so the alias does not imply that every historical World App function remains inside World Money."
+      }
+    ],
+    "products": [
+      {
+        "id": "wlr_prod_940001",
+        "entity_id": "wlr_ent_940001",
+        "slug": "world-money-mobile",
+        "product_name": "World Money",
+        "aliases": [
+          "World App"
+        ],
+        "product_type": "mobile_app",
+        "status": "active",
+        "sales_status": "not_applicable",
+        "support_status": "unknown",
+        "launch_date": "2023-05-08",
+        "launch_date_precision": "day",
+        "platform": [
+          "iOS",
+          "Android"
+        ],
+        "official_url": "https://world.org/",
+        "source_code_url": null,
+        "custody_model": "self_custody",
+        "key_management_model": "self-custodial mobile wallet keys with Safe account abstraction",
+        "summary": "World's mobile wallet application, publicly launched as World App and continued on the money/wallet side as World Money after the 2026 app split.",
+        "confidence": "high",
+        "last_verified_at": "2026-09-20",
+        "notes": "Support status remains unknown because current availability alone is not a formal maintenance commitment under WLR policy."
+      }
+    ],
+    "events": [
+      {
+        "id": "wlr_ev_940001",
+        "entity_id": "wlr_ent_940001",
+        "product_id": "wlr_prod_940001",
+        "affected_product_ids": [
+          "wlr_prod_940001"
+        ],
+        "event_type": "launched",
+        "event_date": "2023-05-08",
+        "event_date_basis": "release",
+        "title": "World App Phase I launched globally",
+        "description": "Tools for Humanity introduced Phase I of World App and made the mobile wallet globally available, describing self-custodial World ID and wallet keys and Safe-based account abstraction.",
+        "confidence": "high",
+        "impact_level": "high",
+        "security_scope": "none",
+        "funds_affected": "unknown",
+        "event_status_effect": "active",
+        "is_major_event": true,
+        "notes": "The first-party launch article explicitly establishes the public Phase I launch date and wallet architecture."
+      },
+      {
+        "id": "wlr_ev_940002",
+        "entity_id": "wlr_ent_940001",
+        "product_id": "wlr_prod_940001",
+        "affected_product_ids": [
+          "wlr_prod_940001"
+        ],
+        "event_type": "rebranded",
+        "event_date": "2026-09-17",
+        "event_date_basis": "announcement",
+        "title": "World Money launches as the dedicated money and wallet app",
+        "description": "World launched World Money while first-party support material documented a split of identity and money functions into World ID App and World Money. World Money retained the crypto wallet, WLD send/receive, payments, virtual-account and other finance functions.",
+        "confidence": "high",
+        "impact_level": "high",
+        "security_scope": "none",
+        "funds_affected": "unknown",
+        "event_status_effect": "active",
+        "is_major_event": true,
+        "user_actions_required": [
+          "none"
+        ],
+        "notes": "This is modeled as a wallet-lineage rebrand/split event. It does not assert that World Money is a simple rename of every historical World App function; identity functions are separately assigned to World ID App."
+      }
+    ],
+    "evidence": [
+      {
+        "id": "wlr_src_940001",
+        "entity_id": "wlr_ent_940001",
+        "product_id": "wlr_prod_940001",
+        "event_id": "wlr_ev_940001",
+        "source_type": "official_blog",
+        "title": "Introducing World App",
+        "url": "https://world.org/blog/announcements/introducing-world-app",
+        "publisher": "World / Tools for Humanity",
+        "published_at": "2023-05-08",
+        "accessed_at": "2026-09-20",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "First-party launch article establishing Phase I public availability, iOS/Android distribution, self-custodial wallet keys and Safe account abstraction."
+      },
+      {
+        "id": "wlr_src_940002",
+        "entity_id": "wlr_ent_940001",
+        "product_id": "wlr_prod_940001",
+        "event_id": null,
+        "source_type": "official_blog",
+        "title": "Introducing World App",
+        "url": "https://world.org/blog/announcements/introducing-world-app",
+        "publisher": "World / Tools for Humanity",
+        "published_at": "2023-05-08",
+        "accessed_at": "2026-09-20",
+        "reliability": "high",
+        "claim_scope": "architecture",
+        "is_primary": true,
+        "notes": "Used specifically for the self-custody and Safe account-abstraction architecture claims."
+      },
+      {
+        "id": "wlr_src_940003",
+        "entity_id": "wlr_ent_940001",
+        "product_id": "wlr_prod_940001",
+        "event_id": "wlr_ev_940002",
+        "source_type": "official_blog",
+        "title": "Introducing World Money: a financial super app for humans",
+        "url": "https://world.org/blog/announcements/world-money",
+        "publisher": "World",
+        "published_at": "2026-09-17",
+        "accessed_at": "2026-09-20",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "First-party World Money launch announcement establishing the September 17, 2026 launch and current money-app role."
+      },
+      {
+        "id": "wlr_src_940004",
+        "entity_id": "wlr_ent_940001",
+        "product_id": "wlr_prod_940001",
+        "event_id": "wlr_ev_940002",
+        "source_type": "official_statement",
+        "title": "What's the Difference between World ID App and World Money App?",
+        "url": "https://support.world.org/hc/en-us/articles/54673496231699-What-s-the-Difference-between-World-ID-App-and-World-Money-App",
+        "publisher": "World Help Center",
+        "published_at": "2026-09-16",
+        "accessed_at": "2026-09-20",
+        "reliability": "high",
+        "claim_scope": "rebrand",
+        "is_primary": true,
+        "notes": "First-party support article establishing the identity/money app split and that World Money continues the crypto wallet, WLD send/receive and finance functions."
+      },
+      {
+        "id": "wlr_src_940005",
+        "entity_id": "wlr_ent_940001",
+        "product_id": "wlr_prod_940001",
+        "event_id": null,
+        "source_type": "official_statement",
+        "title": "Glossary of Terms",
+        "url": "https://support.world.org/hc/en-us/articles/55499230057107-Glossary-of-Terms",
+        "publisher": "World Help Center",
+        "published_at": null,
+        "accessed_at": "2026-09-20",
+        "reliability": "high",
+        "claim_scope": "product",
+        "is_primary": true,
+        "notes": "Current first-party glossary defines World Wallet as the wallet area in World Money and describes World Chain as infrastructure used for World Money wallet transactions."
+      }
+    ]
+  }
+}
