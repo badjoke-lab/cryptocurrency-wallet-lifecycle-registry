@@ -3925,5 +3925,85 @@
     "confidence": "high",
     "last_verified_at": "2026-09-20",
     "notes": "Separate product boundary from the custody wallet because the custody and recovery model changed materially."
+  },
+  {
+    "id": "wlr_prod_000155",
+    "entity_id": "wlr_ent_000105",
+    "slug": "world-money-mobile",
+    "product_name": "World Money",
+    "aliases": [
+      "World App"
+    ],
+    "product_type": "mobile_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": "2023-05-08",
+    "launch_date_precision": "day",
+    "platform": [
+      "iOS",
+      "Android"
+    ],
+    "official_url": "https://world.org/world-app",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "user-controlled wallet keys with Safe-based account abstraction documented for the World App wallet lineage",
+    "summary": "World's mobile wallet application, publicly launched as World App and continued on the money-and-wallet side as World Money after the 2026 app split.",
+    "confidence": "high",
+    "last_verified_at": "2026-09-20",
+    "notes": "Support status remains unknown because current availability is not treated as a formal maintenance commitment. Identity functions moved to a separate World ID App in the 2026 split."
+  },
+  {
+    "id": "wlr_prod_000156",
+    "entity_id": "wlr_ent_000106",
+    "slug": "holdstation-wallet-mobile",
+    "product_name": "Holdstation Wallet Mobile",
+    "aliases": [
+      "Holdstation Wallet"
+    ],
+    "product_type": "mobile_app",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": "2022",
+    "launch_date_precision": "year",
+    "platform": [
+      "iOS",
+      "Android"
+    ],
+    "official_url": "https://holdstation.com/",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "user-controlled Secret Recovery Phrase/private key generated and encrypted on-device in the documented wallet model",
+    "summary": "Holdstation's mobile self-custody wallet, introduced in 2022 and later evolved toward smart-wallet and account-abstraction functionality.",
+    "confidence": "high",
+    "last_verified_at": "2026-09-20",
+    "notes": "Only year-level launch precision is recorded. Current app distribution and the March 2026 mandatory security upgrade establish continued product activity, but do not constitute a formal long-term support commitment."
+  },
+  {
+    "id": "wlr_prod_000157",
+    "entity_id": "wlr_ent_000106",
+    "slug": "holdstation-wallet-world-mini-app",
+    "product_name": "Holdstation Wallet Mini App",
+    "aliases": [
+      "Holdstation Wallet on World"
+    ],
+    "product_type": "embedded_wallet",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": null,
+    "platform": [
+      "World Mini App",
+      "World Chain"
+    ],
+    "official_url": "https://world.org/ecosystem/app_0d4b759921490adc1f2bd569fda9b53a",
+    "source_code_url": null,
+    "custody_model": "unknown",
+    "key_management_model": "unknown; the reviewed World ecosystem listing establishes the Mini App product but not the exact custody/key-control boundary",
+    "summary": "Holdstation-built wallet Mini App distributed through the World ecosystem for token management, transfers, trading and earning features.",
+    "confidence": "high",
+    "last_verified_at": "2026-09-20",
+    "notes": "No launch date is assigned because the reviewed current listing establishes existence and current distribution, not the first public release date."
   }
 ]

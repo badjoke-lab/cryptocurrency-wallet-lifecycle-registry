@@ -5218,5 +5218,91 @@
       "move_funds"
     ],
     "notes": "This is a scoped service-shutdown event, not evidence that IZAKA-YA Wallet has been discontinued globally. The operator said the withdrawal procedure would remain available for affected customers; WLR does not infer that all withdrawals have completed."
+  },
+  {
+    "id": "wlr_ev_000273",
+    "entity_id": "wlr_ent_000105",
+    "product_id": "wlr_prod_000155",
+    "affected_product_ids": [
+      "wlr_prod_000155"
+    ],
+    "event_type": "launched",
+    "event_date": "2023-05-08",
+    "event_date_basis": "release",
+    "title": "World App Phase I launched globally",
+    "description": "Tools for Humanity introduced Phase I of World App and made the mobile wallet globally available, describing self-custodial World ID and wallet keys and Safe-based account abstraction.",
+    "confidence": "high",
+    "impact_level": "high",
+    "security_scope": "none",
+    "funds_affected": "unknown",
+    "event_status_effect": "active",
+    "is_major_event": true,
+    "notes": "The first-party launch article establishes the public Phase I launch date and wallet architecture."
+  },
+  {
+    "id": "wlr_ev_000274",
+    "entity_id": "wlr_ent_000105",
+    "product_id": "wlr_prod_000155",
+    "affected_product_ids": [
+      "wlr_prod_000155"
+    ],
+    "event_type": "rebranded",
+    "event_date": "2026-09-17",
+    "event_date_basis": "announcement",
+    "title": "World Money launches as the dedicated money and wallet app",
+    "description": "World launched World Money while first-party support material documented a split of identity and money functions into World ID App and World Money. World Money retained the crypto wallet, WLD send/receive, payments, virtual-account and other finance functions.",
+    "confidence": "high",
+    "impact_level": "high",
+    "security_scope": "none",
+    "funds_affected": "unknown",
+    "event_status_effect": "active",
+    "is_major_event": true,
+    "user_actions_required": [
+      "none"
+    ],
+    "notes": "This is modeled as a wallet-lineage rebrand/split event. It does not assert that World Money is a simple rename of every historical World App function; identity functions are separately assigned to World ID App."
+  },
+  {
+    "id": "wlr_ev_000275",
+    "entity_id": "wlr_ent_000106",
+    "product_id": "wlr_prod_000156",
+    "affected_product_ids": [
+      "wlr_prod_000156"
+    ],
+    "event_type": "launched",
+    "event_date": "2022",
+    "event_date_basis": "approximate",
+    "title": "Holdstation Wallet introduced as a self-custodial mobile wallet",
+    "description": "Holdstation's roadmap and November 2022 first-party wallet tutorial establish a 2022 introduction of Holdstation Wallet as a self-custodial mobile wallet using a Secret Recovery Phrase/private key controlled by the user.",
+    "confidence": "high",
+    "impact_level": "medium",
+    "security_scope": "none",
+    "funds_affected": "unknown",
+    "event_status_effect": "active",
+    "is_major_event": true,
+    "notes": "Only year precision is used. The November tutorial proves the product existed by 2022-11-02, while Holdstation's roadmap places introduction in Q3/Q4 2022; neither source justifies inventing a specific first-launch day."
+  },
+  {
+    "id": "wlr_ev_000276",
+    "entity_id": "wlr_ent_000106",
+    "product_id": "wlr_prod_000156",
+    "affected_product_ids": [
+      "wlr_prod_000156"
+    ],
+    "event_type": "software_fix",
+    "event_date": "2026-03-13",
+    "event_date_basis": "announcement",
+    "title": "Holdstation requires mandatory wallet security upgrade",
+    "description": "Holdstation instructed wallet users to back up their recovery material, uninstall the old Holdstation app and install the latest March 2026 wallet version as a mandatory security upgrade.",
+    "confidence": "high",
+    "impact_level": "high",
+    "security_scope": "mobile_app",
+    "funds_affected": "unknown",
+    "event_status_effect": "active",
+    "is_major_event": true,
+    "user_actions_required": [
+      "update"
+    ],
+    "notes": "The first-party notice calls this a mandatory security patch/upgrade but does not identify a specific vulnerability root cause or establish a canonical amount of affected funds. WLR records the remediation action without inventing an exploit or loss event."
   }
 ]
