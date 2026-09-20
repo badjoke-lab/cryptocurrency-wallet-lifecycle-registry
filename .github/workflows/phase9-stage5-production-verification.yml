@@ -42,3 +42,28 @@ jobs:
           jq -e '.schema == "wlr.product-record.v1" and .entity.id == "wlr_ent_000103" and .product.id == "wlr_prod_000152" and .product.slug == "xrph-wallet-mobile" and .product.status == "limited"' <<<"${product}" >/dev/null
 
           echo 'XRPH Wallet production human and machine routes verified.'
+
+
+      - name: Verify Wallet of Satoshi production publication
+        shell: bash
+        run: |
+          set -euo pipefail
+          origin='https://wlr.badjoke-lab.com'
+          ok=0
+          for attempt in $(seq 1 20); do
+            nonce="${GITHUB_RUN_ID}-${attempt}"
+            wallet_html="$(curl -fsS --max-time 30 -H 'Cache-Control: no-cache' "${origin}/wallet/wallet-of-satoshi/?production_audit=${nonce}" 2>/dev/null || true)"
+            custody_html="$(curl -fsS --max-time 30 -H 'Cache-Control: no-cache' "${origin}/product/wallet-of-satoshi-custody-wallet/?production_audit=${nonce}" 2>/dev/null || true)"
+            self_html="$(curl -fsS --max-time 30 -H 'Cache-Control: no-cache' "${origin}/product/wallet-of-satoshi-self-custody/?production_audit=${nonce}" 2>/dev/null || true)"
+            wallet_json="$(curl -fsS --max-time 30 -H 'Cache-Control: no-cache' "${origin}/data/wallets/wallet-of-satoshi.json?production_audit=${nonce}" 2>/dev/null || true)"
+            custody_json="$(curl -fsS --max-time 30 -H 'Cache-Control: no-cache' "${origin}/data/products/wallet-of-satoshi-custody-wallet.json?production_audit=${nonce}" 2>/dev/null || true)"
+            self_json="$(curl -fsS --max-time 30 -H 'Cache-Control: no-cache' "${origin}/data/products/wallet-of-satoshi-self-custody.json?production_audit=${nonce}" 2>/dev/null || true)"
+
+            if grep -Fq 'Wallet of Satoshi' <<<"$wallet_html"               && grep -Fq 'Wallet of Satoshi Custody Wallet' <<<"$custody_html"               && grep -Fq 'Wallet of Satoshi Self-Custody' <<<"$self_html"               && jq -e '.schema == "wlr.wallet-record.v1" and .entity.id == "wlr_ent_000104" and .entity.slug == "wallet-of-satoshi" and ([.events[].id] | index("wlr_ev_000269") != null) and ([.events[].id] | index("wlr_ev_000270") != null) and ([.events[].id] | index("wlr_ev_000271") != null)' <<<"$wallet_json" >/dev/null 2>&1               && jq -e '.schema == "wlr.product-record.v1" and .product.id == "wlr_prod_000153" and .product.slug == "wallet-of-satoshi-custody-wallet" and .product.status == "deprecated"' <<<"$custody_json" >/dev/null 2>&1               && jq -e '.schema == "wlr.product-record.v1" and .product.id == "wlr_prod_000154" and .product.slug == "wallet-of-satoshi-self-custody" and .product.status == "active"' <<<"$self_json" >/dev/null 2>&1; then
+              ok=1
+              break
+            fi
+            sleep 10
+          done
+          test "$ok" = 1
+          echo 'Wallet of Satoshi production human and machine routes verified.'
