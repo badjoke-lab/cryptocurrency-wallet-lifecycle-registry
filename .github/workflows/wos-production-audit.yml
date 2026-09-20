@@ -1,0 +1,35 @@
+name: Wallet of Satoshi production audit
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/wos-production-audit.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Verify Wallet of Satoshi live routes
+        shell: bash
+        run: |
+          set -euo pipefail
+          origin='https://wlr.badjoke-lab.com'
+          nonce="${GITHUB_RUN_ID}"
+          wallet_html="$(curl -fsS --max-time 30 -H 'Cache-Control: no-cache' "${origin}/wallet/wallet-of-satoshi/?production_audit=${nonce}")"
+          custody_html="$(curl -fsS --max-time 30 -H 'Cache-Control: no-cache' "${origin}/product/wallet-of-satoshi-custody-wallet/?production_audit=${nonce}")"
+          self_html="$(curl -fsS --max-time 30 -H 'Cache-Control: no-cache' "${origin}/product/wallet-of-satoshi-self-custody/?production_audit=${nonce}")"
+          wallet_json="$(curl -fsS --max-time 30 -H 'Cache-Control: no-cache' "${origin}/data/wallets/wallet-of-satoshi.json?production_audit=${nonce}")"
+          custody_json="$(curl -fsS --max-time 30 -H 'Cache-Control: no-cache' "${origin}/data/products/wallet-of-satoshi-custody-wallet.json?production_audit=${nonce}")"
+          self_json="$(curl -fsS --max-time 30 -H 'Cache-Control: no-cache' "${origin}/data/products/wallet-of-satoshi-self-custody.json?production_audit=${nonce}")"
+
+          grep -Fq 'Wallet of Satoshi' <<<"$wallet_html"
+          grep -Fq 'Wallet of Satoshi Custody Wallet' <<<"$custody_html"
+          grep -Fq 'Wallet of Satoshi Self-Custody' <<<"$self_html"
+          jq -e '.schema == "wlr.wallet-record.v1" and .entity.id == "wlr_ent_000104" and .entity.slug == "wallet-of-satoshi" and ([.events[].id] | index("wlr_ev_000269") != null) and ([.events[].id] | index("wlr_ev_000270") != null) and ([.events[].id] | index("wlr_ev_000271") != null)' <<<"$wallet_json" >/dev/null
+          jq -e '.schema == "wlr.product-record.v1" and .product.id == "wlr_prod_000153" and .product.slug == "wallet-of-satoshi-custody-wallet" and .product.status == "deprecated"' <<<"$custody_json" >/dev/null
+          jq -e '.schema == "wlr.product-record.v1" and .product.id == "wlr_prod_000154" and .product.slug == "wallet-of-satoshi-self-custody" and .product.status == "active"' <<<"$self_json" >/dev/null
+          echo 'Wallet of Satoshi production publication verified.'
