@@ -5304,5 +5304,62 @@
       "update"
     ],
     "notes": "The first-party notice calls this a mandatory security patch/upgrade but does not identify a specific vulnerability root cause or establish a canonical amount of affected funds. WLR records the remediation action without inventing an exploit or loss event."
+  },
+  {
+    "id": "wlr_ev_000277",
+    "entity_id": "wlr_ent_000038",
+    "product_id": null,
+    "affected_product_ids": [
+      "wlr_prod_000087",
+      "wlr_prod_000158"
+    ],
+    "event_type": "rebranded",
+    "event_date": "2026-09-08",
+    "event_date_basis": "announcement",
+    "title": "D'CENT rebranded to DCENT",
+    "description": "IoTrust announced that the D'CENT brand name and logo were changing to DCENT, removing the apostrophe while preserving the existing wallet-product lineage.",
+    "confidence": "high",
+    "impact_level": "medium",
+    "security_scope": "none",
+    "funds_affected": "no",
+    "event_status_effect": "active",
+    "is_major_event": true,
+    "user_actions_required": [
+      "none"
+    ],
+    "notes": "This event supports a later explicit canonical entity-name correction. It does not create a new wallet entity."
+  },
+  {
+    "id": "wlr_ev_000278",
+    "entity_id": "wlr_ent_000038",
+    "product_id": "wlr_prod_000158",
+    "affected_product_ids": [
+      "wlr_prod_000158"
+    ],
+    "event_type": "unauthorized_access",
+    "event_date": "2026-09-15",
+    "event_date_basis": "occurrence",
+    "disclosed_at": "2026-09-16",
+    "title": "Mass unauthorized transfers affected DCENT App Wallet users",
+    "description": "DCENT disclosed abnormal unauthorized asset transfers involving its software App Wallet while separately stating that no impact originating from the hardware wallets themselves had been confirmed. Independent XRPL on-chain analysis traced an initial September 15 sweep of 1,552 wallets and later reported at least 6,633 wallets and 10,137,230 XRP across additional waves through September 20.",
+    "confidence": "high",
+    "impact_level": "critical",
+    "security_scope": "mobile_app",
+    "funds_affected": "yes",
+    "event_status_effect": "limited",
+    "affected_users_text": "DCENT App Wallet users; retrievable XRPL.to analysis reported at least 6,633 XRPL wallets through September 20, 2026",
+    "amount_text": "At least 10,137,230 XRP reported by XRPL.to through September 20, 2026; totals were still evolving",
+    "is_major_event": true,
+    "user_actions_required": [
+      "update",
+      "move_funds",
+      "rotate_seed",
+      "monitor"
+    ],
+    "affected_components": [
+      "DCENT App Wallet",
+      "software wallet key/signing path"
+    ],
+    "notes": "Root cause remains unresolved in DCENT's official incident reporting. WLR must not treat XRPL.to's client-architecture findings as proof of the incident cause. DCENT's guidance also applies when a hardware-wallet recovery phrase was ever imported into App Wallet, because that phrase then entered the software-wallet trust boundary. The newer 6,678-wallet / 11.7M-XRP figures visible in the operator-provided XRPL.to social screenshot are held as a discovery signal pending directly retrievable supporting analysis."
   }
 ]
