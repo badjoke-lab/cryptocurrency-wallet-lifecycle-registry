@@ -1,10 +1,10 @@
 {
   "canonical_only": true,
-  "last_verified_at": "2026-09-20",
+  "last_verified_at": "2026-09-21",
   "object_type": "record_index",
-  "record_count": 263,
+  "record_count": 264,
   "record_counts": {
-    "products": 157,
+    "products": 158,
     "wallets": 106
   },
   "records": [
@@ -1893,6 +1893,18 @@
       "status": "active"
     },
     {
+      "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000158",
+      "human_url": "https://wlr.badjoke-lab.com/product/dcent-app-wallet/",
+      "machine_url": "https://wlr.badjoke-lab.com/data/series/records/product--dcent-app-wallet.json",
+      "name": "DCENT App Wallet",
+      "native_machine_url": "https://wlr.badjoke-lab.com/data/products/dcent-app-wallet.json",
+      "native_record_id": "wlr_prod_000158",
+      "native_record_type": "wlr.product-record.v1",
+      "series_slug": "product--dcent-app-wallet",
+      "slug": "dcent-app-wallet",
+      "status": "limited"
+    },
+    {
       "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000001",
       "human_url": "https://wlr.badjoke-lab.com/wallet/trezor/",
       "machine_url": "https://wlr.badjoke-lab.com/data/series/records/wallet--trezor.json",
@@ -2340,7 +2352,7 @@
       "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000038",
       "human_url": "https://wlr.badjoke-lab.com/wallet/dcent/",
       "machine_url": "https://wlr.badjoke-lab.com/data/series/records/wallet--dcent.json",
-      "name": "D'CENT",
+      "name": "DCENT",
       "native_machine_url": "https://wlr.badjoke-lab.com/data/wallets/dcent.json",
       "native_record_id": "wlr_ent_000038",
       "native_record_type": "wlr.wallet-record.v1",
