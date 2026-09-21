@@ -2,55 +2,27 @@
   "current_state": {
     "native": {
       "confidence": "high",
-      "current_vendor": null,
-      "custody_model": "self_custody",
-      "open_source_status": null,
-      "product_ids": [
-        "wlr_prod_000087",
-        "wlr_prod_000158"
-      ],
-      "status": "active",
-      "wallet_type": "hybrid",
-      "website_status": null
+      "launch_date": null,
+      "launch_date_precision": null,
+      "parent_entity": {
+        "canonical_name": "DCENT",
+        "id": "wlr_ent_000038",
+        "slug": "dcent",
+        "status": "active",
+        "wallet_type": "hybrid"
+      },
+      "predecessor_product_id": null,
+      "product_type": "mobile_app",
+      "sales_status": "not_applicable",
+      "status": "limited",
+      "successor_product_id": null,
+      "support_status": "supported"
     },
-    "status": "active"
+    "status": "limited"
   },
   "events": {
     "mode": "inline",
     "records": [
-      {
-        "affected_product_ids": [
-          "wlr_prod_000087"
-        ],
-        "confidence": "high",
-        "description": "D'CENT announced Cardano (ADA) support for the Biometric Wallet through a firmware and mobile-app update path.",
-        "entity_id": "wlr_ent_000038",
-        "event_date": "2021-04-08",
-        "event_date_basis": "announcement",
-        "event_status_effect": "none",
-        "event_type": "other",
-        "id": "wlr_ev_000145",
-        "is_major_event": false,
-        "notes": "This is a product capability/integration milestone. It is not treated as the D'CENT product launch date.",
-        "product_id": "wlr_prod_000087",
-        "title": "D'CENT Biometric Wallet added Cardano support"
-      },
-      {
-        "affected_product_ids": [
-          "wlr_prod_000087"
-        ],
-        "confidence": "high",
-        "description": "D'CENT announced on 2026-08-10 that its wallet added checks for known spam and phishing addresses, visible risk labels for suspicious transactions, in-app blocking/reporting, XRP tag reminders, and related send-flow safeguards.",
-        "entity_id": "wlr_ent_000038",
-        "event_date": "2026-08-10",
-        "event_date_basis": "announcement",
-        "event_status_effect": "active",
-        "event_type": "other",
-        "id": "wlr_ev_000216",
-        "is_major_event": false,
-        "product_id": "wlr_prod_000087",
-        "title": "D'CENT added scam-address detection safeguards"
-      },
       {
         "affected_product_ids": [
           "wlr_prod_000087",
@@ -113,86 +85,6 @@
   "evidence": {
     "mode": "inline",
     "records": [
-      {
-        "accessed_at": "2026-08-19",
-        "claim_scope": "entity",
-        "entity_id": "wlr_ent_000038",
-        "event_id": null,
-        "id": "wlr_src_000221",
-        "is_primary": true,
-        "notes": "First-party company article identifies IoTrust as the creator of D'CENT Wallet and describes its hardware, card and software-wallet product family.",
-        "product_id": null,
-        "published_at": "2020-02-26",
-        "publisher": "D'CENT / IoTrust",
-        "reliability": "high",
-        "source_type": "official_blog",
-        "title": "About Us: Meet IoTrust, The Company Behind D'CENT Wallet",
-        "url": "https://store.dcentwallet.com/blogs/post/about-dcent-wallet"
-      },
-      {
-        "accessed_at": "2026-08-19",
-        "claim_scope": "product",
-        "entity_id": "wlr_ent_000038",
-        "event_id": null,
-        "id": "wlr_src_000222",
-        "is_primary": true,
-        "notes": "Current first-party storefront lists the D'CENT Biometric Wallet for sale and describes its secure-element and fingerprint wallet boundary.",
-        "product_id": "wlr_prod_000087",
-        "published_at": null,
-        "publisher": "D'CENT / IoTrust",
-        "reliability": "high",
-        "source_type": "official_statement",
-        "title": "D'CENT Biometric Wallet",
-        "url": "https://store.dcentwallet.com/products/biometric-wallet"
-      },
-      {
-        "accessed_at": "2026-08-23",
-        "claim_scope": "event",
-        "entity_id": "wlr_ent_000038",
-        "event_id": "wlr_ev_000145",
-        "id": "wlr_src_000372",
-        "is_primary": true,
-        "notes": "First-party Cardano support announcement.",
-        "product_id": "wlr_prod_000087",
-        "published_at": "2021-04-08",
-        "publisher": "D'CENT Wallet",
-        "reliability": "high",
-        "source_type": "official_blog",
-        "title": "D'CENT Biometric Wallet Integrates Cardano (ADA)",
-        "url": "https://store.dcentwallet.com/blogs/post/d-cent-biometric-wallet-integrates-cardano-ada"
-      },
-      {
-        "accessed_at": "2026-08-25",
-        "claim_scope": "support_status",
-        "entity_id": "wlr_ent_000038",
-        "event_id": null,
-        "id": "wlr_src_000393",
-        "is_primary": true,
-        "notes": "Current first-party 2026 program requires purchase and activation of the D'CENT Biometric Wallet through the current D'CENT App, supporting active product operation.",
-        "product_id": "wlr_prod_000087",
-        "published_at": "2026-03-18",
-        "publisher": "D'CENT",
-        "reliability": "high",
-        "source_type": "official_blog",
-        "title": "Buy a D'CENT Wallet and Get Up to $10 in Crypto",
-        "url": "https://store.dcentwallet.com/blogs/post/dcent-reward-program"
-      },
-      {
-        "accessed_at": "2026-09-01",
-        "claim_scope": "event",
-        "entity_id": "wlr_ent_000038",
-        "event_id": "wlr_ev_000216",
-        "id": "wlr_src_000485",
-        "is_primary": true,
-        "notes": "First-party D'CENT Wallet update announcement.",
-        "product_id": "wlr_prod_000087",
-        "published_at": "2026-08-10",
-        "publisher": "D'CENT Wallet",
-        "reliability": "high",
-        "source_type": "official_blog",
-        "title": "Your Wallet Now Says No to Scam Addresses",
-        "url": "https://store.dcentwallet.com/blogs/post/dcent-spam-phishing-address-detection"
-      },
       {
         "accessed_at": "2026-09-21",
         "claim_scope": "rebrand",
@@ -291,14 +183,13 @@
       }
     ]
   },
-  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000038",
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000158",
   "identity": {
     "aliases": [
-      "D'CENT",
-      "D'CENT Wallet",
-      "DCENT Wallet"
+      "D'CENT App Wallet",
+      "DCENT Software Wallet"
     ],
-    "name": "DCENT"
+    "name": "DCENT App Wallet"
   },
   "object_type": "record_envelope",
   "provenance": {
@@ -308,21 +199,21 @@
     },
     "canonical_only": true,
     "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
-    "native_record": "https://wlr.badjoke-lab.com/data/wallets/dcent.json",
-    "relationship_boundary": "wallet-to-product links are preserved as native product_ids but are not emitted as typed Series relationships during Stage 3"
+    "native_record": "https://wlr.badjoke-lab.com/data/products/dcent-app-wallet.json",
+    "relationship_boundary": "parent/predecessor/successor native IDs are preserved in current_state.native but are not typed Series relationships during Stage 3"
   },
   "record_key": {
-    "native_record_id": "wlr_ent_000038",
-    "native_record_type": "wlr.wallet-record.v1",
-    "slug": "dcent"
+    "native_record_id": "wlr_prod_000158",
+    "native_record_type": "wlr.product-record.v1",
+    "slug": "dcent-app-wallet"
   },
   "registry_id": "cryptocurrency-wallet-lifecycle-registry",
   "relationships": [],
   "series_schema_version": "1.0.0",
   "urls": {
-    "human": "https://wlr.badjoke-lab.com/wallet/dcent/",
-    "machine": "https://wlr.badjoke-lab.com/data/series/records/wallet--dcent.json",
-    "native_machine": "https://wlr.badjoke-lab.com/data/wallets/dcent.json"
+    "human": "https://wlr.badjoke-lab.com/product/dcent-app-wallet/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/product--dcent-app-wallet.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/products/dcent-app-wallet.json"
   },
   "verification": {
     "last_verified_at": "2026-09-21"

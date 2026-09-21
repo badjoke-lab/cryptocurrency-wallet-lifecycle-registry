@@ -5,11 +5,11 @@
       "launch_date": null,
       "launch_date_precision": null,
       "parent_entity": {
-        "canonical_name": "D'CENT",
+        "canonical_name": "DCENT",
         "id": "wlr_ent_000038",
         "slug": "dcent",
         "status": "active",
-        "wallet_type": "hardware"
+        "wallet_type": "hybrid"
       },
       "predecessor_product_id": null,
       "product_type": "hardware_device",
@@ -55,6 +55,30 @@
         "is_major_event": false,
         "product_id": "wlr_prod_000087",
         "title": "D'CENT added scam-address detection safeguards"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000087",
+          "wlr_prod_000158"
+        ],
+        "confidence": "high",
+        "description": "IoTrust announced that the D'CENT brand name and logo were changing to DCENT, removing the apostrophe while preserving the existing wallet-product lineage.",
+        "entity_id": "wlr_ent_000038",
+        "event_date": "2026-09-08",
+        "event_date_basis": "announcement",
+        "event_status_effect": "active",
+        "event_type": "rebranded",
+        "funds_affected": "no",
+        "id": "wlr_ev_000277",
+        "impact_level": "medium",
+        "is_major_event": true,
+        "notes": "This event supports a later explicit canonical entity-name correction. It does not create a new wallet entity.",
+        "product_id": null,
+        "security_scope": "none",
+        "title": "D'CENT rebranded to DCENT",
+        "user_actions_required": [
+          "none"
+        ]
       }
     ]
   },
@@ -124,6 +148,22 @@
         "source_type": "official_blog",
         "title": "Your Wallet Now Says No to Scam Addresses",
         "url": "https://store.dcentwallet.com/blogs/post/dcent-spam-phishing-address-detection"
+      },
+      {
+        "accessed_at": "2026-09-21",
+        "claim_scope": "rebrand",
+        "entity_id": "wlr_ent_000038",
+        "event_id": "wlr_ev_000277",
+        "id": "wlr_src_000571",
+        "is_primary": true,
+        "notes": "First-party rebrand announcement establishing the September 8, 2026 D'CENT-to-DCENT name and logo change.",
+        "product_id": null,
+        "published_at": "2026-09-08",
+        "publisher": "DCENT / IoTrust",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Welcome to the new DCENT — why D'CENT became DCENT",
+        "url": "https://store.dcentwallet.com/zh/blogs/post/dcent-is-now-dcent"
       }
     ]
   },

@@ -4005,5 +4005,32 @@
     "confidence": "high",
     "last_verified_at": "2026-09-20",
     "notes": "No launch date is assigned because the reviewed current listing establishes existence and current distribution, not the first public release date."
+  },
+  {
+    "id": "wlr_prod_000158",
+    "entity_id": "wlr_ent_000038",
+    "slug": "dcent-app-wallet",
+    "product_name": "DCENT App Wallet",
+    "aliases": [
+      "D'CENT App Wallet",
+      "DCENT Software Wallet"
+    ],
+    "product_type": "mobile_app",
+    "status": "limited",
+    "sales_status": "not_applicable",
+    "support_status": "supported",
+    "launch_date": null,
+    "platform": [
+      "iOS",
+      "Android"
+    ],
+    "official_url": "https://store.dcentwallet.com/pages/dcent-wallet-app",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "software wallet keys created or imported on the phone; DCENT states App Wallet private keys are stored locally on the phone",
+    "summary": "Software-wallet mode inside the DCENT mobile app, distinct from DCENT hardware-wallet modes. In September 2026 DCENT warned of unauthorized transfers affecting App Wallet users and directed affected users to update the app and move assets to newly created trusted addresses.",
+    "confidence": "high",
+    "last_verified_at": "2026-09-21",
+    "notes": "Kept separate from the Biometric Wallet product because the key-storage and transaction-signing boundary is the phone rather than a hardware signer. Status is limited while the September 2026 incident investigation and protective migration guidance remain active; this does not mark the entire DCENT entity or its hardware products as limited."
   }
 ]

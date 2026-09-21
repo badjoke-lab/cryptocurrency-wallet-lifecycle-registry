@@ -898,13 +898,15 @@
   {
     "id": "wlr_ent_000038",
     "slug": "dcent",
-    "canonical_name": "D'CENT",
+    "canonical_name": "DCENT",
     "aliases": [
-      "D'CENT Wallet"
+      "D'CENT",
+      "D'CENT Wallet",
+      "DCENT Wallet"
     ],
-    "wallet_type": "hardware",
+    "wallet_type": "hybrid",
     "status": "active",
-    "summary": "Hardware-wallet ecosystem from IoTrust spanning biometric, card and companion-app products.",
+    "summary": "Hybrid self-custody wallet ecosystem from IoTrust spanning biometric and card hardware wallets plus a phone-based software App Wallet with a separate key-storage and signing boundary.",
     "developer_or_company": "IoTrust Co., Ltd.",
     "country_or_origin": "South Korea",
     "launch_date": null,
@@ -912,10 +914,10 @@
     "official_domain": "dcentwallet.com",
     "source_code_urls": [],
     "custody_model": "self_custody",
-    "key_management_model": "hardware_secure_element_private_keys",
+    "key_management_model": "product-specific hardware secure-element keys or phone-local software-wallet keys",
     "confidence": "high",
-    "last_verified_at": "2026-08-19",
-    "notes": "Current first-party material establishes the D'CENT wallet ecosystem and IoTrust identity. Initial D'CENT wallet launch date remains unresolved in this batch."
+    "last_verified_at": "2026-09-21",
+    "notes": "The brand changed from D'CENT to DCENT on 2026-09-08. WLR models the Biometric Wallet and App Wallet as separate products because their key-storage/signing boundaries differ. The September 2026 unauthorized-transfer incident is scoped to the App Wallet product; DCENT stated that no impact originating from its hardware wallets had been confirmed."
   },
   {
     "id": "wlr_ent_000039",
