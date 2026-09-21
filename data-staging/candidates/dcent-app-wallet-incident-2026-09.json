@@ -1,0 +1,196 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_dcent-app-wallet-incident-2026-09",
+  "title": "DCENT App Wallet product boundary, rebrand, and September 2026 unauthorized drain",
+  "review_state": "review_ready",
+  "notes": "Reviewed from latest main on 2026-09-21. Promotion must also correct existing canonical entity wlr_ent_000038 from legacy canonical_name \"D'CENT\" to current \"DCENT\", retain D'CENT/D'CENT Wallet as aliases, change wallet_type from hardware to hybrid, and refresh the entity summary/notes/last_verified_at. The current candidate format cannot mutate an existing canonical entity row, so that correction belongs in the later explicit canonical promotion PR. The operator-provided 2026-09-21 screenshot shows a newer XRPL.to social update reporting 6,678 wallets and 11.7M XRP across six waves, but those newer totals are intentionally not canonicalized here because the corresponding long-form source was not yet directly retrievable during review. The candidate records only figures directly supported by retrievable source material and keeps the incident total open-ended.",
+  "records": {
+    "entities": [],
+    "products": [
+      {
+        "id": "wlr_prod_000158",
+        "entity_id": "wlr_ent_000038",
+        "slug": "dcent-app-wallet",
+        "product_name": "DCENT App Wallet",
+        "aliases": [
+          "D'CENT App Wallet",
+          "DCENT Software Wallet"
+        ],
+        "product_type": "mobile_app",
+        "status": "limited",
+        "sales_status": "not_applicable",
+        "support_status": "supported",
+        "launch_date": null,
+        "platform": [
+          "iOS",
+          "Android"
+        ],
+        "official_url": "https://store.dcentwallet.com/pages/dcent-wallet-app",
+        "source_code_url": null,
+        "custody_model": "self_custody",
+        "key_management_model": "software wallet keys created or imported on the phone; DCENT states App Wallet private keys are stored locally on the phone",
+        "summary": "Software-wallet mode inside the DCENT mobile app, distinct from DCENT hardware-wallet modes. In September 2026 DCENT warned of unauthorized transfers affecting App Wallet users and directed affected users to update the app and move assets to newly created trusted addresses.",
+        "confidence": "high",
+        "last_verified_at": "2026-09-21",
+        "notes": "Kept separate from the Biometric Wallet product because the key-storage and transaction-signing boundary is the phone rather than a hardware signer. Status is limited while the September 2026 incident investigation and protective migration guidance remain active; this does not mark the entire DCENT entity or its hardware products as limited."
+      }
+    ],
+    "events": [
+      {
+        "id": "wlr_ev_000277",
+        "entity_id": "wlr_ent_000038",
+        "product_id": null,
+        "affected_product_ids": [
+          "wlr_prod_000087",
+          "wlr_prod_000158"
+        ],
+        "event_type": "rebranded",
+        "event_date": "2026-09-08",
+        "event_date_basis": "announcement",
+        "title": "D'CENT rebranded to DCENT",
+        "description": "IoTrust announced that the D'CENT brand name and logo were changing to DCENT, removing the apostrophe while preserving the existing wallet-product lineage.",
+        "confidence": "high",
+        "impact_level": "medium",
+        "security_scope": "none",
+        "funds_affected": "no",
+        "event_status_effect": "active",
+        "is_major_event": true,
+        "user_actions_required": [
+          "none"
+        ],
+        "notes": "This event supports a later explicit canonical entity-name correction. It does not create a new wallet entity."
+      },
+      {
+        "id": "wlr_ev_000278",
+        "entity_id": "wlr_ent_000038",
+        "product_id": "wlr_prod_000158",
+        "affected_product_ids": [
+          "wlr_prod_000158"
+        ],
+        "event_type": "unauthorized_access",
+        "event_date": "2026-09-15",
+        "event_date_basis": "occurrence",
+        "disclosed_at": "2026-09-16",
+        "title": "Mass unauthorized transfers affected DCENT App Wallet users",
+        "description": "DCENT disclosed abnormal unauthorized asset transfers involving its software App Wallet while separately stating that no impact originating from the hardware wallets themselves had been confirmed. Independent XRPL on-chain analysis traced an initial September 15 sweep of 1,552 wallets and later reported at least 6,633 wallets and 10,137,230 XRP across additional waves through September 20.",
+        "confidence": "high",
+        "impact_level": "critical",
+        "security_scope": "mobile_app",
+        "funds_affected": "yes",
+        "event_status_effect": "limited",
+        "affected_users_text": "DCENT App Wallet users; retrievable XRPL.to analysis reported at least 6,633 XRPL wallets through September 20, 2026",
+        "amount_text": "At least 10,137,230 XRP reported by XRPL.to through September 20, 2026; totals were still evolving",
+        "is_major_event": true,
+        "user_actions_required": [
+          "update",
+          "move_funds",
+          "rotate_seed",
+          "monitor"
+        ],
+        "affected_components": [
+          "DCENT App Wallet",
+          "software wallet key/signing path"
+        ],
+        "notes": "Root cause remains unresolved in DCENT's official incident reporting. WLR must not treat XRPL.to's client-architecture findings as proof of the incident cause. DCENT's guidance also applies when a hardware-wallet recovery phrase was ever imported into App Wallet, because that phrase then entered the software-wallet trust boundary. The newer 6,678-wallet / 11.7M-XRP figures visible in the operator-provided XRPL.to social screenshot are held as a discovery signal pending directly retrievable supporting analysis."
+      }
+    ],
+    "evidence": [
+      {
+        "id": "wlr_src_000571",
+        "entity_id": "wlr_ent_000038",
+        "product_id": null,
+        "event_id": "wlr_ev_000277",
+        "source_type": "official_blog",
+        "title": "Welcome to the new DCENT — why D'CENT became DCENT",
+        "url": "https://store.dcentwallet.com/zh/blogs/post/dcent-is-now-dcent",
+        "publisher": "DCENT / IoTrust",
+        "published_at": "2026-09-08",
+        "accessed_at": "2026-09-21",
+        "reliability": "high",
+        "claim_scope": "rebrand",
+        "is_primary": true,
+        "notes": "First-party rebrand announcement establishing the September 8, 2026 D'CENT-to-DCENT name and logo change."
+      },
+      {
+        "id": "wlr_src_000572",
+        "entity_id": "wlr_ent_000038",
+        "product_id": "wlr_prod_000158",
+        "event_id": null,
+        "source_type": "official_statement",
+        "title": "DCENT Mobile App",
+        "url": "https://store.dcentwallet.com/pages/dcent-wallet-app",
+        "publisher": "DCENT / IoTrust",
+        "published_at": null,
+        "accessed_at": "2026-09-21",
+        "reliability": "high",
+        "claim_scope": "product",
+        "is_primary": true,
+        "notes": "Current first-party product page establishes App Wallet as a software/hot-wallet mode inside the DCENT mobile app, distinct from Biometric and Card hardware-wallet modes, and states that App Wallet private keys are generated and stored locally on the phone."
+      },
+      {
+        "id": "wlr_src_000573",
+        "entity_id": "wlr_ent_000038",
+        "product_id": "wlr_prod_000158",
+        "event_id": "wlr_ev_000278",
+        "source_type": "official_security_advisory",
+        "title": "Status Report on Unauthorized Asset Transfers in the App Wallet",
+        "url": "https://store.dcentwallet.com/zh/blogs/post/app-wallet-incident-report",
+        "publisher": "DCENT Wallet Team",
+        "published_at": "2026-09-17",
+        "accessed_at": "2026-09-21",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "First-party incident status report establishing unauthorized-transfer reports, App Wallet as the primary affected mode, ongoing root-cause analysis, law-enforcement/exchange coordination, and the distinction from hardware-wallet-originated impact."
+      },
+      {
+        "id": "wlr_src_000574",
+        "entity_id": "wlr_ent_000038",
+        "product_id": "wlr_prod_000158",
+        "event_id": "wlr_ev_000278",
+        "source_type": "official_security_advisory",
+        "title": "Frequently Asked Questions - DCENT App Wallet Security Issue",
+        "url": "https://store.dcentwallet.com/ja/blogs/post/faq-dcent-app",
+        "publisher": "DCENT Wallet Team",
+        "published_at": "2026-09-16",
+        "accessed_at": "2026-09-21",
+        "reliability": "high",
+        "claim_scope": "architecture",
+        "is_primary": true,
+        "notes": "First-party FAQ distinguishes hardware mode from App Wallet mode and states that App Wallet keys are created or imported on the phone and that this is the mode flagged for abnormal transfers."
+      },
+      {
+        "id": "wlr_src_000575",
+        "entity_id": "wlr_ent_000038",
+        "product_id": "wlr_prod_000158",
+        "event_id": "wlr_ev_000278",
+        "source_type": "security_research",
+        "title": "The D'CENT Drain, Minute by Minute: 1,552 Wallets, Two Batches, One Bug",
+        "url": "https://xrpl.to/insights/dcent-app-wallet-drain-timeline",
+        "publisher": "XRPL.to",
+        "published_at": "2026-09-16",
+        "accessed_at": "2026-09-21",
+        "reliability": "high",
+        "claim_scope": "funds_affected",
+        "is_primary": true,
+        "notes": "Original on-chain forensic analysis of the September 15 XRP Ledger drain. It establishes the first 1,552-wallet/2,009,321-XRP wave and transaction timing; the ledger cannot establish how keys were obtained."
+      },
+      {
+        "id": "wlr_src_000576",
+        "entity_id": "wlr_ent_000038",
+        "product_id": "wlr_prod_000158",
+        "event_id": "wlr_ev_000278",
+        "source_type": "security_research",
+        "title": "Inside D'CENT's App Wallet: a Website and a Blind Signer",
+        "url": "https://xrpl.to/insights/dcent-app-wallet-blind-signer",
+        "publisher": "XRPL.to",
+        "published_at": "2026-09-16",
+        "accessed_at": "2026-09-21",
+        "reliability": "high",
+        "claim_scope": "vulnerability",
+        "is_primary": true,
+        "notes": "Original client teardown documents the software App Wallet signing architecture and explicitly states that the app analysis does not prove what caused the unauthorized transfers. The same article reports later XRPL totals of 6,633 wallets and 10,137,230 XRP through September 20."
+      }
+    ]
+  }
+}
