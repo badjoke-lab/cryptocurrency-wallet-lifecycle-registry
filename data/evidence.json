@@ -9824,5 +9824,37 @@
     "claim_scope": "vulnerability",
     "is_primary": true,
     "notes": "Original client teardown documents the software App Wallet signing architecture and explicitly states that the app analysis does not prove what caused the unauthorized transfers. The same article reports later XRPL totals of 6,633 wallets and 10,137,230 XRP through September 20."
+  },
+  {
+    "id": "wlr_src_000577",
+    "entity_id": "wlr_ent_000038",
+    "product_id": "wlr_prod_000158",
+    "event_id": "wlr_ev_000278",
+    "source_type": "official_security_advisory",
+    "title": "How to Check Whether the App Wallet Action Applies to You",
+    "url": "https://store.dcentwallet.com/ja/blogs/post/check-if-app-wallet-action-applies",
+    "publisher": "DCENT Wallet Team",
+    "published_at": "2026-09-17",
+    "accessed_at": "2026-09-21",
+    "reliability": "high",
+    "claim_scope": "affected_versions",
+    "is_primary": true,
+    "notes": "First-party action-scope notice states that the issue is related to DCENT app versions earlier than v8.1.0 and that action is required for users who installed before v8.1.0 and signed App Wallet transactions in an affected version. It states v8.1.0 was released on 2025-11-05. WLR uses this as an affected-version boundary, not as a public root-cause or remediation disclosure."
+  },
+  {
+    "id": "wlr_src_000578",
+    "entity_id": "wlr_ent_000038",
+    "product_id": "wlr_prod_000158",
+    "event_id": "wlr_ev_000278",
+    "source_type": "security_research",
+    "title": "XRPL Insights — The D'CENT Drain, Day by Day featured investigation summary",
+    "url": "https://xrpl.to/insights",
+    "publisher": "XRPL.to",
+    "published_at": null,
+    "accessed_at": "2026-09-21",
+    "reliability": "high",
+    "claim_scope": "funds_affected",
+    "is_primary": true,
+    "notes": "XRPL.to's current featured investigation summary reports six waves through 2026-09-20 totaling 6,633 wallets and 10,137,230 XRP, 5,001 emptied accounts later deleted for their reserves, and 5.6 million XRP swapped to Ethereum through THORChain."
   }
 ]
