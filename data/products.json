@@ -4032,5 +4032,66 @@
     "confidence": "high",
     "last_verified_at": "2026-09-21",
     "notes": "Kept separate from the Biometric Wallet product because the key-storage and transaction-signing boundary is the phone rather than a hardware signer. Status is limited while the September 2026 incident investigation and protective migration guidance remain active; this does not mark the entire DCENT entity or its hardware products as limited."
+  },
+  {
+    "id": "wlr_prod_000159",
+    "entity_id": "wlr_ent_000107",
+    "slug": "dcent-app-wallet",
+    "product_name": "DCENT App Wallet",
+    "aliases": [
+      "D'CENT App Wallet"
+    ],
+    "product_type": "mobile_app",
+    "status": "limited",
+    "sales_status": "not_applicable",
+    "support_status": "supported",
+    "launch_date": "2018",
+    "launch_date_precision": "approximate",
+    "platform": [
+      "android",
+      "ios"
+    ],
+    "official_url": "https://dcentwallet.com/",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "software_wallet_recovery_phrase_on_device",
+    "variants": [],
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "summary": "Software-wallet mode inside the DCENT mobile app. DCENT's September 2026 security guidance applies to recovery phrases that were used in App Wallet versions earlier than v8.1.0 and instructs affected users to migrate assets to a wallet created with a new recovery phrase.",
+    "confidence": "high",
+    "last_verified_at": "2026-09-30",
+    "notes": "Do not conflate this product with DCENT hardware-only mode. Pairing hardware to the app does not itself place the hardware recovery phrase on the phone."
+  },
+  {
+    "id": "wlr_prod_000160",
+    "entity_id": "wlr_ent_000108",
+    "slug": "xrph-wallet-mobile",
+    "product_name": "XRPH Wallet",
+    "aliases": [
+      "XRPH Mobile Wallet",
+      "XRP Healthcare Wallet"
+    ],
+    "product_type": "mobile_app",
+    "status": "limited",
+    "sales_status": "not_applicable",
+    "support_status": "maintenance",
+    "launch_date": "2023-09-15",
+    "launch_date_precision": "day",
+    "platform": [
+      "android",
+      "ios"
+    ],
+    "official_url": "https://xrphtoken.com/",
+    "source_code_url": "https://github.com/XRPHealthcare/XRPH-Mobile-Wallet",
+    "custody_model": "self_custody",
+    "key_management_model": "software_generated_recovery_credentials",
+    "variants": [],
+    "predecessor_product_id": null,
+    "successor_product_id": null,
+    "summary": "Non-custodial XRPL mobile wallet for XRP Healthcare ecosystem assets. The product is under security and recovery work following the September 2026 compromise.",
+    "confidence": "high",
+    "last_verified_at": "2026-09-30",
+    "notes": "Official ecosystem pages describe the wallet as self-custodial. Independent reverse engineering and on-chain analysis attribute the September 2026 theft to guessable or exposed wallet keys."
   }
 ]
