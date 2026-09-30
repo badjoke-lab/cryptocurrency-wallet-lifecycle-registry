@@ -5373,5 +5373,156 @@
         "range": "<8.1.0 for users who signed App Wallet transactions in an affected pre-8.1.0 app version"
       }
     ]
+  },
+  {
+    "id": "wlr_ev_000279",
+    "entity_id": "wlr_ent_000107",
+    "product_id": null,
+    "affected_product_ids": [],
+    "affected_variants": [],
+    "event_type": "rebranded",
+    "event_date": "2026-09-08",
+    "event_date_basis": "announcement",
+    "disclosed_at": "2026-09-08",
+    "title": "D'CENT rebranded as DCENT",
+    "description": "IoTrust changed the official wallet brand notation from D'CENT to DCENT while retaining the existing product lineage, accounts and recovery phrases.",
+    "confidence": "high",
+    "impact_level": "medium",
+    "security_scope": "none",
+    "funds_affected": "no",
+    "event_status_effect": "active",
+    "affected_versions": [],
+    "affected_regions": [],
+    "affected_users_text": null,
+    "affected_data": [],
+    "third_party_name": null,
+    "amount_text": null,
+    "cve_ids": [],
+    "is_major_event": false,
+    "notes": "Brand continuity event; not a security incident.",
+    "user_actions_required": [
+      "none"
+    ],
+    "affected_components": []
+  },
+  {
+    "id": "wlr_ev_000280",
+    "entity_id": "wlr_ent_000107",
+    "product_id": "wlr_prod_000159",
+    "affected_product_ids": [
+      "wlr_prod_000159"
+    ],
+    "affected_variants": [],
+    "event_type": "unauthorized_access",
+    "event_date": "2026-09-15",
+    "event_date_basis": "occurrence",
+    "disclosed_at": "2026-09-16",
+    "title": "Unauthorized transfers affected DCENT App Wallet users",
+    "description": "DCENT reported abnormal asset transfers involving its App Wallet and began incident response, user migration guidance, law-enforcement coordination and fund tracing. DCENT's action criteria cover recovery phrases used to sign in App Wallet versions earlier than v8.1.0; hardware-only users whose recovery phrase was never entered into App Wallet are outside the directly identified scope.",
+    "confidence": "high",
+    "impact_level": "critical",
+    "security_scope": "mobile_app",
+    "funds_affected": "yes",
+    "event_status_effect": "limited",
+    "affected_versions": [
+      "App Wallet versions earlier than v8.1.0 when used for signing"
+    ],
+    "affected_regions": [],
+    "affected_users_text": "XRPL.to tracked 7,393 XRP Ledger wallets affected between September 15 and September 25, 2026; wallet count is not necessarily equal to unique users.",
+    "affected_data": [],
+    "third_party_name": null,
+    "amount_text": "12,402,589 XRP tracked on XRPL between 2026-09-15 and 2026-09-25",
+    "cve_ids": [],
+    "is_major_event": true,
+    "notes": "Root cause remains under technical investigation in DCENT's public incident material. The on-chain loss tally is from independent XRPL.to analysis and should not be presented as DCENT's own final loss figure.",
+    "user_actions_required": [
+      "update",
+      "migrate",
+      "rotate_seed",
+      "move_funds"
+    ],
+    "affected_components": [
+      "DCENT App Wallet"
+    ],
+    "affected_version_rules": [
+      {
+        "product_ids": [
+          "wlr_prod_000159"
+        ],
+        "track": "mobile_app",
+        "range": "<8.1.0"
+      }
+    ]
+  },
+  {
+    "id": "wlr_ev_000281",
+    "entity_id": "wlr_ent_000108",
+    "product_id": "wlr_prod_000160",
+    "affected_product_ids": [
+      "wlr_prod_000160"
+    ],
+    "affected_variants": [],
+    "event_type": "seed_key_exposure",
+    "event_date": "2026-09-03",
+    "event_date_basis": "occurrence",
+    "disclosed_at": "2026-09-04",
+    "title": "XRPH Wallet users lost funds after wallet keys were exposed or predictable",
+    "description": "On-chain analysis identified a mass sweep of XRPH Wallet accounts on September 3, 2026. Independent reverse engineering reported that affected wallet keys could be derived or guessed from the wallet's key-generation design; SlowMist classified the incident as seed phrase leakage.",
+    "confidence": "high",
+    "impact_level": "critical",
+    "security_scope": "seed_generation",
+    "funds_affected": "yes",
+    "event_status_effect": "limited",
+    "affected_versions": [],
+    "affected_regions": [],
+    "affected_users_text": "XRPL.to identified 4,010 victim wallets in the primary sweep analysis.",
+    "affected_data": [],
+    "third_party_name": null,
+    "amount_text": "267,664 XRP plus approximately 23.2M XRPH and 2.43M XRPHAI",
+    "cve_ids": [],
+    "is_major_event": true,
+    "notes": "The XRP Ledger itself was not exploited. Root-cause wording is based on independent reverse engineering and SlowMist classification rather than a published XRP Healthcare forensic report.",
+    "user_actions_required": [
+      "rotate_seed",
+      "move_funds"
+    ],
+    "affected_components": [
+      "XRPH Wallet key generation and recovery credentials"
+    ]
+  },
+  {
+    "id": "wlr_ev_000282",
+    "entity_id": "wlr_ent_000108",
+    "product_id": "wlr_prod_000160",
+    "affected_product_ids": [
+      "wlr_prod_000160"
+    ],
+    "affected_variants": [],
+    "event_type": "service_shutdown",
+    "event_date": "2026-09-04",
+    "event_date_basis": "announcement",
+    "disclosed_at": null,
+    "title": "XRPH Wallet services moved into temporary security and recovery shutdown",
+    "description": "Following the XRPH Wallet incident, XRP Healthcare stated that its digital services were temporarily unavailable while security and recovery work continued.",
+    "confidence": "medium",
+    "impact_level": "high",
+    "security_scope": "software",
+    "funds_affected": "unknown",
+    "event_status_effect": "limited",
+    "affected_versions": [],
+    "affected_regions": [],
+    "affected_users_text": null,
+    "affected_data": [],
+    "third_party_name": null,
+    "amount_text": null,
+    "cve_ids": [],
+    "is_major_event": true,
+    "notes": "The exact start time of the service interruption is not stated on the current official service-update page; the event date follows contemporaneous incident reporting.",
+    "user_actions_required": [
+      "monitor"
+    ],
+    "affected_components": [
+      "XRPH Wallet digital services"
+    ]
   }
 ]
