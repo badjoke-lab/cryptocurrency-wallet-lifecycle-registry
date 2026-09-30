@@ -3868,7 +3868,7 @@
     "key_management_model": "device_local_seed_with_observed_backend_seed_transmission_in_staking_flows",
     "summary": "XRPL mobile wallet for XRP Healthcare ecosystem assets. The application remained distributed through iOS and Android surfaces in September 2026, but XRP Healthcare warned users not to use it after unauthorized transactions affecting the wallet population.",
     "confidence": "high",
-    "last_verified_at": "2026-09-06",
+    "last_verified_at": "2026-09-30",
     "notes": "Forensic analysis cited Android package com.xrphwallet build 8.0.15. Ordinary payments were observed signing on-device, while staking/unstaking code transmitted seed material to a backend. WLR treats the product as limited during the vendor's do-not-use warning rather than discontinued or dead."
   },
   {
@@ -4030,68 +4030,7 @@
     "key_management_model": "software wallet keys created or imported on the phone; DCENT states App Wallet private keys are stored locally on the phone",
     "summary": "Software-wallet mode inside the DCENT mobile app, distinct from DCENT hardware-wallet modes. In September 2026 DCENT warned of unauthorized transfers affecting App Wallet users and directed affected users to update the app and move assets to newly created trusted addresses.",
     "confidence": "high",
-    "last_verified_at": "2026-09-21",
-    "notes": "Kept separate from the Biometric Wallet product because the key-storage and transaction-signing boundary is the phone rather than a hardware signer. Status is limited while the September 2026 incident investigation and protective migration guidance remain active; this does not mark the entire DCENT entity or its hardware products as limited."
-  },
-  {
-    "id": "wlr_prod_000159",
-    "entity_id": "wlr_ent_000107",
-    "slug": "dcent-app-wallet",
-    "product_name": "DCENT App Wallet",
-    "aliases": [
-      "D'CENT App Wallet"
-    ],
-    "product_type": "mobile_app",
-    "status": "limited",
-    "sales_status": "not_applicable",
-    "support_status": "supported",
-    "launch_date": "2018",
-    "launch_date_precision": "approximate",
-    "platform": [
-      "android",
-      "ios"
-    ],
-    "official_url": "https://dcentwallet.com/",
-    "source_code_url": null,
-    "custody_model": "self_custody",
-    "key_management_model": "software_wallet_recovery_phrase_on_device",
-    "variants": [],
-    "predecessor_product_id": null,
-    "successor_product_id": null,
-    "summary": "Software-wallet mode inside the DCENT mobile app. DCENT's September 2026 security guidance applies to recovery phrases that were used in App Wallet versions earlier than v8.1.0 and instructs affected users to migrate assets to a wallet created with a new recovery phrase.",
-    "confidence": "high",
     "last_verified_at": "2026-09-30",
-    "notes": "Do not conflate this product with DCENT hardware-only mode. Pairing hardware to the app does not itself place the hardware recovery phrase on the phone."
-  },
-  {
-    "id": "wlr_prod_000160",
-    "entity_id": "wlr_ent_000108",
-    "slug": "xrph-wallet-mobile",
-    "product_name": "XRPH Wallet",
-    "aliases": [
-      "XRPH Mobile Wallet",
-      "XRP Healthcare Wallet"
-    ],
-    "product_type": "mobile_app",
-    "status": "limited",
-    "sales_status": "not_applicable",
-    "support_status": "maintenance",
-    "launch_date": "2023-09-15",
-    "launch_date_precision": "day",
-    "platform": [
-      "android",
-      "ios"
-    ],
-    "official_url": "https://xrphtoken.com/",
-    "source_code_url": "https://github.com/XRPHealthcare/XRPH-Mobile-Wallet",
-    "custody_model": "self_custody",
-    "key_management_model": "software_generated_recovery_credentials",
-    "variants": [],
-    "predecessor_product_id": null,
-    "successor_product_id": null,
-    "summary": "Non-custodial XRPL mobile wallet for XRP Healthcare ecosystem assets. The product is under security and recovery work following the September 2026 compromise.",
-    "confidence": "high",
-    "last_verified_at": "2026-09-30",
-    "notes": "Official ecosystem pages describe the wallet as self-custodial. Independent reverse engineering and on-chain analysis attribute the September 2026 theft to guessable or exposed wallet keys."
+    "notes": "Kept separate from the Biometric Wallet product because the key-storage and transaction-signing boundary is the phone rather than a hardware signer. Status remains limited while the September 2026 incident investigation and protective migration guidance remain active; this does not mark the entire DCENT entity or its hardware products as limited."
   }
 ]
