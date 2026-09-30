@@ -9365,11 +9365,11 @@
     "url": "https://www.xrphealthcare.ai/",
     "publisher": "XRP Healthcare",
     "published_at": null,
-    "accessed_at": "2026-09-11",
+    "accessed_at": "2026-09-30",
     "reliability": "high",
     "claim_scope": "event",
     "is_primary": true,
-    "notes": "Current first-party site states that XRP Healthcare digital services are temporarily unavailable while security and recovery work continues following the recent XRPH Wallet incident. This corroborates the continued wallet/service-offline and recovery-work portion of wlr_ev_000268 only; it does not establish permanent XRPH Wallet discontinuation or, by itself, the broader operational wind-down decision."
+    "notes": "Current first-party site, rechecked on 2026-09-30, still states that XRP Healthcare digital services are temporarily unavailable while security and recovery work continues following the XRPH Wallet incident. This corroborates the continued wallet/service-offline and recovery-work portion of wlr_ev_000268 only; it does not establish permanent XRPH Wallet discontinuation or, by itself, the broader operational wind-down decision."
   },
   {
     "id": "wlr_src_000549",
@@ -9856,5 +9856,21 @@
     "claim_scope": "funds_affected",
     "is_primary": true,
     "notes": "XRPL.to's current featured investigation summary reports six waves through 2026-09-20 totaling 6,633 wallets and 10,137,230 XRP, 5,001 emptied accounts later deleted for their reserves, and 5.6 million XRP swapped to Ethereum through THORChain."
+  },
+  {
+    "id": "wlr_src_000579",
+    "entity_id": "wlr_ent_000038",
+    "product_id": "wlr_prod_000158",
+    "event_id": "wlr_ev_000278",
+    "source_type": "security_research",
+    "title": "The D’CENT Drain, Day by Day: 12.4 Million XRP, Six Waves, One List of Keys",
+    "url": "https://xrpl.to/insights/dcent-app-wallet-drain-timeline",
+    "publisher": "XRPL.to",
+    "published_at": "2026-09-25",
+    "accessed_at": "2026-09-30",
+    "reliability": "high",
+    "claim_scope": "funds_affected",
+    "is_primary": true,
+    "notes": "Independent full-ledger follow-up reports 12,402,589 XRP taken from 7,393 XRP Ledger wallets between September 15 and September 25, 2026, including repeated sweep and account-deletion activity. It does not establish the initial key-compromise mechanism."
   }
 ]

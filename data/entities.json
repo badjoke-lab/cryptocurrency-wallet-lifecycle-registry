@@ -916,8 +916,8 @@
     "custody_model": "self_custody",
     "key_management_model": "product-specific hardware secure-element keys or phone-local software-wallet keys",
     "confidence": "high",
-    "last_verified_at": "2026-09-21",
-    "notes": "The brand changed from D'CENT to DCENT on 2026-09-08. WLR models the Biometric Wallet and App Wallet as separate products because their key-storage/signing boundaries differ. The September 2026 unauthorized-transfer incident is scoped to the App Wallet product; DCENT stated that no impact originating from its hardware wallets had been confirmed."
+    "last_verified_at": "2026-09-30",
+    "notes": "The brand changed from D'CENT to DCENT on 2026-09-08. WLR models the Biometric Wallet and App Wallet as separate products because their key-storage/signing boundaries differ. The September 2026 unauthorized-transfer incident is scoped to the App Wallet product; DCENT stated that no impact originating from its hardware wallets had been confirmed. DCENT's public incident material still does not establish the root cause."
   },
   {
     "id": "wlr_ent_000039",
@@ -2353,8 +2353,8 @@
     "custody_model": "unknown",
     "key_management_model": "device_local_seed_with_observed_backend_seed_transmission_in_staking_flows",
     "confidence": "high",
-    "last_verified_at": "2026-09-06",
-    "notes": "Current first-party pages describe XRPH Wallet as non-custodial, but forensic analysis of Android build 8.0.15 found staking/unstaking code that transmits the user's seed to an XRP Healthcare server and local plaintext storage of seed/private-key material. This record therefore does not canonicalize self_custody while the architecture and compromise cause remain under investigation. Current first-party timeline/FAQ pages conflict on whether launch occurred in March or September 2023, so WLR uses year-level approximate launch precision."
+    "last_verified_at": "2026-09-30",
+    "notes": "Current first-party pages describe XRPH Wallet as non-custodial, but forensic analysis of Android build 8.0.15 found staking/unstaking code that transmits the user's seed to an XRP Healthcare server and local plaintext storage of seed/private-key material. This record therefore does not canonicalize self_custody while the architecture and compromise cause remain under investigation. Current first-party timeline/FAQ pages conflict on whether launch occurred in March or September 2023, so WLR uses year-level approximate launch precision. As of 2026-09-30, the first-party service page still says digital services are temporarily unavailable while security and recovery work continues."
   },
   {
     "id": "wlr_ent_000104",

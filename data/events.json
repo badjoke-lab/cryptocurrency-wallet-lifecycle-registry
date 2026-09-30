@@ -5341,14 +5341,14 @@
     "event_date_basis": "occurrence",
     "disclosed_at": "2026-09-16",
     "title": "Mass unauthorized transfers affected DCENT App Wallet users",
-    "description": "DCENT disclosed abnormal unauthorized asset transfers involving its software App Wallet while separately stating that no impact originating from the hardware wallets themselves had been confirmed. Independent XRPL on-chain analysis traced an initial September 15 sweep of 1,552 wallets and later reported at least 6,633 wallets and 10,137,230 XRP across additional waves through September 20.",
+    "description": "DCENT disclosed abnormal unauthorized asset transfers involving its software App Wallet while separately stating that no impact originating from the hardware wallets themselves had been confirmed. Independent XRPL on-chain analysis later tracked the same incident through September 25, reporting 12,402,589 XRP taken from 7,393 XRP Ledger wallets across repeated sweep and account-deletion activity.",
     "confidence": "high",
     "impact_level": "critical",
     "security_scope": "mobile_app",
     "funds_affected": "yes",
     "event_status_effect": "limited",
-    "affected_users_text": "DCENT App Wallet users; retrievable XRPL.to analysis reported at least 6,633 XRPL wallets through September 20, 2026",
-    "amount_text": "At least 10,137,230 XRP reported by XRPL.to through September 20, 2026; totals were still evolving",
+    "affected_users_text": "XRPL.to tracked 7,393 XRP Ledger wallets affected between September 15 and September 25, 2026; wallet count is not necessarily equal to unique users.",
+    "amount_text": "12,402,589 XRP tracked by XRPL.to between 2026-09-15 and 2026-09-25",
     "is_major_event": true,
     "user_actions_required": [
       "update",
@@ -5360,7 +5360,7 @@
       "DCENT App Wallet",
       "software wallet key/signing path"
     ],
-    "notes": "Root cause remains unresolved in DCENT's public incident reporting. DCENT's September 17 action-scope notice narrows the confirmed exposure boundary to App Wallet use in app versions earlier than 8.1.0 where the user signed transactions; v8.1.0 was released on 2025-11-05. This scope statement is not treated as a public root-cause disclosure or proof that 8.1.0 was a remediation release. DCENT's guidance also applies when a hardware-wallet recovery phrase was ever imported into App Wallet, because that phrase then entered the software-wallet trust boundary. XRPL.to's current featured on-chain summary reports six waves through 2026-09-20 totaling 6,633 wallets and 10,137,230 XRP, with 5,001 emptied XRPL accounts later deleted for reserves and 5.6 million XRP swapped to Ethereum through THORChain. The newer 6,678-wallet / 11.7M-XRP figures visible in the operator-provided social screenshot remain a discovery signal pending a directly retrievable supporting source.",
+    "notes": "Root cause remains unresolved in DCENT's public incident reporting. DCENT's September 17 action-scope notice narrows the confirmed exposure boundary to App Wallet use in app versions earlier than 8.1.0 where the user signed transactions; v8.1.0 was released on 2025-11-05. This scope statement is not treated as a public root-cause disclosure or proof that 8.1.0 was a remediation release. DCENT's guidance also applies when a hardware-wallet recovery phrase was ever imported into App Wallet, because that phrase then entered the software-wallet trust boundary. XRPL.to's September 25 on-chain follow-up reports 12,402,589 XRP taken from 7,393 wallets, 6,095 account deletions, and approximately 6.3 million XRP swapped to Ethereum through THORChain. Ledger activity establishes the transfers and key-authorized account actions, but not how the attacker initially obtained or derived the keys.",
     "affected_versions": [
       "DCENT app versions earlier than 8.1.0 when the App Wallet was used to sign transactions"
     ],
