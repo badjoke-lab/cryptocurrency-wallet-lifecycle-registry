@@ -275,6 +275,32 @@
         "user_actions_required": [
           "update"
         ]
+      },
+      {
+        "affected_product_ids": [],
+        "affected_regions": [
+          "Southeast Asia"
+        ],
+        "confidence": "high",
+        "description": "Ledger Support said it was investigating reports of lost funds among Southeast Asian customers who purchased Ledger devices from reseller CryptoBilis. As a precaution pending its investigation, Ledger requested that CryptoBilis pause all Ledger device sales and shipments. Ledger advised customers who bought from the reseller within the previous 90 days not to initialize unused devices and advised those who had set up a device to consider moving their assets to a new Ledger signer with a newly generated seed.",
+        "entity_id": "wlr_ent_000002",
+        "event_date": "2026-10-09",
+        "event_date_basis": "announcement",
+        "event_status_effect": "none",
+        "event_type": "policy_change",
+        "funds_affected": "unknown",
+        "id": "wlr_ev_000279",
+        "impact_level": "high",
+        "is_major_event": true,
+        "notes": "This event records the manufacturer's announced precaution and scope; it is not a finding of compromised Ledger hardware, firmware, reseller conduct, or the cause of the reported losses. Specific device models and incident onset remain unknown. A separate Oct 9 third-party $86M+ on-chain estimate by Specter has NOT been attributed by Ledger to CryptoBilis purchasers and is not presented as a confirmed loss here. Guidance is specific to users purchasing from CryptoBilis within the 90 days preceding the announcement. First-party X permalink and statement transcription are corroborated by independent contemporaneous reporting; automated X content retrieval was unavailable at review time.",
+        "product_id": null,
+        "security_scope": "none",
+        "title": "Ledger asks CryptoBilis reseller to pause device sales amid reported customer fund losses",
+        "user_actions_required": [
+          "move_funds",
+          "rotate_seed",
+          "monitor"
+        ]
       }
     ]
   },
@@ -494,6 +520,54 @@
         "source_type": "official_security_advisory",
         "title": "Ledger Security Bulletin 025 — Swap flow accepted a token approval in place of a payment",
         "url": "https://donjon.ledger.com/lsb/025/"
+      },
+      {
+        "accessed_at": "2026-10-09",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000002",
+        "event_id": "wlr_ev_000279",
+        "id": "wlr_src_000580",
+        "is_primary": true,
+        "notes": "First-party Ledger Support X statement; permalink cross-referenced in a contemporaneous Reddit discussion and statement text supplied by project operator, with independent same-day reporting. X page was not directly retrievable by automated tools. Supports Ledger's investigation, reseller sales/shipment pause request, 90-day customer guidance and plan for updates; does NOT verify $86M+ loss estimate, hardware tampering or root cause.",
+        "product_id": null,
+        "published_at": "2026-10-09",
+        "publisher": "Ledger Support (@Ledger_Support)",
+        "reliability": "high",
+        "source_type": "official_social",
+        "title": "Ledger Support — investigation of CryptoBilis-related fund-loss reports and reseller sales/shipping precaution",
+        "url": "https://x.com/Ledger_Support/status/2108551100613714002"
+      },
+      {
+        "accessed_at": "2026-10-09",
+        "claim_scope": "entity",
+        "entity_id": "wlr_ent_000002",
+        "event_id": "wlr_ev_000279",
+        "id": "wlr_src_000581",
+        "is_primary": true,
+        "notes": "Ledger's first-party reseller directory lists CryptoBilis for Indonesia, Malaysia and the Philippines. Supports the reseller relationship only; not evidence of wrongdoing or a particular device flaw.",
+        "product_id": null,
+        "published_at": null,
+        "publisher": "Ledger",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Find or Become an Official Ledger Reseller — CryptoBilis listings",
+        "url": "https://www.ledger.com/reseller"
+      },
+      {
+        "accessed_at": "2026-10-09",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000002",
+        "event_id": "wlr_ev_000279",
+        "id": "wlr_src_000582",
+        "is_primary": false,
+        "notes": "Contemporaneous secondary corroboration. Explicitly distinguishes Ledger's precautionary CryptoBilis warning from Specter's separate >$86M estimate, which Ledger has not confirmed as related.",
+        "product_id": null,
+        "published_at": "2026-10-09",
+        "publisher": "PrimeXBT Editorial Team",
+        "reliability": "medium",
+        "source_type": "news_article",
+        "title": "Ledger Asks Reseller CryptoBilis to Halt Sales Amid Reports of Lost Funds",
+        "url": "https://primexbt.com/news/ledger-asks-reseller-cryptobilis-to-halt-sales-amid-reports-of-lost-funds/"
       }
     ]
   },
