@@ -9911,14 +9911,14 @@
     "product_id": null,
     "event_id": "wlr_ev_000279",
     "source_type": "news_article",
-    "title": "Ledger Asks Reseller CryptoBilis to Halt Sales Amid Reports of Lost Funds",
-    "url": "https://primexbt.com/news/ledger-asks-reseller-cryptobilis-to-halt-sales-amid-reports-of-lost-funds/",
-    "publisher": "PrimeXBT Editorial Team",
+    "title": "Ledger Investigating Reports of Drained Crypto Wallets as Estimated Losses Hit $86M",
+    "url": "https://news.bitcoin.com/security/ledger-investigating-86m-drained-crypto-hardware-wallets/",
+    "publisher": "Bitcoin.com News",
     "published_at": "2026-10-09",
-    "accessed_at": "2026-10-09",
+    "accessed_at": "2026-10-10",
     "reliability": "medium",
     "claim_scope": "event",
     "is_primary": false,
-    "notes": "Contemporaneous secondary corroboration. Explicitly distinguishes Ledger's precautionary CryptoBilis warning from Specter's separate >$86M estimate, which Ledger has not confirmed as related."
+    "notes": "Contemporaneous reporting by Andrew Hayward directly quotes key parts of Ledger Support's Oct 9 statement, including the request to CryptoBilis to suspend sales/shipments and users' 90-day setup/migration guidance. Independently reports Specter's $86M+ estimate without attributing that total to CryptoBilis purchases. Secondary corroboration, not independent confirmation of technical root cause."
   }
 ]
