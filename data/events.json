@@ -5373,5 +5373,31 @@
         "range": "<8.1.0 for users who signed App Wallet transactions in an affected pre-8.1.0 app version"
       }
     ]
+  },
+  {
+    "id": "wlr_ev_000279",
+    "entity_id": "wlr_ent_000002",
+    "product_id": null,
+    "affected_product_ids": [],
+    "event_type": "policy_change",
+    "event_date": "2026-10-09",
+    "event_date_basis": "announcement",
+    "title": "Ledger asks CryptoBilis reseller to pause device sales amid reported customer fund losses",
+    "description": "Ledger Support said it was investigating reports of lost funds among Southeast Asian customers who purchased Ledger devices from reseller CryptoBilis. As a precaution pending its investigation, Ledger requested that CryptoBilis pause all Ledger device sales and shipments. Ledger advised customers who bought from the reseller within the previous 90 days not to initialize unused devices and advised those who had set up a device to consider moving their assets to a new Ledger signer with a newly generated seed.",
+    "confidence": "high",
+    "impact_level": "high",
+    "security_scope": "none",
+    "funds_affected": "unknown",
+    "event_status_effect": "none",
+    "affected_regions": [
+      "Southeast Asia"
+    ],
+    "is_major_event": true,
+    "user_actions_required": [
+      "move_funds",
+      "rotate_seed",
+      "monitor"
+    ],
+    "notes": "This event records the manufacturer's announced precaution and scope; it is not a finding of compromised Ledger hardware, firmware, reseller conduct, or the cause of the reported losses. Specific device models and incident onset remain unknown. A separate Oct 9 third-party $86M+ on-chain estimate by Specter has NOT been attributed by Ledger to CryptoBilis purchasers and is not presented as a confirmed loss here. Guidance is specific to users purchasing from CryptoBilis within the 90 days preceding the announcement. First-party X permalink and statement transcription are corroborated by independent contemporaneous reporting; automated X content retrieval was unavailable at review time."
   }
 ]

@@ -9872,5 +9872,53 @@
     "claim_scope": "funds_affected",
     "is_primary": true,
     "notes": "Independent full-ledger follow-up reports 12,402,589 XRP taken from 7,393 XRP Ledger wallets between September 15 and September 25, 2026, including repeated sweep and account-deletion activity. It does not establish the initial key-compromise mechanism."
+  },
+  {
+    "id": "wlr_src_000580",
+    "entity_id": "wlr_ent_000002",
+    "product_id": null,
+    "event_id": "wlr_ev_000279",
+    "source_type": "official_social",
+    "title": "Ledger Support — investigation of CryptoBilis-related fund-loss reports and reseller sales/shipping precaution",
+    "url": "https://x.com/Ledger_Support/status/2108551100613714002",
+    "publisher": "Ledger Support (@Ledger_Support)",
+    "published_at": "2026-10-09",
+    "accessed_at": "2026-10-09",
+    "reliability": "high",
+    "claim_scope": "event",
+    "is_primary": true,
+    "notes": "First-party Ledger Support X statement; permalink cross-referenced in a contemporaneous Reddit discussion and statement text supplied by project operator, with independent same-day reporting. X page was not directly retrievable by automated tools. Supports Ledger's investigation, reseller sales/shipment pause request, 90-day customer guidance and plan for updates; does NOT verify $86M+ loss estimate, hardware tampering or root cause."
+  },
+  {
+    "id": "wlr_src_000581",
+    "entity_id": "wlr_ent_000002",
+    "product_id": null,
+    "event_id": "wlr_ev_000279",
+    "source_type": "official_statement",
+    "title": "Find or Become an Official Ledger Reseller — CryptoBilis listings",
+    "url": "https://www.ledger.com/reseller",
+    "publisher": "Ledger",
+    "published_at": null,
+    "accessed_at": "2026-10-09",
+    "reliability": "high",
+    "claim_scope": "entity",
+    "is_primary": true,
+    "notes": "Ledger's first-party reseller directory lists CryptoBilis for Indonesia, Malaysia and the Philippines. Supports the reseller relationship only; not evidence of wrongdoing or a particular device flaw."
+  },
+  {
+    "id": "wlr_src_000582",
+    "entity_id": "wlr_ent_000002",
+    "product_id": null,
+    "event_id": "wlr_ev_000279",
+    "source_type": "news_article",
+    "title": "Ledger Investigating Reports of Drained Crypto Wallets as Estimated Losses Hit $86M",
+    "url": "https://news.bitcoin.com/security/ledger-investigating-86m-drained-crypto-hardware-wallets/",
+    "publisher": "Bitcoin.com News",
+    "published_at": "2026-10-09",
+    "accessed_at": "2026-10-10",
+    "reliability": "medium",
+    "claim_scope": "event",
+    "is_primary": false,
+    "notes": "Contemporaneous reporting by Andrew Hayward directly quotes key parts of Ledger Support's Oct 9 statement, including the request to CryptoBilis to suspend sales/shipments and users' 90-day setup/migration guidance. Independently reports Specter's $86M+ estimate without attributing that total to CryptoBilis purchases. Secondary corroboration, not independent confirmation of technical root cause."
   }
 ]
