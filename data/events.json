@@ -5399,5 +5399,32 @@
       "monitor"
     ],
     "notes": "This event records the manufacturer's announced precaution and scope; it is not a finding of compromised Ledger hardware, firmware, reseller conduct, or the cause of the reported losses. Specific device models and incident onset remain unknown. A separate Oct 9 third-party $86M+ on-chain estimate by Specter has NOT been attributed by Ledger to CryptoBilis purchasers and is not presented as a confirmed loss here. Guidance is specific to users purchasing from CryptoBilis within the 90 days preceding the announcement. First-party X permalink and statement transcription are corroborated by independent contemporaneous reporting; automated X content retrieval was unavailable at review time."
+  },
+  {
+    "id": "wlr_ev_000280",
+    "entity_id": "wlr_ent_000002",
+    "product_id": "wlr_prod_000008",
+    "affected_product_ids": [
+      "wlr_prod_000008"
+    ],
+    "event_type": "supply_chain_compromise",
+    "event_date": "2026-05",
+    "event_date_basis": "disclosure",
+    "title": "Independent hardware research documented a physical implant inside a Ledger Nano X",
+    "description": "Hardware security researcher Joe Grand publicly presented reverse-engineering research on a real-world Ledger Nano X unit modified with an additional physical hardware implant at hardwear.io USA 2026. The finding documents that a physically altered unit can exist independently of a vulnerability in Ledger's Secure Element or firmware. It does not establish how many devices were modified, whether a buyer suffered losses, or a link to later CryptoBilis-related reports.",
+    "confidence": "high",
+    "impact_level": "high",
+    "security_scope": "supply_chain",
+    "funds_affected": "unknown",
+    "event_status_effect": "none",
+    "is_major_event": true,
+    "user_actions_required": [
+      "monitor"
+    ],
+    "affected_components": [
+      "physically modified Ledger Nano X unit",
+      "non-original implant hardware"
+    ],
+    "notes": "May 2026 is the precision established by the 26–30 May hardwear.io conference; Grand's published slides were revised May 29, but WLR does not infer an exact first-disclosure day. Vendor and researcher documentation distinguish a genuine Secure Element from physical hardware integrity: software Genuine Check cannot establish absence of an added spying implant. Separate Oct 9, 2026 photos and statements from Mark Karpelès concern a Malaysia-shipped unit he examined, reportedly obtained via an unrelated marketplace seller, not confirmed CryptoBilis stock. Neither the May specimen nor the Oct Karpelès specimen has been shown to account for the Oct CryptoBilis buyer loss reports. Do not link this to Oct wallet-drain estimates or assert a Ledger-wide firmware vulnerability."
   }
 ]
