@@ -301,6 +301,33 @@
           "rotate_seed",
           "monitor"
         ]
+      },
+      {
+        "affected_components": [
+          "physically modified Ledger Nano X unit",
+          "non-original implant hardware"
+        ],
+        "affected_product_ids": [
+          "wlr_prod_000008"
+        ],
+        "confidence": "high",
+        "description": "Hardware security researcher Joe Grand publicly presented reverse-engineering research on a real-world Ledger Nano X unit modified with an additional physical hardware implant at hardwear.io USA 2026. The finding documents that a physically altered unit can exist independently of a vulnerability in Ledger's Secure Element or firmware. It does not establish how many devices were modified, whether a buyer suffered losses, or a link to later CryptoBilis-related reports.",
+        "entity_id": "wlr_ent_000002",
+        "event_date": "2026-05",
+        "event_date_basis": "disclosure",
+        "event_status_effect": "none",
+        "event_type": "supply_chain_compromise",
+        "funds_affected": "unknown",
+        "id": "wlr_ev_000280",
+        "impact_level": "high",
+        "is_major_event": true,
+        "notes": "May 2026 is the precision established by the 26–30 May hardwear.io conference; Grand's published slides were revised May 29, but WLR does not infer an exact first-disclosure day. Vendor and researcher documentation distinguish a genuine Secure Element from physical hardware integrity: software Genuine Check cannot establish absence of an added spying implant. Separate Oct 9, 2026 photos and statements from Mark Karpelès concern a Malaysia-shipped unit he examined, reportedly obtained via an unrelated marketplace seller, not confirmed CryptoBilis stock. Neither the May specimen nor the Oct Karpelès specimen has been shown to account for the Oct CryptoBilis buyer loss reports. Do not link this to Oct wallet-drain estimates or assert a Ledger-wide firmware vulnerability.",
+        "product_id": "wlr_prod_000008",
+        "security_scope": "supply_chain",
+        "title": "Independent hardware research documented a physical implant inside a Ledger Nano X",
+        "user_actions_required": [
+          "monitor"
+        ]
       }
     ]
   },
@@ -568,6 +595,70 @@
         "source_type": "news_article",
         "title": "Ledger Investigating Reports of Drained Crypto Wallets as Estimated Losses Hit $86M",
         "url": "https://news.bitcoin.com/security/ledger-investigating-86m-drained-crypto-hardware-wallets/"
+      },
+      {
+        "accessed_at": "2026-10-10",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000002",
+        "event_id": "wlr_ev_000280",
+        "id": "wlr_src_000583",
+        "is_primary": true,
+        "notes": "Researcher's own project and slides (revised 2026-05-29) documenting a real-world hardware implant found in a Ledger Nano X; primary evidence for the hardware-tampering research, not for CryptoBilis distribution or October victim losses.",
+        "product_id": "wlr_prod_000008",
+        "published_at": "2026-05",
+        "publisher": "Joe Grand / Grand Idea Studio",
+        "reliability": "high",
+        "source_type": "security_research",
+        "title": "Reverse Engineering a Ledger Nano X Hardware Implant — researcher publication and May 2026 materials",
+        "url": "https://grandideastudio.com/portfolio/security/ledger-hardware-implant/"
+      },
+      {
+        "accessed_at": "2026-10-10",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000002",
+        "event_id": "wlr_ev_000280",
+        "id": "wlr_src_000584",
+        "is_primary": true,
+        "notes": "Official conference programme confirms Grand's first-hand presentation was part of 26–30 May 2026 and describes the examination of a real-world hardware implant in a Ledger Nano X.",
+        "product_id": "wlr_prod_000008",
+        "published_at": "2026-05",
+        "publisher": "hardwear.io / Joe Grand",
+        "reliability": "high",
+        "source_type": "security_research",
+        "title": "hardwear.io USA 2026 — Reverse Engineering a Ledger Nano X Hardware Implant",
+        "url": "https://hardwear.io/talks/usa-2026-talks/reverse-engineering-a-ledger-nano-x-hardware-implant/"
+      },
+      {
+        "accessed_at": "2026-10-10",
+        "claim_scope": "architecture",
+        "entity_id": "wlr_ent_000002",
+        "event_id": "wlr_ev_000280",
+        "id": "wlr_src_000585",
+        "is_primary": true,
+        "notes": "Ledger's own threat model states Genuine Check tests the Secure Element's cryptographic authenticity, not unauthorized physical modifications such as spying implants where the original Secure Element remains intact.",
+        "product_id": "wlr_prod_000008",
+        "published_at": null,
+        "publisher": "Ledger Donjon",
+        "reliability": "high",
+        "source_type": "official_security_advisory",
+        "title": "Ledger Donjon Threat Model: Genuineness and physical verification",
+        "url": "https://donjon.ledger.com/threat-model/device-genuineness/"
+      },
+      {
+        "accessed_at": "2026-10-10",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000002",
+        "event_id": "wlr_ev_000280",
+        "id": "wlr_src_000586",
+        "is_primary": true,
+        "notes": "First-person October report with photos of a physical implant hidden behind the screen; original post text also mirrored by Yahoo real-time search. This is a separate observation and does not prove that the examined device came from CryptoBilis or caused October thefts.",
+        "product_id": "wlr_prod_000008",
+        "published_at": "2026-10-09",
+        "publisher": "Mark Karpelès (@MagicalTux)",
+        "reliability": "high",
+        "source_type": "official_social",
+        "title": "Mark Karpelès: separate Malaysia-shipped Ledger device containing alleged hardware implant",
+        "url": "https://x.com/MagicalTux/status/2108576506704548179"
       }
     ]
   },
