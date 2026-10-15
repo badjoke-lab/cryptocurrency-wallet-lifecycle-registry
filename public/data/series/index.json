@@ -1,11 +1,11 @@
 {
   "canonical_only": true,
-  "last_verified_at": "2026-10-15",
+  "last_verified_at": "2026-10-16",
   "object_type": "record_index",
-  "record_count": 268,
+  "record_count": 270,
   "record_counts": {
-    "products": 161,
-    "wallets": 107
+    "products": 162,
+    "wallets": 108
   },
   "records": [
     {
@@ -1941,6 +1941,18 @@
       "status": "deprecated"
     },
     {
+      "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000162",
+      "human_url": "https://wlr.badjoke-lab.com/product/teleport-wallet-web/",
+      "machine_url": "https://wlr.badjoke-lab.com/data/series/records/product--teleport-wallet-web.json",
+      "name": "Teleport Wallet Web App",
+      "native_machine_url": "https://wlr.badjoke-lab.com/data/products/teleport-wallet-web.json",
+      "native_record_id": "wlr_prod_000162",
+      "native_record_type": "wlr.product-record.v1",
+      "series_slug": "product--teleport-wallet-web",
+      "slug": "teleport-wallet-web",
+      "status": "limited"
+    },
+    {
       "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000001",
       "human_url": "https://wlr.badjoke-lab.com/wallet/trezor/",
       "machine_url": "https://wlr.badjoke-lab.com/data/series/records/wallet--trezor.json",
@@ -3223,6 +3235,18 @@
       "series_slug": "wallet--magic-eden-wallet",
       "slug": "magic-eden-wallet",
       "status": "deprecated"
+    },
+    {
+      "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000108",
+      "human_url": "https://wlr.badjoke-lab.com/wallet/teleport-wallet/",
+      "machine_url": "https://wlr.badjoke-lab.com/data/series/records/wallet--teleport-wallet.json",
+      "name": "Teleport Wallet",
+      "native_machine_url": "https://wlr.badjoke-lab.com/data/wallets/teleport-wallet.json",
+      "native_record_id": "wlr_ent_000108",
+      "native_record_type": "wlr.wallet-record.v1",
+      "series_slug": "wallet--teleport-wallet",
+      "slug": "teleport-wallet",
+      "status": "limited"
     }
   ],
   "registry_id": "cryptocurrency-wallet-lifecycle-registry",
