@@ -1,11 +1,11 @@
 {
   "canonical_only": true,
-  "last_verified_at": "2026-09-30",
+  "last_verified_at": "2026-10-15",
   "object_type": "record_index",
-  "record_count": 264,
+  "record_count": 268,
   "record_counts": {
-    "products": 158,
-    "wallets": 106
+    "products": 161,
+    "wallets": 107
   },
   "records": [
     {
@@ -1905,6 +1905,42 @@
       "status": "limited"
     },
     {
+      "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000159",
+      "human_url": "https://wlr.badjoke-lab.com/product/magic-eden-wallet-extension/",
+      "machine_url": "https://wlr.badjoke-lab.com/data/series/records/product--magic-eden-wallet-extension.json",
+      "name": "Magic Eden Wallet Browser Extension",
+      "native_machine_url": "https://wlr.badjoke-lab.com/data/products/magic-eden-wallet-extension.json",
+      "native_record_id": "wlr_prod_000159",
+      "native_record_type": "wlr.product-record.v1",
+      "series_slug": "product--magic-eden-wallet-extension",
+      "slug": "magic-eden-wallet-extension",
+      "status": "deprecated"
+    },
+    {
+      "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000160",
+      "human_url": "https://wlr.badjoke-lab.com/product/magic-eden-wallet-mobile/",
+      "machine_url": "https://wlr.badjoke-lab.com/data/series/records/product--magic-eden-wallet-mobile.json",
+      "name": "Magic Eden Wallet Mobile",
+      "native_machine_url": "https://wlr.badjoke-lab.com/data/products/magic-eden-wallet-mobile.json",
+      "native_record_id": "wlr_prod_000160",
+      "native_record_type": "wlr.product-record.v1",
+      "series_slug": "product--magic-eden-wallet-mobile",
+      "slug": "magic-eden-wallet-mobile",
+      "status": "deprecated"
+    },
+    {
+      "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000161",
+      "human_url": "https://wlr.badjoke-lab.com/product/magic-eden-account-wallet/",
+      "machine_url": "https://wlr.badjoke-lab.com/data/series/records/product--magic-eden-account-wallet.json",
+      "name": "Magic Eden Account Wallet",
+      "native_machine_url": "https://wlr.badjoke-lab.com/data/products/magic-eden-account-wallet.json",
+      "native_record_id": "wlr_prod_000161",
+      "native_record_type": "wlr.product-record.v1",
+      "series_slug": "product--magic-eden-account-wallet",
+      "slug": "magic-eden-account-wallet",
+      "status": "deprecated"
+    },
+    {
       "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000001",
       "human_url": "https://wlr.badjoke-lab.com/wallet/trezor/",
       "machine_url": "https://wlr.badjoke-lab.com/data/series/records/wallet--trezor.json",
@@ -3175,6 +3211,18 @@
       "series_slug": "wallet--holdstation-wallet",
       "slug": "holdstation-wallet",
       "status": "active"
+    },
+    {
+      "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000107",
+      "human_url": "https://wlr.badjoke-lab.com/wallet/magic-eden-wallet/",
+      "machine_url": "https://wlr.badjoke-lab.com/data/series/records/wallet--magic-eden-wallet.json",
+      "name": "Magic Eden Wallet",
+      "native_machine_url": "https://wlr.badjoke-lab.com/data/wallets/magic-eden-wallet.json",
+      "native_record_id": "wlr_ent_000107",
+      "native_record_type": "wlr.wallet-record.v1",
+      "series_slug": "wallet--magic-eden-wallet",
+      "slug": "magic-eden-wallet",
+      "status": "deprecated"
     }
   ],
   "registry_id": "cryptocurrency-wallet-lifecycle-registry",
