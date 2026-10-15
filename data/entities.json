@@ -2446,5 +2446,25 @@
     "confidence": "high",
     "last_verified_at": "2026-10-15",
     "notes": "The brand-level Magic Eden Solana NFT marketplace is still active and must not be conflated with this discontinued wallet-product line. The June 30 official documentation says vendor support ended after April 1, and that full wallet-service shutdown was planned for May 1, but does not independently prove the exact May 1 execution. Entity is conservatively classified deprecated, not dead, and discontinued_date is left unknown."
+  },
+  {
+    "id": "wlr_ent_000108",
+    "slug": "teleport-wallet",
+    "canonical_name": "Teleport Wallet",
+    "aliases": [],
+    "wallet_type": "software",
+    "status": "limited",
+    "summary": "Non-custodial cryptocurrency wallet primarily built for Silicon Network. It stopped new wallet creation on September 2, 2026 and announced a phased shutdown of wallet login, transfers, swaps and DApp connectivity at noon KST on December 31, 2026.",
+    "developer_or_company": "Teleport Wallet Team",
+    "country_or_origin": null,
+    "launch_date": null,
+    "official_url": "https://app.teleportwallet.net/",
+    "official_domain": "teleportwallet.net",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "Provider describes a non-custodial wallet with user-held keys; exact social-login recovery and access dependencies require independent verification.",
+    "confidence": "high",
+    "last_verified_at": "2026-10-16",
+    "notes": "Limited as of 2026-10-16. Future 2026-12-31 cutoff is announced, not treated as already effective. Silicon Network shutdown schedule corroborated by network's independent official notice. User asset-recovery limitations depend on whether the assets are bridge-backed or native Silicon assets, so universal recoverability is not asserted."
   }
 ]

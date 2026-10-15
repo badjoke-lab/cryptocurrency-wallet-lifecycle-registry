@@ -4099,5 +4099,27 @@
     "confidence": "high",
     "last_verified_at": "2026-10-15",
     "notes": "Official June 30, 2026 documentation establishes ended support after April 1 and planned May 1 full shutdown. Do not infer that installed clients ceased to function precisely on May 1 without execution evidence."
+  },
+  {
+    "id": "wlr_prod_000162",
+    "entity_id": "wlr_ent_000108",
+    "slug": "teleport-wallet-web",
+    "product_name": "Teleport Wallet Web App",
+    "product_type": "web_app",
+    "status": "limited",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": null,
+    "platform": [
+      "Web"
+    ],
+    "official_url": "https://app.teleportwallet.net/",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "key_management_model": "Vendor describes non-custodial wallet operation; wallet access depends on the announced Silicon Network service and social-login interface transition.",
+    "summary": "User-facing Teleport Wallet web application. New wallet creation ceased on September 2, 2026; the operator plans to stop transfers, swaps, login, balance/history views and interface services on December 31, 2026 (12:00 KST).",
+    "confidence": "high",
+    "last_verified_at": "2026-10-16",
+    "notes": "No confirmed ordinary software maintenance/update commitment: support_status remains unknown, distinct from the announced service shutdown. Existing withdrawal period is still open as of review date."
   }
 ]
