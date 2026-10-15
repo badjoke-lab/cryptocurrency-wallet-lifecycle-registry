@@ -328,6 +328,90 @@
         "user_actions_required": [
           "monitor"
         ]
+      },
+      {
+        "affected_components": [
+          "hardware implant",
+          "device display recovery-phrase interception",
+          "LTE/eSIM exfiltration module"
+        ],
+        "affected_product_ids": [],
+        "affected_regions": [
+          "Southeast Asia"
+        ],
+        "confidence": "high",
+        "description": "Ledger's security investigation determined that genuine hardware signers were physically modified with hidden components after leaving the manufacturer. The implants captured recovery phrases displayed during setup and sent them over a cellular connection. Ledger associated the confirmed draining operation with compromised devices redistributed through the Southeast Asian reseller channel; it reported no compromise of its Secure Element, operating system, or servers.",
+        "entity_id": "wlr_ent_000002",
+        "event_date": "2026-10-13",
+        "event_date_basis": "disclosure",
+        "event_status_effect": "none",
+        "event_type": "supply_chain_compromise",
+        "funds_affected": "yes",
+        "id": "wlr_ev_000282",
+        "impact_level": "critical",
+        "is_major_event": true,
+        "notes": "Disclosure anchor: Ledger Donjon's October 13 technical findings as reported contemporaneously, corroborated in Ledger's October 15 first-party report. No exact number of compromised units, manufacturer-confirmed loss total, affected SKU or responsible intermediary is established here. This updates the investigation after the separate October 9 precaution and is not the unrelated May Nano X researcher specimen.",
+        "product_id": null,
+        "security_scope": "supply_chain",
+        "title": "Ledger confirms recovery-phrase interception by hardware implants in reseller-distributed devices",
+        "user_actions_required": [
+          "move_funds",
+          "rotate_seed",
+          "replace_device",
+          "monitor"
+        ]
+      },
+      {
+        "affected_product_ids": [],
+        "affected_regions": [
+          "Europe",
+          "Germany"
+        ],
+        "confidence": "high",
+        "description": "MediaMarktSaturn said it withdrew Ledger products from its retail stores and online platforms across its markets after reports of tampered devices purchased in Germany. Ledger described the suspension as coordinated with the retailer. Public accounts of two allegedly modified store-purchased units remain distinct from independently confirmed CryptoBilis-linked wallet drains; no fund loss was reported in connection with the German case.",
+        "entity_id": "wlr_ent_000002",
+        "event_date": "2026-10-13",
+        "event_date_basis": "announcement",
+        "event_status_effect": "none",
+        "event_type": "policy_change",
+        "funds_affected": "unknown",
+        "id": "wlr_ev_000283",
+        "impact_level": "high",
+        "is_major_event": true,
+        "notes": "Event confirms the retailer's precautionary sales suspension and Ledger coordination, not proof that every claimed German device implant was independently authenticated or part of the same CryptoBilis distribution chain. Do not imply the company ended all direct Ledger sales.",
+        "product_id": null,
+        "security_scope": "physical_delivery",
+        "third_party_name": "MediaMarktSaturn",
+        "title": "MediaMarktSaturn removes Ledger devices from retail sale as a precaution",
+        "user_actions_required": [
+          "monitor"
+        ]
+      },
+      {
+        "affected_product_ids": [],
+        "affected_regions": [
+          "Southeast Asia",
+          "Hong Kong",
+          "Germany"
+        ],
+        "confidence": "high",
+        "description": "Ledger said organized attackers modified genuine devices after they left company control, added custom recovery-phrase-capturing implants and redistributed them through Southeast Asian resellers. Its teams tested samples from stores including Germany and warehouses, reporting the examined samples clean. It asked authorized resellers and distributors to pause sales in Southeast Asia and Hong Kong, reiterated that returned signers must not be resold, and instituted further stock-handling and incident-reporting controls.",
+        "entity_id": "wlr_ent_000002",
+        "event_date": "2026-10-15",
+        "event_date_basis": "announcement",
+        "event_status_effect": "none",
+        "event_type": "policy_change",
+        "funds_affected": "yes",
+        "id": "wlr_ev_000284",
+        "impact_level": "high",
+        "is_major_event": true,
+        "notes": "First-party company response dated 2026-10-15. Ledger characterizes this as a localized distribution attack and says its own chip, OS and servers were not compromised. Store/warehouse sampling cannot demonstrate that every unit worldwide was checked. Victim-count and loss figures have not been independently reconciled by WLR.",
+        "product_id": null,
+        "security_scope": "supply_chain",
+        "title": "Ledger publishes distribution-attack findings and strengthens reseller handling rules",
+        "user_actions_required": [
+          "monitor"
+        ]
       }
     ]
   },
@@ -659,6 +743,81 @@
         "source_type": "official_social",
         "title": "Mark Karpelès: separate Malaysia-shipped Ledger device containing alleged hardware implant",
         "url": "https://x.com/MagicalTux/status/2108576506704548179"
+      },
+      {
+        "accessed_at": "2026-10-16",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000002",
+        "event_id": "wlr_ev_000282",
+        "id": "wlr_src_000590",
+        "is_primary": true,
+        "notes": "Manufacturer's first-party confirmation of physically altered genuine devices, recovery-phrase collection and resale through the Southeast Asian distribution channel; no chip, OS, or server flaw.",
+        "published_at": "2026-10-15",
+        "publisher": "Ledger",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Ledger's Response to the Hardware Implant Attack",
+        "url": "https://www.ledger.com/blog-response-hardware-implant-attack"
+      },
+      {
+        "accessed_at": "2026-10-16",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000002",
+        "event_id": "wlr_ev_000282",
+        "id": "wlr_src_000591",
+        "is_primary": false,
+        "notes": "Contemporaneous technical account citing Ledger's Donjon investigation, LTE/eSIM exfiltration and lack of Secure Element/OS compromise.",
+        "published_at": "2026-10-13",
+        "publisher": "CoinDesk",
+        "reliability": "high",
+        "source_type": "news_article",
+        "title": "Ledger says spy chip inside CryptoBilis Ledger devices transmitted wallet keys over mobile network",
+        "url": "https://www.coindesk.com/tech/2026/10/13/ledger-says-spy-chip-inside-cryptobilis-ledger-devices-transmitted-wallet-keys-over-mobile-network"
+      },
+      {
+        "accessed_at": "2026-10-16",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000002",
+        "event_id": "wlr_ev_000283",
+        "id": "wlr_src_000592",
+        "is_primary": false,
+        "notes": "Includes direct spokesperson statement confirming retailer-wide precautionary withdrawal and Ledger's statement of coordination and no confirmed German case-related fund losses.",
+        "published_at": "2026-10-13",
+        "publisher": "Cointelegraph",
+        "reliability": "high",
+        "source_type": "news_article",
+        "title": "MediaMarktSaturn pulls Ledger products amid tampering reports",
+        "url": "https://cointelegraph.com/news/mediamarkt-pulls-ledger-wallet-security-incident"
+      },
+      {
+        "accessed_at": "2026-10-16",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000002",
+        "event_id": "wlr_ev_000283",
+        "id": "wlr_src_000593",
+        "is_primary": false,
+        "notes": "Direct MediaMarktSaturn statement; separately preserves reports from Germany and other locations without attributing their physical devices to CryptoBilis.",
+        "published_at": "2026-10-13",
+        "publisher": "The Block",
+        "reliability": "high",
+        "source_type": "news_article",
+        "title": "Ledger confirms hardware implant in CryptoBilis reseller units as MediaMarkt suspends sales in Europe",
+        "url": "https://www.theblock.co/news/business/2026-10-13-ledger-confirms-hardware-implant-cryptobilis-reseller-units-mediamarkt-suspends-sales-europe-418442"
+      },
+      {
+        "accessed_at": "2026-10-16",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000002",
+        "event_id": "wlr_ev_000284",
+        "id": "wlr_src_000594",
+        "is_primary": true,
+        "notes": "Primary record for Ledger's sales suspensions covering Southeast Asia/Hong Kong and October 15 reseller handling policy changes. Clean sampled stock is not universal assurance.",
+        "published_at": "2026-10-15",
+        "publisher": "Ledger",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Ledger's Response to the Hardware Implant Attack — updated distribution controls",
+        "url": "https://www.ledger.com/blog-response-hardware-implant-attack"
       }
     ]
   },
