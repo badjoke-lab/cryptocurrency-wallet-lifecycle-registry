@@ -10163,5 +10163,49 @@
     "claim_scope": "event",
     "is_primary": true,
     "notes": "Public reply indexed on the support account profile says the team is already handling the case and will reply via the customer's support ticket. Original reply permalink and exact publication date not retrieved. Confirms support engagement only, not the loss or cause."
+  },
+  {
+    "id": "wlr_src_000597",
+    "entity_id": "wlr_ent_000108",
+    "product_id": "wlr_prod_000162",
+    "event_id": "wlr_ev_000286",
+    "source_type": "official_statement",
+    "title": "Teleport Wallet Service Discontinuation and Asset Transfer Notice",
+    "url": "https://app.teleportwallet.net/",
+    "publisher": "Teleport Wallet Team",
+    "published_at": "2026-09-02",
+    "accessed_at": "2026-10-16",
+    "reliability": "high",
+    "claim_scope": "discontinuation",
+    "is_primary": true,
+    "product_ids": [
+      "wlr_prod_000162"
+    ],
+    "event_ids": [
+      "wlr_ev_000286"
+    ],
+    "notes": "Official wallet page with 2026-09-02 new-wallet stop and 2026-12-31 final service deadline; confirms non-custodial nature."
+  },
+  {
+    "id": "wlr_src_000598",
+    "entity_id": "wlr_ent_000108",
+    "product_id": "wlr_prod_000162",
+    "event_id": "wlr_ev_000286",
+    "source_type": "official_statement",
+    "title": "Silicon Network Service Termination Notice",
+    "url": "https://silicon.network/",
+    "publisher": "Silicon Network",
+    "published_at": "2026-09-02",
+    "accessed_at": "2026-10-16",
+    "reliability": "high",
+    "claim_scope": "event",
+    "is_primary": true,
+    "product_ids": [
+      "wlr_prod_000162"
+    ],
+    "event_ids": [
+      "wlr_ev_000286"
+    ],
+    "notes": "Primary network notice describes Silicon bridge deposit stop and withdrawal period to 2026-12-31. This is a dependency source and not proof that Teleport's own final cutoff already happened."
   }
 ]
