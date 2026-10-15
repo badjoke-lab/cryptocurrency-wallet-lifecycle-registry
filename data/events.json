@@ -5557,5 +5557,27 @@
       "monitor"
     ],
     "notes": "This is a verified public customer report and vendor-support acknowledgement, not a verified wallet exploit, private-key exposure or confirmed loss valuation. The precise original X status permalink and forensic report were not available at recording time; evidence includes the submitting user's screenshots and publicly indexed account statements. Do not connect to SafePal's August 2026 customer-order-data incident without evidence; product scope is the iOS SafePal App, not its hardware devices."
+  },
+  {
+    "id": "wlr_ev_000286",
+    "entity_id": "wlr_ent_000108",
+    "product_id": "wlr_prod_000162",
+    "affected_product_ids": [
+      "wlr_prod_000162"
+    ],
+    "event_type": "deprecation_announced",
+    "event_date": "2026-09-02",
+    "event_date_basis": "announcement",
+    "title": "Teleport Wallet ends new wallet creation and announces December 31 discontinuation",
+    "description": "Teleport Wallet announced that new wallet creation was disabled on September 2, 2026 at 11:00 KST. Its web wallet, signing/transfer, swap, login, DApp connection and history interfaces are scheduled to end December 31, 2026 at noon KST, linked to Silicon Network's withdrawal-and-shutdown timeline. This entry does not claim the final shutdown has occurred.",
+    "confidence": "high",
+    "impact_level": "high",
+    "event_status_effect": "limited",
+    "is_major_event": true,
+    "user_actions_required": [
+      "move_funds",
+      "migrate"
+    ],
+    "notes": "Timing derives from Teleport's official in-app shutdown notice and Silicon's official network closure notice; separate claims about assets that cannot bridge must remain asset-specific."
   }
 ]
