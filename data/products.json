@@ -4032,5 +4032,72 @@
     "confidence": "high",
     "last_verified_at": "2026-09-30",
     "notes": "Kept separate from the Biometric Wallet product because the key-storage and transaction-signing boundary is the phone rather than a hardware signer. Status remains limited while the September 2026 incident investigation and protective migration guidance remain active; this does not mark the entire DCENT entity or its hardware products as limited."
+  },
+  {
+    "id": "wlr_prod_000159",
+    "entity_id": "wlr_ent_000107",
+    "slug": "magic-eden-wallet-extension",
+    "product_name": "Magic Eden Wallet Browser Extension",
+    "product_type": "browser_extension",
+    "status": "deprecated",
+    "sales_status": "unknown",
+    "support_status": "ended",
+    "launch_date": null,
+    "platform": [
+      "Browser extension"
+    ],
+    "official_url": "https://help.magiceden.io/en/articles/13885539-magic-eden-wallet-deprecation-overview",
+    "source_code_url": null,
+    "custody_model": "unknown",
+    "key_management_model": "Official migration guidance describes exporting the wallet's private key; key custody details are not independently audited.",
+    "summary": "Magic Eden browser-extension wallet affected by the 2026 phased deprecation and planned May 1 shutdown.",
+    "confidence": "high",
+    "last_verified_at": "2026-10-15",
+    "notes": "Official June 30, 2026 documentation establishes ended support after April 1 and planned May 1 full shutdown. Do not infer that installed clients ceased to function precisely on May 1 without execution evidence."
+  },
+  {
+    "id": "wlr_prod_000160",
+    "entity_id": "wlr_ent_000107",
+    "slug": "magic-eden-wallet-mobile",
+    "product_name": "Magic Eden Wallet Mobile",
+    "product_type": "mobile_app",
+    "status": "deprecated",
+    "sales_status": "end_of_sale",
+    "support_status": "ended",
+    "launch_date": null,
+    "platform": [
+      "iOS",
+      "Android"
+    ],
+    "official_url": "https://help.magiceden.io/en/articles/13885539-magic-eden-wallet-deprecation-overview",
+    "source_code_url": null,
+    "custody_model": "unknown",
+    "key_management_model": "Official migration guidance describes exporting the wallet's private key; key custody details are not independently audited.",
+    "summary": "Magic Eden mobile wallet affected by the 2026 app-store removal, end of support and planned May 1 shutdown.",
+    "confidence": "high",
+    "last_verified_at": "2026-10-15",
+    "notes": "Official June 30, 2026 documentation establishes ended support after April 1 and planned May 1 full shutdown. Do not infer that installed clients ceased to function precisely on May 1 without execution evidence."
+  },
+  {
+    "id": "wlr_prod_000161",
+    "entity_id": "wlr_ent_000107",
+    "slug": "magic-eden-account-wallet",
+    "product_name": "Magic Eden Account Wallet",
+    "product_type": "embedded_wallet",
+    "status": "deprecated",
+    "sales_status": "not_applicable",
+    "support_status": "ended",
+    "launch_date": null,
+    "platform": [
+      "Web"
+    ],
+    "official_url": "https://help.magiceden.io/en/articles/13885539-magic-eden-wallet-deprecation-overview",
+    "source_code_url": null,
+    "custody_model": "unknown",
+    "key_management_model": "Official migration guidance describes exporting the wallet's private key; key custody details are not independently audited.",
+    "summary": "Embedded Account Wallet created inside Magic Eden's website; official 2026 notice instructs users to export their private key because ongoing account-wallet support ends with the deprecation.",
+    "confidence": "high",
+    "last_verified_at": "2026-10-15",
+    "notes": "Official June 30, 2026 documentation establishes ended support after April 1 and planned May 1 full shutdown. Do not infer that installed clients ceased to function precisely on May 1 without execution evidence."
   }
 ]
