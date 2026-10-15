@@ -56,6 +56,30 @@
         "notes": "Year precision only. The July 2019 source concerns a DEX-capable official App version and already refers to the SafePal App; it is not treated as the exact initial App launch day. The May 2020 Software Wallet milestone is modeled as a later capability expansion rather than the initial App release.",
         "product_id": "wlr_prod_000073",
         "title": "SafePal App released in 2019"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000073"
+        ],
+        "amount_text": "USD 23,050 claimed by the user; not independently verified",
+        "confidence": "medium",
+        "description": "On October 11, user @kunaltradess publicly reported that three of four separately created SafePal wallets on one iPhone were emptied, alleging losses totaling USD 23,050. The user stated that the wallets used different recovery phrases and denied knowingly signing the transfers or installing suspicious applications. SafePal Support later publicly replied that its team was handling the case through a support ticket. No transaction-level independent validation, root cause or SafePal product vulnerability has been established.",
+        "entity_id": "wlr_ent_000026",
+        "event_date": "2026-10-11",
+        "event_date_basis": "disclosure",
+        "event_status_effect": "none",
+        "event_type": "other",
+        "funds_affected": "unknown",
+        "id": "wlr_ev_000285",
+        "impact_level": "medium",
+        "is_major_event": false,
+        "notes": "This is a verified public customer report and vendor-support acknowledgement, not a verified wallet exploit, private-key exposure or confirmed loss valuation. The precise original X status permalink and forensic report were not available at recording time; evidence includes the submitting user's screenshots and publicly indexed account statements. Do not connect to SafePal's August 2026 customer-order-data incident without evidence; product scope is the iOS SafePal App, not its hardware devices.",
+        "product_id": "wlr_prod_000073",
+        "security_scope": "other",
+        "title": "SafePal App user reports three wallet drains; cause unverified",
+        "user_actions_required": [
+          "monitor"
+        ]
       }
     ]
   },
@@ -133,6 +157,38 @@
         "source_type": "official_blog",
         "title": "SafePal Progress Update",
         "url": "https://www.safepal.com/en/blog/safepal-progress-update"
+      },
+      {
+        "accessed_at": "2026-10-16",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000026",
+        "event_id": "wlr_ev_000285",
+        "id": "wlr_src_000595",
+        "is_primary": true,
+        "notes": "First-person X report shown in operator-supplied screenshots, additionally mirrored in public social indexing. Specific X status URL was not retrieved; linked account URL is not a verified direct permalink. Primary evidence for the existence of the allegation, not proof of blockchain losses or a SafePal vulnerability.",
+        "product_id": "wlr_prod_000073",
+        "published_at": "2026-10-11",
+        "publisher": "Kunaltrades (@kunaltradess)",
+        "reliability": "medium",
+        "source_type": "community_reference",
+        "title": "Kunaltrades: public report of three SafePal wallets allegedly drained",
+        "url": "https://x.com/kunaltradess"
+      },
+      {
+        "accessed_at": "2026-10-16",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000026",
+        "event_id": "wlr_ev_000285",
+        "id": "wlr_src_000596",
+        "is_primary": true,
+        "notes": "Public reply indexed on the support account profile says the team is already handling the case and will reply via the customer's support ticket. Original reply permalink and exact publication date not retrieved. Confirms support engagement only, not the loss or cause.",
+        "product_id": "wlr_prod_000073",
+        "published_at": null,
+        "publisher": "SafePal Support (@safepal_support)",
+        "reliability": "medium",
+        "source_type": "official_social",
+        "title": "SafePal Support responds to Kunaltrades and confirms customer-support follow-up",
+        "url": "https://x.com/safepal_support"
       }
     ]
   },
