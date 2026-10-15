@@ -5426,5 +5426,28 @@
       "non-original implant hardware"
     ],
     "notes": "May 2026 is the precision established by the 26–30 May hardwear.io conference; Grand's published slides were revised May 29, but WLR does not infer an exact first-disclosure day. Vendor and researcher documentation distinguish a genuine Secure Element from physical hardware integrity: software Genuine Check cannot establish absence of an added spying implant. Separate Oct 9, 2026 photos and statements from Mark Karpelès concern a Malaysia-shipped unit he examined, reportedly obtained via an unrelated marketplace seller, not confirmed CryptoBilis stock. Neither the May specimen nor the Oct Karpelès specimen has been shown to account for the Oct CryptoBilis buyer loss reports. Do not link this to Oct wallet-drain estimates or assert a Ledger-wide firmware vulnerability."
+  },
+  {
+    "id": "wlr_ev_000281",
+    "entity_id": "wlr_ent_000107",
+    "product_id": null,
+    "affected_product_ids": [
+      "wlr_prod_000159",
+      "wlr_prod_000160",
+      "wlr_prod_000161"
+    ],
+    "event_type": "deprecation_announced",
+    "event_date": "2026-06-30",
+    "event_date_basis": "disclosure",
+    "title": "Magic Eden publishes wallet deprecation and migration guidance",
+    "description": "Magic Eden documented the phased retirement of its mobile wallet, browser extension and embedded Account Wallet. The official notice states that support ended after April 1, 2026 and describes May 1 as the planned full shutdown date. Users were directed to export their private keys to a compatible wallet. The exact execution date of the planned full shutdown is not independently established by this document.",
+    "confidence": "high",
+    "impact_level": "high",
+    "event_status_effect": "deprecated",
+    "is_major_event": true,
+    "user_actions_required": [
+      "migrate"
+    ],
+    "notes": "The event date is the date of the official Help Center documentation, not an inferred original announcement or an independently confirmed May 1 completion."
   }
 ]
