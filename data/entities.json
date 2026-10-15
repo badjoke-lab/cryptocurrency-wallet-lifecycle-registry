@@ -2424,5 +2424,27 @@
     "confidence": "high",
     "last_verified_at": "2026-09-20",
     "notes": "Entity-level custody remains conservative because the original mobile-wallet self-custody model is directly documented while the current World Mini App's exact custody/key-control architecture is not established by the reviewed distributor listing."
+  },
+  {
+    "id": "wlr_ent_000107",
+    "slug": "magic-eden-wallet",
+    "canonical_name": "Magic Eden Wallet",
+    "aliases": [
+      "Magic Eden Account Wallet"
+    ],
+    "wallet_type": "software",
+    "status": "deprecated",
+    "summary": "Magic Eden's cryptocurrency wallet ecosystem covering a browser extension, a mobile wallet and a distinct embedded Account Wallet product. Magic Eden's official 2026 guidance declares support ended for these wallet surfaces and describes a phased discontinuation, with an announced May 1 full shutdown target.",
+    "developer_or_company": "Magic Eden",
+    "country_or_origin": null,
+    "launch_date": null,
+    "official_url": "https://magiceden.io/",
+    "official_domain": "magiceden.io",
+    "source_code_urls": [],
+    "custody_model": "unknown",
+    "key_management_model": "The official migration materials require users to export per-wallet private keys. Do not infer custody or recovery properties beyond the documented migration route for each product.",
+    "confidence": "high",
+    "last_verified_at": "2026-10-15",
+    "notes": "The brand-level Magic Eden Solana NFT marketplace is still active and must not be conflated with this discontinued wallet-product line. The June 30 official documentation says vendor support ended after April 1, and that full wallet-service shutdown was planned for May 1, but does not independently prove the exact May 1 execution. Entity is conservatively classified deprecated, not dead, and discontinued_date is left unknown."
   }
 ]

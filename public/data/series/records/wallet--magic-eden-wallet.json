@@ -1,0 +1,158 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "current_vendor": null,
+      "custody_model": "unknown",
+      "open_source_status": null,
+      "product_ids": [
+        "wlr_prod_000159",
+        "wlr_prod_000160",
+        "wlr_prod_000161"
+      ],
+      "status": "deprecated",
+      "wallet_type": "software",
+      "website_status": null
+    },
+    "status": "deprecated"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000159",
+          "wlr_prod_000160",
+          "wlr_prod_000161"
+        ],
+        "confidence": "high",
+        "description": "Magic Eden documented the phased retirement of its mobile wallet, browser extension and embedded Account Wallet. The official notice states that support ended after April 1, 2026 and describes May 1 as the planned full shutdown date. Users were directed to export their private keys to a compatible wallet. The exact execution date of the planned full shutdown is not independently established by this document.",
+        "entity_id": "wlr_ent_000107",
+        "event_date": "2026-06-30",
+        "event_date_basis": "disclosure",
+        "event_status_effect": "deprecated",
+        "event_type": "deprecation_announced",
+        "id": "wlr_ev_000281",
+        "impact_level": "high",
+        "is_major_event": true,
+        "notes": "The event date is the date of the official Help Center documentation, not an inferred original announcement or an independently confirmed May 1 completion.",
+        "product_id": null,
+        "title": "Magic Eden publishes wallet deprecation and migration guidance",
+        "user_actions_required": [
+          "migrate"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-10-15",
+        "claim_scope": "discontinuation",
+        "entity_id": "wlr_ent_000107",
+        "event_id": "wlr_ev_000281",
+        "event_ids": [
+          "wlr_ev_000281"
+        ],
+        "id": "wlr_src_000587",
+        "is_primary": true,
+        "notes": "Primary declaration of product/support end after April 1 and May 1 planned shutdown. Covers browser extension, mobile app and Account Wallet.",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000159",
+          "wlr_prod_000160",
+          "wlr_prod_000161"
+        ],
+        "published_at": "2026-06-30",
+        "publisher": "Magic Eden Help Center",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Magic Eden Wallet Deprecation Overview",
+        "url": "https://help.magiceden.io/en/articles/13885539-magic-eden-wallet-deprecation-overview"
+      },
+      {
+        "accessed_at": "2026-10-15",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000107",
+        "event_id": "wlr_ev_000281",
+        "event_ids": [
+          "wlr_ev_000281"
+        ],
+        "id": "wlr_src_000588",
+        "is_primary": true,
+        "notes": "Primary notice distinguishes retiring Magic Eden Wallet and other surfaces from the continuing Solana Marketplace, preventing erroneous classification of the entire Magic Eden brand as dead.",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000159",
+          "wlr_prod_000160",
+          "wlr_prod_000161"
+        ],
+        "published_at": "2026-06-30",
+        "publisher": "Magic Eden Help Center",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Magic Eden Marketplace Updates & Service Changes",
+        "url": "https://help.magiceden.io/en/articles/13885504-magic-eden-marketplace-updates-service-changes"
+      },
+      {
+        "accessed_at": "2026-10-15",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000107",
+        "event_id": "wlr_ev_000281",
+        "event_ids": [
+          "wlr_ev_000281"
+        ],
+        "id": "wlr_src_000589",
+        "is_primary": true,
+        "notes": "Official guide substantiates the recommended private-key export and user migration pathway.",
+        "product_id": null,
+        "product_ids": [
+          "wlr_prod_000159",
+          "wlr_prod_000160",
+          "wlr_prod_000161"
+        ],
+        "published_at": "2026-06-30",
+        "publisher": "Magic Eden Help Center",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "How to Migrate Your Magic Eden Wallet",
+        "url": "https://help.magiceden.io/en/articles/13885558-how-to-migrate-your-magic-eden-wallet"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000107",
+  "identity": {
+    "aliases": [
+      "Magic Eden Account Wallet"
+    ],
+    "name": "Magic Eden Wallet"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/wallets/magic-eden-wallet.json",
+    "relationship_boundary": "wallet-to-product links are preserved as native product_ids but are not emitted as typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_ent_000107",
+    "native_record_type": "wlr.wallet-record.v1",
+    "slug": "magic-eden-wallet"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/magic-eden-wallet/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/wallet--magic-eden-wallet.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/wallets/magic-eden-wallet.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-10-15"
+  }
+}

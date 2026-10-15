@@ -9984,5 +9984,77 @@
     "claim_scope": "event",
     "is_primary": true,
     "notes": "First-person October report with photos of a physical implant hidden behind the screen; original post text also mirrored by Yahoo real-time search. This is a separate observation and does not prove that the examined device came from CryptoBilis or caused October thefts."
+  },
+  {
+    "id": "wlr_src_000587",
+    "entity_id": "wlr_ent_000107",
+    "product_id": null,
+    "event_id": "wlr_ev_000281",
+    "source_type": "official_statement",
+    "title": "Magic Eden Wallet Deprecation Overview",
+    "url": "https://help.magiceden.io/en/articles/13885539-magic-eden-wallet-deprecation-overview",
+    "publisher": "Magic Eden Help Center",
+    "published_at": "2026-06-30",
+    "accessed_at": "2026-10-15",
+    "reliability": "high",
+    "claim_scope": "discontinuation",
+    "is_primary": true,
+    "product_ids": [
+      "wlr_prod_000159",
+      "wlr_prod_000160",
+      "wlr_prod_000161"
+    ],
+    "event_ids": [
+      "wlr_ev_000281"
+    ],
+    "notes": "Primary declaration of product/support end after April 1 and May 1 planned shutdown. Covers browser extension, mobile app and Account Wallet."
+  },
+  {
+    "id": "wlr_src_000588",
+    "entity_id": "wlr_ent_000107",
+    "product_id": null,
+    "event_id": "wlr_ev_000281",
+    "source_type": "official_statement",
+    "title": "Magic Eden Marketplace Updates & Service Changes",
+    "url": "https://help.magiceden.io/en/articles/13885504-magic-eden-marketplace-updates-service-changes",
+    "publisher": "Magic Eden Help Center",
+    "published_at": "2026-06-30",
+    "accessed_at": "2026-10-15",
+    "reliability": "high",
+    "claim_scope": "product",
+    "is_primary": true,
+    "product_ids": [
+      "wlr_prod_000159",
+      "wlr_prod_000160",
+      "wlr_prod_000161"
+    ],
+    "event_ids": [
+      "wlr_ev_000281"
+    ],
+    "notes": "Primary notice distinguishes retiring Magic Eden Wallet and other surfaces from the continuing Solana Marketplace, preventing erroneous classification of the entire Magic Eden brand as dead."
+  },
+  {
+    "id": "wlr_src_000589",
+    "entity_id": "wlr_ent_000107",
+    "product_id": null,
+    "event_id": "wlr_ev_000281",
+    "source_type": "official_statement",
+    "title": "How to Migrate Your Magic Eden Wallet",
+    "url": "https://help.magiceden.io/en/articles/13885558-how-to-migrate-your-magic-eden-wallet",
+    "publisher": "Magic Eden Help Center",
+    "published_at": "2026-06-30",
+    "accessed_at": "2026-10-15",
+    "reliability": "high",
+    "claim_scope": "event",
+    "is_primary": true,
+    "product_ids": [
+      "wlr_prod_000159",
+      "wlr_prod_000160",
+      "wlr_prod_000161"
+    ],
+    "event_ids": [
+      "wlr_ev_000281"
+    ],
+    "notes": "Official guide substantiates the recommended private-key export and user migration pathway."
   }
 ]
