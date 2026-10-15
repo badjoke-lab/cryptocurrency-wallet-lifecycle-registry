@@ -5449,5 +5449,113 @@
       "migrate"
     ],
     "notes": "The event date is the date of the official Help Center documentation, not an inferred original announcement or an independently confirmed May 1 completion."
+  },
+  {
+    "id": "wlr_ev_000282",
+    "entity_id": "wlr_ent_000002",
+    "product_id": null,
+    "affected_product_ids": [],
+    "event_type": "supply_chain_compromise",
+    "event_date": "2026-10-13",
+    "event_date_basis": "disclosure",
+    "title": "Ledger confirms recovery-phrase interception by hardware implants in reseller-distributed devices",
+    "description": "Ledger's security investigation determined that genuine hardware signers were physically modified with hidden components after leaving the manufacturer. The implants captured recovery phrases displayed during setup and sent them over a cellular connection. Ledger associated the confirmed draining operation with compromised devices redistributed through the Southeast Asian reseller channel; it reported no compromise of its Secure Element, operating system, or servers.",
+    "confidence": "high",
+    "impact_level": "critical",
+    "security_scope": "supply_chain",
+    "funds_affected": "yes",
+    "event_status_effect": "none",
+    "affected_regions": [
+      "Southeast Asia"
+    ],
+    "is_major_event": true,
+    "user_actions_required": [
+      "move_funds",
+      "rotate_seed",
+      "replace_device",
+      "monitor"
+    ],
+    "affected_components": [
+      "hardware implant",
+      "device display recovery-phrase interception",
+      "LTE/eSIM exfiltration module"
+    ],
+    "notes": "Disclosure anchor: Ledger Donjon's October 13 technical findings as reported contemporaneously, corroborated in Ledger's October 15 first-party report. No exact number of compromised units, manufacturer-confirmed loss total, affected SKU or responsible intermediary is established here. This updates the investigation after the separate October 9 precaution and is not the unrelated May Nano X researcher specimen."
+  },
+  {
+    "id": "wlr_ev_000283",
+    "entity_id": "wlr_ent_000002",
+    "product_id": null,
+    "affected_product_ids": [],
+    "event_type": "policy_change",
+    "event_date": "2026-10-13",
+    "event_date_basis": "announcement",
+    "title": "MediaMarktSaturn removes Ledger devices from retail sale as a precaution",
+    "description": "MediaMarktSaturn said it withdrew Ledger products from its retail stores and online platforms across its markets after reports of tampered devices purchased in Germany. Ledger described the suspension as coordinated with the retailer. Public accounts of two allegedly modified store-purchased units remain distinct from independently confirmed CryptoBilis-linked wallet drains; no fund loss was reported in connection with the German case.",
+    "confidence": "high",
+    "impact_level": "high",
+    "security_scope": "physical_delivery",
+    "funds_affected": "unknown",
+    "event_status_effect": "none",
+    "affected_regions": [
+      "Europe",
+      "Germany"
+    ],
+    "third_party_name": "MediaMarktSaturn",
+    "is_major_event": true,
+    "user_actions_required": [
+      "monitor"
+    ],
+    "notes": "Event confirms the retailer's precautionary sales suspension and Ledger coordination, not proof that every claimed German device implant was independently authenticated or part of the same CryptoBilis distribution chain. Do not imply the company ended all direct Ledger sales."
+  },
+  {
+    "id": "wlr_ev_000284",
+    "entity_id": "wlr_ent_000002",
+    "product_id": null,
+    "affected_product_ids": [],
+    "event_type": "policy_change",
+    "event_date": "2026-10-15",
+    "event_date_basis": "announcement",
+    "title": "Ledger publishes distribution-attack findings and strengthens reseller handling rules",
+    "description": "Ledger said organized attackers modified genuine devices after they left company control, added custom recovery-phrase-capturing implants and redistributed them through Southeast Asian resellers. Its teams tested samples from stores including Germany and warehouses, reporting the examined samples clean. It asked authorized resellers and distributors to pause sales in Southeast Asia and Hong Kong, reiterated that returned signers must not be resold, and instituted further stock-handling and incident-reporting controls.",
+    "confidence": "high",
+    "impact_level": "high",
+    "security_scope": "supply_chain",
+    "funds_affected": "yes",
+    "event_status_effect": "none",
+    "affected_regions": [
+      "Southeast Asia",
+      "Hong Kong",
+      "Germany"
+    ],
+    "is_major_event": true,
+    "user_actions_required": [
+      "monitor"
+    ],
+    "notes": "First-party company response dated 2026-10-15. Ledger characterizes this as a localized distribution attack and says its own chip, OS and servers were not compromised. Store/warehouse sampling cannot demonstrate that every unit worldwide was checked. Victim-count and loss figures have not been independently reconciled by WLR."
+  },
+  {
+    "id": "wlr_ev_000285",
+    "entity_id": "wlr_ent_000026",
+    "product_id": "wlr_prod_000073",
+    "affected_product_ids": [
+      "wlr_prod_000073"
+    ],
+    "event_type": "other",
+    "event_date": "2026-10-11",
+    "event_date_basis": "disclosure",
+    "title": "SafePal App user reports three wallet drains; cause unverified",
+    "description": "On October 11, user @kunaltradess publicly reported that three of four separately created SafePal wallets on one iPhone were emptied, alleging losses totaling USD 23,050. The user stated that the wallets used different recovery phrases and denied knowingly signing the transfers or installing suspicious applications. SafePal Support later publicly replied that its team was handling the case through a support ticket. No transaction-level independent validation, root cause or SafePal product vulnerability has been established.",
+    "confidence": "medium",
+    "impact_level": "medium",
+    "security_scope": "other",
+    "funds_affected": "unknown",
+    "event_status_effect": "none",
+    "amount_text": "USD 23,050 claimed by the user; not independently verified",
+    "is_major_event": false,
+    "user_actions_required": [
+      "monitor"
+    ],
+    "notes": "This is a verified public customer report and vendor-support acknowledgement, not a verified wallet exploit, private-key exposure or confirmed loss valuation. The precise original X status permalink and forensic report were not available at recording time; evidence includes the submitting user's screenshots and publicly indexed account statements. Do not connect to SafePal's August 2026 customer-order-data incident without evidence; product scope is the iOS SafePal App, not its hardware devices."
   }
 ]
