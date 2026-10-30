@@ -5579,5 +5579,27 @@
       "migrate"
     ],
     "notes": "Timing derives from Teleport's official in-app shutdown notice and Silicon's official network closure notice; separate claims about assets that cannot bridge must remain asset-specific."
+  },
+  {
+    "id": "wlr_ev_000287",
+    "entity_id": "wlr_ent_000109",
+    "product_id": null,
+    "affected_product_ids": [
+      "wlr_prod_000163",
+      "wlr_prod_000164",
+      "wlr_prod_000165",
+      "wlr_prod_000166",
+      "wlr_prod_000167"
+    ],
+    "event_type": "service_shutdown",
+    "event_date": "2026-05-28",
+    "event_date_basis": "effective",
+    "title": "Leap Wallet applications sunset",
+    "description": "The operator confirms its browser, mobile and web wallet products and Compass-branded applications were discontinued on 28 May 2026.",
+    "confidence": "high",
+    "impact_level": "high",
+    "event_status_effect": "dead",
+    "is_major_event": true,
+    "notes": "Confirmed on the operator's current website. Historical software end-of-life event; not a security incident."
   }
 ]
