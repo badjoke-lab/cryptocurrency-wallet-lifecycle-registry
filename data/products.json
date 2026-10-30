@@ -4121,5 +4121,117 @@
     "confidence": "high",
     "last_verified_at": "2026-10-16",
     "notes": "No confirmed ordinary software maintenance/update commitment: support_status remains unknown, distinct from the announced service shutdown. Existing withdrawal period is still open as of review date."
+  },
+  {
+    "id": "wlr_prod_000163",
+    "entity_id": "wlr_ent_000109",
+    "slug": "leap-wallet-extension",
+    "product_name": "Leap Wallet Browser Extension",
+    "product_type": "browser_extension",
+    "status": "discontinued",
+    "sales_status": "not_applicable",
+    "support_status": "ended",
+    "launch_date": null,
+    "platform": [
+      "Chromium browsers"
+    ],
+    "official_url": "https://www.leapwallet.io/",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "summary": "Leap Wallet Browser Extension was included in Leap Wallet's May 28, 2026 shutdown of wallet and related products.",
+    "confidence": "high",
+    "last_verified_at": "2026-10-30",
+    "discontinued_date": "2026-05-28",
+    "notes": "First-party sunset notice names the affected Leap and Compass wallet products. iOS and Android belong to one mobile product identity. Discontinuation is not evidence of loss of on-chain customer assets."
+  },
+  {
+    "id": "wlr_prod_000164",
+    "entity_id": "wlr_ent_000109",
+    "slug": "leap-wallet-mobile",
+    "product_name": "Leap Wallet Mobile",
+    "product_type": "mobile_app",
+    "status": "discontinued",
+    "sales_status": "not_applicable",
+    "support_status": "ended",
+    "launch_date": null,
+    "platform": [
+      "iOS",
+      "Android"
+    ],
+    "official_url": "https://www.leapwallet.io/",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "summary": "Leap Wallet Mobile was included in Leap Wallet's May 28, 2026 shutdown of wallet and related products.",
+    "confidence": "high",
+    "last_verified_at": "2026-10-30",
+    "discontinued_date": "2026-05-28",
+    "notes": "First-party sunset notice names the affected Leap and Compass wallet products. iOS and Android belong to one mobile product identity. Discontinuation is not evidence of loss of on-chain customer assets."
+  },
+  {
+    "id": "wlr_prod_000165",
+    "entity_id": "wlr_ent_000109",
+    "slug": "leap-wallet-webapp",
+    "product_name": "Leap WebApp",
+    "product_type": "web_app",
+    "status": "discontinued",
+    "sales_status": "not_applicable",
+    "support_status": "ended",
+    "launch_date": null,
+    "platform": [
+      "Web"
+    ],
+    "official_url": "https://www.leapwallet.io/",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "summary": "Leap WebApp was included in Leap Wallet's May 28, 2026 shutdown of wallet and related products.",
+    "confidence": "high",
+    "last_verified_at": "2026-10-30",
+    "discontinued_date": "2026-05-28",
+    "notes": "First-party sunset notice names the affected Leap and Compass wallet products. iOS and Android belong to one mobile product identity. Discontinuation is not evidence of loss of on-chain customer assets."
+  },
+  {
+    "id": "wlr_prod_000166",
+    "entity_id": "wlr_ent_000109",
+    "slug": "compass-wallet-extension",
+    "product_name": "Compass Wallet Browser Extension",
+    "product_type": "browser_extension",
+    "status": "discontinued",
+    "sales_status": "not_applicable",
+    "support_status": "ended",
+    "launch_date": null,
+    "platform": [
+      "Chromium browsers"
+    ],
+    "official_url": "https://www.leapwallet.io/",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "summary": "Compass Wallet Browser Extension was included in Leap Wallet's May 28, 2026 shutdown of wallet and related products.",
+    "confidence": "high",
+    "last_verified_at": "2026-10-30",
+    "discontinued_date": "2026-05-28",
+    "notes": "First-party sunset notice names the affected Leap and Compass wallet products. iOS and Android belong to one mobile product identity. Discontinuation is not evidence of loss of on-chain customer assets."
+  },
+  {
+    "id": "wlr_prod_000167",
+    "entity_id": "wlr_ent_000109",
+    "slug": "compass-wallet-mobile",
+    "product_name": "Compass Wallet Mobile",
+    "product_type": "mobile_app",
+    "status": "discontinued",
+    "sales_status": "not_applicable",
+    "support_status": "ended",
+    "launch_date": null,
+    "platform": [
+      "iOS",
+      "Android"
+    ],
+    "official_url": "https://www.leapwallet.io/",
+    "source_code_url": null,
+    "custody_model": "self_custody",
+    "summary": "Compass Wallet Mobile was included in Leap Wallet's May 28, 2026 shutdown of wallet and related products.",
+    "confidence": "high",
+    "last_verified_at": "2026-10-30",
+    "discontinued_date": "2026-05-28",
+    "notes": "First-party sunset notice names the affected Leap and Compass wallet products. iOS and Android belong to one mobile product identity. Discontinuation is not evidence of loss of on-chain customer assets."
   }
 ]
