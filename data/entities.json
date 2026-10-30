@@ -2466,5 +2466,28 @@
     "confidence": "high",
     "last_verified_at": "2026-10-16",
     "notes": "Limited as of 2026-10-16. Future 2026-12-31 cutoff is announced, not treated as already effective. Silicon Network shutdown schedule corroborated by network's independent official notice. User asset-recovery limitations depend on whether the assets are bridge-backed or native Silicon assets, so universal recoverability is not asserted."
+  },
+  {
+    "id": "wlr_ent_000109",
+    "slug": "leap-wallet",
+    "canonical_name": "Leap Wallet",
+    "aliases": [
+      "Leap"
+    ],
+    "wallet_type": "software",
+    "status": "dead",
+    "summary": "Non-custodial multichain wallet ecosystem encompassing Leap's browser, mobile and web wallets and its Compass-branded wallet applications. The operator confirms that the products were sunset on 28 May 2026.",
+    "developer_or_company": "Leap Wallet team",
+    "country_or_origin": null,
+    "launch_date": null,
+    "official_url": "https://www.leapwallet.io/",
+    "official_domain": "leapwallet.io",
+    "source_code_urls": [],
+    "custody_model": "self_custody",
+    "key_management_model": "Locally managed recovery phrases and private keys; users retain on-chain assets and can restore access in compatible wallet software.",
+    "confidence": "high",
+    "last_verified_at": "2026-10-30",
+    "discontinued_date": "2026-05-28",
+    "notes": "The first-party current site explicitly confirms that Leap Wallet and associated products were sunset on 2026-05-28. Historical first-party sunset FAQ distinguishes Leap extension/mobile/WebApp and Compass extension/mobile. Swapfast, validator and Cosmos Snaps are associated non-core services not counted as separate wallet products here. Exact initial wallet launch date withheld because sources differ on 2021/2022 start. Brand homepage availability is a memorial, not evidence of live wallet service."
   }
 ]
