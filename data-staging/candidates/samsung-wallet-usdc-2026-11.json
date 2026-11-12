@@ -1,0 +1,154 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_samsung-wallet-usdc-2026-11",
+  "title": "Samsung Wallet Stablecoin Account (USDC on Solana) launch",
+  "review_state": "researching",
+  "notes": "Source-backed candidate for an embedded custodial USDC wallet account, rather than a new launch date for the wider Samsung Wallet app. The November 5 first-party Solana launch statement dates operational availability to November 2, 2026. Sui partnership was announced separately; live Sui functionality is not asserted. Eligibility is restricted to qualifying U.S. residents and devices and excludes New York. Compatible-device footprint is not an active-user figure.",
+  "records": {
+    "entities": [
+      {
+        "id": "wlr_ent_961112",
+        "slug": "samsung-wallet",
+        "canonical_name": "Samsung Wallet",
+        "aliases": [],
+        "wallet_type": "software",
+        "status": "active",
+        "summary": "Samsung's digital wallet application includes a custodial Stablecoin Account enabling eligible U.S. Galaxy users to hold and transfer USDC on Solana since November 2026.",
+        "developer_or_company": "Samsung Electronics",
+        "country_or_origin": null,
+        "launch_date": null,
+        "official_url": "https://news.samsung.com/us/samsung-wallet-bring-stablecoin-access-eligible-galaxy-users-us/",
+        "official_domain": "samsung.com",
+        "source_code_urls": [],
+        "custody_model": "custodial",
+        "key_management_model": "Stablecoin Account infrastructure provided by Bastion; Coinbase Prime Vault acts as USDC sub-custodian. The user is not required to manage private keys for this integrated feature.",
+        "confidence": "high",
+        "last_verified_at": "2026-11-12",
+        "notes": "The entity refers to Samsung Wallet as a product ecosystem; the 2026-11-02 date is the USDC Stablecoin Account feature's live date, not the original Samsung Wallet application launch. Product-level support commitments are not inferred from current account availability."
+      }
+    ],
+    "products": [
+      {
+        "id": "wlr_prod_961112",
+        "entity_id": "wlr_ent_961112",
+        "slug": "samsung-wallet-stablecoin-account",
+        "product_name": "Samsung Wallet Stablecoin Account",
+        "product_type": "embedded_wallet",
+        "status": "active",
+        "sales_status": "not_applicable",
+        "support_status": "unknown",
+        "launch_date": "2026-11-02",
+        "launch_date_precision": "day",
+        "platform": [
+          "Android 13+ compatible Galaxy devices in the United States"
+        ],
+        "official_url": "https://news.samsung.com/us/samsung-wallet-bring-stablecoin-access-eligible-galaxy-users-us/",
+        "source_code_url": null,
+        "custody_model": "custodial",
+        "key_management_model": "Bastion account/custody infrastructure with Coinbase Prime Vault sub-custody; user access in Samsung Wallet is authenticated by device biometrics.",
+        "summary": "An embedded USDC stablecoin account in Samsung Wallet for eligible adult U.S. residents, initially confirmed live on Solana; supports purchase, holdings, wallet transfers, and eligible cross-border bank payouts.",
+        "confidence": "high",
+        "last_verified_at": "2026-11-12",
+        "notes": "Product identity is limited to the embedded Stablecoin Account, not all Samsung Pay card functionality. Initial eligibility excludes New York residents. Sui integration was announced, but Solana is the network independently identified as live in the November 5 statement."
+      }
+    ],
+    "events": [
+      {
+        "id": "wlr_ev_961112",
+        "entity_id": "wlr_ent_961112",
+        "product_id": "wlr_prod_961112",
+        "affected_product_ids": [
+          "wlr_prod_961112"
+        ],
+        "event_type": "product_announced",
+        "event_date": "2026-10-07",
+        "event_date_basis": "announcement",
+        "title": "Samsung announces integrated USDC Stablecoin Account for eligible U.S. Galaxy users",
+        "description": "Samsung announced stablecoin access within Samsung Wallet, with USDC first and Bastion, Coinbase, Solana and Sui named as partners. Availability was initially planned for the last week of October 2026.",
+        "confidence": "high",
+        "impact_level": "high",
+        "security_scope": "none",
+        "funds_affected": "unknown",
+        "event_status_effect": "none",
+        "is_major_event": true,
+        "affected_regions": [
+          "United States"
+        ],
+        "notes": "Announcement is distinguished from the actual November 2 launch. Sui partnership at this point is not proof of live Sui transactions."
+      },
+      {
+        "id": "wlr_ev_961113",
+        "entity_id": "wlr_ent_961112",
+        "product_id": "wlr_prod_961112",
+        "affected_product_ids": [
+          "wlr_prod_961112"
+        ],
+        "event_type": "product_released",
+        "event_date": "2026-11-02",
+        "event_date_basis": "effective",
+        "title": "Samsung Wallet Stablecoin Account goes live with USDC on Solana",
+        "description": "Solana Foundation's November 5 first-party notice states that the USDC Stablecoin Account was live from November 2 for eligible U.S. Galaxy users. Users can buy, hold, send and receive USDC on Solana and use qualifying bank payout routes.",
+        "confidence": "high",
+        "impact_level": "high",
+        "security_scope": "none",
+        "funds_affected": "unknown",
+        "event_status_effect": "active",
+        "is_major_event": true,
+        "affected_regions": [
+          "United States (except New York)"
+        ],
+        "notes": "The approximately 82 million figure is a compatible-device footprint, not a count of active users or verified wallet accounts. Online and physical point-of-sale stablecoin payments are future possibilities, not established launch features."
+      }
+    ],
+    "evidence": [
+      {
+        "id": "wlr_src_961112",
+        "entity_id": "wlr_ent_961112",
+        "product_id": "wlr_prod_961112",
+        "event_id": "wlr_ev_961112",
+        "source_type": "official_statement",
+        "title": "Samsung Wallet to Bring Stablecoin Access to Eligible Galaxy Users in the US",
+        "url": "https://news.samsung.com/us/samsung-wallet-bring-stablecoin-access-eligible-galaxy-users-us/",
+        "publisher": "Samsung Electronics America",
+        "published_at": "2026-10-07",
+        "accessed_at": "2026-11-12",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "Primary announcement for the USDC account, U.S. eligibility, announced partner networks and proposed later stablecoin payment functionality."
+      },
+      {
+        "id": "wlr_src_961113",
+        "entity_id": "wlr_ent_961112",
+        "product_id": "wlr_prod_961112",
+        "event_id": "wlr_ev_961113",
+        "source_type": "official_statement",
+        "title": "Stablecoin Account Goes Live in Samsung Wallet, Bringing USDC on Solana to Eligible U.S. Galaxy Users",
+        "url": "https://solana.com/news/stablecoin-account-goes-live-in-samsung-wallet-bringing-usdc-on-solana-to-eligible-u-s-galaxy-users",
+        "publisher": "Solana Foundation",
+        "published_at": "2026-11-05",
+        "accessed_at": "2026-11-12",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "First-party partner notice explicitly gives November 2, 2026 as live date and documents Solana settlement, eligibility, custody, sending and payout functions."
+      },
+      {
+        "id": "wlr_src_961114",
+        "entity_id": "wlr_ent_961112",
+        "product_id": "wlr_prod_961112",
+        "event_id": null,
+        "source_type": "official_blog",
+        "title": "Coinbase and Samsung Bring USDC to Samsung Wallet",
+        "url": "https://www.coinbase.com/blog/coinbase-and-samsung-bring-usdc-to-samsung-wallet",
+        "publisher": "Coinbase",
+        "published_at": "2026-10-08",
+        "accessed_at": "2026-11-12",
+        "reliability": "high",
+        "claim_scope": "architecture",
+        "is_primary": true,
+        "notes": "Identifies Coinbase Prime Vault's sub-custody role alongside a licensed stablecoin partner. Does not support claims of self-custody by end users."
+      }
+    ]
+  }
+}
