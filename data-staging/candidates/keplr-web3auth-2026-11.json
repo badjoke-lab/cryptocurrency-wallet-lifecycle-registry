@@ -1,0 +1,142 @@
+{
+  "bundle_version": "1.0.0",
+  "candidate_id": "wlr_cand_keplr-web3auth-2026-11",
+  "title": "Keplr social-login private-key exposure and unauthorized transfers",
+  "review_state": "researching",
+  "notes": "The existing Keplr entity remains active. The affected boundary is the Web3Auth-dependent Google/Apple account variant rather than a particular Keplr client release. No product-specific impact or final reimbursement outcome is established. Torus Wallet is also named in the provider's update; its separate identity and product boundary require separate review. Direct retrieval of some links was unavailable; the official November 13 statement was available as indexed full text. Review primary links and run candidate validation before canonical promotion.",
+  "records": {
+    "entities": [],
+    "products": [],
+    "events": [
+      {
+        "id": "wlr_ev_961118",
+        "entity_id": "wlr_ent_000043",
+        "product_id": null,
+        "affected_product_ids": [],
+        "affected_variants": [
+          "Accounts created with Google or Apple login via Web3Auth"
+        ],
+        "event_type": "private_key_exposure",
+        "event_date": "2026-11-07",
+        "event_date_basis": "disclosure",
+        "title": "Web3Auth security incident exposed some Keplr social-login wallet keys",
+        "description": "Keplr reported unauthorized transactions involving some accounts created using Google or Apple login and paused those login options. Web3Auth confirmed a security issue in its own infrastructure affecting certain embedded wallets. Keplr distinguished recovery-phrase and hardware-wallet accounts from the affected social-login variant. Web3Auth and Keplr moved at-risk assets into protective recovery wallets. On November 13 Web3Auth reported that access for existing users of its Plug & Play and SFA SDKs had resumed, with restrictions remaining, and that return of recovered assets was still being coordinated.",
+        "confidence": "high",
+        "impact_level": "critical",
+        "security_scope": "third_party_vendor",
+        "funds_affected": "yes",
+        "event_status_effect": "none",
+        "third_party_name": "Web3Auth (Consensys)",
+        "affected_data": [
+          "Private keys"
+        ],
+        "affected_users_text": "Some Google/Apple-login accounts; Keplr co-founder estimated approximately 20% of this cohort, not 20% of all users (reported by The Block).",
+        "amount_text": "Bitquery estimated USD 1.82 million taken by the attacker; The Block reported about USD 5.6 million held at published recovery addresses on November 8. These are distinct estimates, not an official final loss or reimbursement total.",
+        "is_major_event": true,
+        "user_actions_required": [
+          "monitor",
+          "move_funds"
+        ],
+        "notes": "November 7 is the provider's confirmed disclosure date, not the date of the earliest unauthorized transaction. Bitquery reported earlier activity beginning November 1 UTC. No confirmed specific Keplr client version, technical root cause, final loss, victim count, return completion or Keplr-specific full restoration. Protective transfers are not counted as theft; SDK service restoration does not establish that compromised keys are safe. Initial Keplr guidance instructed affected users not to fund or recreate the old account."
+      }
+    ],
+    "evidence": [
+      {
+        "id": "wlr_src_961118",
+        "entity_id": "wlr_ent_000043",
+        "product_id": null,
+        "event_id": "wlr_ev_961118",
+        "source_type": "official_security_advisory",
+        "title": "Update on the Web3Auth Security Incident: Service Restoration and Asset Recovery",
+        "url": "https://web3auth.io/updates/security-incident-update.html",
+        "publisher": "Web3Auth",
+        "published_at": "2026-11-13",
+        "accessed_at": "2026-11-18",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "Indexed full first-party text confirms November 7 infrastructure issue; names Keplr and Torus Wallet, explains protective recovery and pending returns, and distinguishes restored existing-user access from remaining registration restrictions."
+      },
+      {
+        "id": "wlr_src_961119",
+        "entity_id": "wlr_ent_000043",
+        "product_id": null,
+        "event_id": "wlr_ev_961118",
+        "source_type": "official_statement",
+        "title": "Login Service security incident maintenance notice",
+        "url": "https://status.web3auth.io/events/maintenance/461",
+        "publisher": "Web3Auth",
+        "published_at": "2026-11-06",
+        "accessed_at": "2026-11-18",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": true,
+        "notes": "Provider status notice dates maintenance start to 18:30 UTC on November 6."
+      },
+      {
+        "id": "wlr_src_961120",
+        "entity_id": "wlr_ent_000043",
+        "product_id": null,
+        "event_id": "wlr_ev_961118",
+        "source_type": "news_article",
+        "title": "Web3Auth says it frontran hackers by moving $5.6 million out of exposed Keplr wallets",
+        "url": "https://www.theblock.co/news/defi/2026-11-08-web3auth-says-it-frontran-hackers-by-moving-5-6-million-out-of-exposed-keplr-wallets-436029",
+        "publisher": "The Block",
+        "published_at": "2026-11-08",
+        "accessed_at": "2026-11-18",
+        "reliability": "high",
+        "claim_scope": "funds_affected",
+        "is_primary": false,
+        "notes": "Reports key exposure, Keplr co-founder estimate for the social-login cohort, and snapshot value of published protective recovery addresses."
+      },
+      {
+        "id": "wlr_src_961121",
+        "entity_id": "wlr_ent_000043",
+        "product_id": null,
+        "event_id": "wlr_ev_961118",
+        "source_type": "security_research",
+        "title": "Keplr Wallet Hack: Attacker Took $1.82M Before the Rescue",
+        "url": "https://bitquery.io/investigations/keplr-wallet-hack",
+        "publisher": "Bitquery",
+        "published_at": null,
+        "accessed_at": "2026-11-18",
+        "reliability": "high",
+        "claim_scope": "funds_affected",
+        "is_primary": true,
+        "notes": "Independent on-chain reconstruction with data read on November 12; estimated theft is distinct from protective transfers and not a final provider-confirmed total."
+      },
+      {
+        "id": "wlr_src_961122",
+        "entity_id": "wlr_ent_000043",
+        "product_id": null,
+        "event_id": "wlr_ev_961118",
+        "source_type": "official_statement",
+        "title": "Privacy & Security",
+        "url": "https://help.keplr.app/general-faq/5R3bMyjtr3tXNeJo8ojSDV/privacy--security/5So5gM41LjRMhRcps2GQmq",
+        "publisher": "Keplr",
+        "published_at": null,
+        "accessed_at": "2026-11-18",
+        "reliability": "high",
+        "claim_scope": "architecture",
+        "is_primary": true,
+        "notes": "First-party help explicitly documents Web3Auth dependency for Google login and distinguishes Ledger and local private-key handling."
+      },
+      {
+        "id": "wlr_src_961123",
+        "entity_id": "wlr_ent_000043",
+        "product_id": null,
+        "event_id": "wlr_ev_961118",
+        "source_type": "news_article",
+        "title": "Keplr Wallet reports unauthorized transactions on accounts created with Google or Apple login; related login functions have been suspended",
+        "url": "https://www.ababnews.com/en/news/d79be6eb-f04c-44d6-bf6a-19b523cd43e7",
+        "publisher": "ABAB News",
+        "published_at": null,
+        "accessed_at": "2026-11-18",
+        "reliability": "high",
+        "claim_scope": "event",
+        "is_primary": false,
+        "notes": "Secondary report reproduces initial vendor instructions and links the Keplr official announcement at https://x.com/keplrwallet/status/2118933132900802826; direct original permalink requires review."
+      }
+    ]
+  }
+}
