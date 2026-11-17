@@ -1,11 +1,11 @@
 {
   "canonical_only": true,
-  "last_verified_at": "2026-10-16",
+  "last_verified_at": "2026-11-18",
   "object_type": "record_index",
-  "record_count": 270,
+  "record_count": 272,
   "record_counts": {
-    "products": 162,
-    "wallets": 108
+    "products": 163,
+    "wallets": 109
   },
   "records": [
     {
@@ -1953,6 +1953,18 @@
       "status": "limited"
     },
     {
+      "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.product-record.v1:wlr_prod_000163",
+      "human_url": "https://wlr.badjoke-lab.com/product/samsung-wallet-stablecoin-account/",
+      "machine_url": "https://wlr.badjoke-lab.com/data/series/records/product--samsung-wallet-stablecoin-account.json",
+      "name": "Samsung Wallet Stablecoin Account",
+      "native_machine_url": "https://wlr.badjoke-lab.com/data/products/samsung-wallet-stablecoin-account.json",
+      "native_record_id": "wlr_prod_000163",
+      "native_record_type": "wlr.product-record.v1",
+      "series_slug": "product--samsung-wallet-stablecoin-account",
+      "slug": "samsung-wallet-stablecoin-account",
+      "status": "active"
+    },
+    {
       "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000001",
       "human_url": "https://wlr.badjoke-lab.com/wallet/trezor/",
       "machine_url": "https://wlr.badjoke-lab.com/data/series/records/wallet--trezor.json",
@@ -3247,6 +3259,18 @@
       "series_slug": "wallet--teleport-wallet",
       "slug": "teleport-wallet",
       "status": "limited"
+    },
+    {
+      "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000109",
+      "human_url": "https://wlr.badjoke-lab.com/wallet/samsung-wallet/",
+      "machine_url": "https://wlr.badjoke-lab.com/data/series/records/wallet--samsung-wallet.json",
+      "name": "Samsung Wallet",
+      "native_machine_url": "https://wlr.badjoke-lab.com/data/wallets/samsung-wallet.json",
+      "native_record_id": "wlr_ent_000109",
+      "native_record_type": "wlr.wallet-record.v1",
+      "series_slug": "wallet--samsung-wallet",
+      "slug": "samsung-wallet",
+      "status": "active"
     }
   ],
   "registry_id": "cryptocurrency-wallet-lifecycle-registry",

@@ -4121,5 +4121,28 @@
     "confidence": "high",
     "last_verified_at": "2026-10-16",
     "notes": "No confirmed ordinary software maintenance/update commitment: support_status remains unknown, distinct from the announced service shutdown. Existing withdrawal period is still open as of review date."
+  },
+  {
+    "id": "wlr_prod_000163",
+    "entity_id": "wlr_ent_000109",
+    "slug": "samsung-wallet-stablecoin-account",
+    "product_name": "Samsung Wallet Stablecoin Account",
+    "product_type": "embedded_wallet",
+    "status": "active",
+    "sales_status": "not_applicable",
+    "support_status": "unknown",
+    "launch_date": "2026-11-02",
+    "launch_date_precision": "day",
+    "platform": [
+      "Android"
+    ],
+    "official_url": "https://www.samsung.com/us/support/answer/ANS10013605/",
+    "source_code_url": null,
+    "custody_model": "custodial",
+    "key_management_model": "Bastion provides stablecoin accounts and custody infrastructure; Coinbase provides sub-custody through Coinbase Prime Vault. Account access requires fingerprint authentication.",
+    "summary": "An embedded custodial USDC account that enables qualifying U.S. Galaxy users to purchase, hold, send and receive USDC on Solana and access eligible bank payouts.",
+    "confidence": "high",
+    "last_verified_at": "2026-11-18",
+    "notes": "Eligible U.S. residents aged 18 or older with a compatible Android 13+ Galaxy device and Samsung Account; New York residents are excluded according to Samsung's FAQ. Sui was announced as an infrastructure partner; live Sui availability is not established by the reviewed Solana launch notice. A maintenance commitment is not established."
   }
 ]

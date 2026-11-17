@@ -1,0 +1,186 @@
+{
+  "current_state": {
+    "native": {
+      "confidence": "high",
+      "current_vendor": null,
+      "custody_model": "custodial",
+      "open_source_status": null,
+      "product_ids": [
+        "wlr_prod_000163"
+      ],
+      "status": "active",
+      "wallet_type": "software",
+      "website_status": null
+    },
+    "status": "active"
+  },
+  "events": {
+    "mode": "inline",
+    "records": [
+      {
+        "affected_product_ids": [
+          "wlr_prod_000163"
+        ],
+        "affected_regions": [
+          "United States"
+        ],
+        "confidence": "high",
+        "description": "Samsung announced stablecoin functionality for eligible U.S. Samsung Wallet users, naming USDC as the first supported asset and Bastion, Coinbase, Solana and Sui as partners.",
+        "entity_id": "wlr_ent_000109",
+        "event_date": "2026-10-07",
+        "event_date_basis": "announcement",
+        "event_status_effect": "none",
+        "event_type": "product_announced",
+        "funds_affected": "unknown",
+        "id": "wlr_ev_000287",
+        "impact_level": "high",
+        "is_major_event": true,
+        "notes": "The announcement targeted the last week of October. The subsequently confirmed effective date is recorded separately.",
+        "product_id": "wlr_prod_000163",
+        "security_scope": "none",
+        "title": "Samsung announces USDC Stablecoin Account"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000163"
+        ],
+        "affected_regions": [
+          "United States"
+        ],
+        "confidence": "high",
+        "description": "The Solana Foundation reported on November 5 that the Stablecoin Account had gone live on November 2, enabling eligible U.S. Galaxy users to purchase, hold, send and receive USDC on Solana. The service also supports eligible bank payouts.",
+        "disclosed_at": "2026-11-05",
+        "entity_id": "wlr_ent_000109",
+        "event_date": "2026-11-02",
+        "event_date_basis": "effective",
+        "event_status_effect": "active",
+        "event_type": "product_released",
+        "funds_affected": "unknown",
+        "id": "wlr_ev_000288",
+        "impact_level": "high",
+        "is_major_event": true,
+        "notes": "Samsung's FAQ excludes New York residents. The approximately 82 million figure refers to compatible devices, not active accounts. No live Sui or in-store stablecoin payment claim is established here.",
+        "product_id": "wlr_prod_000163",
+        "security_scope": "none",
+        "title": "Samsung Wallet Stablecoin Account goes live with USDC on Solana"
+      }
+    ]
+  },
+  "evidence": {
+    "mode": "inline",
+    "records": [
+      {
+        "accessed_at": "2026-11-18",
+        "claim_scope": "launch_date",
+        "entity_id": "wlr_ent_000109",
+        "event_id": null,
+        "id": "wlr_src_000599",
+        "is_primary": true,
+        "notes": "Establishes the platform launch and its integration with the separate Samsung Blockchain Wallet.",
+        "product_id": null,
+        "published_at": "2022-06-16",
+        "publisher": "Samsung Electronics",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Introducing Samsung Wallet: An Easy-To-Use, Secure Platform That Holds Everything Your Digital Life Needs",
+        "url": "https://news.samsung.com/global/introducing-samsung-wallet-an-easy-to-use-secure-platform-that-holds-everything-your-digital-life-needs"
+      },
+      {
+        "accessed_at": "2026-11-18",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000109",
+        "event_id": "wlr_ev_000287",
+        "id": "wlr_src_000600",
+        "is_primary": true,
+        "notes": "First-party announcement of USDC, the planned rollout and partner roles.",
+        "product_id": "wlr_prod_000163",
+        "published_at": "2026-10-07",
+        "publisher": "Samsung Electronics America",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Samsung Wallet to Bring Stablecoin Access to Eligible Galaxy Users in the US",
+        "url": "https://www.samsungmobilepress.com/articles/samsung-wallet-stablecoin-galaxy-us"
+      },
+      {
+        "accessed_at": "2026-11-18",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000109",
+        "event_id": "wlr_ev_000288",
+        "id": "wlr_src_000601",
+        "is_primary": true,
+        "notes": "First-party network partner confirms the November 2 effective date, USDC on Solana and the provider custody arrangement.",
+        "product_id": "wlr_prod_000163",
+        "published_at": "2026-11-05",
+        "publisher": "Solana Foundation",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Stablecoin Account Goes Live in Samsung Wallet, Bringing USDC on Solana to Eligible U.S. Galaxy Users",
+        "url": "https://solana.com/news/samsung-wallet-solana"
+      },
+      {
+        "accessed_at": "2026-11-18",
+        "claim_scope": "product",
+        "entity_id": "wlr_ent_000109",
+        "event_id": null,
+        "id": "wlr_src_000602",
+        "is_primary": true,
+        "notes": "Current first-party product FAQ documents eligibility, New York exclusion, Android 13+, fingerprint authentication and the account's custody and payout functions.",
+        "product_id": "wlr_prod_000163",
+        "published_at": null,
+        "publisher": "Samsung Electronics America",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Samsung Wallet Stablecoin Account FAQs",
+        "url": "https://www.samsung.com/us/support/answer/ANS10013605/"
+      },
+      {
+        "accessed_at": "2026-11-18",
+        "claim_scope": "architecture",
+        "entity_id": "wlr_ent_000109",
+        "event_id": null,
+        "id": "wlr_src_000603",
+        "is_primary": true,
+        "notes": "Bastion's press release establishes its account operations, custody and remittance role; Solana's activation notice establishes Coinbase's sub-custody role.",
+        "product_id": "wlr_prod_000163",
+        "published_at": "2026-10-08",
+        "publisher": "Bastion",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Bastion Selected as One of Samsung Wallet’s Stablecoin Partners, Providing Regulated Infrastructure, Custody, and Cross-Border Remittances",
+        "url": "https://www.globenewswire.com/news-release/2026/10/08/3376923/0/en/bastion-selected-as-one-of-samsung-wallet-s-stablecoin-partners-providing-regulated-infrastructure-custody-and-cross-border-remittances.html"
+      }
+    ]
+  },
+  "global_record_key": "cryptocurrency-wallet-lifecycle-registry:wlr.wallet-record.v1:wlr_ent_000109",
+  "identity": {
+    "aliases": [],
+    "name": "Samsung Wallet"
+  },
+  "object_type": "record_envelope",
+  "provenance": {
+    "adapter": {
+      "id": "series-adapter-cryptocurrency-wallet-lifecycle-registry",
+      "version": "1.0.0"
+    },
+    "canonical_only": true,
+    "native_manifest": "https://wlr.badjoke-lab.com/data/manifest.json",
+    "native_record": "https://wlr.badjoke-lab.com/data/wallets/samsung-wallet.json",
+    "relationship_boundary": "wallet-to-product links are preserved as native product_ids but are not emitted as typed Series relationships during Stage 3"
+  },
+  "record_key": {
+    "native_record_id": "wlr_ent_000109",
+    "native_record_type": "wlr.wallet-record.v1",
+    "slug": "samsung-wallet"
+  },
+  "registry_id": "cryptocurrency-wallet-lifecycle-registry",
+  "relationships": [],
+  "series_schema_version": "1.0.0",
+  "urls": {
+    "human": "https://wlr.badjoke-lab.com/wallet/samsung-wallet/",
+    "machine": "https://wlr.badjoke-lab.com/data/series/records/wallet--samsung-wallet.json",
+    "native_machine": "https://wlr.badjoke-lab.com/data/wallets/samsung-wallet.json"
+  },
+  "verification": {
+    "last_verified_at": "2026-11-18"
+  }
+}
