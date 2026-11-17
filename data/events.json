@@ -5579,5 +5579,52 @@
       "migrate"
     ],
     "notes": "Timing derives from Teleport's official in-app shutdown notice and Silicon's official network closure notice; separate claims about assets that cannot bridge must remain asset-specific."
+  },
+  {
+    "id": "wlr_ev_000287",
+    "entity_id": "wlr_ent_000109",
+    "product_id": "wlr_prod_000163",
+    "affected_product_ids": [
+      "wlr_prod_000163"
+    ],
+    "confidence": "high",
+    "impact_level": "high",
+    "security_scope": "none",
+    "funds_affected": "unknown",
+    "is_major_event": true,
+    "event_type": "product_announced",
+    "event_date": "2026-10-07",
+    "event_date_basis": "announcement",
+    "title": "Samsung announces USDC Stablecoin Account",
+    "description": "Samsung announced stablecoin functionality for eligible U.S. Samsung Wallet users, naming USDC as the first supported asset and Bastion, Coinbase, Solana and Sui as partners.",
+    "event_status_effect": "none",
+    "affected_regions": [
+      "United States"
+    ],
+    "notes": "The announcement targeted the last week of October. The subsequently confirmed effective date is recorded separately."
+  },
+  {
+    "id": "wlr_ev_000288",
+    "entity_id": "wlr_ent_000109",
+    "product_id": "wlr_prod_000163",
+    "affected_product_ids": [
+      "wlr_prod_000163"
+    ],
+    "confidence": "high",
+    "impact_level": "high",
+    "security_scope": "none",
+    "funds_affected": "unknown",
+    "is_major_event": true,
+    "event_type": "product_released",
+    "event_date": "2026-11-02",
+    "event_date_basis": "effective",
+    "disclosed_at": "2026-11-05",
+    "title": "Samsung Wallet Stablecoin Account goes live with USDC on Solana",
+    "description": "The Solana Foundation reported on November 5 that the Stablecoin Account had gone live on November 2, enabling eligible U.S. Galaxy users to purchase, hold, send and receive USDC on Solana. The service also supports eligible bank payouts.",
+    "event_status_effect": "active",
+    "affected_regions": [
+      "United States"
+    ],
+    "notes": "Samsung's FAQ excludes New York residents. The approximately 82 million figure refers to compatible devices, not active accounts. No live Sui or in-store stablecoin payment claim is established here."
   }
 ]

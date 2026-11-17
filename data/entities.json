@@ -2466,5 +2466,26 @@
     "confidence": "high",
     "last_verified_at": "2026-10-16",
     "notes": "Limited as of 2026-10-16. Future 2026-12-31 cutoff is announced, not treated as already effective. Silicon Network shutdown schedule corroborated by network's independent official notice. User asset-recovery limitations depend on whether the assets are bridge-backed or native Silicon assets, so universal recoverability is not asserted."
+  },
+  {
+    "id": "wlr_ent_000109",
+    "slug": "samsung-wallet",
+    "canonical_name": "Samsung Wallet",
+    "aliases": [],
+    "wallet_type": "software",
+    "status": "active",
+    "summary": "Samsung's digital wallet platform, introduced in June 2022, includes a separately operated custodial Stablecoin Account for eligible U.S. Galaxy users with USDC transfers on Solana from November 2026.",
+    "developer_or_company": "Samsung Electronics",
+    "country_or_origin": null,
+    "launch_date": "2022-06-16",
+    "launch_date_precision": "day",
+    "official_url": "https://www.samsung.com/us/apps/samsung-wallet/",
+    "official_domain": "samsung.com",
+    "source_code_urls": [],
+    "custody_model": "custodial",
+    "key_management_model": "For the Stablecoin Account only: Bastion operates the account and Coinbase provides sub-custody; no private keys are managed by the account user.",
+    "confidence": "high",
+    "last_verified_at": "2026-11-18",
+    "notes": "The launch date refers to the wider Samsung Wallet platform. WLR custody classification is limited to its native Stablecoin Account, not the distinct Samsung Blockchain Wallet, external linked accounts, or non-crypto functions. Samsung Wallet integrated with Samsung Blockchain Wallet in 2022; this does not establish a merger or shared custody model."
   }
 ]
