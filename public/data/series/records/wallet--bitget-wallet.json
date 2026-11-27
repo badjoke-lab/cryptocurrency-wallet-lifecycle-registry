@@ -49,6 +49,23 @@
         "is_major_event": true,
         "product_id": "wlr_prod_000095",
         "title": "Bitget Wallet expanded multi-chain MEV protection by default"
+      },
+      {
+        "affected_product_ids": [
+          "wlr_prod_000095"
+        ],
+        "confidence": "high",
+        "description": "Bitget Wallet published launch-day guidance for Arc mainnet on 2026-09-16, documenting Arc network support in the self-custodial mobile wallet together with USDC gas, CCTP cross-chain transfers, onchain trading, and access to compatible Arc dApps.",
+        "entity_id": "wlr_ent_000046",
+        "event_date": "2026-09-16",
+        "event_date_basis": "release",
+        "event_status_effect": "active",
+        "event_type": "other",
+        "id": "wlr_ev_000289",
+        "is_major_event": false,
+        "notes": "The event is scoped to wallet network/product capability. It does not treat Arc token price activity, referral promotions, or third-party launchpad claims as lifecycle evidence.",
+        "product_id": "wlr_prod_000095",
+        "title": "Bitget Wallet documented Arc mainnet support at public launch"
       }
     ]
   },
@@ -134,6 +151,22 @@
         "source_type": "official_blog",
         "title": "Bitget Wallet Expands Multi-Chain MEV Protection for Safer Transactions",
         "url": "https://web3.bitget.com/en/blog/articles/multi-chain-mev-protection"
+      },
+      {
+        "accessed_at": "2026-11-28",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000046",
+        "event_id": "wlr_ev_000289",
+        "id": "wlr_src_000604",
+        "is_primary": true,
+        "notes": "First-party Bitget Wallet guide dated 2026-09-16 confirming Arc mainnet support and describing Arc access, USDC gas, CCTP cross-chain transfers, onchain trading, and dApp access.",
+        "product_id": "wlr_prod_000095",
+        "published_at": "2026-09-16",
+        "publisher": "Bitget Wallet",
+        "reliability": "high",
+        "source_type": "official_blog",
+        "title": "Arcウォレットガイド：Bitget WalletでArcを始める方法",
+        "url": "https://web3.bitget.com/ja/academy/arc-wallet-guide"
       }
     ]
   },

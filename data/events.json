@@ -5626,5 +5626,22 @@
       "United States"
     ],
     "notes": "Samsung's FAQ excludes New York residents. The approximately 82 million figure refers to compatible devices, not active accounts. No live Sui or in-store stablecoin payment claim is established here."
+  },
+  {
+    "id": "wlr_ev_000289",
+    "entity_id": "wlr_ent_000046",
+    "product_id": "wlr_prod_000095",
+    "affected_product_ids": [
+      "wlr_prod_000095"
+    ],
+    "event_type": "other",
+    "event_date": "2026-09-16",
+    "event_date_basis": "release",
+    "title": "Bitget Wallet documented Arc mainnet support at public launch",
+    "description": "Bitget Wallet published launch-day guidance for Arc mainnet on 2026-09-16, documenting Arc network support in the self-custodial mobile wallet together with USDC gas, CCTP cross-chain transfers, onchain trading, and access to compatible Arc dApps.",
+    "confidence": "high",
+    "event_status_effect": "active",
+    "is_major_event": false,
+    "notes": "The event is scoped to wallet network/product capability. It does not treat Arc token price activity, referral promotions, or third-party launchpad claims as lifecycle evidence."
   }
 ]
