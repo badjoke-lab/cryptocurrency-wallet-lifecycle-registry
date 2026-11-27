@@ -10287,5 +10287,21 @@
     "claim_scope": "architecture",
     "is_primary": true,
     "notes": "Bastion's press release establishes its account operations, custody and remittance role; Solana's activation notice establishes Coinbase's sub-custody role."
+  },
+  {
+    "id": "wlr_src_000604",
+    "entity_id": "wlr_ent_000046",
+    "product_id": "wlr_prod_000095",
+    "event_id": "wlr_ev_000289",
+    "source_type": "official_blog",
+    "title": "Arcウォレットガイド：Bitget WalletでArcを始める方法",
+    "url": "https://web3.bitget.com/ja/academy/arc-wallet-guide",
+    "publisher": "Bitget Wallet",
+    "published_at": "2026-09-16",
+    "accessed_at": "2026-11-28",
+    "reliability": "high",
+    "claim_scope": "event",
+    "is_primary": true,
+    "notes": "First-party Bitget Wallet guide dated 2026-09-16 confirming Arc mainnet support and describing Arc access, USDC gas, CCTP cross-chain transfers, onchain trading, and dApp access."
   }
 ]
