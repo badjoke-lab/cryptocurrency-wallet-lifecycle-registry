@@ -79,6 +79,31 @@
           "monitor",
           "move_funds"
         ]
+      },
+      {
+        "affected_product_ids": [],
+        "affected_variants": [
+          "Accounts created with Google or Apple login via Web3Auth"
+        ],
+        "confidence": "high",
+        "description": "On November 18 Web3Auth published its investigation findings and recovery update for the security incident affecting Keplr social-login wallets. It confirmed the issue sat in its older social-login infrastructure, stated that the investigation remains ongoing, and opened a recovery lookup site where users can check whether their wallet was identified as potentially affected and view the status of associated asset-recovery efforts. On November 19 Keplr announced that the recovery status checker was live, warned users about phishing and impersonators, and stated that recovery efforts were ongoing but the recovery process itself was not yet live. As of November 28, neither provider had announced a start of the recovered-asset return process, a compensation programme, or an official final loss total.",
+        "entity_id": "wlr_ent_000043",
+        "event_date": "2026-11-18",
+        "event_date_basis": "announcement",
+        "event_status_effect": "none",
+        "event_type": "other",
+        "funds_affected": "yes",
+        "id": "wlr_ev_000291",
+        "impact_level": "high",
+        "is_major_event": false,
+        "notes": "This event records the post-incident follow-up only; the underlying private-key exposure is recorded in wlr_ev_000290. The recovery lookup shows status only and is not a payout or return confirmation. Third-party loss estimates remain unofficial; as of November 28 neither Web3Auth nor Keplr has published a final loss figure, a confirmed victim count, or a return schedule.",
+        "product_id": null,
+        "security_scope": "third_party_vendor",
+        "third_party_name": "Web3Auth (Consensys)",
+        "title": "Web3Auth published investigation findings and opened a Keplr recovery lookup; asset return process not yet started",
+        "user_actions_required": [
+          "monitor"
+        ]
       }
     ]
   },
@@ -260,6 +285,54 @@
         "source_type": "news_article",
         "title": "Keplr Wallet reports unauthorized transactions on accounts created with Google or Apple login; related login functions have been suspended",
         "url": "https://www.ababnews.com/en/news/d79be6eb-f04c-44d6-bf6a-19b523cd43e7"
+      },
+      {
+        "accessed_at": "2026-11-28",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000043",
+        "event_id": "wlr_ev_000291",
+        "id": "wlr_src_000611",
+        "is_primary": true,
+        "notes": "First-party findings state the issue was confirmed on November 6 in older social-login infrastructure, primarily affecting Keplr, and that the investigation remains ongoing. Legacy SDK support was ended and users are directed to the recovery lookup for affected-wallet status; details on the return of recovered assets are stated to follow through official channels.",
+        "product_id": null,
+        "published_at": "2026-11-18",
+        "publisher": "Web3Auth",
+        "reliability": "high",
+        "source_type": "official_security_advisory",
+        "title": "Web3Auth Security Incident: Investigation Findings and Recovery Update",
+        "url": "https://web3auth.io/updates/security-incident-report.html"
+      },
+      {
+        "accessed_at": "2026-11-28",
+        "claim_scope": "event",
+        "entity_id": "wlr_ent_000043",
+        "event_id": "wlr_ev_000291",
+        "id": "wlr_src_000612",
+        "is_primary": true,
+        "notes": "Keplr's official post announces that the recovery status checker is live, warns users to verify the URL, never share their passphrase and never sign suspicious transactions, and states that recovery efforts are ongoing while the recovery process itself is not yet live.",
+        "product_id": null,
+        "published_at": "2026-11-19",
+        "publisher": "Keplr",
+        "reliability": "high",
+        "source_type": "official_social",
+        "title": "The Web3Auth recovery status checker is live",
+        "url": "https://x.com/keplrwallet/status/2123236004224250196"
+      },
+      {
+        "accessed_at": "2026-11-28",
+        "claim_scope": "status",
+        "entity_id": "wlr_ent_000043",
+        "event_id": "wlr_ev_000291",
+        "id": "wlr_src_000613",
+        "is_primary": true,
+        "notes": "Official lookup lets users check whether a wallet has been identified as potentially affected and view the status of associated asset-recovery efforts. The page states it shows status only and that details on the return of recovered assets will follow through official channels.",
+        "product_id": null,
+        "published_at": "2026-11-18",
+        "publisher": "Web3Auth",
+        "reliability": "high",
+        "source_type": "official_statement",
+        "title": "Web3Auth Keplr Recovery Lookup",
+        "url": "https://web3auth.io/keplr-recovery/"
       }
     ]
   },
