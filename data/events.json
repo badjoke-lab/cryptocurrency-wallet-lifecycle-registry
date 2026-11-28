@@ -5643,5 +5643,61 @@
     "event_status_effect": "active",
     "is_major_event": false,
     "notes": "The event is scoped to wallet network/product capability. It does not treat Arc token price activity, referral promotions, or third-party launchpad claims as lifecycle evidence."
+  },
+  {
+    "id": "wlr_ev_000290",
+    "entity_id": "wlr_ent_000043",
+    "product_id": null,
+    "affected_product_ids": [],
+    "affected_variants": [
+      "Accounts created with Google or Apple login via Web3Auth"
+    ],
+    "event_type": "private_key_exposure",
+    "event_date": "2026-11-07",
+    "event_date_basis": "disclosure",
+    "title": "Web3Auth security incident exposed some Keplr social-login wallet keys",
+    "description": "Keplr reported unauthorized transactions involving some accounts created using Google or Apple login and paused those login options. Web3Auth confirmed a security issue in its own infrastructure affecting certain embedded wallets. Keplr distinguished recovery-phrase and hardware-wallet accounts from the affected social-login variant. Web3Auth and Keplr moved at-risk assets into protective recovery wallets. On November 13 Web3Auth reported that access for existing users of its Plug & Play and SFA SDKs had resumed, with restrictions remaining, and that return of recovered assets was still being coordinated.",
+    "confidence": "high",
+    "impact_level": "critical",
+    "security_scope": "third_party_vendor",
+    "funds_affected": "yes",
+    "event_status_effect": "none",
+    "third_party_name": "Web3Auth (Consensys)",
+    "affected_data": [
+      "Private keys"
+    ],
+    "affected_users_text": "Some Google/Apple-login accounts; Keplr co-founder estimated approximately 20% of this cohort, not 20% of all users (reported by The Block).",
+    "amount_text": "Bitquery estimated USD 1.82 million taken by the attacker; The Block reported about USD 5.6 million held at published recovery addresses on November 8. These are distinct estimates, not an official final loss or reimbursement total.",
+    "is_major_event": true,
+    "user_actions_required": [
+      "monitor",
+      "move_funds"
+    ],
+    "notes": "November 7 is the provider's confirmed disclosure date, not the date of the earliest unauthorized transaction. Bitquery reported earlier activity beginning November 1 UTC. No confirmed specific Keplr client version, technical root cause, final loss, victim count, return completion or Keplr-specific full restoration. Protective transfers are not counted as theft; SDK service restoration does not establish that compromised keys are safe. Initial Keplr guidance instructed affected users not to fund or recreate the old account."
+  },
+  {
+    "id": "wlr_ev_000291",
+    "entity_id": "wlr_ent_000043",
+    "product_id": null,
+    "affected_product_ids": [],
+    "affected_variants": [
+      "Accounts created with Google or Apple login via Web3Auth"
+    ],
+    "event_type": "other",
+    "event_date": "2026-11-18",
+    "event_date_basis": "announcement",
+    "title": "Web3Auth published investigation findings and opened a Keplr recovery lookup; asset return process not yet started",
+    "description": "On November 18 Web3Auth published its investigation findings and recovery update for the security incident affecting Keplr social-login wallets. It confirmed the issue sat in its older social-login infrastructure, stated that the investigation remains ongoing, and opened a recovery lookup site where users can check whether their wallet was identified as potentially affected and view the status of associated asset-recovery efforts. On November 19 Keplr announced that the recovery status checker was live, warned users about phishing and impersonators, and stated that recovery efforts were ongoing but the recovery process itself was not yet live. As of November 28, neither provider had announced a start of the recovered-asset return process, a compensation programme, or an official final loss total.",
+    "confidence": "high",
+    "impact_level": "high",
+    "security_scope": "third_party_vendor",
+    "funds_affected": "yes",
+    "event_status_effect": "none",
+    "third_party_name": "Web3Auth (Consensys)",
+    "is_major_event": false,
+    "user_actions_required": [
+      "monitor"
+    ],
+    "notes": "This event records the post-incident follow-up only; the underlying private-key exposure is recorded in wlr_ev_000290. The recovery lookup shows status only and is not a payout or return confirmation. Third-party loss estimates remain unofficial; as of November 28 neither Web3Auth nor Keplr has published a final loss figure, a confirmed victim count, or a return schedule."
   }
 ]
